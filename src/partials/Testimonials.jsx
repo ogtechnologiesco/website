@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Hyperledger from "../images/HL.jpg"
 import TestimonialImage01 from '../images/testimonial-01.jpg';
 import TestimonialImage02 from '../images/testimonial-02.jpg';
 import TestimonialImage03 from '../images/testimonial-03.jpg';
@@ -102,49 +102,54 @@ class Testimonials extends Component {
             <div>
         
         <Slider {...settings}>
+        <div>
+            <h3><img src={openai}   alt="OpenAI"/></h3>
+          </div>
           <div>
             <h3><img src={Netlify}   alt="Netlify"/> 
             </h3>
           </div>
           <div>
-            <h3><img src={Heroku}   alt="Stellar"/></h3>
+            <h3><img src={Heroku}   alt="Heroku"/></h3>
           </div>
           <div>
-            <h3><img src={Mongodb}   alt="Stellar"/></h3>
+            <h3><img src={Mongodb}   alt="MongoDB"/></h3>
           </div>
           <div>
-            <h3><img src={Ipfs}   alt="Stellar"/></h3>
+            <h3><img src={Ipfs}   alt="IPFS"/></h3>
           </div>
           <div>
-            <h3><img src={Docker}   alt="Stellar"/></h3>
+            <h3><img src={Docker}   alt="Docker"/></h3>
           </div>
           <div>
             <h3><img src={Stellar}   alt="Stellar"/></h3>
           </div>
           <div>
-            <h3><img src={Postg}   alt="Stellar"/></h3>
+            <h3><img src={Postg}   alt="Postgres"/></h3>
           </div>
           <div>
             <h3><img src={Bitcoin}   alt="Bitcoin"/></h3>
           </div>
           <div>
-            <h3><img src={Vercel}   alt="Bitcoin"/></h3>
+            <h3><img src={Vercel}   alt="Vercel"/></h3>
           </div>
           <div>
             <h3><img src={ethereum}   alt="Bitcoin"/></h3>
           </div>
           <div>
-            <h3><img src={npm}   alt="Bitcoin"/></h3>
+            <h3><img src={npm}   alt="npm"/></h3>
+          </div>
+          
+          <div>
+            <h3><img src={zaho}   alt="Zoho"/></h3>
           </div>
           <div>
-            <h3><img src={openai}   alt="Bitcoin"/></h3>
+            <h3><img src={vite}   alt="Vite"/></h3>
           </div>
-          <div>
-            <h3><img src={zaho}   alt="Bitcoin"/></h3>
-          </div>
-          <div>
-            <h3><img src={vite}   alt="Bitcoin"/></h3>
-          </div>
+            <div>
+              <h3><img src={Hyperledger}   alt="Hyperledger"/></h3>
+            </div>
+          
         </Slider>
       </div>
 

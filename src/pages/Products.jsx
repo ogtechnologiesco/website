@@ -17,6 +17,7 @@ import elearn from '../images/eleran.png';
 import travel from '../images/travel.png';
 import bb from '../images/bb.png';
 import aii from '../images/ai.png';
+import space from "../images/space.png"
 
 
 
@@ -150,6 +151,23 @@ function Products() {
                  
                   <h3 className="h3 mb-3">E-learning platform development </h3>
                   <p className="text-xl text-gray-400 mb-4"> We can help your business build a custom e-learning platform that incorporates the latest technologies such as AI and blockchain. Our team of instructional designers, developers, and data scientists can work with you to design and develop an e-learning platform that provides personalized learning experiences to your users, while ensuring data security and integrity.</p>
+                  
+                </div>
+              </div>
+            </div>
+
+             {/* 3rd item */}
+             <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
+              {/* Image */}
+              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="fade-up">
+                <img className="max-w-full mx-auto md:max-w-none h-auto" src={space} width="540" height="405" alt="Features 03" />
+              </div>
+              {/* Content */}
+              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
+                <div className="md:pr-4 lg:pr-12 xl:pr-16">
+                 
+                  <h3 className="h3 mb-3">Space technology development </h3>
+                  <p className="text-xl text-gray-400 mb-4"> Explore the cosmos with our expertise in crafting cutting-edge space technology solutions. Our skilled team, comprising engineers, developers, and data specialists, is ready to collaborate with you in creating a bespoke space technology platform. From satellite communications to celestial data analysis, we tailor solutions that offer unparalleled experiences. Ensuring the utmost security and integrity of space-related data, we bring innovation to the forefront of your cosmic endeavors. Join hands with us to propel your business into the future of space technology. </p>
                   
                 </div>
               </div>

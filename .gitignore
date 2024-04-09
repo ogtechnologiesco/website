@@ -56,3 +56,6 @@ dist/
 
 # Storybook
 /storybook
+
+# Local Netlify folder
+.netlify

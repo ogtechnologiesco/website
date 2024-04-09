@@ -113,15 +113,6 @@ import FeaturedPost from './FeaturedPost';
       imageText: 'Learn about Blockchain and how to apply it to your day-to-day business life',
       link: 'https://edunode.org/blog/the-web3-revolution',
     },
-    {
-      title: 'Learn about Docker',
-      date: '28/03/2023',
-      description:
-        'Learn about Docker, what are the most popular applications, and how you can apply it in Blockchain.',
-      image: bb,
-      imageText: 'Learn about Docker, what are the most popular applications, and how you can apply it in Blockchain.',
-      link: 'https://edunode.org/blog/Docker',
-    }
   ];
 
 function Imprint() {

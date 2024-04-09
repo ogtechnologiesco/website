@@ -58,7 +58,7 @@ Services in automatic data processing and information technology<br />
 <br />
   <br />
 Managing director<br />
-Olvis E. Gil Rios<br />
+Olvis E. Gil Ríos<br />
 <br />
   <br />
 Chamber<br />
