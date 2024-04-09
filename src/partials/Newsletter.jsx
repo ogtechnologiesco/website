@@ -13,7 +13,7 @@ function Newsletter() {
     setSubmitError(null);
 
     try {
-      const response = await axios.post('http://localhost:3000/api/subscribe', { email });
+      const response = await axios.post('https://og-technologies.herokuapp.com/api/subscribe', { email });
       console.log(response.data);
       alert('Thanks for subscribing!');
       setSubmitSuccess(true);
