@@ -1,7 +1,11 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/OG Technologies_logo.png';
+
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer>
       <div className="py-12 md:py-16">
@@ -15,36 +19,18 @@ function Footer() {
               <div className="mb-2">
                 {/* Logo */}
                 <Link to="/" className="inline-block" aria-label="sarah">
-                <div style={{ width: '100px', height: '60px' }}>
-                <img src={logo} alt="Logo" style={{ maxWidth: '100%', maxHeight: '100%' }} />
-              </div>
+                  <div style={{ width: '100px', height: '60px' }}>
+                    <img src={logo} alt="Logo" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+                  </div>
                 </Link>
               </div>
-              <div className="text-gray-400">   Liechtensteinstraße 111-115, 1090 Vienna, Austria.
-     </div>
+              <div className="text-gray-400">Widerhofergasse 6 /12, 1090 Vienna, Austria.</div>
             </div>
 
             {/* 2nd, 3rd and 4th blocks */}
             <div className="md:col-span-8 lg:col-span-7 grid sm:grid-cols-3 gap-8">
 
-              {/* 2nd block */}
-             {/**  <div className="text-sm">
-                <h6 className="text-gray-200 font-medium mb-1"> <Link to="/products" >Products</Link></h6>
-                <ul>
-                  <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">travel booking platform</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">E-commerce marketplace</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">PBlockchain consulting services</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">AI-powered chatbot</Link>
-                  </li>
-                </ul>
-              </div>*/}
+             
 
               {/* 3rd block */}
               
@@ -104,11 +90,9 @@ function Footer() {
               </li>
             </ul>
 
-            {/* Copyrights note */}
-            <div className="text-gray-400 text-sm mr-4">&copy; OG Technologies. All rights reserved.</div>
-
+            {/* Copyright note */}
+            <div className="text-gray-400 text-sm mr-4">&copy; {currentYear} OG Technologies EU. All rights reserved.</div>
           </div>
-
         </div>
       </div>
     </footer>

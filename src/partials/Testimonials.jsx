@@ -23,6 +23,8 @@ import openai from '../images/openai.png'
 import npm from '../images/NPM.png'
 import ethereum from '../images/ETHEREUM.jpg'
 import vite from '../images/vite.png'
+import blockstandLogo from '../images/blockstand_logo.png'
+import ffg from '../images/ffg.png'
 import "~slick-carousel/slick/slick.css"; 
 import "~slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -96,7 +98,7 @@ class Testimonials extends Component {
           </div>
 */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h2 className="h2 mb-4">Our technologies</h2>
+            <h2 className="h2 mb-4">Our clients, partners and technologies</h2>
            
              <div> <p></p></div>
             <div>
@@ -149,6 +151,13 @@ class Testimonials extends Component {
             <div>
               <h3><img src={Hyperledger}   alt="Hyperledger"/></h3>
             </div>
+          
+          <div>
+            <h3><img src={blockstandLogo} alt="Blockstand" style={{ backgroundColor: 'white'}} /></h3>
+          </div>
+          <div>
+            <h3><img src={ffg} alt="FFG" /></h3>
+          </div>
           
         </Slider>
       </div>
