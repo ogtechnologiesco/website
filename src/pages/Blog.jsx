@@ -9,6 +9,7 @@ import FeaturedPost from './FeaturedPost';
 import blog1 from '../images/blog1.jpg';
 import meridian from '../images/meridian.png';
 import stand from '../images/stand.jpeg';
+import ebsi from '../images/ebsi2.png';
 
 const myPosts = [
   {
@@ -36,6 +37,14 @@ const myPosts = [
      image: stand,
      imageText: 'standards',
     link: '/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers',
+   },
+   {
+    title: 'Verifying EBSI Verifiable Credentials, trust chain verification and compliance',
+    date: '30/03/2025',
+    description: 'In this article, we explore the key requirements for ensuring the authenticity and compliance of verifiable credentials within the European Blockchain Services Infrastructure (EBSI).',
+    image: ebsi,
+    imageText: 'Key requirements for verifying EBSI Verifiable Credentials',
+    link: '/blog/ebsi-verifiable-credentials',
    },
 ];
 

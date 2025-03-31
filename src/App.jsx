@@ -20,6 +20,7 @@ import Blogs from './pages/Blog';
 import BlogPost from './pages/Blogs/intro';
 import MeridianPost from './pages/Blogs/meridian2024';
 import StandardsPost from './pages/Blogs/standards';
+import Ebsi from './pages/Blogs/ebsi';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Quote from './pages/Quote';
 import HelpDesk from './pages/HelpDesk';
@@ -62,6 +63,7 @@ function App() {
         <Route exact path="/blog" element={<Blogs/>} />
         <Route exact path="/blog/reaching-new-frontiers" element={<BlogPost/>} />
         <Route exact path="/blog/meridian-2024-highlights" element={<MeridianPost/>} />
+        <Route exact path="/blog/ebsi-verifiable-credentials" element={<Ebsi/>} />
         <Route exact path="/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers" element={<StandardsPost/>} />
 
       </Routes>
