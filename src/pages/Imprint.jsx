@@ -39,7 +39,7 @@ function Imprint() {
 
 
 OG Technologies EU<br />
-Liechtensteinstraße 111-115, <br />
+Widerhofergasse 6 / 12,<br />
 1090 Vienna, Austria<br />
 <br />
   <br />
