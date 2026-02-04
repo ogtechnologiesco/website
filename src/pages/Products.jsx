@@ -113,7 +113,7 @@ function Products() {
                 <div className="md:pl-4 lg:pl-12 xl:pl-16">
                  
                   <h3 className="h3 mb-3">AI-powered chatbot development  </h3>
-                  <p className="text-xl text-gray-400 mb-4">We can help your business build an AI-powered chatbot that provides 24/7 customer support to your customers. Our team of developers and data scientists can work with you to design a chatbot that uses natural language processing and machine learning algorithms to provide personalized assistance to your customers.</p>
+                  <p className="text-xl text-gray-400 mb-4">We can help your business build an AI-powered agents/chatbot that provides 24/7 customer support to your customers. Our team of developers and data scientists can work with you to design a agent/chatbot that uses natural language processing and machine learning algorithms to provide personalized assistance to your customers.</p>
                   
                 </div>
               </div>

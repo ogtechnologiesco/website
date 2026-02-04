@@ -1,14 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from '../utils/Modal';
 
 import HeroImage from '../images/hero-image-01.jpg';
 
 function HeroHome() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [particles, setParticles] = useState([]);
+
+  useEffect(() => {
+    // Generate floating particles
+    const newParticles = Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 4 + 1,
+      duration: Math.random() * 20 + 10,
+      delay: Math.random() * 5
+    }));
+    setParticles(newParticles);
+  }, []);
 
   return (
-    <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+    <section className="relative overflow-hidden">
+      {/* Animated background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-pink-900/20 animated-gradient-bg" />
+      
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {particles.map((particle) => (
+          <div
+            key={particle.id}
+            className="absolute rounded-full bg-purple-400/30 blur-sm particle-glow"
+            style={{
+              left: `${particle.x}%`,
+              top: `${particle.y}%`,
+              width: `${particle.size}px`,
+              height: `${particle.size}px`,
+              animation: `float ${particle.duration}s ease-in-out ${particle.delay}s infinite`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Illustration behind hero content */}
         <div
           className="absolute left-0 bottom-0 -ml-20 hidden lg:block pointer-events-none"
@@ -36,20 +70,20 @@ function HeroHome() {
         <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h1 mb-4" data-aos="fade-up">
-             OG Technologies
+            <h1 className="h1 mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-gradient bg-300" data-aos="fade-up">
+             OG Technologies EU
             </h1>
             <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">
             Transforming businesses through Web3/Blockchain innovation.
             </p>
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <div data-aos="fade-up" data-aos-delay="400">
-                <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0" onClick={() => window.location.href = 'mailto:hi@ogtechnologies.co'}>
+                <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0 btn-animated transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/50" href="#0" onClick={() => window.location.href = 'mailto:hi@ogtechnologies.co'}>
                   Contact Us
                 </a>
               </div>
               <div data-aos="fade-up" data-aos-delay="600">
-                <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#middle-section">
+                <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4 btn-animated transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/50" href="#middle-section">
                   Learn more
                 </a>
               </div>
@@ -59,9 +93,12 @@ function HeroHome() {
           {/* Hero image */}
           <div>
             <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
-              <img className="mx-auto" src={HeroImage} width="1024" height="504" alt="Hero" />
+              <div className="relative group hero-image-container">
+                <img className="mx-auto rounded-lg shadow-2xl transition-all duration-500" src={HeroImage} width="1024" height="504" alt="Hero" />
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-purple-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
               <a
-                className="absolute group"
+                className="absolute group transform hover:scale-110 transition-transform duration-300"
                 href="#0"
                 onClick={(e) => {
                   e.preventDefault();
@@ -70,23 +107,26 @@ function HeroHome() {
                 }}
                 aria-controls="modal"
               >
-                <svg
-                  className="w-16 h-16 sm:w-20 sm:h-20 hover:opacity-75 transition duration-150 ease-in-out"
-                  viewBox="0 0 88 88"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <linearGradient x1="78.169%" y1="9.507%" x2="24.434%" y2="90.469%" id="a">
-                      <stop stopColor="#EBF1F5" stopOpacity=".8" offset="0%" />
-                      <stop stopColor="#EBF1F5" offset="100%" />
-                    </linearGradient>
-                  </defs>
-                  <circle fill="url(#a)" cx="44" cy="44" r="44" />
-                  <path
-                    className="fill-current text-purple-600"
-                    d="M52 44a.999.999 0 00-.427-.82l-10-7A1 1 0 0040 37V51a.999.999 0 001.573.82l10-7A.995.995 0 0052 44V44c0 .001 0 .001 0 0z"
-                  />
-                </svg>
+                <div className="relative">
+                  <svg
+                    className="w-16 h-16 sm:w-20 sm:h-20 transition-all duration-300 group-hover:opacity-100 opacity-90"
+                    viewBox="0 0 88 88"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs>
+                      <linearGradient x1="78.169%" y1="9.507%" x2="24.434%" y2="90.469%" id="a">
+                        <stop stopColor="#EBF1F5" stopOpacity=".8" offset="0%" />
+                        <stop stopColor="#EBF1F5" offset="100%" />
+                      </linearGradient>
+                    </defs>
+                    <circle className="fill-purple-600 group-hover:fill-purple-500 transition-colors duration-300" fill="url(#a)" cx="44" cy="44" r="44" />
+                    <path
+                      className="fill-current text-white"
+                      d="M52 44a.999.999 0 00-.427-.82l-10-7A1 1 0 0040 37V51a.999.999 0 001.573.82l10-7A.995.995 0 0052 44V44c0 .001 0 .001 0 0z"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 rounded-full bg-purple-500 animate-ping opacity-75" />
+                </div>
               </a>
             </div>
 

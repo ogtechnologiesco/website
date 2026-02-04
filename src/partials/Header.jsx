@@ -1,14 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Dropdown from '../utils/Dropdown';
-import logo from '../images/OG Technologies_logo.png';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import  { Select} from '@mui/material';
-
-
-
+import logo from '../images/og_logo.png';
 
 
 function Header() {
@@ -89,34 +81,9 @@ function Header() {
             </ul>
 
             <div>
-            {/* <FormControl sx={{ width: '200px' }}> */}
-            {/* <InputLabel id="demo-simple-select-autowidth-label"  style={{ color: 'white' }}>Language</InputLabel> */}
-        {/* <div>
-        <Select   labelId="demo-simple-select-autowidth-label"
-          id="demo-simple-select-autowidth"
-          size='large'
-          autoWidth
-          label="Language"
-          padding-right= "80px"
-          style={{ width: '100px' , border: '2px solid white', backgroundColor:'rgb(93 93 255 / var(--tw-bg-opacity))'}}
-          inputProps={{ style: { color: 'white' } }}
-           MenuProps={{ MenuListProps: {
-              style: {
-                backgroundColor: 'grey',
-                color: 'white' },
-              },
-            }}
+          
+    </div>
 
-         >
-       <MenuItem style={{ color: 'white' }} value={20}>Englich</MenuItem>
-       <MenuItem style={{ color: 'white' }} value={10}>Deutsch </MenuItem>
-       </Select>
-    </div>
-      </FormControl> */}
-    </div>
-    {/*<button onClick={handleDarkModeToggle}>
-        {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-      </button>*/}
           </nav>
 
         

@@ -5,18 +5,6 @@ import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBTextArea,
-  MDBFile
-}
-from 'mdb-react-ui-kit';
 import Quotes from '../partials/Quotes';
 function Quote() {
   return (

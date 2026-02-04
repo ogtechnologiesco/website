@@ -22,9 +22,11 @@ import MeridianPost from './pages/Blogs/meridian2024';
 import StandardsPost from './pages/Blogs/standards';
 import Ebsi from './pages/Blogs/ebsi';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import CookiePolicy from './pages/CookiePolicy';
 import Quote from './pages/Quote';
 import HelpDesk from './pages/HelpDesk';
-
+import Alliance from './pages/Alliance';
+import CookieConsent from './components/CookieConsent';
 
 
 function App() {
@@ -56,10 +58,12 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route exact path="/imprint" element={<Imprint/>} />
         <Route exact path="/privacy" element={<PrivacyPolicy/>} />
+        <Route exact path="/cookie-policy" element={<CookiePolicy/>} />
         <Route exact path="/products" element={<Products/>} />
         <Route exact path="/careers" element={<Job/>} />
         <Route exact path="/quote" element={<Quote/>} />
         <Route exact path="/helpdesk" element={<HelpDesk/>} />
+        <Route exact path="/alliance" element={<Alliance/>} />
         <Route exact path="/blog" element={<Blogs/>} />
         <Route exact path="/blog/reaching-new-frontiers" element={<BlogPost/>} />
         <Route exact path="/blog/meridian-2024-highlights" element={<MeridianPost/>} />
@@ -67,6 +71,7 @@ function App() {
         <Route exact path="/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers" element={<StandardsPost/>} />
 
       </Routes>
+      <CookieConsent />
     </>
   );
 }

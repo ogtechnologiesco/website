@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../images/OG Technologies_logo.png';
+import logo from '../images/og_logo.png';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
