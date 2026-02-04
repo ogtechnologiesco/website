@@ -18,30 +18,40 @@ import blockstandLogo from '../images/blockstand_logo1.jpg'
 import ffg from '../images/ffg.png'
 import asi from '../images/ASI_logo.png'
 import iso from '../images/ISO_logo.png'
+import kafka from '../images/kafka_logo.jpg'
+import kubernetes from '../images/kubernetes.jpg'
+import aws from '../images/aws.jpg'
+import microsoft from '../images/microsoft.jpg'
+import google from '../images/googlecloud.jpg'
 
 const Testimonials = () => {
   const scrollRef = useRef(null);
 
   const logos = [
   { src: openai, alt: "OpenAI", bg: "bg-black" },
-  { src: Netlify, alt: "Netlify", bg: "bg-black" },
-  { src: Heroku, alt: "Heroku", bg: "bg-black" },
-  { src: Mongodb, alt: "MongoDB", bg: "bg-black" },
-  { src: Ipfs, alt: "IPFS", bg: "bg-black" },
-  { src: Docker, alt: "Docker", bg: "bg-black" },
-  { src: Stellar, alt: "Stellar", bg: "bg-black" },
-  { src: Postg, alt: "Postgres", bg: "bg-black" },
-  { src: Bitcoin, alt: "Bitcoin", bg: "bg-black" },
-  { src: Vercel, alt: "Vercel", bg: "bg-black" },
-  { src: ethereum, alt: "Ethereum", bg: "bg-black" },
-  { src: npm, alt: "npm", bg: "bg-black" },
-  { src: zaho, alt: "Zoho", bg: "bg-black" },
-  { src: vite, alt: "Vite", bg: "bg-black" },
-  { src: Hyperledger, alt: "Hyperledger", bg: "bg-black" },
-  { src: blockstandLogo, alt: "Blockstand", bg: "bg-black" },
   { src: ffg, alt: "FFG", bg: "bg-black" },
+  { src: Mongodb, alt: "MongoDB", bg: "bg-black" },
+  { src: google, alt: "Google", bg: "bg-white-900" },
+  { src: microsoft, alt: "Microsoft", bg: "bg-white-900" },
+  { src: aws, alt: "AWS", bg: "bg-white-900" },
+  { src: iso, alt: "ISO", bg: "bg-black" },
+  { src: Stellar, alt: "Stellar", bg: "bg-black" },
+  { src: kubernetes, alt: "Kubernetes", bg: "bg-black" },
+  { src: Docker, alt: "Docker", bg: "bg-black" },
+  { src: Hyperledger, alt: "Hyperledger", bg: "bg-black" },
   { src: asi, alt: "Austrian Standards", bg: "bg-black" },
-  { src: iso, alt: "ISO", bg: "bg-black" }
+  { src: ethereum, alt: "Ethereum", bg: "bg-black" },
+  { src: Vercel, alt: "Vercel", bg: "bg-black" },
+  { src: Netlify, alt: "Netlify", bg: "bg-black" },
+  { src: Bitcoin, alt: "Bitcoin", bg: "bg-black" },
+  { src: Heroku, alt: "Heroku", bg: "bg-black" },
+  { src: npm, alt: "npm", bg: "bg-black" },
+  { src: vite, alt: "Vite", bg: "bg-black" },
+  { src: kafka, alt: "Kafka", bg: "bg-white-900" },
+  { src: Postg, alt: "Postgres", bg: "bg-black" },
+  { src: Ipfs, alt: "IPFS", bg: "bg-black" },
+  { src: blockstandLogo, alt: "Blockstand", bg: "bg-black" },
+  { src: zaho, alt: "Zoho", bg: "bg-black" },
   ];
 
   // Duplicate logos for seamless infinite scroll
