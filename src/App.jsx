@@ -26,6 +26,7 @@ import CookiePolicy from './pages/CookiePolicy';
 import Quote from './pages/Quote';
 import HelpDesk from './pages/HelpDesk';
 import Alliance from './pages/Alliance';
+import Ventures from './pages/Ventures';
 import CookieConsent from './components/CookieConsent';
 
 
@@ -64,6 +65,7 @@ function App() {
         <Route exact path="/quote" element={<Quote/>} />
         <Route exact path="/helpdesk" element={<HelpDesk/>} />
         <Route exact path="/alliance" element={<Alliance/>} />
+        <Route exact path="/ventures" element={<Ventures/>} />
         <Route exact path="/blog" element={<Blogs/>} />
         <Route exact path="/blog/reaching-new-frontiers" element={<BlogPost/>} />
         <Route exact path="/blog/meridian-2024-highlights" element={<MeridianPost/>} />

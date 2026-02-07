@@ -230,9 +230,8 @@ const CookiePolicy = () => {
               </p>
               <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 mt-4">
                 <p className="text-gray-300">
-                  Email: privacy@ogtechnologies.eu<br />
+                  E-mail: hi@ogtechnologies.co<br />
                   Address: Widerhofergasse 6 / 12, 1090 Vienna, Austria<br />
-                  E-mail: hi@ogtechnologies.co
                 </p>
               </div>
             </div>
