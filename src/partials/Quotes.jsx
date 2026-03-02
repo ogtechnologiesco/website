@@ -9,6 +9,7 @@ function Quotes() {
   const [service, setService] = useState('');
   const [description, setDescription] = useState('');
   const [budget, setBudget] = useState('');
+  const [companySize, setCompanySize] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -26,6 +27,7 @@ function Quotes() {
       service,
       description,
       budget,
+      companySize,
     };
 
    
@@ -113,20 +115,30 @@ function Quotes() {
                   id="phone-input"
                   type="text"
                   className="w-full appearance-none bg-purple-700 border border-purple-500 focus:border-purple-300 rounded-sm px-4 py-3 mb-5 sm:mb-2 sm:mr-2 text-white placeholder-purple-400"
-                  placeholder="Your phone number"
-                  aria-label="Your phone number"
+                  placeholder="Your work phone number"
+                  aria-label="Your work phone number"
                   value={number}
                   onChange={(event) => setNumber(event.target.value)}
                   disabled={isSubmitting}
                 />
                 <input
-                  id="comapany"
+                  id="company"
                   type="text"
                   className="w-full appearance-none bg-purple-700 border border-purple-500 focus:border-purple-300 rounded-sm px-4 py-3 mb-2 sm:mb-2 sm:mr-2 text-white placeholder-purple-400"
                   placeholder="Your company name"
                   aria-label="Your company name"
                   value={company}
                   onChange={(event) => setCompany(event.target.value)}
+                  disabled={isSubmitting}
+                />
+                <input
+                  id="company-size"
+                  type="text"
+                  className="w-full appearance-none bg-purple-700 border border-purple-500 focus:border-purple-300 rounded-sm px-4 py-3 mb-2 sm:mb-2 sm:mr-2 text-white placeholder-purple-400"
+                  placeholder="Company Size (1-10, 11-50, 51-200, 201-500, 501+)"
+                  aria-label="Company Size"
+                  value={companySize}
+                  onChange={(event) => setCompanySize(event.target.value)}
                   disabled={isSubmitting}
                 />
                 <input
