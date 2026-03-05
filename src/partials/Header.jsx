@@ -76,6 +76,9 @@ function Header() {
               <Link to="/ventures" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Ventures </Link>
               </li>
               <li>
+              <Link to="/portfolio" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Portfolio </Link>
+              </li>
+              <li>
               <Link to="/careers" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Careers </Link>
               </li>
               <li>
@@ -126,6 +129,9 @@ function Header() {
                 </li>
                 <li>
                   <Link to="/ventures" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Ventures</Link>
+                </li>
+                <li>
+                  <Link to="/portfolio" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Portfolio</Link>
                 </li>
               </ul>
 
