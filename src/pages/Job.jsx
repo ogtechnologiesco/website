@@ -7,6 +7,9 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import bb from '../images/bb.png';
+import cultureImage1 from '../images/intrapreneurship.jpg';
+import cultureImage2 from '../images/startups.jpg';
+import cultureImage3 from '../images/new-business.jpg';
 
 
 
@@ -42,97 +45,183 @@ function Job() {
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
                 <h1 className="h1">We are Hiring!</h1>
+                <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="100">
+                  Join our innovative team and help shape the future of technology
+                </p>
               </div>
 
-              {/* Form */}
-              <div className="max-w-XL mx-auto">
-              <Container disableGutters maxWidth="xl" component="main" sx={{ pt: 1, pb:6}}>
-              <div className="max-w-sm mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 items-start md:max-w-2xl lg:max-w-none" data-aos-id-blocks>
+              {/* Company Culture Section */}
+              <div className="max-w-6xl mx-auto pb-16 md:pb-24">
+                <div className="text-center mb-12" data-aos="fade-up">
+                  <h2 className="h2 mb-4">Why Join OG Technologies?</h2>
+                  <p className="text-xl text-gray-400">
+                    We're more than just a company – we're a community of innovators, creators, and problem-solvers
+                  </p>
+                </div>
 
-{/* 1st item */}
+                <div className="grid gap-8 md:grid-cols-3 lg:gap-12 items-start" data-aos-id-culture>
+                  
+                  {/* Culture Card 1 */}
+                  <div className="relative flex flex-col" data-aos="fade-up" data-aos-anchor="[data-aos-id-culture]">
+                    <div className="mb-6">
+                      <img 
+                        src={cultureImage1} 
+                        alt="Innovation and intrapreneurship" 
+                        className="w-full h-48 object-cover rounded-lg"
+                      />
+                    </div>
+                    <h3 className="h3 mb-3">Innovation-Driven Culture</h3>
+                    <p className="text-lg text-gray-400 mb-4">
+                      We foster intrapreneurship and encourage creative thinking. Every team member has the opportunity to innovate, experiment, and drive meaningful change in the blockchain and technology space.
+                    </p>
+                    <ul className="text-gray-400 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">✓</span>
+                        <span>Innovation time and resources</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">✓</span>
+                        <span>Cutting-edge technology projects</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">✓</span>
+                        <span>Continuous learning opportunities</span>
+                      </li>
+                    </ul>
+                  </div>
 
+                  {/* Culture Card 2 */}
+                  <div className="relative flex flex-col" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-culture]">
+                    <div className="mb-6">
+                      <img 
+                        src={cultureImage2} 
+                        alt="Collaborative startup environment" 
+                        className="w-full h-48 object-cover rounded-lg"
+                      />
+                    </div>
+                    <h3 className="h3 mb-3">Collaborative Environment</h3>
+                    <p className="text-lg text-gray-400 mb-4">
+                      We believe in the power of collaboration and diverse perspectives. Our startup-like environment encourages open communication, knowledge sharing, and mutual growth among team members.
+                    </p>
+                    <ul className="text-gray-400 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">✓</span>
+                        <span>Flat hierarchy and open doors</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">✓</span>
+                        <span>Regular team building activities</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">✓</span>
+                        <span>Supportive mentorship programs</span>
+                      </li>
+                    </ul>
+                  </div>
 
-<div className="relative flex flex-col items-center" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
-  <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <rect className="fill-current text-purple-600" width="64" height="64" rx="32" />
-    <path className="stroke-current text-purple-100" d="M30 39.313l-4.18 2.197L27 34.628l-5-4.874 6.91-1.004L32 22.49l3.09 6.26L42 29.754l-3 2.924" strokeLinecap="square" strokeWidth="2" fill="none" fillRule="evenodd" />
-    <path className="stroke-current text-purple-300" d="M43 42h-9M43 37h-9" strokeLinecap="square" strokeWidth="2" />
-  </svg>
-  <h4 className="h4 mb-2">Software Engineer</h4>
-  <p className="text-lg text-gray-400 text-center">Responsible for designing, developing, testing and maintaining the software applications and systems</p>
-</div>
+                  {/* Culture Card 3 */}
+                  <div className="relative flex flex-col" data-aos="fade-up" data-aos-delay="200" data-aos-anchor="[data-aos-id-culture]">
+                    <div className="mb-6">
+                      <img 
+                        src={cultureImage3} 
+                        alt="Growth and development opportunities" 
+                        className="w-full h-48 object-cover rounded-lg"
+                      />
+                    </div>
+                    <h3 className="h3 mb-3">Growth & Development</h3>
+                    <p className="text-lg text-gray-400 mb-4">
+                      Your growth is our priority. We provide ample opportunities for professional development, career advancement, and personal growth in a rapidly evolving tech landscape.
+                    </p>
+                    <ul className="text-gray-400 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">✓</span>
+                        <span>Professional development budget</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">✓</span>
+                        <span>Career advancement paths</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">✓</span>
+                        <span>Industry conference attendance</span>
+                      </li>
+                    </ul>
+                  </div>
 
-{/* 2nd item */}
-<div className="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]">
-  <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <circle className="fill-current text-purple-600" cx="32" cy="32" r="32" />
-    <path className="stroke-current text-purple-100" strokeWidth="2" strokeLinecap="square" d="M21 23h22v18H21z" fill="none" fillRule="evenodd" />
-    <path className="stroke-current text-purple-300" d="M26 28h12M26 32h12M26 36h5" strokeWidth="2" strokeLinecap="square" />
-  </svg>
-  <h4 className="h4 mb-2">UX/UI Designer </h4>
-  <p className="text-lg text-gray-400 text-center">Responsible for creating user-centric designs for websites, applications, and other digital products to ensure a positive user experience.</p>
-</div>
+                </div>
 
-{/* 3rd item */}
-<div className="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="200" data-aos-anchor="[data-aos-id-blocks]">
-  <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <rect className="fill-current text-purple-600" width="64" height="64" rx="32" />
-    <g transform="translate(21 21)" strokeLinecap="square" strokeWidth="2" fill="none" fillRule="evenodd">
-      <ellipse className="stroke-current text-purple-300" cx="11" cy="11" rx="5.5" ry="11" />
-      <path className="stroke-current text-purple-100" d="M11 0v22M0 11h22" />
-      <circle className="stroke-current text-purple-100" cx="11" cy="11" r="11" />
-    </g>
-  </svg>
-  <h4 className="h4 mb-2">Product Manager</h4>
-  <p className="text-lg text-gray-400 text-center"> Responsible for the development and launch of new products and features, including market research, product strategy, and collaboration with engineering and design teams.</p>
-</div>
-
-{/* 4th item */}
-<div className="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="300" data-aos-anchor="[data-aos-id-blocks]">
-  <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <rect className="fill-current text-purple-600" width="64" height="64" rx="32" />
-    <g transform="translate(22 21)" strokeLinecap="square" strokeWidth="2" fill="none" fillRule="evenodd">
-      <path className="stroke-current text-purple-100" d="M17 22v-6.3a8.97 8.97 0 003-6.569A9.1 9.1 0 0011.262 0 9 9 0 002 9v1l-2 5 2 1v4a2 2 0 002 2h4a5 5 0 005-5v-5" />
-      <circle className="stroke-current text-purple-300" cx="13" cy="9" r="3" />
-    </g>
-  </svg>
-  <h4 className="h4 mb-2">Sales and Marketing Manager </h4>
-  <p className="text-lg text-gray-400 text-center"> Responsible for driving the growth and success of the company through effective marketing strategies, identifying new opportunities, and closing deals with potential customers.</p>
-</div>
-
-{/* 5th item */}
-<div className="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="400" data-aos-anchor="[data-aos-id-blocks]">
-  <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <rect className="fill-current text-purple-600" width="64" height="64" rx="32" />
-    <g strokeLinecap="square" strokeWidth="2" fill="none" fillRule="evenodd">
-      <path className="stroke-current text-purple-100" d="M29 42h10.229a2 2 0 001.912-1.412l2.769-9A2 2 0 0042 29h-7v-4c0-2.373-1.251-3.494-2.764-3.86a1.006 1.006 0 00-1.236.979V26l-5 6" />
-      <path className="stroke-current text-purple-300" d="M22 30h4v12h-4z" />
-    </g>
-  </svg>
-  <h4 className="h4 mb-2">CTO (Chief Technology Officer) </h4>
-  <p className="text-lg text-gray-400 text-center">Responsible for overseeing the technology and product development aspects of the company, ensuring that the product roadmap aligns with the overall business strategy.</p>
-</div>
-
-{/* 6th item */}
-<div className="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="500" data-aos-anchor="[data-aos-id-blocks]">
-  <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <rect className="fill-current text-purple-600" width="64" height="64" rx="32" />
-    <g transform="translate(21 22)" strokeLinecap="square" strokeWidth="2" fill="none" fillRule="evenodd">
-      <path className="stroke-current text-purple-300" d="M17 2V0M19.121 2.879l1.415-1.415M20 5h2M19.121 7.121l1.415 1.415M17 8v2M14.879 7.121l-1.415 1.415M14 5h-2M14.879 2.879l-1.415-1.415" />
-      <circle className="stroke-current text-purple-300" cx="17" cy="5" r="3" />
-      <path className="stroke-current text-purple-100" d="M8.86 1.18C3.8 1.988 0 5.6 0 10c0 5 4.9 9 11 9a10.55 10.55 0 003.1-.4L20 21l-.6-5.2a9.125 9.125 0 001.991-2.948" />
-    </g>
-  </svg>
-  <h4 className="h4 mb-2">Data Scientist</h4>
-  <p className="text-lg text-gray-400 text-center"> Responsible for analyzing and interpreting large amounts of data to identify patterns, trends, and insights that can inform business decisions. They use statistical and machine learning techniques to build predictive models and help the company make data-driven decisions.</p>
-</div>
-
-
-</div>
-
-      </Container>
+                {/* Call to Action */}
+                <div className="text-center mt-16" data-aos="fade-up" data-aos-delay="300">
+                  <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg p-8 max-w-4xl mx-auto">
+                    <h3 className="h3 text-white mb-4">Ready to Make an Impact?</h3>
+                    <p className="text-xl text-gray-100 mb-6">
+                      Join us in building the future of blockchain technology. Whether you're a seasoned professional or just starting your career, we have a place for you.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <div className="text-gray-100">
+                        <strong className="text-white">What we offer:</strong> Competitive salary, flexible work arrangements, health benefits, and the chance to work on groundbreaking projects.
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
+              {/* Job Openings Section */}
+              <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-12" data-aos="fade-up">
+                  <h2 className="h2 mb-4">Current Openings</h2>
+                  <p className="text-xl text-gray-400">
+                    Find your perfect role and join our growing team
+                  </p>
+                </div>
+
+                <div className="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
+                  <div className="bg-gray-800 rounded-lg p-12">
+                    <div className="mb-6">
+                      <svg className="w-20 h-20 mx-auto text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
+                      </svg>
+                    </div>
+                    <h3 className="h3 mb-4 text-white">No Current Openings</h3>
+                    <p className="text-xl text-gray-400 mb-8">
+                      We're not actively hiring at the moment, but we're always looking for talented individuals who share our vision.
+                    </p>
+                    <div className="text-gray-300 mb-8">
+                      <p className="mb-4">Feel free to reach out to us if you're interested in future opportunities:</p>
+                      <ul className="text-left max-w-md mx-auto space-y-2">
+                        <li className="flex items-center justify-center">
+                          <span className="text-purple-600 mr-2">•</span>
+                          <span>Software Engineers & Developers</span>
+                        </li>
+                        <li className="flex items-center justify-center">
+                          <span className="text-purple-600 mr-2">•</span>
+                          <span>UX/UI Designers</span>
+                        </li>
+                        <li className="flex items-center justify-center">
+                          <span className="text-purple-600 mr-2">•</span>
+                          <span>Product Managers</span>
+                        </li>
+                        <li className="flex items-center justify-center">
+                          <span className="text-purple-600 mr-2">•</span>
+                          <span>Sales & Marketing Professionals</span>
+                        </li>
+                        <li className="flex items-center justify-center">
+                          <span className="text-purple-600 mr-2">•</span>
+                          <span>Data Scientists</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
+                      <div>
+                        <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0" onClick={() => window.location.href = 'mailto:hi@ogtechnologies.co?subject=Future Opportunities - OG Technologies'}>
+                          Send Your Resume
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
             <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
           

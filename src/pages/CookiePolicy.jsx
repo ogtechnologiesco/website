@@ -195,8 +195,8 @@ const CookiePolicy = () => {
               </p>
               <ul className="text-gray-300 space-y-2 mt-4">
                 <li>Through our cookie consent banner when you first visit the site</li>
+                <li>By clicking "Cookie Settings" in the footer of any page</li>
                 <li>By adjusting your browser settings to block or delete cookies</li>
-                <li>Through the cookie settings panel available in your account preferences</li>
               </ul>
               <p className="text-gray-300 leading-relaxed mt-4">
                 Note that blocking strictly necessary cookies may affect website functionality.

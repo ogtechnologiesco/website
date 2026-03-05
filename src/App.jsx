@@ -28,12 +28,14 @@ import HelpDesk from './pages/HelpDesk';
 import Alliance from './pages/Alliance';
 import Ventures from './pages/Ventures';
 import CookieConsent from './components/CookieConsent';
+import CookieSettingsModal from './components/CookieSettingsModal';
 
 
 function App() {
 
   const location = useLocation();
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [showCookieSettings, setShowCookieSettings] = useState(false);
   useEffect(() => {
     AOS.init({
       once: true,
@@ -48,6 +50,14 @@ function App() {
     window.scroll({ top: 0 })
     document.querySelector('html').style.scrollBehavior = ''
   }, [location.pathname]); // triggered on route change
+
+  // Set up global function for cookie settings
+  useEffect(() => {
+    window.openCookieSettings = () => setShowCookieSettings(true);
+    return () => {
+      delete window.openCookieSettings;
+    };
+  }, []);
 
   return (
     <>
@@ -74,6 +84,10 @@ function App() {
 
       </Routes>
       <CookieConsent />
+      <CookieSettingsModal 
+        isOpen={showCookieSettings} 
+        onClose={() => setShowCookieSettings(false)} 
+      />
     </>
   );
 }

@@ -54,6 +54,23 @@ function Footer() {
                   <li className="mb-1">
                     <Link to="/products" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Products</Link>
                   </li>
+                  <li className="mb-1">
+                    <Link to="/quote" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Quotes</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/careers" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Careers</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/ventures" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ventures</Link>
+                  </li>
+                  <li className="mb-1">
+                    <button 
+                      onClick={() => window.openCookieSettings?.()}
+                      className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out text-left w-full"
+                    >
+                      Cookie Settings
+                    </button>
+                  </li>
                 </ul>
               </div>
 

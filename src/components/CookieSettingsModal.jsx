@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { hasConsent, saveConsent, defaultCookiePreferences } from './shared/cookieUtils';
+import { getCurrentPreferences, saveConsent } from './shared/cookieUtils';
 
 // Simple SVG icon components
 const X = ({ className }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-  </svg>
-);
-
-const Settings = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
   </svg>
 );
 
@@ -40,45 +33,24 @@ const Target = ({ className }) => (
   </svg>
 );
 
-const CookieConsent = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [showCustomize, setShowCustomize] = useState(false);
-  const [preferences, setPreferences] = useState(defaultCookiePreferences);
+const CookieSettingsModal = ({ isOpen, onClose }) => {
+  const [preferences, setPreferences] = useState({
+    necessary: true,
+    analytics: false,
+    functional: false,
+    marketing: false
+  });
 
   useEffect(() => {
-    if (!hasConsent()) {
-      setIsVisible(true);
+    if (isOpen) {
+      const currentPrefs = getCurrentPreferences();
+      setPreferences(currentPrefs);
     }
-  }, []);
-
-  const handleAcceptAll = () => {
-    const allConsent = {
-      necessary: true,
-      analytics: true,
-      functional: true,
-      marketing: true
-    };
-    if (saveConsent(allConsent)) {
-      setIsVisible(false);
-    }
-  };
-
-  const handleRejectNonEssential = () => {
-    const essentialOnly = {
-      necessary: true,
-      analytics: false,
-      functional: false,
-      marketing: false
-    };
-    if (saveConsent(essentialOnly)) {
-      setIsVisible(false);
-    }
-  };
+  }, [isOpen]);
 
   const handleSavePreferences = () => {
     if (saveConsent(preferences)) {
-      setIsVisible(false);
-      setShowCustomize(false);
+      onClose();
     }
   };
 
@@ -91,7 +63,7 @@ const CookieConsent = () => {
     }
   };
 
-  if (!isVisible) return null;
+  if (!isOpen) return null;
 
   const cookieCategories = [
     {
@@ -125,72 +97,38 @@ const CookieConsent = () => {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-gray-900 border-t border-gray-700 shadow-2xl">
-      <div className="max-w-6xl mx-auto p-6">
-        {!showCustomize ? (
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-            <div className="flex-1">
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Privacy & Cookie Preferences
-              </h3>
-              <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                We use cookies to enhance your experience, analyze site performance, and support our marketing efforts. 
-                Your privacy matters, and you can withdraw consent at any time.
-              </p>
-              <div className="flex flex-wrap gap-4 text-sm">
-                <a href="/privacy" className="text-blue-400 hover:text-blue-300 underline">
-                  Privacy Policy
-                </a>
-                <a href="/cookie-policy" className="text-blue-400 hover:text-blue-300 underline">
-                  Cookie Policy
-                </a>
-              </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-3 min-w-0">
-              <button
-                onClick={handleAcceptAll}
-                className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors text-center whitespace-nowrap"
-              >
-                Accept all
-              </button>
-              <button
-                onClick={handleRejectNonEssential}
-                className="px-6 py-3 bg-gray-700 text-white font-medium rounded-lg hover:bg-gray-600 transition-colors text-center whitespace-nowrap"
-              >
-                Reject non-essential
-              </button>
-              <button
-                onClick={() => setShowCustomize(true)}
-                className="px-6 py-3 bg-gray-800 text-white font-medium rounded-lg hover:bg-gray-700 transition-colors text-center whitespace-nowrap flex items-center justify-center gap-2"
-                title="Customize cookie settings by category"
-              >
-                <Settings className="w-4 h-4" />
-                Customize
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="space-y-6">
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-white">
-                Customize Cookie Preferences
+    <div className="fixed inset-0 z-50 overflow-y-auto">
+      <div className="flex min-h-screen items-center justify-center p-4">
+        {/* Backdrop */}
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
+          onClick={onClose}
+        />
+        
+        {/* Modal */}
+        <div className="relative bg-gray-900 rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-gray-700">
+          <div className="p-6">
+            {/* Header */}
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-xl font-semibold text-white">
+                Cookie Settings
               </h3>
               <button
-                onClick={() => setShowCustomize(false)}
+                onClick={onClose}
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <X className="w-5 h-5" />
+                <X className="w-6 h-6" />
               </button>
             </div>
 
+            {/* Content */}
             <div className="text-sm text-gray-300">
-              <p className="mb-4">
+              <p className="mb-6">
                 We respect your privacy and use cookies only to enhance your experience. 
                 Choose which categories you'd like to enable:
               </p>
               
-              <div className="space-y-4">
+              <div className="space-y-4 mb-6">
                 {cookieCategories.map((category) => {
                   const Icon = category.icon;
                   return (
@@ -233,7 +171,7 @@ const CookieConsent = () => {
                 })}
               </div>
 
-              <div className="bg-gray-800 rounded-lg p-4 mt-4">
+              <div className="bg-gray-800 rounded-lg p-4 mb-6">
                 <h4 className="font-medium text-white mb-2">Why this matters</h4>
                 <p className="text-sm text-gray-400">
                   Your consent choices are stored locally and can be updated at any time. 
@@ -242,6 +180,7 @@ const CookieConsent = () => {
               </div>
             </div>
 
+            {/* Footer */}
             <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-700">
               <button
                 onClick={handleSavePreferences}
@@ -250,17 +189,17 @@ const CookieConsent = () => {
                 Save preferences
               </button>
               <button
-                onClick={() => setShowCustomize(false)}
+                onClick={onClose}
                 className="px-6 py-3 bg-gray-700 text-white font-medium rounded-lg hover:bg-gray-600 transition-colors"
               >
                 Cancel
               </button>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
 };
 
-export default CookieConsent;
+export default CookieSettingsModal;
