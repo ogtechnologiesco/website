@@ -51,6 +51,79 @@ function Products() {
           {/* Items */}
           <div className="grid gap-20">
 
+            {/* CRM Product - Main Product */}
+            <div className="md:grid md:grid-cols-12 md:gap-6 items-center bg-gradient-to-r from-purple-900/20 to-blue-900/20 rounded-lg p-8 border border-purple-500/30">
+              {/* Image */}
+              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="fade-up">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-purple-600/20 rounded-lg blur-xl"></div>
+                  <div className="relative bg-gray-800 rounded-lg p-6 border border-purple-500/30">
+                    <div className="text-center mb-4">
+                      <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-2">CRM & Ticketing System</h4>
+                      <p className="text-purple-300 text-sm">Our flagship product</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Content */}
+              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
+                <div className="md:pr-4 lg:pr-12 xl:pr-16">
+                  <div className="flex items-center mb-3">
+                    <span className="bg-purple-600 text-white text-xs px-2 py-1 rounded-full mr-2">MAIN PRODUCT</span>
+                    <span className="text-green-400 text-sm">✓ Active Development</span>
+                  </div>
+                  <h3 className="h3 mb-3 text-white">Complete CRM and Ticketing Solution</h3>
+                  <p className="text-xl text-gray-300 mb-4">Transform your customer relationships with our comprehensive CRM and ticketing system. Manage contacts, track interactions, automate workflows, and provide exceptional customer support - all in one powerful platform.</p>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold text-white mb-3">Key Features:</h4>
+                    <ul className="space-y-2 text-gray-300">
+                      <li className="flex items-center">
+                        <span className="text-purple-400 mr-2">✓</span>
+                        Contact Management & CRM
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-purple-400 mr-2">✓</span>
+                        Advanced Ticketing System
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-purple-400 mr-2">✓</span>
+                        Automation & Workflows
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-purple-400 mr-2">✓</span>
+                        Analytics & Reporting
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-purple-400 mr-2">✓</span>
+                        Multi-channel Support
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link 
+                      to="/pricing"
+                      className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out text-center"
+                    >
+                      View Pricing Plans
+                    </Link>
+                    <Link 
+                      to="/quote"
+                      className="bg-transparent border-2 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out text-center"
+                    >
+                      Request Demo
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* 1st item */}
             <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
               {/* Image */}

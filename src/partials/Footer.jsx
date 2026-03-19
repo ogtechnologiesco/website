@@ -49,6 +49,9 @@ function Footer() {
                     <Link to="/privacy" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Privacy Policy</Link>
                   </li>
                   <li className="mb-1">
+                    <Link to="/careers" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Careers</Link>
+                  </li>
+                  <li className="mb-1">
                     <Link to="/blog" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Blogs</Link>
                   </li>
                   <li className="mb-1">

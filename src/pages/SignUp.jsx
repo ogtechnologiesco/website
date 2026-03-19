@@ -1,65 +1,117 @@
-import React from 'react';
-import axios from 'axios'
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
-import { Link } from 'react-router-dom';
-import Alert from 'react-bootstrap/Alert'; 
+import { useAuth } from '../hooks/useAuth'; 
 
 function SignUp() {
   const [name, setName] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState(null);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [formErrors, setFormErrors] = useState({});
+  const [showSuccess, setShowSuccess] = useState(false);
+  const navigate = useNavigate();
+  const { register, error: authError, isAuthenticated, isInitialized } = useAuth();
   
+
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (isInitialized && isAuthenticated) {
+      navigate('/');
+    }
+  }, [isInitialized, isAuthenticated, navigate]);
+
+  // Validation functions
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    return password.length >= 10;
+  };
+
+  const validateForm = () => {
+    const errors = {};
+
+    if (!name.trim()) {
+      errors.name = 'Full name is required';
+    }
+
+    if (!companyName.trim()) {
+      errors.companyName = 'Company name is required';
+    }
+
+    if (!email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!validateEmail(email)) {
+      errors.email = 'Please enter a valid email address';
+    }
+
+    if (!password) {
+      errors.password = 'Password is required';
+    } else if (!validatePassword(password)) {
+      errors.password = 'Password must be at least 10 characters long';
+    }
+
+    if (password !== confirmPassword) {
+      errors.confirmPassword = 'Passwords do not match';
+    }
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsSubmitting(true);
-    setSubmitError(null);
+
+    if (!validateForm()) {
+      return;
+    }
 
     try {
-      const response = await axios.post('http://localhost:3000/api/signup', {
+      const result = await register({
         name,
         companyName,
         email,
-        password,
+        password
       });
-      
-      console.log(response.data);
-      setSubmitSuccess(true);
-     
+
+      if (result.success) {
+        // Registration successful, show success message
+        console.log('Registration successful:', result.message);
+        setShowSuccess(true);
+        // Redirect to login page after successful registration
+        setTimeout(() => {
+          navigate('/signin');
+        }, 3000);
+      }
     } catch (error) {
-      console.error(error);
-      setSubmitError('An error occurred, please try again.');
-      
-    }finally {
-      setIsSubmitting(false);
+      console.error('Registration error:', error);
     }
   };
 
   const renderAlert = () => {
-    if (submitSuccess) {
+    if (showSuccess) {
       return (
         <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4" role="alert">
           <p className="font-bold">Success!</p>
-          <p>Your account has been created successfully.</p>
+          <p>Registration successful! Redirecting to sign in page...</p>
         </div>
       );
-    } else if (submitError) {
+    }
+    if (authError) {
       return (
         <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4" role="alert">
           <p className="font-bold">Error!</p>
-          <p>{submitError}</p>
+          <p>{authError}</p>
         </div>
       );
-    } else {
-      return null;
     }
-  }
+    return null;
+  };
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -107,39 +159,97 @@ function SignUp() {
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="full-name">Full Name <span className="text-red-600">*</span></label>
-                      <input id="full-name" type="text" className="form-input w-full text-gray-300" placeholder="First and last name" required value={name}
-                  onChange={(event) => setName(event.target.value)}
-                  disabled={isSubmitting}/>
+                      <input 
+                        id="full-name" 
+                        type="text" 
+                        className={`form-input w-full text-gray-300 ${formErrors.name ? 'border-red-500' : ''}`} 
+                        placeholder="First and last name" 
+                        required 
+                        value={name}
+                        onChange={(event) => setName(event.target.value)}
+                      />
+                      {formErrors.name && (
+                        <p className="text-red-500 text-xs mt-1">{formErrors.name}</p>
+                      )}
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="company-name">Company Name <span className="text-red-600">*</span></label>
-                      <input id="company-name" type="text" className="form-input w-full text-gray-300" placeholder="Your company or app name" required  value={companyName}
-                  onChange={(event) => setCompanyName(event.target.value)}
-                  disabled={isSubmitting} />
+                      <input 
+                        id="company-name" 
+                        type="text" 
+                        className={`form-input w-full text-gray-300 ${formErrors.companyName ? 'border-red-500' : ''}`} 
+                        placeholder="Your company or app name" 
+                        required 
+                        value={companyName}
+                        onChange={(event) => setCompanyName(event.target.value)}
+                      />
+                      {formErrors.companyName && (
+                        <p className="text-red-500 text-xs mt-1">{formErrors.companyName}</p>
+                      )}
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="email">Work Email <span className="text-red-600">*</span></label>
-                      <input id="email" type="email" className="form-input w-full text-gray-300" placeholder="you@yourcompany.com" required   value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  disabled={isSubmitting} />
+                      <input 
+                        id="email" 
+                        type="email" 
+                        className={`form-input w-full text-gray-300 ${formErrors.email ? 'border-red-500' : ''}`} 
+                        placeholder="you@yourcompany.com" 
+                        required 
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                      />
+                      {formErrors.email && (
+                        <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>
+                      )}
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="password">Password <span className="text-red-600">*</span></label>
-                      <input id="password" type="password" className="form-input w-full text-gray-300" placeholder="Password (at least 10 characters)" required   value={password}
-                  onChange={(event) => setPassword(event.target.value)}
-                  disabled={isSubmitting}/>
+                      <input 
+                        id="password" 
+                        type="password" 
+                        className={`form-input w-full text-gray-300 ${formErrors.password ? 'border-red-500' : ''}`} 
+                        placeholder="Password (at least 10 characters)" 
+                        required 
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                      />
+                      {formErrors.password && (
+                        <p className="text-red-500 text-xs mt-1">{formErrors.password}</p>
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap -mx-3 mb-4">
+                    <div className="w-full px-3">
+                      <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="confirm-password">Confirm Password <span className="text-red-600">*</span></label>
+                      <input 
+                        id="confirm-password" 
+                        type="password" 
+                        className={`form-input w-full text-gray-300 ${formErrors.confirmPassword ? 'border-red-500' : ''}`} 
+                        placeholder="Confirm your password" 
+                        required 
+                        value={confirmPassword}
+                        onChange={(event) => setConfirmPassword(event.target.value)}
+                      />
+                      {formErrors.confirmPassword && (
+                        <p className="text-red-500 text-xs mt-1">{formErrors.confirmPassword}</p>
+                      )}
                     </div>
                   </div>
                   
                   <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
-                      <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full"  type="submit"  disabled={isSubmitting}  >Sign up   </button>
+                      <button 
+                        className="btn text-white bg-purple-600 hover:bg-purple-700 w-full" 
+                        type="submit" 
+                      >
+                        Sign up
+                      </button>
                     </div>
                   </div>
                 </form>

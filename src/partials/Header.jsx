@@ -1,14 +1,27 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../images/og_logo.png';
+import { useAuth } from '../hooks/useAuth';
+import toast from 'react-hot-toast';
 
 
 function Header() {
-  
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
   const trigger = useRef(null);
   const mobileNav = useRef(null);
+  const userMenuRef = useRef(null);
+  const navigate = useNavigate();
+  
+  const { 
+    user, 
+    isAuthenticated, 
+    isLoading, 
+    getDisplayName, 
+    logout, 
+    hasActiveSubscription 
+  } = useAuth();
 
   const handleDarkModeToggle = () => {
     setIsDarkMode(!isDarkMode);
@@ -24,7 +37,18 @@ function Header() {
     return () => document.removeEventListener('click', clickHandler);
   });
 
-  // close the mobile menu if the esc key is pressed
+  // close user menu on click outside
+  useEffect(() => {
+    const clickHandler = ({ target }) => {
+      if (!userMenuRef.current) return;
+      if (!userMenuOpen || userMenuRef.current.contains(target)) return;
+      setUserMenuOpen(false);
+    };
+    document.addEventListener('click', clickHandler);
+    return () => document.removeEventListener('click', clickHandler);
+  });
+
+  // close mobile menu if esc key is pressed
   useEffect(() => {
     const keyHandler = ({ keyCode }) => {
       if (!mobileNavOpen || keyCode !== 27) return;
@@ -34,8 +58,19 @@ function Header() {
     return () => document.removeEventListener('keydown', keyHandler);
   });
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+      toast.success('Logged out successfully');
+      navigate('/');
+      setUserMenuOpen(false);
+    } catch (error) {
+      toast.error('Failed to logout');
+    }
+  };
+
   return (
-    <header Name={isDarkMode ? 'dark-mode' : ''} className="absolute w-full z-30">
+    <header className={`absolute w-full z-30 ${isDarkMode ? 'dark-mode' : ''}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-2">
         <div className="flex items-center justify-between h-20">
 
@@ -54,36 +89,104 @@ function Header() {
 
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
-            <li>
+              <li>
                 <Link to="/" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Home </Link>
+              </li>
+              <li>
+                <Link to="/standards" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Standards </Link>
+              </li>
+              <li>
+                <Link to="/products" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Products </Link>
+              </li>
+              <li>
+                <Link to="/pricing" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Pricing </Link>
               </li>
               <li>
                 <Link to="/imprint" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Imprint </Link>
               </li>
               <li>
-              <Link to="/terms" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Terms </Link>
+                <Link to="/terms" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Terms </Link>
               </li>
               <li>
-              <Link to="/Privacy" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Privacy </Link>
+                <Link to="/Privacy" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Privacy </Link>
               </li>
               <li>
-              <Link to="/blog" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Blogs </Link>
+                <Link to="/blog" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Blogs </Link>
               </li>
               <li>
-              <Link to="/products" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Products </Link>
+                <Link to="/ventures" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Ventures </Link>
               </li>
               <li>
-              <Link to="/ventures" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Ventures </Link>
+                <Link to="/portfolio" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Portfolio </Link>
               </li>
               <li>
-              <Link to="/portfolio" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Portfolio </Link>
+                <Link to="/careers" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Careers </Link>
               </li>
               <li>
-              <Link to="/careers" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Careers </Link>
+                <Link to="/quote" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Quotes </Link>
               </li>
-              <li>
-              <Link to="/quote" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Quotes </Link>
-              </li>
+              
+              {/* Authentication buttons */}
+              {isLoading ? (
+                <li className="px-4 py-3">
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-purple-600"></div>
+                </li>
+              ) : isAuthenticated ? (
+                <li className="relative">
+                  <button
+                    ref={userMenuRef}
+                    className="flex items-center text-purple-600 hover:text-gray-200 px-4 py-3 transition duration-150 ease-in-out"
+                    onClick={() => setUserMenuOpen(!userMenuOpen)}
+                  >
+                    <span className="font-medium">{getDisplayName()}</span>
+                    <svg className="w-4 h-4 ml-2 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                    </svg>
+                  </button>
+                  
+                  {/* User dropdown menu */}
+                  {userMenuOpen && (
+                    <div className="absolute right-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50">
+                      <div className="px-4 py-2 border-b border-gray-700">
+                        <p className="text-sm font-medium text-white">{getDisplayName()}</p>
+                        <p className="text-xs text-gray-400">{user?.email}</p>
+                        {hasActiveSubscription() && (
+                          <p className="text-xs text-green-400">Active Subscription</p>
+                        )}
+                      </div>
+                      <Link
+                        to="/dashboard"
+                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                        onClick={() => setUserMenuOpen(false)}
+                      >
+                        Dashboard
+                      </Link>
+                      <Link
+                        to="/settings"
+                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                        onClick={() => setUserMenuOpen(false)}
+                      >
+                        Settings
+                      </Link>
+                      <button
+                        onClick={handleLogout}
+                        className="block w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      >
+                        Sign Out
+                      </button>
+                    </div>
+                  )}
+                </li>
+              ) : (
+                <>
+                  <li>
+                    <Link to="/signin" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Sign In </Link>
+                  </li>
+                  <li>
+                    <Link to="/signup" className="font-medium text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-md flex items-center transition duration-150 ease-in-out"> Sign Up </Link>
+                  </li>
+                </>
+              )}
             </ul>
 
             <div>
@@ -112,9 +215,15 @@ function Header() {
                 <li>
                   <Link to="/imprint" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Imprint</Link>
                 </li>
-                {/*<li>
-                  <Link to="/" className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out">Sign up</Link>
-                </li>*/}
+                <li>
+                  <Link to="/standards" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Standards</Link>
+                </li>
+                <li>
+                  <Link to="/products" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Products</Link>
+                </li>
+                <li>
+                  <Link to="/pricing" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Pricing</Link>
+                </li>
                 <li>
                   <Link to="/terms" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Terms</Link>
                 </li>
@@ -125,17 +234,54 @@ function Header() {
                   <Link to="/blog" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Blogs</Link>
                 </li>
                 <li>
-                  <Link to="/products" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Products</Link>
-                </li>
-                <li>
                   <Link to="/ventures" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Ventures</Link>
                 </li>
                 <li>
                   <Link to="/portfolio" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Portfolio</Link>
                 </li>
+                
+                {/* Mobile authentication buttons */}
+                {isLoading ? (
+                  <li className="flex justify-center py-2">
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-purple-600"></div>
+                  </li>
+                ) : isAuthenticated ? (
+                  <>
+                    <li className="border-t border-gray-700 pt-2 mt-2">
+                      <div className="text-center">
+                        <p className="text-sm font-medium text-white">{getDisplayName()}</p>
+                        <p className="text-xs text-gray-400">{user?.email}</p>
+                        {hasActiveSubscription() && (
+                          <p className="text-xs text-green-400">Active Subscription</p>
+                        )}
+                      </div>
+                    </li>
+                    <li>
+                      <Link to="/dashboard" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Dashboard</Link>
+                    </li>
+                    <li>
+                      <Link to="/settings" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Settings</Link>
+                    </li>
+                    <li>
+                      <button
+                        onClick={handleLogout}
+                        className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center"
+                      >
+                        Sign Out
+                      </button>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <Link to="/signin" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Sign In</Link>
+                    </li>
+                    <li>
+                      <Link to="/signup" className="flex font-medium w-full text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-md my-2 justify-center">Sign Up</Link>
+                    </li>
+                  </>
+                )}
               </ul>
-
-
             </nav>
             
           </div>

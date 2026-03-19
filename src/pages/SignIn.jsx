@@ -1,11 +1,78 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
+import { useAuth } from '../hooks/useAuth';
 
 
 function SignIn() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+  const navigate = useNavigate();
+  const { login, error: authError, isAuthenticated, isInitialized, isLoading } = useAuth();
+
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (isInitialized && isAuthenticated) {
+      navigate('/');
+    }
+  }, [isInitialized, isAuthenticated, navigate]);
+
+  // Validation functions
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateForm = () => {
+    const errors = {};
+
+    if (!email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!validateEmail(email)) {
+      errors.email = 'Please enter a valid email address';
+    }
+
+    if (!password) {
+      errors.password = 'Password is required';
+    }
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    try {
+      const result = await login(email, password, rememberMe);
+
+      if (result.success) {
+        // Login successful, user will be redirected by useEffect
+        console.log('Login successful:', result.user);
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+    }
+  };
+
+  const renderAlert = () => {
+    if (authError) {
+      return (
+        <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4" role="alert">
+          <p className="font-bold">Error!</p>
+          <p>{authError}</p>
+        </div>
+      );
+    }
+    return null;
+  };
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -49,24 +116,51 @@ function SignIn() {
                   <div className="text-gray-400">Or, sign in with your email</div>
                   <div className="border-t border-gray-700 border-dotted grow ml-3" aria-hidden="true"></div>
                 </div>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="email">Email</label>
-                      <input id="email" type="email" className="form-input w-full text-gray-300" placeholder="you@yourcompany.com" required />
+                      <input 
+                        id="email" 
+                        type="email" 
+                        className={`form-input w-full text-gray-300 ${formErrors.email ? 'border-red-500' : ''}`} 
+                        placeholder="you@yourcompany.com" 
+                        required 
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                      />
+                      {formErrors.email && (
+                        <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>
+                      )}
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="password">Password</label>
-                      <input id="password" type="password" className="form-input w-full text-gray-300" placeholder="Password (at least 10 characters)" required />
+                      <input 
+                        id="password" 
+                        type="password" 
+                        className={`form-input w-full text-gray-300 ${formErrors.password ? 'border-red-500' : ''}`} 
+                        placeholder="Password" 
+                        required 
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                      />
+                      {formErrors.password && (
+                        <p className="text-red-500 text-xs mt-1">{formErrors.password}</p>
+                      )}
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <div className="flex justify-between">
                         <label className="flex items-center">
-                          <input type="checkbox" className="form-checkbox" />
+                          <input 
+                            type="checkbox" 
+                            className="form-checkbox" 
+                            checked={rememberMe}
+                            onChange={(event) => setRememberMe(event.target.checked)}
+                          />
                           <span className="text-gray-400 ml-2">Keep me signed in</span>
                         </label>
                         <Link to="/reset-password" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Forgot Password?</Link>
@@ -75,13 +169,20 @@ function SignIn() {
                   </div>
                   <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
-                      <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Sign in</button>
+                      <button 
+                        className="btn text-white bg-purple-600 hover:bg-purple-700 w-full disabled:opacity-50" 
+                        type="submit"
+                        disabled={isLoading}
+                      >
+                        {isLoading ? 'Signing in...' : 'Sign in'}
+                      </button>
                     </div>
                   </div>
                 </form>
                 <div className="text-gray-400 text-center mt-6">
                   Don’t you have an account? <Link to="/signup" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Sign up</Link>
                 </div>
+                {renderAlert()}
               </div>
 
             </div>

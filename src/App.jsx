@@ -8,10 +8,16 @@ import 'aos/dist/aos.css';
 import './css/style.css';
 import AOS from 'aos';
 import { useState } from 'react';
+import { AuthProvider } from './contexts/AuthContext';
+import { Toaster } from 'react-hot-toast';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ResetPassword from './pages/ResetPassword';
+import Dashboard from './pages/Dashboard';
+import Settings from './pages/Settings';
+import Standards from './pages/Standards';
+import Pricing from './pages/Pricing';
 import Terms from './pages/Terms';
 import Imprint from './pages/Imprint';
 import Products from './pages/Products';
@@ -30,6 +36,7 @@ import Ventures from './pages/Ventures';
 import Portfolio from './pages/Portfolio';
 import CookieConsent from './components/CookieConsent';
 import CookieSettingsModal from './components/CookieSettingsModal';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 function App() {
@@ -61,13 +68,25 @@ function App() {
   }, []);
 
   return (
-    <>
+    <AuthProvider>
       <Routes>
         <Route exact path="/terms" element={<Terms/>} />
         <Route exact path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/dashboard" element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        } />
+        <Route path="/settings" element={
+          <ProtectedRoute>
+            <Settings />
+          </ProtectedRoute>
+        } />
+        <Route path="/standards" element={<Standards />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route exact path="/imprint" element={<Imprint/>} />
         <Route exact path="/privacy" element={<PrivacyPolicy/>} />
         <Route exact path="/cookie-policy" element={<CookiePolicy/>} />
@@ -83,14 +102,29 @@ function App() {
         <Route exact path="/blog/meridian-2024-highlights" element={<MeridianPost/>} />
         <Route exact path="/blog/ebsi-verifiable-credentials" element={<Ebsi/>} />
         <Route exact path="/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers" element={<StandardsPost/>} />
-
       </Routes>
       <CookieConsent />
       <CookieSettingsModal 
         isOpen={showCookieSettings} 
         onClose={() => setShowCookieSettings(false)} 
       />
-    </>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: '#363636',
+            color: '#fff',
+          },
+          success: {
+            duration: 3000,
+          },
+          error: {
+            duration: 5000,
+          },
+        }}
+      />
+    </AuthProvider>
   );
 }
 
