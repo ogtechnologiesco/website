@@ -31,6 +31,11 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import CookiePolicy from './pages/CookiePolicy';
 import Quote from './pages/Quote';
 import HelpDesk from './pages/HelpDesk';
+import CRM from './pages/CRM';
+import Contacts from './pages/Contacts';
+import Leads from './pages/Leads';
+import Opportunities from './pages/Opportunities';
+import Activities from './pages/Activities';
 import Alliance from './pages/Alliance';
 import Ventures from './pages/Ventures';
 import Portfolio from './pages/Portfolio';
@@ -94,6 +99,11 @@ function App() {
         <Route exact path="/careers" element={<Job/>} />
         <Route exact path="/quote" element={<Quote/>} />
         <Route exact path="/helpdesk" element={<HelpDesk/>} />
+        <Route path="/crm" element={<CRM/>} />
+        <Route path="/crm/contacts" element={<Contacts/>} />
+        <Route path="/crm/leads" element={<Leads/>} />
+        <Route path="/crm/opportunities" element={<Opportunities/>} />
+        <Route path="/crm/activities" element={<Activities/>} />
         <Route exact path="/alliance" element={<Alliance/>} />
         <Route exact path="/ventures" element={<Ventures/>} />
         <Route exact path="/portfolio" element={<Portfolio/>} />

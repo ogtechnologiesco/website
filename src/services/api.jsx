@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Environment configuration
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://og-technologies.herokuapp.com/api/';
 
 // Default headers
 const defaultHeaders = {
@@ -107,25 +107,25 @@ export const apiDelete = (url, config = {}) => apiRequest('DELETE', url, null, c
 // Authentication API methods
 export const authAPI = {
   // User registration
-  signup: (userData) => apiPost('/api/users/signup', userData),
+  signup: (userData) => apiPost('https://og-technologies.herokuapp.com/api/users/signup', userData),
   
   // User login
-  login: (credentials) => apiPost('/api/auth/login', credentials),
+  login: (credentials) => apiPost('https://og-technologies.herokuapp.com/api/auth/login', credentials),
   
   // Refresh token
-  refreshToken: () => apiPost('/api/auth/refresh'),
+  refreshToken: () => apiPost('https://og-technologies.herokuapp.com/api/auth/refresh'),
   
   // Logout
-  logout: () => apiPost('/api/auth/logout'),
+  logout: () => apiPost('https://og-technologies.herokuapp.com/api/auth/logout'),
   
   // Get current user
-  getCurrentUser: () => apiGet('/api/auth/me'),
+  getCurrentUser: () => apiGet('https://og-technologies.herokuapp.com/api/auth/me'),
   
   // Password reset request
-  requestPasswordReset: (email) => apiPost('/api/auth/forgot-password', { email }),
+  requestPasswordReset: (email) => apiPost('https://og-technologies.herokuapp.com/api/auth/forgot-password', { email }),
   
   // Reset password
-  resetPassword: (token, newPassword) => apiPost('/api/auth/reset-password', {
+  resetPassword: (token, newPassword) => apiPost('https://og-technologies.herokuapp.com/api/auth/reset-password', {
     token,
     password: newPassword
   })
@@ -134,10 +134,10 @@ export const authAPI = {
 // Subscription API methods
 export const subscriptionAPI = {
   // Get all subscription plans
-  getPlans: (activeOnly = true) => apiGet(`/api/subscriptions/plans?activeOnly=${activeOnly}`),
+  getPlans: (activeOnly = true) => apiGet('https://og-technologies.herokuapp.com/api/subscriptions/plans?activeOnly=${activeOnly}'),
   
   // Get single plan
-  getPlan: (planId) => apiGet(`/api/subscriptions/plans/${planId}`),
+  getPlan: (planId) => apiGet('https://og-technologies.herokuapp.com/api/subscriptions/plans/${planId}'),
   
   // Get user subscriptions
   getUserSubscriptions: (userId, status = null) => {
