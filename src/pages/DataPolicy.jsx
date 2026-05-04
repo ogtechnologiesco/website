@@ -45,7 +45,7 @@ const Eye = ({ className }) => (
   </svg>
 );
 
-const CookiePolicy = () => {
+const DataPolicy = () => {
   const cookieCategories = [
     {
       icon: Shield,
@@ -249,4 +249,4 @@ const CookiePolicy = () => {
   );
 };
 
-export default CookiePolicy;
+export default DataPolicy;

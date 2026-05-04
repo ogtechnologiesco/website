@@ -12,7 +12,7 @@ const initialState = {
 };
 
 // Action types
-const AUTH_ACTIONS = {
+export const AUTH_ACTIONS = {
   LOGIN_START: 'LOGIN_START',
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_FAILURE: 'LOGIN_FAILURE',
@@ -287,15 +287,31 @@ export const AuthProvider = ({ children }) => {
     return state.token;
   };
 
+  // Check if user is admin
+  const isAdmin = () => {
+    const actualUser = state.user.user || state.user;
+    if (!actualUser) return false;
+    
+    // Multiple admin validation methods
+    return (
+      actualUser?.role === 'admin' ||
+      actualUser?.isAdmin === true ||
+      actualUser?.email?.endsWith('@ogtechnologies.co') ||
+      actualUser?.email?.endsWith('@admin.ogtechnologies.co')
+    );
+  };
+
   const value = {
     ...state,
+    dispatch,
     login,
     register,
     logout,
     clearError,
     isAuthenticatedUser,
     getCurrentUser,
-    getAuthToken
+    getAuthToken,
+    isAdmin
   };
 
   return (

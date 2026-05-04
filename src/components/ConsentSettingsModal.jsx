@@ -33,7 +33,7 @@ const Target = ({ className }) => (
   </svg>
 );
 
-const CookieSettingsModal = ({ isOpen, onClose }) => {
+const ConsentSettingsModal = ({ isOpen, onClose }) => {
   const [preferences, setPreferences] = useState({
     necessary: true,
     analytics: false,
@@ -202,4 +202,4 @@ const CookieSettingsModal = ({ isOpen, onClose }) => {
   );
 };
 
-export default CookieSettingsModal;
+export default ConsentSettingsModal;

@@ -2,11 +2,11 @@ import { useState, useEffect, useCallback } from 'react';
 import { apiGet, apiPost, apiPut, apiDelete } from '../services/api';
 
 // Environment configuration
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+const API_BASE_URL = 'https://og-technologies.herokuapp.com/';
 
 const useApi = (url, options = {}) => {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   // Default options
@@ -75,7 +75,7 @@ const useApi = (url, options = {}) => {
     if (immediate && url) {
       fetchData();
     }
-  }, [immediate, url, fetchData, ...dependencies]);
+  }, [immediate, url, fetchData, Array.isArray(dependencies) ? dependencies : []]);
 
   // Refetch function
   const refetch = useCallback((requestOptions = {}) => {

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../images/og_logo.png';
 import { useAuth } from '../hooks/useAuth';
+import { useSubscription } from '../hooks/useSubscription';
 import toast from 'react-hot-toast';
 
 
@@ -18,10 +19,16 @@ function Header() {
     user, 
     isAuthenticated, 
     isLoading, 
-    getDisplayName, 
-    logout, 
-    hasActiveSubscription 
+    error, 
+    isInitialized,
+    login,
+    register,
+    logout,
+    clearError,
+    getDisplayName
   } = useAuth();
+
+  const { hasActiveSubscription } = useSubscription();
 
   const handleDarkModeToggle = () => {
     setIsDarkMode(!isDarkMode);
@@ -161,20 +168,24 @@ function Header() {
                       >
                         Dashboard
                       </Link>
-                      <Link
-                        to="/crm"
-                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
-                        onClick={() => setUserMenuOpen(false)}
-                      >
-                        OG CRM
-                      </Link>
-                      <Link
-                        to="/helpdesk"
-                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
-                        onClick={() => setUserMenuOpen(false)}
-                      >
-                        OG Helpdesk
-                      </Link>
+                      {hasActiveSubscription() && (
+                        <>
+                          <Link
+                            to="/crm"
+                            className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                            onClick={() => setUserMenuOpen(false)}
+                          >
+                            OG CRM
+                          </Link>
+                          <Link
+                            to="/helpdesk"
+                            className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                            onClick={() => setUserMenuOpen(false)}
+                          >
+                            OG Helpdesk
+                          </Link>
+                        </>
+                      )}
                       <Link
                         to="/settings"
                         className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
@@ -273,12 +284,16 @@ function Header() {
                     <li>
                       <Link to="/dashboard" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Dashboard</Link>
                     </li>
-                    <li>
-                      <Link to="/crm" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">OG CRM</Link>
-                    </li>
-                    <li>
-                      <Link to="/helpdesk" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">OG Helpdesk</Link>
-                    </li>
+                    {hasActiveSubscription() && (
+                      <>
+                        <li>
+                          <Link to="/crm" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">OG CRM</Link>
+                        </li>
+                        <li>
+                          <Link to="/helpdesk" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">OG Helpdesk</Link>
+                        </li>
+                      </>
+                    )}
                     <li>
                       <Link to="/settings" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Settings</Link>
                     </li>

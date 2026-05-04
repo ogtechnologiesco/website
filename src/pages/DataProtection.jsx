@@ -6,7 +6,7 @@ import PageIllustration from '../partials/PageIllustration';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
-function PrivacyPolicy() {
+function DataProtection() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -132,4 +132,4 @@ If you have any questions about this Privacy Policy, please contact us at hi@ogt
   );
 }
 
-export default PrivacyPolicy;
+export default DataProtection;

@@ -62,6 +62,43 @@ function SignIn() {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    console.log('[DEBUG] Google sign-in clicked at:', new Date().toISOString());
+    console.log('[DEBUG] Current URL:', window.location.href);
+    console.log('[DEBUG] Current pathname:', window.location.pathname);
+
+    const backendUrl = 'https://og-technologies.herokuapp.com/api/auth/google';
+    console.log('[DEBUG] Redirecting to backend OAuth:', backendUrl);
+
+    try {
+      // Store current path for potential error return
+      sessionStorage.setItem('oauth_redirect_from', window.location.pathname);
+      console.log('[DEBUG] Stored redirect origin in sessionStorage');
+
+      // Test if we can navigate
+      console.log('[DEBUG] window.location exists:', !!window.location);
+      console.log('[DEBUG] window.location.href before:', window.location.href);
+
+      // Redirect to backend Google OAuth endpoint
+      console.log('[DEBUG] Setting window.location.href to:', backendUrl);
+      window.location.href = backendUrl;
+
+      // This line should NOT execute if redirect works
+      console.log('[DEBUG] AFTER redirect call - this should not appear!');
+      console.log('[DEBUG] window.location.href after:', window.location.href);
+
+      // Force redirect if still here after 100ms
+      setTimeout(() => {
+        console.log('[DEBUG] Force redirect via window.open');
+        window.open(backendUrl, '_self');
+      }, 100);
+    } catch (error) {
+      console.error('[DEBUG] Google sign-in error:', error);
+      console.error('[DEBUG] Error stack:', error.stack);
+      setFormErrors({ google: 'Google sign-in is not available: ' + error.message });
+    }
+  };
+
   const renderAlert = () => {
     if (authError) {
       return (
@@ -101,13 +138,16 @@ function SignIn() {
                 <form>
                   <div className="flex flex-wrap -mx-3">
                     <div className="w-full px-3">
-                      <button className="btn px-0 text-white bg-red-600 hover:bg-red-700 w-full relative flex items-center">
+                      <a
+                        href="https://og-technologies.herokuapp.com/api/auth/google"
+                        className="btn px-0 text-white bg-red-600 hover:bg-red-700 w-full relative flex items-center no-underline"
+                      >
                         <svg className="w-4 h-4 fill-current text-white opacity-75 shrink-0 mx-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                           <path d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z" />
                         </svg>
                         <span className="h-6 flex items-center border-r border-white border-opacity-25 mr-4" aria-hidden="true"></span>
                         <span className="flex-auto pl-16 pr-8 -ml-16">Sign in with Google</span>
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </form>
@@ -183,6 +223,12 @@ function SignIn() {
                   Don’t you have an account? <Link to="/signup" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Sign up</Link>
                 </div>
                 {renderAlert()}
+                {formErrors.google && (
+                  <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mt-4" role="alert">
+                    <p className="font-bold">Google Sign-in Error!</p>
+                    <p>{formErrors.google}</p>
+                  </div>
+                )}
               </div>
 
             </div>

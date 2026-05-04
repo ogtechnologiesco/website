@@ -1,39 +1,84 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { useAuth } from './useAuth';
 import { subscriptionAPI, paymentAPI } from '../services/api';
 import useApi from './useApi';
 
+// Cache for subscription plans to prevent duplicate API calls
+let cachedPlans = null;
+let plansPromise = null;
+
 export const useSubscription = () => {
-  const { user, isAuthenticated, hasActiveSubscription } = useAuth();
+  const { user, isAuthenticated } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Get subscription plans
+  // Get subscription plans with caching
   const { 
     data: plans, 
     loading: plansLoading, 
     error: plansError,
     refetch: refetchPlans 
   } = useApi('/api/subscriptions/plans?activeOnly=true', {
-    immediate: isAuthenticated
+    immediate: isAuthenticated && !cachedPlans, // Only fetch if authenticated and not cached
+    dependencies: [] // No dependencies to prevent refetch loops
   });
 
-  // Get user subscriptions
+  // Cache plans when data arrives
+  useEffect(() => {
+    if (plans && !cachedPlans) {
+      cachedPlans = plans;
+    }
+  }, [plans]);
+
+  // Get user subscriptions with stable reference to prevent re-fetches
+  const actualUser = user?.user || user;
+  const currentUserId = actualUser?._id || actualUser?.id;
+  
+  // Use ref to maintain stable userId across renders
+  const userIdRef = useRef(currentUserId);
+  const hasFetchedRef = useRef(false);
+  
+  // Only update ref when userId actually changes
+  useEffect(() => {
+    if (currentUserId && currentUserId !== userIdRef.current) {
+      userIdRef.current = currentUserId;
+      hasFetchedRef.current = false; // Reset fetch flag when user changes
+    }
+  }, [currentUserId]);
+  
+  const shouldFetch = isAuthenticated && userIdRef.current && !hasFetchedRef.current;
+  
   const { 
     data: userSubscriptions, 
     loading: subscriptionsLoading, 
     error: subscriptionsError,
     refetch: refetchSubscriptions 
-  } = useApi(user && user._id ? `/api/subscriptions/user/${user._id}` : null, {
-    immediate: isAuthenticated && user && user._id
+  } = useApi(userIdRef.current ? `/api/subscriptions/user/${userIdRef.current}` : null, {
+    immediate: shouldFetch
   });
+  
+  // Mark as fetched when data arrives
+  useEffect(() => {
+    if (userSubscriptions && !hasFetchedRef.current) {
+      hasFetchedRef.current = true;
+    }
+  }, [userSubscriptions]);
 
-  // Get current active subscription
-  const activeSubscription = userSubscriptions?.find(sub => sub.status === 'active') || null;
+  // Handle different response formats (direct array or nested)
+  const subscriptionsArray = Array.isArray(userSubscriptions) 
+    ? userSubscriptions 
+    : userSubscriptions?.subscriptions || userSubscriptions?.data || [];
+
+  // Get current active subscription with case-insensitive status check
+  const activeStatuses = ['active', 'Active', 'ACTIVE', 'paid', 'success'];
+  const activeSubscription = subscriptionsArray.find(sub => 
+    activeStatuses.includes(sub.status) || 
+    sub.status?.toLowerCase() === 'active'
+  ) || null;
 
   // Create subscription
   const createSubscription = useCallback(async (planId, billingCycle = 'monthly') => {
-    if (!isAuthenticated || !user || !user._id) {
+    if (!isAuthenticated || !actualUser || !userId) {
       return { success: false, error: 'User not authenticated or user data incomplete' };
     }
 
@@ -42,7 +87,7 @@ export const useSubscription = () => {
 
     try {
       const subscriptionData = {
-        userId: user._id,
+        userId: userId,
         planId,
         billingCycle,
         trialStartDate: new Date().toISOString(),
@@ -61,7 +106,7 @@ export const useSubscription = () => {
     } finally {
       setLoading(false);
     }
-  }, [isAuthenticated, user, refetchSubscriptions]);
+  }, [isAuthenticated, actualUser, refetchSubscriptions]);
 
   // Update subscription
   const updateSubscription = useCallback(async (subscriptionId, updateData) => {
@@ -107,6 +152,11 @@ export const useSubscription = () => {
     return plans.find(plan => plan._id === planId) || null;
   }, [plans]);
 
+  // Check if user has active subscription
+  const hasActiveSubscription = useCallback(() => {
+    return !!activeSubscription;
+  }, [activeSubscription]);
+
   // Check if user can subscribe to a plan
   const canSubscribeToPlan = useCallback((planId) => {
     if (!isAuthenticated || !user) return false;
@@ -135,6 +185,7 @@ export const useSubscription = () => {
     plans,
     userSubscriptions,
     activeSubscription,
+    hasActiveSubscription,
     
     // Loading states
     loading: loading || plansLoading || subscriptionsLoading,

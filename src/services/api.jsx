@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Environment configuration
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://og-technologies.herokuapp.com/api/';
+const API_BASE_URL = 'https://og-technologies.herokuapp.com/';
 
 // Default headers
 const defaultHeaders = {
@@ -13,8 +13,42 @@ const defaultHeaders = {
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: defaultHeaders,
-  timeout: 5000, // 5 seconds timeout - reduced from 10 seconds
+  timeout: 15000, // 15 seconds timeout for Heroku cold starts
 });
+
+// Add request retry logic for network errors
+let retryCount = 0;
+const MAX_RETRIES = 3;
+
+// Response interceptor for retry logic
+api.interceptors.response.use(
+  (response) => {
+    retryCount = 0; // Reset retry count on success
+    return response;
+  },
+  async (error) => {
+    const { config, code, message } = error;
+    
+    // Check if it's a timeout or network error
+    const isNetworkError = code === 'ECONNABORTED' || 
+                          code === 'ETIMEDOUT' || 
+                          !error.response ||
+                          message?.includes('timeout');
+    
+    if (isNetworkError && retryCount < MAX_RETRIES) {
+      retryCount++;
+      console.log(`Network error detected, retrying... (${retryCount}/${MAX_RETRIES})`);
+      
+      // Exponential backoff: 1s, 2s, 4s
+      const delay = Math.pow(2, retryCount - 1) * 1000;
+      await new Promise(resolve => setTimeout(resolve, delay));
+      
+      return api(config);
+    }
+    
+    return Promise.reject(error);
+  }
+);
 
 // Global error handler
 export const handleApiError = (error) => {
@@ -43,6 +77,9 @@ export const handleApiError = (error) => {
   } else if (error.request) {
     // Network error
     console.error('Network Error:', error.message);
+    if (error.message?.includes('timeout')) {
+      return 'Backend is waking up... Please try again in a moment (Heroku free tier may need time to start).';
+    }
     return 'Network error. Please check your internet connection.';
   } else {
     // Other error
@@ -82,17 +119,49 @@ api.interceptors.response.use(
   }
 );
 
-// API utility functions
+// Pending requests cache to prevent duplicate in-flight requests
+const pendingRequests = new Map();
+
+// Generate unique key for request
+const getRequestKey = (method, url, data, config) => {
+  return `${method}:${url}:${JSON.stringify(data || {})}:${JSON.stringify(config.params || {})}`;
+};
+
+// API utility functions with deduplication
 export const apiRequest = async (method, url, data = null, config = {}) => {
+  const requestKey = getRequestKey(method, url, data, config);
+  
+  // Return existing pending request if exists
+  if (pendingRequests.has(requestKey)) {
+    console.log(`Deduplicating request: ${method} ${url}`);
+    return pendingRequests.get(requestKey);
+  }
+  
   try {
-    const response = await api({
+    const requestConfig = {
       method,
       url,
-      data,
       ...config
+    };
+    // Only add data to request if it's not null/undefined (prevents sending "null" string)
+    if (data !== null && data !== undefined) {
+      requestConfig.data = data;
+    }
+    
+    // Create promise and store in pending requests
+    const requestPromise = api(requestConfig).then(response => {
+      pendingRequests.delete(requestKey);
+      return response.data;
+    }).catch(error => {
+      pendingRequests.delete(requestKey);
+      const errorMessage = handleApiError(error);
+      throw new Error(errorMessage);
     });
-    return response.data;
+    
+    pendingRequests.set(requestKey, requestPromise);
+    return requestPromise;
   } catch (error) {
+    pendingRequests.delete(requestKey);
     const errorMessage = handleApiError(error);
     throw new Error(errorMessage);
   }
@@ -107,25 +176,31 @@ export const apiDelete = (url, config = {}) => apiRequest('DELETE', url, null, c
 // Authentication API methods
 export const authAPI = {
   // User registration
-  signup: (userData) => apiPost('https://og-technologies.herokuapp.com/api/users/signup', userData),
-  
+  signup: (userData) => apiPost('/api/users/signup', userData),
+
   // User login
-  login: (credentials) => apiPost('https://og-technologies.herokuapp.com/api/auth/login', credentials),
-  
+  login: (credentials) => apiPost('/api/auth/login', credentials),
+
+  // Google OAuth sign-in
+  googleSignIn: (googleData) => apiPost('/api/auth/google', googleData),
+
+  // Google OAuth sign-up
+  googleSignUp: (googleData) => apiPost('/api/auth/google/signup', googleData),
+
   // Refresh token
-  refreshToken: () => apiPost('https://og-technologies.herokuapp.com/api/auth/refresh'),
-  
+  refreshToken: () => apiPost('/api/auth/refresh'),
+
   // Logout
-  logout: () => apiPost('https://og-technologies.herokuapp.com/api/auth/logout'),
-  
+  logout: () => apiPost('/api/auth/logout'),
+
   // Get current user
-  getCurrentUser: () => apiGet('https://og-technologies.herokuapp.com/api/auth/me'),
+  getCurrentUser: () => apiGet('/api/auth/me'),
   
   // Password reset request
-  requestPasswordReset: (email) => apiPost('https://og-technologies.herokuapp.com/api/auth/forgot-password', { email }),
-  
+  requestPasswordReset: (email) => apiPost('/api/auth/forgot-password', { email }),
+
   // Reset password
-  resetPassword: (token, newPassword) => apiPost('https://og-technologies.herokuapp.com/api/auth/reset-password', {
+  resetPassword: (token, newPassword) => apiPost('/api/auth/reset-password', {
     token,
     password: newPassword
   })
@@ -134,10 +209,10 @@ export const authAPI = {
 // Subscription API methods
 export const subscriptionAPI = {
   // Get all subscription plans
-  getPlans: (activeOnly = true) => apiGet('https://og-technologies.herokuapp.com/api/subscriptions/plans?activeOnly=${activeOnly}'),
-  
+  getPlans: (activeOnly = true) => apiGet(`/api/subscriptions/plans?activeOnly=${activeOnly}`),
+
   // Get single plan
-  getPlan: (planId) => apiGet('https://og-technologies.herokuapp.com/api/subscriptions/plans/${planId}'),
+  getPlan: (planId) => apiGet(`/api/subscriptions/plans/${planId}`),
   
   // Get user subscriptions
   getUserSubscriptions: (userId, status = null) => {
@@ -152,13 +227,25 @@ export const subscriptionAPI = {
   updateSubscription: (subscriptionId, updateData) => apiPut(`/api/subscriptions/${subscriptionId}`, updateData),
   
   // Cancel subscription
-  cancelSubscription: (subscriptionId) => apiDelete(`/api/subscriptions/${subscriptionId}`)
+  cancelSubscription: (subscriptionId) => apiDelete(`/api/subscriptions/${subscriptionId}`),
+  
+  // Admin: Manually set user to Pro subscription
+  setProSubscription: ({ userId, force = false }) => apiPost('/api/admin/set-pro-subscription', { userId, force }),
+  
+  // Admin: Remove Pro subscription
+  removeProSubscription: (userId) => apiPost('/api/admin/remove-pro-subscription', { userId })
 };
 
 // Payment API methods
 export const paymentAPI = {
   // Create payment intent
   createPaymentIntent: (paymentData) => apiPost('/api/payments/create-intent', paymentData),
+  
+  // Create Stripe checkout session
+  createCheckoutSession: (sessionData) => apiPost('/api/payments/create-checkout-session', sessionData),
+  
+  // Create billing portal session
+  createBillingPortal: (portalData) => apiPost('/api/payments/create-billing-portal', portalData),
   
   // Confirm payment
   confirmPayment: (confirmationData) => apiPost('/api/payments/confirm', confirmationData),
@@ -208,12 +295,19 @@ export const crmAPI = {
     const queryString = new URLSearchParams(params).toString();
     return apiGet(`/api/tickets?${queryString}`);
   },
-  
+
   createTicket: (ticketData) => apiPost('/api/tickets', ticketData),
-  
+
   getTicket: (ticketId) => apiGet(`/api/tickets/${ticketId}`),
-  
-  addTicketComment: (ticketId, commentData) => apiPost(`/api/tickets/${ticketId}/comments`, commentData)
+
+  updateTicket: (ticketId, updateData) => apiPut(`/api/tickets/${ticketId}`, updateData),
+
+  deleteTicket: (ticketId) => apiDelete(`/api/tickets/${ticketId}`),
+
+  addTicketComment: (ticketId, commentData) => apiPost(`/api/tickets/${ticketId}/comments`, commentData),
+
+  // Users
+  lookupUserByEmail: (email) => apiGet(`/api/users/lookup?email=${encodeURIComponent(email)}`)
 };
 
 // Legacy API methods

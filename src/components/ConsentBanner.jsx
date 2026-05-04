@@ -40,7 +40,7 @@ const Target = ({ className }) => (
   </svg>
 );
 
-const CookieConsent = () => {
+const ConsentBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showCustomize, setShowCustomize] = useState(false);
   const [preferences, setPreferences] = useState(defaultCookiePreferences);
@@ -263,4 +263,4 @@ const CookieConsent = () => {
   );
 };
 
-export default CookieConsent;
+export default ConsentBanner;

@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import toast from 'react-hot-toast';
 
-const ProtectedRoute = ({ 
-  children, 
+const ProtectedRoute = ({
+  children,
   requiredRole = null,
   requiredPermission = null,
   redirectTo = '/signin',
-  fallback = null 
+  fallback = null
 }) => {
   const { isAuthenticated, isLoading, hasRole, hasPermission, user } = useAuth();
   const location = useLocation();
+
+  // Handle toast notifications after render
+  useEffect(() => {
+    if (!isLoading) {
+      if (!isAuthenticated) {
+        toast.error('Please sign in to access this page');
+      } else if (requiredRole && !hasRole(requiredRole)) {
+        toast.error('You do not have the required permissions to access this page');
+      } else if (requiredPermission && !hasPermission(requiredPermission)) {
+        toast.error('You do not have the required permissions to access this page');
+      }
+    }
+  }, [isLoading, isAuthenticated, requiredRole, requiredPermission, hasRole, hasPermission]);
 
   // Show loading spinner while checking authentication
   if (isLoading) {
@@ -24,28 +37,22 @@ const ProtectedRoute = ({
 
   // If not authenticated, redirect to login
   if (!isAuthenticated) {
-    // Show toast notification
-    toast.error('Please sign in to access this page');
-    
-    // Store the intended destination for redirect after login
     return (
-      <Navigate 
-        to={redirectTo} 
-        state={{ from: location }} 
-        replace 
+      <Navigate
+        to={redirectTo}
+        state={{ from: location }}
+        replace
       />
     );
   }
 
   // Check if user has required role
   if (requiredRole && !hasRole(requiredRole)) {
-    toast.error('You do not have the required permissions to access this page');
     return fallback || <Navigate to="/unauthorized" replace />;
   }
 
   // Check if user has required permission
   if (requiredPermission && !hasPermission(requiredPermission)) {
-    toast.error('You do not have the required permissions to access this page');
     return fallback || <Navigate to="/unauthorized" replace />;
   }
 
@@ -66,22 +73,28 @@ export const withProtection = (Component, options = {}) => {
 };
 
 // Component for subscription-protected routes
-export const SubscriptionProtectedRoute = ({ 
-  children, 
+export const SubscriptionProtectedRoute = ({
+  children,
   requireActiveSubscription = true,
   redirectTo = '/pricing',
-  fallback = null 
+  fallback = null
 }) => {
   const { hasActiveSubscription, isOnTrial } = useAuth();
   const location = useLocation();
+  const needsSubscription = requireActiveSubscription && !hasActiveSubscription() && !isOnTrial();
 
-  if (requireActiveSubscription && !hasActiveSubscription() && !isOnTrial()) {
-    toast.error('This feature requires an active subscription');
+  useEffect(() => {
+    if (needsSubscription) {
+      toast.error('This feature requires an active subscription');
+    }
+  }, [needsSubscription]);
+
+  if (needsSubscription) {
     return (
-      <Navigate 
-        to={redirectTo} 
-        state={{ from: location }} 
-        replace 
+      <Navigate
+        to={redirectTo}
+        state={{ from: location }}
+        replace
       />
     );
   }
@@ -93,14 +106,20 @@ export const SubscriptionProtectedRoute = ({
 export const VerifiedUserRoute = ({ children, redirectTo = '/verify-email' }) => {
   const { isVerified } = useAuth();
   const location = useLocation();
+  const verified = isVerified();
 
-  if (!isVerified()) {
-    toast.error('Please verify your email address to access this page');
+  useEffect(() => {
+    if (!verified) {
+      toast.error('Please verify your email address to access this page');
+    }
+  }, [verified]);
+
+  if (!verified) {
     return (
-      <Navigate 
-        to={redirectTo} 
-        state={{ from: location }} 
-        replace 
+      <Navigate
+        to={redirectTo}
+        state={{ from: location }}
+        replace
       />
     );
   }

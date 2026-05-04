@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import Footer from '../partials/Footer';
+import { useStripePayment } from '../hooks/useStripePayment';
 
 function Pricing() {
+  const { isLoading, error, startProSubscription, clearError } = useStripePayment();
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Header />
@@ -30,6 +33,21 @@ function Pricing() {
                   </p>
                 </div>
               </div>
+
+              {/* Payment Error Alert */}
+              {error && (
+                <div className="max-w-3xl mx-auto mb-8">
+                  <div className="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-lg flex items-center justify-between">
+                    <span>{error}</span>
+                    <button
+                      onClick={clearError}
+                      className="text-red-300 hover:text-red-100 ml-4"
+                    >
+                      ×
+                    </button>
+                  </div>
+                </div>
+              )}
 
               {/* Pricing Cards */}
               <div className="max-w-5xl mx-auto">
@@ -106,12 +124,13 @@ function Pricing() {
                         <span className="text-4xl font-bold text-white">€8</span>
                         <span className="text-gray-400">/month</span>
                       </div>
-                      <Link 
-                        to="/signup"
-                        className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out inline-block"
+                      <button
+                        onClick={startProSubscription}
+                        disabled={isLoading}
+                        className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        Start Pro Trial
-                      </Link>
+                        {isLoading ? 'Processing...' : 'Start Pro Trial'}
+                      </button>
                     </div>
                     
                     <div className="space-y-4">

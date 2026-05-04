@@ -5,12 +5,13 @@ import PageIllustration from '../partials/PageIllustration';
 import { useAuth } from '../hooks/useAuth';
 import { useSubscription } from '../hooks/useSubscription';
 import ProtectedRoute from '../components/ProtectedRoute';
+import AdminProActivation from '../components/AdminProActivation';
 import toast from 'react-hot-toast';
 
 function Settings() {
   const navigate = useNavigate();
   const { user, getDisplayName, updateProfile, changePassword, logout } = useAuth();
-  const { activeSubscription, plans, cancelSubscription } = useSubscription();
+  const { activeSubscription, plans, cancelSubscription, loading: subscriptionsLoading } = useSubscription();
   
   const [formData, setFormData] = useState({
     name: user?.name || '',
@@ -356,10 +357,17 @@ function Settings() {
 
                   {/* Subscription Tab */}
                   {activeTab === 'subscription' && (
-                    <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-                      <h3 className="text-lg font-semibold text-white mb-6">Subscription Management</h3>
-                      
-                      {activeSubscription ? (
+                    <div>
+                      <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 mb-6">
+                        <h3 className="text-lg font-semibold text-white mb-6">Subscription Management</h3>
+                        
+                        {subscriptionsLoading && !activeSubscription ? (
+                        <div className="text-center py-8">
+                          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600 mx-auto mb-4"></div>
+                          <p className="text-gray-400">Loading subscription data...</p>
+                          <p className="text-gray-500 text-xs mt-1">Backend may be waking up (Heroku free tier)</p>
+                        </div>
+                      ) : activeSubscription ? (
                         <div className="space-y-6">
                           <div className="bg-gray-700 rounded-lg p-4">
                             <div className="flex justify-between items-start mb-4">
@@ -411,9 +419,12 @@ function Settings() {
                           </Link>
                         </div>
                       )}
+                      </div>
+                      
+                      {/* Admin Pro Activation Component */}
+                      <AdminProActivation />
                     </div>
                   )}
-
                 </div>
               </div>
             </div>
