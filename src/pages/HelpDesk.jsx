@@ -248,7 +248,12 @@ function HelpdeskDashboard() {
 
   // Fetch tickets from database on component mount
   useEffect(() => {
+    console.log('=== HelpDesk useEffect triggered ===');
+    console.log('Current user:', user);
+    console.log('Current loading state:', loading);
+    
     const fetchTickets = async () => {
+      console.log('--- Starting fetchTickets ---');
       setLoading(true);
       setFetchError(null);
       try {
@@ -257,9 +262,11 @@ function HelpdeskDashboard() {
         console.log('Full user object:', user);
         console.log('User _id:', user?._id);
         console.log('User id:', user?.id);
-        // Try with user filter if user ID exists
+        
+        // Only fetch if user is authenticated or if we want to fetch all tickets
         let data;
         if (userId) {
+          console.log('User ID exists, fetching assigned tickets');
           try {
             data = await crmAPI.getTickets({ assignedTo: userId });
           } catch (filterError) {
@@ -268,21 +275,29 @@ function HelpdeskDashboard() {
             data = await crmAPI.getTickets({});
           }
         } else {
+          console.log('No user ID, fetching all tickets');
           // No user ID, fetch all tickets
           data = await crmAPI.getTickets({});
         }
         console.log('Tickets fetched:', data);
+        console.log('Data structure:', typeof data);
+        console.log('Data keys:', data ? Object.keys(data) : 'null');
+        
         const ticketsWithSLA = (data.tickets || []).map(ticket => ({
           ...ticket,
           sla: ticket.sla || calculateSLA(ticket.priority),
           slaStatus: ticket.slaStatus || 'on_track'
         }));
+        console.log('Tickets with SLA:', ticketsWithSLA);
         setTickets(ticketsWithSLA);
         setFilteredTickets(ticketsWithSLA);
+        console.log('State updated successfully');
       } catch (error) {
         console.error('Error fetching tickets:', error);
+        console.error('Error details:', error.message, error.stack);
         setFetchError(error.message || 'Failed to load tickets. Please try again.');
       } finally {
+        console.log('Setting loading to false');
         setLoading(false);
       }
     };
@@ -889,7 +904,7 @@ function HelpdeskDashboard() {
                               
                               {/* Dropdown Menu */}
                               {activeDropdown === (ticket._id || ticket.id) && (
-                                <div className="absolute right-0 mt-1 w-48 bg-gray-800 rounded-md shadow-lg border border-gray-700 z-50">
+                                <div className="absolute right-0 mt-1 w-48 bg-gray-800 rounded-md shadow-lg border border-gray-700 z-[9999]">
                                   <div className="py-1">
                                     {/* View Ticket */}
                                     <button

@@ -246,6 +246,54 @@ function Products() {
               </div>
             </div>
 
+            {/* Health Industry item */}
+            <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
+              {/* Image */}
+              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl" data-aos="fade-up">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-600/20 to-emerald-600/20 rounded-lg blur-xl"></div>
+                  <div className="relative bg-gray-800 rounded-lg p-8 border border-teal-500/30 flex items-center justify-center min-h-[300px]">
+                    <svg className="w-32 h-32 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 4v16m8-8H4" style={{opacity: 0.6}}></path>
+                      <circle cx="12" cy="12" r="10" strokeWidth="1.5" stroke="currentColor" fill="none" opacity="0.3"></circle>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4" opacity="0.8"></path>
+                    </svg>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
+                        <span className="text-teal-300 text-xs font-medium">Digital Health</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Content */}
+              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-left">
+                <div className="md:pl-4 lg:pl-12 xl:pl-16">
+                  <div className="flex items-center mb-3">
+                    <span className="bg-teal-600/20 text-teal-400 text-xs px-2 py-1 rounded-full border border-teal-500/30">HEALTHCARE</span>
+                  </div>
+                  <h3 className="h3 mb-3">Health Industry Solutions </h3>
+                  <p className="text-xl text-gray-400 mb-4">Transform healthcare delivery with our cutting-edge digital health solutions. We specialize in building secure, HIPAA-compliant healthcare platforms that leverage AI diagnostics, telemedicine capabilities, and blockchain-based health records. From patient management systems to remote monitoring solutions, we help healthcare providers deliver better patient outcomes through innovative technology.</p>
+                  <ul className="space-y-2 text-gray-300 mb-4">
+                    <li className="flex items-center">
+                      <span className="text-teal-400 mr-2">✓</span>
+                      Electronic Health Records (EHR) Systems
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-teal-400 mr-2">✓</span>
+                      Telemedicine & Virtual Care Platforms
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-teal-400 mr-2">✓</span>
+                      AI-Powered Diagnostic Tools
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
