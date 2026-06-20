@@ -4,56 +4,89 @@ import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import { useAuth } from '../hooks/useAuth';
 import ProtectedRoute from '../components/ProtectedRoute';
-
-// Sample contact data for initial implementation
-const sampleContacts = [
-  { id: 1, firstName: 'John', lastName: 'Doe', email: 'john@example.com', phone: '+1234567890', company: 'Acme Corp', title: 'CEO', status: 'active', tags: ['VIP', 'Enterprise'], lastActivity: '2 days ago' },
-  { id: 2, firstName: 'Jane', lastName: 'Smith', email: 'jane@techcorp.com', phone: '+1987654321', company: 'TechCorp', title: 'CTO', status: 'active', tags: ['Prospect'], lastActivity: '1 week ago' },
-  { id: 3, firstName: 'Mike', lastName: 'Johnson', email: 'mike@startup.io', phone: '+1122334455', company: 'Startup Inc', title: 'Founder', status: 'lead', tags: ['Startup', 'Hot Lead'], lastActivity: '3 days ago' },
-  { id: 4, firstName: 'Sarah', lastName: 'Williams', email: 'sarah@bigcorp.com', phone: '+1555666777', company: 'BigCorp', title: 'Manager', status: 'inactive', tags: ['Enterprise'], lastActivity: '1 month ago' },
-  { id: 5, firstName: 'David', lastName: 'Brown', email: 'david@smallbiz.com', phone: '+1999888777', company: 'SmallBiz', title: 'Owner', status: 'active', tags: ['SMB'], lastActivity: '1 day ago' }
-];
+import { crmAPI } from '../services/api';
+import toast from 'react-hot-toast';
 
 function Contacts() {
   const navigate = useNavigate();
-  const [contacts, setContacts] = useState(sampleContacts);
-  const [filteredContacts, setFilteredContacts] = useState(sampleContacts);
+  const [contacts, setContacts] = useState([]);
+  const [filteredContacts, setFilteredContacts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [showAddModal, setShowAddModal] = useState(false);
   const [editingContact, setEditingContact] = useState(null);
   const [selectedContacts, setSelectedContacts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [pagination, setPagination] = useState({
+    page: 1,
+    limit: 50,
+    total: 0,
+    pages: 0
+  });
 
-  // Filter contacts based on search and status
   useEffect(() => {
-    let filtered = contacts;
-    
-    if (searchTerm) {
-      filtered = filtered.filter(contact => 
-        contact.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        contact.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        contact.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        contact.company.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-    
-    if (statusFilter !== 'all') {
-      filtered = filtered.filter(contact => contact.status === statusFilter);
-    }
-    
-    setFilteredContacts(filtered);
-  }, [contacts, searchTerm, statusFilter]);
+    fetchContacts();
+  }, [pagination.page, pagination.limit]);
 
-  const handleDeleteContact = (id) => {
-    if (window.confirm('Are you sure you want to delete this contact?')) {
-      setContacts(contacts.filter(c => c.id !== id));
+  const fetchContacts = async () => {
+    try {
+      setLoading(true);
+      const params = {
+        page: pagination.page,
+        limit: pagination.limit
+      };
+      if (searchTerm) params.search = searchTerm;
+      if (statusFilter !== 'all') params.status = statusFilter;
+
+      const response = await crmAPI.getContacts(params);
+      setContacts(response.contacts || []);
+      setFilteredContacts(response.contacts || []);
+      setPagination({
+        ...pagination,
+        total: response.pagination?.total || 0,
+        pages: response.pagination?.pages || 0
+      });
+    } catch (error) {
+      console.error('Error fetching contacts:', error);
+      toast.error('Failed to load contacts');
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleBulkDelete = () => {
+  // Filter contacts based on search and status (client-side for immediate feedback)
+  useEffect(() => {
+    if (searchTerm || statusFilter !== 'all') {
+      fetchContacts();
+    } else {
+      setFilteredContacts(contacts);
+    }
+  }, [searchTerm, statusFilter]);
+
+  const handleDeleteContact = async (id) => {
+    if (window.confirm('Are you sure you want to delete this contact?')) {
+      try {
+        await crmAPI.deleteContact(id);
+        toast.success('Contact deleted successfully');
+        fetchContacts();
+      } catch (error) {
+        console.error('Error deleting contact:', error);
+        toast.error('Failed to delete contact');
+      }
+    }
+  };
+
+  const handleBulkDelete = async () => {
     if (window.confirm(`Delete ${selectedContacts.length} selected contacts?`)) {
-      setContacts(contacts.filter(c => !selectedContacts.includes(c.id)));
-      setSelectedContacts([]);
+      try {
+        await Promise.all(selectedContacts.map(id => crmAPI.deleteContact(id)));
+        toast.success('Contacts deleted successfully');
+        setSelectedContacts([]);
+        fetchContacts();
+      } catch (error) {
+        console.error('Error deleting contacts:', error);
+        toast.error('Failed to delete contacts');
+      }
     }
   };
 
@@ -63,19 +96,61 @@ function Contacts() {
     );
   };
 
-  const handleAddContact = (newContact) => {
-    const contact = {
-      ...newContact,
-      id: Math.max(...contacts.map(c => c.id), 0) + 1,
-      lastActivity: 'Just now'
-    };
-    setContacts([...contacts, contact]);
-    setShowAddModal(false);
+  const handleAddContact = async (newContact) => {
+    try {
+      // Map frontend form data to backend API format
+      const contactData = {
+        name: `${newContact.firstName} ${newContact.lastName}`,
+        email: newContact.email,
+        phone: newContact.phone,
+        tags: newContact.tags || [],
+        status: newContact.status === 'active' ? 'customer' : newContact.status,
+        customFields: {
+          title: newContact.title
+        }
+      };
+      
+      // Only include company if it's a valid MongoDB ObjectId (24 hex characters)
+      // Otherwise, store company name in customFields
+      const objectIdRegex = /^[0-9a-fA-F]{24}$/;
+      if (newContact.company && objectIdRegex.test(newContact.company)) {
+        contactData.company = newContact.company;
+      } else if (newContact.company) {
+        contactData.customFields.companyName = newContact.company;
+      }
+      
+      await crmAPI.createContact(contactData);
+      toast.success('Contact created successfully');
+      setShowAddModal(false);
+      fetchContacts();
+    } catch (error) {
+      console.error('Error creating contact:', error);
+      toast.error('Failed to create contact');
+    }
   };
 
-  const handleEditContact = (updatedContact) => {
-    setContacts(contacts.map(c => c.id === updatedContact.id ? updatedContact : c));
-    setEditingContact(null);
+  const handleEditContact = async (updatedContact) => {
+    try {
+      const contactData = {
+        name: `${updatedContact.firstName} ${updatedContact.lastName}`,
+        email: updatedContact.email,
+        phone: updatedContact.phone,
+        company: updatedContact.company,
+        tags: updatedContact.tags || [],
+        status: updatedContact.status === 'active' ? 'customer' : updatedContact.status,
+        customFields: {
+          title: updatedContact.title
+        }
+      };
+      
+      await crmAPI.updateContact(updatedContact._id || updatedContact.id, contactData);
+      toast.success('Contact updated successfully');
+      setEditingContact(null);
+      fetchContacts();
+    } catch (error) {
+      console.error('Error updating contact:', error);
+      toast.error('Failed to update contact');
+    }
   };
 
   return (
@@ -139,12 +214,12 @@ function Contacts() {
                       className="bg-gray-700 text-white px-4 py-3 rounded-md border border-gray-600 focus:border-purple-500 focus:outline-none"
                     >
                       <option value="all">All Status</option>
-                      <option value="active">Active</option>
+                      <option value="customer">Customer</option>
                       <option value="lead">Lead</option>
-                      <option value="inactive">Inactive</option>
+                      <option value="prospect">Prospect</option>
                     </select>
                     <button
-                      onClick={() => {setSearchTerm(''); setStatusFilter('all');}}
+                      onClick={() => {setSearchTerm(''); setStatusFilter('all'); fetchContacts();}}
                       className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-3 rounded-md transition duration-150 ease-in-out"
                     >
                       Clear Filters
@@ -186,7 +261,7 @@ function Contacts() {
                             checked={selectedContacts.length === filteredContacts.length && filteredContacts.length > 0}
                             onChange={(e) => {
                               if (e.target.checked) {
-                                setSelectedContacts(filteredContacts.map(c => c.id));
+                                setSelectedContacts(filteredContacts.map(c => c._id || c.id));
                               } else {
                                 setSelectedContacts([]);
                               }
@@ -203,103 +278,140 @@ function Contacts() {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-700">
-                      {filteredContacts.map((contact) => (
-                        <tr key={contact.id} className="hover:bg-gray-700/50">
-                          <td className="p-4">
-                            <input
-                              type="checkbox"
-                              checked={selectedContacts.includes(contact.id)}
-                              onChange={() => toggleContactSelection(contact.id)}
-                              className="w-4 h-4 rounded border-gray-600 text-purple-600 focus:ring-purple-500"
-                            />
-                          </td>
-                          <td className="p-4">
-                            <div className="flex items-center">
-                              <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
-                                {contact.firstName[0]}{contact.lastName[0]}
-                              </div>
-                              <div className="ml-3">
-                                <p className="text-white font-medium">{contact.firstName} {contact.lastName}</p>
-                                <p className="text-gray-400 text-sm">{contact.email}</p>
-                                <p className="text-gray-500 text-xs">{contact.phone}</p>
-                              </div>
-                            </div>
-                          </td>
-                          <td className="p-4">
-                            <div>
-                              <p className="text-white">{contact.company}</p>
-                              <p className="text-gray-400 text-sm">{contact.title}</p>
-                            </div>
-                          </td>
-                          <td className="p-4">
-                            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                              contact.status === 'active' ? 'bg-green-600 text-white' :
-                              contact.status === 'lead' ? 'bg-blue-600 text-white' :
-                              'bg-gray-600 text-gray-300'
-                            }`}>
-                              {contact.status}
-                            </span>
-                          </td>
-                          <td className="p-4">
-                            <div className="flex flex-wrap gap-1">
-                              {contact.tags.map((tag, index) => (
-                                <span key={index} className="px-2 py-1 bg-purple-600/30 text-purple-300 rounded text-xs">
-                                  {tag}
-                                </span>
-                              ))}
-                            </div>
-                          </td>
-                          <td className="p-4 text-gray-400">
-                            {contact.lastActivity}
-                          </td>
-                          <td className="p-4">
-                            <div className="flex gap-2">
-                              <button
-                                onClick={() => setEditingContact(contact)}
-                                className="text-blue-400 hover:text-blue-300 p-2 rounded-md hover:bg-blue-600/20 transition duration-150 ease-in-out"
-                              >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                                </svg>
-                              </button>
-                              <button
-                                onClick={() => handleDeleteContact(contact.id)}
-                                className="text-red-400 hover:text-red-300 p-2 rounded-md hover:bg-red-600/20 transition duration-150 ease-in-out"
-                              >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                </svg>
-                              </button>
-                            </div>
+                      {loading ? (
+                        <tr>
+                          <td colSpan="7" className="p-8 text-center">
+                            <p className="text-gray-400">Loading contacts...</p>
                           </td>
                         </tr>
-                      ))}
+                      ) : filteredContacts.length === 0 ? (
+                        <tr>
+                          <td colSpan="7" className="p-8 text-center">
+                            <p className="text-gray-400 text-lg">No contacts found</p>
+                            <button
+                              onClick={() => {setSearchTerm(''); setStatusFilter('all'); fetchContacts();}}
+                              className="mt-4 text-purple-400 hover:text-purple-300"
+                            >
+                              Clear filters
+                            </button>
+                          </td>
+                        </tr>
+                      ) : (
+                        filteredContacts.map((contact) => {
+                          const nameParts = (contact.name || '').split(' ');
+                          const firstName = nameParts[0] || '';
+                          const lastName = nameParts.slice(1).join(' ') || '';
+                          return (
+                            <tr key={contact._id || contact.id} className="hover:bg-gray-700/50">
+                              <td className="p-4">
+                                <input
+                                  type="checkbox"
+                                  checked={selectedContacts.includes(contact._id || contact.id)}
+                                  onChange={() => toggleContactSelection(contact._id || contact.id)}
+                                  className="w-4 h-4 rounded border-gray-600 text-purple-600 focus:ring-purple-500"
+                                />
+                              </td>
+                              <td className="p-4">
+                                <div className="flex items-center">
+                                  <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
+                                    {firstName[0]}{lastName[0] || firstName[0]}
+                                  </div>
+                                  <div className="ml-3">
+                                    <p className="text-white font-medium">{contact.name}</p>
+                                    <p className="text-gray-400 text-sm">{contact.email}</p>
+                                    <p className="text-gray-500 text-xs">{contact.phone}</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td className="p-4">
+                                <div>
+                                  <p className="text-white">{contact.company || '-'}</p>
+                                  <p className="text-gray-400 text-sm">{contact.customFields?.title || '-'}</p>
+                                </div>
+                              </td>
+                              <td className="p-4">
+                                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                                  contact.status === 'customer' ? 'bg-green-600 text-white' :
+                                  contact.status === 'lead' ? 'bg-blue-600 text-white' :
+                                  contact.status === 'prospect' ? 'bg-yellow-600 text-white' :
+                                  'bg-gray-600 text-gray-300'
+                                }`}>
+                                  {contact.status || 'Unknown'}
+                                </span>
+                              </td>
+                              <td className="p-4">
+                                <div className="flex flex-wrap gap-1">
+                                  {contact.tags && contact.tags.length > 0 ? (
+                                    contact.tags.map((tag, index) => (
+                                      <span key={index} className="px-2 py-1 bg-purple-600/30 text-purple-300 rounded text-xs">
+                                        {tag}
+                                      </span>
+                                    ))
+                                  ) : (
+                                    <span className="text-gray-500 text-xs">No tags</span>
+                                  )}
+                                </div>
+                              </td>
+                              <td className="p-4 text-gray-400">
+                                {contact.updatedAt ? new Date(contact.updatedAt).toLocaleDateString() : 'Never'}
+                              </td>
+                              <td className="p-4">
+                                <div className="flex gap-2">
+                                  <button
+                                    onClick={() => {
+                                      setEditingContact({
+                                        ...contact,
+                                        firstName,
+                                        lastName,
+                                        title: contact.customFields?.title || ''
+                                      });
+                                    }}
+                                    className="text-blue-400 hover:text-blue-300 p-2 rounded-md hover:bg-blue-600/20 transition duration-150 ease-in-out"
+                                  >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                    </svg>
+                                  </button>
+                                  <button
+                                    onClick={() => handleDeleteContact(contact._id || contact.id)}
+                                    className="text-red-400 hover:text-red-300 p-2 rounded-md hover:bg-red-600/20 transition duration-150 ease-in-out"
+                                  >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                    </svg>
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          );
+                        })
+                      )}
                     </tbody>
                   </table>
                 </div>
-                {filteredContacts.length === 0 && (
-                  <div className="p-8 text-center">
-                    <p className="text-gray-400 text-lg">No contacts found</p>
-                    <button
-                      onClick={() => {setSearchTerm(''); setStatusFilter('all');}}
-                      className="mt-4 text-purple-400 hover:text-purple-300"
-                    >
-                      Clear filters
-                    </button>
-                  </div>
-                )}
               </div>
 
               {/* Pagination */}
               <div className="mt-6 flex items-center justify-between">
                 <p className="text-gray-400">
-                  Showing {filteredContacts.length} of {contacts.length} contacts
+                  Showing {filteredContacts.length} of {pagination.total} contacts
                 </p>
                 <div className="flex gap-2">
-                  <button className="px-4 py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 transition duration-150 ease-in-out disabled:opacity-50">
+                  <button 
+                    onClick={() => setPagination({...pagination, page: Math.max(1, pagination.page - 1)})}
+                    disabled={pagination.page === 1}
+                    className="px-4 py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 transition duration-150 ease-in-out disabled:opacity-50"
+                  >
                     Previous
                   </button>
-                  <button className="px-4 py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 transition duration-150 ease-in-out disabled:opacity-50">
+                  <span className="px-4 py-2 text-gray-300">
+                    Page {pagination.page} of {pagination.pages || 1}
+                  </span>
+                  <button 
+                    onClick={() => setPagination({...pagination, page: Math.min(pagination.pages, pagination.page + 1)})}
+                    disabled={pagination.page >= pagination.pages}
+                    className="px-4 py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 transition duration-150 ease-in-out disabled:opacity-50"
+                  >
                     Next
                   </button>
                 </div>
@@ -419,8 +531,8 @@ function AddContactModal({ onClose, onAdd }) {
               className="w-full bg-gray-700 text-white px-3 py-2 rounded-md border border-gray-600 focus:border-purple-500 focus:outline-none"
             >
               <option value="lead">Lead</option>
-              <option value="active">Active</option>
-              <option value="inactive">Inactive</option>
+              <option value="customer">Customer</option>
+              <option value="prospect">Prospect</option>
             </select>
           </div>
           <div className="flex gap-3 mt-6">
@@ -446,7 +558,12 @@ function AddContactModal({ onClose, onAdd }) {
 
 // Edit Contact Modal Component
 function EditContactModal({ contact, onClose, onEdit }) {
-  const [formData, setFormData] = useState(contact);
+  const [formData, setFormData] = useState({
+    ...contact,
+    firstName: contact.firstName || '',
+    lastName: contact.lastName || '',
+    title: contact.title || ''
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -525,8 +642,8 @@ function EditContactModal({ contact, onClose, onEdit }) {
               className="w-full bg-gray-700 text-white px-3 py-2 rounded-md border border-gray-600 focus:border-purple-500 focus:outline-none"
             >
               <option value="lead">Lead</option>
-              <option value="active">Active</option>
-              <option value="inactive">Inactive</option>
+              <option value="customer">Customer</option>
+              <option value="prospect">Prospect</option>
             </select>
           </div>
           <div className="flex gap-3 mt-6">

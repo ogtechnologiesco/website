@@ -4,43 +4,88 @@ import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import { useAuth } from '../hooks/useAuth';
 import ProtectedRoute from '../components/ProtectedRoute';
+import { crmAPI } from '../services/api';
+import toast from 'react-hot-toast';
 
 // CRM Components
 const CRMDashboard = () => {
   const navigate = useNavigate();
   const [stats, setStats] = useState({
     totalContacts: 0,
-    totalLeads: 0,
-    opportunities: 0,
+    activeLeads: 0,
+    totalOpportunities: 0,
     wonDeals: 0,
-    recentActivities: []
+    totalValue: 0,
+    recentActivities: [],
+    pipelineDistribution: []
   });
+  const [timeRange, setTimeRange] = useState('all_time');
+  const [loading, setLoading] = useState(true);
 
-  // Mock data for initial implementation
   useEffect(() => {
-    setStats({
-      totalContacts: 156,
-      totalLeads: 42,
-      opportunities: 18,
-      wonDeals: 8,
-      recentActivities: [
-        { id: 1, type: 'lead', message: 'New lead: Acme Corp', time: '2 hours ago' },
-        { id: 2, type: 'contact', message: 'Contact updated: John Doe', time: '4 hours ago' },
-        { id: 3, type: 'deal', message: 'Deal won: €5,000', time: '1 day ago' },
-        { id: 4, type: 'task', message: 'Meeting scheduled with TechStart', time: '1 day ago' }
-      ]
-    });
-  }, []);
+    fetchDashboardMetrics();
+  }, [timeRange]);
+
+  const fetchDashboardMetrics = async () => {
+    try {
+      setLoading(true);
+      const response = await crmAPI.getDashboardMetrics(timeRange);
+      setStats({
+        totalContacts: response.metrics.totalContacts || 0,
+        activeLeads: response.metrics.activeLeads || 0,
+        totalOpportunities: response.metrics.totalOpportunities || 0,
+        wonDeals: response.metrics.wonDeals || 0,
+        totalValue: response.metrics.totalValue || 0,
+        recentActivities: response.recentActivities || [],
+        pipelineDistribution: response.pipelineDistribution || []
+      });
+    } catch (error) {
+      console.error('Error fetching dashboard metrics:', error);
+      toast.error('Failed to load dashboard metrics');
+      // Set default values on error
+      setStats({
+        totalContacts: 0,
+        activeLeads: 0,
+        totalOpportunities: 0,
+        wonDeals: 0,
+        totalValue: 0,
+        recentActivities: [],
+        pipelineDistribution: []
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="space-y-8">
+      {/* Time Range Selector */}
+      <div className="flex items-center justify-between">
+        <div className="flex gap-2">
+          {['today', 'this_week', 'this_month', 'all_time'].map((range) => (
+            <button
+              key={range}
+              onClick={() => setTimeRange(range)}
+              className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out ${
+                timeRange === range 
+                  ? 'bg-purple-600 text-white' 
+                  : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'
+              }`}
+            >
+              {range.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+            </button>
+          ))}
+        </div>
+        {loading && <div className="text-gray-400">Loading...</div>}
+      </div>
+
       {/* Stats Overview */}
       <div className="grid md:grid-cols-4 gap-6">
         <div className="bg-gradient-to-br from-purple-900/50 to-purple-800/30 rounded-lg p-6 border border-purple-500/30">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-400 text-sm">Total Contacts</p>
-              <p className="text-3xl font-bold text-white">{stats.totalContacts}</p>
+              <p className="text-3xl font-bold text-white">{loading ? '-' : stats.totalContacts}</p>
             </div>
             <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,7 +99,7 @@ const CRMDashboard = () => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-400 text-sm">Active Leads</p>
-              <p className="text-3xl font-bold text-white">{stats.totalLeads}</p>
+              <p className="text-3xl font-bold text-white">{loading ? '-' : stats.activeLeads}</p>
             </div>
             <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,7 +113,7 @@ const CRMDashboard = () => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-400 text-sm">Opportunities</p>
-              <p className="text-3xl font-bold text-white">{stats.opportunities}</p>
+              <p className="text-3xl font-bold text-white">{loading ? '-' : stats.totalOpportunities}</p>
             </div>
             <div className="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,7 +127,7 @@ const CRMDashboard = () => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-400 text-sm">Won Deals</p>
-              <p className="text-3xl font-bold text-white">{stats.wonDeals}</p>
+              <p className="text-3xl font-bold text-white">{loading ? '-' : stats.wonDeals}</p>
             </div>
             <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,7 +141,7 @@ const CRMDashboard = () => {
       {/* Quick Actions */}
       <div className="flex flex-wrap gap-4">
         <button
-          onClick={() => navigate('/crm/contacts/new')}
+          onClick={() => navigate('/crm/contacts')}
           className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-semibold transition duration-150 ease-in-out flex items-center"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,7 +150,7 @@ const CRMDashboard = () => {
           New Contact
         </button>
         <button
-          onClick={() => navigate('/crm/leads/new')}
+          onClick={() => navigate('/crm/leads')}
           className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition duration-150 ease-in-out flex items-center"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,48 +172,60 @@ const CRMDashboard = () => {
       {/* Pipeline Overview */}
       <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
         <h3 className="text-xl font-semibold text-white mb-6">Lead Pipeline</h3>
-        <div className="grid md:grid-cols-5 gap-4">
-          {['New', 'Qualified', 'Proposition', 'Negotiation', 'Won/Lost'].map((stage, index) => {
-            const counts = [12, 8, 5, 3, 14];
-            const colors = ['gray', 'blue', 'yellow', 'purple', 'green'];
-            return (
-              <div key={stage} className={`bg-${colors[index]}-900/30 rounded-lg p-4 border border-${colors[index]}-500/30`}>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-300 text-sm font-medium">{stage}</span>
-                  <span className={`text-${colors[index]}-400 font-bold`}>{counts[index]}</span>
+        {stats.pipelineDistribution.length > 0 ? (
+          <div className="grid md:grid-cols-5 gap-4">
+            {stats.pipelineDistribution.map((stageData, index) => {
+              const colors = ['gray', 'blue', 'yellow', 'purple', 'green'];
+              const color = colors[index % colors.length];
+              const totalLeads = stats.pipelineDistribution.reduce((sum, s) => sum + s.count, 0);
+              return (
+                <div key={stageData.stage} className={`bg-${color}-900/30 rounded-lg p-4 border border-${color}-500/30`}>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-gray-300 text-sm font-medium capitalize">{stageData.stage}</span>
+                    <span className={`text-${color}-400 font-bold`}>{stageData.count}</span>
+                  </div>
+                  <div className={`w-full bg-gray-700 rounded-full h-2`}>
+                    <div 
+                      className={`bg-${color}-500 h-2 rounded-full`} 
+                      style={{ width: totalLeads > 0 ? `${(stageData.count / totalLeads) * 100}%` : '0%' }}
+                    ></div>
+                  </div>
                 </div>
-                <div className={`w-full bg-gray-700 rounded-full h-2`}>
-                  <div 
-                    className={`bg-${colors[index]}-500 h-2 rounded-full`} 
-                    style={{ width: `${(counts[index] / 42) * 100}%` }}
-                  ></div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="text-gray-400 text-center py-4">No pipeline data available</div>
+        )}
       </div>
 
       {/* Recent Activity */}
       <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
         <h3 className="text-xl font-semibold text-white mb-4">Recent Activity</h3>
-        <div className="space-y-3">
-          {stats.recentActivities.map((activity) => (
-            <div key={activity.id} className="flex items-center justify-between py-3 border-b border-gray-700 last:border-b-0">
-              <div className="flex items-center">
-                <div className={`w-2 h-2 rounded-full mr-3 ${
-                  activity.type === 'lead' ? 'bg-blue-500' :
-                  activity.type === 'contact' ? 'bg-purple-500' :
-                  activity.type === 'deal' ? 'bg-green-500' : 'bg-yellow-500'
-                }`}></div>
-                <div>
-                  <p className="text-gray-300">{activity.message}</p>
-                  <p className="text-gray-500 text-sm">{activity.time}</p>
+        {stats.recentActivities.length > 0 ? (
+          <div className="space-y-3">
+            {stats.recentActivities.map((activity) => (
+              <div key={activity._id || activity.id} className="flex items-center justify-between py-3 border-b border-gray-700 last:border-b-0">
+                <div className="flex items-center">
+                  <div className={`w-2 h-2 rounded-full mr-3 ${
+                    activity.type === 'call' ? 'bg-blue-500' :
+                    activity.type === 'email' ? 'bg-green-500' :
+                    activity.type === 'meeting' ? 'bg-purple-500' :
+                    activity.type === 'note' ? 'bg-yellow-500' : 'bg-red-500'
+                  }`}></div>
+                  <div>
+                    <p className="text-gray-300">{activity.description || activity.message}</p>
+                    <p className="text-gray-500 text-sm">
+                      {new Date(activity.createdAt).toLocaleDateString()} at {new Date(activity.createdAt).toLocaleTimeString()}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-gray-400 text-center py-4">No recent activities</div>
+        )}
       </div>
     </div>
   );

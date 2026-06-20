@@ -3,16 +3,8 @@ import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import ProtectedRoute from '../components/ProtectedRoute';
-
-// Sample leads data
-const sampleLeads = [
-  { id: 1, name: 'Acme Corp Deal', company: 'Acme Corporation', contact: 'John Doe', email: 'john@acme.com', value: 50000, stage: 'new', priority: 'high', source: 'Website', lastActivity: '2 hours ago' },
-  { id: 2, name: 'TechStart Partnership', company: 'TechStart Inc', contact: 'Jane Smith', email: 'jane@techstart.com', value: 75000, stage: 'qualified', priority: 'high', source: 'Referral', lastActivity: '1 day ago' },
-  { id: 3, name: 'Enterprise Solution', company: 'Big Enterprise', contact: 'Mike Johnson', email: 'mike@bigenterprise.com', value: 120000, stage: 'proposition', priority: 'medium', source: 'Email Campaign', lastActivity: '3 days ago' },
-  { id: 4, name: 'SMB Package', company: 'SmallBiz Co', contact: 'Sarah Williams', email: 'sarah@smallbiz.com', value: 15000, stage: 'negotiation', priority: 'low', source: 'Social Media', lastActivity: '5 hours ago' },
-  { id: 5, name: 'Startup Deal', company: 'New Startup', contact: 'David Brown', email: 'david@startup.com', value: 25000, stage: 'won', priority: 'medium', source: 'Event', lastActivity: '1 week ago' },
-  { id: 6, name: 'Lost Opportunity', company: 'Competitor Win', contact: 'Tom Wilson', email: 'tom@competitor.com', value: 30000, stage: 'lost', priority: 'low', source: 'Cold Call', lastActivity: '2 weeks ago' }
-];
+import { crmAPI } from '../services/api';
+import toast from 'react-hot-toast';
 
 const stages = [
   { id: 'new', name: 'New', color: 'gray' },
@@ -24,10 +16,32 @@ const stages = [
 ];
 
 function Leads() {
-  const [leads, setLeads] = useState(sampleLeads);
+  const [leads, setLeads] = useState([]);
   const [draggedLead, setDraggedLead] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
-  const [viewMode, setViewMode] = useState('pipeline'); // 'pipeline' or 'list'
+  const [viewMode, setViewMode] = useState('pipeline');
+  const [loading, setLoading] = useState(true);
+  const [statusFilter, setStatusFilter] = useState('all');
+
+  useEffect(() => {
+    fetchLeads();
+  }, [statusFilter]);
+
+  const fetchLeads = async () => {
+    try {
+      setLoading(true);
+      const params = {};
+      if (statusFilter !== 'all') params.status = statusFilter;
+      
+      const response = await crmAPI.getLeads(params);
+      setLeads(response.leads || []);
+    } catch (error) {
+      console.error('Error fetching leads:', error);
+      toast.error('Failed to load leads');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleDragStart = (lead) => {
     setDraggedLead(lead);
@@ -37,30 +51,54 @@ function Leads() {
     e.preventDefault();
   };
 
-  const handleDrop = (e, stageId) => {
+  const handleDrop = async (e, stageId) => {
     e.preventDefault();
     if (draggedLead) {
-      const updatedLeads = leads.map(lead => 
-        lead.id === draggedLead.id ? { ...lead, stage: stageId } : lead
-      );
-      setLeads(updatedLeads);
+      try {
+        await crmAPI.updateLead(draggedLead._id || draggedLead.id, { status: stageId });
+        toast.success('Lead stage updated');
+        fetchLeads();
+      } catch (error) {
+        console.error('Error updating lead stage:', error);
+        toast.error('Failed to update lead stage');
+      }
       setDraggedLead(null);
     }
   };
 
-  const handleAddLead = (newLead) => {
-    const lead = {
-      ...newLead,
-      id: Math.max(...leads.map(l => l.id), 0) + 1,
-      stage: 'new',
-      lastActivity: 'Just now'
-    };
-    setLeads([...leads, lead]);
-    setShowAddModal(false);
+  const handleAddLead = async (newLead) => {
+    try {
+      const leadData = {
+        name: newLead.name,
+        email: newLead.email,
+        phone: newLead.contact,
+        status: 'new',
+        source: newLead.source,
+        value: parseInt(newLead.value) || 0,
+        customFields: {}
+      };
+      
+      // Only include company if it's a valid MongoDB ObjectId (24 hex characters)
+      // Otherwise, store company name in customFields
+      const objectIdRegex = /^[0-9a-fA-F]{24}$/;
+      if (newLead.company && objectIdRegex.test(newLead.company)) {
+        leadData.company = newLead.company;
+      } else if (newLead.company) {
+        leadData.customFields.companyName = newLead.company;
+      }
+      
+      await crmAPI.createLead(leadData);
+      toast.success('Lead created successfully');
+      setShowAddModal(false);
+      fetchLeads();
+    } catch (error) {
+      console.error('Error creating lead:', error);
+      toast.error('Failed to create lead');
+    }
   };
 
-  const getTotalValue = () => leads.reduce((sum, lead) => sum + (lead.stage !== 'lost' ? lead.value : 0), 0);
-  const getWonValue = () => leads.filter(l => l.stage === 'won').reduce((sum, lead) => sum + lead.value, 0);
+  const getTotalValue = () => leads.reduce((sum, lead) => sum + (lead.status !== 'lost' ? (lead.value || 0) : 0), 0);
+  const getWonValue = () => leads.filter(l => l.status === 'won').reduce((sum, lead) => sum + (lead.value || 0), 0);
 
   return (
     <ProtectedRoute>
@@ -78,11 +116,11 @@ function Leads() {
                   <h1 className="h1 mb-2">Leads & Pipeline</h1>
                   <p className="text-xl text-gray-400">Manage your sales pipeline</p>
                 </div>
-                <div className="mt-4 md:mt-0 flex gap-3">
+                <div className="mt-4 md:mt-0 flex gap-3 relative z-10">
                   <div className="flex bg-gray-800 rounded-md p-1">
                     <button
                       onClick={() => setViewMode('pipeline')}
-                      className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out ${
+                      className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out cursor-pointer ${
                         viewMode === 'pipeline' ? 'bg-purple-600 text-white' : 'text-gray-400 hover:text-white'
                       }`}
                     >
@@ -90,7 +128,7 @@ function Leads() {
                     </button>
                     <button
                       onClick={() => setViewMode('list')}
-                      className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out ${
+                      className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out cursor-pointer ${
                         viewMode === 'list' ? 'bg-purple-600 text-white' : 'text-gray-400 hover:text-white'
                       }`}
                     >
@@ -99,7 +137,7 @@ function Leads() {
                   </div>
                   <button
                     onClick={() => setShowAddModal(true)}
-                    className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-semibold transition duration-150 ease-in-out flex items-center"
+                    className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-semibold transition duration-150 ease-in-out flex items-center cursor-pointer"
                   >
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
@@ -113,20 +151,20 @@ function Leads() {
               <div className="grid md:grid-cols-4 gap-6 mb-8">
                 <div className="bg-gradient-to-br from-blue-900/50 to-blue-800/30 rounded-lg p-6 border border-blue-500/30">
                   <p className="text-gray-400 text-sm">Total Pipeline Value</p>
-                  <p className="text-3xl font-bold text-white">€{getTotalValue().toLocaleString()}</p>
+                  <p className="text-3xl font-bold text-white">{loading ? '-' : `€${getTotalValue().toLocaleString()}`}</p>
                 </div>
                 <div className="bg-gradient-to-br from-green-900/50 to-green-800/30 rounded-lg p-6 border border-green-500/30">
                   <p className="text-gray-400 text-sm">Won Deals</p>
-                  <p className="text-3xl font-bold text-white">€{getWonValue().toLocaleString()}</p>
+                  <p className="text-3xl font-bold text-white">{loading ? '-' : `€${getWonValue().toLocaleString()}`}</p>
                 </div>
                 <div className="bg-gradient-to-br from-purple-900/50 to-purple-800/30 rounded-lg p-6 border border-purple-500/30">
                   <p className="text-gray-400 text-sm">Active Leads</p>
-                  <p className="text-3xl font-bold text-white">{leads.filter(l => l.stage !== 'won' && l.stage !== 'lost').length}</p>
+                  <p className="text-3xl font-bold text-white">{loading ? '-' : leads.filter(l => l.status !== 'won' && l.status !== 'lost').length}</p>
                 </div>
                 <div className="bg-gradient-to-br from-yellow-900/50 to-yellow-800/30 rounded-lg p-6 border border-yellow-500/30">
                   <p className="text-gray-400 text-sm">Win Rate</p>
                   <p className="text-3xl font-bold text-white">
-                    {Math.round((leads.filter(l => l.stage === 'won').length / leads.filter(l => l.stage === 'won' || l.stage === 'lost').length) * 100) || 0}%
+                    {loading ? '-' : `${Math.round((leads.filter(l => l.status === 'won').length / Math.max(1, leads.filter(l => l.status === 'won' || l.status === 'lost').length)) * 100)}%`}
                   </p>
                 </div>
               </div>
@@ -135,8 +173,8 @@ function Leads() {
               {viewMode === 'pipeline' ? (
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
                   {stages.map((stage) => {
-                    const stageLeads = leads.filter(lead => lead.stage === stage.id);
-                    const stageValue = stageLeads.reduce((sum, lead) => sum + lead.value, 0);
+                    const stageLeads = leads.filter(lead => lead.status === stage.id);
+                    const stageValue = stageLeads.reduce((sum, lead) => sum + (lead.value || 0), 0);
                     
                     return (
                       <div
@@ -154,31 +192,30 @@ function Leads() {
                         </div>
                         
                         <div className="p-3 space-y-3">
-                          {stageLeads.map((lead) => (
-                            <div
-                              key={lead.id}
-                              draggable
-                              onDragStart={() => handleDragStart(lead)}
-                              className={`bg-gray-800 p-3 rounded-lg border border-gray-700 cursor-move hover:border-${stage.color}-500/50 transition duration-150 ease-in-out`}
-                            >
-                              <div className="flex justify-between items-start mb-2">
-                                <h4 className="text-white font-medium text-sm">{lead.name}</h4>
-                                <span className={`px-2 py-1 rounded text-xs font-semibold ${
-                                  lead.priority === 'high' ? 'bg-red-600 text-white' :
-                                  lead.priority === 'medium' ? 'bg-yellow-600 text-white' :
-                                  'bg-gray-600 text-gray-300'
-                                }`}>
-                                  {lead.priority}
-                                </span>
+                          {loading ? (
+                            <p className="text-gray-400 text-xs text-center">Loading...</p>
+                          ) : stageLeads.length === 0 ? (
+                            <p className="text-gray-500 text-xs text-center">No leads</p>
+                          ) : (
+                            stageLeads.map((lead) => (
+                              <div
+                                key={lead._id || lead.id}
+                                draggable
+                                onDragStart={() => handleDragStart(lead)}
+                                className={`bg-gray-800 p-3 rounded-lg border border-gray-700 cursor-move hover:border-${stage.color}-500/50 transition duration-150 ease-in-out`}
+                              >
+                                <div className="flex justify-between items-start mb-2">
+                                  <h4 className="text-white font-medium text-sm">{lead.name}</h4>
+                                </div>
+                                <p className="text-gray-400 text-xs mb-1">{lead.company || '-'}</p>
+                                <p className="text-gray-500 text-xs mb-2">{lead.email || lead.phone || '-'}</p>
+                                <div className="flex justify-between items-center">
+                                  <span className="text-purple-400 text-sm font-semibold">€{(lead.value || 0).toLocaleString()}</span>
+                                  <span className="text-gray-500 text-xs">{lead.updatedAt ? new Date(lead.updatedAt).toLocaleDateString() : 'Never'}</span>
+                                </div>
                               </div>
-                              <p className="text-gray-400 text-xs mb-1">{lead.company}</p>
-                              <p className="text-gray-500 text-xs mb-2">{lead.contact}</p>
-                              <div className="flex justify-between items-center">
-                                <span className="text-purple-400 text-sm font-semibold">€{lead.value.toLocaleString()}</span>
-                                <span className="text-gray-500 text-xs">{lead.lastActivity}</span>
-                              </div>
-                            </div>
-                          ))}
+                            ))
+                          )}
                         </div>
                       </div>
                     );
@@ -187,56 +224,57 @@ function Leads() {
               ) : (
                 /* List View */
                 <div className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
-                  <table className="w-full">
-                    <thead className="bg-gray-700">
-                      <tr>
-                        <th className="p-4 text-left text-gray-300 font-semibold">Lead Name</th>
-                        <th className="p-4 text-left text-gray-300 font-semibold">Company</th>
-                        <th className="p-4 text-left text-gray-300 font-semibold">Value</th>
-                        <th className="p-4 text-left text-gray-300 font-semibold">Stage</th>
-                        <th className="p-4 text-left text-gray-300 font-semibold">Priority</th>
-                        <th className="p-4 text-left text-gray-300 font-semibold">Source</th>
-                        <th className="p-4 text-left text-gray-300 font-semibold">Last Activity</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-700">
-                      {leads.map((lead) => (
-                        <tr key={lead.id} className="hover:bg-gray-700/50">
-                          <td className="p-4">
-                            <div>
-                              <p className="text-white font-medium">{lead.name}</p>
-                              <p className="text-gray-400 text-sm">{lead.contact}</p>
-                            </div>
-                          </td>
-                          <td className="p-4 text-white">{lead.company}</td>
-                          <td className="p-4 text-purple-400 font-semibold">€{lead.value.toLocaleString()}</td>
-                          <td className="p-4">
-                            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                              lead.stage === 'new' ? 'bg-gray-600 text-gray-300' :
-                              lead.stage === 'qualified' ? 'bg-blue-600 text-white' :
-                              lead.stage === 'proposition' ? 'bg-yellow-600 text-white' :
-                              lead.stage === 'negotiation' ? 'bg-purple-600 text-white' :
-                              lead.stage === 'won' ? 'bg-green-600 text-white' :
-                              'bg-red-600 text-white'
-                            }`}>
-                              {lead.stage}
-                            </span>
-                          </td>
-                          <td className="p-4">
-                            <span className={`px-2 py-1 rounded text-xs font-semibold ${
-                              lead.priority === 'high' ? 'bg-red-600 text-white' :
-                              lead.priority === 'medium' ? 'bg-yellow-600 text-white' :
-                              'bg-gray-600 text-gray-300'
-                            }`}>
-                              {lead.priority}
-                            </span>
-                          </td>
-                          <td className="p-4 text-gray-400">{lead.source}</td>
-                          <td className="p-4 text-gray-400">{lead.lastActivity}</td>
+                  {loading ? (
+                    <div className="p-8 text-center">
+                      <p className="text-gray-400">Loading leads...</p>
+                    </div>
+                  ) : (
+                    <table className="w-full">
+                      <thead className="bg-gray-700">
+                        <tr>
+                          <th className="p-4 text-left text-gray-300 font-semibold">Lead Name</th>
+                          <th className="p-4 text-left text-gray-300 font-semibold">Company</th>
+                          <th className="p-4 text-left text-gray-300 font-semibold">Value</th>
+                          <th className="p-4 text-left text-gray-300 font-semibold">Stage</th>
+                          <th className="p-4 text-left text-gray-300 font-semibold">Source</th>
+                          <th className="p-4 text-left text-gray-300 font-semibold">Last Activity</th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody className="divide-y divide-gray-700">
+                        {leads.map((lead) => (
+                          <tr key={lead._id || lead.id} className="hover:bg-gray-700/50">
+                            <td className="p-4">
+                              <div>
+                                <p className="text-white font-medium">{lead.name}</p>
+                                <p className="text-gray-400 text-sm">{lead.email || lead.phone || '-'}</p>
+                              </div>
+                            </td>
+                            <td className="p-4 text-white">{lead.company || '-'}</td>
+                            <td className="p-4 text-purple-400 font-semibold">€{(lead.value || 0).toLocaleString()}</td>
+                            <td className="p-4">
+                              <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                                lead.status === 'new' ? 'bg-gray-600 text-gray-300' :
+                                lead.status === 'qualified' ? 'bg-blue-600 text-white' :
+                                lead.status === 'proposition' ? 'bg-yellow-600 text-white' :
+                                lead.status === 'negotiation' ? 'bg-purple-600 text-white' :
+                                lead.status === 'won' ? 'bg-green-600 text-white' :
+                                'bg-red-600 text-white'
+                              }`}>
+                                {lead.status || 'Unknown'}
+                              </span>
+                            </td>
+                            <td className="p-4 text-gray-400">{lead.source || '-'}</td>
+                            <td className="p-4 text-gray-400">{lead.updatedAt ? new Date(lead.updatedAt).toLocaleDateString() : 'Never'}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  )}
+                  {!loading && leads.length === 0 && (
+                    <div className="p-8 text-center">
+                      <p className="text-gray-400 text-lg">No leads found</p>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -262,7 +300,6 @@ function AddLeadModal({ onClose, onAdd }) {
     contact: '',
     email: '',
     value: '',
-    priority: 'medium',
     source: 'Website'
   });
 
@@ -331,32 +368,20 @@ function AddLeadModal({ onClose, onAdd }) {
               />
             </div>
             <div>
-              <label className="block text-gray-400 text-sm mb-1">Priority</label>
+              <label className="block text-gray-400 text-sm mb-1">Source</label>
               <select
-                value={formData.priority}
-                onChange={(e) => setFormData({...formData, priority: e.target.value})}
+                value={formData.source}
+                onChange={(e) => setFormData({...formData, source: e.target.value})}
                 className="w-full bg-gray-700 text-white px-3 py-2 rounded-md border border-gray-600 focus:border-purple-500 focus:outline-none"
               >
-                <option value="high">High</option>
-                <option value="medium">Medium</option>
-                <option value="low">Low</option>
+                <option value="Website">Website</option>
+                <option value="Referral">Referral</option>
+                <option value="Email Campaign">Email Campaign</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Cold Call">Cold Call</option>
+                <option value="Event">Event</option>
               </select>
             </div>
-          </div>
-          <div>
-            <label className="block text-gray-400 text-sm mb-1">Source</label>
-            <select
-              value={formData.source}
-              onChange={(e) => setFormData({...formData, source: e.target.value})}
-              className="w-full bg-gray-700 text-white px-3 py-2 rounded-md border border-gray-600 focus:border-purple-500 focus:outline-none"
-            >
-              <option value="Website">Website</option>
-              <option value="Referral">Referral</option>
-              <option value="Email Campaign">Email Campaign</option>
-              <option value="Social Media">Social Media</option>
-              <option value="Cold Call">Cold Call</option>
-              <option value="Event">Event</option>
-            </select>
           </div>
           <div className="flex gap-3 mt-6">
             <button

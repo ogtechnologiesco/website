@@ -271,11 +271,15 @@ export const crmAPI = {
     return apiGet(`/api/contacts?${queryString}`);
   },
   
+  getContact: (contactId) => apiGet(`/api/contacts/${contactId}`),
+  
   createContact: (contactData) => apiPost('/api/contacts', contactData),
   
   updateContact: (contactId, updateData) => apiPut(`/api/contacts/${contactId}`, updateData),
   
   deleteContact: (contactId) => apiDelete(`/api/contacts/${contactId}`),
+  
+  updateContactCompany: (contactId, companyId) => apiPut(`/api/contacts/${contactId}/company`, { companyId }),
   
   // Companies
   getCompanies: (params = {}) => {
@@ -283,14 +287,76 @@ export const crmAPI = {
     return apiGet(`/api/companies?${queryString}`);
   },
   
+  getCompany: (companyId) => apiGet(`/api/companies/${companyId}`),
+  
   createCompany: (companyData) => apiPost('/api/companies', companyData),
+  
+  updateCompany: (companyId, updateData) => apiPut(`/api/companies/${companyId}`, updateData),
+  
+  deleteCompany: (companyId) => apiDelete(`/api/companies/${companyId}`),
   
   getCompanyContacts: (companyId, params = {}) => {
     const queryString = new URLSearchParams(params).toString();
     return apiGet(`/api/companies/${companyId}/contacts?${queryString}`);
   },
   
-  // Tickets
+  // Leads
+  getLeads: (params = {}) => {
+    const queryString = new URLSearchParams(params).toString();
+    return apiGet(`/api/leads?${queryString}`);
+  },
+  
+  getLead: (leadId) => apiGet(`/api/leads/${leadId}`),
+  
+  createLead: (leadData) => apiPost('/api/leads', leadData),
+  
+  updateLead: (leadId, updateData) => apiPut(`/api/leads/${leadId}`, updateData),
+  
+  deleteLead: (leadId) => apiDelete(`/api/leads/${leadId}`),
+  
+  // Opportunities
+  getOpportunities: (params = {}) => {
+    const queryString = new URLSearchParams(params).toString();
+    return apiGet(`/api/opportunities?${queryString}`);
+  },
+  
+  getOpportunity: (opportunityId) => apiGet(`/api/opportunities/${opportunityId}`),
+  
+  createOpportunity: (opportunityData) => apiPost('/api/opportunities', opportunityData),
+  
+  updateOpportunity: (opportunityId, updateData) => apiPut(`/api/opportunities/${opportunityId}`, updateData),
+  
+  deleteOpportunity: (opportunityId) => apiDelete(`/api/opportunities/${opportunityId}`),
+  
+  // Activities
+  getActivities: (params = {}) => {
+    const queryString = new URLSearchParams(params).toString();
+    return apiGet(`/api/activities?${queryString}`);
+  },
+  
+  getActivity: (activityId) => apiGet(`/api/activities/${activityId}`),
+  
+  createActivity: (activityData) => apiPost('/api/activities', activityData),
+  
+  updateActivity: (activityId, updateData) => apiPut(`/api/activities/${activityId}`, updateData),
+  
+  deleteActivity: (activityId) => apiDelete(`/api/activities/${activityId}`),
+  
+  // Dashboard
+  getDashboardMetrics: (timeRange = 'all_time') => apiGet(`/api/dashboard/metrics?timeRange=${timeRange}`),
+  
+  // Import
+  importContacts: (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    return api.post('/api/import/contacts', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }).then(response => response.data);
+  },
+  
+  // Tickets (existing)
   getTickets: (params = {}) => {
     const queryString = new URLSearchParams(params).toString();
     return apiGet(`/api/tickets?${queryString}`);

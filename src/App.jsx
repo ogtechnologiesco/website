@@ -38,6 +38,8 @@ import Contacts from './pages/Contacts';
 import Leads from './pages/Leads';
 import Opportunities from './pages/Opportunities';
 import Activities from './pages/Activities';
+import Import from './pages/Import';
+import Companies from './pages/Companies';
 import Alliance from './pages/Alliance';
 import Ventures from './pages/Ventures';
 import Portfolio from './pages/Portfolio';
@@ -116,6 +118,8 @@ function App() {
         <Route path="/crm/leads" element={<Leads/>} />
         <Route path="/crm/opportunities" element={<Opportunities/>} />
         <Route path="/crm/activities" element={<Activities/>} />
+        <Route path="/crm/import" element={<Import/>} />
+        <Route path="/crm/companies" element={<Companies/>} />
         <Route exact path="/alliance" element={<Alliance/>} />
         <Route exact path="/ventures" element={<Ventures/>} />
         <Route exact path="/portfolio" element={<Portfolio/>} />

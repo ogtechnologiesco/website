@@ -3,18 +3,8 @@ import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import ProtectedRoute from '../components/ProtectedRoute';
-
-// Sample activities data
-const sampleActivities = [
-  { id: 1, type: 'call', title: 'Call with Acme Corp', description: 'Discussed implementation timeline and pricing', contact: 'John Doe', company: 'Acme Corp', date: '2024-03-20', time: '10:00 AM', duration: '30 min', outcome: 'positive', relatedTo: 'Enterprise Software License', relatedType: 'opportunity' },
-  { id: 2, type: 'email', title: 'Proposal sent to TechCorp', description: 'Sent detailed proposal for CRM implementation', contact: 'Jane Smith', company: 'TechCorp', date: '2024-03-19', time: '2:30 PM', duration: null, outcome: 'pending', relatedTo: 'CRM Implementation', relatedType: 'opportunity' },
-  { id: 3, type: 'meeting', title: 'Demo meeting with StartupXYZ', description: 'Product demo for team of 5 decision makers', contact: 'Mike Chen', company: 'StartupXYZ', date: '2024-03-19', time: '11:00 AM', duration: '1 hour', outcome: 'positive', relatedTo: 'StartupXYZ Lead', relatedType: 'lead' },
-  { id: 4, type: 'note', title: 'Updated contact info', description: 'Updated phone number and added secondary email', contact: 'Sarah Williams', company: 'BigCorp', date: '2024-03-18', time: '4:15 PM', duration: null, outcome: null, relatedTo: 'Sarah Williams', relatedType: 'contact' },
-  { id: 5, type: 'task', title: 'Follow-up call scheduled', description: 'Schedule follow-up call next week to discuss contract terms', contact: 'David Brown', company: 'InnovateTech', date: '2024-03-18', time: '9:00 AM', duration: null, outcome: 'pending', relatedTo: 'Custom Development', relatedType: 'opportunity' },
-  { id: 6, type: 'email', title: 'Welcome email sent', description: 'Sent onboarding materials and welcome package', contact: 'Emma Davis', company: 'LearnFast Inc', date: '2024-03-17', time: '3:00 PM', duration: null, outcome: 'completed', relatedTo: 'Training Package', relatedType: 'opportunity' },
-  { id: 7, type: 'call', title: 'Support call resolved', description: 'Helped customer resolve dashboard access issue', contact: 'Tom Wilson', company: 'ServiceCo', date: '2024-03-17', time: '11:30 AM', duration: '15 min', outcome: 'completed', relatedTo: 'Support Ticket #1234', relatedType: 'ticket' },
-  { id: 8, type: 'meeting', title: 'Quarterly review', description: 'Q1 performance review and planning for Q2', contact: 'Lisa Johnson', company: 'TechCorp Global', date: '2024-03-16', time: '2:00 PM', duration: '1.5 hours', outcome: 'positive', relatedTo: 'Enterprise Account', relatedType: 'account' }
-];
+import { crmAPI } from '../services/api';
+import toast from 'react-hot-toast';
 
 const activityIcons = {
   call: (
@@ -60,57 +50,90 @@ const outcomeColors = {
 };
 
 function Activities() {
-  const [activities, setActivities] = useState(sampleActivities);
-  const [filteredActivities, setFilteredActivities] = useState(sampleActivities);
+  const [activities, setActivities] = useState([]);
+  const [filteredActivities, setFilteredActivities] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('all');
   const [dateFilter, setDateFilter] = useState('all');
   const [showAddModal, setShowAddModal] = useState(false);
   const [viewMode, setViewMode] = useState('timeline');
+  const [loading, setLoading] = useState(true);
 
-  // Filter activities
   useEffect(() => {
-    let filtered = activities;
-    
+    fetchActivities();
+  }, [typeFilter, dateFilter]);
+
+  const fetchActivities = async () => {
+    try {
+      setLoading(true);
+      const params = {};
+      if (searchTerm) params.search = searchTerm;
+      if (typeFilter !== 'all') params.type = typeFilter;
+      if (dateFilter !== 'all') params.dateRange = dateFilter;
+
+      const response = await crmAPI.getActivities(params);
+      setActivities(response.activities || []);
+      setFilteredActivities(response.activities || []);
+    } catch (error) {
+      console.error('Error fetching activities:', error);
+      toast.error('Failed to load activities');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Filter activities client-side for search
+  useEffect(() => {
     if (searchTerm) {
-      filtered = filtered.filter(activity => 
+      const filtered = activities.filter(activity => 
         activity.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        activity.contact.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        activity.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        activity.description.toLowerCase().includes(searchTerm.toLowerCase())
+        (activity.contact && activity.contact.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (activity.company && activity.company.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (activity.description && activity.description.toLowerCase().includes(searchTerm.toLowerCase()))
       );
+      setFilteredActivities(filtered);
+    } else {
+      setFilteredActivities(activities);
     }
-    
-    if (typeFilter !== 'all') {
-      filtered = filtered.filter(activity => activity.type === typeFilter);
-    }
-    
-    if (dateFilter !== 'all') {
-      const today = new Date().toISOString().split('T')[0];
-      const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+  }, [searchTerm, activities]);
+
+  const handleAddActivity = async (activityData) => {
+    try {
+      const data = {
+        type: activityData.type,
+        title: activityData.title,
+        description: activityData.description,
+        contact: activityData.contact,
+        company: activityData.company,
+        date: activityData.date,
+        time: activityData.time,
+        duration: activityData.duration,
+        outcome: activityData.outcome,
+        relatedTo: activityData.relatedTo,
+        relatedType: activityData.relatedType
+      };
       
-      if (dateFilter === 'today') {
-        filtered = filtered.filter(activity => activity.date === today);
-      } else if (dateFilter === 'yesterday') {
-        filtered = filtered.filter(activity => activity.date === yesterday);
-      } else if (dateFilter === 'week') {
-        const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString().split('T')[0];
-        filtered = filtered.filter(activity => activity.date >= weekAgo);
+      await crmAPI.createActivity(data);
+      toast.success('Activity created successfully');
+      setShowAddModal(false);
+      fetchActivities();
+    } catch (error) {
+      console.error('Error creating activity:', error);
+      toast.error('Failed to create activity');
+    }
+  };
+
+  const handleDeleteActivity = async (activityId) => {
+    if (window.confirm('Are you sure you want to delete this activity?')) {
+      try {
+        await crmAPI.deleteActivity(activityId);
+        toast.success('Activity deleted successfully');
+        fetchActivities();
+      } catch (error) {
+        console.error('Error deleting activity:', error);
+        toast.error('Failed to delete activity');
       }
     }
-    
-    setFilteredActivities(filtered);
-  }, [activities, searchTerm, typeFilter, dateFilter]);
-
-  const handleAddActivity = (activityData) => {
-    const newActivity = {
-      ...activityData,
-      id: Math.max(...activities.map(a => a.id), 0) + 1,
-      date: new Date().toISOString().split('T')[0],
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-    };
-    setActivities([newActivity, ...activities]);
-    setShowAddModal(false);
   };
 
   // Group activities by date for timeline view
@@ -142,11 +165,11 @@ function Activities() {
                   <h1 className="h1 mb-2">Activities</h1>
                   <p className="text-xl text-gray-400">Track all interactions and touchpoints</p>
                 </div>
-                <div className="mt-4 md:mt-0 flex gap-3">
+                <div className="mt-4 md:mt-0 flex gap-3 relative z-10">
                   <div className="flex bg-gray-800 rounded-md p-1">
                     <button
                       onClick={() => setViewMode('timeline')}
-                      className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out ${
+                      className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out cursor-pointer ${
                         viewMode === 'timeline' ? 'bg-purple-600 text-white' : 'text-gray-400 hover:text-white'
                       }`}
                     >
@@ -154,7 +177,7 @@ function Activities() {
                     </button>
                     <button
                       onClick={() => setViewMode('list')}
-                      className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out ${
+                      className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out cursor-pointer ${
                         viewMode === 'list' ? 'bg-purple-600 text-white' : 'text-gray-400 hover:text-white'
                       }`}
                     >
@@ -163,7 +186,7 @@ function Activities() {
                   </div>
                   <button
                     onClick={() => setShowAddModal(true)}
-                    className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-semibold transition duration-150 ease-in-out flex items-center"
+                    className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-semibold transition duration-150 ease-in-out flex items-center cursor-pointer"
                   >
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
@@ -241,7 +264,11 @@ function Activities() {
               {/* Timeline View */}
               {viewMode === 'timeline' ? (
                 <div className="space-y-8">
-                  {sortedDates.length === 0 ? (
+                  {loading ? (
+                    <div className="text-center py-12">
+                      <p className="text-gray-400">Loading activities...</p>
+                    </div>
+                  ) : sortedDates.length === 0 ? (
                     <div className="text-center py-12">
                       <p className="text-gray-400 text-lg">No activities found</p>
                     </div>
@@ -257,7 +284,7 @@ function Activities() {
                         
                         <div className="space-y-4 ml-4">
                           {groupedActivities[date].map((activity) => (
-                            <div key={activity.id} className="flex">
+                            <div key={activity._id || activity.id} className="flex">
                               <div className="flex flex-col items-center mr-4">
                                 <div className={`w-12 h-12 ${activityColors[activity.type]} rounded-full flex items-center justify-center`}>
                                   {activityIcons[activity.type]}
@@ -269,7 +296,7 @@ function Activities() {
                                 <div className="flex justify-between items-start mb-2">
                                   <div>
                                     <h3 className="text-white font-semibold">{activity.title}</h3>
-                                    <p className="text-gray-400 text-sm">{activity.time} • {activity.contact} • {activity.company}</p>
+                                    <p className="text-gray-400 text-sm">{activity.time || ''} • {activity.contact || '-'} • {activity.company || '-'}</p>
                                   </div>
                                   <div className="flex items-center gap-2">
                                     {activity.outcome && (
@@ -277,15 +304,18 @@ function Activities() {
                                         {activity.outcome}
                                       </span>
                                     )}
-                                    <button className="text-gray-400 hover:text-white p-1">
+                                    <button 
+                                      onClick={() => handleDeleteActivity(activity._id || activity.id)}
+                                      className="text-red-400 hover:text-red-300 p-1"
+                                    >
                                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                       </svg>
                                     </button>
                                   </div>
                                 </div>
                                 
-                                <p className="text-gray-300 mb-3">{activity.description}</p>
+                                <p className="text-gray-300 mb-3">{activity.description || ''}</p>
                                 
                                 {activity.duration && (
                                   <p className="text-gray-500 text-sm mb-2">
@@ -298,7 +328,7 @@ function Activities() {
                                     to={`/${activity.relatedType === 'contact' ? 'crm/contacts' : activity.relatedType === 'lead' ? 'crm/leads' : 'crm/opportunities'}`}
                                     className="text-purple-400 hover:text-purple-300 text-sm"
                                   >
-                                    Related to: {activity.relatedTo}
+                                    Related to: {activity.relatedTo || '-'}
                                   </Link>
                                 </div>
                               </div>
