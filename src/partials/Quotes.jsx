@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'; // import axios library to make HTTP requests
 
-function Quotes() {
+function Quotes({ doraData: initialDoraData = null }) {
   const [email, setEmail] = useState('');
   const [fullname, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -14,18 +14,74 @@ function Quotes() {
   const [submitError, setSubmitError] = useState(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
+  // DORA-specific fields - initialize from props if provided
+  const [doraData, setDoraData] = useState(initialDoraData || {
+    companyType: '',
+    blockchainPlatforms: '',
+    primaryTechFocus: '',
+    web3Protocols: '',
+    smartContractAuditStatus: '',
+    ictRiskManagement: '',
+    ictThirdPartyRisk: '',
+    digitalResilienceTesting: '',
+    ictIncidentReporting: '',
+    informationSharing: '',
+    criticalThirdPartyOversight: '',
+    complianceDeadlineAwareness: '',
+    timeline: '',
+    preferredContactMethod: '',
+    additionalComments: ''
+  });
+
+  // Update state when doraData prop changes
+  React.useEffect(() => {
+    if (initialDoraData) {
+      setDoraData(initialDoraData);
+      // Map basic DORA fields to quote form fields
+      if (initialDoraData.contactName) setName(initialDoraData.contactName);
+      if (initialDoraData.email) setEmail(initialDoraData.email);
+      if (initialDoraData.phone) setNumber(initialDoraData.phone);
+      if (initialDoraData.companyName) setCompany(initialDoraData.companyName);
+      if (initialDoraData.companySize) setCompanySize(initialDoraData.companySize);
+      if (initialDoraData.estimatedBudget) setBudget(initialDoraData.estimatedBudget);
+    }
+  }, [initialDoraData]);
+
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
     setIsSubmitting(true);
     setSubmitError(null);
+
+    // Map DORA fields to quote form fields
+    const mappedService = [
+      doraData.companyType ? `Company Type: ${doraData.companyType}` : null,
+      doraData.blockchainPlatforms ? `Blockchain Platforms: ${doraData.blockchainPlatforms}` : null,
+      doraData.primaryTechFocus ? `Primary Tech Focus: ${doraData.primaryTechFocus}` : null,
+      doraData.web3Protocols ? `Web3 Protocols: ${doraData.web3Protocols}` : null,
+      doraData.smartContractAuditStatus ? `Smart Contract Audit Status: ${doraData.smartContractAuditStatus}` : null,
+      doraData.timeline ? `Timeline: ${doraData.timeline}` : null,
+      doraData.preferredContactMethod ? `Preferred Contact Method: ${doraData.preferredContactMethod}` : null
+    ].filter(Boolean).join(' | ');
+
+    const mappedDescription = [
+      doraData.ictRiskManagement ? `ICT Risk Management: ${doraData.ictRiskManagement}` : null,
+      doraData.ictThirdPartyRisk ? `ICT Third-Party Risk: ${doraData.ictThirdPartyRisk}` : null,
+      doraData.digitalResilienceTesting ? `Digital Resilience Testing: ${doraData.digitalResilienceTesting}` : null,
+      doraData.ictIncidentReporting ? `ICT Incident Reporting: ${doraData.ictIncidentReporting}` : null,
+      doraData.informationSharing ? `Information Sharing: ${doraData.informationSharing}` : null,
+      doraData.criticalThirdPartyOversight ? `Critical Third-Party Oversight: ${doraData.criticalThirdPartyOversight}` : null,
+      doraData.complianceDeadlineAwareness ? `Compliance Deadline Awareness: ${doraData.complianceDeadlineAwareness}` : null,
+      doraData.additionalComments ? `Additional Comments: ${doraData.additionalComments}` : null
+    ].filter(Boolean).join('\n');
+
     const formData = {
       name: fullname,
       email,
       phone: number,
       company,
-      service,
-      description,
+      service: service || mappedService,
+      description: description || mappedDescription,
       budget,
       companySize,
     };

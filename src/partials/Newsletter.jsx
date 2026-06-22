@@ -12,11 +12,20 @@ function Newsletter() {
     setIsSubmitting(true);
     setSubmitError(null);
 
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setSubmitError('Please enter a valid email address.');
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const response = await axios.post('https://og-technologies.herokuapp.com/api/subscribe', { email });
       console.log(response.data);
       alert('Thanks for subscribing!');
       setSubmitSuccess(true);
+      setEmail('');
     } catch (error) {
       console.error(error);
       setSubmitError('An error occurred, please try again.');

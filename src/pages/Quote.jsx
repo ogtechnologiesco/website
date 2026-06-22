@@ -34,7 +34,7 @@ function Quote() {
               <div className="max-w-XL mx-auto">
                 <Container disableGutters maxWidth="xl" component="main" sx={{ pt: 1, pb: 6 }}>
 
-                  <Typography textAlignLast='right' textAlign="left" variant="h5" align="justify" color="white" component="p">
+                  <Typography textAlign="left" variant="h5" align="justify" color="white" component="div" sx={{ textAlignLast: 'right' }}>
 
 
                     Welcome to OG Technologies EU, where we create IT solutions that enhance business processes and help you adapt to the ever-evolving technological landscape. Our industry-leading IT consulting services are custom-tailored to help you achieve your business goals efficiently and cost-effectively.<br />
@@ -42,7 +42,7 @@ function Quote() {
                     We believe that behind every great solution, there's not only cutting-edge technology but also people's passion, creativity, and dedication. We deeply care about your success and aim to cultivate strong relationships built on trust and mutual growth.<br />
                     <br />
                     <br />
-                    <div >
+                    <div>
                       <h3 className="h3"> Our Services: </h3>
                     </div>
                     <br />
@@ -66,8 +66,8 @@ function Quote() {
                     Our team can help you design, develop, and implement custom software solutions that cater to your specific business needs.<br />
                     <br />
                     <br />
-                   
-                    <div >
+
+                    <div>
                       <h3 className="h3"> Pricing: </h3>
                     </div>
                     <br />
@@ -78,7 +78,7 @@ function Quote() {
           <Quotes></Quotes>
           <br />
           <br />
-          <Typography textAlignLast='right' textAlign="left" variant="h5" align="justify" color="white" component="p" >
+          <Typography textAlign="left" variant="h5" align="justify" color="white" component="div" sx={{ textAlignLast: 'right' }}>
           For any further information, feel free to email us at hi@ogtechnologies.co <br></br>
           Let's shape the future of your business, together !
           </Typography>

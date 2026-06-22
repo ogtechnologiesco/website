@@ -103,6 +103,9 @@ function Header() {
                 <Link to="/standards" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Standards </Link>
               </li>
               <li>
+                <Link to="/dora" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> DORA </Link>
+              </li>
+              <li>
                 <Link to="/products" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Products </Link>
               </li>
               <li>
@@ -242,6 +245,9 @@ function Header() {
                 </li>
                 <li>
                   <Link to="/standards" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Standards</Link>
+                </li>
+                <li>
+                  <Link to="/dora" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">DORA</Link>
                 </li>
                 <li>
                   <Link to="/products" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Products</Link>

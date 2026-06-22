@@ -254,6 +254,53 @@ function Standards() {
                 </div>
               </div>
 
+              {/* Regulatory Compliance - DORA */}
+              <div className="mb-20">
+                <div className="bg-gray-800 rounded-lg p-8 border border-gray-700 mb-8">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                      🛡️
+                    </div>
+                    <h2 className="text-2xl font-bold text-white">DORA Compliance</h2>
+                  </div>
+                  <p className="text-gray-300 mb-4">
+                    Digital Operational Resilience Act (DORA) - Essential compliance for financial entities operating in the EU
+                  </p>
+                  <div className="bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded p-4 mb-6">
+                    <p className="text-purple-300 text-sm font-semibold">⚠️ Deadline: January 2025</p>
+                    <p className="text-gray-400 text-sm mt-1">DORA becomes fully applicable - ensure your organization is prepared</p>
+                  </div>
+                  <ul className="space-y-2 text-gray-300 mb-6">
+                    <li className="flex items-start">
+                      <span className="text-purple-400 mr-2">•</span>
+                      <span>ICT risk management framework implementation</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-400 mr-2">•</span>
+                      <span>Third-party risk management and oversight</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-400 mr-2">•</span>
+                      <span>Digital operational resilience testing</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-400 mr-2">•</span>
+                      <span>ICT incident reporting capabilities</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-400 mr-2">•</span>
+                      <span>Specialized expertise for blockchain & Web3 companies</span>
+                    </li>
+                  </ul>
+                  <Link 
+                    to="/dora"
+                    className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-2 px-4 rounded-md transition duration-150 ease-in-out"
+                  >
+                    Take DORA Assessment
+                  </Link>
+                </div>
+              </div>
+
               {/* Certification Support Services */}
               <div className="mb-20">
                 <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">

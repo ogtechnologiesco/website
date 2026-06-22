@@ -1,1 +1,13 @@
+# Force HTTPS redirect
+http://ogtechnologies.co/* https://ogtechnologies.co/:splat 301!
+http://www.ogtechnologies.co/* https://ogtechnologies.co/:splat 301!
+
+# SPA routing
 /* /index.html 200
+
+# 404 handling for non-API routes
+/.git/* /404.html 404
+/backup* /404.html 404
+/admin /404.html 404
+/wp-admin /404.html 404
+/phpmyadmin /404.html 404

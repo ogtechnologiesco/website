@@ -1,0 +1,6 @@
+Contact: mailto:security@ogtechnologies.co
+Expires: 2027-06-22T05:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.ogtechnologies.co/.well-known/security.txt
+Policy: https://www.ogtechnologies.co/privacy
+Acknowledgments: https://www.ogtechnologies.co/security-hall-of-fame

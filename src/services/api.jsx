@@ -16,6 +16,13 @@ const api = axios.create({
   timeout: 15000, // 15 seconds timeout for Heroku cold starts
 });
 
+// Create public axios instance (no authentication)
+const publicApi = axios.create({
+  baseURL: API_BASE_URL,
+  headers: defaultHeaders,
+  timeout: 15000,
+});
+
 // Add request retry logic for network errors
 let retryCount = 0;
 const MAX_RETRIES = 3;
@@ -44,6 +51,35 @@ api.interceptors.response.use(
       await new Promise(resolve => setTimeout(resolve, delay));
       
       return api(config);
+    }
+    
+    return Promise.reject(error);
+  }
+);
+
+// Response interceptor for retry logic (public API)
+let publicRetryCount = 0;
+publicApi.interceptors.response.use(
+  (response) => {
+    publicRetryCount = 0;
+    return response;
+  },
+  async (error) => {
+    const { config, code, message } = error;
+    
+    const isNetworkError = code === 'ECONNABORTED' || 
+                          code === 'ETIMEDOUT' || 
+                          !error.response ||
+                          message?.includes('timeout');
+    
+    if (isNetworkError && publicRetryCount < MAX_RETRIES) {
+      publicRetryCount++;
+      console.log(`Public API network error detected, retrying... (${publicRetryCount}/${MAX_RETRIES})`);
+      
+      const delay = Math.pow(2, publicRetryCount - 1) * 1000;
+      await new Promise(resolve => setTimeout(resolve, delay));
+      
+      return publicApi(config);
     }
     
     return Promise.reject(error);
@@ -172,6 +208,28 @@ export const apiGet = (url, config = {}) => apiRequest('GET', url, null, config)
 export const apiPost = (url, data, config = {}) => apiRequest('POST', url, data, config);
 export const apiPut = (url, data, config = {}) => apiRequest('PUT', url, data, config);
 export const apiDelete = (url, config = {}) => apiRequest('DELETE', url, null, config);
+
+// Public API methods (no authentication)
+export const publicApiRequest = async (method, url, data = null, config = {}) => {
+  try {
+    const requestConfig = {
+      method,
+      url,
+      ...config
+    };
+    if (data !== null && data !== undefined) {
+      requestConfig.data = data;
+    }
+    
+    const response = await publicApi(requestConfig);
+    return response.data;
+  } catch (error) {
+    const errorMessage = handleApiError(error);
+    throw new Error(errorMessage);
+  }
+};
+
+export const publicApiPost = (url, data, config = {}) => publicApiRequest('POST', url, data, config);
 
 // Authentication API methods
 export const authAPI = {
@@ -374,6 +432,16 @@ export const crmAPI = {
 
   // Users
   lookupUserByEmail: (email) => apiGet(`/api/users/lookup?email=${encodeURIComponent(email)}`)
+};
+
+// DORA Assessment API methods
+export const doraAPI = {
+  // Submit DORA compliance assessment (using public quote endpoint for non-registered users)
+  submitAssessment: (assessmentData) => publicApiPost('/api/quote', {
+    name: assessmentData.contactName,
+    email: assessmentData.email,
+    message: `DORA Assessment from ${assessmentData.companyName}\n\nFull Assessment Data:\n${JSON.stringify(assessmentData, null, 2)}`
+  })
 };
 
 // Legacy API methods

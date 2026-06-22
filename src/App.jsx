@@ -32,6 +32,7 @@ import DataProtection from './pages/DataProtection';
 import DataPolicy from './pages/DataPolicy';
 import AuthCallback from './pages/AuthCallback';
 import Quote from './pages/Quote';
+import Dora from './pages/Dora';
 import HelpDesk from './pages/HelpDesk';
 import HelpDeskTicketDetail from './pages/HelpDeskTicketDetail';
 import CRM from './pages/CRM';
@@ -109,6 +110,7 @@ function App() {
         <Route exact path="/products" element={<Products/>} />
         <Route exact path="/careers" element={<Job/>} />
         <Route exact path="/quote" element={<Quote/>} />
+        <Route exact path="/dora" element={<Dora/>} />
         <Route exact path="/helpdesk" element={<HelpDesk/>} />
         <Route path="/helpdesk/ticket/:id" element={
           <ProtectedRoute>
