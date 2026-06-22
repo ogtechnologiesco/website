@@ -10,6 +10,7 @@ import AOS from 'aos';
 import { useState } from 'react';
 import { AuthProvider } from './contexts/AuthContext';
 import { Toaster } from 'react-hot-toast';
+import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -79,8 +80,9 @@ function App() {
   }, []);
 
   return (
-    <AuthProvider>
-      <Routes>
+    <HelmetProvider>
+      <AuthProvider>
+        <Routes>
         <Route exact path="/terms" element={<Terms/>} />
         <Route exact path="/" element={<Home />} />
         <Route exact path="/signin" element={<SignIn/>} />
@@ -150,7 +152,8 @@ function App() {
           },
         }}
       />
-    </AuthProvider>
+      </AuthProvider>
+    </HelmetProvider>
   );
 }
 

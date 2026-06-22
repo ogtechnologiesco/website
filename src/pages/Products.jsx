@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Footer from '../partials/Footer';
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
@@ -24,6 +25,27 @@ import space from "../images/space.png"
 
 function Products() {
   return (
+    <>
+      <Helmet>
+        <title>Our Products - OG Technologies EU</title>
+        <meta name="description" content="Discover OG Technologies EU's comprehensive product suite including CRM & Ticketing System, blockchain consulting, AI chatbots, e-commerce platforms, and space technology solutions." />
+        <meta name="keywords" content="CRM system, ticketing system, blockchain consulting, AI chatbot, e-commerce platform, travel booking, loyalty program, space technology, healthcare solutions" />
+        <link rel="canonical" href="https://ogtechnologies.co/products" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ogtechnologies.co/products" />
+        <meta property="og:title" content="Our Products - OG Technologies EU" />
+        <meta property="og:description" content="Explore our comprehensive product suite including CRM, blockchain solutions, AI chatbots, and enterprise technology platforms." />
+        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://ogtechnologies.co/products" />
+        <meta name="twitter:title" content="Our Products - OG Technologies EU" />
+        <meta name="twitter:description" content="Explore our comprehensive product suite including CRM, blockchain solutions, AI chatbots, and enterprise technology platforms." />
+        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+      </Helmet>
     <div className="flex flex-col min-h-screen overflow-hidden">
 
       {/*  Site header */}
@@ -306,6 +328,7 @@ function Products() {
 
 
     </div>
+    </>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import Footer from '../partials/Footer';
@@ -9,6 +10,27 @@ function Pricing() {
   const { isLoading, error, startProSubscription, clearError } = useStripePayment();
 
   return (
+    <>
+      <Helmet>
+        <title>Pricing - OG Technologies EU</title>
+        <meta name="description" content="Simple, transparent pricing for OG Technologies EU's CRM and Ticketing System. Choose from Free, Pro (€8/month), or Enterprise plans with features that scale with your business." />
+        <meta name="keywords" content="CRM pricing, ticketing system pricing, subscription plans, free CRM, enterprise CRM, SaaS pricing" />
+        <link rel="canonical" href="https://ogtechnologies.co/pricing" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ogtechnologies.co/pricing" />
+        <meta property="og:title" content="Pricing - OG Technologies EU" />
+        <meta property="og:description" content="Simple, transparent pricing for our CRM and Ticketing System. Start free and upgrade as you grow." />
+        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://ogtechnologies.co/pricing" />
+        <meta name="twitter:title" content="Pricing - OG Technologies EU" />
+        <meta name="twitter:description" content="Simple, transparent pricing for our CRM and Ticketing System. Start free and upgrade as you grow." />
+        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+      </Helmet>
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Header />
       
@@ -366,6 +388,7 @@ function Pricing() {
       
       <Footer />
     </div>
+    </>
   );
 }
 
