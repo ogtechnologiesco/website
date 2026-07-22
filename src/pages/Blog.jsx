@@ -10,6 +10,7 @@ import blog1 from '../images/blog1.jpg';
 import meridian from '../images/meridian.png';
 import stand from '../images/stand.jpeg';
 import ebsi from '../images/ebsi2.png';
+import digitalPaymentsFuture from '../images/digital-payments-future.jpg';
 
 const myPosts = [
   {
@@ -45,6 +46,14 @@ const myPosts = [
     image: ebsi,
     imageText: 'Key requirements for verifying EBSI Verifiable Credentials',
     link: '/blog/ebsi-verifiable-credentials',
+   },
+   {
+    title: 'Building the Rails for Europe\'s Digital Payment Future',
+    date: '21/07/2026',
+    description: 'Three major transitions—MiCA, digital euro, ISO 20022—are converging. Europe is building a new digital payment infrastructure, and we need the standards to make it work.',
+    image: digitalPaymentsFuture,
+    imageText: 'Europe\'s Digital Payment Future',
+    link: '/blog/digital-payments-future',
    },
 ];
 

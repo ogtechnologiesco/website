@@ -28,6 +28,7 @@ import BlogPost from './pages/Blogs/intro';
 import MeridianPost from './pages/Blogs/meridian2024';
 import StandardsPost from './pages/Blogs/standards';
 import Ebsi from './pages/Blogs/ebsi';
+import DigitalPaymentsFuture from './pages/Blogs/digitalPaymentsFuture';
 import DataProtection from './pages/DataProtection';
 import DataPolicy from './pages/DataPolicy';
 import AuthCallback from './pages/AuthCallback';
@@ -132,6 +133,7 @@ function App() {
         <Route exact path="/blog/meridian-2024-highlights" element={<MeridianPost/>} />
         <Route exact path="/blog/ebsi-verifiable-credentials" element={<Ebsi/>} />
         <Route exact path="/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers" element={<StandardsPost/>} />
+        <Route exact path="/blog/digital-payments-future" element={<DigitalPaymentsFuture/>} />
       </Routes>
       <ConsentBanner />
       <ConsentSettingsModal 
