@@ -11,6 +11,7 @@ import meridian from '../images/meridian.png';
 import stand from '../images/stand.jpeg';
 import ebsi from '../images/ebsi2.png';
 import digitalPaymentsFuture from '../images/digital-payments-future.jpg';
+import earthquakeStandards from '../images/pereira-earthquake.jpg';
 
 const myPosts = [
   {
@@ -54,6 +55,14 @@ const myPosts = [
     image: digitalPaymentsFuture,
     imageText: 'Europe\'s Digital Payment Future',
     link: '/blog/digital-payments-future',
+   },
+   {
+    title: 'Terremoto de 7,4 en Colombia: la guía de estándares ISO para responder, evaluar y reconstruir',
+    date: '14/08/2026',
+    description: 'Repasamos las normas clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente, y su relación con la NSR-10.',
+    image: earthquakeStandards,
+    imageText: 'Estándares ISO para resiliencia sísmica',
+    link: '/blog/estandares-sismicos-colombia',
    },
 ];
 
