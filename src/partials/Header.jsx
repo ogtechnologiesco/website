@@ -10,9 +10,11 @@ function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [utilitiesOpen, setUtilitiesOpen] = useState(false);
   const trigger = useRef(null);
   const mobileNav = useRef(null);
   const userMenuRef = useRef(null);
+  const utilitiesRef = useRef(null);
   const navigate = useNavigate();
   
   const { 
@@ -50,6 +52,17 @@ function Header() {
       if (!userMenuRef.current) return;
       if (!userMenuOpen || userMenuRef.current.contains(target)) return;
       setUserMenuOpen(false);
+    };
+    document.addEventListener('click', clickHandler);
+    return () => document.removeEventListener('click', clickHandler);
+  });
+
+  // close utilities menu on click outside
+  useEffect(() => {
+    const clickHandler = ({ target }) => {
+      if (!utilitiesRef.current) return;
+      if (!utilitiesOpen || utilitiesRef.current.contains(target)) return;
+      setUtilitiesOpen(false);
     };
     document.addEventListener('click', clickHandler);
     return () => document.removeEventListener('click', clickHandler);
@@ -135,7 +148,46 @@ function Header() {
               <li>
                 <Link to="/quote" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Quotes </Link>
               </li>
-              
+
+              {/* Utilities dropdown */}
+              <li className="relative" ref={utilitiesRef}>
+                <button
+                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
+                  onClick={() => setUtilitiesOpen(!utilitiesOpen)}
+                  aria-expanded={utilitiesOpen}
+                >
+                  Utilities
+                  <svg className="w-3 h-3 ml-1 fill-current" viewBox="0 0 12 12">
+                    <path d="M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.762L10.825 4z" />
+                  </svg>
+                </button>
+                {utilitiesOpen && (
+                  <div className="absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50">
+                    <Link
+                      to="/tools/html-to-image"
+                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      onClick={() => setUtilitiesOpen(false)}
+                    >
+                      HTML to Image
+                    </Link>
+                    <Link
+                      to="/tools/screenshot-to-image"
+                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      onClick={() => setUtilitiesOpen(false)}
+                    >
+                      Screenshot to Image
+                    </Link>
+                    <Link
+                      to="/tools/pdf-tools"
+                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      onClick={() => setUtilitiesOpen(false)}
+                    >
+                      PDF Tools
+                    </Link>
+                  </div>
+                )}
+              </li>
+
               {/* Authentication buttons */}
               {isLoading ? (
                 <li className="px-4 py-3">
@@ -270,7 +322,19 @@ function Header() {
                 <li>
                   <Link to="/portfolio" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Portfolio</Link>
                 </li>
-                
+                <li className="border-t border-gray-700 pt-2 mt-2">
+                  <p className="text-xs font-semibold text-gray-400 text-center uppercase tracking-wide">Utilities</p>
+                </li>
+                <li>
+                  <Link to="/tools/html-to-image" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">HTML to Image</Link>
+                </li>
+                <li>
+                  <Link to="/tools/screenshot-to-image" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Screenshot to Image</Link>
+                </li>
+                <li>
+                  <Link to="/tools/pdf-tools" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">PDF Tools</Link>
+                </li>
+
                 {/* Mobile authentication buttons */}
                 {isLoading ? (
                   <li className="flex justify-center py-2">

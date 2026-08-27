@@ -30,6 +30,9 @@ import StandardsPost from './pages/Blogs/standards';
 import Ebsi from './pages/Blogs/ebsi';
 import DigitalPaymentsFuture from './pages/Blogs/digitalPaymentsFuture';
 import EarthquakeStandards from './pages/Blogs/earthquakeStandards';
+import HtmlToImage from './pages/HtmlToImage';
+import ScreenshotToImage from './pages/ScreenshotToImage';
+import PdfTools from './pages/pdfTools';
 import DataProtection from './pages/DataProtection';
 import DataPolicy from './pages/DataPolicy';
 import AuthCallback from './pages/AuthCallback';
@@ -136,6 +139,9 @@ function App() {
         <Route exact path="/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers" element={<StandardsPost/>} />
         <Route exact path="/blog/digital-payments-future" element={<DigitalPaymentsFuture/>} />
         <Route exact path="/blog/estandares-sismicos-colombia" element={<EarthquakeStandards/>} />
+        <Route exact path="/tools/html-to-image" element={<HtmlToImage/>} />
+        <Route exact path="/tools/screenshot-to-image" element={<ScreenshotToImage/>} />
+        <Route exact path="/tools/pdf-tools" element={<PdfTools/>} />
       </Routes>
       <ConsentBanner />
       <ConsentSettingsModal 
