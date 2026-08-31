@@ -4,6 +4,8 @@ import Header from '../../partials/Header';
 import Footer from '../../partials/Footer';
 import PageIllustration from '../../partials/PageIllustration';
 import blogImage from '../../images/digital-payments-future.jpg';
+import standictLogo from '../../images/standict-logo.svg';
+import euLogo from '../../images/eu-co-funded-logo.png';
 
 const fadeInKeyframes = `
   @keyframes fadeIn {
@@ -219,6 +221,14 @@ function DigitalPaymentsFuture() {
                     </p>
 
                     <h3 className="h3 mb-4 text-gray-100">The Broader Picture: StandICT.eu 2029</h3>
+                    <div className="flex flex-wrap items-center justify-center gap-8 mb-8">
+                      <div className="rounded-xl py-4 px-6 flex items-center" style={{ backgroundColor: '#003B71' }}>
+                        <img src={standictLogo} alt="StandICT.eu" className="h-12 w-auto" />
+                      </div>
+                      <div className="bg-white rounded-xl p-4 flex items-center">
+                        <img src={euLogo} alt="Co-funded by the European Union" className="h-12 w-auto" />
+                      </div>
+                    </div>
                     <p className="mb-8">
                       This work is made possible by StandICT.eu 2029, the EU's flagship programme for ICT standardisation. With €4.2 million in funding supporting over 300 experts across six open calls, StandICT.eu enables European specialists to represent Europe in major standardisation bodies. In Open Call 1 alone, 75 fellowships were selected, with an average quality score of 8.2 out of 10.
                     </p>
