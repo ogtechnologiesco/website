@@ -57,9 +57,9 @@ const myPosts = [
     link: '/blog/digital-payments-future',
    },
    {
-    title: 'Terremoto de 7,4 en Colombia: la guía de estándares ISO para responder, evaluar y reconstruir',
+    title: 'Terremoto en Colombia: guía de estándares ISO para responder, evaluar y reconstruir',
     date: '14/08/2026',
-    description: 'Repasamos las normas clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente, y su relación con la NSR-10.',
+    description: 'Normas clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente.',
     image: earthquakeStandards,
     imageText: 'Estándares ISO para resiliencia sísmica',
     link: '/blog/estandares-sismicos-colombia',
