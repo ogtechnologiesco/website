@@ -33,6 +33,7 @@ import EarthquakeStandards from './pages/Blogs/earthquakeStandards';
 import HtmlToImage from './pages/HtmlToImage';
 import ScreenshotToImage from './pages/ScreenshotToImage';
 import PdfTools from './pages/pdfTools';
+import SecurityTools from './pages/securityTools';
 import DataProtection from './pages/DataProtection';
 import DataPolicy from './pages/DataPolicy';
 import AuthCallback from './pages/AuthCallback';
@@ -142,6 +143,7 @@ function App() {
         <Route exact path="/tools/html-to-image" element={<HtmlToImage/>} />
         <Route exact path="/tools/screenshot-to-image" element={<ScreenshotToImage/>} />
         <Route exact path="/tools/pdf-tools" element={<PdfTools/>} />
+        <Route exact path="/tools/security-tools" element={<SecurityTools/>} />
       </Routes>
       <ConsentBanner />
       <ConsentSettingsModal 

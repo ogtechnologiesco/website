@@ -184,6 +184,13 @@ function Header() {
                     >
                       PDF Tools
                     </Link>
+                    <Link
+                      to="/tools/security-tools"
+                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      onClick={() => setUtilitiesOpen(false)}
+                    >
+                      Security Scanner
+                    </Link>
                   </div>
                 )}
               </li>
@@ -333,6 +340,9 @@ function Header() {
                 </li>
                 <li>
                   <Link to="/tools/pdf-tools" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">PDF Tools</Link>
+                </li>
+                <li>
+                  <Link to="/tools/security-tools" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Security Scanner</Link>
                 </li>
 
                 {/* Mobile authentication buttons */}
