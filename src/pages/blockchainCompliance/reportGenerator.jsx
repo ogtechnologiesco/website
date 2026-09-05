@@ -1,0 +1,184 @@
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
+
+const PAGE_WIDTH = 595.28;
+const PAGE_HEIGHT = 841.89;
+const MARGIN = 50;
+const CONTENT_WIDTH = PAGE_WIDTH - MARGIN * 2;
+
+const COLORS = {
+  black: rgb(0, 0, 0),
+  darkGray: rgb(0.25, 0.25, 0.25),
+  gray: rgb(0.5, 0.5, 0.5),
+  lightGray: rgb(0.75, 0.75, 0.75),
+  purple: rgb(0.37, 0.25, 0.63),
+  white: rgb(1, 1, 1),
+  red: rgb(0.72, 0.18, 0.18),
+  green: rgb(0.18, 0.55, 0.28),
+  amber: rgb(0.72, 0.52, 0.1),
+  blue: rgb(0.18, 0.38, 0.72),
+};
+
+const PRIORITY_COLORS = {
+  critical: COLORS.red,
+  high: COLORS.amber,
+  medium: COLORS.blue,
+  info: COLORS.green,
+};
+
+function getGradeColor(grade) {
+  if (grade === 'A' || grade === 'B') return COLORS.green;
+  if (grade === 'C' || grade === 'D') return COLORS.amber;
+  return COLORS.red;
+}
+
+export async function generateCompliancePdf(results, formData) {
+  const pdfDoc = await PDFDocument.create();
+  const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+  const boldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+
+  const { matchedStandards, grouped, sortedCategories, summary } = results;
+
+  let page = pdfDoc.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
+  let y = PAGE_HEIGHT - MARGIN;
+
+  function ensureSpace(needed) {
+    if (y < MARGIN + needed) {
+      page = pdfDoc.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
+      y = PAGE_HEIGHT - MARGIN;
+    }
+  }
+
+  function drawText(text, fontType, size, color, x = MARGIN) {
+    ensureSpace(size + 6);
+    page.drawText(text, { x, y, size, font: fontType, color });
+    y -= size + 4;
+  }
+
+  function drawWrapped(text, fontType, size, color, x = MARGIN, maxWidth = CONTENT_WIDTH) {
+    const words = text.split(' ');
+    let currentLine = '';
+    for (const word of words) {
+      const testLine = currentLine ? `${currentLine} ${word}` : word;
+      const width = fontType.widthOfTextAtSize(testLine, size);
+      if (width > maxWidth && currentLine) {
+        ensureSpace(size + 6);
+        page.drawText(currentLine, { x, y, size, font: fontType, color });
+        y -= size + 4;
+        currentLine = word;
+      } else {
+        currentLine = testLine;
+      }
+    }
+    if (currentLine) {
+      ensureSpace(size + 6);
+      page.drawText(currentLine, { x, y, size, font: fontType, color });
+      y -= size + 4;
+    }
+  }
+
+  function drawSeparator() {
+    ensureSpace(20);
+    page.drawLine({
+      start: { x: MARGIN, y },
+      end: { x: PAGE_WIDTH - MARGIN, y },
+      thickness: 0.5,
+      color: COLORS.lightGray,
+    });
+    y -= 16;
+  }
+
+  function addSpacer(gap = 10) {
+    y -= gap;
+  }
+
+  // Header
+  ensureSpace(80);
+  drawText('OG Technologies EU', boldFont, 20, COLORS.purple);
+  drawText('Standards & Compliance Roadmap', boldFont, 14, COLORS.darkGray);
+  addSpacer();
+  const dateStr = new Date().toLocaleString('en-EU', { dateStyle: 'long', timeStyle: 'short' });
+  drawText(`Report generated: ${dateStr}`, font, 9, COLORS.gray);
+  drawSeparator();
+
+  // Project Profile
+  ensureSpace(120);
+  drawText('Project Profile', boldFont, 12, COLORS.purple);
+  addSpacer();
+  drawText(`Company: ${formData.companyName || 'N/A'}`, font, 10, COLORS.darkGray);
+  drawText(`Contact: ${formData.contactName || 'N/A'}`, font, 10, COLORS.darkGray);
+  drawText(`Email: ${formData.email || 'N/A'}`, font, 10, COLORS.darkGray);
+  if (formData.phone) drawText(`Phone: ${formData.phone}`, font, 10, COLORS.darkGray);
+  if (formData.companySize) drawText(`Company Size: ${formData.companySize}`, font, 10, COLORS.darkGray);
+  addSpacer();
+  drawText(`Blockchain/Network: ${formData.blockchainNetwork?.join(', ') || 'N/A'}`, font, 10, COLORS.darkGray);
+  drawText(`Use Case: ${formData.useCase || 'N/A'}`, font, 10, COLORS.darkGray);
+  drawText(`Identity Approach: ${formData.identity || 'N/A'}`, font, 10, COLORS.darkGray);
+  drawText(`Payments: ${formData.payments || 'N/A'}`, font, 10, COLORS.darkGray);
+  drawText(`Jurisdiction: ${formData.jurisdiction?.join(', ') || 'N/A'}`, font, 10, COLORS.darkGray);
+  drawText(`Data Handled: ${formData.dataHandled?.join(', ') || 'N/A'}`, font, 10, COLORS.darkGray);
+  drawText(`Target Market: ${formData.targetMarket?.join(', ') || 'N/A'}`, font, 10, COLORS.darkGray);
+  if (formData.additionalComments) {
+    addSpacer();
+    drawWrapped(`Additional Comments: ${formData.additionalComments}`, font, 9, COLORS.gray);
+  }
+  drawSeparator();
+
+  // Compliance Summary
+  ensureSpace(100);
+  drawText('Compliance Readiness Summary', boldFont, 12, COLORS.purple);
+  addSpacer();
+  const gradeColor = getGradeColor(summary.grade);
+  drawText(`Readiness Grade: ${summary.grade}  (Score: ${summary.readinessScore}/100)`, boldFont, 14, gradeColor);
+  addSpacer();
+  drawText(
+    `Standards Matched: ${summary.total}  |  Critical: ${summary.critical}  |  High Priority: ${summary.high}`,
+    font,
+    10,
+    COLORS.darkGray
+  );
+  drawSeparator();
+
+  // Standards by Category
+  for (const category of sortedCategories) {
+    ensureSpace(40);
+    drawText(category, boldFont, 11, COLORS.purple);
+    y -= 6;
+
+    for (const standard of grouped[category]) {
+      const sevColor = PRIORITY_COLORS[standard.priority] || COLORS.darkGray;
+      ensureSpace(80);
+
+      drawText(`[${standard.priority.toUpperCase()}] ${standard.name}`, boldFont, 10, sevColor);
+      drawWrapped(standard.description, font, 9, COLORS.darkGray);
+      drawWrapped(`Recommendation: ${standard.recommendation}`, font, 9, COLORS.gray);
+      y -= 8;
+    }
+    addSpacer();
+  }
+
+  // Footer
+  ensureSpace(40);
+  drawSeparator();
+  drawWrapped(
+    'Generated by OG Technologies EU Blockchain Compliance Checker. This roadmap is based on the information provided and is not a substitute for professional legal or compliance advice. Standards and regulations evolve — consult with our experts for a tailored compliance strategy.',
+    font,
+    8,
+    COLORS.gray
+  );
+  drawText('https://ogtechnologies.co/tools/blockchain-compliance-checker', font, 8, COLORS.purple);
+
+  const pdfBytes = await pdfDoc.save();
+  return pdfBytes;
+}
+
+export function downloadPdfReport(pdfBytes, filename) {
+  const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}

@@ -53,7 +53,7 @@ function SecurityTools() {
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Helmet>
         <title>Web Security Scanner - Free Online Passive Security Check | OG Technologies EU</title>
-        <meta name="description" content="Enter any website URL and get an instant passive security scan. Checks HTTPS, security headers, cookies, mixed content, and more — mapped to OWASP Top 10. Free and no signup required." />
+        <meta name="description" content="Enter any website URL and get an instant passive security scan. Checks HTTPS, security headers, cookies, mixed content, and more — mapped to OWASP Top 10. For Free." />
         <meta name="keywords" content="web security scanner, OWASP top 10, security headers check, passive security scan, free pentesting tool, website security analysis, HSTS check, CSP check, cookie security" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ogtechnologies.co/tools/security-tools" />
@@ -62,14 +62,14 @@ function SecurityTools() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ogtechnologies.co/tools/security-tools" />
         <meta property="og:title" content="Web Security Scanner - Free Online Passive Security Check | OG Technologies EU" />
-        <meta property="og:description" content="Enter any website URL and get an instant passive security scan mapped to OWASP Top 10. Free and no signup required." />
+        <meta property="og:description" content="Enter any website URL and get an instant passive security scan mapped to OWASP Top 10. For Free." />
         <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://ogtechnologies.co/tools/security-tools" />
         <meta name="twitter:title" content="Web Security Scanner - Free Online Passive Security Check | OG Technologies EU" />
-        <meta name="twitter:description" content="Enter any website URL and get an instant passive security scan mapped to OWASP Top 10. Free and no signup required." />
+        <meta name="twitter:description" content="Enter any website URL and get an instant passive security scan mapped to OWASP Top 10. For Free." />
         <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
 
         {/* JSON-LD Structured Data */}
@@ -124,7 +124,7 @@ function SecurityTools() {
                 <h1 className="h1">Web Security Scanner</h1>
                 <p className="text-xl text-gray-400 mt-4">
                   Enter a website URL to get an instant passive security assessment with
-                  OWASP Top 10 mapping and remediation advice. Free, no signup required.
+                  OWASP Top 10 mapping and remediation advice. For Free.
                 </p>
               </div>
 

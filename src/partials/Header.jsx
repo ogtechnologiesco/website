@@ -191,6 +191,13 @@ function Header() {
                     >
                       Security Scanner
                     </Link>
+                    <Link
+                      to="/tools/blockchain-compliance-checker"
+                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      onClick={() => setUtilitiesOpen(false)}
+                    >
+                      Blockchain Compliance Checker
+                    </Link>
                   </div>
                 )}
               </li>
