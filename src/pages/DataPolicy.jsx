@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 // Simple SVG icon components
 const Shield = ({ className }) => (
@@ -79,6 +80,16 @@ const DataPolicy = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-200">
+      <Helmet>
+        <title>Cookie Policy - OG Technologies EU</title>
+        <meta name="description" content="Cookie Policy for OG Technologies EU. Learn about the types of cookies we use, your rights under GDPR, and how to manage your cookie preferences." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ogtechnologies.co/cookie-policy" />
+        <meta property="og:url" content="https://ogtechnologies.co/cookie-policy" />
+        <meta property="og:title" content="Cookie Policy - OG Technologies EU" />
+        <meta property="og:description" content="Cookie Policy for OG Technologies EU. Types of cookies we use and how to manage your preferences under GDPR." />
+        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+      </Helmet>
       <div className="max-w-4xl mx-auto px-6 py-12">
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-white mb-6">Cookie Policy</h1>

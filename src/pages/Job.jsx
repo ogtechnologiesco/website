@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Footer from '../partials/Footer';
 import Header from '../partials/Header';
@@ -26,6 +27,22 @@ function Job() {
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
+      <Helmet>
+        <title>Careers - OG Technologies EU | Join Our Team</title>
+        <meta name="description" content="Join OG Technologies EU and help shape the future of Web3, blockchain, and enterprise IT. We offer competitive salaries, flexible work arrangements, and groundbreaking projects." />
+        <meta name="keywords" content="careers, jobs, IT jobs, blockchain jobs, Web3 jobs, software engineer, developer jobs, Vienna tech jobs, remote work" />
+        <link rel="canonical" href="https://ogtechnologies.co/careers" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ogtechnologies.co/careers" />
+        <meta property="og:title" content="Careers - OG Technologies EU | Join Our Team" />
+        <meta property="og:description" content="Join OG Technologies EU and help shape the future of Web3, blockchain, and enterprise IT." />
+        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://ogtechnologies.co/careers" />
+        <meta name="twitter:title" content="Careers - OG Technologies EU | Join Our Team" />
+        <meta name="twitter:description" content="Join OG Technologies EU and help shape the future of Web3, blockchain, and enterprise IT." />
+        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+      </Helmet>
 
       {/*  Site header */}
       <Header />

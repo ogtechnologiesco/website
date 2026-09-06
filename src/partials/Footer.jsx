@@ -28,16 +28,74 @@ function Footer() {
             </div>
 
             {/* 2nd, 3rd and 4th blocks */}
-            <div className="md:col-span-8 lg:col-span-7 grid sm:grid-cols-3 gap-8">
+            <div className="md:col-span-8 lg:col-span-7 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-             
-
-              {/* 3rd block */}
-              
-
-              {/* 4th block */}
+              {/* Products column */}
               <div className="text-sm">
-                <h6 className="text-gray-200 font-medium mb-1">Company</h6>
+                <h6 className="text-gray-200 font-medium mb-2">Products</h6>
+                <ul>
+                  <li className="mb-1">
+                    <Link to="/products" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Products</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/pricing" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Pricing</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/standards" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Standards</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/dora" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">DORA Compliance</Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Tools column */}
+              <div className="text-sm">
+                <h6 className="text-gray-200 font-medium mb-2">Tools</h6>
+                <ul>
+                  <li className="mb-1">
+                    <Link to="/tools/html-to-image" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">HTML to Image</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/screenshot-to-image" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Screenshot to Image</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/pdf-tools" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">PDF Tools</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/security-tools" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Security Scanner</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/blockchain-compliance-checker" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Blockchain Compliance</Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Resources column */}
+              <div className="text-sm">
+                <h6 className="text-gray-200 font-medium mb-2">Resources</h6>
+                <ul>
+                  <li className="mb-1">
+                    <Link to="/blog" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Blog</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/ventures" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ventures</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/portfolio" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Portfolio</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/careers" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Careers</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/quote" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Request a Quote</Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Company / Legal column */}
+              <div className="text-sm">
+                <h6 className="text-gray-200 font-medium mb-2">Company</h6>
                 <ul>
                   <li className="mb-1">
                     <Link to="/imprint" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Imprint</Link>
@@ -49,25 +107,10 @@ function Footer() {
                     <Link to="/privacy" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Privacy Policy</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/careers" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Careers</Link>
+                    <Link to="/cookie-policy" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Cookie Policy</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/blog" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Blogs</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/products" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Products</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/quote" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Quotes</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/ventures" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ventures</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/portfolio" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Portfolio</Link>
-                  </li>
-                  <li className="mb-1">
-                    <button 
+                    <button
                       onClick={() => window.openCookieSettings?.()}
                       className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out text-left w-full"
                     >

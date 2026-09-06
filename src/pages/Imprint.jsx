@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Footer from '../partials/Footer';
 import Header from '../partials/Header';
@@ -9,6 +10,17 @@ import Typography from '@mui/material/Typography';
 function Imprint() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
+      <Helmet>
+        <title>Imprint - OG Technologies EU</title>
+        <meta name="description" content="Legal imprint for OG Technologies EU, based in Vienna, Austria. Company details, legal form, registered office, and managing director information." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ogtechnologies.co/imprint" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ogtechnologies.co/imprint" />
+        <meta property="og:title" content="Imprint - OG Technologies EU" />
+        <meta property="og:description" content="Legal imprint for OG Technologies EU, based in Vienna, Austria." />
+        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+      </Helmet>
 
       {/*  Site header */}
       <Header />

@@ -4,6 +4,7 @@ import logo from '../images/og_logo.png';
 import { useAuth } from '../hooks/useAuth';
 import { useSubscription } from '../hooks/useSubscription';
 import toast from 'react-hot-toast';
+import SiteSearch from '../components/SiteSearch';
 
 
 function Header() {
@@ -11,10 +12,17 @@ function Header() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [utilitiesOpen, setUtilitiesOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
+  const [mobileUtilitiesOpen, setMobileUtilitiesOpen] = useState(false);
   const trigger = useRef(null);
   const mobileNav = useRef(null);
   const userMenuRef = useRef(null);
   const utilitiesRef = useRef(null);
+  const solutionsRef = useRef(null);
+  const resourcesRef = useRef(null);
   const navigate = useNavigate();
   
   const { 
@@ -68,6 +76,28 @@ function Header() {
     return () => document.removeEventListener('click', clickHandler);
   });
 
+  // close solutions menu on click outside
+  useEffect(() => {
+    const clickHandler = ({ target }) => {
+      if (!solutionsRef.current) return;
+      if (!solutionsOpen || solutionsRef.current.contains(target)) return;
+      setSolutionsOpen(false);
+    };
+    document.addEventListener('click', clickHandler);
+    return () => document.removeEventListener('click', clickHandler);
+  });
+
+  // close resources menu on click outside
+  useEffect(() => {
+    const clickHandler = ({ target }) => {
+      if (!resourcesRef.current) return;
+      if (!resourcesOpen || resourcesRef.current.contains(target)) return;
+      setResourcesOpen(false);
+    };
+    document.addEventListener('click', clickHandler);
+    return () => document.removeEventListener('click', clickHandler);
+  });
+
   // close mobile menu if esc key is pressed
   useEffect(() => {
     const keyHandler = ({ keyCode }) => {
@@ -113,47 +143,60 @@ function Header() {
                 <Link to="/" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Home </Link>
               </li>
               <li>
-                <Link to="/standards" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Standards </Link>
-              </li>
-              <li>
-                <Link to="/dora" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> DORA </Link>
-              </li>
-              <li>
                 <Link to="/products" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Products </Link>
               </li>
               <li>
                 <Link to="/pricing" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Pricing </Link>
               </li>
-              <li>
-                <Link to="/imprint" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Imprint </Link>
+
+              {/* Solutions dropdown */}
+              <li className="relative" ref={solutionsRef}>
+                <button
+                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
+                  onClick={() => { setSolutionsOpen(!solutionsOpen); setResourcesOpen(false); setUtilitiesOpen(false); }}
+                  aria-expanded={solutionsOpen}
+                >
+                  Solutions
+                  <svg className="w-3 h-3 ml-1 fill-current" viewBox="0 0 12 12">
+                    <path d="M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.762L10.825 4z" />
+                  </svg>
+                </button>
+                {solutionsOpen && (
+                  <div className="absolute left-0 mt-2 w-56 bg-gray-800 rounded-md shadow-lg py-1 z-50">
+                    <Link to="/standards" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setSolutionsOpen(false)}>Standards</Link>
+                    <Link to="/dora" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setSolutionsOpen(false)}>DORA Compliance</Link>
+                    <Link to="/ventures" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setSolutionsOpen(false)}>Ventures</Link>
+                    <Link to="/portfolio" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setSolutionsOpen(false)}>Portfolio</Link>
+                  </div>
+                )}
               </li>
-              <li>
-                <Link to="/terms" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Terms </Link>
-              </li>
-              <li>
-                <Link to="/Privacy" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Privacy </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Blogs </Link>
-              </li>
-              <li>
-                <Link to="/ventures" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Ventures </Link>
-              </li>
-              <li>
-                <Link to="/portfolio" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Portfolio </Link>
-              </li>
-              <li>
-                <Link to="/careers" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Careers </Link>
-              </li>
-              <li>
-                <Link to="/quote" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"> Quotes </Link>
+
+              {/* Resources dropdown */}
+              <li className="relative" ref={resourcesRef}>
+                <button
+                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
+                  onClick={() => { setResourcesOpen(!resourcesOpen); setSolutionsOpen(false); setUtilitiesOpen(false); }}
+                  aria-expanded={resourcesOpen}
+                >
+                  Resources
+                  <svg className="w-3 h-3 ml-1 fill-current" viewBox="0 0 12 12">
+                    <path d="M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.762L10.825 4z" />
+                  </svg>
+                </button>
+                {resourcesOpen && (
+                  <div className="absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50">
+                    <Link to="/blog" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setResourcesOpen(false)}>Blog</Link>
+                    <Link to="/careers" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setResourcesOpen(false)}>Careers</Link>
+                    <Link to="/quote" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setResourcesOpen(false)}>Request a Quote</Link>
+                  </div>
+                )}
               </li>
 
               {/* Utilities dropdown */}
               <li className="relative" ref={utilitiesRef}>
                 <button
                   className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
-                  onClick={() => setUtilitiesOpen(!utilitiesOpen)}
+                  onClick={() => { setUtilitiesOpen(!utilitiesOpen); setSolutionsOpen(false); setResourcesOpen(false); }}
                   aria-expanded={utilitiesOpen}
                 >
                   Utilities
@@ -162,44 +205,19 @@ function Header() {
                   </svg>
                 </button>
                 {utilitiesOpen && (
-                  <div className="absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50">
-                    <Link
-                      to="/tools/html-to-image"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
-                      onClick={() => setUtilitiesOpen(false)}
-                    >
-                      HTML to Image
-                    </Link>
-                    <Link
-                      to="/tools/screenshot-to-image"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
-                      onClick={() => setUtilitiesOpen(false)}
-                    >
-                      Screenshot to Image
-                    </Link>
-                    <Link
-                      to="/tools/pdf-tools"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
-                      onClick={() => setUtilitiesOpen(false)}
-                    >
-                      PDF Tools
-                    </Link>
-                    <Link
-                      to="/tools/security-tools"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
-                      onClick={() => setUtilitiesOpen(false)}
-                    >
-                      Security Scanner
-                    </Link>
-                    <Link
-                      to="/tools/blockchain-compliance-checker"
-                      className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
-                      onClick={() => setUtilitiesOpen(false)}
-                    >
-                      Blockchain Compliance Checker
-                    </Link>
+                  <div className="absolute left-0 mt-2 w-56 bg-gray-800 rounded-md shadow-lg py-1 z-50">
+                    <Link to="/tools/html-to-image" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>HTML to Image</Link>
+                    <Link to="/tools/screenshot-to-image" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Screenshot to Image</Link>
+                    <Link to="/tools/pdf-tools" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>PDF Tools</Link>
+                    <Link to="/tools/security-tools" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Security Scanner</Link>
+                    <Link to="/tools/blockchain-compliance-checker" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Blockchain Compliance Checker</Link>
                   </div>
                 )}
+              </li>
+
+              {/* Search bar */}
+              <li className="px-2">
+                <SiteSearch />
               </li>
 
               {/* Authentication buttons */}
@@ -306,14 +324,11 @@ function Header() {
             {/*Mobile navigation */}
             <nav id="mobile-nav" ref={mobileNav} className="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out" style={mobileNavOpen ? { maxHeight: mobileNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: .8 } }>
               <ul className="bg-gray-800 px-4 py-2">
-                <li>
-                  <Link to="/imprint" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Imprint</Link>
+                <li className="pb-2">
+                  <SiteSearch isMobile={true} />
                 </li>
                 <li>
-                  <Link to="/standards" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Standards</Link>
-                </li>
-                <li>
-                  <Link to="/dora" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">DORA</Link>
+                  <Link to="/" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Home</Link>
                 </li>
                 <li>
                   <Link to="/products" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Products</Link>
@@ -321,35 +336,68 @@ function Header() {
                 <li>
                   <Link to="/pricing" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Pricing</Link>
                 </li>
-                <li>
-                  <Link to="/terms" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Terms</Link>
-                </li>
-                <li>
-                  <Link to="/Privacy" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Privacy</Link>
-                </li>
-                <li>
-                  <Link to="/blog" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Blogs</Link>
-                </li>
-                <li>
-                  <Link to="/ventures" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Ventures</Link>
-                </li>
-                <li>
-                  <Link to="/portfolio" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Portfolio</Link>
-                </li>
+
+                {/* Mobile Solutions section */}
                 <li className="border-t border-gray-700 pt-2 mt-2">
-                  <p className="text-xs font-semibold text-gray-400 text-center uppercase tracking-wide">Utilities</p>
+                  <button
+                    className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center items-center"
+                    onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+                  >
+                    Solutions
+                    <svg className="w-3 h-3 ml-1 fill-current" viewBox="0 0 12 12">
+                      <path d="M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.762L10.825 4z" />
+                    </svg>
+                  </button>
+                  {mobileSolutionsOpen && (
+                    <ul className="bg-gray-700 rounded mt-1 mb-1">
+                      <li><Link to="/standards" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Standards</Link></li>
+                      <li><Link to="/dora" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">DORA Compliance</Link></li>
+                      <li><Link to="/ventures" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Ventures</Link></li>
+                      <li><Link to="/portfolio" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Portfolio</Link></li>
+                    </ul>
+                  )}
                 </li>
-                <li>
-                  <Link to="/tools/html-to-image" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">HTML to Image</Link>
+
+                {/* Mobile Resources section */}
+                <li className="border-t border-gray-700 pt-2 mt-2">
+                  <button
+                    className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center items-center"
+                    onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
+                  >
+                    Resources
+                    <svg className="w-3 h-3 ml-1 fill-current" viewBox="0 0 12 12">
+                      <path d="M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.762L10.825 4z" />
+                    </svg>
+                  </button>
+                  {mobileResourcesOpen && (
+                    <ul className="bg-gray-700 rounded mt-1 mb-1">
+                      <li><Link to="/blog" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Blog</Link></li>
+                      <li><Link to="/careers" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Careers</Link></li>
+                      <li><Link to="/quote" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Request a Quote</Link></li>
+                    </ul>
+                  )}
                 </li>
-                <li>
-                  <Link to="/tools/screenshot-to-image" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Screenshot to Image</Link>
-                </li>
-                <li>
-                  <Link to="/tools/pdf-tools" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">PDF Tools</Link>
-                </li>
-                <li>
-                  <Link to="/tools/security-tools" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Security Scanner</Link>
+
+                {/* Mobile Utilities section */}
+                <li className="border-t border-gray-700 pt-2 mt-2">
+                  <button
+                    className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center items-center"
+                    onClick={() => setMobileUtilitiesOpen(!mobileUtilitiesOpen)}
+                  >
+                    Utilities
+                    <svg className="w-3 h-3 ml-1 fill-current" viewBox="0 0 12 12">
+                      <path d="M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.762L10.825 4z" />
+                    </svg>
+                  </button>
+                  {mobileUtilitiesOpen && (
+                    <ul className="bg-gray-700 rounded mt-1 mb-1">
+                      <li><Link to="/tools/html-to-image" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">HTML to Image</Link></li>
+                      <li><Link to="/tools/screenshot-to-image" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Screenshot to Image</Link></li>
+                      <li><Link to="/tools/pdf-tools" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">PDF Tools</Link></li>
+                      <li><Link to="/tools/security-tools" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Security Scanner</Link></li>
+                      <li><Link to="/tools/blockchain-compliance-checker" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Blockchain Compliance Checker</Link></li>
+                    </ul>
+                  )}
                 </li>
 
                 {/* Mobile authentication buttons */}

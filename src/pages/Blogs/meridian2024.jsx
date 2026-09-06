@@ -7,9 +7,10 @@ import Typography from '@mui/material/Typography';
 import { useInView } from 'react-intersection-observer';
 import './BlogPost.css';
 import img from "../../images/meridian.png"; // Make sure to add an appropriate image
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import RelatedPosts from '../../components/RelatedPosts';
 
 function MeridianBlogPost() {
   const { ref, inView } = useInView({
@@ -93,8 +94,27 @@ function MeridianBlogPost() {
         <meta property="og:description" content="Explore our insights from Meridian 2024, where the Stellar community gathered to discuss the future of blockchain and financial technology." />
         <meta property="og:image" content={heroImage.src} />
         <meta property="og:type" content="article" />
-        <link rel="canonical" href="https://yourdomain.com/blogs/meridian-2024" />
+        <link rel="canonical" href="https://ogtechnologies.co/blog/meridian-2024-highlights" />
         <link rel="preload" as="image" href={heroImage.placeholder} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://ogtechnologies.co/blog/meridian-2024-highlights" />
+        <meta name="twitter:title" content="Meeting the Stellar Community at Meridian 2024: A Defining Moment for Web3" />
+        <meta name="twitter:description" content="Discover our experience at Meridian 2024 in London, where we explored the future of blockchain, DeFi, and Stellar's innovative solutions." />
+        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Meeting the Stellar Community at Meridian 2024: A Defining Moment for Web3",
+            "description": "Discover our experience at Meridian 2024 in London, where we explored the future of blockchain, DeFi, and Stellar's innovative solutions for enterprise-level adoption.",
+            "datePublished": "2024-10-15",
+            "dateModified": "2024-10-15",
+            "author": { "@type": "Organization", "name": "OG Technologies EU" },
+            "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://ogtechnologies.co/og-og-image.png" } },
+            "url": "https://ogtechnologies.co/blog/meridian-2024-highlights",
+            "image": "https://ogtechnologies.co/og-og-image.png"
+          })}
+        </script>
       </Helmet>
 
       {/* Site header */}
@@ -192,6 +212,10 @@ function MeridianBlogPost() {
           </div>
         </section>
       </main>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-12">
+        <RelatedPosts currentLink="/blog/meridian-2024-highlights" categories={['Blockchain', 'Web3', 'Events']} />
+      </div>
 
       <Footer />
     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Footer from '../partials/Footer';
 import Header from '../partials/Header';
@@ -9,6 +10,22 @@ import Quotes from '../partials/Quotes';
 function Quote() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
+      <Helmet>
+        <title>Request a Quote - OG Technologies EU | IT Consulting Services</title>
+        <meta name="description" content="Get a customized quote for IT strategy consulting, digital transformation, IT security, cloud consulting, and software development services from OG Technologies EU." />
+        <meta name="keywords" content="IT consulting quote, software development quote, digital transformation, IT security consulting, cloud consulting, blockchain consulting, pricing" />
+        <link rel="canonical" href="https://ogtechnologies.co/quote" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ogtechnologies.co/quote" />
+        <meta property="og:title" content="Request a Quote - OG Technologies EU | IT Consulting Services" />
+        <meta property="og:description" content="Get a customized quote for IT strategy consulting, digital transformation, IT security, cloud consulting, and software development services." />
+        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://ogtechnologies.co/quote" />
+        <meta name="twitter:title" content="Request a Quote - OG Technologies EU | IT Consulting Services" />
+        <meta name="twitter:description" content="Get a customized quote for IT consulting, digital transformation, and software development services." />
+        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+      </Helmet>
 
       {/*  Site header */}
       <Header />

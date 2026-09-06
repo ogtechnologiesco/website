@@ -24,6 +24,18 @@ export default function FeaturedPost(props) {
               <Typography variant="subtitle1" color="textSecondary">
                 {post.date}
               </Typography>
+              {post.categories && (
+                <div className="flex flex-wrap gap-1 mt-1 mb-2">
+                  {post.categories.map((cat) => (
+                    <span
+                      key={cat}
+                      className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded-full"
+                    >
+                      {cat}
+                    </span>
+                  ))}
+                </div>
+              )}
               <Typography variant="subtitle1" paragraph>
                 {post.description}
               </Typography>

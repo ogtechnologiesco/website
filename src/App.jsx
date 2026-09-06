@@ -49,7 +49,6 @@ import Opportunities from './pages/Opportunities';
 import Activities from './pages/Activities';
 import Import from './pages/Import';
 import Companies from './pages/Companies';
-import Alliance from './pages/Alliance';
 import Ventures from './pages/Ventures';
 import Portfolio from './pages/Portfolio';
 import PaymentSuccess from './pages/PaymentSuccess';
@@ -57,6 +56,7 @@ import PaymentCancel from './pages/PaymentCancel';
 import ConsentBanner from './components/ConsentBanner';
 import ConsentSettingsModal from './components/ConsentSettingsModal';
 import ProtectedRoute from './components/ProtectedRoute';
+import Breadcrumbs from './components/Breadcrumbs';
 
 
 function App() {
@@ -90,6 +90,7 @@ function App() {
   return (
     <HelmetProvider>
       <AuthProvider>
+        <Breadcrumbs />
         <Routes>
         <Route exact path="/terms" element={<Terms/>} />
         <Route exact path="/" element={<Home />} />
@@ -131,7 +132,6 @@ function App() {
         <Route path="/crm/activities" element={<Activities/>} />
         <Route path="/crm/import" element={<Import/>} />
         <Route path="/crm/companies" element={<Companies/>} />
-        <Route exact path="/alliance" element={<Alliance/>} />
         <Route exact path="/ventures" element={<Ventures/>} />
         <Route exact path="/portfolio" element={<Portfolio/>} />
         <Route exact path="/blog" element={<Blogs/>} />

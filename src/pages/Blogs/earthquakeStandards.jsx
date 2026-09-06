@@ -1,8 +1,10 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../../partials/Header';
 import Footer from '../../partials/Footer';
 import PageIllustration from '../../partials/PageIllustration';
 import blogImage from '../../images/pereira-earthquake.jpg';
+import RelatedPosts from '../../components/RelatedPosts';
 
 const fadeInKeyframes = `
   @keyframes fadeIn {
@@ -22,6 +24,37 @@ function EarthquakeStandards() {
     <>
       <style>{fadeInKeyframes}</style>
       <div className="flex flex-col min-h-screen overflow-hidden">
+        <Helmet>
+          <title>Terremoto en Colombia: Guía de Estándares ISO para Responder y Reconstruir</title>
+          <meta name="description" content="Normas ISO clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente tras el terremoto en Colombia." />
+          <meta name="keywords" content="ISO 3010, ISO 13822, ISO 22320, ISO 22301, NSR-10, terremoto Colombia, resiliencia sísmica, gestión del riesgo, estándares ISO, construcción sismo resistente" />
+          <link rel="canonical" href="https://ogtechnologies.co/blog/estandares-sismicos-colombia" />
+          <meta property="og:type" content="article" />
+          <meta property="og:url" content="https://ogtechnologies.co/blog/estandares-sismicos-colombia" />
+          <meta property="og:title" content="Terremoto en Colombia: Guía de Estándares ISO para Responder y Reconstruir" />
+          <meta property="og:description" content="Normas ISO clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente tras el terremoto en Colombia." />
+          <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:url" content="https://ogtechnologies.co/blog/estandares-sismicos-colombia" />
+          <meta name="twitter:title" content="Terremoto en Colombia: Guía de Estándares ISO para Responder y Reconstruir" />
+          <meta name="twitter:description" content="Normas ISO clave para evaluación estructural, respuesta ante emergencias y reconstrucción resiliente tras el terremoto en Colombia." />
+          <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": "Terremoto de 7,4 en Colombia: la guía de estándares ISO para responder, evaluar y reconstruir",
+              "description": "Normas ISO clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente tras el terremoto en Colombia.",
+              "datePublished": "2026-08-14",
+              "dateModified": "2026-08-14",
+              "author": { "@type": "Person", "name": "Olvis Enrique Gil Ríos" },
+              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://ogtechnologies.co/og-og-image.png" } },
+              "url": "https://ogtechnologies.co/blog/estandares-sismicos-colombia",
+              "image": "https://ogtechnologies.co/og-og-image.png",
+              "inLanguage": "es"
+            })}
+          </script>
+        </Helmet>
         <Header />
 
         <main className="grow">
@@ -173,6 +206,10 @@ function EarthquakeStandards() {
             </div>
           </section>
         </main>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-12">
+          <RelatedPosts currentLink="/blog/estandares-sismicos-colombia" categories={['Standards', 'Compliance']} />
+        </div>
 
         <Footer />
       </div>

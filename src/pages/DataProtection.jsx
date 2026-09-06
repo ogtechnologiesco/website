@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Footer from '../partials/Footer';
 import Header from '../partials/Header';
@@ -9,6 +10,17 @@ import Typography from '@mui/material/Typography';
 function DataProtection() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
+      <Helmet>
+        <title>Privacy Policy - OG Technologies EU</title>
+        <meta name="description" content="Privacy Policy for OG Technologies EU. Learn how we collect, use, and protect your personal information in connection with our software development services." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ogtechnologies.co/privacy" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ogtechnologies.co/privacy" />
+        <meta property="og:title" content="Privacy Policy - OG Technologies EU" />
+        <meta property="og:description" content="Privacy Policy for OG Technologies EU. How we collect, use, and protect your personal information." />
+        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+      </Helmet>
 
       {/*  Site header */}
       <Header />

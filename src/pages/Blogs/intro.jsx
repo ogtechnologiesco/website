@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Footer from '../../partials/Footer';
 import Header from '../../partials/Header';
 import PageIllustration from '../../partials/PageIllustration';
@@ -7,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import { useInView } from 'react-intersection-observer';
 import './BlogPost.css'; // Make sure to create this CSS file for styling
 import img from "../../images/blog1.jpg"
+import RelatedPosts from '../../components/RelatedPosts';
 function BlogPost() {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -15,6 +17,36 @@ function BlogPost() {
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
+      <Helmet>
+        <title>Reaching New Tech Frontiers with OG Technologies EU</title>
+        <meta name="description" content="Discover how OG Technologies EU drives growth through IT consulting in Finance, Education, and Web3/Blockchain. Learn about our innovative solutions and approach." />
+        <meta name="keywords" content="IT consulting, Web3, blockchain, finance technology, education technology, IT helpdesk, digital transformation" />
+        <link rel="canonical" href="https://ogtechnologies.co/blog/reaching-new-frontiers" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://ogtechnologies.co/blog/reaching-new-frontiers" />
+        <meta property="og:title" content="Reaching New Tech Frontiers with OG Technologies EU" />
+        <meta property="og:description" content="Discover how OG Technologies EU drives growth through IT consulting in Finance, Education, and Web3/Blockchain." />
+        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://ogtechnologies.co/blog/reaching-new-frontiers" />
+        <meta name="twitter:title" content="Reaching New Tech Frontiers with OG Technologies EU" />
+        <meta name="twitter:description" content="Discover how OG Technologies EU drives growth through IT consulting in Finance, Education, and Web3/Blockchain." />
+        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Reaching New Tech Frontiers with OG Technologies EU",
+            "description": "Discover how OG Technologies EU drives growth through IT consulting in Finance, Education, and Web3/Blockchain.",
+            "datePublished": "2024-05-14",
+            "dateModified": "2024-05-14",
+            "author": { "@type": "Organization", "name": "OG Technologies EU" },
+            "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://ogtechnologies.co/og-og-image.png" } },
+            "url": "https://ogtechnologies.co/blog/reaching-new-frontiers",
+            "image": "https://ogtechnologies.co/og-og-image.png"
+          })}
+        </script>
+      </Helmet>
       {/* Site header */}
       <Header />
 
@@ -70,6 +102,10 @@ function BlogPost() {
           </div>
         </section>
       </main>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-12">
+        <RelatedPosts currentLink="/blog/reaching-new-frontiers" categories={['Company', 'Web3', 'Blockchain']} />
+      </div>
 
       <Footer />
     </div>

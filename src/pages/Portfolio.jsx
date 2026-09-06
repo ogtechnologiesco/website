@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
@@ -43,6 +44,22 @@ function Portfolio() {
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden" id="light">
+      <Helmet>
+        <title>Portfolio - OG Technologies EU | Innovative Projects</title>
+        <meta name="description" content="Explore our portfolio of innovative projects including EduNode, an educational STEM/Web3/AI platform, and Mozart Pay, a Stellar-based payment platform. Proven experience with cutting-edge technologies." />
+        <meta name="keywords" content="portfolio, EduNode, Mozart Pay, Stellar, blockchain projects, Web3 projects, education technology, payment platform, open source" />
+        <link rel="canonical" href="https://ogtechnologies.co/portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ogtechnologies.co/portfolio" />
+        <meta property="og:title" content="Portfolio - OG Technologies EU | Innovative Projects" />
+        <meta property="og:description" content="Explore our portfolio of innovative projects including EduNode and Mozart Pay. Proven experience with cutting-edge technologies." />
+        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://ogtechnologies.co/portfolio" />
+        <meta name="twitter:title" content="Portfolio - OG Technologies EU | Innovative Projects" />
+        <meta name="twitter:description" content="Explore our portfolio of innovative projects including EduNode and Mozart Pay." />
+        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+      </Helmet>
       {/*  Site header */}
       <Header />
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Footer from '../partials/Footer';
 import Header from '../partials/Header';
@@ -9,6 +10,17 @@ import Typography from '@mui/material/Typography';
 function Terms() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
+      <Helmet>
+        <title>Terms and Conditions - OG Technologies EU</title>
+        <meta name="description" content="Terms and Conditions for the use of OG Technologies EU website and software development services, including payment, intellectual property, confidentiality, and liability terms." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ogtechnologies.co/terms" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ogtechnologies.co/terms" />
+        <meta property="og:title" content="Terms and Conditions - OG Technologies EU" />
+        <meta property="og:description" content="Terms and Conditions for the use of OG Technologies EU website and software development services." />
+        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+      </Helmet>
 
       {/*  Site header */}
       <Header />

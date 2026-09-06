@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Container from '@mui/material/Container';
 import Header from '../../partials/Header';
 import Footer from '../../partials/Footer';
@@ -8,6 +9,7 @@ import eu from '../../images/eu.png'
 import bsl from '../../images/blockstand_logo.png';
 import bslPartners from '../../images/blockstand_partners.png';
 import trustChainExample from '../../images/trust_chain_education.png';
+import RelatedPosts from '../../components/RelatedPosts';
 
 
 // Add fadeIn animation keyframes
@@ -29,6 +31,36 @@ function EBSI() {
     <>
       <style>{fadeInKeyframes}</style>
       <div className="flex flex-col min-h-screen overflow-hidden">
+        <Helmet>
+          <title>Verifying EBSI Verifiable Credentials: Trust Chain & Compliance</title>
+          <meta name="description" content="Explore the key requirements for verifying EBSI Verifiable Credentials, including trust chain verification, eIDAS compliance, ISO/IEC standards, and W3C data models." />
+          <meta name="keywords" content="EBSI, verifiable credentials, trust chain, eIDAS, ISO/IEC 29115, ISO/IEC 27001, W3C, DID, European Blockchain Services Infrastructure" />
+          <link rel="canonical" href="https://ogtechnologies.co/blog/ebsi-verifiable-credentials" />
+          <meta property="og:type" content="article" />
+          <meta property="og:url" content="https://ogtechnologies.co/blog/ebsi-verifiable-credentials" />
+          <meta property="og:title" content="Verifying EBSI Verifiable Credentials: Trust Chain & Compliance" />
+          <meta property="og:description" content="Explore the key requirements for verifying EBSI Verifiable Credentials, including trust chain verification, eIDAS compliance, and ISO/IEC standards." />
+          <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:url" content="https://ogtechnologies.co/blog/ebsi-verifiable-credentials" />
+          <meta name="twitter:title" content="Verifying EBSI Verifiable Credentials: Trust Chain & Compliance" />
+          <meta name="twitter:description" content="Explore the key requirements for verifying EBSI Verifiable Credentials, including trust chain verification, eIDAS compliance, and ISO/IEC standards." />
+          <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": "Key Requirements for Verifying EBSI Verifiable Credentials, Including Trust Chain Verification and Regulatory Alignment",
+              "description": "Explore the key requirements for verifying EBSI Verifiable Credentials, including trust chain verification, eIDAS compliance, and ISO/IEC standards.",
+              "datePublished": "2025-03-30",
+              "dateModified": "2025-04-17",
+              "author": { "@type": "Organization", "name": "OG Technologies EU" },
+              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://ogtechnologies.co/og-og-image.png" } },
+              "url": "https://ogtechnologies.co/blog/ebsi-verifiable-credentials",
+              "image": "https://ogtechnologies.co/og-og-image.png"
+            })}
+          </script>
+        </Helmet>
         <Header />
 
         <main className="grow">
@@ -426,6 +458,10 @@ function EBSI() {
             </div>
           </section>
         </main>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-12">
+          <RelatedPosts currentLink="/blog/ebsi-verifiable-credentials" categories={['Standards', 'Blockchain', 'Compliance']} />
+        </div>
 
         <Footer />
       </div>

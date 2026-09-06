@@ -1,74 +1,39 @@
 // Imprint.js
-import React from 'react';
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import PageIllustration from '../partials/PageIllustration';
 import FeaturedPost from './FeaturedPost';
-import blog1 from '../images/blog1.jpg';
-import meridian from '../images/meridian.png';
-import stand from '../images/stand.jpeg';
-import ebsi from '../images/ebsi2.png';
-import digitalPaymentsFuture from '../images/digital-payments-future.jpg';
-import earthquakeStandards from '../images/pereira-earthquake.jpg';
-
-const myPosts = [
-  {
-    title: 'Reaching new Tech frontiers with OG Technologies EU',
-    date: '14/05/2024',
-    description:
-      'In todays fast-paced business landscape, technology plays a crucial role in driving growth and innovation.',
-    image: blog1,
-    imageText: 'Image Text',
-    link: '/blog/reaching-new-frontiers',
-  },
-  {
-    title: 'Meeting the Stellar Community at Meridian 2024',
-    date: '24/10/2024',
-    description:
-      'Last week, we had the incredible opportunity to attend Meridian 2024 in London, where the Stellar community gathered to discuss...',
-    image: meridian,
-    imageText: 'meridian',
-    link: '/blog/meridian-2024-highlights',
-  },
- {
-   title: 'How Blockchain Standards Enable Enterprises to Reach Global Customers',
-     date: '22/11/2024',
-     description: 'In todays interconnected business world, standards play a crucial role in helping enterprises expand their reach and connect with more customers.',
-     image: stand,
-     imageText: 'standards',
-    link: '/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers',
-   },
-   {
-    title: 'Verifying EBSI Verifiable Credentials, trust chain verification and compliance',
-    date: '30/03/2025',
-    description: 'In this article, we explore the key requirements for ensuring the authenticity and compliance of verifiable credentials within the European Blockchain Services Infrastructure (EBSI).',
-    image: ebsi,
-    imageText: 'Key requirements for verifying EBSI Verifiable Credentials',
-    link: '/blog/ebsi-verifiable-credentials',
-   },
-   {
-    title: 'Building the Rails for Europe\'s Digital Payment Future',
-    date: '21/07/2026',
-    description: 'Three major transitions—MiCA, digital euro, ISO 20022—are converging. Europe is building a new digital payment infrastructure, and we need the standards to make it work.',
-    image: digitalPaymentsFuture,
-    imageText: 'Europe\'s Digital Payment Future',
-    link: '/blog/digital-payments-future',
-   },
-   {
-    title: 'Terremoto en Colombia: guía de estándares ISO para responder, evaluar y reconstruir',
-    date: '14/08/2026',
-    description: 'Normas clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente.',
-    image: earthquakeStandards,
-    imageText: 'Estándares ISO para resiliencia sísmica',
-    link: '/blog/estandares-sismicos-colombia',
-   },
-];
+import { blogPosts, allCategories } from '../data/blogPosts';
 
 function Blog() {
+  const [activeCategory, setActiveCategory] = useState('All');
+
+  const filteredPosts = activeCategory === 'All'
+    ? blogPosts
+    : blogPosts.filter((post) => post.categories.includes(activeCategory));
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
+      <Helmet>
+        <title>Blog - OG Technologies EU | Web3, Blockchain & IT Insights</title>
+        <meta name="description" content="Explore the OG Technologies EU blog for insights on Web3, blockchain standards, verifiable credentials, digital payments, and enterprise IT innovation." />
+        <meta name="keywords" content="blockchain blog, Web3 insights, verifiable credentials, EBSI, digital payments, ISO standards, DLT, Stellar, IT consulting" />
+        <link rel="canonical" href="https://ogtechnologies.co/blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ogtechnologies.co/blog" />
+        <meta property="og:title" content="Blog - OG Technologies EU | Web3, Blockchain & IT Insights" />
+        <meta property="og:description" content="Explore the OG Technologies EU blog for insights on Web3, blockchain standards, verifiable credentials, digital payments, and enterprise IT innovation." />
+        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://ogtechnologies.co/blog" />
+        <meta name="twitter:title" content="Blog - OG Technologies EU | Web3, Blockchain & IT Insights" />
+        <meta name="twitter:description" content="Explore the OG Technologies EU blog for insights on Web3, blockchain standards, verifiable credentials, digital payments, and enterprise IT innovation." />
+        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+      </Helmet>
       {/* Site header */}
       <Header />
 
@@ -91,12 +56,29 @@ function Blog() {
                 </p>
               </div>
 
+              {/* Category filter */}
+              <div className="flex flex-wrap justify-center gap-2 mb-8">
+                {allCategories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`px-4 py-1.5 rounded-full text-sm font-medium transition duration-150 ease-in-out ${
+                      activeCategory === cat
+                        ? 'bg-purple-600 text-white'
+                        : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-gray-200'
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+
               {/* Posts */}
               <div className="max-w-XL mx-auto">
                 <Container disableGutters maxWidth="xl" component="main" sx={{ pt: 1, pb: 6 }}>
                   <main>
                     <Grid container spacing={4}>
-                      {myPosts.map((post) => (
+                      {filteredPosts.map((post) => (
                         <FeaturedPost key={post.title} post={post} />
                       ))}
                     </Grid>
