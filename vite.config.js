@@ -90,6 +90,8 @@ export default defineConfig({
       postProcess(renderedRoute) {
         const meta = routeMeta[renderedRoute.route]
         if (meta) {
+          const canonicalUrl = `https://ogtechnologies.co${renderedRoute.route === '/' ? '' : renderedRoute.route}`
+
           renderedRoute.html = renderedRoute.html.replace(
             /<title>[^<]*<\/title>/,
             `<title>${meta.title}</title>`
@@ -106,7 +108,6 @@ export default defineConfig({
             /(<meta\s+)(?:content="[^"]*"\s+property="og:description"|property="og:description"\s+content="[^"]*")/,
             `$1property="og:description" content="${meta.description}"`
           )
-          const canonicalUrl = `https://ogtechnologies.co${renderedRoute.route === '/' ? '' : renderedRoute.route}`
           renderedRoute.html = renderedRoute.html.replace(
             /(<link\s+)(?:href="[^"]*"\s+rel="canonical"|rel="canonical"\s+href="[^"]*")/,
             `$1rel="canonical" href="${canonicalUrl}"`
@@ -115,6 +116,70 @@ export default defineConfig({
             /(<meta\s+)(?:content="[^"]*"\s+property="og:url"|property="og:url"\s+content="[^"]*")/,
             `$1property="og:url" content="${canonicalUrl}"`
           )
+          renderedRoute.html = renderedRoute.html.replace(
+            /(<meta\s+)(?:content="[^"]*"\s+property="twitter:title"|property="twitter:title"\s+content="[^"]*")/,
+            `$1property="twitter:title" content="${meta.title}"`
+          )
+          renderedRoute.html = renderedRoute.html.replace(
+            /(<meta\s+)(?:content="[^"]*"\s+property="twitter:description"|property="twitter:description"\s+content="[^"]*")/,
+            `$1property="twitter:description" content="${meta.description}"`
+          )
+          renderedRoute.html = renderedRoute.html.replace(
+            /(<meta\s+)(?:content="[^"]*"\s+property="twitter:url"|property="twitter:url"\s+content="[^"]*")/,
+            `$1property="twitter:url" content="${canonicalUrl}"`
+          )
+
+          const jsonLdScripts = []
+
+          if (renderedRoute.route !== '/') {
+            const segments = renderedRoute.route.split('/').filter(Boolean)
+            const itemListElement = segments.map((seg, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              name: seg.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+              item: `https://ogtechnologies.co/${segments.slice(0, i + 1).join('/')}`,
+            }))
+            jsonLdScripts.push({
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement,
+            })
+          }
+
+          if (renderedRoute.route.startsWith('/blog/') && renderedRoute.route !== '/blog') {
+            jsonLdScripts.push({
+              '@context': 'https://schema.org',
+              '@type': 'BlogPosting',
+              headline: meta.title,
+              description: meta.description,
+              url: canonicalUrl,
+              author: { '@type': 'Organization', name: 'OG Technologies EU' },
+              publisher: { '@type': 'Organization', name: 'OG Technologies EU' },
+            })
+          }
+
+          if (renderedRoute.route.startsWith('/tools/')) {
+            jsonLdScripts.push({
+              '@context': 'https://schema.org',
+              '@type': 'WebApplication',
+              name: meta.title.replace(' - OG Technologies EU', ''),
+              description: meta.description,
+              url: canonicalUrl,
+              applicationCategory: 'DeveloperApplication',
+              operatingSystem: 'Any',
+              offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+            })
+          }
+
+          if (jsonLdScripts.length > 0) {
+            const jsonLdHtml = jsonLdScripts
+              .map(s => `<script type="application/ld+json">${JSON.stringify(s)}</script>`)
+              .join('')
+            renderedRoute.html = renderedRoute.html.replace(
+              /<\/head>/,
+              `${jsonLdHtml}</head>`
+            )
+          }
         }
         return renderedRoute
       },
