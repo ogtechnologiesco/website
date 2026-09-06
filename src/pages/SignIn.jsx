@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import { useAuth } from '../hooks/useAuth';
@@ -112,6 +113,9 @@ function SignIn() {
   };
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
 
       {/*  Site header */}
       <Header />

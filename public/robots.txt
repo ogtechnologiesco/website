@@ -4,9 +4,15 @@
 User-agent: *
 Allow: /
 
-# Disallow specific paths if needed
-# Disallow: /admin/
-# Disallow: /private/
+# Disallow specific paths
+Disallow: /signin
+Disallow: /signup
+Disallow: /reset-password
+Disallow: /dashboard
+Disallow: /settings
+Disallow: /crm
+Disallow: /crm/*
+Disallow: /auth/callback
 
 # Explicitly allow AI crawlers
 User-agent: GPTBot
