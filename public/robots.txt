@@ -40,4 +40,4 @@ User-agent: Bingbot
 Allow: /
 
 # Sitemap location
-Sitemap: https://ogtechnologies.co/sitemap.xml
+Sitemap: https://www.ogtechnologies.co/sitemap.xml

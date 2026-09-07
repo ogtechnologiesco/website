@@ -26,21 +26,21 @@ function PdfTools() {
         <meta name="description" content="Merge, split, and convert PDF files directly in your browser. Convert images and documents to PDF. Free and private - no file is ever uploaded to a server." />
         <meta name="keywords" content="PDF tools, merge PDF, split PDF, image to PDF, DOCX to PDF, ODT to PDF, TXT to PDF, free PDF converter, browser PDF tools" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ogtechnologies.co/tools/pdf-tools" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/pdf-tools" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ogtechnologies.co/tools/pdf-tools" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/pdf-tools" />
         <meta property="og:title" content="Free PDF Tools - Merge, Split & Convert PDFs Online | OG Technologies EU" />
         <meta property="og:description" content="Merge, split, and convert PDF files directly in your browser. Free and private - no file is ever uploaded to a server." />
-        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://ogtechnologies.co/tools/pdf-tools" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/pdf-tools" />
         <meta name="twitter:title" content="Free PDF Tools - Merge, Split & Convert PDFs Online | OG Technologies EU" />
         <meta name="twitter:description" content="Merge, split, and convert PDF files directly in your browser. Free and private - no file is ever uploaded to a server." />
-        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
@@ -48,7 +48,7 @@ function PdfTools() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'PDF Tools',
-            url: 'https://ogtechnologies.co/tools/pdf-tools',
+            url: 'https://www.ogtechnologies.co/tools/pdf-tools',
             description: 'Merge, split, and convert PDF files directly in your browser. Free and private - no file is ever uploaded to a server.',
             applicationCategory: 'UtilitiesApplication',
             operatingSystem: 'Any',
@@ -66,7 +66,7 @@ function PdfTools() {
             creator: {
               '@type': 'Organization',
               name: 'OG Technologies EU',
-              url: 'https://ogtechnologies.co/',
+              url: 'https://www.ogtechnologies.co/',
             },
           })}
         </script>

@@ -13,21 +13,21 @@ function Dora() {
         <title>DORA Compliance Assessment - OG Technologies EU</title>
         <meta name="description" content="Assess your Digital Operational Resilience Act (DORA) compliance status. Specialized assessment for fintech startups and enterprises using blockchain, DLT, and Web3 technologies." />
         <meta name="keywords" content="DORA compliance, Digital Operational Resilience Act, fintech compliance, blockchain regulation, DLT compliance, Web3 regulation, financial sector resilience" />
-        <link rel="canonical" href="https://ogtechnologies.co/dora" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/dora" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ogtechnologies.co/dora" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/dora" />
         <meta property="og:title" content="DORA Compliance Assessment - OG Technologies EU" />
         <meta property="og:description" content="Specialized DORA compliance assessment for fintech and blockchain enterprises. Evaluate your digital operational resilience today." />
-        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://ogtechnologies.co/dora" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/dora" />
         <meta name="twitter:title" content="DORA Compliance Assessment - OG Technologies EU" />
         <meta name="twitter:description" content="Specialized DORA compliance assessment for fintech and blockchain enterprises. Evaluate your digital operational resilience today." />
-        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
       </Helmet>
       <div className="flex flex-col min-h-screen overflow-hidden">
 

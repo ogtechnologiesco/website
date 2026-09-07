@@ -28,17 +28,17 @@ function EarthquakeStandards() {
           <title>Terremoto en Colombia: Guía de Estándares ISO para Responder y Reconstruir</title>
           <meta name="description" content="Normas ISO clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente tras el terremoto en Colombia." />
           <meta name="keywords" content="ISO 3010, ISO 13822, ISO 22320, ISO 22301, NSR-10, terremoto Colombia, resiliencia sísmica, gestión del riesgo, estándares ISO, construcción sismo resistente" />
-          <link rel="canonical" href="https://ogtechnologies.co/blog/estandares-sismicos-colombia" />
+          <link rel="canonical" href="https://www.ogtechnologies.co/blog/estandares-sismicos-colombia" />
           <meta property="og:type" content="article" />
-          <meta property="og:url" content="https://ogtechnologies.co/blog/estandares-sismicos-colombia" />
+          <meta property="og:url" content="https://www.ogtechnologies.co/blog/estandares-sismicos-colombia" />
           <meta property="og:title" content="Terremoto en Colombia: Guía de Estándares ISO para Responder y Reconstruir" />
           <meta property="og:description" content="Normas ISO clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente tras el terremoto en Colombia." />
-          <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+          <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:url" content="https://ogtechnologies.co/blog/estandares-sismicos-colombia" />
+          <meta name="twitter:url" content="https://www.ogtechnologies.co/blog/estandares-sismicos-colombia" />
           <meta name="twitter:title" content="Terremoto en Colombia: Guía de Estándares ISO para Responder y Reconstruir" />
           <meta name="twitter:description" content="Normas ISO clave para evaluación estructural, respuesta ante emergencias y reconstrucción resiliente tras el terremoto en Colombia." />
-          <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+          <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
@@ -48,9 +48,9 @@ function EarthquakeStandards() {
               "datePublished": "2026-08-14",
               "dateModified": "2026-08-14",
               "author": { "@type": "Person", "name": "Olvis Enrique Gil Ríos" },
-              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://ogtechnologies.co/og-og-image.png" } },
-              "url": "https://ogtechnologies.co/blog/estandares-sismicos-colombia",
-              "image": "https://ogtechnologies.co/og-og-image.png",
+              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
+              "url": "https://www.ogtechnologies.co/blog/estandares-sismicos-colombia",
+              "image": "https://www.ogtechnologies.co/og-og-image.png",
               "inLanguage": "es"
             })}
           </script>

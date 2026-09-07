@@ -74,21 +74,21 @@ function BlockchainCompliance() {
         <meta name="description" content="Free Web3 & blockchain standards compliance checker. Enter your project details and get a personalized compliance roadmap covering eIDAS, W3C VCs, DID Core, ISO 27001, GDPR, ISO 20022, MiCA, DORA and more." />
         <meta name="keywords" content="blockchain compliance checker, blockchain regulatory compliance, EBSI compliance, verifiable credentials compliance, blockchain standards, Web3 compliance Europe, eIDAS blockchain, W3C VC compliance, DID compliance, MiCA compliance, DORA blockchain, ISO 20022 crypto" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ogtechnologies.co/tools/blockchain-compliance-checker" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/blockchain-compliance-checker" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ogtechnologies.co/tools/blockchain-compliance-checker" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/blockchain-compliance-checker" />
         <meta property="og:title" content="Blockchain Compliance Checker - Web3 Standards & Regulatory Compliance | OG Technologies EU" />
         <meta property="og:description" content="Free Web3 & blockchain standards compliance checker. Get a personalized compliance roadmap covering eIDAS, W3C VCs, DID Core, ISO 27001, GDPR, ISO 20022, and more." />
-        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://ogtechnologies.co/tools/blockchain-compliance-checker" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/blockchain-compliance-checker" />
         <meta name="twitter:title" content="Blockchain Compliance Checker - Web3 Standards & Regulatory Compliance | OG Technologies EU" />
         <meta name="twitter:description" content="Free Web3 & blockchain standards compliance checker. Get a personalized compliance roadmap covering eIDAS, W3C VCs, DID Core, ISO 27001, GDPR, ISO 20022, and more." />
-        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
@@ -96,7 +96,7 @@ function BlockchainCompliance() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'Blockchain Compliance Checker',
-            url: 'https://ogtechnologies.co/tools/blockchain-compliance-checker',
+            url: 'https://www.ogtechnologies.co/tools/blockchain-compliance-checker',
             description: 'Free Web3 & blockchain standards compliance checker. Enter your project details and get a personalized compliance roadmap covering eIDAS, W3C Verifiable Credentials, DID Core, ISO 27001, GDPR, ISO 20022, MiCA, DORA and more.',
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Any',
@@ -116,7 +116,7 @@ function BlockchainCompliance() {
             creator: {
               '@type': 'Organization',
               name: 'OG Technologies EU',
-              url: 'https://ogtechnologies.co/',
+              url: 'https://www.ogtechnologies.co/',
             },
           })}
         </script>

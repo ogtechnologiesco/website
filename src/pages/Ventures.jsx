@@ -18,17 +18,17 @@ function Ventures() {
         <title>Ventures - OG Technologies EU | Startups, Spin-offs & Intrapreneurship</title>
         <meta name="description" content="We support innovation and entrepreneurship through startups, new business ventures, university spin-offs, and intrapreneurship programs. Transforming ideas into successful ventures." />
         <meta name="keywords" content="ventures, startups, spin-offs, intrapreneurship, innovation, entrepreneurship, technology ventures, business incubation" />
-        <link rel="canonical" href="https://ogtechnologies.co/ventures" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/ventures" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ogtechnologies.co/ventures" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/ventures" />
         <meta property="og:title" content="Ventures - OG Technologies EU | Startups, Spin-offs & Intrapreneurship" />
         <meta property="og:description" content="We support innovation and entrepreneurship through startups, new business ventures, university spin-offs, and intrapreneurship programs." />
-        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://ogtechnologies.co/ventures" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/ventures" />
         <meta name="twitter:title" content="Ventures - OG Technologies EU | Startups, Spin-offs & Intrapreneurship" />
         <meta name="twitter:description" content="We support innovation and entrepreneurship through startups, new business ventures, and intrapreneurship programs." />
-        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
       </Helmet>
 
       {/*  Site header */}

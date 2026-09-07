@@ -94,13 +94,13 @@ function MeridianBlogPost() {
         <meta property="og:description" content="Explore our insights from Meridian 2024, where the Stellar community gathered to discuss the future of blockchain and financial technology." />
         <meta property="og:image" content={heroImage.src} />
         <meta property="og:type" content="article" />
-        <link rel="canonical" href="https://ogtechnologies.co/blog/meridian-2024-highlights" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/blog/meridian-2024-highlights" />
         <link rel="preload" as="image" href={heroImage.placeholder} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://ogtechnologies.co/blog/meridian-2024-highlights" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/blog/meridian-2024-highlights" />
         <meta name="twitter:title" content="Meeting the Stellar Community at Meridian 2024: A Defining Moment for Web3" />
         <meta name="twitter:description" content="Discover our experience at Meridian 2024 in London, where we explored the future of blockchain, DeFi, and Stellar's innovative solutions." />
-        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -110,9 +110,9 @@ function MeridianBlogPost() {
             "datePublished": "2024-10-15",
             "dateModified": "2024-10-15",
             "author": { "@type": "Organization", "name": "OG Technologies EU" },
-            "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://ogtechnologies.co/og-og-image.png" } },
-            "url": "https://ogtechnologies.co/blog/meridian-2024-highlights",
-            "image": "https://ogtechnologies.co/og-og-image.png"
+            "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
+            "url": "https://www.ogtechnologies.co/blog/meridian-2024-highlights",
+            "image": "https://www.ogtechnologies.co/og-og-image.png"
           })}
         </script>
       </Helmet>

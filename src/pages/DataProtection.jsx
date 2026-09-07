@@ -14,12 +14,12 @@ function DataProtection() {
         <title>Privacy Policy - OG Technologies EU</title>
         <meta name="description" content="Privacy Policy for OG Technologies EU. Learn how we collect, use, and protect your personal information in connection with our software development services." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ogtechnologies.co/privacy" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/privacy" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ogtechnologies.co/privacy" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/privacy" />
         <meta property="og:title" content="Privacy Policy - OG Technologies EU" />
         <meta property="og:description" content="Privacy Policy for OG Technologies EU. How we collect, use, and protect your personal information." />
-        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
       </Helmet>
 
       {/*  Site header */}

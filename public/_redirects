@@ -1,7 +1,6 @@
-# Force HTTPS redirect
-http://ogtechnologies.co/* https://ogtechnologies.co/:splat 301!
-http://www.ogtechnologies.co/* https://ogtechnologies.co/:splat 301!
-https://www.ogtechnologies.co/* https://ogtechnologies.co/:splat 301!
+# Force HTTPS redirect to www
+http://ogtechnologies.co/* https://www.ogtechnologies.co/:splat 301!
+http://www.ogtechnologies.co/* https://www.ogtechnologies.co/:splat 301!
 
 # SPA routing
 /* /index.html 200

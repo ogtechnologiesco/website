@@ -12,21 +12,21 @@ function Standards() {
         <title>ISO Standards & Certification Services - OG Technologies EU</title>
         <meta name="description" content="Expert ISO standards and certification services from Austrian delegates for ISO/TC 307 and CEN CENELEC JTC 19. Blockchain, finance, sustainability, and security standards consulting." />
         <meta name="keywords" content="ISO standards, ISO/TC 307, CEN CENELEC JTC 19, ISO 20022, ISO 27001, ISO 9001, blockchain standards, certification services, Austrian delegates" />
-        <link rel="canonical" href="https://ogtechnologies.co/standards" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/standards" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ogtechnologies.co/standards" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/standards" />
         <meta property="og:title" content="ISO Standards & Certification Services - OG Technologies EU" />
         <meta property="og:description" content="Expert ISO standards and certification services from Austrian delegates. Blockchain, finance, sustainability, and security standards consulting." />
-        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://ogtechnologies.co/standards" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/standards" />
         <meta name="twitter:title" content="ISO Standards & Certification Services - OG Technologies EU" />
         <meta name="twitter:description" content="Expert ISO standards and certification services from Austrian delegates. Blockchain, finance, sustainability, and security standards consulting." />
-        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
       </Helmet>
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Header />

@@ -165,7 +165,7 @@ export async function generateCompliancePdf(results, formData) {
     8,
     COLORS.gray
   );
-  drawText('https://ogtechnologies.co/tools/blockchain-compliance-checker', font, 8, COLORS.purple);
+  drawText('https://www.ogtechnologies.co/tools/blockchain-compliance-checker', font, 8, COLORS.purple);
 
   const pdfBytes = await pdfDoc.save();
   return pdfBytes;

@@ -22,17 +22,17 @@ function Blog() {
         <title>Blog - OG Technologies EU | Web3, Blockchain & IT Insights</title>
         <meta name="description" content="Explore the OG Technologies EU blog for insights on Web3, blockchain standards, verifiable credentials, digital payments, and enterprise IT innovation." />
         <meta name="keywords" content="blockchain blog, Web3 insights, verifiable credentials, EBSI, digital payments, ISO standards, DLT, Stellar, IT consulting" />
-        <link rel="canonical" href="https://ogtechnologies.co/blog" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/blog" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ogtechnologies.co/blog" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/blog" />
         <meta property="og:title" content="Blog - OG Technologies EU | Web3, Blockchain & IT Insights" />
         <meta property="og:description" content="Explore the OG Technologies EU blog for insights on Web3, blockchain standards, verifiable credentials, digital payments, and enterprise IT innovation." />
-        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://ogtechnologies.co/blog" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/blog" />
         <meta name="twitter:title" content="Blog - OG Technologies EU | Web3, Blockchain & IT Insights" />
         <meta name="twitter:description" content="Explore the OG Technologies EU blog for insights on Web3, blockchain standards, verifiable credentials, digital payments, and enterprise IT innovation." />
-        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
       </Helmet>
       {/* Site header */}
       <Header />

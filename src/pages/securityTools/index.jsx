@@ -56,21 +56,21 @@ function SecurityTools() {
         <meta name="description" content="Enter any website URL and get an instant passive security scan. Checks HTTPS, security headers, cookies, mixed content, and more — mapped to OWASP Top 10. For Free." />
         <meta name="keywords" content="web security scanner, OWASP top 10, security headers check, passive security scan, free pentesting tool, website security analysis, HSTS check, CSP check, cookie security" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ogtechnologies.co/tools/security-tools" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/security-tools" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ogtechnologies.co/tools/security-tools" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/security-tools" />
         <meta property="og:title" content="Web Security Scanner - Free Online Passive Security Check | OG Technologies EU" />
         <meta property="og:description" content="Enter any website URL and get an instant passive security scan mapped to OWASP Top 10. For Free." />
-        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://ogtechnologies.co/tools/security-tools" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/security-tools" />
         <meta name="twitter:title" content="Web Security Scanner - Free Online Passive Security Check | OG Technologies EU" />
         <meta name="twitter:description" content="Enter any website URL and get an instant passive security scan mapped to OWASP Top 10. For Free." />
-        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
@@ -78,7 +78,7 @@ function SecurityTools() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'Web Security Scanner',
-            url: 'https://ogtechnologies.co/tools/security-tools',
+            url: 'https://www.ogtechnologies.co/tools/security-tools',
             description: 'Enter any website URL and get an instant passive security scan. Checks HTTPS, security headers, cookies, mixed content, and more — mapped to OWASP Top 10.',
             applicationCategory: 'SecurityApplication',
             operatingSystem: 'Any',
@@ -100,7 +100,7 @@ function SecurityTools() {
             creator: {
               '@type': 'Organization',
               name: 'OG Technologies EU',
-              url: 'https://ogtechnologies.co/',
+              url: 'https://www.ogtechnologies.co/',
             },
           })}
         </script>

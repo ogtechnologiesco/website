@@ -55,7 +55,7 @@ function Breadcrumbs() {
       '@type': 'ListItem',
       position: index + 1,
       name: crumb.name,
-      item: `https://ogtechnologies.co${crumb.path}`,
+      item: `https://www.ogtechnologies.co${crumb.path}`,
     })),
   };
 

@@ -106,21 +106,21 @@ function ScreenshotToImage() {
         <meta name="description" content="Paste a screenshot from your clipboard and download it as an image file. Free, private, and secure - everything happens locally in your browser." />
         <meta name="keywords" content="screenshot to image, paste screenshot, clipboard image download, save screenshot as file, browser tool, free tool" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ogtechnologies.co/tools/screenshot-to-image" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/screenshot-to-image" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ogtechnologies.co/tools/screenshot-to-image" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/screenshot-to-image" />
         <meta property="og:title" content="Screenshot to Image - Paste & Download Clipboard Images | OG Technologies EU" />
         <meta property="og:description" content="Paste a screenshot from your clipboard and download it as an image file. Everything happens locally in your browser." />
-        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://ogtechnologies.co/tools/screenshot-to-image" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/screenshot-to-image" />
         <meta name="twitter:title" content="Screenshot to Image - Paste & Download Clipboard Images | OG Technologies EU" />
         <meta name="twitter:description" content="Paste a screenshot from your clipboard and download it as an image file. Everything happens locally in your browser." />
-        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
@@ -128,7 +128,7 @@ function ScreenshotToImage() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'Screenshot to Image',
-            url: 'https://ogtechnologies.co/tools/screenshot-to-image',
+            url: 'https://www.ogtechnologies.co/tools/screenshot-to-image',
             description: 'Paste a screenshot from your clipboard and download it as an image file. Everything happens locally in your browser.',
             applicationCategory: 'UtilitiesApplication',
             operatingSystem: 'Any',
@@ -140,7 +140,7 @@ function ScreenshotToImage() {
             creator: {
               '@type': 'Organization',
               name: 'OG Technologies EU',
-              url: 'https://ogtechnologies.co/',
+              url: 'https://www.ogtechnologies.co/',
             },
           })}
         </script>

@@ -29,21 +29,21 @@ function Home() {
         <title>OG Technologies EU - Web3 & Blockchain Innovation</title>
         <meta name="description" content="Transform your business with cutting-edge Web3 and blockchain solutions. OG Technologies EU delivers enterprise-grade decentralized applications, verifiable credentials, and digital identity systems." />
         <meta name="keywords" content="Web3, blockchain, enterprise solutions, verifiable credentials, digital identity, Stellar, DeFi, decentralized applications" />
-        <link rel="canonical" href="https://ogtechnologies.co/" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ogtechnologies.co/" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/" />
         <meta property="og:title" content="OG Technologies EU - Web3 & Blockchain Innovation" />
         <meta property="og:description" content="Transform your business with cutting-edge Web3 and blockchain solutions. Enterprise-grade decentralized applications and digital identity systems." />
-        <meta property="og:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://ogtechnologies.co/" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/" />
         <meta name="twitter:title" content="OG Technologies EU - Web3 & Blockchain Innovation" />
         <meta name="twitter:description" content="Transform your business with cutting-edge Web3 and blockchain solutions. Enterprise-grade decentralized applications and digital identity systems." />
-        <meta name="twitter:image" content="https://ogtechnologies.co/og-og-image.png" />
+        <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
@@ -51,8 +51,8 @@ function Home() {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "OG Technologies EU",
-            "url": "https://ogtechnologies.co",
-            "logo": "https://ogtechnologies.co/og-og-image.png",
+            "url": "https://www.ogtechnologies.co",
+            "logo": "https://www.ogtechnologies.co/og-og-image.png",
             "description": "Transforming businesses through Web3 and blockchain innovation. Enterprise solutions for the decentralized future.",
             "address": {
               "@type": "PostalAddress",
