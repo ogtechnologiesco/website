@@ -112,6 +112,9 @@ const Testimonials = () => {
                     src={logo.src}
                     alt={logo.alt}
                     className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    loading="lazy"
+                    width="96"
+                    height="96"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
                 </div>

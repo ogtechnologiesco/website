@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, lazy, Suspense } from 'react';
 import {
   Routes,
   Route,
@@ -7,56 +7,56 @@ import {
 import 'aos/dist/aos.css';
 import './css/style.css';
 import AOS from 'aos';
-import { useState } from 'react';
 import { AuthProvider } from './contexts/AuthContext';
 import { Toaster } from 'react-hot-toast';
 import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
-import ResetPassword from './pages/ResetPassword';
-import Dashboard from './pages/Dashboard';
-import Settings from './pages/Settings';
-import Standards from './pages/Standards';
-import Pricing from './pages/Pricing';
-import Terms from './pages/Terms';
-import Imprint from './pages/Imprint';
-import Products from './pages/Products';
-import Job from './pages/Job';
-import Blogs from './pages/Blog';
-import BlogPost from './pages/Blogs/intro';
-import MeridianPost from './pages/Blogs/meridian2024';
-import StandardsPost from './pages/Blogs/standards';
-import Ebsi from './pages/Blogs/ebsi';
-import DigitalPaymentsFuture from './pages/Blogs/digitalPaymentsFuture';
-import EarthquakeStandards from './pages/Blogs/earthquakeStandards';
-import HtmlToImage from './pages/HtmlToImage';
-import ScreenshotToImage from './pages/ScreenshotToImage';
-import PdfTools from './pages/pdfTools';
-import SecurityTools from './pages/securityTools';
-import BlockchainCompliance from './pages/blockchainCompliance';
-import DataProtection from './pages/DataProtection';
-import DataPolicy from './pages/DataPolicy';
-import AuthCallback from './pages/AuthCallback';
-import Quote from './pages/Quote';
-import Dora from './pages/Dora';
-import HelpDesk from './pages/HelpDesk';
-import HelpDeskTicketDetail from './pages/HelpDeskTicketDetail';
-import CRM from './pages/CRM';
-import Contacts from './pages/Contacts';
-import Leads from './pages/Leads';
-import Opportunities from './pages/Opportunities';
-import Activities from './pages/Activities';
-import Import from './pages/Import';
-import Companies from './pages/Companies';
-import Ventures from './pages/Ventures';
-import Portfolio from './pages/Portfolio';
-import PaymentSuccess from './pages/PaymentSuccess';
-import PaymentCancel from './pages/PaymentCancel';
 import ConsentBanner from './components/ConsentBanner';
 import ConsentSettingsModal from './components/ConsentSettingsModal';
 import ProtectedRoute from './components/ProtectedRoute';
 import Breadcrumbs from './components/Breadcrumbs';
+
+const SignIn = lazy(() => import('./pages/SignIn'));
+const SignUp = lazy(() => import('./pages/SignUp'));
+const ResetPassword = lazy(() => import('./pages/ResetPassword'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Settings = lazy(() => import('./pages/Settings'));
+const Standards = lazy(() => import('./pages/Standards'));
+const Pricing = lazy(() => import('./pages/Pricing'));
+const Terms = lazy(() => import('./pages/Terms'));
+const Imprint = lazy(() => import('./pages/Imprint'));
+const Products = lazy(() => import('./pages/Products'));
+const Job = lazy(() => import('./pages/Job'));
+const Blogs = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/Blogs/intro'));
+const MeridianPost = lazy(() => import('./pages/Blogs/meridian2024'));
+const StandardsPost = lazy(() => import('./pages/Blogs/standards'));
+const Ebsi = lazy(() => import('./pages/Blogs/ebsi'));
+const DigitalPaymentsFuture = lazy(() => import('./pages/Blogs/digitalPaymentsFuture'));
+const EarthquakeStandards = lazy(() => import('./pages/Blogs/earthquakeStandards'));
+const HtmlToImage = lazy(() => import('./pages/HtmlToImage'));
+const ScreenshotToImage = lazy(() => import('./pages/ScreenshotToImage'));
+const PdfTools = lazy(() => import('./pages/pdfTools'));
+const SecurityTools = lazy(() => import('./pages/securityTools'));
+const BlockchainCompliance = lazy(() => import('./pages/blockchainCompliance'));
+const DataProtection = lazy(() => import('./pages/DataProtection'));
+const DataPolicy = lazy(() => import('./pages/DataPolicy'));
+const AuthCallback = lazy(() => import('./pages/AuthCallback'));
+const Quote = lazy(() => import('./pages/Quote'));
+const Dora = lazy(() => import('./pages/Dora'));
+const HelpDesk = lazy(() => import('./pages/HelpDesk'));
+const HelpDeskTicketDetail = lazy(() => import('./pages/HelpDeskTicketDetail'));
+const CRM = lazy(() => import('./pages/CRM'));
+const Contacts = lazy(() => import('./pages/Contacts'));
+const Leads = lazy(() => import('./pages/Leads'));
+const Opportunities = lazy(() => import('./pages/Opportunities'));
+const Activities = lazy(() => import('./pages/Activities'));
+const Import = lazy(() => import('./pages/Import'));
+const Companies = lazy(() => import('./pages/Companies'));
+const Ventures = lazy(() => import('./pages/Ventures'));
+const Portfolio = lazy(() => import('./pages/Portfolio'));
+const PaymentSuccess = lazy(() => import('./pages/PaymentSuccess'));
+const PaymentCancel = lazy(() => import('./pages/PaymentCancel'));
 
 
 function App() {
@@ -91,6 +91,7 @@ function App() {
     <HelmetProvider>
       <AuthProvider>
         <Breadcrumbs />
+        <Suspense fallback={<div className="flex items-center justify-center min-h-screen bg-black"><div className="text-gray-400">Loading...</div></div>}>
         <Routes>
         <Route exact path="/terms" element={<Terms/>} />
         <Route exact path="/" element={<Home />} />
@@ -147,6 +148,7 @@ function App() {
         <Route exact path="/tools/security-tools" element={<SecurityTools/>} />
         <Route exact path="/tools/blockchain-compliance-checker" element={<BlockchainCompliance/>} />
       </Routes>
+        </Suspense>
       <ConsentBanner />
       <ConsentSettingsModal 
         isOpen={showCookieSettings} 

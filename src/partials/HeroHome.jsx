@@ -74,7 +74,7 @@ function HeroHome() {
              OG Technologies EU
             </h1>
             <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">
-            Transforming businesses through Web3/Blockchain innovation.
+            We provide technical expertise at the intersection of payment infrastructure, DLT, digital identity and international standards.
             </p>
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <div data-aos="fade-up" data-aos-delay="400">
@@ -94,7 +94,7 @@ function HeroHome() {
           <div>
             <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
               <div className="relative group hero-image-container">
-                <img className="mx-auto rounded-lg shadow-2xl transition-all duration-500" src={HeroImage} width="1024" height="504" alt="Hero" />
+                <img className="mx-auto rounded-lg shadow-2xl transition-all duration-500" src={HeroImage} width="1024" height="504" alt="Hero" fetchpriority="high" />
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-purple-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               <a
@@ -106,6 +106,7 @@ function HeroHome() {
                   setVideoModalOpen(true);
                 }}
                 aria-controls="modal"
+                aria-label="Play video"
               >
                 <div className="relative">
                   <svg
@@ -133,7 +134,7 @@ function HeroHome() {
             {/* Modal */}
             <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
               <div className="relative pb-9/16">
-                <iframe className="absolute w-full h-full" src="https://player.vimeo.com/video/1149520449" title="Video" allowFullScreen></iframe>
+                {videoModalOpen && <iframe className="absolute w-full h-full" src="https://player.vimeo.com/video/1149520449?dnt=1" title="Video" allowFullScreen></iframe>}
               </div>
             </Modal>
           </div>

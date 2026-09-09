@@ -25,7 +25,7 @@ function FeaturesZigzag() {
               {/* Image */}
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1 group" data-aos="fade-up">
                 <div className="relative overflow-hidden rounded-lg">
-                  <img className="max-w-full mx-auto md:max-w-none h-auto transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-xl" src={FeatImage01} width="540" height="405" alt="Features 01" />
+                  <img className="max-w-full mx-auto md:max-w-none h-auto transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-xl" src={FeatImage01} width="540" height="405" alt="Features 01" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </div>
@@ -64,7 +64,7 @@ function FeaturesZigzag() {
               {/* Image */}
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl group" data-aos="fade-up">
                 <div className="relative overflow-hidden rounded-lg">
-                  <img className="max-w-full mx-auto md:max-w-none h-auto transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-xl" src={FeatImage02} width="540" height="405" alt="Features 02" />
+                  <img className="max-w-full mx-auto md:max-w-none h-auto transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-xl" src={FeatImage02} width="540" height="405" alt="Features 02" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </div>
@@ -109,7 +109,7 @@ function FeaturesZigzag() {
               {/* Image */}
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1 group" data-aos="fade-up">
                 <div className="relative overflow-hidden rounded-lg">
-                  <img className="max-w-full mx-auto md:max-w-none h-auto transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-xl" src={FeatImage03} width="540" height="405" alt="Features 03" />
+                  <img className="max-w-full mx-auto md:max-w-none h-auto transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-xl" src={FeatImage03} width="540" height="405" alt="Features 03" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </div>

@@ -1,0 +1,41 @@
+# OG Technologies EU
+
+> OG Technologies EU provides technical expertise at the intersection of payment infrastructure, DLT, digital identity and international standards.
+
+## Products
+
+- [EduNode](https://www.ogtechnologies.co/products): Education platform built on Web3 technology
+- [Mozart Pay](https://www.ogtechnologies.co/products): Payment infrastructure solution
+
+## Services
+
+- [IT Consulting](https://www.ogtechnologies.co/quote): Request a quote for consulting and software development
+- [Standards Consulting](https://www.ogtechnologies.co/standards): ISO, CEN, EBSI standards expertise
+- [DORA Compliance](https://www.ogtechnologies.co/dora): Digital Operational Resilience Act compliance
+
+## Tools
+
+- [HTML to Image Converter](https://www.ogtechnologies.co/tools/html-to-image)
+- [Screenshot to Image](https://www.ogtechnologies.co/tools/screenshot-to-image)
+- [PDF Tools](https://www.ogtechnologies.co/tools/pdf-tools)
+- [Security Scanner](https://www.ogtechnologies.co/tools/security-tools)
+- [Blockchain Compliance Checker](https://www.ogtechnologies.co/tools/blockchain-compliance-checker)
+
+## Resources
+
+- [Blog](https://www.ogtechnologies.co/blog): Insights on Web3, blockchain, and enterprise IT
+- [Ventures](https://www.ogtechnologies.co/ventures): Supporting startups and spin-offs
+- [Portfolio](https://www.ogtechnologies.co/portfolio): Explore our projects
+- [Careers](https://www.ogtechnologies.co/careers): Join our team
+
+## Legal
+
+- [Terms and Conditions](https://www.ogtechnologies.co/terms)
+- [Privacy Policy](https://www.ogtechnologies.co/privacy)
+- [Cookie Policy](https://www.ogtechnologies.co/cookie-policy)
+- [Imprint](https://www.ogtechnologies.co/imprint)
+
+## Contact
+
+- Email: hi@ogtechnologies.co
+- LinkedIn: https://www.linkedin.com/company/og-technologies-eu/

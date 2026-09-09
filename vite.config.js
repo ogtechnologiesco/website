@@ -3,6 +3,7 @@ import path from 'path'
 import postcss from './postcss.config.js'
 import react from '@vitejs/plugin-react'
 import vitePrerender, { PuppeteerRenderer } from 'vite-plugin-prerender'
+import viteImagemin from 'vite-plugin-imagemin'
 
 const routeMeta = {
   '/': { title: 'OG Technologies EU - Web3 & Blockchain Innovation', description: 'Transforming businesses through Web3 and blockchain innovation. Enterprise solutions for the decentralized future.' },
@@ -43,6 +44,31 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    viteImagemin({
+      gifsicle: {
+        optimizationLevel: 7,
+        interlaced: false,
+      },
+      optipng: {
+        optimizationLevel: 7,
+      },
+      mozjpeg: {
+        quality: 80,
+      },
+      pngquant: {
+        quality: [0.65, 0.8],
+        speed: 4,
+      },
+      svgo: {
+        plugins: [
+          { name: 'removeViewBox', active: false },
+          { name: 'removeEmptyAttrs', active: false },
+        ],
+      },
+      webp: {
+        quality: 80,
+      },
+    }),
     vitePrerender({
       staticDir: path.join(__dirname, 'dist'),
       indexPath: path.join(__dirname, 'dist', 'index.html'),
@@ -196,8 +222,9 @@ export default defineConfig({
     ],
   },
   build: {
+    sourcemap: true,
     commonjsOptions: {
       transformMixedEsModules: true,
     }
-  } 
+  }
 })

@@ -129,7 +129,7 @@ function Header() {
             {/* Logo */}
             <Link to="/" className="block" aria-label="sarah">
               <div style={{ width: '100px', height: '60px' }}>
-                <img src={logo} alt="Logo" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+                <img src={logo} alt="Logo" width="100" height="60" style={{ maxWidth: '100%', maxHeight: '100%' }} />
               </div>
             </Link>
           </div>
