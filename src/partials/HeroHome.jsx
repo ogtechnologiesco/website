@@ -3,6 +3,9 @@ import Modal from '../utils/Modal';
 
 import HeroImage from '../images/hero-image-01.jpg';
 
+const VIDEO_ID = '1149520449';
+const VIDEO_SRC = `https://player.vimeo.com/video/${VIDEO_ID}?dnt=1`;
+
 function HeroHome() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [particles, setParticles] = useState([]);
@@ -91,7 +94,7 @@ function HeroHome() {
           </div>
 
           {/* Hero image */}
-          <div>
+          <div id="video">
             <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
               <div className="relative group hero-image-container">
                 <img className="mx-auto rounded-lg shadow-2xl transition-all duration-500" src={HeroImage} width="1024" height="504" alt="Hero" fetchpriority="high" />
@@ -134,7 +137,7 @@ function HeroHome() {
             {/* Modal */}
             <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
               <div className="relative pb-9/16">
-                {videoModalOpen && <iframe className="absolute w-full h-full" src="https://player.vimeo.com/video/1149520449?dnt=1" title="Video" allowFullScreen></iframe>}
+                {videoModalOpen && <iframe className="absolute w-full h-full" src={VIDEO_SRC} title="Video" allowFullScreen></iframe>}
               </div>
             </Modal>
           </div>
