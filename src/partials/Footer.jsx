@@ -68,6 +68,33 @@ function Footer() {
                   <li className="mb-1">
                     <Link to="/tools/blockchain-compliance-checker" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Blockchain Compliance</Link>
                   </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iso-27001-gap-analysis" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 27001 Gap Analysis</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iso-9001-readiness-checker" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 9001 Readiness</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iso-42001-ai-readiness" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 42001 AI Readiness</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iso-8601-validator" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 8601 Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/ethereum-toolkit" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ethereum Toolkit</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/aws-arn-parser" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">AWS ARN Parser</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iam-policy-validator" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">IAM Policy Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/sap-odata-url-builder" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">SAP OData URL Builder</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/hash-generator" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Hash Generator</Link>
+                  </li>
                 </ul>
               </div>
 

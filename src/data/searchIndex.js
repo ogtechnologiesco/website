@@ -22,6 +22,15 @@ export const searchIndex = [
   { title: 'PDF Tools', description: 'PDF manipulation and conversion utilities', path: '/tools/pdf-tools' },
   { title: 'Security Scanner', description: 'Scan websites for security vulnerabilities', path: '/tools/security-tools' },
   { title: 'Blockchain Compliance Checker', description: 'Check blockchain smart contracts for compliance', path: '/tools/blockchain-compliance-checker' },
+  { title: 'ISO 27001 Gap Analysis', description: 'Free ISO/IEC 27001:2022 gap analysis tool — assess your ISMS readiness', path: '/tools/iso-27001-gap-analysis' },
+  { title: 'ISO 9001 Readiness Checker', description: 'Free ISO 9001:2015 readiness checker — assess your QMS', path: '/tools/iso-9001-readiness-checker' },
+  { title: 'ISO 42001 AI Readiness', description: 'Free ISO/IEC 42001:2023 AI readiness assessment — evaluate your AIMS', path: '/tools/iso-42001-ai-readiness' },
+  { title: 'ISO 8601 Date Validator', description: 'Free ISO 8601 / RFC 3339 date validator — validate date strings in bulk', path: '/tools/iso-8601-validator' },
+  { title: 'Ethereum Developer Toolkit', description: 'Free Ethereum tools: Wei/Gwei/ETH converter, Keccak256 hash, function selector, ABI encoder, EIP-55 address checksum', path: '/tools/ethereum-toolkit' },
+  { title: 'AWS ARN Parser', description: 'Parse AWS ARN strings into components or build valid ARNs from fields', path: '/tools/aws-arn-parser' },
+  { title: 'IAM Policy Validator', description: 'Validate AWS IAM policies — flag wildcards, privilege escalation, NotAction traps, public principals', path: '/tools/iam-policy-validator' },
+  { title: 'SAP OData URL Builder', description: 'Build SAP OData query URLs with $select, $expand, $filter, $orderby, $top, $skip', path: '/tools/sap-odata-url-builder' },
+  { title: 'Hash Generator', description: 'Generate MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512 hashes online', path: '/tools/hash-generator' },
   // Blog posts
   ...blogPosts.map((post) => ({
     title: post.title,

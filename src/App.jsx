@@ -39,6 +39,15 @@ const ScreenshotToImage = lazy(() => import('./pages/ScreenshotToImage'));
 const PdfTools = lazy(() => import('./pages/pdfTools'));
 const SecurityTools = lazy(() => import('./pages/securityTools'));
 const BlockchainCompliance = lazy(() => import('./pages/blockchainCompliance'));
+const Iso27001GapAnalysis = lazy(() => import('./pages/iso27001'));
+const Iso9001ReadinessChecker = lazy(() => import('./pages/iso9001'));
+const Iso42001AiReadiness = lazy(() => import('./pages/iso42001'));
+const Iso8601Validator = lazy(() => import('./pages/iso8601'));
+const EthereumToolkit = lazy(() => import('./pages/ethereumToolkit'));
+const AwsArnParser = lazy(() => import('./pages/awsArnParser'));
+const IamPolicyValidator = lazy(() => import('./pages/iamPolicyValidator'));
+const SapODataUrlBuilder = lazy(() => import('./pages/sapODataUrlBuilder'));
+const HashGenerator = lazy(() => import('./pages/hashGenerator'));
 const DataProtection = lazy(() => import('./pages/DataProtection'));
 const DataPolicy = lazy(() => import('./pages/DataPolicy'));
 const AuthCallback = lazy(() => import('./pages/AuthCallback'));
@@ -147,6 +156,15 @@ function App() {
         <Route exact path="/tools/pdf-tools" element={<PdfTools/>} />
         <Route exact path="/tools/security-tools" element={<SecurityTools/>} />
         <Route exact path="/tools/blockchain-compliance-checker" element={<BlockchainCompliance/>} />
+        <Route exact path="/tools/iso-27001-gap-analysis" element={<Iso27001GapAnalysis/>} />
+        <Route exact path="/tools/iso-9001-readiness-checker" element={<Iso9001ReadinessChecker/>} />
+        <Route exact path="/tools/iso-42001-ai-readiness" element={<Iso42001AiReadiness/>} />
+        <Route exact path="/tools/iso-8601-validator" element={<Iso8601Validator/>} />
+        <Route exact path="/tools/ethereum-toolkit" element={<EthereumToolkit/>} />
+        <Route exact path="/tools/aws-arn-parser" element={<AwsArnParser/>} />
+        <Route exact path="/tools/iam-policy-validator" element={<IamPolicyValidator/>} />
+        <Route exact path="/tools/sap-odata-url-builder" element={<SapODataUrlBuilder/>} />
+        <Route exact path="/tools/hash-generator" element={<HashGenerator/>} />
       </Routes>
         </Suspense>
       <ConsentBanner />

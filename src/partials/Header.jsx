@@ -211,6 +211,15 @@ function Header() {
                     <Link to="/tools/pdf-tools" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>PDF Tools</Link>
                     <Link to="/tools/security-tools" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Security Scanner</Link>
                     <Link to="/tools/blockchain-compliance-checker" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Blockchain Compliance Checker</Link>
+                    <Link to="/tools/iso-27001-gap-analysis" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>ISO 27001 Gap Analysis</Link>
+                    <Link to="/tools/iso-9001-readiness-checker" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>ISO 9001 Readiness Checker</Link>
+                    <Link to="/tools/iso-42001-ai-readiness" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>ISO 42001 AI Readiness</Link>
+                    <Link to="/tools/iso-8601-validator" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>ISO 8601 Date Validator</Link>
+                    <Link to="/tools/ethereum-toolkit" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Ethereum Toolkit</Link>
+                    <Link to="/tools/aws-arn-parser" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>AWS ARN Parser</Link>
+                    <Link to="/tools/iam-policy-validator" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>IAM Policy Validator</Link>
+                    <Link to="/tools/sap-odata-url-builder" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>SAP OData URL Builder</Link>
+                    <Link to="/tools/hash-generator" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Hash Generator</Link>
                   </div>
                 )}
               </li>
@@ -396,6 +405,15 @@ function Header() {
                       <li><Link to="/tools/pdf-tools" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">PDF Tools</Link></li>
                       <li><Link to="/tools/security-tools" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Security Scanner</Link></li>
                       <li><Link to="/tools/blockchain-compliance-checker" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Blockchain Compliance Checker</Link></li>
+                      <li><Link to="/tools/iso-27001-gap-analysis" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">ISO 27001 Gap Analysis</Link></li>
+                      <li><Link to="/tools/iso-9001-readiness-checker" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">ISO 9001 Readiness Checker</Link></li>
+                      <li><Link to="/tools/iso-42001-ai-readiness" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">ISO 42001 AI Readiness</Link></li>
+                      <li><Link to="/tools/iso-8601-validator" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">ISO 8601 Date Validator</Link></li>
+                      <li><Link to="/tools/ethereum-toolkit" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Ethereum Toolkit</Link></li>
+                      <li><Link to="/tools/aws-arn-parser" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">AWS ARN Parser</Link></li>
+                      <li><Link to="/tools/iam-policy-validator" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">IAM Policy Validator</Link></li>
+                      <li><Link to="/tools/sap-odata-url-builder" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">SAP OData URL Builder</Link></li>
+                      <li><Link to="/tools/hash-generator" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Hash Generator</Link></li>
                     </ul>
                   )}
                 </li>

@@ -1,0 +1,178 @@
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
+
+const PAGE_WIDTH = 595.28;
+const PAGE_HEIGHT = 841.89;
+const MARGIN = 50;
+const CONTENT_WIDTH = PAGE_WIDTH - MARGIN * 2;
+
+const COLORS = {
+  black: rgb(0, 0, 0),
+  darkGray: rgb(0.25, 0.25, 0.25),
+  gray: rgb(0.5, 0.5, 0.5),
+  lightGray: rgb(0.75, 0.75, 0.75),
+  purple: rgb(0.37, 0.25, 0.63),
+  white: rgb(1, 1, 1),
+  red: rgb(0.72, 0.18, 0.18),
+  green: rgb(0.18, 0.55, 0.28),
+  amber: rgb(0.72, 0.52, 0.1),
+  blue: rgb(0.18, 0.38, 0.72),
+};
+
+const STATUS_COLORS = {
+  critical: COLORS.red,
+  warning: COLORS.amber,
+};
+
+function getGradeColor(grade) {
+  if (grade === 'A' || grade === 'B') return COLORS.green;
+  if (grade === 'C' || grade === 'D') return COLORS.amber;
+  return COLORS.red;
+}
+
+export async function generateGapPdf(results, formData) {
+  const pdfDoc = await PDFDocument.create();
+  const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+  const boldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+
+  const { sections, gaps, summary } = results;
+
+  let page = pdfDoc.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
+  let y = PAGE_HEIGHT - MARGIN;
+
+  function ensureSpace(needed) {
+    if (y < MARGIN + needed) {
+      page = pdfDoc.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
+      y = PAGE_HEIGHT - MARGIN;
+    }
+  }
+
+  function drawText(text, fontType, size, color, x = MARGIN) {
+    ensureSpace(size + 6);
+    page.drawText(text, { x, y, size, font: fontType, color });
+    y -= size + 4;
+  }
+
+  function drawWrapped(text, fontType, size, color, x = MARGIN, maxWidth = CONTENT_WIDTH) {
+    const words = text.split(' ');
+    let currentLine = '';
+    for (const word of words) {
+      const testLine = currentLine ? `${currentLine} ${word}` : word;
+      const width = fontType.widthOfTextAtSize(testLine, size);
+      if (width > maxWidth && currentLine) {
+        ensureSpace(size + 6);
+        page.drawText(currentLine, { x, y, size, font: fontType, color });
+        y -= size + 4;
+        currentLine = word;
+      } else {
+        currentLine = testLine;
+      }
+    }
+    if (currentLine) {
+      ensureSpace(size + 6);
+      page.drawText(currentLine, { x, y, size, font: fontType, color });
+      y -= size + 4;
+    }
+  }
+
+  function drawSeparator() {
+    ensureSpace(20);
+    page.drawLine({
+      start: { x: MARGIN, y },
+      end: { x: PAGE_WIDTH - MARGIN, y },
+      thickness: 0.5,
+      color: COLORS.lightGray,
+    });
+    y -= 16;
+  }
+
+  function addSpacer(gap = 10) {
+    y -= gap;
+  }
+
+  ensureSpace(80);
+  drawText('OG Technologies EU', boldFont, 20, COLORS.purple);
+  drawText('ISO/IEC 42001:2023 AI Readiness Report', boldFont, 14, COLORS.darkGray);
+  addSpacer();
+  const dateStr = new Date().toLocaleString('en-EU', { dateStyle: 'long', timeStyle: 'short' });
+  drawText(`Report generated: ${dateStr}`, font, 9, COLORS.gray);
+  drawSeparator();
+
+  ensureSpace(100);
+  drawText('Organization Profile', boldFont, 12, COLORS.purple);
+  addSpacer();
+  drawText(`Company: ${formData.companyName || 'N/A'}`, font, 10, COLORS.darkGray);
+  if (formData.companySize) drawText(`Company Size: ${formData.companySize}`, font, 10, COLORS.darkGray);
+  if (formData.aiRole) drawText(`AI Role: ${formData.aiRole}`, font, 10, COLORS.darkGray);
+  if (formData.industry) drawText(`Industry: ${formData.industry}`, font, 10, COLORS.darkGray);
+  drawSeparator();
+
+  ensureSpace(100);
+  drawText('AI Readiness Summary', boldFont, 12, COLORS.purple);
+  addSpacer();
+  const gradeColor = getGradeColor(summary.grade);
+  drawText(`Readiness Grade: ${summary.grade}  (Score: ${summary.readinessScore}/100)`, boldFont, 14, gradeColor);
+  drawText(`Maturity Level: ${summary.maturityLevel}`, font, 10, COLORS.darkGray);
+  addSpacer();
+  drawText(
+    `In Place: ${summary.implemented}  |  Needs Work: ${summary.partialGaps}  |  Gaps: ${summary.criticalGaps}`,
+    font,
+    10,
+    COLORS.darkGray
+  );
+  drawText(`Estimated weeks to readiness: ${summary.weeksToReady}`, font, 10, COLORS.darkGray);
+  drawSeparator();
+
+  ensureSpace(60);
+  drawText('Section Breakdown', boldFont, 12, COLORS.purple);
+  addSpacer();
+  for (const sec of sections) {
+    ensureSpace(20);
+    drawText(`${sec.name}: ${sec.percentage}% (${sec.score}/${sec.max})`, font, 10, COLORS.darkGray);
+  }
+  drawSeparator();
+
+  if (gaps.length > 0) {
+    ensureSpace(40);
+    drawText(`Identified Gaps (${gaps.length})`, boldFont, 12, COLORS.purple);
+    addSpacer();
+
+    for (const gap of gaps) {
+      const sevColor = STATUS_COLORS[gap.status] || COLORS.darkGray;
+      ensureSpace(80);
+
+      const label = gap.status === 'critical' ? '[GAP]' : '[NEEDS WORK]';
+      drawText(`${label} ${gap.clause}`, boldFont, 10, sevColor);
+      drawWrapped(gap.question, font, 9, COLORS.darkGray);
+      drawWrapped(`Recommended Action: ${gap.remediation}`, font, 9, COLORS.gray);
+      y -= 8;
+    }
+  } else {
+    ensureSpace(40);
+    drawText('No gaps identified. All assessed controls appear in place.', boldFont, 11, COLORS.green);
+  }
+
+  ensureSpace(40);
+  drawSeparator();
+  drawWrapped(
+    'Generated by OG Technologies EU ISO 42001 AI Readiness Assessment Tool. This assessment is based on self-reported information and is not a substitute for a formal certification audit.',
+    font,
+    8,
+    COLORS.gray
+  );
+  drawText('https://www.ogtechnologies.co/tools/iso-42001-ai-readiness', font, 8, COLORS.purple);
+
+  const pdfBytes = await pdfDoc.save();
+  return pdfBytes;
+}
+
+export function downloadPdfReport(pdfBytes, filename) {
+  const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}

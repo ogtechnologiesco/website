@@ -32,6 +32,15 @@ const routeMeta = {
   '/tools/pdf-tools': { title: 'PDF Tools - OG Technologies EU', description: 'PDF manipulation and conversion utilities.' },
   '/tools/security-tools': { title: 'Security Scanner - OG Technologies EU', description: 'Scan websites for security vulnerabilities with our online tool.' },
   '/tools/blockchain-compliance-checker': { title: 'Blockchain Compliance Checker - OG Technologies EU', description: 'Check blockchain smart contracts for compliance with regulatory standards.' },
+  '/tools/iso-27001-gap-analysis': { title: 'ISO 27001 Gap Analysis Tool - Free Readiness Assessment | OG Technologies EU', description: 'Free ISO/IEC 27001:2022 gap analysis tool. Assess your ISMS against all clauses and Annex A controls. Get a readiness score, prioritized gap list, and downloadable PDF report.' },
+  '/tools/iso-9001-readiness-checker': { title: 'ISO 9001 Readiness Checker - Free QMS Self-Assessment | OG Technologies EU', description: 'Free ISO 9001:2015 readiness checker. Assess your Quality Management System against all clauses and quality management principles. Get a readiness score, prioritized gap list, and downloadable PDF report.' },
+  '/tools/iso-42001-ai-readiness': { title: 'ISO 42001 AI Readiness Assessment - Free AIMS Checker | OG Technologies EU', description: 'Free ISO/IEC 42001:2023 AI readiness assessment tool. Evaluate your AI Management System against all clauses and Annex A controls. Get a maturity score, prioritized gap list, and downloadable PDF report.' },
+  '/tools/iso-8601-validator': { title: 'ISO 8601 Date Validator - Free Online Date Format Checker | OG Technologies EU', description: 'Free ISO 8601 / RFC 3339 date validator. Validate date-time strings in bulk, catch malformed formats, illegal leap days, and missing offsets. 100% browser-based, no uploads.' },
+  '/tools/ethereum-toolkit': { title: 'Ethereum Developer Toolkit - Wei Converter, Keccak256, ABI Encoder | OG Technologies EU', description: 'Free browser-based Ethereum developer tools: Wei/Gwei/ETH unit converter, Keccak256 hash generator, Solidity function selector calculator, ABI encoder/decoder, and EIP-55 address checksum validator. 100% client-side.' },
+  '/tools/aws-arn-parser': { title: 'AWS ARN Parser & Builder - Free Online Tool | OG Technologies EU', description: 'Parse AWS ARN strings into components (partition, service, region, account ID, resource) or build valid ARNs from fields. 100% client-side, no data sent to any server.' },
+  '/tools/iam-policy-validator': { title: 'AWS IAM Policy Validator - Free Online Security Checker | OG Technologies EU', description: 'Paste an AWS IAM policy JSON and instantly flag wildcards, privilege escalation, NotAction traps, public principals, and check policy size limits. 100% client-side.' },
+  '/tools/sap-odata-url-builder': { title: 'SAP OData URL Builder - Free Online Query Tool | OG Technologies EU', description: 'Build SAP OData query URLs interactively with $select, $expand, $filter, $orderby, $top, $skip, $format, and $count parameters. 100% client-side.' },
+  '/tools/hash-generator': { title: 'Hash Generator - SHA-256, SHA-512, Keccak256, MD5 | OG Technologies EU', description: 'Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512. Text or hex input, multiple algorithms simultaneously. 100% client-side.' },
 }
 
 // https://vitejs.dev/config/
@@ -99,6 +108,15 @@ export default defineConfig({
         '/tools/pdf-tools',
         '/tools/security-tools',
         '/tools/blockchain-compliance-checker',
+        '/tools/iso-27001-gap-analysis',
+        '/tools/iso-9001-readiness-checker',
+        '/tools/iso-42001-ai-readiness',
+        '/tools/iso-8601-validator',
+  '/tools/ethereum-toolkit',
+  '/tools/aws-arn-parser',
+  '/tools/iam-policy-validator',
+  '/tools/sap-odata-url-builder',
+  '/tools/hash-generator',
       ],
       minify: {
         collapseWhitespace: true,
