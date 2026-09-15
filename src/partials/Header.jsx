@@ -210,6 +210,19 @@ function Header() {
                     <Link to="/tools/html-to-image" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>HTML to Image</Link>
                     <Link to="/tools/screenshot-to-image" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Screenshot to Image</Link>
                     <Link to="/tools/pdf-tools" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>PDF Tools</Link>
+                    <Link to="/tools/merge-pdf" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>Merge PDFs</Link>
+                    <Link to="/tools/split-pdf" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>Split PDF</Link>
+                    <Link to="/tools/image-to-pdf" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>Image → PDF</Link>
+                    <Link to="/tools/document-to-pdf" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>Document → PDF</Link>
+                    <Link to="/tools/pdf-to-word" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>PDF → Word</Link>
+                    <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">XML Tools</p>
+                    <Link to="/tools/xml-tools" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>XML Tools</Link>
+                    <Link to="/tools/xml-formatter" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>XML Formatter</Link>
+                    <Link to="/tools/xml-validator" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>XML Validator</Link>
+                    <Link to="/tools/xml-to-json" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>XML → JSON</Link>
+                    <Link to="/tools/xml-minifier" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>XML Minifier</Link>
+                    <Link to="/tools/xpath-tester" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>XPath Tester</Link>
+                    <Link to="/tools/xml-to-csv" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>XML → CSV</Link>
                     <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Security</p>
                     <Link to="/tools/security-tools" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Security Scanner</Link>
                     <Link to="/tools/blockchain-compliance-checker" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Blockchain Compliance Checker</Link>
@@ -220,6 +233,11 @@ function Header() {
                     <Link to="/tools/iso-8601-validator" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>ISO 8601 Date Validator</Link>
                     <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Developer Tools</p>
                     <Link to="/tools/ethereum-toolkit" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Ethereum Toolkit</Link>
+                    <Link to="/tools/wei-converter" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>Wei Converter</Link>
+                    <Link to="/tools/keccak256-hash" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>Keccak256 Hash</Link>
+                    <Link to="/tools/function-selector" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>Function Selector</Link>
+                    <Link to="/tools/abi-encoder" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>ABI Encoder</Link>
+                    <Link to="/tools/address-checksum" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>Address Checksum</Link>
                     <Link to="/tools/aws-arn-parser" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>AWS ARN Parser</Link>
                     <Link to="/tools/iam-policy-validator" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>IAM Policy Validator</Link>
                     <Link to="/tools/sap-odata-url-builder" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>SAP OData URL Builder</Link>
@@ -408,6 +426,19 @@ function Header() {
                       <li><Link to="/tools/html-to-image" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">HTML to Image</Link></li>
                       <li><Link to="/tools/screenshot-to-image" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Screenshot to Image</Link></li>
                       <li><Link to="/tools/pdf-tools" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">PDF Tools</Link></li>
+                      <li><Link to="/tools/merge-pdf" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">Merge PDFs</Link></li>
+                      <li><Link to="/tools/split-pdf" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">Split PDF</Link></li>
+                      <li><Link to="/tools/image-to-pdf" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">Image → PDF</Link></li>
+                      <li><Link to="/tools/document-to-pdf" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">Document → PDF</Link></li>
+                      <li><Link to="/tools/pdf-to-word" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">PDF → Word</Link></li>
+                      <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">XML Tools</li>
+                      <li><Link to="/tools/xml-tools" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">XML Tools</Link></li>
+                      <li><Link to="/tools/xml-formatter" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">XML Formatter</Link></li>
+                      <li><Link to="/tools/xml-validator" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">XML Validator</Link></li>
+                      <li><Link to="/tools/xml-to-json" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">XML → JSON</Link></li>
+                      <li><Link to="/tools/xml-minifier" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">XML Minifier</Link></li>
+                      <li><Link to="/tools/xpath-tester" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">XPath Tester</Link></li>
+                      <li><Link to="/tools/xml-to-csv" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">XML → CSV</Link></li>
                       <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Security</li>
                       <li><Link to="/tools/security-tools" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Security Scanner</Link></li>
                       <li><Link to="/tools/blockchain-compliance-checker" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Blockchain Compliance Checker</Link></li>
@@ -418,6 +449,11 @@ function Header() {
                       <li><Link to="/tools/iso-8601-validator" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">ISO 8601 Date Validator</Link></li>
                       <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Developer Tools</li>
                       <li><Link to="/tools/ethereum-toolkit" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Ethereum Toolkit</Link></li>
+                      <li><Link to="/tools/wei-converter" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">Wei Converter</Link></li>
+                      <li><Link to="/tools/keccak256-hash" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">Keccak256 Hash</Link></li>
+                      <li><Link to="/tools/function-selector" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">Function Selector</Link></li>
+                      <li><Link to="/tools/abi-encoder" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">ABI Encoder</Link></li>
+                      <li><Link to="/tools/address-checksum" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">Address Checksum</Link></li>
                       <li><Link to="/tools/aws-arn-parser" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">AWS ARN Parser</Link></li>
                       <li><Link to="/tools/iam-policy-validator" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">IAM Policy Validator</Link></li>
                       <li><Link to="/tools/sap-odata-url-builder" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">SAP OData URL Builder</Link></li>

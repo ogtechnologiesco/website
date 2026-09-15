@@ -17,7 +17,7 @@ function getParserError(doc) {
 
 function formatNode(node, indent, indentStr) {
   let out = '';
-  const child = node.firstChild;
+  let child = node.firstChild;
   while (child) {
     if (child.nodeType === Node.ELEMENT_NODE) {
       const hasElementChildren = Array.from(child.childNodes).some(

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '../../partials/Header';
 import Footer from '../../partials/Footer';
@@ -11,17 +12,16 @@ import XPathTester from './XPathTester';
 import XmlToCsv from './XmlToCsv';
 
 const TABS = [
-  { id: 'format', label: 'Formatter', component: XmlFormatter },
-  { id: 'validate', label: 'Validator', component: XmlValidator },
-  { id: 'json', label: 'XML → JSON', component: XmlToJson },
-  { id: 'minify', label: 'Minifier', component: XmlMinifier },
-  { id: 'xpath', label: 'XPath Tester', component: XPathTester },
-  { id: 'csv', label: 'XML → CSV', component: XmlToCsv },
+  { id: 'format', label: 'Formatter', path: '/tools/xml-formatter', component: XmlFormatter },
+  { id: 'validate', label: 'Validator', path: '/tools/xml-validator', component: XmlValidator },
+  { id: 'json', label: 'XML → JSON', path: '/tools/xml-to-json', component: XmlToJson },
+  { id: 'minify', label: 'Minifier', path: '/tools/xml-minifier', component: XmlMinifier },
+  { id: 'xpath', label: 'XPath Tester', path: '/tools/xpath-tester', component: XPathTester },
+  { id: 'csv', label: 'XML → CSV', path: '/tools/xml-to-csv', component: XmlToCsv },
 ];
 
 function XmlTools() {
-  const [activeTab, setActiveTab] = useState('format');
-  const ActiveComponent = TABS.find((tab) => tab.id === activeTab).component;
+  const ActiveComponent = TABS[0].component;
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -96,17 +96,18 @@ function XmlTools() {
               <div className="max-w-4xl mx-auto">
                 <div className="flex flex-wrap rounded-lg overflow-hidden border border-gray-600 mb-8">
                   {TABS.map((tab) => (
-                    <button
+                    <Link
                       key={tab.id}
-                      className={`flex-1 min-w-[120px] px-4 py-3 text-sm font-medium transition-colors ${
-                        activeTab === tab.id
+                      to={tab.path}
+                      className={`flex-1 min-w-[120px] px-4 py-3 text-sm font-medium transition-colors text-center ${
+                        tab.id === 'format'
                           ? 'bg-purple-600 text-white'
                           : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                      }`}
-                      onClick={() => setActiveTab(tab.id)}
+                      }`
+                    }
                     >
                       {tab.label}
-                    </button>
+                    </Link>
                   ))}
                 </div>
 

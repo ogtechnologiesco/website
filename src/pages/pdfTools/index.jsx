@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '../../partials/Header';
 import Footer from '../../partials/Footer';
@@ -10,16 +11,15 @@ import DocToPdf from './DocToPdf';
 import PdfToWord from './PdfToWord';
 
 const TABS = [
-  { id: 'merge', label: 'Merge PDFs', component: PdfMerge },
-  { id: 'split', label: 'Split PDF', component: PdfSplit },
-  { id: 'image', label: 'Image → PDF', component: ImageToPdf },
-  { id: 'doc', label: 'Document → PDF', component: DocToPdf },
-  { id: 'word', label: 'PDF → Word', component: PdfToWord },
+  { id: 'merge', label: 'Merge PDFs', path: '/tools/merge-pdf', component: PdfMerge },
+  { id: 'split', label: 'Split PDF', path: '/tools/split-pdf', component: PdfSplit },
+  { id: 'image', label: 'Image → PDF', path: '/tools/image-to-pdf', component: ImageToPdf },
+  { id: 'doc', label: 'Document → PDF', path: '/tools/document-to-pdf', component: DocToPdf },
+  { id: 'word', label: 'PDF → Word', path: '/tools/pdf-to-word', component: PdfToWord },
 ];
 
 function PdfTools() {
-  const [activeTab, setActiveTab] = useState('merge');
-  const ActiveComponent = TABS.find((tab) => tab.id === activeTab).component;
+  const ActiveComponent = TABS[0].component;
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -100,17 +100,17 @@ function PdfTools() {
                 {/* Tabs */}
                 <div className="flex flex-wrap rounded-lg overflow-hidden border border-gray-600 mb-8">
                   {TABS.map((tab) => (
-                    <button
+                    <Link
                       key={tab.id}
-                      className={`flex-1 min-w-[140px] px-4 py-3 text-sm font-medium transition-colors ${
-                        activeTab === tab.id
+                      to={tab.path}
+                      className={`flex-1 min-w-[140px] px-4 py-3 text-sm font-medium transition-colors text-center ${
+                        tab.id === 'merge'
                           ? 'bg-purple-600 text-white'
                           : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                       }`}
-                      onClick={() => setActiveTab(tab.id)}
                     >
                       {tab.label}
-                    </button>
+                    </Link>
                   ))}
                 </div>
 

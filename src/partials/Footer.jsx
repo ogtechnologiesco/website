@@ -63,6 +63,42 @@ function Footer() {
                     <Link to="/tools/pdf-tools" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">PDF Tools</Link>
                   </li>
                   <li className="mb-1">
+                    <Link to="/tools/merge-pdf" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Merge PDFs</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/split-pdf" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Split PDF</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/image-to-pdf" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Image → PDF</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/document-to-pdf" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Document → PDF</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/pdf-to-word" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">PDF → Word</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xml-tools" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XML Tools</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xml-formatter" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML Formatter</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xml-validator" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xml-to-json" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML → JSON</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xml-minifier" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML Minifier</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xpath-tester" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XPath Tester</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xml-to-csv" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML → CSV</Link>
+                  </li>
+                  <li className="mb-1">
                     <Link to="/tools/security-tools" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Security Scanner</Link>
                   </li>
                   <li className="mb-1">
@@ -82,6 +118,21 @@ function Footer() {
                   </li>
                   <li className="mb-1">
                     <Link to="/tools/ethereum-toolkit" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ethereum Toolkit</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/wei-converter" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Wei Converter</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/keccak256-hash" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Keccak256 Hash</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/function-selector" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Function Selector</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/abi-encoder" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">ABI Encoder</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/address-checksum" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Address Checksum</Link>
                   </li>
                   <li className="mb-1">
                     <Link to="/tools/aws-arn-parser" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">AWS ARN Parser</Link>

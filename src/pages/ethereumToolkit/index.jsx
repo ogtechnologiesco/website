@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '../../partials/Header';
 import Footer from '../../partials/Footer';
@@ -10,16 +11,15 @@ import AbiEncoder from './AbiEncoder';
 import AddressChecksum from './AddressChecksum';
 
 const TABS = [
-  { id: 'wei', label: 'Wei Converter', component: WeiConverter },
-  { id: 'keccak', label: 'Keccak256', component: Keccak256 },
-  { id: 'selector', label: 'Function Selector', component: FunctionSelector },
-  { id: 'abi', label: 'ABI Encoder', component: AbiEncoder },
-  { id: 'address', label: 'Address Checksum', component: AddressChecksum },
+  { id: 'wei', label: 'Wei Converter', path: '/tools/wei-converter', component: WeiConverter },
+  { id: 'keccak', label: 'Keccak256', path: '/tools/keccak256-hash', component: Keccak256 },
+  { id: 'selector', label: 'Function Selector', path: '/tools/function-selector', component: FunctionSelector },
+  { id: 'abi', label: 'ABI Encoder', path: '/tools/abi-encoder', component: AbiEncoder },
+  { id: 'address', label: 'Address Checksum', path: '/tools/address-checksum', component: AddressChecksum },
 ];
 
 function EthereumToolkit() {
-  const [activeTab, setActiveTab] = useState('wei');
-  const ActiveComponent = TABS.find((tab) => tab.id === activeTab).component;
+  const ActiveComponent = TABS[0].component;
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -93,17 +93,17 @@ function EthereumToolkit() {
               <div className="max-w-4xl mx-auto">
                 <div className="flex flex-wrap rounded-lg overflow-hidden border border-gray-600 mb-8">
                   {TABS.map((tab) => (
-                    <button
+                    <Link
                       key={tab.id}
-                      className={`flex-1 min-w-[120px] px-4 py-3 text-sm font-medium transition-colors ${
-                        activeTab === tab.id
+                      to={tab.path}
+                      className={`flex-1 min-w-[120px] px-4 py-3 text-sm font-medium transition-colors text-center ${
+                        tab.id === 'wei'
                           ? 'bg-purple-600 text-white'
                           : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                       }`}
-                      onClick={() => setActiveTab(tab.id)}
                     >
                       {tab.label}
-                    </button>
+                    </Link>
                   ))}
                 </div>
 
