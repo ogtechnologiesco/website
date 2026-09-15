@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PDFDocument, StandardFonts } from 'pdf-lib';
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import mammoth from 'mammoth';
 import JSZip from 'jszip';
 import toast from 'react-hot-toast';
@@ -8,13 +8,21 @@ import FileDrop from './FileDrop';
 const A4 = { width: 595.28, height: 841.89 };
 const MARGIN = 50;
 const LINE_HEIGHT_FACTOR = 1.4;
+const LINK_COLOR = rgb(0, 0, 0.85);
 
 const STYLES = {
   h1: { size: 18, bold: true, spaceBefore: 18 },
   h2: { size: 15, bold: true, spaceBefore: 14 },
   h3: { size: 13, bold: true, spaceBefore: 10 },
   p: { size: 11, bold: false, spaceBefore: 6 },
+  li: { size: 11, bold: false, spaceBefore: 4 },
+  td: { size: 10, bold: false, spaceBefore: 2 },
+  th: { size: 10, bold: true, spaceBefore: 2 },
 };
+
+const BULLET = '\u2022 ';
+const MIN_CELL_WIDTH = 60;
+const TABLE_BORDER = rgb(0.6, 0.6, 0.6);
 
 // WinAnsi (pdf-lib standard fonts) does not support these Unicode characters
 const CHAR_REPLACEMENTS = {
@@ -48,7 +56,36 @@ async function extractTxt(file) {
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter(Boolean)
-    .map((t) => ({ type: 'p', text: t }));
+    .map((t) => ({ type: 'p', runs: [{ text: t, bold: false, italic: false, link: false }] }));
+}
+
+function extractRuns(el) {
+  const runs = [];
+  for (const node of el.childNodes) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const text = node.textContent;
+      if (text) runs.push({ text, bold: false, italic: false, link: false });
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      const tag = node.tagName.toLowerCase();
+      const isBold = ['strong', 'b'].includes(tag);
+      const isItalic = ['em', 'i'].includes(tag);
+      const isLink = tag === 'a';
+      const childRuns = extractRuns(node);
+      for (const r of childRuns) {
+        r.bold = r.bold || isBold;
+        r.italic = r.italic || isItalic;
+        r.link = r.link || isLink;
+        runs.push(r);
+      }
+    }
+  }
+  return runs;
+}
+
+function extractImageFromDataUri(dataUri) {
+  const match = dataUri.match(/^data:(image\/(png|jpeg|jpg));base64,(.+)$/);
+  if (!match) return null;
+  return { format: match[1], data: match[3] };
 }
 
 async function extractDocx(file) {
@@ -56,12 +93,50 @@ async function extractDocx(file) {
   const { value: html } = await mammoth.convertToHtml({ arrayBuffer });
   const doc = new DOMParser().parseFromString(html, 'text/html');
   const blocks = [];
-  doc.body.querySelectorAll('h1, h2, h3, p, li').forEach((el) => {
-    const text = el.textContent.trim();
-    if (!text) return;
+
+  for (const el of doc.body.children) {
     const tag = el.tagName.toLowerCase();
-    blocks.push({ type: ['h1', 'h2', 'h3'].includes(tag) ? tag : 'p', text });
-  });
+    if (['h1', 'h2', 'h3'].includes(tag)) {
+      const runs = extractRuns(el);
+      if (runs.length === 0) continue;
+      blocks.push({ type: tag, runs });
+    } else if (tag === 'p') {
+      const runs = extractRuns(el);
+      if (runs.length === 0) continue;
+      blocks.push({ type: 'p', runs });
+    } else if (tag === 'ul' || tag === 'ol') {
+      let idx = 1;
+      for (const li of el.querySelectorAll(':scope > li')) {
+        const runs = extractRuns(li);
+        if (runs.length === 0) continue;
+        blocks.push({
+          type: 'li',
+          runs,
+          listType: tag === 'ol' ? 'number' : 'bullet',
+          index: idx++,
+        });
+      }
+    } else if (tag === 'table') {
+      const rows = [];
+      for (const tr of el.querySelectorAll(':scope > thead > tr, :scope > tbody > tr, :scope > tr')) {
+        const cells = [];
+        for (const cell of tr.children) {
+          const cellTag = cell.tagName.toLowerCase();
+          const runs = extractRuns(cell);
+          cells.push({ runs, isHeader: cellTag === 'th' });
+        }
+        if (cells.length) rows.push(cells);
+      }
+      if (rows.length) blocks.push({ type: 'table', rows });
+    } else if (tag === 'img') {
+      const src = el.getAttribute('src') || '';
+      const img = extractImageFromDataUri(src);
+      if (img) blocks.push({ type: 'image', ...img });
+    } else {
+      const runs = extractRuns(el);
+      if (runs.length) blocks.push({ type: 'p', runs });
+    }
+  }
   return blocks;
 }
 
@@ -84,15 +159,74 @@ async function extractOdt(file) {
       const level = parseInt(el.getAttribute('text:outline-level') || '1', 10);
       type = level <= 1 ? 'h1' : level === 2 ? 'h2' : 'h3';
     }
-    blocks.push({ type, text });
+    blocks.push({ type, runs: [{ text, bold: false, italic: false, link: false }] });
   }
   return blocks;
 }
 
+function getFontForRun(run, fonts) {
+  if (run.bold && run.italic) return fonts.boldOblique;
+  if (run.bold) return fonts.bold;
+  if (run.italic) return fonts.oblique;
+  return fonts.regular;
+}
+
+function wrapRunsIntoLines(runs, fonts, size, maxWidth) {
+  const lines = [];
+  let currentRuns = [];
+
+  for (const run of runs) {
+    const font = getFontForRun(run, fonts);
+    const words = sanitizeText(run.text).split(/(\s+)/);
+    let i = 0;
+    while (i < words.length) {
+      let word = words[i];
+      i++;
+      while (i < words.length && /^\s+$/.test(words[i])) {
+        word += words[i];
+        i++;
+      }
+      if (!word) continue;
+
+      if (currentRuns.length === 0) {
+        currentRuns.push({ ...run, text: word, font });
+      } else {
+        const candidate = currentRuns.map((r) => r.text).join('') + word;
+        const candidateWidth = currentRuns.reduce(
+          (sum, r) => sum + r.font.widthOfTextAtSize(r.text, size),
+          0,
+        ) + font.widthOfTextAtSize(word, size);
+
+        if (candidateWidth <= maxWidth) {
+          currentRuns.push({ ...run, text: word, font });
+        } else {
+          lines.push(currentRuns);
+          currentRuns = [{ ...run, text: word.trimStart(), font }];
+        }
+      }
+    }
+  }
+  if (currentRuns.length) lines.push(currentRuns);
+  return lines;
+}
+
+function drawRunsLine(page, lineRuns, x, y, size) {
+  let currentX = x;
+  for (const r of lineRuns) {
+    const color = r.link ? LINK_COLOR : rgb(0, 0, 0);
+    page.drawText(r.text, { x: currentX, y: y, size, font: r.font, color });
+    currentX += r.font.widthOfTextAtSize(r.text, size);
+  }
+}
+
 async function blocksToPdf(blocks) {
   const pdfDoc = await PDFDocument.create();
-  const regular = await pdfDoc.embedFont(StandardFonts.Helvetica);
-  const bold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+  const fonts = {
+    regular: await pdfDoc.embedFont(StandardFonts.Helvetica),
+    bold: await pdfDoc.embedFont(StandardFonts.HelveticaBold),
+    oblique: await pdfDoc.embedFont(StandardFonts.HelveticaOblique),
+    boldOblique: await pdfDoc.embedFont(StandardFonts.HelveticaBoldOblique),
+  };
 
   let page = pdfDoc.addPage([A4.width, A4.height]);
   let y = A4.height - MARGIN;
@@ -104,28 +238,96 @@ async function blocksToPdf(blocks) {
   };
 
   for (const block of blocks) {
+    if (block.type === 'image') {
+      try {
+        const imgBytes = Uint8Array.from(atob(block.data), (c) => c.charCodeAt(0));
+        const isPng = block.format === 'image/png';
+        const embedded = isPng
+          ? await pdfDoc.embedPng(imgBytes)
+          : await pdfDoc.embedJpg(imgBytes);
+
+        const maxW = maxWidth;
+        const maxH = A4.height - 2 * MARGIN;
+        const scale = Math.min(maxW / embedded.width, maxH / embedded.height, 1);
+        const w = embedded.width * scale;
+        const h = embedded.height * scale;
+
+        if (y - h < MARGIN) newPage();
+        y -= h + 10;
+        page.drawImage(embedded, {
+          x: MARGIN + (maxWidth - w) / 2,
+          y,
+          width: w,
+          height: h,
+        });
+      } catch (err) {
+        console.error('Image embed failed:', err);
+      }
+      continue;
+    }
+
+    if (block.type === 'table') {
+      const { rows } = block;
+      const numCols = Math.max(...rows.map((r) => r.length));
+      const colWidth = Math.max(MIN_CELL_WIDTH, maxWidth / numCols);
+
+      for (const row of rows) {
+        let maxCellHeight = 0;
+        const cellLines = [];
+
+        for (let c = 0; c < numCols; c++) {
+          const cell = row[c] || { runs: [], isHeader: false };
+          const style = cell.isHeader ? STYLES.th : STYLES.td;
+          const lines = wrapRunsIntoLines(cell.runs, fonts, style.size, colWidth - 8);
+          cellLines.push({ lines, style });
+          maxCellHeight = Math.max(
+            maxCellHeight,
+            lines.length * style.size * LINE_HEIGHT_FACTOR + 8,
+          );
+        }
+
+        if (y - maxCellHeight < MARGIN) newPage();
+        y -= maxCellHeight;
+
+        for (let c = 0; c < numCols; c++) {
+          const cellX = MARGIN + c * colWidth;
+          page.drawRectangle({
+            x: cellX,
+            y: y - 2,
+            width: colWidth,
+            height: maxCellHeight,
+            borderColor: TABLE_BORDER,
+            borderWidth: 0.5,
+          });
+          const { lines, style } = cellLines[c];
+          let textY = y + maxCellHeight - style.size - 4;
+          for (const line of lines) {
+            drawRunsLine(page, line, cellX + 4, textY, style.size);
+            textY -= style.size * LINE_HEIGHT_FACTOR;
+          }
+        }
+        y -= 2;
+      }
+      y -= 6;
+      continue;
+    }
+
     const style = STYLES[block.type] || STYLES.p;
-    const font = style.bold ? bold : regular;
     const lineHeight = style.size * LINE_HEIGHT_FACTOR;
 
-    const words = sanitizeText(block.text).split(/\s+/);
-    const lines = [];
-    let current = '';
-    for (const word of words) {
-      const candidate = current ? `${current} ${word}` : word;
-      if (font.widthOfTextAtSize(candidate, style.size) <= maxWidth) {
-        current = candidate;
-      } else {
-        if (current) lines.push(current);
-        current = word;
-      }
+    let runs = block.runs || [{ text: block.text || '', bold: false, italic: false, link: false }];
+
+    if (block.type === 'li') {
+      const prefix = block.listType === 'number' ? `${block.index}. ` : BULLET;
+      runs = [{ text: prefix, bold: false, italic: false, link: false }, ...runs];
     }
-    if (current) lines.push(current);
+
+    const lines = wrapRunsIntoLines(runs, fonts, style.size, maxWidth);
 
     y -= style.spaceBefore;
     for (const line of lines) {
       if (y - lineHeight < MARGIN) newPage();
-      page.drawText(line, { x: MARGIN, y: y - style.size, size: style.size, font });
+      drawRunsLine(page, line, MARGIN, y - style.size, style.size);
       y -= lineHeight;
     }
   }
@@ -188,7 +390,7 @@ function DocToPdf() {
       )}
 
       <p className="text-sm text-gray-500 mt-4">
-        Note: conversion is 100% local and has basic fidelity: it preserves text, headings and paragraphs, but not images, tables or complex layout. The legacy binary .doc format is not supported (use .docx).
+        Note: conversion is 100% local in your browser. It preserves text, headings, bold/italic, bullet and numbered lists, tables (with borders), images (PNG/JPEG), and hyperlinks (visual only). Fonts are limited to Helvetica; colors and complex multi-column layouts are not preserved. The legacy binary .doc format is not supported (use .docx).
       </p>
     </div>
   );

@@ -48,6 +48,23 @@ const AwsArnParser = lazy(() => import('./pages/awsArnParser'));
 const IamPolicyValidator = lazy(() => import('./pages/iamPolicyValidator'));
 const SapODataUrlBuilder = lazy(() => import('./pages/sapODataUrlBuilder'));
 const HashGenerator = lazy(() => import('./pages/hashGenerator'));
+const XmlTools = lazy(() => import('./pages/xmlTools'));
+const XmlFormatterPage = lazy(() => import('./pages/xmlTools/XmlFormatterPage'));
+const XmlValidatorPage = lazy(() => import('./pages/xmlTools/XmlValidatorPage'));
+const XmlToJsonPage = lazy(() => import('./pages/xmlTools/XmlToJsonPage'));
+const XmlMinifierPage = lazy(() => import('./pages/xmlTools/XmlMinifierPage'));
+const XPathTesterPage = lazy(() => import('./pages/xmlTools/XPathTesterPage'));
+const XmlToCsvPage = lazy(() => import('./pages/xmlTools/XmlToCsvPage'));
+const PdfMergePage = lazy(() => import('./pages/pdfTools/PdfMergePage'));
+const PdfSplitPage = lazy(() => import('./pages/pdfTools/PdfSplitPage'));
+const ImageToPdfPage = lazy(() => import('./pages/pdfTools/ImageToPdfPage'));
+const DocToPdfPage = lazy(() => import('./pages/pdfTools/DocToPdfPage'));
+const PdfToWordPage = lazy(() => import('./pages/pdfTools/PdfToWordPage'));
+const WeiConverterPage = lazy(() => import('./pages/ethereumToolkit/WeiConverterPage'));
+const Keccak256Page = lazy(() => import('./pages/ethereumToolkit/Keccak256Page'));
+const FunctionSelectorPage = lazy(() => import('./pages/ethereumToolkit/FunctionSelectorPage'));
+const AbiEncoderPage = lazy(() => import('./pages/ethereumToolkit/AbiEncoderPage'));
+const AddressChecksumPage = lazy(() => import('./pages/ethereumToolkit/AddressChecksumPage'));
 const DataProtection = lazy(() => import('./pages/DataProtection'));
 const DataPolicy = lazy(() => import('./pages/DataPolicy'));
 const AuthCallback = lazy(() => import('./pages/AuthCallback'));
@@ -165,6 +182,23 @@ function App() {
         <Route exact path="/tools/iam-policy-validator" element={<IamPolicyValidator/>} />
         <Route exact path="/tools/sap-odata-url-builder" element={<SapODataUrlBuilder/>} />
         <Route exact path="/tools/hash-generator" element={<HashGenerator/>} />
+        <Route exact path="/tools/xml-tools" element={<XmlTools/>} />
+        <Route exact path="/tools/xml-formatter" element={<XmlFormatterPage/>} />
+        <Route exact path="/tools/xml-validator" element={<XmlValidatorPage/>} />
+        <Route exact path="/tools/xml-to-json" element={<XmlToJsonPage/>} />
+        <Route exact path="/tools/xml-minifier" element={<XmlMinifierPage/>} />
+        <Route exact path="/tools/xpath-tester" element={<XPathTesterPage/>} />
+        <Route exact path="/tools/xml-to-csv" element={<XmlToCsvPage/>} />
+        <Route exact path="/tools/merge-pdf" element={<PdfMergePage/>} />
+        <Route exact path="/tools/split-pdf" element={<PdfSplitPage/>} />
+        <Route exact path="/tools/image-to-pdf" element={<ImageToPdfPage/>} />
+        <Route exact path="/tools/document-to-pdf" element={<DocToPdfPage/>} />
+        <Route exact path="/tools/pdf-to-word" element={<PdfToWordPage/>} />
+        <Route exact path="/tools/wei-converter" element={<WeiConverterPage/>} />
+        <Route exact path="/tools/keccak256-hash" element={<Keccak256Page/>} />
+        <Route exact path="/tools/function-selector" element={<FunctionSelectorPage/>} />
+        <Route exact path="/tools/abi-encoder" element={<AbiEncoderPage/>} />
+        <Route exact path="/tools/address-checksum" element={<AddressChecksumPage/>} />
       </Routes>
         </Suspense>
       <ConsentBanner />

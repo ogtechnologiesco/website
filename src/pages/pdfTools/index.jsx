@@ -7,12 +7,14 @@ import PdfMerge from './PdfMerge';
 import PdfSplit from './PdfSplit';
 import ImageToPdf from './ImageToPdf';
 import DocToPdf from './DocToPdf';
+import PdfToWord from './PdfToWord';
 
 const TABS = [
   { id: 'merge', label: 'Merge PDFs', component: PdfMerge },
   { id: 'split', label: 'Split PDF', component: PdfSplit },
   { id: 'image', label: 'Image → PDF', component: ImageToPdf },
   { id: 'doc', label: 'Document → PDF', component: DocToPdf },
+  { id: 'word', label: 'PDF → Word', component: PdfToWord },
 ];
 
 function PdfTools() {
@@ -23,8 +25,8 @@ function PdfTools() {
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Helmet>
         <title>Free PDF Tools - Merge, Split & Convert PDFs Online | OG Technologies EU</title>
-        <meta name="description" content="Merge, split, and convert PDF files directly in your browser. Convert images and documents to PDF. Free and private - no file is ever uploaded to a server." />
-        <meta name="keywords" content="PDF tools, merge PDF, split PDF, image to PDF, DOCX to PDF, ODT to PDF, TXT to PDF, free PDF converter, browser PDF tools" />
+        <meta name="description" content="Merge, split, and convert PDF files directly in your browser. Convert images and documents to PDF, or convert PDF to Word (.docx, .txt, .html). Free and private - no file is ever uploaded to a server." />
+        <meta name="keywords" content="PDF tools, merge PDF, split PDF, image to PDF, DOCX to PDF, ODT to PDF, TXT to PDF, PDF to Word, PDF to docx, free PDF converter, browser PDF tools" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.ogtechnologies.co/tools/pdf-tools" />
 
@@ -57,6 +59,7 @@ function PdfTools() {
               'Split a PDF at any page',
               'Convert PNG/JPG images to PDF',
               'Convert DOCX, ODT, and TXT documents to PDF',
+              'Convert PDF to Word (.docx, .txt, .html)',
             ],
             offers: {
               '@type': 'Offer',
@@ -89,7 +92,7 @@ function PdfTools() {
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
                 <h1 className="h1">PDF Tools</h1>
                 <p className="text-xl text-gray-400 mt-4">
-                  Merge, split and convert PDF files directly in your browser. No file is sent to a server.
+                  Merge, split, convert, and transform PDF files directly in your browser. No file is sent to a server.
                 </p>
               </div>
 
