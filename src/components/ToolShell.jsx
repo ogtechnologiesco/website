@@ -24,16 +24,16 @@ function ToolShell({
         <meta name="description" content={description} />
         {keywords && <meta name="keywords" content={keywords} />}
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://www.ogtechnologies.co${canonical}`} />
+        <link rel="canonical" href={`https://www.ogtechnologies.co${canonical}/`} />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://www.ogtechnologies.co${canonical}`} />
+        <meta property="og:url" content={`https://www.ogtechnologies.co${canonical}/`} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={`https://www.ogtechnologies.co${canonical}`} />
+        <meta name="twitter:url" content={`https://www.ogtechnologies.co${canonical}/`} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />

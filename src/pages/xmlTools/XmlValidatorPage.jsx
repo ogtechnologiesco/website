@@ -26,7 +26,7 @@ function XmlValidatorPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'XML Validator',
-        url: 'https://www.ogtechnologies.co/tools/xml-validator',
+        url: 'https://www.ogtechnologies.co/tools/xml-validator/',
         description: 'Validate XML well-formedness online. Check for unclosed tags, unescaped characters, and duplicate attributes with error line and column reporting.',
         applicationCategory: 'DeveloperApplication',
         operatingSystem: 'Any',

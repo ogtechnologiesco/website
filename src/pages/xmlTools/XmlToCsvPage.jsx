@@ -26,7 +26,7 @@ function XmlToCsvPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'XML to CSV Converter',
-        url: 'https://www.ogtechnologies.co/tools/xml-to-csv',
+        url: 'https://www.ogtechnologies.co/tools/xml-to-csv/',
         description: 'Convert XML to CSV online with automatic record element detection. Attributes included as @-prefixed columns. 100% browser-based.',
         applicationCategory: 'DeveloperApplication',
         operatingSystem: 'Any',

@@ -104,18 +104,18 @@ function HtmlToImage() {
         <meta name="description" content="Convert HTML files to PNG or JPG images directly in your browser. Free, private, and secure - no file is ever uploaded to a server." />
         <meta name="keywords" content="HTML to image, HTML to PNG, HTML to JPG, HTML screenshot, convert HTML to image, browser tool, free converter" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/tools/html-to-image" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/html-to-image/" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/tools/html-to-image" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/html-to-image/" />
         <meta property="og:title" content="HTML to Image Converter - Free Browser Tool | OG Technologies EU" />
         <meta property="og:description" content="Convert HTML files to PNG or JPG images directly in your browser. No file is ever uploaded to a server." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/html-to-image" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/html-to-image/" />
         <meta name="twitter:title" content="HTML to Image Converter - Free Browser Tool | OG Technologies EU" />
         <meta name="twitter:description" content="Convert HTML files to PNG or JPG images directly in your browser. No file is ever uploaded to a server." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -126,7 +126,7 @@ function HtmlToImage() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'HTML to Image Converter',
-            url: 'https://www.ogtechnologies.co/tools/html-to-image',
+            url: 'https://www.ogtechnologies.co/tools/html-to-image/',
             description: 'Convert HTML files to PNG or JPG images directly in your browser. No file is ever uploaded to a server.',
             applicationCategory: 'UtilitiesApplication',
             operatingSystem: 'Any',

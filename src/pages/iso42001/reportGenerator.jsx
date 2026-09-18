@@ -159,7 +159,7 @@ export async function generateGapPdf(results, formData) {
     8,
     COLORS.gray
   );
-  drawText('https://www.ogtechnologies.co/tools/iso-42001-ai-readiness', font, 8, COLORS.purple);
+  drawText('https://www.ogtechnologies.co/tools/iso-42001-ai-readiness/', font, 8, COLORS.purple);
 
   const pdfBytes = await pdfDoc.save();
   return pdfBytes;

@@ -25,7 +25,7 @@ function WeiConverterPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'Wei to Ether Converter',
-        url: 'https://www.ogtechnologies.co/tools/wei-converter',
+        url: 'https://www.ogtechnologies.co/tools/wei-converter/',
         description: 'Convert between Wei, Gwei, Finney, and Ether with full BigInt precision. Free browser-based Ethereum unit converter. 100% client-side.',
         applicationCategory: 'DeveloperApplication',
         operatingSystem: 'Any',

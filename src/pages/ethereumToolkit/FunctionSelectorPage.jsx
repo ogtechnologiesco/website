@@ -25,7 +25,7 @@ function FunctionSelectorPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'Solidity Function Selector Calculator',
-        url: 'https://www.ogtechnologies.co/tools/function-selector',
+        url: 'https://www.ogtechnologies.co/tools/function-selector/',
         description: 'Calculate the 4-byte function selector for any Solidity function signature. Uses keccak256 of the canonical function signature. 100% client-side.',
         applicationCategory: 'DeveloperApplication',
         operatingSystem: 'Any',

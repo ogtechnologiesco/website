@@ -30,18 +30,18 @@ function Products() {
         <title>Our Products - OG Technologies EU</title>
         <meta name="description" content="Discover OG Technologies EU's comprehensive product suite including CRM & Ticketing System, blockchain consulting, AI chatbots, e-commerce platforms, and space technology solutions." />
         <meta name="keywords" content="CRM system, ticketing system, blockchain consulting, AI chatbot, e-commerce platform, travel booking, loyalty program, space technology, healthcare solutions" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/products" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/products/" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/products" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/products/" />
         <meta property="og:title" content="Our Products - OG Technologies EU" />
         <meta property="og:description" content="Explore our comprehensive product suite including CRM, blockchain solutions, AI chatbots, and enterprise technology platforms." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/products" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/products/" />
         <meta name="twitter:title" content="Our Products - OG Technologies EU" />
         <meta name="twitter:description" content="Explore our comprehensive product suite including CRM, blockchain solutions, AI chatbots, and enterprise technology platforms." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />

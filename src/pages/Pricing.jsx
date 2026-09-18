@@ -15,18 +15,18 @@ function Pricing() {
         <title>Pricing - OG Technologies EU</title>
         <meta name="description" content="Simple, transparent pricing for OG Technologies EU's CRM and Ticketing System. Choose from Free, Pro (€8/month), or Enterprise plans with features that scale with your business." />
         <meta name="keywords" content="CRM pricing, ticketing system pricing, subscription plans, free CRM, enterprise CRM, SaaS pricing" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/pricing" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/pricing/" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/pricing" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/pricing/" />
         <meta property="og:title" content="Pricing - OG Technologies EU" />
         <meta property="og:description" content="Simple, transparent pricing for our CRM and Ticketing System. Start free and upgrade as you grow." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/pricing" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/pricing/" />
         <meta name="twitter:title" content="Pricing - OG Technologies EU" />
         <meta name="twitter:description" content="Simple, transparent pricing for our CRM and Ticketing System. Start free and upgrade as you grow." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />

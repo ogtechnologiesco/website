@@ -26,7 +26,7 @@ function XPathTesterPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'XPath Tester',
-        url: 'https://www.ogtechnologies.co/tools/xpath-tester',
+        url: 'https://www.ogtechnologies.co/tools/xpath-tester/',
         description: 'Test and evaluate XPath expressions against XML documents in real time. Supports XPath 1.0 via the browser native document.evaluate(). 100% client-side.',
         applicationCategory: 'DeveloperApplication',
         operatingSystem: 'Any',

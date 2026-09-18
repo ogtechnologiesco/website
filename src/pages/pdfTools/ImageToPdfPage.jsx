@@ -25,7 +25,7 @@ function ImageToPdfPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'Image to PDF Converter',
-        url: 'https://www.ogtechnologies.co/tools/image-to-pdf',
+        url: 'https://www.ogtechnologies.co/tools/image-to-pdf/',
         description: 'Convert PNG and JPG images to PDF directly in your browser. 100% client-side and private.',
         applicationCategory: 'UtilitiesApplication',
         operatingSystem: 'Any',

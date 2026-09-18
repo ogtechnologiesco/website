@@ -25,7 +25,7 @@ function Keccak256Page() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'Keccak256 Hash Generator',
-        url: 'https://www.ogtechnologies.co/tools/keccak256-hash',
+        url: 'https://www.ogtechnologies.co/tools/keccak256-hash/',
         description: 'Compute the Keccak-256 hash of any text or hex data. The hash function used throughout Ethereum for addresses, storage, signatures, and function selectors. 100% client-side.',
         applicationCategory: 'DeveloperApplication',
         operatingSystem: 'Any',

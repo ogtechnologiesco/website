@@ -25,7 +25,7 @@ function AbiEncoderPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'Ethereum ABI Encoder & Decoder',
-        url: 'https://www.ogtechnologies.co/tools/abi-encoder',
+        url: 'https://www.ogtechnologies.co/tools/abi-encoder/',
         description: 'Encode and decode Ethereum ABI calldata for smart contract interactions. Supports uint, address, bytes, string, and array types. 100% client-side.',
         applicationCategory: 'DeveloperApplication',
         operatingSystem: 'Any',

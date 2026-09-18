@@ -31,14 +31,14 @@ function DigitalPaymentsFuture() {
           <title>Building the Rails for Europe's Digital Payment Future</title>
           <meta name="description" content="MiCA, digital euro, and ISO 20022 are converging. Learn how StandICT.eu 2029 fellowship is creating standards for interoperable, compliant DLT-based retail payments in Europe." />
           <meta name="keywords" content="digital payments, MiCA, digital euro, ISO 20022, DLT, blockchain payments, StandICT, W3C Verifiable Credentials, PSD2, retail payments, EU fintech" />
-          <link rel="canonical" href="https://www.ogtechnologies.co/blog/digital-payments-future" />
+          <link rel="canonical" href="https://www.ogtechnologies.co/blog/digital-payments-future/" />
           <meta property="og:type" content="article" />
-          <meta property="og:url" content="https://www.ogtechnologies.co/blog/digital-payments-future" />
+          <meta property="og:url" content="https://www.ogtechnologies.co/blog/digital-payments-future/" />
           <meta property="og:title" content="Building the Rails for Europe's Digital Payment Future" />
           <meta property="og:description" content="MiCA, digital euro, and ISO 20022 are converging. Learn how StandICT.eu 2029 fellowship is creating standards for interoperable, compliant DLT-based retail payments." />
           <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:url" content="https://www.ogtechnologies.co/blog/digital-payments-future" />
+          <meta name="twitter:url" content="https://www.ogtechnologies.co/blog/digital-payments-future/" />
           <meta name="twitter:title" content="Building the Rails for Europe's Digital Payment Future" />
           <meta name="twitter:description" content="MiCA, digital euro, and ISO 20022 are converging. Standards for interoperable DLT-based retail payments in Europe." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -52,7 +52,7 @@ function DigitalPaymentsFuture() {
               "dateModified": "2026-07-21",
               "author": { "@type": "Person", "name": "Olvis Enrique Gil Ríos" },
               "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/blog/digital-payments-future",
+              "url": "https://www.ogtechnologies.co/blog/digital-payments-future/",
               "image": "https://www.ogtechnologies.co/og-og-image.png"
             })}
           </script>

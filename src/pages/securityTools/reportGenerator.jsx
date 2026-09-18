@@ -255,7 +255,7 @@ export async function generatePdfReport(scanData, auditInfo) {
           8,
           COLORS.gray
         );
-        drawText('https://www.ogtechnologies.co/tools/security-tools', font, 8, COLORS.purple);
+        drawText('https://www.ogtechnologies.co/tools/security-tools/', font, 8, COLORS.purple);
         break;
       }
 

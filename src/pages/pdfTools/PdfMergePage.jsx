@@ -25,7 +25,7 @@ function PdfMergePage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'Merge PDF',
-        url: 'https://www.ogtechnologies.co/tools/merge-pdf',
+        url: 'https://www.ogtechnologies.co/tools/merge-pdf/',
         description: 'Merge two or more PDF files into one document directly in your browser. 100% client-side and private.',
         applicationCategory: 'UtilitiesApplication',
         operatingSystem: 'Any',

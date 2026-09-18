@@ -61,16 +61,16 @@ function Iso27001GapAnalysis() {
         <meta name="description" content="Free ISO/IEC 27001:2022 gap analysis tool. Assess your information security management system against all clauses and Annex A controls. Get a readiness score, prioritized gap list, and downloadable PDF report." />
         <meta name="keywords" content="ISO 27001 gap analysis, ISO 27001 readiness assessment, ISMS compliance checker, ISO 27001 self-assessment, information security gap analysis, Annex A controls, ISO 27001:2022 checker" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/tools/iso-27001-gap-analysis" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/iso-27001-gap-analysis/" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/tools/iso-27001-gap-analysis" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/iso-27001-gap-analysis/" />
         <meta property="og:title" content="ISO 27001 Gap Analysis Tool - Free Readiness Assessment | OG Technologies EU" />
         <meta property="og:description" content="Free ISO/IEC 27001:2022 gap analysis tool. Assess your ISMS, get a readiness score, prioritized gaps, and downloadable PDF report." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/iso-27001-gap-analysis" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/iso-27001-gap-analysis/" />
         <meta name="twitter:title" content="ISO 27001 Gap Analysis Tool - Free Readiness Assessment | OG Technologies EU" />
         <meta name="twitter:description" content="Free ISO/IEC 27001:2022 gap analysis tool. Assess your ISMS, get a readiness score, prioritized gaps, and downloadable PDF report." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -80,7 +80,7 @@ function Iso27001GapAnalysis() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'ISO 27001 Gap Analysis Tool',
-            url: 'https://www.ogtechnologies.co/tools/iso-27001-gap-analysis',
+            url: 'https://www.ogtechnologies.co/tools/iso-27001-gap-analysis/',
             description: 'Free ISO/IEC 27001:2022 gap analysis tool. Assess your information security management system against all clauses and Annex A controls. Get a readiness score, prioritized gap list, and downloadable PDF report.',
             applicationCategory: 'SecurityApplication',
             operatingSystem: 'Any',

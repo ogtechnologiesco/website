@@ -168,7 +168,7 @@ export default defineConfig({
       postProcess(renderedRoute) {
         const meta = routeMeta[renderedRoute.route]
         if (meta) {
-          const canonicalUrl = `https://www.ogtechnologies.co${renderedRoute.route === '/' ? '' : renderedRoute.route}`
+          const canonicalUrl = `https://www.ogtechnologies.co${renderedRoute.route === '/' ? '/' : renderedRoute.route + '/'}`
 
           renderedRoute.html = renderedRoute.html.replace(
             /<title>[^<]*<\/title>/,
@@ -215,7 +215,7 @@ export default defineConfig({
               '@type': 'ListItem',
               position: i + 1,
               name: seg.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
-              item: `https://www.ogtechnologies.co/${segments.slice(0, i + 1).join('/')}`,
+              item: `https://www.ogtechnologies.co/${segments.slice(0, i + 1).join('/')}/`,
             }))
             jsonLdScripts.push({
               '@context': 'https://schema.org',

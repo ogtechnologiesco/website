@@ -103,16 +103,16 @@ function AwsArnParser() {
         <meta name="description" content="Parse AWS ARN strings into components (partition, service, region, account ID, resource) or build valid ARNs from fields. 100% client-side, no data sent to any server." />
         <meta name="keywords" content="AWS ARN parser, ARN builder, Amazon Resource Name, AWS tools, ARN validator, AWS developer tools" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/tools/aws-arn-parser" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/aws-arn-parser/" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/tools/aws-arn-parser" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/aws-arn-parser/" />
         <meta property="og:title" content="Free AWS ARN Parser & Builder Online | OG Technologies EU" />
         <meta property="og:description" content="Parse AWS ARN strings into components or build valid ARNs from fields. 100% client-side." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/aws-arn-parser" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/aws-arn-parser/" />
         <meta name="twitter:title" content="Free AWS ARN Parser & Builder Online | OG Technologies EU" />
         <meta name="twitter:description" content="Parse AWS ARN strings into components or build valid ARNs from fields. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -122,7 +122,7 @@ function AwsArnParser() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'AWS ARN Parser & Builder',
-            url: 'https://www.ogtechnologies.co/tools/aws-arn-parser',
+            url: 'https://www.ogtechnologies.co/tools/aws-arn-parser/',
             description: 'Parse AWS ARN strings into components (partition, service, region, account ID, resource) or build valid ARNs from fields. 100% client-side.',
             applicationCategory: 'DeveloperApplication',
             operatingSystem: 'Any',

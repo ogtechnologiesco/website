@@ -119,16 +119,16 @@ function IamPolicyValidator() {
         <meta name="description" content="Paste an AWS IAM policy JSON and instantly flag wildcards, privilege escalation, NotAction traps, public principals, and check policy size limits. 100% client-side." />
         <meta name="keywords" content="IAM policy validator, AWS security, IAM linter, policy checker, privilege escalation, wildcard detection, AWS developer tools" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/tools/iam-policy-validator" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/iam-policy-validator/" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/tools/iam-policy-validator" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/iam-policy-validator/" />
         <meta property="og:title" content="Free AWS IAM Policy Validator Online | OG Technologies EU" />
         <meta property="og:description" content="Paste an IAM policy and instantly flag wildcards, privilege escalation, NotAction traps, public principals, and check size limits. 100% client-side." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/iam-policy-validator" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/iam-policy-validator/" />
         <meta name="twitter:title" content="Free AWS IAM Policy Validator Online | OG Technologies EU" />
         <meta name="twitter:description" content="Paste an IAM policy and instantly flag wildcards, privilege escalation, NotAction traps, public principals, and check size limits. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -138,7 +138,7 @@ function IamPolicyValidator() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'AWS IAM Policy Validator',
-            url: 'https://www.ogtechnologies.co/tools/iam-policy-validator',
+            url: 'https://www.ogtechnologies.co/tools/iam-policy-validator/',
             description: 'Paste an AWS IAM policy JSON and instantly flag wildcards, privilege escalation, NotAction traps, public principals, and check policy size limits. 100% client-side.',
             applicationCategory: 'DeveloperApplication',
             operatingSystem: 'Any',

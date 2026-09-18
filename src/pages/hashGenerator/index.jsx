@@ -147,16 +147,16 @@ function HashGenerator() {
         <meta name="description" content="Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512. 100% client-side, no data sent to any server." />
         <meta name="keywords" content="hash generator, sha256, sha512, keccak256, md5, sha1, hash calculator, online hash tool, cryptographic hash" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/tools/hash-generator" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/hash-generator/" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/tools/hash-generator" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/hash-generator/" />
         <meta property="og:title" content="Free Hash Generator - SHA-256, SHA-512, Keccak256, MD5 | OG Technologies EU" />
         <meta property="og:description" content="Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512. 100% client-side." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/hash-generator" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/hash-generator/" />
         <meta name="twitter:title" content="Free Hash Generator - SHA-256, SHA-512, Keccak256, MD5 | OG Technologies EU" />
         <meta name="twitter:description" content="Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -166,7 +166,7 @@ function HashGenerator() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'Hash Generator',
-            url: 'https://www.ogtechnologies.co/tools/hash-generator',
+            url: 'https://www.ogtechnologies.co/tools/hash-generator/',
             description: 'Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512. 100% client-side.',
             applicationCategory: 'DeveloperApplication',
             operatingSystem: 'Any',

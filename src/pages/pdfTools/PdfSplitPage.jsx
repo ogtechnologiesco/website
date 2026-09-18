@@ -25,7 +25,7 @@ function PdfSplitPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'Split PDF',
-        url: 'https://www.ogtechnologies.co/tools/split-pdf',
+        url: 'https://www.ogtechnologies.co/tools/split-pdf/',
         description: 'Split a PDF at any page number to extract specific pages or ranges. 100% browser-based.',
         applicationCategory: 'UtilitiesApplication',
         operatingSystem: 'Any',

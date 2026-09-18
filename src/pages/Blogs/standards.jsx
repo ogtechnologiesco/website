@@ -31,14 +31,14 @@ function Standards() {
           <title>How Blockchain Standards Enable Enterprises to Reach Global Customers</title>
           <meta name="description" content="Blockchain standards are pivotal for cross-border communication, secure transactions, and universal compatibility. Learn how ISO standards and BlockStand help enterprises expand globally." />
           <meta name="keywords" content="blockchain standards, ISO 20022, ISO/TC 307, BlockStand, interoperability, cross-border payments, enterprise blockchain, CEN/CLC JTC 19" />
-          <link rel="canonical" href="https://www.ogtechnologies.co/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers" />
+          <link rel="canonical" href="https://www.ogtechnologies.co/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers/" />
           <meta property="og:type" content="article" />
-          <meta property="og:url" content="https://www.ogtechnologies.co/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers" />
+          <meta property="og:url" content="https://www.ogtechnologies.co/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers/" />
           <meta property="og:title" content="How Blockchain Standards Enable Enterprises to Reach Global Customers" />
           <meta property="og:description" content="Blockchain standards are pivotal for cross-border communication, secure transactions, and universal compatibility. Learn how ISO standards and BlockStand help enterprises expand globally." />
           <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:url" content="https://www.ogtechnologies.co/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers" />
+          <meta name="twitter:url" content="https://www.ogtechnologies.co/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers/" />
           <meta name="twitter:title" content="How Blockchain Standards Enable Enterprises to Reach Global Customers" />
           <meta name="twitter:description" content="Blockchain standards are pivotal for cross-border communication, secure transactions, and universal compatibility." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -52,7 +52,7 @@ function Standards() {
               "dateModified": "2024-11-22",
               "author": { "@type": "Organization", "name": "OG Technologies EU" },
               "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers",
+              "url": "https://www.ogtechnologies.co/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers/",
               "image": "https://www.ogtechnologies.co/og-og-image.png"
             })}
           </script>

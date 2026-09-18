@@ -26,7 +26,7 @@ function XmlMinifierPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'XML Minifier',
-        url: 'https://www.ogtechnologies.co/tools/xml-minifier',
+        url: 'https://www.ogtechnologies.co/tools/xml-minifier/',
         description: 'Minify and compress XML by removing unnecessary whitespace. Reduce XML file size for production payloads. 100% browser-based.',
         applicationCategory: 'DeveloperApplication',
         operatingSystem: 'Any',

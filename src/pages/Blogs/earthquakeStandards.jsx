@@ -28,14 +28,14 @@ function EarthquakeStandards() {
           <title>Terremoto en Colombia: Guía de Estándares ISO para Responder y Reconstruir</title>
           <meta name="description" content="Normas ISO clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente tras el terremoto en Colombia." />
           <meta name="keywords" content="ISO 3010, ISO 13822, ISO 22320, ISO 22301, NSR-10, terremoto Colombia, resiliencia sísmica, gestión del riesgo, estándares ISO, construcción sismo resistente" />
-          <link rel="canonical" href="https://www.ogtechnologies.co/blog/estandares-sismicos-colombia" />
+          <link rel="canonical" href="https://www.ogtechnologies.co/blog/estandares-sismicos-colombia/" />
           <meta property="og:type" content="article" />
-          <meta property="og:url" content="https://www.ogtechnologies.co/blog/estandares-sismicos-colombia" />
+          <meta property="og:url" content="https://www.ogtechnologies.co/blog/estandares-sismicos-colombia/" />
           <meta property="og:title" content="Terremoto en Colombia: Guía de Estándares ISO para Responder y Reconstruir" />
           <meta property="og:description" content="Normas ISO clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente tras el terremoto en Colombia." />
           <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:url" content="https://www.ogtechnologies.co/blog/estandares-sismicos-colombia" />
+          <meta name="twitter:url" content="https://www.ogtechnologies.co/blog/estandares-sismicos-colombia/" />
           <meta name="twitter:title" content="Terremoto en Colombia: Guía de Estándares ISO para Responder y Reconstruir" />
           <meta name="twitter:description" content="Normas ISO clave para evaluación estructural, respuesta ante emergencias y reconstrucción resiliente tras el terremoto en Colombia." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -49,7 +49,7 @@ function EarthquakeStandards() {
               "dateModified": "2026-08-14",
               "author": { "@type": "Person", "name": "Olvis Enrique Gil Ríos" },
               "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/blog/estandares-sismicos-colombia",
+              "url": "https://www.ogtechnologies.co/blog/estandares-sismicos-colombia/",
               "image": "https://www.ogtechnologies.co/og-og-image.png",
               "inLanguage": "es"
             })}
@@ -169,7 +169,7 @@ function EarthquakeStandards() {
 
                     <h3 className="h3 mb-4 text-gray-100">Nuestro compromiso: plan Pro gratuito para las empresas afectadas</h3>
                     <p className="mb-8">
-                      A partir de este momento, nuestro <a href="https://www.ogtechnologies.co/pricing" className="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener noreferrer">plan Pro</a> estará gratis y totalmente disponible para todas las empresas afectadas por el sismo. Creemos que, en una emergencia de esta magnitud, la tecnología debe estar al servicio de la respuesta y la recuperación, no detrás de una barrera de pago.
+                      A partir de este momento, nuestro <a href="https://www.ogtechnologies.co/pricing/" className="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener noreferrer">plan Pro</a> estará gratis y totalmente disponible para todas las empresas afectadas por el sismo. Creemos que, en una emergencia de esta magnitud, la tecnología debe estar al servicio de la respuesta y la recuperación, no detrás de una barrera de pago.
                     </p>
                     <p className="mb-8">
                       Una de las capacidades más críticas en este momento es el <strong>análisis con inteligencia artificial del riesgo de desplome de las estructuras afectadas</strong>. Tras un terremoto de magnitud 7,4, miles de edificaciones quedan en una zona gris: no colapsaron, pero tampoco es seguro ocuparlas. Las réplicas pueden convertir un daño moderado en un colapso mortal en cuestión de minutos.
@@ -178,7 +178,7 @@ function EarthquakeStandards() {
                       El análisis con AI permite procesar a gran escala las fotografías, los registros de inspección y los datos estructurales del inventario de edificaciones, priorizando qué estructuras requieren evaluación urgente por un ingeniero, cuáles deben acordonarse de inmediato y cuáles pueden ocuparse con seguridad. Combinado con metodologías estandarizadas como la evaluación simplificada de ISO 28841 y los criterios de ISO 13822, este enfoque acelera decisiones que hoy se toman en días y que en contextos de emergencia se miden en vidas.
                     </p>
                     <p className="mb-8">
-                      Si tu empresa, alcaldía u organización fue afectada por el terremoto y necesitas apoyo en la evaluación de estructuras, la coordinación de inspecciones o la gestión de la continuidad operativa, <a href="https://www.ogtechnologies.co/pricing" className="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener noreferrer">activa tu plan Pro sin costo</a> y nuestro equipo te acompañará en el proceso.
+                      Si tu empresa, alcaldía u organización fue afectada por el terremoto y necesitas apoyo en la evaluación de estructuras, la coordinación de inspecciones o la gestión de la continuidad operativa, <a href="https://www.ogtechnologies.co/pricing/" className="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener noreferrer">activa tu plan Pro sin costo</a> y nuestro equipo te acompañará en el proceso.
                     </p>
 
                     <h3 className="h3 mb-4 text-gray-100">Referencias</h3>

@@ -28,16 +28,16 @@ function EthereumToolkit() {
         <meta name="description" content="Free browser-based Ethereum developer tools: Wei/Gwei/ETH unit converter, Keccak256 hash generator, Solidity function selector calculator, ABI encoder/decoder, and EIP-55 address checksum validator. 100% client-side, no data sent to any server." />
         <meta name="keywords" content="ethereum tools, wei converter, keccak256 hash, function selector, ABI encoder, ABI decoder, EIP-55 checksum, ethereum address validator, solidity developer tools, web3 utilities" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/tools/ethereum-toolkit" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/ethereum-toolkit/" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/tools/ethereum-toolkit" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/ethereum-toolkit/" />
         <meta property="og:title" content="Free Ethereum Developer Toolkit - Wei Converter, Keccak256, ABI Encoder | OG Technologies EU" />
         <meta property="og:description" content="Free browser-based Ethereum developer tools: Wei/Gwei/ETH converter, Keccak256 hash, function selector, ABI encoder/decoder, EIP-55 address checksum. 100% client-side." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/ethereum-toolkit" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/ethereum-toolkit/" />
         <meta name="twitter:title" content="Free Ethereum Developer Toolkit - Wei Converter, Keccak256, ABI Encoder | OG Technologies EU" />
         <meta name="twitter:description" content="Free browser-based Ethereum developer tools: Wei/Gwei/ETH converter, Keccak256 hash, function selector, ABI encoder/decoder, EIP-55 address checksum. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -47,7 +47,7 @@ function EthereumToolkit() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'Ethereum Developer Toolkit',
-            url: 'https://www.ogtechnologies.co/tools/ethereum-toolkit',
+            url: 'https://www.ogtechnologies.co/tools/ethereum-toolkit/',
             description: 'Free browser-based Ethereum developer tools: Wei/Gwei/ETH unit converter, Keccak256 hash generator, Solidity function selector calculator, ABI encoder/decoder, and EIP-55 address checksum validator. 100% client-side.',
             applicationCategory: 'DeveloperApplication',
             operatingSystem: 'Any',

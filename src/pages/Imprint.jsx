@@ -14,9 +14,9 @@ function Imprint() {
         <title>Imprint - OG Technologies EU</title>
         <meta name="description" content="Legal imprint for OG Technologies EU, based in Vienna, Austria. Company details, legal form, registered office, and managing director information." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/imprint" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/imprint/" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/imprint" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/imprint/" />
         <meta property="og:title" content="Imprint - OG Technologies EU" />
         <meta property="og:description" content="Legal imprint for OG Technologies EU, based in Vienna, Austria." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />

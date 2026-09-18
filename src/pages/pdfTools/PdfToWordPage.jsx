@@ -25,7 +25,7 @@ function PdfToWordPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'PDF to Word Converter',
-        url: 'https://www.ogtechnologies.co/tools/pdf-to-word',
+        url: 'https://www.ogtechnologies.co/tools/pdf-to-word/',
         description: 'Convert PDF to Word (.docx), plain text (.txt), or HTML directly in your browser. 100% client-side and private.',
         applicationCategory: 'UtilitiesApplication',
         operatingSystem: 'Any',

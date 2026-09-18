@@ -21,14 +21,14 @@ function BlogPost() {
         <title>Reaching New Tech Frontiers with OG Technologies EU</title>
         <meta name="description" content="Discover how OG Technologies EU drives growth through IT consulting in Finance, Education, and Web3/Blockchain. Learn about our innovative solutions and approach." />
         <meta name="keywords" content="IT consulting, Web3, blockchain, finance technology, education technology, IT helpdesk, digital transformation" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/blog/reaching-new-frontiers" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/blog/reaching-new-frontiers/" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/blog/reaching-new-frontiers" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/blog/reaching-new-frontiers/" />
         <meta property="og:title" content="Reaching New Tech Frontiers with OG Technologies EU" />
         <meta property="og:description" content="Discover how OG Technologies EU drives growth through IT consulting in Finance, Education, and Web3/Blockchain." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/blog/reaching-new-frontiers" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/blog/reaching-new-frontiers/" />
         <meta name="twitter:title" content="Reaching New Tech Frontiers with OG Technologies EU" />
         <meta name="twitter:description" content="Discover how OG Technologies EU drives growth through IT consulting in Finance, Education, and Web3/Blockchain." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -42,7 +42,7 @@ function BlogPost() {
             "dateModified": "2024-05-14",
             "author": { "@type": "Organization", "name": "OG Technologies EU" },
             "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-            "url": "https://www.ogtechnologies.co/blog/reaching-new-frontiers",
+            "url": "https://www.ogtechnologies.co/blog/reaching-new-frontiers/",
             "image": "https://www.ogtechnologies.co/og-og-image.png"
           })}
         </script>

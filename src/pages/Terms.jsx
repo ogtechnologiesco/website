@@ -14,9 +14,9 @@ function Terms() {
         <title>Terms and Conditions - OG Technologies EU</title>
         <meta name="description" content="Terms and Conditions for the use of OG Technologies EU website and software development services, including payment, intellectual property, confidentiality, and liability terms." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/terms" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/terms/" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/terms" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/terms/" />
         <meta property="og:title" content="Terms and Conditions - OG Technologies EU" />
         <meta property="og:description" content="Terms and Conditions for the use of OG Technologies EU website and software development services." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -55,7 +55,7 @@ Welcome to our website! These Terms and Conditions outline the rules and regulat
   <br />
 Definitions <br />
 "Company" refers to our software development startup OG Technologies EU, based in Vienna, Austria. <br />
-"Website" refers to our website located at https://www.ogtechnologies.co/. <br />
+"Website" refers to our website located at https://www.ogtechnologies.co/./ <br />
 "Services" refers to our software development services in payments, edtech, ecommerce, and blockchain. <br />
 "User" refers to anyone who accesses our website or uses our services. <br />
 <br />

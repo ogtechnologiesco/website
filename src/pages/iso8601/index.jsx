@@ -204,16 +204,16 @@ function Iso8601Validator() {
         <meta name="description" content="Free ISO 8601 / RFC 3339 date validator. Validate date-time strings in bulk, catch malformed formats, illegal leap days, and missing offsets. 100% browser-based, no uploads." />
         <meta name="keywords" content="ISO 8601 validator, RFC 3339 checker, date format validator, ISO 8601 date parser, bulk date validation, timestamp validator, datetime format checker" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/tools/iso-8601-validator" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/iso-8601-validator/" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/tools/iso-8601-validator" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/iso-8601-validator/" />
         <meta property="og:title" content="ISO 8601 Date Validator - Free Online Date Format Checker | OG Technologies EU" />
         <meta property="og:description" content="Free ISO 8601 / RFC 3339 date validator. Validate date-time strings in bulk. 100% browser-based, no uploads." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/iso-8601-validator" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/iso-8601-validator/" />
         <meta name="twitter:title" content="ISO 8601 Date Validator - Free Online Date Format Checker | OG Technologies EU" />
         <meta name="twitter:description" content="Free ISO 8601 / RFC 3339 date validator. Validate date-time strings in bulk. 100% browser-based, no uploads." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -223,7 +223,7 @@ function Iso8601Validator() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'ISO 8601 Date Validator',
-            url: 'https://www.ogtechnologies.co/tools/iso-8601-validator',
+            url: 'https://www.ogtechnologies.co/tools/iso-8601-validator/',
             description: 'Free ISO 8601 / RFC 3339 date validator. Validate date-time strings in bulk, catch malformed formats, illegal leap days, and missing offsets. 100% browser-based, no uploads.',
             applicationCategory: 'DeveloperApplication',
             operatingSystem: 'Any',

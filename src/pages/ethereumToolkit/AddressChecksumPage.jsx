@@ -25,7 +25,7 @@ function AddressChecksumPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'EIP-55 Address Checksum Validator',
-        url: 'https://www.ogtechnologies.co/tools/address-checksum',
+        url: 'https://www.ogtechnologies.co/tools/address-checksum/',
         description: 'Validate and generate EIP-55 checksummed Ethereum addresses. Check if an address has a valid mixed-case checksum. 100% client-side.',
         applicationCategory: 'DeveloperApplication',
         operatingSystem: 'Any',

@@ -26,7 +26,7 @@ function XmlFormatterPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'XML Formatter & Beautifier',
-        url: 'https://www.ogtechnologies.co/tools/xml-formatter',
+        url: 'https://www.ogtechnologies.co/tools/xml-formatter/',
         description: 'Format and beautify XML with customizable indentation. Pretty-print minified XML online — 100% browser-based.',
         applicationCategory: 'DeveloperApplication',
         operatingSystem: 'Any',

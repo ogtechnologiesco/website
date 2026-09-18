@@ -35,14 +35,14 @@ function EBSI() {
           <title>Verifying EBSI Verifiable Credentials: Trust Chain & Compliance</title>
           <meta name="description" content="Explore the key requirements for verifying EBSI Verifiable Credentials, including trust chain verification, eIDAS compliance, ISO/IEC standards, and W3C data models." />
           <meta name="keywords" content="EBSI, verifiable credentials, trust chain, eIDAS, ISO/IEC 29115, ISO/IEC 27001, W3C, DID, European Blockchain Services Infrastructure" />
-          <link rel="canonical" href="https://www.ogtechnologies.co/blog/ebsi-verifiable-credentials" />
+          <link rel="canonical" href="https://www.ogtechnologies.co/blog/ebsi-verifiable-credentials/" />
           <meta property="og:type" content="article" />
-          <meta property="og:url" content="https://www.ogtechnologies.co/blog/ebsi-verifiable-credentials" />
+          <meta property="og:url" content="https://www.ogtechnologies.co/blog/ebsi-verifiable-credentials/" />
           <meta property="og:title" content="Verifying EBSI Verifiable Credentials: Trust Chain & Compliance" />
           <meta property="og:description" content="Explore the key requirements for verifying EBSI Verifiable Credentials, including trust chain verification, eIDAS compliance, and ISO/IEC standards." />
           <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:url" content="https://www.ogtechnologies.co/blog/ebsi-verifiable-credentials" />
+          <meta name="twitter:url" content="https://www.ogtechnologies.co/blog/ebsi-verifiable-credentials/" />
           <meta name="twitter:title" content="Verifying EBSI Verifiable Credentials: Trust Chain & Compliance" />
           <meta name="twitter:description" content="Explore the key requirements for verifying EBSI Verifiable Credentials, including trust chain verification, eIDAS compliance, and ISO/IEC standards." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -56,7 +56,7 @@ function EBSI() {
               "dateModified": "2025-04-17",
               "author": { "@type": "Organization", "name": "OG Technologies EU" },
               "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/blog/ebsi-verifiable-credentials",
+              "url": "https://www.ogtechnologies.co/blog/ebsi-verifiable-credentials/",
               "image": "https://www.ogtechnologies.co/og-og-image.png"
             })}
           </script>

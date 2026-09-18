@@ -61,16 +61,16 @@ function Iso42001AiReadiness() {
         <meta name="description" content="Free ISO/IEC 42001:2023 AI readiness assessment tool. Evaluate your AI Management System against all clauses and Annex A controls. Get a maturity score, prioritized gap list, and downloadable PDF report." />
         <meta name="keywords" content="ISO 42001 gap analysis, ISO 42001 readiness assessment, AI management system checker, AIMS compliance, ISO 42001:2023 self-assessment, AI governance assessment, AI risk management tool" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/tools/iso-42001-ai-readiness" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/iso-42001-ai-readiness/" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/tools/iso-42001-ai-readiness" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/iso-42001-ai-readiness/" />
         <meta property="og:title" content="ISO 42001 AI Readiness Assessment - Free AIMS Checker | OG Technologies EU" />
         <meta property="og:description" content="Free ISO/IEC 42001:2023 AI readiness assessment. Evaluate your AIMS, get a maturity score, prioritized gaps, and downloadable PDF report." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/iso-42001-ai-readiness" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/iso-42001-ai-readiness/" />
         <meta name="twitter:title" content="ISO 42001 AI Readiness Assessment - Free AIMS Checker | OG Technologies EU" />
         <meta name="twitter:description" content="Free ISO/IEC 42001:2023 AI readiness assessment. Evaluate your AIMS, get a maturity score, prioritized gaps, and downloadable PDF report." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -80,7 +80,7 @@ function Iso42001AiReadiness() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'ISO 42001 AI Readiness Assessment',
-            url: 'https://www.ogtechnologies.co/tools/iso-42001-ai-readiness',
+            url: 'https://www.ogtechnologies.co/tools/iso-42001-ai-readiness/',
             description: 'Free ISO/IEC 42001:2023 AI readiness assessment tool. Evaluate your AI Management System against all clauses and Annex A controls. Get a maturity score, prioritized gap list, and downloadable PDF report.',
             applicationCategory: 'SecurityApplication',
             operatingSystem: 'Any',

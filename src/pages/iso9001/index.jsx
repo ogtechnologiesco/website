@@ -61,16 +61,16 @@ function Iso9001ReadinessChecker() {
         <meta name="description" content="Free ISO 9001:2015 readiness checker. Assess your Quality Management System against all clauses and quality management principles. Get a readiness score, prioritized gap list, and downloadable PDF report." />
         <meta name="keywords" content="ISO 9001 readiness checker, ISO 9001 self-assessment, QMS compliance checker, ISO 9001:2015 gap analysis, quality management system assessment, ISO 9001 certification readiness" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/tools/iso-9001-readiness-checker" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/iso-9001-readiness-checker/" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/tools/iso-9001-readiness-checker" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/iso-9001-readiness-checker/" />
         <meta property="og:title" content="ISO 9001 Readiness Checker - Free QMS Self-Assessment | OG Technologies EU" />
         <meta property="og:description" content="Free ISO 9001:2015 readiness checker. Assess your QMS, get a readiness score, prioritized gaps, and downloadable PDF report." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/iso-9001-readiness-checker" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/iso-9001-readiness-checker/" />
         <meta name="twitter:title" content="ISO 9001 Readiness Checker - Free QMS Self-Assessment | OG Technologies EU" />
         <meta name="twitter:description" content="Free ISO 9001:2015 readiness checker. Assess your QMS, get a readiness score, prioritized gaps, and downloadable PDF report." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -80,7 +80,7 @@ function Iso9001ReadinessChecker() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'ISO 9001 Readiness Checker',
-            url: 'https://www.ogtechnologies.co/tools/iso-9001-readiness-checker',
+            url: 'https://www.ogtechnologies.co/tools/iso-9001-readiness-checker/',
             description: 'Free ISO 9001:2015 readiness checker. Assess your Quality Management System against all clauses and quality management principles. Get a readiness score, prioritized gap list, and downloadable PDF report.',
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Any',

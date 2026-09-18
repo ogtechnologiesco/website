@@ -26,7 +26,7 @@ function XmlToJsonPage() {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'XML to JSON Converter',
-        url: 'https://www.ogtechnologies.co/tools/xml-to-json',
+        url: 'https://www.ogtechnologies.co/tools/xml-to-json/',
         description: 'Convert XML to JSON online using the @-prefix attribute convention. Repeated elements become arrays automatically. 100% browser-based.',
         applicationCategory: 'DeveloperApplication',
         operatingSystem: 'Any',

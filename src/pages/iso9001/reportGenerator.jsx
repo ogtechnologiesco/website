@@ -157,7 +157,7 @@ export async function generateGapPdf(results, formData) {
     8,
     COLORS.gray
   );
-  drawText('https://www.ogtechnologies.co/tools/iso-9001-readiness-checker', font, 8, COLORS.purple);
+  drawText('https://www.ogtechnologies.co/tools/iso-9001-readiness-checker/', font, 8, COLORS.purple);
 
   const pdfBytes = await pdfDoc.save();
   return pdfBytes;

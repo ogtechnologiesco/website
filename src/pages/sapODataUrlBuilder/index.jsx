@@ -74,16 +74,16 @@ function SapODataUrlBuilder() {
         <meta name="description" content="Build SAP OData query URLs interactively with $select, $expand, $filter, $orderby, $top, $skip, $format, and $count parameters. 100% client-side." />
         <meta name="keywords" content="SAP OData URL builder, OData query, SAP Gateway, $filter, $select, $expand, SAP developer tools, OData V2, OData V4" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ogtechnologies.co/tools/sap-odata-url-builder" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/tools/sap-odata-url-builder/" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ogtechnologies.co/tools/sap-odata-url-builder" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/tools/sap-odata-url-builder/" />
         <meta property="og:title" content="Free SAP OData URL Builder Online | OG Technologies EU" />
         <meta property="og:description" content="Build SAP OData query URLs interactively with $select, $expand, $filter, $orderby, $top, $skip, $format. 100% client-side." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/sap-odata-url-builder" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/sap-odata-url-builder/" />
         <meta name="twitter:title" content="Free SAP OData URL Builder Online | OG Technologies EU" />
         <meta name="twitter:description" content="Build SAP OData query URLs interactively with $select, $expand, $filter, $orderby, $top, $skip, $format. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
@@ -93,7 +93,7 @@ function SapODataUrlBuilder() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'SAP OData URL Builder',
-            url: 'https://www.ogtechnologies.co/tools/sap-odata-url-builder',
+            url: 'https://www.ogtechnologies.co/tools/sap-odata-url-builder/',
             description: 'Build SAP OData query URLs interactively with $select, $expand, $filter, $orderby, $top, $skip, $format, and $count parameters. 100% client-side.',
             applicationCategory: 'DeveloperApplication',
             operatingSystem: 'Any',
