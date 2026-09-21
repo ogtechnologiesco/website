@@ -48,6 +48,21 @@ const AwsArnParser = lazy(() => import('./pages/awsArnParser'));
 const IamPolicyValidator = lazy(() => import('./pages/iamPolicyValidator'));
 const SapODataUrlBuilder = lazy(() => import('./pages/sapODataUrlBuilder'));
 const HashGenerator = lazy(() => import('./pages/hashGenerator'));
+const IbanValidator = lazy(() => import('./pages/ibanValidator'));
+const BicValidator = lazy(() => import('./pages/bicValidator'));
+const LeiValidator = lazy(() => import('./pages/leiValidator'));
+const Iso20022Viewer = lazy(() => import('./pages/iso20022'));
+const Mt940ToCsv = lazy(() => import('./pages/mt940ToCsv'));
+const Hl7Parser = lazy(() => import('./pages/hl7Parser'));
+const FhirValidator = lazy(() => import('./pages/fhirValidator'));
+const TleParser = lazy(() => import('./pages/tleParser'));
+const TleConverter = lazy(() => import('./pages/tleConverter'));
+const ScormValidator = lazy(() => import('./pages/scormValidator'));
+const GtinValidator = lazy(() => import('./pages/gtinValidator'));
+const PhoneFormatter = lazy(() => import('./pages/phoneFormatter'));
+const VcardGenerator = lazy(() => import('./pages/vcardGenerator'));
+const EmailValidator = lazy(() => import('./pages/emailValidator'));
+const CsvDeduplicator = lazy(() => import('./pages/csvDeduplicator'));
 const Tools = lazy(() => import('./pages/Tools'));
 const XmlTools = lazy(() => import('./pages/xmlTools'));
 const XmlFormatterPage = lazy(() => import('./pages/xmlTools/XmlFormatterPage'));
@@ -84,6 +99,12 @@ const Ventures = lazy(() => import('./pages/Ventures'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const PaymentSuccess = lazy(() => import('./pages/PaymentSuccess'));
 const PaymentCancel = lazy(() => import('./pages/PaymentCancel'));
+const Insights = lazy(() => import('./pages/Insights'));
+const Iso20022Migration = lazy(() => import('./pages/Insights/iso20022Migration'));
+const Iso42001Guide = lazy(() => import('./pages/Insights/iso42001Guide'));
+const IamPolicySecurity = lazy(() => import('./pages/Insights/iamPolicySecurity'));
+const Hl7VsFhir = lazy(() => import('./pages/Insights/hl7VsFhir'));
+const EthereumCalldata = lazy(() => import('./pages/Insights/ethereumCalldata'));
 
 
 function App() {
@@ -169,6 +190,12 @@ function App() {
         <Route exact path="/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers" element={<StandardsPost/>} />
         <Route exact path="/blog/digital-payments-future" element={<DigitalPaymentsFuture/>} />
         <Route exact path="/blog/estandares-sismicos-colombia" element={<EarthquakeStandards/>} />
+        <Route exact path="/insights" element={<Insights/>} />
+        <Route exact path="/insights/iso-20022-migration-guide" element={<Iso20022Migration/>} />
+        <Route exact path="/insights/iso-42001-ai-management-guide" element={<Iso42001Guide/>} />
+        <Route exact path="/insights/iam-policy-security-patterns" element={<IamPolicySecurity/>} />
+        <Route exact path="/insights/hl7-v2-vs-fhir-comparison" element={<Hl7VsFhir/>} />
+        <Route exact path="/insights/ethereum-calldata-abi-guide" element={<EthereumCalldata/>} />
         <Route exact path="/tools" element={<Tools/>} />
         <Route exact path="/tools/html-to-image" element={<HtmlToImage/>} />
         <Route exact path="/tools/screenshot-to-image" element={<ScreenshotToImage/>} />
@@ -201,6 +228,21 @@ function App() {
         <Route exact path="/tools/function-selector" element={<FunctionSelectorPage/>} />
         <Route exact path="/tools/abi-encoder" element={<AbiEncoderPage/>} />
         <Route exact path="/tools/address-checksum" element={<AddressChecksumPage/>} />
+        <Route exact path="/tools/iban-validator" element={<IbanValidator/>} />
+        <Route exact path="/tools/bic-validator" element={<BicValidator/>} />
+        <Route exact path="/tools/lei-validator" element={<LeiValidator/>} />
+        <Route exact path="/tools/iso-20022-viewer" element={<Iso20022Viewer/>} />
+        <Route exact path="/tools/mt940-to-csv" element={<Mt940ToCsv/>} />
+        <Route exact path="/tools/hl7-parser" element={<Hl7Parser/>} />
+        <Route exact path="/tools/fhir-validator" element={<FhirValidator/>} />
+        <Route exact path="/tools/tle-parser" element={<TleParser/>} />
+        <Route exact path="/tools/tle-converter" element={<TleConverter/>} />
+        <Route exact path="/tools/scorm-validator" element={<ScormValidator/>} />
+        <Route exact path="/tools/gtin-validator" element={<GtinValidator/>} />
+        <Route exact path="/tools/phone-formatter" element={<PhoneFormatter/>} />
+        <Route exact path="/tools/vcard-generator" element={<VcardGenerator/>} />
+        <Route exact path="/tools/email-validator" element={<EmailValidator/>} />
+        <Route exact path="/tools/csv-deduplicator" element={<CsvDeduplicator/>} />
       </Routes>
         </Suspense>
       <ConsentBanner />

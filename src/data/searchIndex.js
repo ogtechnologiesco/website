@@ -1,4 +1,5 @@
 import { blogPosts } from './blogPosts';
+import { insightsPosts } from './insightsPosts';
 
 export const searchIndex = [
   { title: 'Home', description: 'OG Technologies EU - IT consulting for Web3, blockchain, and enterprise solutions', path: '/' },
@@ -7,6 +8,7 @@ export const searchIndex = [
   { title: 'Standards', description: 'Blockchain and IT standards consulting - ISO, CEN, EBSI', path: '/standards/' },
   { title: 'DORA Compliance', description: 'Digital Operational Resilience Act compliance consulting', path: '/dora/' },
   { title: 'Blog', description: 'Insights on Web3, blockchain standards, verifiable credentials, and digital payments', path: '/blog/' },
+  { title: 'Insights', description: 'Industry articles on payment standards, AI governance, cloud security, healthcare interoperability, and blockchain development', path: '/insights/' },
   { title: 'Ventures', description: 'Supporting startups, spin-offs, and intrapreneurship programs', path: '/ventures/' },
   { title: 'Portfolio', description: 'Innovative projects including EduNode and Mozart Pay', path: '/portfolio/' },
   { title: 'Careers', description: 'Join OG Technologies EU - jobs in Web3, blockchain, and enterprise IT', path: '/careers/' },
@@ -32,8 +34,30 @@ export const searchIndex = [
   { title: 'IAM Policy Validator', description: 'Validate AWS IAM policies — flag wildcards, privilege escalation, NotAction traps, public principals', path: '/tools/iam-policy-validator/' },
   { title: 'SAP OData URL Builder', description: 'Build SAP OData query URLs with $select, $expand, $filter, $orderby, $top, $skip', path: '/tools/sap-odata-url-builder/' },
   { title: 'Hash Generator', description: 'Generate MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512 hashes online', path: '/tools/hash-generator/' },
+  { title: 'IBAN Validator', description: 'Validate IBANs — MOD-97 checksum, BBAN structure, SEPA reachability', path: '/tools/iban-validator/' },
+  { title: 'BIC / SWIFT Validator', description: 'Decode BIC/SWIFT codes per ISO 9362 — institution, country, branch', path: '/tools/bic-validator/' },
+  { title: 'LEI Validator', description: 'Validate Legal Entity Identifiers per ISO 17442 with MOD 97-10 check digits', path: '/tools/lei-validator/' },
+  { title: 'ISO 20022 Viewer', description: 'Parse pain.001, camt.053, pacs.008 messages with consistency checks', path: '/tools/iso-20022-viewer/' },
+  { title: 'MT940 to CSV', description: 'Convert SWIFT MT940 bank statements to CSV for Excel', path: '/tools/mt940-to-csv/' },
+  { title: 'HL7 v2 Message Parser', description: 'Parse HL7 v2.x messages — segment, field, component breakdown with labels', path: '/tools/hl7-parser/' },
+  { title: 'FHIR Resource Viewer', description: 'Validate and inspect FHIR R4 JSON resources', path: '/tools/fhir-validator/' },
+  { title: 'TLE Parser', description: 'Decode NORAD two-line element sets into orbital elements', path: '/tools/tle-parser/' },
+  { title: 'TLE to JSON/CSV', description: 'Convert TLE/3LE satellite files to OMM/GP JSON or CSV', path: '/tools/tle-converter/' },
+  { title: 'SCORM Package Validator', description: 'Validate SCORM/xAPI/cmi5 packages before LMS upload', path: '/tools/scorm-validator/' },
+  { title: 'GTIN / UPC / EAN Validator', description: 'GS1 check digit validation, format detection, country prefix lookup', path: '/tools/gtin-validator/' },
+  { title: 'Phone Number Formatter', description: 'E.164, international, national phone formats — single or bulk', path: '/tools/phone-formatter/' },
+  { title: 'vCard Generator', description: 'Create and parse .vcf contact files (v3.0/4.0)', path: '/tools/vcard-generator/' },
+  { title: 'Email List Validator', description: 'Bulk email syntax check, dedupe, disposable-domain flagging', path: '/tools/email-validator/' },
+  { title: 'CSV Deduplicator', description: 'Remove duplicate rows by key columns before CRM import', path: '/tools/csv-deduplicator/' },
   // Blog posts
   ...blogPosts.map((post) => ({
+    title: post.title,
+    description: post.description,
+    path: post.link,
+    categories: post.categories,
+  })),
+  // Insights articles
+  ...insightsPosts.map((post) => ({
     title: post.title,
     description: post.description,
     path: post.link,

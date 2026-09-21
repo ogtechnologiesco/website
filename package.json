@@ -19,6 +19,7 @@
     "html-to-image": "^1.11.13",
     "js-sha3": "^0.9.3",
     "jszip": "^3.10.1",
+    "libphonenumber-js": "^1.13.13",
     "mammoth": "^1.12.1",
     "mdb-react-ui-kit": "^6.1.0",
     "netlify-cli": "^27.4.2",

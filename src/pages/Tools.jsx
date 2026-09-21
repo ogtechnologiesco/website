@@ -32,6 +32,51 @@ const TOOL_CATEGORIES = [
     ],
   },
   {
+    name: 'Finance & Payments',
+    tools: [
+      { name: 'IBAN Validator', path: '/tools/iban-validator/', description: 'Validate IBANs — MOD-97 checksum, BBAN structure, SEPA reachability.' },
+      { name: 'BIC / SWIFT Validator', path: '/tools/bic-validator/', description: 'Decode BIC/SWIFT codes per ISO 9362 — institution, country, branch.' },
+      { name: 'LEI Validator', path: '/tools/lei-validator/', description: 'Validate Legal Entity Identifiers per ISO 17442.' },
+      { name: 'ISO 20022 Viewer', path: '/tools/iso-20022-viewer/', description: 'Parse pain.001, camt.053, pacs.008 messages with consistency checks.' },
+      { name: 'MT940 to CSV', path: '/tools/mt940-to-csv/', description: 'Convert SWIFT MT940 statements to CSV for Excel.' },
+    ],
+  },
+  {
+    name: 'Health IT',
+    tools: [
+      { name: 'HL7 v2 Message Parser', path: '/tools/hl7-parser/', description: 'Parse HL7 v2.x messages — segment, field, component breakdown with labels.' },
+      { name: 'FHIR Resource Viewer', path: '/tools/fhir-validator/', description: 'Validate and inspect FHIR R4 JSON resources.' },
+    ],
+  },
+  {
+    name: 'Space',
+    tools: [
+      { name: 'TLE Parser', path: '/tools/tle-parser/', description: 'Decode NORAD two-line element sets into orbital elements.' },
+      { name: 'TLE to JSON/CSV', path: '/tools/tle-converter/', description: 'Convert TLE/3LE files to OMM/GP JSON or CSV.' },
+    ],
+  },
+  {
+    name: 'E-Learning',
+    tools: [
+      { name: 'SCORM Package Validator', path: '/tools/scorm-validator/', description: 'Validate SCORM/xAPI/cmi5 packages before LMS upload.' },
+    ],
+  },
+  {
+    name: 'E-Commerce',
+    tools: [
+      { name: 'GTIN / UPC / EAN Validator', path: '/tools/gtin-validator/', description: 'GS1 check digit validation, format detection, country prefix lookup.' },
+    ],
+  },
+  {
+    name: 'CRM & Contact Data',
+    tools: [
+      { name: 'Phone Number Formatter', path: '/tools/phone-formatter/', description: 'E.164, international, national formats — single or bulk.' },
+      { name: 'vCard Generator', path: '/tools/vcard-generator/', description: 'Create and parse .vcf contact files (v3.0/4.0).' },
+      { name: 'Email List Validator', path: '/tools/email-validator/', description: 'Bulk syntax check, dedupe, disposable-domain flagging.' },
+      { name: 'CSV Deduplicator', path: '/tools/csv-deduplicator/', description: 'Remove duplicate rows by key columns before CRM import.' },
+    ],
+  },
+  {
     name: 'Security',
     tools: [
       { name: 'Security Scanner', path: '/tools/security-tools/', description: 'Scan websites for security vulnerabilities.' },

@@ -157,6 +157,9 @@ function Footer() {
                     <Link to="/blog/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Blog</Link>
                   </li>
                   <li className="mb-1">
+                    <Link to="/insights/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Insights</Link>
+                  </li>
+                  <li className="mb-1">
                     <Link to="/ventures/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ventures</Link>
                   </li>
                   <li className="mb-1">

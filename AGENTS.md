@@ -73,7 +73,7 @@ When adding a new route:
 1. Create the page component in `src/pages/`
 2. Add a lazy import in `App.jsx`
 3. Add a `<Route>` entry in the `<Routes>` block
-4. If the route should be prerendered, add it to the `routes` array and `routeMeta` object in `vite.config.js`
+4. Complete the full SEO checklist below — every public route must be discoverable and prerendered
 
 ### Authentication
 
@@ -97,9 +97,24 @@ When adding a new route:
 `vite.config.js` configures `vite-plugin-prerender` to generate static HTML for all routes. The `postProcess` function injects:
 - Page-specific `<title>`, `<meta name="description">`, canonical URL
 - Open Graph and Twitter Card meta tags
-- JSON-LD structured data (BreadcrumbList, BlogPosting, WebApplication)
+- JSON-LD structured data: BreadcrumbList (all non-root routes), BlogPosting (`/blog/*`), WebApplication (`/tools/*`)
 
-All canonical URLs use `https://www.ogtechnologies.co`. When adding a new prerendered route, update both `routeMeta` and the `routes` array.
+All canonical URLs use `https://www.ogtechnologies.co` with a trailing slash.
+
+#### SEO checklist for every new public page (all steps required)
+
+1. **`<Helmet>` in the page component** — title, `meta description`, `meta keywords`, `meta robots` (`index, follow`), `link canonical`, full Open Graph block (`og:type`, `og:url`, `og:title`, `og:description`, `og:image`), Twitter Card block (`twitter:card`, `twitter:url`, `twitter:title`, `twitter:description`, `twitter:image`), and a `WebApplication`/`Article` JSON-LD script. Copy the block from an existing tool page (e.g. `src/pages/hashGenerator/index.jsx`) and adapt.
+2. **`vite.config.js`** — add the route to BOTH the `routeMeta` object (title + description used by `postProcess`) AND the prerender `routes` array. Missing `routeMeta` means no meta injection; missing `routes` means no static HTML.
+3. **`public/sitemap.xml`** — add a `<url>` entry with `<loc>` (canonical URL with trailing slash), `<lastmod>`, `<changefreq>monthly</changefreq>`, `<priority>0.8</priority>` (0.8 for tools, adjust per existing entries).
+4. **`src/data/searchIndex.js`** — add `{ title, description, path }` so the page appears in site search.
+5. **`public/llms.txt`** — add a link under `## Tools` (or the appropriate section) for AI-crawler discoverability.
+6. **`src/pages/Tools.jsx`** — if it's a tool, add it to `TOOL_CATEGORIES` under the right category.
+7. **Verify** — run `npm run build` and confirm the route appears in the prerendered output (`dist/<route>/index.html` contains the injected meta).
+
+Notes:
+- `robots.txt` allows all crawlers including AI bots — only touch it to disallow a route.
+- `public/_redirects` SPA fallback (`/* /index.html 200`) covers new routes automatically; no edit needed.
+- `postProcess` already injects BreadcrumbList + WebApplication JSON-LD for `/tools/` routes — the page-level `<Helmet>` JSON-LD complements it (richer `featureList`), keep both.
 
 ### Styling
 
@@ -117,7 +132,7 @@ All canonical URLs use `https://www.ogtechnologies.co`. When adding a new preren
 - Deployment is automatic on push to `main` via Netlify
 - `public/_redirects` — SPA fallback routing, HTTPS redirects, security blocks for common attack paths
 - `public/_headers` — Security headers (CSP, HSTS, X-Frame-Options, etc.)
-- `public/sitemap.xml` and `public/robots.txt` — SEO configuration
+- `public/sitemap.xml` and `public/robots.txt` — SEO configuration (sitemap must list every public route)
 
 ## Security Guidelines
 
@@ -136,5 +151,5 @@ All canonical URLs use `https://www.ogtechnologies.co`. When adding a new preren
 - Modify `public/_redirects` or `public/_headers` without understanding Netlify routing and CSP implications
 - Create new axios instances — use the existing `api` or `publicApi` from `src/services/api.jsx`
 - Access `AuthContext` directly — use the `useAuth` hook instead
-- Add routes without updating both `App.jsx` and the prerender config in `vite.config.js` (if prerendering is needed)
+- Add routes without completing the full SEO checklist above (`App.jsx`, `vite.config.js` routeMeta + routes, `sitemap.xml`, `searchIndex.js`, `llms.txt`)
 - Use inline styles when Tailwind utility classes can achieve the same result

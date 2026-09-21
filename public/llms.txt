@@ -30,6 +30,30 @@
 - [IAM Policy Validator](https://www.ogtechnologies.co/tools/iam-policy-validator/)
 - [SAP OData URL Builder](https://www.ogtechnologies.co/tools/sap-odata-url-builder/)
 - [Hash Generator](https://www.ogtechnologies.co/tools/hash-generator/)
+- [IBAN Validator](https://www.ogtechnologies.co/tools/iban-validator/)
+- [BIC / SWIFT Validator](https://www.ogtechnologies.co/tools/bic-validator/)
+- [LEI Validator](https://www.ogtechnologies.co/tools/lei-validator/)
+- [ISO 20022 Message Viewer](https://www.ogtechnologies.co/tools/iso-20022-viewer/)
+- [MT940 to CSV Converter](https://www.ogtechnologies.co/tools/mt940-to-csv/)
+- [HL7 v2 Message Parser](https://www.ogtechnologies.co/tools/hl7-parser/)
+- [FHIR Resource Viewer](https://www.ogtechnologies.co/tools/fhir-validator/)
+- [TLE Parser](https://www.ogtechnologies.co/tools/tle-parser/)
+- [TLE to JSON/CSV Converter](https://www.ogtechnologies.co/tools/tle-converter/)
+- [SCORM Package Validator](https://www.ogtechnologies.co/tools/scorm-validator/)
+- [GTIN / UPC / EAN Validator](https://www.ogtechnologies.co/tools/gtin-validator/)
+- [Phone Number Formatter](https://www.ogtechnologies.co/tools/phone-formatter/)
+- [vCard Generator](https://www.ogtechnologies.co/tools/vcard-generator/)
+- [Email List Validator](https://www.ogtechnologies.co/tools/email-validator/)
+- [CSV Deduplicator](https://www.ogtechnologies.co/tools/csv-deduplicator/)
+
+## Insights
+
+- [Insights](https://www.ogtechnologies.co/insights/): Industry articles on standards, payments, security, and developer tools
+- [ISO 20022 Migration Guide](https://www.ogtechnologies.co/insights/iso-20022-migration-guide/): What the November 2026 deadline means for payment messages
+- [ISO/IEC 42001 AI Management Guide](https://www.ogtechnologies.co/insights/iso-42001-ai-management-guide/): Practical guide to AI management system readiness
+- [IAM Policy Security Patterns](https://www.ogtechnologies.co/insights/iam-policy-security-patterns/): 7 AWS privilege escalation patterns and how to catch them
+- [HL7 v2 vs FHIR](https://www.ogtechnologies.co/insights/hl7-v2-vs-fhir-comparison/): Choosing the right healthcare interoperability standard
+- [Ethereum Calldata & ABI Guide](https://www.ogtechnologies.co/insights/ethereum-calldata-abi-guide/): Function selectors, ABI encoding, and EIP-55 checksums
 
 ## Resources
 
