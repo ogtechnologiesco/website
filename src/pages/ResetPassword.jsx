@@ -93,7 +93,7 @@ function ResetPassword() {
       setSubmitSuccess(true);
       // Redirect to login after successful reset
       setTimeout(() => {
-        navigate('/signin');
+        navigate('/signin/');
       }, 3000);
     } catch (error) {
       setSubmitError(error.message);
@@ -243,7 +243,7 @@ function ResetPassword() {
                 )}
                 {renderAlert()}
                 <div className="text-gray-400 text-center mt-6">
-                  <Link to="/signin" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">
+                  <Link to="/signin/" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">
                     {isResetMode ? 'Back to Sign In' : 'Cancel'}
                   </Link>
                 </div>

@@ -48,12 +48,12 @@ const ProtectedRoute = ({
 
   // Check if user has required role
   if (requiredRole && !hasRole(requiredRole)) {
-    return fallback || <Navigate to="/unauthorized" replace />;
+    return fallback || <Navigate to="/unauthorized/" replace />;
   }
 
   // Check if user has required permission
   if (requiredPermission && !hasPermission(requiredPermission)) {
-    return fallback || <Navigate to="/unauthorized" replace />;
+    return fallback || <Navigate to="/unauthorized/" replace />;
   }
 
   // User is authenticated and has required permissions

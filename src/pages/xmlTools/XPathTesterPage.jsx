@@ -3,12 +3,12 @@ import ToolShell from '../../components/ToolShell';
 import XPathTester from './XPathTester';
 
 const TABS = [
-  { id: 'format', label: 'Formatter', path: '/tools/xml-formatter' },
-  { id: 'validate', label: 'Validator', path: '/tools/xml-validator' },
-  { id: 'json', label: 'XML → JSON', path: '/tools/xml-to-json' },
-  { id: 'minify', label: 'Minifier', path: '/tools/xml-minifier' },
-  { id: 'xpath', label: 'XPath Tester', path: '/tools/xpath-tester' },
-  { id: 'csv', label: 'XML → CSV', path: '/tools/xml-to-csv' },
+  { id: 'format', label: 'Formatter', path: '/tools/xml-formatter/' },
+  { id: 'validate', label: 'Validator', path: '/tools/xml-validator/' },
+  { id: 'json', label: 'XML → JSON', path: '/tools/xml-to-json/' },
+  { id: 'minify', label: 'Minifier', path: '/tools/xml-minifier/' },
+  { id: 'xpath', label: 'XPath Tester', path: '/tools/xpath-tester/' },
+  { id: 'csv', label: 'XML → CSV', path: '/tools/xml-to-csv/' },
 ];
 
 function XPathTesterPage() {

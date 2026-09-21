@@ -146,14 +146,14 @@ function SecurityTools() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                       <Link
-                        to="/signin"
+                        to="/signin/"
                         state={{ from: '/tools/security-tools' }}
                         className="px-6 py-3 rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors"
                       >
                         Sign In
                       </Link>
                       <Link
-                        to="/signup"
+                        to="/signup/"
                         state={{ from: '/tools/security-tools' }}
                         className="px-6 py-3 rounded-lg bg-gray-800 border border-gray-600 text-gray-300 font-medium hover:bg-gray-700 transition-colors"
                       >

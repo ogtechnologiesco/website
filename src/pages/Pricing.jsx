@@ -85,7 +85,7 @@ function Pricing() {
                         <span className="text-gray-400">/month</span>
                       </div>
                       <Link 
-                        to="/signup"
+                        to="/signup/"
                         className="w-full bg-gray-700 hover:bg-gray-600 text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out inline-block"
                       >
                         Get Started Free
@@ -207,7 +207,7 @@ function Pricing() {
                         <span className="text-4xl font-bold text-white">Custom</span>
                       </div>
                       <Link 
-                        to="/quote"
+                        to="/quote/"
                         className="w-full bg-gray-700 hover:bg-gray-600 text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out inline-block"
                       >
                         Contact Sales
@@ -366,13 +366,13 @@ function Pricing() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link 
-                      to="/signup"
+                      to="/signup/"
                       className="bg-white text-purple-600 hover:bg-gray-100 py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out"
                     >
                       Start Free Trial
                     </Link>
                     <Link 
-                      to="/quote"
+                      to="/quote/"
                       className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-purple-600 py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out"
                     >
                       Schedule Demo

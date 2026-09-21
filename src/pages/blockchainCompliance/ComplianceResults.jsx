@@ -184,7 +184,7 @@ function ComplianceResults({ results, formData, onReset }) {
           Our team of ISO/TC 307 delegates and blockchain compliance experts can help you build a tailored compliance roadmap.
         </p>
         <Link
-          to="/quote"
+          to="/quote/"
           className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors"
         >
           Request a Consultation

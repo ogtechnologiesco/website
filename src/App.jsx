@@ -48,6 +48,7 @@ const AwsArnParser = lazy(() => import('./pages/awsArnParser'));
 const IamPolicyValidator = lazy(() => import('./pages/iamPolicyValidator'));
 const SapODataUrlBuilder = lazy(() => import('./pages/sapODataUrlBuilder'));
 const HashGenerator = lazy(() => import('./pages/hashGenerator'));
+const Tools = lazy(() => import('./pages/Tools'));
 const XmlTools = lazy(() => import('./pages/xmlTools'));
 const XmlFormatterPage = lazy(() => import('./pages/xmlTools/XmlFormatterPage'));
 const XmlValidatorPage = lazy(() => import('./pages/xmlTools/XmlValidatorPage'));
@@ -168,6 +169,7 @@ function App() {
         <Route exact path="/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers" element={<StandardsPost/>} />
         <Route exact path="/blog/digital-payments-future" element={<DigitalPaymentsFuture/>} />
         <Route exact path="/blog/estandares-sismicos-colombia" element={<EarthquakeStandards/>} />
+        <Route exact path="/tools" element={<Tools/>} />
         <Route exact path="/tools/html-to-image" element={<HtmlToImage/>} />
         <Route exact path="/tools/screenshot-to-image" element={<ScreenshotToImage/>} />
         <Route exact path="/tools/pdf-tools" element={<PdfTools/>} />

@@ -13,7 +13,7 @@ export const blogPosts = [
       'In todays fast-paced business landscape, technology plays a crucial role in driving growth and innovation.',
     image: blog1,
     imageText: 'Image Text',
-    link: '/blog/reaching-new-frontiers',
+    link: '/blog/reaching-new-frontiers/',
     categories: ['Company', 'Web3', 'Blockchain'],
   },
   {
@@ -23,7 +23,7 @@ export const blogPosts = [
       'Last week, we had the incredible opportunity to attend Meridian 2024 in London, where the Stellar community gathered to discuss...',
     image: meridian,
     imageText: 'meridian',
-    link: '/blog/meridian-2024-highlights',
+    link: '/blog/meridian-2024-highlights/',
     categories: ['Blockchain', 'Web3', 'Events'],
   },
   {
@@ -32,7 +32,7 @@ export const blogPosts = [
     description: 'In todays interconnected business world, standards play a crucial role in helping enterprises expand their reach and connect with more customers.',
     image: stand,
     imageText: 'standards',
-    link: '/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers',
+    link: '/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers/',
     categories: ['Standards', 'Blockchain', 'Compliance'],
   },
   {
@@ -41,7 +41,7 @@ export const blogPosts = [
     description: 'In this article, we explore the key requirements for ensuring the authenticity and compliance of verifiable credentials within the European Blockchain Services Infrastructure (EBSI).',
     image: ebsi,
     imageText: 'Key requirements for verifying EBSI Verifiable Credentials',
-    link: '/blog/ebsi-verifiable-credentials',
+    link: '/blog/ebsi-verifiable-credentials/',
     categories: ['Standards', 'Blockchain', 'Compliance'],
   },
   {
@@ -50,7 +50,7 @@ export const blogPosts = [
     description: 'Three major transitions—MiCA, digital euro, ISO 20022—are converging. Europe is building a new digital payment infrastructure, and we need the standards to make it work.',
     image: digitalPaymentsFuture,
     imageText: "Europe's Digital Payment Future",
-    link: '/blog/digital-payments-future',
+    link: '/blog/digital-payments-future/',
     categories: ['Standards', 'Payments', 'Blockchain'],
   },
   {
@@ -59,7 +59,7 @@ export const blogPosts = [
     description: 'Normas clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente.',
     image: earthquakeStandards,
     imageText: 'Estándares ISO para resiliencia sísmica',
-    link: '/blog/estandares-sismicos-colombia',
+    link: '/blog/estandares-sismicos-colombia/',
     categories: ['Standards', 'Compliance'],
   },
 ];

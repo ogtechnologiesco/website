@@ -11,11 +11,11 @@ import DocToPdf from './DocToPdf';
 import PdfToWord from './PdfToWord';
 
 const TABS = [
-  { id: 'merge', label: 'Merge PDFs', path: '/tools/merge-pdf', component: PdfMerge },
-  { id: 'split', label: 'Split PDF', path: '/tools/split-pdf', component: PdfSplit },
-  { id: 'image', label: 'Image → PDF', path: '/tools/image-to-pdf', component: ImageToPdf },
-  { id: 'doc', label: 'Document → PDF', path: '/tools/document-to-pdf', component: DocToPdf },
-  { id: 'word', label: 'PDF → Word', path: '/tools/pdf-to-word', component: PdfToWord },
+  { id: 'merge', label: 'Merge PDFs', path: '/tools/merge-pdf/', component: PdfMerge },
+  { id: 'split', label: 'Split PDF', path: '/tools/split-pdf/', component: PdfSplit },
+  { id: 'image', label: 'Image → PDF', path: '/tools/image-to-pdf/', component: ImageToPdf },
+  { id: 'doc', label: 'Document → PDF', path: '/tools/document-to-pdf/', component: DocToPdf },
+  { id: 'word', label: 'PDF → Word', path: '/tools/pdf-to-word/', component: PdfToWord },
 ];
 
 function PdfTools() {

@@ -45,7 +45,7 @@ function Breadcrumbs() {
   segments.forEach((segment) => {
     currentPath += '/' + segment;
     const name = routeNames[segment] || segment.charAt(0).toUpperCase() + segment.slice(1);
-    crumbs.push({ name, path: currentPath });
+    crumbs.push({ name, path: currentPath + '/' });
   });
 
   const jsonLd = {
@@ -55,7 +55,7 @@ function Breadcrumbs() {
       '@type': 'ListItem',
       position: index + 1,
       name: crumb.name,
-      item: `https://www.ogtechnologies.co${crumb.path === '/' ? '/' : crumb.path + '/'}`,
+      item: `https://www.ogtechnologies.co${crumb.path}`,
     })),
   };
 

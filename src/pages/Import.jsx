@@ -90,7 +90,7 @@ function Import() {
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Header */}
               <div className="mb-8">
-                <Link to="/crm" className="text-purple-400 hover:text-purple-300 mb-4 inline-block">
+                <Link to="/crm/" className="text-purple-400 hover:text-purple-300 mb-4 inline-block">
                   ← Back to CRM
                 </Link>
                 <h1 className="text-4xl font-bold text-white mb-2">Import Contacts</h1>
@@ -208,7 +208,7 @@ function Import() {
 
                   <div className="mt-6">
                     <Link
-                      to="/crm/contacts"
+                      to="/crm/contacts/"
                       className="inline-block bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md transition duration-150 ease-in-out"
                     >
                       View Imported Contacts

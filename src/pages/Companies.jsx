@@ -107,7 +107,7 @@ function Companies() {
               {/* Header */}
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <Link to="/crm" className="text-purple-400 hover:text-purple-300 mb-2 inline-block">
+                  <Link to="/crm/" className="text-purple-400 hover:text-purple-300 mb-2 inline-block">
                     ← Back to CRM
                   </Link>
                   <h1 className="text-4xl font-bold text-white mb-2">Companies</h1>

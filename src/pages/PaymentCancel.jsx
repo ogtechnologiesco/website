@@ -33,13 +33,13 @@ function PaymentCancel() {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link 
-                    to="/pricing"
+                    to="/pricing/"
                     className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out"
                   >
                     Back to Pricing
                   </Link>
                   <Link 
-                    to="/dashboard"
+                    to="/dashboard/"
                     className="bg-gray-700 hover:bg-gray-600 text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out"
                   >
                     Go to Dashboard

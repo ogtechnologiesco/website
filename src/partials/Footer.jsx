@@ -35,16 +35,16 @@ function Footer() {
                 <h6 className="text-gray-200 font-medium mb-2">Products</h6>
                 <ul>
                   <li className="mb-1">
-                    <Link to="/products" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Products</Link>
+                    <Link to="/products/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Products</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/pricing" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Pricing</Link>
+                    <Link to="/pricing/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Pricing</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/standards" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Standards</Link>
+                    <Link to="/standards/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Standards</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/dora" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">DORA Compliance</Link>
+                    <Link to="/dora/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">DORA Compliance</Link>
                   </li>
                 </ul>
               </div>
@@ -54,97 +54,97 @@ function Footer() {
                 <h6 className="text-gray-200 font-medium mb-2">Tools</h6>
                 <ul>
                   <li className="mb-1">
-                    <Link to="/tools/html-to-image" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">HTML to Image</Link>
+                    <Link to="/tools/html-to-image/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">HTML to Image</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/screenshot-to-image" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Screenshot to Image</Link>
+                    <Link to="/tools/screenshot-to-image/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Screenshot to Image</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/pdf-tools" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">PDF Tools</Link>
+                    <Link to="/tools/pdf-tools/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">PDF Tools</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/merge-pdf" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Merge PDFs</Link>
+                    <Link to="/tools/merge-pdf/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Merge PDFs</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/split-pdf" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Split PDF</Link>
+                    <Link to="/tools/split-pdf/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Split PDF</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/image-to-pdf" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Image → PDF</Link>
+                    <Link to="/tools/image-to-pdf/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Image → PDF</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/document-to-pdf" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Document → PDF</Link>
+                    <Link to="/tools/document-to-pdf/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Document → PDF</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/pdf-to-word" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">PDF → Word</Link>
+                    <Link to="/tools/pdf-to-word/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">PDF → Word</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/xml-tools" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XML Tools</Link>
+                    <Link to="/tools/xml-tools/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XML Tools</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/xml-formatter" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML Formatter</Link>
+                    <Link to="/tools/xml-formatter/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML Formatter</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/xml-validator" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML Validator</Link>
+                    <Link to="/tools/xml-validator/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML Validator</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/xml-to-json" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML → JSON</Link>
+                    <Link to="/tools/xml-to-json/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML → JSON</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/xml-minifier" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML Minifier</Link>
+                    <Link to="/tools/xml-minifier/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML Minifier</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/xpath-tester" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XPath Tester</Link>
+                    <Link to="/tools/xpath-tester/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XPath Tester</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/xml-to-csv" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML → CSV</Link>
+                    <Link to="/tools/xml-to-csv/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML → CSV</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/security-tools" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Security Scanner</Link>
+                    <Link to="/tools/security-tools/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Security Scanner</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/blockchain-compliance-checker" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Blockchain Compliance</Link>
+                    <Link to="/tools/blockchain-compliance-checker/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Blockchain Compliance</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/iso-27001-gap-analysis" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 27001 Gap Analysis</Link>
+                    <Link to="/tools/iso-27001-gap-analysis/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 27001 Gap Analysis</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/iso-9001-readiness-checker" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 9001 Readiness</Link>
+                    <Link to="/tools/iso-9001-readiness-checker/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 9001 Readiness</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/iso-42001-ai-readiness" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 42001 AI Readiness</Link>
+                    <Link to="/tools/iso-42001-ai-readiness/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 42001 AI Readiness</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/iso-8601-validator" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 8601 Validator</Link>
+                    <Link to="/tools/iso-8601-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 8601 Validator</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/ethereum-toolkit" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ethereum Toolkit</Link>
+                    <Link to="/tools/ethereum-toolkit/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ethereum Toolkit</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/wei-converter" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Wei Converter</Link>
+                    <Link to="/tools/wei-converter/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Wei Converter</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/keccak256-hash" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Keccak256 Hash</Link>
+                    <Link to="/tools/keccak256-hash/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Keccak256 Hash</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/function-selector" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Function Selector</Link>
+                    <Link to="/tools/function-selector/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Function Selector</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/abi-encoder" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">ABI Encoder</Link>
+                    <Link to="/tools/abi-encoder/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">ABI Encoder</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/address-checksum" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Address Checksum</Link>
+                    <Link to="/tools/address-checksum/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Address Checksum</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/aws-arn-parser" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">AWS ARN Parser</Link>
+                    <Link to="/tools/aws-arn-parser/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">AWS ARN Parser</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/iam-policy-validator" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">IAM Policy Validator</Link>
+                    <Link to="/tools/iam-policy-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">IAM Policy Validator</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/sap-odata-url-builder" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">SAP OData URL Builder</Link>
+                    <Link to="/tools/sap-odata-url-builder/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">SAP OData URL Builder</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/tools/hash-generator" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Hash Generator</Link>
+                    <Link to="/tools/hash-generator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Hash Generator</Link>
                   </li>
                 </ul>
               </div>
@@ -154,19 +154,19 @@ function Footer() {
                 <h6 className="text-gray-200 font-medium mb-2">Resources</h6>
                 <ul>
                   <li className="mb-1">
-                    <Link to="/blog" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Blog</Link>
+                    <Link to="/blog/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Blog</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/ventures" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ventures</Link>
+                    <Link to="/ventures/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ventures</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/portfolio" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Portfolio</Link>
+                    <Link to="/portfolio/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Portfolio</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/careers" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Careers</Link>
+                    <Link to="/careers/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Careers</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/quote" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Request a Quote</Link>
+                    <Link to="/quote/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Request a Quote</Link>
                   </li>
                 </ul>
               </div>
@@ -176,16 +176,16 @@ function Footer() {
                 <h6 className="text-gray-200 font-medium mb-2">Company</h6>
                 <ul>
                   <li className="mb-1">
-                    <Link to="/imprint" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Imprint</Link>
+                    <Link to="/imprint/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Imprint</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/terms" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Terms</Link>
+                    <Link to="/terms/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Terms</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/privacy" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Privacy Policy</Link>
+                    <Link to="/privacy/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Privacy Policy</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="/cookie-policy" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Cookie Policy</Link>
+                    <Link to="/cookie-policy/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Cookie Policy</Link>
                   </li>
                   <li className="mb-1">
                     <button

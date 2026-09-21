@@ -12,12 +12,12 @@ import XPathTester from './XPathTester';
 import XmlToCsv from './XmlToCsv';
 
 const TABS = [
-  { id: 'format', label: 'Formatter', path: '/tools/xml-formatter', component: XmlFormatter },
-  { id: 'validate', label: 'Validator', path: '/tools/xml-validator', component: XmlValidator },
-  { id: 'json', label: 'XML → JSON', path: '/tools/xml-to-json', component: XmlToJson },
-  { id: 'minify', label: 'Minifier', path: '/tools/xml-minifier', component: XmlMinifier },
-  { id: 'xpath', label: 'XPath Tester', path: '/tools/xpath-tester', component: XPathTester },
-  { id: 'csv', label: 'XML → CSV', path: '/tools/xml-to-csv', component: XmlToCsv },
+  { id: 'format', label: 'Formatter', path: '/tools/xml-formatter/', component: XmlFormatter },
+  { id: 'validate', label: 'Validator', path: '/tools/xml-validator/', component: XmlValidator },
+  { id: 'json', label: 'XML → JSON', path: '/tools/xml-to-json/', component: XmlToJson },
+  { id: 'minify', label: 'Minifier', path: '/tools/xml-minifier/', component: XmlMinifier },
+  { id: 'xpath', label: 'XPath Tester', path: '/tools/xpath-tester/', component: XPathTester },
+  { id: 'csv', label: 'XML → CSV', path: '/tools/xml-to-csv/', component: XmlToCsv },
 ];
 
 function XmlTools() {

@@ -15,6 +15,7 @@ function ToolShell({
   activeTab,
   heading,
   subheading,
+  about,
   children,
 }) {
   return (
@@ -80,6 +81,28 @@ function ToolShell({
                 )}
 
                 {children}
+
+                {about && about.length > 0 && (
+                  <div className="mt-12 space-y-8">
+                    {about.map((section) => (
+                      <div key={section.heading}>
+                        <h2 className="h4 mb-3">{section.heading}</h2>
+                        {section.paragraphs.map((paragraph, i) => (
+                          <p key={i} className="text-gray-400 mb-3 last:mb-0">
+                            {paragraph}
+                          </p>
+                        ))}
+                        {section.list && (
+                          <ul className="list-disc list-inside text-gray-400 space-y-1 mt-3">
+                            {section.list.map((item, i) => (
+                              <li key={i}>{item}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -394,7 +394,7 @@ function Settings() {
                           
                           <div className="flex space-x-4">
                             <Link
-                              to="/standards"
+                              to="/standards/"
                               className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-md transition duration-150 ease-in-out"
                             >
                               Upgrade Plan
@@ -412,7 +412,7 @@ function Settings() {
                         <div className="text-center py-8">
                           <p className="text-gray-400 mb-6">You don't have an active subscription</p>
                           <Link
-                            to="/standards"
+                            to="/standards/"
                             className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-md transition duration-150 ease-in-out"
                           >
                             View Plans

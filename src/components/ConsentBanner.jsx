@@ -138,10 +138,10 @@ const ConsentBanner = () => {
                 Your privacy matters, and you can withdraw consent at any time.
               </p>
               <div className="flex flex-wrap gap-4 text-sm">
-                <a href="/privacy" className="text-blue-400 hover:text-blue-300 underline">
+                <a href="/privacy/" className="text-blue-400 hover:text-blue-300 underline">
                   Privacy Policy
                 </a>
-                <a href="/cookie-policy" className="text-blue-400 hover:text-blue-300 underline">
+                <a href="/cookie-policy/" className="text-blue-400 hover:text-blue-300 underline">
                   Cookie Policy
                 </a>
               </div>

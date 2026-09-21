@@ -196,7 +196,7 @@ function AssessmentResults({ results, formData, onReset }) {
           Our ISO/IEC 27001 experts can help you build a tailored implementation roadmap and prepare for certification.
         </p>
         <Link
-          to="/quote"
+          to="/quote/"
           className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors"
         >
           Request a Consultation

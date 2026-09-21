@@ -141,7 +141,7 @@ const CRMDashboard = () => {
       {/* Quick Actions */}
       <div className="flex flex-wrap gap-4">
         <button
-          onClick={() => navigate('/crm/contacts')}
+          onClick={() => navigate('/crm/contacts/')}
           className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-semibold transition duration-150 ease-in-out flex items-center"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,7 +150,7 @@ const CRMDashboard = () => {
           New Contact
         </button>
         <button
-          onClick={() => navigate('/crm/leads')}
+          onClick={() => navigate('/crm/leads/')}
           className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition duration-150 ease-in-out flex items-center"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -159,7 +159,7 @@ const CRMDashboard = () => {
           New Lead
         </button>
         <button
-          onClick={() => navigate('/crm/import')}
+          onClick={() => navigate('/crm/import/')}
           className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-md font-semibold transition duration-150 ease-in-out flex items-center"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -256,7 +256,7 @@ function CRM() {
               {/* CRM Navigation */}
               <div className="flex flex-wrap gap-2 mb-8 border-b border-gray-700 pb-4">
                 <Link
-                  to="/crm"
+                  to="/crm/"
                   className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out ${
                     activeTab === 'dashboard' 
                       ? 'bg-purple-600 text-white' 
@@ -267,7 +267,7 @@ function CRM() {
                   Dashboard
                 </Link>
                 <Link
-                  to="/crm/contacts"
+                  to="/crm/contacts/"
                   className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out ${
                     activeTab === 'contacts' 
                       ? 'bg-purple-600 text-white' 
@@ -278,7 +278,7 @@ function CRM() {
                   Contacts
                 </Link>
                 <Link
-                  to="/crm/leads"
+                  to="/crm/leads/"
                   className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out ${
                     activeTab === 'leads' 
                       ? 'bg-purple-600 text-white' 
@@ -289,7 +289,7 @@ function CRM() {
                   Leads
                 </Link>
                 <Link
-                  to="/crm/opportunities"
+                  to="/crm/opportunities/"
                   className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out ${
                     activeTab === 'opportunities' 
                       ? 'bg-purple-600 text-white' 
@@ -300,7 +300,7 @@ function CRM() {
                   Opportunities
                 </Link>
                 <Link
-                  to="/crm/activities"
+                  to="/crm/activities/"
                   className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out ${
                     activeTab === 'activities' 
                       ? 'bg-purple-600 text-white' 

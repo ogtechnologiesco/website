@@ -130,13 +130,13 @@ function Products() {
                   
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link 
-                      to="/pricing"
+                      to="/pricing/"
                       className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out text-center"
                     >
                       View Pricing Plans
                     </Link>
                     <Link 
-                      to="/quote"
+                      to="/quote/"
                       className="bg-transparent border-2 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out text-center"
                     >
                       Request Demo

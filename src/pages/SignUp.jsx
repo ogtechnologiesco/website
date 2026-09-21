@@ -85,7 +85,7 @@ function SignUp() {
         setShowSuccess(true);
         // Redirect to login page after successful registration
         setTimeout(() => {
-          navigate('/signin');
+          navigate('/signin/');
         }, 3000);
       }
     } catch (error) {

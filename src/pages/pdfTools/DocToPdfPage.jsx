@@ -3,11 +3,11 @@ import ToolShell from '../../components/ToolShell';
 import DocToPdf from './DocToPdf';
 
 const TABS = [
-  { id: 'merge', label: 'Merge PDFs', path: '/tools/merge-pdf' },
-  { id: 'split', label: 'Split PDF', path: '/tools/split-pdf' },
-  { id: 'image', label: 'Image → PDF', path: '/tools/image-to-pdf' },
-  { id: 'doc', label: 'Document → PDF', path: '/tools/document-to-pdf' },
-  { id: 'word', label: 'PDF → Word', path: '/tools/pdf-to-word' },
+  { id: 'merge', label: 'Merge PDFs', path: '/tools/merge-pdf/' },
+  { id: 'split', label: 'Split PDF', path: '/tools/split-pdf/' },
+  { id: 'image', label: 'Image → PDF', path: '/tools/image-to-pdf/' },
+  { id: 'doc', label: 'Document → PDF', path: '/tools/document-to-pdf/' },
+  { id: 'word', label: 'PDF → Word', path: '/tools/pdf-to-word/' },
 ];
 
 function DocToPdfPage() {

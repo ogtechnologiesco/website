@@ -90,7 +90,7 @@ function Standards() {
                         </li>
                       </ul>
                       <Link 
-                        to="/quote"
+                        to="/quote/"
                         className="inline-block bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-md transition duration-150 ease-in-out"
                       >
                         Get ISO/TC 307 Consulting
@@ -123,7 +123,7 @@ function Standards() {
                         </li>
                       </ul>
                       <Link 
-                        to="/quote"
+                        to="/quote/"
                         className="inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition duration-150 ease-in-out"
                       >
                         Get JTC 19 Consulting
@@ -167,7 +167,7 @@ function Standards() {
                         </li>
                       </ul>
                       <Link 
-                        to="/quote"
+                        to="/quote/"
                         className="inline-block bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition duration-150 ease-in-out"
                       >
                         Get ISO 20022 Implementation
@@ -197,7 +197,7 @@ function Standards() {
                         </li>
                       </ul>
                       <Link 
-                        to="/quote"
+                        to="/quote/"
                         className="inline-block bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition duration-150 ease-in-out"
                       >
                         Get ESG Framework Consulting
@@ -293,7 +293,7 @@ function Standards() {
                     </li>
                   </ul>
                   <Link 
-                    to="/dora"
+                    to="/dora/"
                     className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-2 px-4 rounded-md transition duration-150 ease-in-out"
                   >
                     Take DORA Assessment
@@ -398,7 +398,7 @@ function Standards() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link 
-                      to="/quote"
+                      to="/quote/"
                       className="bg-white text-purple-600 hover:bg-gray-100 py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out"
                     >
                       Get Started Today

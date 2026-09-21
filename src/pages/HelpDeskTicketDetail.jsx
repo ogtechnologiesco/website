@@ -196,7 +196,7 @@ function HelpDeskTicketDetail() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
             <div className="bg-red-900/30 border border-red-500/30 rounded-lg p-4">
               <p className="text-red-400">{error || 'Ticket not found'}</p>
-              <Link to="/helpdesk" className="text-purple-400 hover:text-purple-300 mt-4 inline-block">
+              <Link to="/helpdesk/" className="text-purple-400 hover:text-purple-300 mt-4 inline-block">
                 ← Back to Helpdesk
               </Link>
             </div>
@@ -217,7 +217,7 @@ function HelpDeskTicketDetail() {
           <div className="pt-32 pb-12 md:pt-40 md:pb-20">
             {/* Header */}
             <div className="mb-8">
-              <Link to="/helpdesk" className="text-purple-400 hover:text-purple-300 mb-4 inline-block">
+              <Link to="/helpdesk/" className="text-purple-400 hover:text-purple-300 mb-4 inline-block">
                 ← Back to Helpdesk
               </Link>
               <h1 className="h1 mb-2">#{ticket.id}: {ticket.title}</h1>

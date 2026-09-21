@@ -3,11 +3,11 @@ import ToolShell from '../../components/ToolShell';
 import AddressChecksum from './AddressChecksum';
 
 const TABS = [
-  { id: 'wei', label: 'Wei Converter', path: '/tools/wei-converter' },
-  { id: 'keccak', label: 'Keccak256', path: '/tools/keccak256-hash' },
-  { id: 'selector', label: 'Function Selector', path: '/tools/function-selector' },
-  { id: 'abi', label: 'ABI Encoder', path: '/tools/abi-encoder' },
-  { id: 'address', label: 'Address Checksum', path: '/tools/address-checksum' },
+  { id: 'wei', label: 'Wei Converter', path: '/tools/wei-converter/' },
+  { id: 'keccak', label: 'Keccak256', path: '/tools/keccak256-hash/' },
+  { id: 'selector', label: 'Function Selector', path: '/tools/function-selector/' },
+  { id: 'abi', label: 'ABI Encoder', path: '/tools/abi-encoder/' },
+  { id: 'address', label: 'Address Checksum', path: '/tools/address-checksum/' },
 ];
 
 function AddressChecksumPage() {

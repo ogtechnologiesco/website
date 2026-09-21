@@ -80,7 +80,7 @@ function Dashboard() {
                       </p>
                     </div>
                     <Link 
-                      to="/settings"
+                      to="/settings/"
                       className="mt-4 block w-full text-center bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-md transition duration-150 ease-in-out"
                     >
                       Edit Profile
@@ -109,7 +109,7 @@ function Dashboard() {
                       )}
                     </div>
                     <Link 
-                      to="/settings"
+                      to="/settings/"
                       className="mt-4 block w-full text-center bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition duration-150 ease-in-out"
                     >
                       Manage Subscription
@@ -129,19 +129,19 @@ function Dashboard() {
                     </div>
                     <div className="space-y-3">
                       <Link 
-                        to="/standards"
+                        to="/standards/"
                         className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition duration-150 ease-in-out"
                       >
                         Explore Standards
                       </Link>
                       <Link 
-                        to="/products"
+                        to="/products/"
                         className="block w-full text-center bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded-md transition duration-150 ease-in-out"
                       >
                         View Products
                       </Link>
                       <Link 
-                        to="/quote"
+                        to="/quote/"
                         className="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-md transition duration-150 ease-in-out"
                       >
                         Get Quote
