@@ -21,6 +21,32 @@ function DocToPdfPage() {
       subheading="Convert DOCX, ODT, and TXT files to PDF. No file is sent to a server."
       tabs={TABS}
       activeTab="doc"
+      about={[
+        {
+          heading: 'Document to PDF without uploads',
+          paragraphs: [
+            'Converting a document to PDF usually means uploading it to a conversion service — a poor fit for contracts, reports, or anything confidential. This converter parses DOCX, ODT, and TXT files in your browser and renders a PDF locally, so the document\'s contents never leave your machine.',
+            'The conversion preserves document structure: headings, bold and italic text, lists, tables, and embedded images carry over into the generated PDF.',
+          ],
+        },
+        {
+          heading: 'Features',
+          paragraphs: [],
+          list: [
+            'Convert DOCX, ODT, and TXT files to PDF',
+            'Preserves headings, emphasis, lists, tables, and images',
+            'Generates a standard PDF readable by any viewer',
+            'No account, watermark, or file-size limit',
+            'Fully client-side — no document is ever uploaded',
+          ],
+        },
+        {
+          heading: 'When to use it',
+          paragraphs: [
+            'Use it to produce a PDF for sharing or printing when you don\'t have a word processor installed, freeze a draft\'s formatting before distribution, convert open-document formats for recipients who expect PDF, or handle sensitive files that can\'t go to an online converter.',
+          ],
+        },
+      ]}
       jsonLd={{
         '@context': 'https://schema.org',
         '@type': 'WebApplication',

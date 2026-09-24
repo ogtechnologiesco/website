@@ -21,6 +21,32 @@ function PdfToWordPage() {
       subheading="Convert PDF to Word (.docx), text, or HTML. No file is sent to a server."
       tabs={TABS}
       activeTab="word"
+      about={[
+        {
+          heading: 'PDF to editable formats, locally',
+          paragraphs: [
+            'PDFs are designed for viewing, not editing — extracting their text into an editable format requires parsing the document\'s content streams. This tool does that parsing in your browser and rebuilds the content as a Word (.docx), plain text (.txt), or HTML file, with no upload involved.',
+            'Text-based PDFs convert cleanly. Scanned PDFs contain images rather than text, so they require OCR and will produce limited output — a general limitation of any converter.',
+          ],
+        },
+        {
+          heading: 'Features',
+          paragraphs: [],
+          list: [
+            'Convert PDF to Word (.docx) for editing',
+            'Extract plain text (.txt) for reuse elsewhere',
+            'Convert to HTML for web publishing',
+            'Preserves paragraphs and basic formatting',
+            'Files processed entirely on your device — nothing uploaded',
+          ],
+        },
+        {
+          heading: 'When to use it',
+          paragraphs: [
+            'Use it to edit a document you only have as PDF, extract quotes or data from reports, repurpose PDF content for the web, or recover text from a file whose original source is unavailable.',
+          ],
+        },
+      ]}
       jsonLd={{
         '@context': 'https://schema.org',
         '@type': 'WebApplication',

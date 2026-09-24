@@ -21,6 +21,32 @@ function PdfMergePage() {
       subheading="Combine multiple PDF files into a single document. No file is sent to a server."
       tabs={TABS}
       activeTab="merge"
+      about={[
+        {
+          heading: 'Why merge PDFs in the browser?',
+          paragraphs: [
+            'Most online PDF mergers upload your files to a server, process them, and hand back a download — meaning contracts, invoices, or personal documents pass through infrastructure you don\'t control. This tool assembles the merged PDF locally in your browser, so the files never leave your device.',
+            'The merge preserves the original pages exactly: no recompression, no watermark, no page limit.',
+          ],
+        },
+        {
+          heading: 'Features',
+          paragraphs: [],
+          list: [
+            'Combine two or more PDFs into a single document',
+            'Reorder files before merging',
+            'Preserves original page quality — no recompression or watermarks',
+            'No file size or page-count limits imposed by a server',
+            'Files are processed locally and never uploaded',
+          ],
+        },
+        {
+          heading: 'When to use it',
+          paragraphs: [
+            'Use it to combine scanned documents into one file, assemble reports from separate chapters, merge signed contract pages with appendices, or bundle invoices and receipts for expense submissions.',
+          ],
+        },
+      ]}
       jsonLd={{
         '@context': 'https://schema.org',
         '@type': 'WebApplication',

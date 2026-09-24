@@ -21,6 +21,32 @@ function AddressChecksumPage() {
       subheading="Validate and generate EIP-55 checksummed Ethereum addresses."
       tabs={TABS}
       activeTab="address"
+      about={[
+        {
+          heading: 'What is an EIP-55 checksum?',
+          paragraphs: [
+            'Ethereum addresses are hexadecimal, which makes them easy to mistype and hard to verify by eye. EIP-55 solves this by encoding a checksum into the capitalization of the address: each letter is upper- or lowercased according to the Keccak-256 hash of the lowercase address. A single mistyped character almost always produces an invalid checksum.',
+            'Wallets and exchanges use this checksum to catch typos before funds are sent. An all-lowercase address contains no checksum at all — it is syntactically valid but offers no typo protection.',
+          ],
+        },
+        {
+          heading: 'Features',
+          paragraphs: [],
+          list: [
+            'Validate the mixed-case checksum of any Ethereum address',
+            'Convert a lowercase address to its checksummed form',
+            'Detect addresses with no checksum or a broken one',
+            'Works for EOAs and contract addresses alike',
+            '100% client-side — addresses are never transmitted',
+          ],
+        },
+        {
+          heading: 'When to use it',
+          paragraphs: [
+            'Use it before sending funds to an address copied from an untrusted source, when a wallet rejects an address as invalid, when publishing an address in documentation (always use the checksummed form), or when verifying that two differently-cased strings refer to the same account.',
+          ],
+        },
+      ]}
       jsonLd={{
         '@context': 'https://schema.org',
         '@type': 'WebApplication',

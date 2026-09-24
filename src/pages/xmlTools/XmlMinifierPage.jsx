@@ -22,6 +22,32 @@ function XmlMinifierPage() {
       subheading="Compress XML by removing unnecessary whitespace between elements. Text content and CDATA are preserved."
       tabs={TABS}
       activeTab="minify"
+      about={[
+        {
+          heading: 'What is XML minification?',
+          paragraphs: [
+            'Minification removes the whitespace added for human readability — indentation, line breaks, and padding between elements — without changing the document\'s meaning. A formatted XML file can shrink substantially, which matters for SOAP payloads, configuration files, and API responses transmitted over the network.',
+            'This minifier only strips whitespace between elements. Text content inside elements, CDATA sections, and comments are preserved exactly as written.',
+          ],
+        },
+        {
+          heading: 'Features',
+          paragraphs: [],
+          list: [
+            'Removes whitespace and line breaks between elements',
+            'Preserves text content, CDATA, comments, and processing instructions',
+            'Reports original size, minified size, and savings percentage',
+            'Processes large documents entirely in the browser',
+            'No uploads — your XML never leaves the page',
+          ],
+        },
+        {
+          heading: 'When to use it',
+          paragraphs: [
+            'Use it before embedding XML in a request body, shrinking SOAP envelopes for bandwidth-constrained services, reducing the size of stored configuration files, or preparing fixtures and test payloads where formatting is irrelevant.',
+          ],
+        },
+      ]}
       jsonLd={{
         '@context': 'https://schema.org',
         '@type': 'WebApplication',

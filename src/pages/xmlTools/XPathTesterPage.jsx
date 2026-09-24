@@ -22,6 +22,32 @@ function XPathTesterPage() {
       subheading="Evaluate XPath expressions against your XML document in real time. Supports XPath 1.0 with typed results."
       tabs={TABS}
       activeTab="xpath"
+      about={[
+        {
+          heading: 'What is XPath?',
+          paragraphs: [
+            'XPath (XML Path Language) is a query language for selecting nodes from XML documents. Expressions like //book[@category="tech"]/title navigate the document tree the way file paths navigate a filesystem, with predicates for filtering on attributes, position, and content.',
+            'This tester evaluates XPath 1.0 expressions using the browser\'s native document.evaluate() engine — the same implementation your web page scripts use. Results are typed: element and attribute nodes, text, numbers, strings, or booleans.',
+          ],
+        },
+        {
+          heading: 'Features',
+          paragraphs: [],
+          list: [
+            'Evaluate XPath 1.0 expressions in real time',
+            'Typed results: elements, attributes, text, numbers, booleans',
+            'Example expressions for common query patterns',
+            'Clear error reporting for malformed expressions',
+            'Everything runs client-side — documents stay in the browser',
+          ],
+        },
+        {
+          heading: 'When to use it',
+          paragraphs: [
+            'Use it when writing XPath for web scraping or test automation selectors, extracting data from SOAP responses, debugging queries before embedding them in XSLT or application code, or learning XPath interactively against a real document.',
+          ],
+        },
+      ]}
       jsonLd={{
         '@context': 'https://schema.org',
         '@type': 'WebApplication',

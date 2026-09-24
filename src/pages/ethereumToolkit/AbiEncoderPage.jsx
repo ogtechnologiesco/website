@@ -21,6 +21,32 @@ function AbiEncoderPage() {
       subheading="Encode and decode Ethereum ABI calldata for smart contract interactions."
       tabs={TABS}
       activeTab="abi"
+      about={[
+        {
+          heading: 'What is ABI encoding?',
+          paragraphs: [
+            'The Ethereum Application Binary Interface (ABI) defines how function calls and their arguments are encoded into calldata — the raw bytes sent with a transaction to a smart contract. Every call starts with a 4-byte function selector (derived from the function signature\'s Keccak-256 hash), followed by each argument padded to 32 bytes.',
+            'Decoding reverses the process: given raw calldata and the expected parameter types, it recovers the typed values. This is essential for debugging failed transactions, verifying what a contract call will do, or building raw transactions without a full SDK.',
+          ],
+        },
+        {
+          heading: 'Features',
+          paragraphs: [],
+          list: [
+            'Encode function calls into ABI calldata',
+            'Decode raw calldata back into typed arguments',
+            'Supports uint, int, address, bool, bytes, string, and array types',
+            'Shows the 4-byte selector separately from encoded arguments',
+            'Runs entirely in the browser — calldata never leaves your machine',
+          ],
+        },
+        {
+          heading: 'When to use it',
+          paragraphs: [
+            'Use it when inspecting calldata on a block explorer, hand-crafting a contract interaction for a multisig or governance proposal, testing edge-case inputs against a contract, or double-checking what a dApp frontend is actually about to submit.',
+          ],
+        },
+      ]}
       jsonLd={{
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
