@@ -28,7 +28,7 @@ function Footer() {
             </div>
 
             {/* 2nd, 3rd and 4th blocks */}
-            <div className="md:col-span-8 lg:col-span-7 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="md:col-span-8 lg:col-span-7 grid sm:grid-cols-3 gap-8">
 
               {/* Products column */}
               <div className="text-sm">
@@ -45,154 +45,6 @@ function Footer() {
                   </li>
                   <li className="mb-1">
                     <Link to="/dora/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">DORA Compliance</Link>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Tools column */}
-              <div className="text-sm">
-                <h6 className="text-gray-200 font-medium mb-2">Tools</h6>
-                <ul>
-                  <li className="mb-1">
-                    <Link to="/tools/" className="text-purple-400 hover:text-purple-300 transition duration-150 ease-in-out">All Tools</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/html-to-image/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">HTML to Image</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/screenshot-to-image/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Screenshot to Image</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/pdf-tools/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">PDF Tools</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/merge-pdf/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Merge PDFs</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/split-pdf/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Split PDF</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/image-to-pdf/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Image → PDF</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/document-to-pdf/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Document → PDF</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/pdf-to-word/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">PDF → Word</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/xml-tools/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XML Tools</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/xml-formatter/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML Formatter</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/xml-validator/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML Validator</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/xml-to-json/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML → JSON</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/xml-minifier/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML Minifier</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/xpath-tester/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XPath Tester</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/xml-to-csv/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">XML → CSV</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/security-tools/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Security Scanner</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/blockchain-compliance-checker/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Blockchain Compliance</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/iso-27001-gap-analysis/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 27001 Gap Analysis</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/iso-9001-readiness-checker/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 9001 Readiness</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/iso-42001-ai-readiness/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 42001 AI Readiness</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/iso-8601-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 8601 Validator</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/ethereum-toolkit/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ethereum Toolkit</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/wei-converter/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Wei Converter</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/keccak256-hash/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Keccak256 Hash</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/function-selector/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Function Selector</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/abi-encoder/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">ABI Encoder</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/address-checksum/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out pl-3">Address Checksum</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/aws-arn-parser/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">AWS ARN Parser</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/iam-policy-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">IAM Policy Validator</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/sap-odata-url-builder/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">SAP OData URL Builder</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/hash-generator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Hash Generator</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/iban-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">IBAN Validator</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/bic-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">BIC Validator</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/lei-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">LEI Validator</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/iso-20022-viewer/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 20022 Viewer</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/mt940-to-csv/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">MT940 to CSV</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/hl7-parser/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">HL7 Parser</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/fhir-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">FHIR Validator</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/tle-parser/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">TLE Parser</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/tle-converter/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">TLE to JSON/CSV</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/scorm-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">SCORM Validator</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/gtin-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">GTIN Validator</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/phone-formatter/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Phone Formatter</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/vcard-generator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">vCard Generator</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/email-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Email Validator</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="/tools/csv-deduplicator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">CSV Deduplicator</Link>
                   </li>
                 </ul>
               </div>
@@ -251,6 +103,197 @@ function Footer() {
 
             </div>
 
+          </div>
+
+          {/* Tools area: one column per category */}
+          <div className="mb-8 md:mb-12">
+            <div className="flex items-baseline justify-between mb-4">
+              <h6 className="text-gray-200 font-medium">Tools</h6>
+              <Link to="/tools/" className="text-sm text-purple-400 hover:text-purple-300 transition duration-150 ease-in-out">All Tools →</Link>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 text-sm">
+
+              {/* Image & PDF */}
+              <div>
+                <h6 className="text-gray-500 font-medium mb-2 text-xs uppercase tracking-wider">Image &amp; PDF</h6>
+                <ul>
+                  <li className="mb-1">
+                    <Link to="/tools/html-to-image/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">HTML to Image</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/screenshot-to-image/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Screenshot to Image</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/pdf-tools/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">PDF Tools</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/merge-pdf/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Merge PDFs</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/split-pdf/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Split PDF</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/image-to-pdf/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Image → PDF</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/document-to-pdf/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Document → PDF</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/pdf-to-word/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">PDF → Word</Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* XML */}
+              <div>
+                <h6 className="text-gray-500 font-medium mb-2 text-xs uppercase tracking-wider">XML</h6>
+                <ul>
+                  <li className="mb-1">
+                    <Link to="/tools/xml-tools/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XML Tools</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xml-formatter/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XML Formatter</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xml-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XML Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xml-to-json/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XML → JSON</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xml-minifier/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XML Minifier</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xpath-tester/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XPath Tester</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xml-to-csv/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XML → CSV</Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Developer */}
+              <div>
+                <h6 className="text-gray-500 font-medium mb-2 text-xs uppercase tracking-wider">Developer</h6>
+                <ul>
+                  <li className="mb-1">
+                    <Link to="/tools/ethereum-toolkit/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ethereum Toolkit</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/wei-converter/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Wei Converter</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/keccak256-hash/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Keccak256 Hash</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/function-selector/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Function Selector</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/abi-encoder/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ABI Encoder</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/address-checksum/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Address Checksum</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/aws-arn-parser/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">AWS ARN Parser</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iam-policy-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">IAM Policy Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/sap-odata-url-builder/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">SAP OData Builder</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/hash-generator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Hash Generator</Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Security & ISO */}
+              <div>
+                <h6 className="text-gray-500 font-medium mb-2 text-xs uppercase tracking-wider">Security &amp; ISO</h6>
+                <ul>
+                  <li className="mb-1">
+                    <Link to="/tools/security-tools/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Security Scanner</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/blockchain-compliance-checker/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Blockchain Compliance</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iso-27001-gap-analysis/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 27001 Gap Analysis</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iso-9001-readiness-checker/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 9001 Readiness</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iso-42001-ai-readiness/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 42001 AI Readiness</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iso-8601-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 8601 Validator</Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Finance */}
+              <div>
+                <h6 className="text-gray-500 font-medium mb-2 text-xs uppercase tracking-wider">Finance</h6>
+                <ul>
+                  <li className="mb-1">
+                    <Link to="/tools/iban-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">IBAN Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/bic-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">BIC Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/lei-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">LEI Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iso-20022-viewer/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 20022 Viewer</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/mt940-to-csv/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">MT940 to CSV</Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Data & Other */}
+              <div>
+                <h6 className="text-gray-500 font-medium mb-2 text-xs uppercase tracking-wider">Data &amp; Other</h6>
+                <ul>
+                  <li className="mb-1">
+                    <Link to="/tools/hl7-parser/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">HL7 Parser</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/fhir-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">FHIR Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/tle-parser/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">TLE Parser</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/tle-converter/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">TLE to JSON/CSV</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/scorm-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">SCORM Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/gtin-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">GTIN Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/phone-formatter/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Phone Formatter</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/vcard-generator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">vCard Generator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/email-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Email Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/csv-deduplicator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">CSV Deduplicator</Link>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
           </div>
 
           {/* Bottom area */}
