@@ -243,6 +243,28 @@ function Header() {
                     <Link to="/tools/iam-policy-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>IAM Policy Validator</Link>
                     <Link to="/tools/sap-odata-url-builder/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>SAP OData URL Builder</Link>
                     <Link to="/tools/hash-generator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Hash Generator</Link>
+                    <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Finance & Payments</p>
+                    <Link to="/tools/iban-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>IBAN Validator</Link>
+                    <Link to="/tools/bic-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>BIC Validator</Link>
+                    <Link to="/tools/lei-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>LEI Validator</Link>
+                    <Link to="/tools/iso-20022-viewer/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>ISO 20022 Viewer</Link>
+                    <Link to="/tools/mt940-to-csv/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>MT940 to CSV</Link>
+                    <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Health IT</p>
+                    <Link to="/tools/hl7-parser/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>HL7 Parser</Link>
+                    <Link to="/tools/fhir-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>FHIR Validator</Link>
+                    <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Space</p>
+                    <Link to="/tools/tle-parser/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>TLE Parser</Link>
+                    <Link to="/tools/tle-converter/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>TLE to JSON/CSV</Link>
+                    <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">E-Learning</p>
+                    <Link to="/tools/scorm-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>SCORM Validator</Link>
+                    <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">E-Commerce</p>
+                    <Link to="/tools/gtin-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>GTIN Validator</Link>
+                    <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">CRM & Contact Data</p>
+                    <Link to="/tools/phone-formatter/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Phone Formatter</Link>
+                    <Link to="/tools/vcard-generator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>vCard Generator</Link>
+                    <Link to="/tools/email-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Email Validator</Link>
+                    <Link to="/tools/csv-deduplicator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>CSV Deduplicator</Link>
+                    <Link to="/tools/" className="block px-4 py-2 text-sm text-purple-400 hover:bg-gray-700 hover:text-white border-t border-gray-700 mt-1" onClick={() => setUtilitiesOpen(false)}>All Tools →</Link>
                   </div>
                 )}
               </li>
@@ -460,6 +482,28 @@ function Header() {
                       <li><Link to="/tools/iam-policy-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">IAM Policy Validator</Link></li>
                       <li><Link to="/tools/sap-odata-url-builder/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">SAP OData URL Builder</Link></li>
                       <li><Link to="/tools/hash-generator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Hash Generator</Link></li>
+                      <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Finance & Payments</li>
+                      <li><Link to="/tools/iban-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">IBAN Validator</Link></li>
+                      <li><Link to="/tools/bic-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">BIC Validator</Link></li>
+                      <li><Link to="/tools/lei-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">LEI Validator</Link></li>
+                      <li><Link to="/tools/iso-20022-viewer/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">ISO 20022 Viewer</Link></li>
+                      <li><Link to="/tools/mt940-to-csv/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">MT940 to CSV</Link></li>
+                      <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Health IT</li>
+                      <li><Link to="/tools/hl7-parser/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">HL7 Parser</Link></li>
+                      <li><Link to="/tools/fhir-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">FHIR Validator</Link></li>
+                      <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Space</li>
+                      <li><Link to="/tools/tle-parser/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">TLE Parser</Link></li>
+                      <li><Link to="/tools/tle-converter/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">TLE to JSON/CSV</Link></li>
+                      <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">E-Learning</li>
+                      <li><Link to="/tools/scorm-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">SCORM Validator</Link></li>
+                      <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">E-Commerce</li>
+                      <li><Link to="/tools/gtin-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">GTIN Validator</Link></li>
+                      <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">CRM & Contact Data</li>
+                      <li><Link to="/tools/phone-formatter/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Phone Formatter</Link></li>
+                      <li><Link to="/tools/vcard-generator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">vCard Generator</Link></li>
+                      <li><Link to="/tools/email-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Email Validator</Link></li>
+                      <li><Link to="/tools/csv-deduplicator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">CSV Deduplicator</Link></li>
+                      <li className="border-t border-gray-600 mt-1"><Link to="/tools/" className="flex font-medium w-full text-purple-400 hover:text-white py-2 px-4 justify-center">All Tools →</Link></li>
                     </ul>
                   )}
                 </li>

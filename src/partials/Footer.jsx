@@ -54,6 +54,9 @@ function Footer() {
                 <h6 className="text-gray-200 font-medium mb-2">Tools</h6>
                 <ul>
                   <li className="mb-1">
+                    <Link to="/tools/" className="text-purple-400 hover:text-purple-300 transition duration-150 ease-in-out">All Tools</Link>
+                  </li>
+                  <li className="mb-1">
                     <Link to="/tools/html-to-image/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">HTML to Image</Link>
                   </li>
                   <li className="mb-1">
@@ -145,6 +148,51 @@ function Footer() {
                   </li>
                   <li className="mb-1">
                     <Link to="/tools/hash-generator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Hash Generator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iban-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">IBAN Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/bic-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">BIC Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/lei-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">LEI Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/iso-20022-viewer/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 20022 Viewer</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/mt940-to-csv/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">MT940 to CSV</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/hl7-parser/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">HL7 Parser</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/fhir-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">FHIR Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/tle-parser/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">TLE Parser</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/tle-converter/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">TLE to JSON/CSV</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/scorm-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">SCORM Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/gtin-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">GTIN Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/phone-formatter/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Phone Formatter</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/vcard-generator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">vCard Generator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/email-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Email Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/csv-deduplicator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">CSV Deduplicator</Link>
                   </li>
                 </ul>
               </div>
