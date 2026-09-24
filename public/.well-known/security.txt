@@ -1,5 +1,5 @@
-Contact: mailto:security@ogtechnologies.co
-Expires: 2027-06-22T05:00:00.000Z
+Contact: mailto:hi@ogtechnologies.co
+Expires: 2027-09-23T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://www.ogtechnologies.co/.well-known/security.txt
 Policy: https://www.ogtechnologies.co/privacy/

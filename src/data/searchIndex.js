@@ -18,6 +18,7 @@ export const searchIndex = [
   { title: 'Privacy Policy', description: 'How we collect, use, and protect your personal information', path: '/privacy/' },
   { title: 'Cookie Policy', description: 'Types of cookies we use and GDPR compliance', path: '/cookie-policy/' },
   { title: 'Imprint', description: 'Legal imprint for OG Technologies EU, Vienna, Austria', path: '/imprint/' },
+  { title: 'Security Hall of Fame', description: 'Recognizing security researchers who responsibly disclose vulnerabilities — how to report security issues', path: '/security-hall-of-fame/' },
   // Tools
   { title: 'All Tools', description: 'Index of all free browser-based tools and utilities', path: '/tools/' },
   { title: 'HTML to Image', description: 'Convert HTML content to images', path: '/tools/html-to-image/' },

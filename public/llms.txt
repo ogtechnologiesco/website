@@ -68,6 +68,7 @@
 - [Privacy Policy](https://www.ogtechnologies.co/privacy/)
 - [Cookie Policy](https://www.ogtechnologies.co/cookie-policy/)
 - [Imprint](https://www.ogtechnologies.co/imprint/)
+- [Security Hall of Fame](https://www.ogtechnologies.co/security-hall-of-fame/): Responsible disclosure policy and researcher acknowledgments
 
 ## Contact
 

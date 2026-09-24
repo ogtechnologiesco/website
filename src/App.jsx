@@ -25,6 +25,7 @@ const Standards = lazy(() => import('./pages/Standards'));
 const Pricing = lazy(() => import('./pages/Pricing'));
 const Terms = lazy(() => import('./pages/Terms'));
 const Imprint = lazy(() => import('./pages/Imprint'));
+const SecurityHallOfFame = lazy(() => import('./pages/SecurityHallOfFame'));
 const Products = lazy(() => import('./pages/Products'));
 const Job = lazy(() => import('./pages/Job'));
 const Blogs = lazy(() => import('./pages/Blog'));
@@ -162,6 +163,7 @@ function App() {
         <Route path="/payment/success" element={<PaymentSuccess />} />
         <Route path="/payment/cancel" element={<PaymentCancel />} />
         <Route exact path="/imprint" element={<Imprint/>} />
+        <Route exact path="/security-hall-of-fame" element={<SecurityHallOfFame/>} />
         <Route exact path="/privacy" element={<DataProtection/>} />
         <Route exact path="/cookie-policy" element={<DataPolicy/>} />
         <Route exact path="/products" element={<Products/>} />

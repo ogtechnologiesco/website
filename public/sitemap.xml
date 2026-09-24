@@ -97,6 +97,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.ogtechnologies.co/security-hall-of-fame/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.ogtechnologies.co/tools/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
