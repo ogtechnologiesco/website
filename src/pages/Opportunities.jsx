@@ -71,8 +71,13 @@ function Opportunities() {
         source: oppData.source,
         assignedTo: oppData.assignedTo,
         contactId: oppData.contactId,
-        leadId: oppData.leadId
+        leadId: oppData.leadId,
+        customFields: {}
       };
+
+      if (oppData.partnerName) opportunityData.customFields.partnerName = oppData.partnerName;
+      if (oppData.referralCode) opportunityData.customFields.referralCode = oppData.referralCode;
+      if (Object.keys(opportunityData.customFields).length === 0) delete opportunityData.customFields;
       
       await crmAPI.createOpportunity(opportunityData);
       toast.success('Opportunity created successfully');
@@ -246,6 +251,9 @@ function Opportunities() {
                                   <span className="text-purple-400 text-xs font-semibold">{opp.probability || 0}%</span>
                                 </div>
                                 <p className="text-gray-400 text-xs mb-1">{opp.company || opp.assignedTo || '-'}</p>
+                                {opp.customFields?.partnerName && (
+                                  <p className="text-purple-400 text-xs mb-1">via {opp.customFields.partnerName}</p>
+                                )}
                                 <div className="flex justify-between items-center mb-2">
                                   <span className="text-purple-400 text-sm font-semibold">€{(opp.value || 0).toLocaleString()}</span>
                                 </div>
@@ -320,6 +328,12 @@ function Opportunities() {
                               <div>
                                 <p className="text-white font-medium">{opp.name}</p>
                                 <p className="text-gray-400 text-sm">{opp.assignedTo || '-'}</p>
+                                {opp.customFields?.partnerName && (
+                                  <p className="text-purple-400 text-sm">
+                                    via {opp.customFields.partnerName}
+                                    {opp.customFields.referralCode ? ` (${opp.customFields.referralCode})` : ''}
+                                  </p>
+                                )}
                               </div>
                             </td>
                             <td className="p-4 text-white">{opp.company || '-'}</td>
@@ -391,8 +405,12 @@ function AddOpportunityModal({ onClose, onAdd }) {
     expectedClose: '',
     priority: 'medium',
     source: 'Website',
+    partnerName: '',
+    referralCode: '',
     description: ''
   });
+
+  const isPartnerSourced = ['Referral', 'Partner Referral'].includes(formData.source);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -515,6 +533,33 @@ function AddOpportunityModal({ onClose, onAdd }) {
               </select>
             </div>
           </div>
+          {isPartnerSourced && (
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-gray-400 text-sm mb-1">
+                  Referring Partner {formData.source === 'Partner Referral' ? '*' : ''}
+                </label>
+                <input
+                  type="text"
+                  required={formData.source === 'Partner Referral'}
+                  value={formData.partnerName}
+                  onChange={(e) => setFormData({...formData, partnerName: e.target.value})}
+                  className="w-full bg-gray-700 text-white px-3 py-2 rounded-md border border-gray-600 focus:border-purple-500 focus:outline-none"
+                  placeholder="e.g., Acme Consulting"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-400 text-sm mb-1">Referral Code</label>
+                <input
+                  type="text"
+                  value={formData.referralCode}
+                  onChange={(e) => setFormData({...formData, referralCode: e.target.value})}
+                  className="w-full bg-gray-700 text-white px-3 py-2 rounded-md border border-gray-600 focus:border-purple-500 focus:outline-none"
+                  placeholder="e.g., ACME-2026"
+                />
+              </div>
+            </div>
+          )}
           <div>
             <label className="block text-gray-400 text-sm mb-1">Description</label>
             <textarea

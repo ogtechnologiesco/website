@@ -86,6 +86,9 @@ function Leads() {
       } else if (newLead.company) {
         leadData.customFields.companyName = newLead.company;
       }
+
+      if (newLead.partnerName) leadData.customFields.partnerName = newLead.partnerName;
+      if (newLead.referralCode) leadData.customFields.referralCode = newLead.referralCode;
       
       await crmAPI.createLead(leadData);
       toast.success('Lead created successfully');
@@ -209,6 +212,9 @@ function Leads() {
                                 </div>
                                 <p className="text-gray-400 text-xs mb-1">{lead.company || '-'}</p>
                                 <p className="text-gray-500 text-xs mb-2">{lead.email || lead.phone || '-'}</p>
+                                {lead.customFields?.partnerName && (
+                                  <p className="text-purple-400 text-xs mb-2">via {lead.customFields.partnerName}</p>
+                                )}
                                 <div className="flex justify-between items-center">
                                   <span className="text-purple-400 text-sm font-semibold">€{(lead.value || 0).toLocaleString()}</span>
                                   <span className="text-gray-500 text-xs">{lead.updatedAt ? new Date(lead.updatedAt).toLocaleDateString() : 'Never'}</span>
@@ -263,7 +269,17 @@ function Leads() {
                                 {lead.status || 'Unknown'}
                               </span>
                             </td>
-                            <td className="p-4 text-gray-400">{lead.source || '-'}</td>
+                            <td className="p-4 text-gray-400">
+                              <div>
+                                <p>{lead.source || '-'}</p>
+                                {lead.customFields?.partnerName && (
+                                  <p className="text-purple-400 text-sm">
+                                    via {lead.customFields.partnerName}
+                                    {lead.customFields.referralCode ? ` (${lead.customFields.referralCode})` : ''}
+                                  </p>
+                                )}
+                              </div>
+                            </td>
                             <td className="p-4 text-gray-400">{lead.updatedAt ? new Date(lead.updatedAt).toLocaleDateString() : 'Never'}</td>
                           </tr>
                         ))}
@@ -300,8 +316,12 @@ function AddLeadModal({ onClose, onAdd }) {
     contact: '',
     email: '',
     value: '',
-    source: 'Website'
+    source: 'Website',
+    partnerName: '',
+    referralCode: ''
   });
+
+  const isPartnerSourced = ['Referral', 'Partner Referral'].includes(formData.source);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -376,6 +396,8 @@ function AddLeadModal({ onClose, onAdd }) {
               >
                 <option value="Website">Website</option>
                 <option value="Referral">Referral</option>
+                <option value="Partner Referral">Partner Referral</option>
+                <option value="Existing Customer">Existing Customer</option>
                 <option value="Email Campaign">Email Campaign</option>
                 <option value="Social Media">Social Media</option>
                 <option value="Cold Call">Cold Call</option>
@@ -383,6 +405,33 @@ function AddLeadModal({ onClose, onAdd }) {
               </select>
             </div>
           </div>
+          {isPartnerSourced && (
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-gray-400 text-sm mb-1">
+                  Referring Partner {formData.source === 'Partner Referral' ? '*' : ''}
+                </label>
+                <input
+                  type="text"
+                  required={formData.source === 'Partner Referral'}
+                  value={formData.partnerName}
+                  onChange={(e) => setFormData({...formData, partnerName: e.target.value})}
+                  className="w-full bg-gray-700 text-white px-3 py-2 rounded-md border border-gray-600 focus:border-purple-500 focus:outline-none"
+                  placeholder="e.g., Acme Consulting"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-400 text-sm mb-1">Referral Code</label>
+                <input
+                  type="text"
+                  value={formData.referralCode}
+                  onChange={(e) => setFormData({...formData, referralCode: e.target.value})}
+                  className="w-full bg-gray-700 text-white px-3 py-2 rounded-md border border-gray-600 focus:border-purple-500 focus:outline-none"
+                  placeholder="e.g., ACME-2026"
+                />
+              </div>
+            </div>
+          )}
           <div className="flex gap-3 mt-6">
             <button
               type="button"

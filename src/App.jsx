@@ -98,6 +98,7 @@ const Import = lazy(() => import('./pages/Import'));
 const Companies = lazy(() => import('./pages/Companies'));
 const Ventures = lazy(() => import('./pages/Ventures'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
+const Partners = lazy(() => import('./pages/Partners'));
 const PaymentSuccess = lazy(() => import('./pages/PaymentSuccess'));
 const PaymentCancel = lazy(() => import('./pages/PaymentCancel'));
 const Insights = lazy(() => import('./pages/Insights'));
@@ -185,6 +186,7 @@ function App() {
         <Route path="/crm/companies" element={<Companies/>} />
         <Route exact path="/ventures" element={<Ventures/>} />
         <Route exact path="/portfolio" element={<Portfolio/>} />
+        <Route exact path="/partners" element={<Partners/>} />
         <Route exact path="/blog" element={<Blogs/>} />
         <Route exact path="/blog/reaching-new-frontiers" element={<BlogPost/>} />
         <Route exact path="/blog/meridian-2024-highlights" element={<MeridianPost/>} />

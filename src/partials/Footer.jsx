@@ -63,6 +63,9 @@ function Footer() {
                     <Link to="/ventures/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Ventures</Link>
                   </li>
                   <li className="mb-1">
+                    <Link to="/partners/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Partners</Link>
+                  </li>
+                  <li className="mb-1">
                     <Link to="/portfolio/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Portfolio</Link>
                   </li>
                   <li className="mb-1">
