@@ -27,21 +27,6 @@ function SecurityHallOfFame() {
         <meta name="twitter:title" content="Security Hall of Fame - OG Technologies EU" />
         <meta name="twitter:description" content="Recognizing security researchers who responsibly disclose vulnerabilities to OG Technologies EU." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            name: 'Security Hall of Fame',
-            url: 'https://www.ogtechnologies.co/security-hall-of-fame/',
-            description: 'Recognizing security researchers who have responsibly disclosed vulnerabilities to OG Technologies EU.',
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       {/*  Site header */}

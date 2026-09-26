@@ -308,27 +308,6 @@ function Iso20022Viewer() {
         <meta name="twitter:title" content="Free ISO 20022 Message Viewer - pain.001, camt.053, pacs.008 | OG Technologies EU" />
         <meta name="twitter:description" content="Parse and inspect ISO 20022 XML messages: auto-detect type, check consistency, validate IBANs/BICs. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'ISO 20022 Message Viewer',
-            url: 'https://www.ogtechnologies.co/tools/iso-20022-viewer/',
-            description: 'Parse and inspect ISO 20022 XML messages: pain.001, pain.008, camt.052/053/054, pacs.008. Auto-detects message type, checks NbOfTxs/CtrlSum consistency, validates embedded IBANs and BICs. 100% client-side.',
-            applicationCategory: 'FinanceApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'Auto-detection of message type from namespace',
-              'pain.001, pain.008, camt.052/053/054, pacs.008 support',
-              'NbOfTxs and CtrlSum consistency checks',
-              'Embedded IBAN and BIC validation',
-              'Balances and transaction extraction',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

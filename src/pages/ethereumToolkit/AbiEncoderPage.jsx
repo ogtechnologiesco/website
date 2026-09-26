@@ -47,22 +47,7 @@ function AbiEncoderPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Ethereum ABI Encoder & Decoder',
-        url: 'https://www.ogtechnologies.co/tools/abi-encoder/',
-        description: 'Encode and decode Ethereum ABI calldata for smart contract interactions. Supports uint, address, bytes, string, and array types. 100% client-side.',
-        applicationCategory: 'DeveloperApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Encode Solidity function calls into ABI calldata',
-          'Decode raw ABI calldata back into typed values',
-          'Supports uint, int, address, bool, bytes, string, and array types',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <AbiEncoder />
     </ToolShell>

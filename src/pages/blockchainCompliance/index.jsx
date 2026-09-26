@@ -91,35 +91,6 @@ function BlockchainCompliance() {
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Blockchain Compliance Checker',
-            url: 'https://www.ogtechnologies.co/tools/blockchain-compliance-checker/',
-            description: 'Free Web3 & blockchain standards compliance checker. Enter your project details and get a personalized compliance roadmap covering eIDAS, W3C Verifiable Credentials, DID Core, ISO 27001, GDPR, ISO 20022, MiCA, DORA and more.',
-            applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'Personalized standards mapping based on blockchain network, use case, and jurisdiction',
-              'Covers eIDAS, W3C VCs, DID Core, ISO 27001, ISO 29115, GDPR, ISO 20022, MiCA, DORA',
-              'FATF Travel Rule, CCPA/CPRA, UK GDPR, EBSI compliance, CEN/CENELEC JTC 19',
-              'Compliance readiness scoring with grade assessment',
-              'Downloadable PDF Standards & Compliance Roadmap',
-              'Expert consultation lead capture for implementation support',
-            ],
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       <Header />

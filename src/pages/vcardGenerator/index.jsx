@@ -66,26 +66,6 @@ function VcardGenerator() {
         <meta name="twitter:title" content="Free vCard Generator & Parser - Create .vcf Contact Files | OG Technologies EU" />
         <meta name="twitter:description" content="Create vCard 3.0/4.0 contact files or parse existing .vcf files. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'vCard Generator & Parser',
-            url: 'https://www.ogtechnologies.co/tools/vcard-generator/',
-            description: 'Create and parse vCard (.vcf) contact files. Generate vCard 3.0 or 4.0 for iPhone, Android, Outlook, and Google Contacts. 100% client-side.',
-            applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'vCard 3.0 and 4.0 generation',
-              'Live .vcf preview with line folding',
-              'vCard parser with property table',
-              'Downloadable .vcf files',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

@@ -74,36 +74,6 @@ function Iso9001ReadinessChecker() {
         <meta name="twitter:title" content="ISO 9001 Readiness Checker - Free QMS Self-Assessment | OG Technologies EU" />
         <meta name="twitter:description" content="Free ISO 9001:2015 readiness checker. Assess your QMS, get a readiness score, prioritized gaps, and downloadable PDF report." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'ISO 9001 Readiness Checker',
-            url: 'https://www.ogtechnologies.co/tools/iso-9001-readiness-checker/',
-            description: 'Free ISO 9001:2015 readiness checker. Assess your Quality Management System against all clauses and quality management principles. Get a readiness score, prioritized gap list, and downloadable PDF report.',
-            applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'Clause-by-clause assessment (Clauses 4–10)',
-              'Quality management principles assessment (customer focus, process approach, risk-based thinking)',
-              'Readiness score with letter grade',
-              'Prioritized gap list with remediation recommendations',
-              'Downloadable PDF report',
-              'Estimated weeks to certification readiness',
-            ],
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       <Header />

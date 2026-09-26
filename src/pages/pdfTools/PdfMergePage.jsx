@@ -47,22 +47,7 @@ function PdfMergePage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Merge PDF',
-        url: 'https://www.ogtechnologies.co/tools/merge-pdf/',
-        description: 'Merge two or more PDF files into one document directly in your browser. 100% client-side and private.',
-        applicationCategory: 'UtilitiesApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Merge multiple PDF files into a single document',
-          'Reorder files before merging',
-          '100% browser-based — no file uploads',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <PdfMerge />
     </ToolShell>

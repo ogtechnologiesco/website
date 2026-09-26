@@ -45,34 +45,6 @@ function PdfTools() {
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'PDF Tools',
-            url: 'https://www.ogtechnologies.co/tools/pdf-tools/',
-            description: 'Merge, split, and convert PDF files directly in your browser. Free and private - no file is ever uploaded to a server.',
-            applicationCategory: 'UtilitiesApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'Merge two PDF files into one',
-              'Split a PDF at any page',
-              'Convert PNG/JPG images to PDF',
-              'Convert DOCX, ODT, and TXT documents to PDF',
-              'Convert PDF to Word (.docx, .txt, .html)',
-            ],
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       {/* Site header */}

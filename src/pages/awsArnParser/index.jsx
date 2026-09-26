@@ -116,26 +116,6 @@ function AwsArnParser() {
         <meta name="twitter:title" content="Free AWS ARN Parser & Builder Online | OG Technologies EU" />
         <meta name="twitter:description" content="Parse AWS ARN strings into components or build valid ARNs from fields. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'AWS ARN Parser & Builder',
-            url: 'https://www.ogtechnologies.co/tools/aws-arn-parser/',
-            description: 'Parse AWS ARN strings into components (partition, service, region, account ID, resource) or build valid ARNs from fields. 100% client-side.',
-            applicationCategory: 'DeveloperApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'Parse ARN strings into individual components',
-              'Build valid ARNs from individual fields',
-              'Visual color-coded breakdown of ARN segments',
-              'Validation with warnings for common mistakes',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

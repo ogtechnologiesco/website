@@ -97,26 +97,6 @@ function FhirValidator() {
         <meta name="twitter:title" content="Free FHIR Resource Viewer & Validator - FHIR R4 JSON | OG Technologies EU" />
         <meta name="twitter:description" content="Validate and inspect FHIR R4 resources: required-field checks, type validation, flattened field view. 100% client-side — PHI never uploaded." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'FHIR Resource Viewer & Validator',
-            url: 'https://www.ogtechnologies.co/tools/fhir-validator/',
-            description: 'Validate and inspect FHIR R4 resources: required-field checks, type validation, and flattened field view for Patient, Observation, Bundle, and more. 100% client-side.',
-            applicationCategory: 'DeveloperApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'FHIR R4 JSON validation',
-              'Required-field and type checks',
-              'Flattened field-path view',
-              'Patient, Observation, Bundle, Encounter, MedicationRequest schemas',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

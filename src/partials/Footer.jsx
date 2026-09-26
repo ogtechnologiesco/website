@@ -293,6 +293,9 @@ function Footer() {
                   <li className="mb-1">
                     <Link to="/tools/csv-deduplicator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">CSV Deduplicator</Link>
                   </li>
+                  <li className="mb-1">
+                    <Link to="/tools/word-counter/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Word Counter</Link>
+                  </li>
                 </ul>
               </div>
 

@@ -48,22 +48,7 @@ function XmlMinifierPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'XML Minifier',
-        url: 'https://www.ogtechnologies.co/tools/xml-minifier/',
-        description: 'Minify and compress XML by removing unnecessary whitespace. Reduce XML file size for production payloads. 100% browser-based.',
-        applicationCategory: 'DeveloperApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Remove whitespace between XML elements',
-          'Preserve text content, CDATA sections, and comments',
-          'Shows original size, minified size, and savings percentage',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <XmlMinifier />
     </ToolShell>

@@ -65,26 +65,6 @@ function TleParser() {
         <meta name="twitter:title" content="Free TLE Parser - Two-Line Element Set Decoder & Orbital Elements | OG Technologies EU" />
         <meta name="twitter:description" content="Decode NORAD TLEs: catalog number, epoch, inclination, RAAN, eccentricity, mean motion, plus derived orbital parameters. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'TLE Parser & Orbital Elements Decoder',
-            url: 'https://www.ogtechnologies.co/tools/tle-parser/',
-            description: 'Decode NORAD two-line element sets: satellite catalog number, epoch, inclination, RAAN, eccentricity, mean motion — plus derived orbital period, apogee, and perigee. 100% client-side.',
-            applicationCategory: 'DeveloperApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'TLE line 1 and line 2 field decoding',
-              'Checksum validation',
-              'Epoch conversion to UTC date',
-              'Derived orbital period, apogee, perigee, orbit type',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

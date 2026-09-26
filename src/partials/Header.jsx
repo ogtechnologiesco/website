@@ -264,6 +264,8 @@ function Header() {
                     <Link to="/tools/vcard-generator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>vCard Generator</Link>
                     <Link to="/tools/email-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Email Validator</Link>
                     <Link to="/tools/csv-deduplicator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>CSV Deduplicator</Link>
+                    <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Text</p>
+                    <Link to="/tools/word-counter/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Word Counter</Link>
                     <Link to="/tools/" className="block px-4 py-2 text-sm text-purple-400 hover:bg-gray-700 hover:text-white border-t border-gray-700 mt-1" onClick={() => setUtilitiesOpen(false)}>All Tools →</Link>
                   </div>
                 )}
@@ -503,6 +505,8 @@ function Header() {
                       <li><Link to="/tools/vcard-generator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">vCard Generator</Link></li>
                       <li><Link to="/tools/email-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Email Validator</Link></li>
                       <li><Link to="/tools/csv-deduplicator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">CSV Deduplicator</Link></li>
+                      <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Text</li>
+                      <li><Link to="/tools/word-counter/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Word Counter</Link></li>
                       <li className="border-t border-gray-600 mt-1"><Link to="/tools/" className="flex font-medium w-full text-purple-400 hover:text-white py-2 px-4 justify-center">All Tools →</Link></li>
                     </ul>
                   )}

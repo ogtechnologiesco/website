@@ -35,21 +35,6 @@ function Hl7VsFhir() {
           <meta name="twitter:title" content="HL7 v2 vs FHIR: Choosing the Right Healthcare Interoperability Standard" />
           <meta name="twitter:description" content="Compare HL7 v2 and FHIR R4: message formats, transport, tooling, and migration strategies for healthcare interoperability." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": "HL7 v2 vs FHIR: Choosing the Right Healthcare Interoperability Standard",
-              "description": "HL7 v2 still powers most hospital integrations, but FHIR R4 is the future of healthcare APIs. Compare message formats, transport, tooling, and migration strategies.",
-              "datePublished": "2026-09-21",
-              "dateModified": "2026-09-21",
-              "author": { "@type": "Organization", "name": "OG Technologies EU" },
-              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/insights/hl7-v2-vs-fhir-comparison/",
-              "image": "https://www.ogtechnologies.co/og-og-image.png",
-              "mainEntityOfPage": "https://www.ogtechnologies.co/insights/hl7-v2-vs-fhir-comparison/"
-            })}
-          </script>
         </Helmet>
         <Header />
 

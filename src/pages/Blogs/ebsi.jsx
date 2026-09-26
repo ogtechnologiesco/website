@@ -46,20 +46,6 @@ function EBSI() {
           <meta name="twitter:title" content="Verifying EBSI Verifiable Credentials: Trust Chain & Compliance" />
           <meta name="twitter:description" content="Explore the key requirements for verifying EBSI Verifiable Credentials, including trust chain verification, eIDAS compliance, and ISO/IEC standards." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              "headline": "Key Requirements for Verifying EBSI Verifiable Credentials, Including Trust Chain Verification and Regulatory Alignment",
-              "description": "Explore the key requirements for verifying EBSI Verifiable Credentials, including trust chain verification, eIDAS compliance, and ISO/IEC standards.",
-              "datePublished": "2025-03-30",
-              "dateModified": "2025-04-17",
-              "author": { "@type": "Organization", "name": "OG Technologies EU" },
-              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/blog/ebsi-verifiable-credentials/",
-              "image": "https://www.ogtechnologies.co/og-og-image.png"
-            })}
-          </script>
         </Helmet>
         <Header />
 

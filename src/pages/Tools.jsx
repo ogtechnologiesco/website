@@ -77,6 +77,12 @@ const TOOL_CATEGORIES = [
     ],
   },
   {
+    name: 'Text',
+    tools: [
+      { name: 'Word Counter', path: '/tools/word-counter/', description: 'Count words, characters, sentences, paragraphs, and spaces — with reading time and keyword density.' },
+    ],
+  },
+  {
     name: 'Security',
     tools: [
       { name: 'Security Scanner', path: '/tools/security-tools/', description: 'Scan websites for security vulnerabilities.' },
@@ -130,21 +136,6 @@ function Tools() {
         <meta name="twitter:title" content="Free Online Tools - Developer, PDF, XML & Security Utilities | OG Technologies EU" />
         <meta name="twitter:description" content="Free browser-based tools: PDF converters, XML utilities, Ethereum toolkit, hash generator, ISO readiness checkers, and security scanners." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'CollectionPage',
-            name: 'Free Online Tools',
-            url: 'https://www.ogtechnologies.co/tools/',
-            description: 'Free browser-based tools by OG Technologies EU: PDF converters, XML utilities, Ethereum toolkit, hash generator, ISO readiness checkers, and security scanners.',
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       <Header />

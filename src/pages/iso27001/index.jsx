@@ -57,9 +57,9 @@ function Iso27001GapAnalysis() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Helmet>
-        <title>ISO 27001 Gap Analysis Tool - Free Readiness Assessment | OG Technologies EU</title>
-        <meta name="description" content="Free ISO/IEC 27001:2022 gap analysis tool. Assess your information security management system against all clauses and Annex A controls. Get a readiness score, prioritized gap list, and downloadable PDF report." />
-        <meta name="keywords" content="ISO 27001 gap analysis, ISO 27001 readiness assessment, ISMS compliance checker, ISO 27001 self-assessment, information security gap analysis, Annex A controls, ISO 27001:2022 checker" />
+        <title>ISO 27001 Gap Analysis Tool - Free Assessment & PDF Report | OG Technologies EU</title>
+        <meta name="description" content="Free ISO/IEC 27001:2022 gap analysis and readiness assessment. Check your ISMS against all clauses and Annex A controls — readiness score, prioritized gap list, and a downloadable PDF report. No signup." />
+        <meta name="keywords" content="ISO 27001 gap analysis, ISO 27001 gap assessment, ISO 27001 readiness assessment, ISO 27001 gap analysis template, ISMS compliance checker, ISO 27001 self-assessment, information security gap analysis, Annex A controls, ISO 27001:2022 checker" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.ogtechnologies.co/tools/iso-27001-gap-analysis/" />
 
@@ -74,36 +74,6 @@ function Iso27001GapAnalysis() {
         <meta name="twitter:title" content="ISO 27001 Gap Analysis Tool - Free Readiness Assessment | OG Technologies EU" />
         <meta name="twitter:description" content="Free ISO/IEC 27001:2022 gap analysis tool. Assess your ISMS, get a readiness score, prioritized gaps, and downloadable PDF report." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'ISO 27001 Gap Analysis Tool',
-            url: 'https://www.ogtechnologies.co/tools/iso-27001-gap-analysis/',
-            description: 'Free ISO/IEC 27001:2022 gap analysis tool. Assess your information security management system against all clauses and Annex A controls. Get a readiness score, prioritized gap list, and downloadable PDF report.',
-            applicationCategory: 'SecurityApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'Clause-by-clause assessment (Clauses 4–10)',
-              'Annex A control assessment (Organizational, People, Physical, Technological)',
-              'Readiness score with letter grade',
-              'Prioritized gap list with remediation recommendations',
-              'Downloadable PDF report',
-              'Estimated weeks to certification readiness',
-            ],
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       <Header />
@@ -119,8 +89,8 @@ function Iso27001GapAnalysis() {
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
                 <h1 className="h1 mb-4">ISO 27001 Gap Analysis Tool</h1>
                 <p className="text-xl text-gray-400 mb-4">
-                  Assess your organization against ISO/IEC 27001:2022. Get an instant readiness score,
-                  a prioritized gap list with remediation advice, and a downloadable PDF report. Free, no signup.
+                  Run a free gap assessment against ISO/IEC 27001:2022. Get an instant readiness score,
+                  a prioritized gap list with remediation advice, and a downloadable PDF report. No signup.
                 </p>
               </div>
 
@@ -208,6 +178,58 @@ function Iso27001GapAnalysis() {
                   </div>
                 </div>
               )}
+
+              <div className="max-w-4xl mx-auto mt-12">
+                <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
+                  <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+                  <div className="space-y-6 text-gray-300">
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">What is an ISO 27001 gap analysis?</h3>
+                      <p className="text-sm">
+                        A gap analysis compares your current information security practices against the
+                        requirements of ISO/IEC 27001:2022 — the management system clauses (4–10) and the
+                        Annex A controls. It produces a list of gaps to remediate before a certification
+                        audit, so you can budget effort and sequence work.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">What is the difference between a gap analysis and a risk assessment?</h3>
+                      <p className="text-sm">
+                        A gap analysis measures your practices against the standard's requirements. A risk
+                        assessment (required by Clause 6.1.2) identifies and evaluates threats to your specific
+                        information assets. You need both: the risk assessment decides which controls matter;
+                        the gap analysis shows which of those controls are missing or incomplete.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">How long does an ISO 27001 gap analysis take?</h3>
+                      <p className="text-sm">
+                        This self-assessment takes about 10 minutes. A consultant-led gap analysis typically
+                        takes 2–6 weeks depending on organization size, documentation maturity, and how many
+                        sites and systems are in scope.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">What does the PDF report include?</h3>
+                      <p className="text-sm">
+                        The downloadable report contains your overall readiness score and grade, a
+                        clause-by-clause and Annex A breakdown, a prioritized gap list with remediation
+                        recommendations, and an estimated timeline to certification readiness — formatted for
+                        sharing with management or auditors.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">Is this a substitute for a certification audit?</h3>
+                      <p className="text-sm">
+                        No. This is a self-assessment that gives you a baseline and a remediation roadmap.
+                        Certification requires a two-stage audit by an accredited certification body — but
+                        arriving at Stage 1 with a completed gap analysis significantly improves your chances
+                        of passing without major nonconformities.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

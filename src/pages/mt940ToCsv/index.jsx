@@ -261,27 +261,6 @@ function Mt940ToCsv() {
         <meta name="twitter:title" content="Free MT940 to CSV Converter - SWIFT Statement Parser | OG Technologies EU" />
         <meta name="twitter:description" content="Convert SWIFT MT940 bank statements to CSV. Parses :61:/:86: tags and SEPA references. 100% client-side — no upload." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'MT940 to CSV Converter',
-            url: 'https://www.ogtechnologies.co/tools/mt940-to-csv/',
-            description: 'Convert SWIFT MT940 bank statements to CSV online. Parses :61:/:86: tags, SEPA references, running balances verified against the closing balance. 100% client-side.',
-            applicationCategory: 'FinanceApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'MT940 :61:/:86: tag parsing',
-              'SEPA reference extraction (EREF+, MREF+, CRED+)',
-              'Running balance verification against closing balance',
-              'RFC 4180 CSV with UTF-8 BOM for Excel',
-              'SWIFT envelope stripping',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

@@ -68,26 +68,6 @@ function IbanValidator() {
         <meta name="twitter:title" content="Free IBAN Validator - Check IBAN Online (ISO 13616) | OG Technologies EU" />
         <meta name="twitter:description" content="Validate IBANs online: MOD-97 checksum, per-country BBAN structure, and SEPA reachability. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'IBAN Validator',
-            url: 'https://www.ogtechnologies.co/tools/iban-validator/',
-            description: 'Validate IBANs online: MOD-97 checksum, per-country BBAN structure, and SEPA reachability for 90+ countries. 100% client-side.',
-            applicationCategory: 'FinanceApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'MOD-97 checksum validation (ISO 13616)',
-              'Per-country BBAN structure checks',
-              'SEPA reachability indicator',
-              'Check digit calculator',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

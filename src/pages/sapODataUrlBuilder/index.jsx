@@ -87,27 +87,6 @@ function SapODataUrlBuilder() {
         <meta name="twitter:title" content="Free SAP OData URL Builder Online | OG Technologies EU" />
         <meta name="twitter:description" content="Build SAP OData query URLs interactively with $select, $expand, $filter, $orderby, $top, $skip, $format. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'SAP OData URL Builder',
-            url: 'https://www.ogtechnologies.co/tools/sap-odata-url-builder/',
-            description: 'Build SAP OData query URLs interactively with $select, $expand, $filter, $orderby, $top, $skip, $format, and $count parameters. 100% client-side.',
-            applicationCategory: 'DeveloperApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'Interactive OData query parameter builder',
-              'Support for $select, $expand, $filter, $orderby',
-              'Support for $top, $skip, $format, $count, $search',
-              'Live URL preview with URL encoding',
-              'Copy generated URL to clipboard',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

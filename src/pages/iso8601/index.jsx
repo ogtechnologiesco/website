@@ -217,36 +217,6 @@ function Iso8601Validator() {
         <meta name="twitter:title" content="ISO 8601 Date Validator - Free Online Date Format Checker | OG Technologies EU" />
         <meta name="twitter:description" content="Free ISO 8601 / RFC 3339 date validator. Validate date-time strings in bulk. 100% browser-based, no uploads." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'ISO 8601 Date Validator',
-            url: 'https://www.ogtechnologies.co/tools/iso-8601-validator/',
-            description: 'Free ISO 8601 / RFC 3339 date validator. Validate date-time strings in bulk, catch malformed formats, illegal leap days, and missing offsets. 100% browser-based, no uploads.',
-            applicationCategory: 'DeveloperApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'Bulk validation of ISO 8601 / RFC 3339 date strings',
-              'Per-line valid/invalid verdicts with error explanations',
-              'Parsed component display (year, month, day, hour, minute, second, offset)',
-              'UTC canonical form output for valid dates',
-              'Supports calendar dates, week dates, ordinal dates, durations, and intervals',
-              '100% browser-based — no data uploaded to any server',
-            ],
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       <Header />

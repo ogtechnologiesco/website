@@ -101,20 +101,6 @@ function MeridianBlogPost() {
         <meta name="twitter:title" content="Meeting the Stellar Community at Meridian 2024: A Defining Moment for Web3" />
         <meta name="twitter:description" content="Discover our experience at Meridian 2024 in London, where we explored the future of blockchain, DeFi, and Stellar's innovative solutions." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": "Meeting the Stellar Community at Meridian 2024: A Defining Moment for Web3",
-            "description": "Discover our experience at Meridian 2024 in London, where we explored the future of blockchain, DeFi, and Stellar's innovative solutions for enterprise-level adoption.",
-            "datePublished": "2024-10-15",
-            "dateModified": "2024-10-15",
-            "author": { "@type": "Organization", "name": "OG Technologies EU" },
-            "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-            "url": "https://www.ogtechnologies.co/blog/meridian-2024-highlights/",
-            "image": "https://www.ogtechnologies.co/og-og-image.png"
-          })}
-        </script>
       </Helmet>
 
       {/* Site header */}

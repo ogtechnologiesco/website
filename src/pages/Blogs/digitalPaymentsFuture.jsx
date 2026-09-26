@@ -42,20 +42,6 @@ function DigitalPaymentsFuture() {
           <meta name="twitter:title" content="Building the Rails for Europe's Digital Payment Future" />
           <meta name="twitter:description" content="MiCA, digital euro, and ISO 20022 are converging. Standards for interoperable DLT-based retail payments in Europe." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              "headline": "Building the Rails for Europe's Digital Payment Future",
-              "description": "MiCA, digital euro, and ISO 20022 are converging. Standards for interoperable, compliant DLT-based retail payments in Europe.",
-              "datePublished": "2026-07-21",
-              "dateModified": "2026-07-21",
-              "author": { "@type": "Person", "name": "Olvis Enrique Gil Ríos" },
-              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/blog/digital-payments-future/",
-              "image": "https://www.ogtechnologies.co/og-og-image.png"
-            })}
-          </script>
         </Helmet>
         <Header />
 

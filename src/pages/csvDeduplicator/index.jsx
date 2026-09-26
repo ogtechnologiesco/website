@@ -92,26 +92,6 @@ function CsvDeduplicator() {
         <meta name="twitter:title" content="Free CSV Deduplicator - Remove Duplicate Rows for CRM Import | OG Technologies EU" />
         <meta name="twitter:description" content="Remove duplicate rows from CSV files: pick key columns, see a dupe report, download clean CSV. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'CSV Deduplicator',
-            url: 'https://www.ogtechnologies.co/tools/csv-deduplicator/',
-            description: 'Remove duplicate rows from CSV files. Pick key columns, see a duplicate report, and download a clean CSV ready for CRM import. 100% client-side.',
-            applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'Duplicate detection by selected key columns',
-              'Case-insensitive normalized matching',
-              'Duplicate report with row numbers',
-              'Clean CSV export with UTF-8 BOM',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

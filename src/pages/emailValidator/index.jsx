@@ -68,27 +68,6 @@ function EmailValidator() {
         <meta name="twitter:title" content="Free Email List Validator - Bulk Email Checker & Cleaner | OG Technologies EU" />
         <meta name="twitter:description" content="Validate email lists: syntax, duplicates, disposable domains, typo suggestions. Export clean CSV. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Email List Validator',
-            url: 'https://www.ogtechnologies.co/tools/email-validator/',
-            description: 'Validate email lists: RFC 5322 syntax check, duplicate detection, disposable-domain flagging, and typo suggestions. Export clean CSV. 100% client-side.',
-            applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'RFC 5322 syntax validation',
-              'Duplicate detection',
-              'Disposable domain flagging',
-              'Domain typo suggestions',
-              'Clean CSV export',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

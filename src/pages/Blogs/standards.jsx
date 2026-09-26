@@ -42,20 +42,6 @@ function Standards() {
           <meta name="twitter:title" content="How Blockchain Standards Enable Enterprises to Reach Global Customers" />
           <meta name="twitter:description" content="Blockchain standards are pivotal for cross-border communication, secure transactions, and universal compatibility." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              "headline": "How Blockchain Standards Enable Enterprises to Reach Global Customers",
-              "description": "Blockchain standards are pivotal for cross-border communication, secure transactions, and universal compatibility.",
-              "datePublished": "2024-11-22",
-              "dateModified": "2024-11-22",
-              "author": { "@type": "Organization", "name": "OG Technologies EU" },
-              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers/",
-              "image": "https://www.ogtechnologies.co/og-og-image.png"
-            })}
-          </script>
         </Helmet>
         <Header />
 

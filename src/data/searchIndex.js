@@ -51,6 +51,7 @@ export const searchIndex = [
   { title: 'vCard Generator', description: 'Create and parse .vcf contact files (v3.0/4.0)', path: '/tools/vcard-generator/' },
   { title: 'Email List Validator', description: 'Bulk email syntax check, dedupe, disposable-domain flagging', path: '/tools/email-validator/' },
   { title: 'CSV Deduplicator', description: 'Remove duplicate rows by key columns before CRM import', path: '/tools/csv-deduplicator/' },
+  { title: 'Word Counter', description: 'Count words, characters, sentences, paragraphs, and spaces — with reading time and keyword density', path: '/tools/word-counter/' },
   // Blog posts
   ...blogPosts.map((post) => ({
     title: post.title,

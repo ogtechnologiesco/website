@@ -47,22 +47,7 @@ function AddressChecksumPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'EIP-55 Address Checksum Validator',
-        url: 'https://www.ogtechnologies.co/tools/address-checksum/',
-        description: 'Validate and generate EIP-55 checksummed Ethereum addresses. Check if an address has a valid mixed-case checksum. 100% client-side.',
-        applicationCategory: 'DeveloperApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Validate EIP-55 mixed-case checksum on Ethereum addresses',
-          'Generate checksummed addresses from raw hex',
-          'Detect invalid or non-checksummed addresses',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <AddressChecksum />
     </ToolShell>

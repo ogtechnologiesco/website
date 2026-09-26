@@ -47,22 +47,7 @@ function PdfSplitPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Split PDF',
-        url: 'https://www.ogtechnologies.co/tools/split-pdf/',
-        description: 'Split a PDF at any page number to extract specific pages or ranges. 100% browser-based.',
-        applicationCategory: 'UtilitiesApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Split a PDF at any page number',
-          'Extract specific page ranges',
-          '100% browser-based — no file uploads',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <PdfSplit />
     </ToolShell>

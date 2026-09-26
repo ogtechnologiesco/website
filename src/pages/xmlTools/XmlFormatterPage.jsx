@@ -48,22 +48,7 @@ function XmlFormatterPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'XML Formatter & Beautifier',
-        url: 'https://www.ogtechnologies.co/tools/xml-formatter/',
-        description: 'Format and beautify XML with customizable indentation. Pretty-print minified XML online — 100% browser-based.',
-        applicationCategory: 'DeveloperApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Pretty-print XML with 2-space, 4-space, or tab indentation',
-          'Preserves comments, CDATA sections, and processing instructions',
-          'Error reporting with line and column numbers',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <XmlFormatter />
     </ToolShell>

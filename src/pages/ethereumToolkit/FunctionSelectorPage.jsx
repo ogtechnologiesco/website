@@ -47,22 +47,7 @@ function FunctionSelectorPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Solidity Function Selector Calculator',
-        url: 'https://www.ogtechnologies.co/tools/function-selector/',
-        description: 'Calculate the 4-byte function selector for any Solidity function signature. Uses keccak256 of the canonical function signature. 100% client-side.',
-        applicationCategory: 'DeveloperApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Calculate 4-byte function selectors from Solidity signatures',
-          'Uses keccak256 of the canonical function signature',
-          'Supports multiple function signatures at once',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <FunctionSelector />
     </ToolShell>

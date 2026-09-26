@@ -121,27 +121,6 @@ function HtmlToImage() {
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'HTML to Image Converter',
-            url: 'https://www.ogtechnologies.co/tools/html-to-image/',
-            description: 'Convert HTML files to PNG or JPG images directly in your browser. No file is ever uploaded to a server.',
-            applicationCategory: 'UtilitiesApplication',
-            operatingSystem: 'Any',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       {/* Site header */}

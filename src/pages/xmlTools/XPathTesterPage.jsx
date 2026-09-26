@@ -48,23 +48,7 @@ function XPathTesterPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'XPath Tester',
-        url: 'https://www.ogtechnologies.co/tools/xpath-tester/',
-        description: 'Test and evaluate XPath expressions against XML documents in real time. Supports XPath 1.0 via the browser native document.evaluate(). 100% client-side.',
-        applicationCategory: 'DeveloperApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Evaluate XPath 1.0 expressions against XML documents',
-          'Typed results: elements, attributes, text, numbers, strings, booleans',
-          'Example expressions for common queries',
-          'Real-time evaluation with error reporting',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <XPathTester />
     </ToolShell>

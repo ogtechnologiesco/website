@@ -41,35 +41,6 @@ function EthereumToolkit() {
         <meta name="twitter:title" content="Free Ethereum Developer Toolkit - Wei Converter, Keccak256, ABI Encoder | OG Technologies EU" />
         <meta name="twitter:description" content="Free browser-based Ethereum developer tools: Wei/Gwei/ETH converter, Keccak256 hash, function selector, ABI encoder/decoder, EIP-55 address checksum. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Ethereum Developer Toolkit',
-            url: 'https://www.ogtechnologies.co/tools/ethereum-toolkit/',
-            description: 'Free browser-based Ethereum developer tools: Wei/Gwei/ETH unit converter, Keccak256 hash generator, Solidity function selector calculator, ABI encoder/decoder, and EIP-55 address checksum validator. 100% client-side.',
-            applicationCategory: 'DeveloperApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'Wei / Gwei / Finney / Ether unit converter with BigInt precision',
-              'Keccak256 hash generator for text and hex input',
-              'Solidity function selector calculator (4-byte selectors)',
-              'ABI encoder and decoder for smart contract calldata',
-              'EIP-55 Ethereum address checksum validator',
-            ],
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       <Header />

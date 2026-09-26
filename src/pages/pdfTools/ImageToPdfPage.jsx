@@ -47,22 +47,7 @@ function ImageToPdfPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Image to PDF Converter',
-        url: 'https://www.ogtechnologies.co/tools/image-to-pdf/',
-        description: 'Convert PNG and JPG images to PDF directly in your browser. 100% client-side and private.',
-        applicationCategory: 'UtilitiesApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Convert PNG and JPG images to PDF',
-          'Multiple images in a single PDF',
-          '100% browser-based — no file uploads',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <ImageToPdf />
     </ToolShell>

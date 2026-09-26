@@ -35,21 +35,6 @@ function Iso20022Migration() {
           <meta name="twitter:title" content="ISO 20022 Migration: What the November 2026 Deadline Means for Your Payment Messages" />
           <meta name="twitter:description" content="The MT/ISO 20022 coexistence period ends in November 2026. Learn what changes and how to validate your messages." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": "ISO 20022 Migration: What the November 2026 Deadline Means for Your Payment Messages",
-              "description": "The MT/ISO 20022 coexistence period ends in November 2026. Learn what changes for pain.001, camt.053 and pacs.008 messages and how to validate them.",
-              "datePublished": "2026-09-21",
-              "dateModified": "2026-09-21",
-              "author": { "@type": "Organization", "name": "OG Technologies EU" },
-              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/insights/iso-20022-migration-guide/",
-              "image": "https://www.ogtechnologies.co/og-og-image.png",
-              "mainEntityOfPage": "https://www.ogtechnologies.co/insights/iso-20022-migration-guide/"
-            })}
-          </script>
         </Helmet>
         <Header />
 

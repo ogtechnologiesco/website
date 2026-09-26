@@ -160,27 +160,6 @@ function HashGenerator() {
         <meta name="twitter:title" content="Free Hash Generator - SHA-256, SHA-512, Keccak256, MD5 | OG Technologies EU" />
         <meta name="twitter:description" content="Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Hash Generator',
-            url: 'https://www.ogtechnologies.co/tools/hash-generator/',
-            description: 'Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512. 100% client-side.',
-            applicationCategory: 'DeveloperApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'MD5 hash generation',
-              'SHA-1, SHA-256, SHA-384, SHA-512',
-              'Keccak-256 and Keccak-512',
-              'Text and hex input modes',
-              'Multiple algorithms simultaneously',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

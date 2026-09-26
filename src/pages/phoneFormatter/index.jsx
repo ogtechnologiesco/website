@@ -76,26 +76,6 @@ function PhoneFormatter() {
         <meta name="twitter:title" content="Free Phone Number Formatter - E.164, International, National | OG Technologies EU" />
         <meta name="twitter:description" content="Format and validate phone numbers: E.164, international, national, RFC 3966. Bulk mode for CRM imports. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Phone Number Formatter',
-            url: 'https://www.ogtechnologies.co/tools/phone-formatter/',
-            description: 'Format and validate phone numbers: E.164, international, national, and RFC 3966 formats for 240+ countries. Bulk mode for CRM imports. 100% client-side.',
-            applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'E.164, international, national, RFC 3966 output',
-              'Validity and line-type detection',
-              'Bulk list processing for CRM imports',
-              '240+ country numbering plans (libphonenumber)',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

@@ -72,27 +72,6 @@ function GtinValidator() {
         <meta name="twitter:title" content="Free GTIN / UPC / EAN Barcode Validator - GS1 Check Digit | OG Technologies EU" />
         <meta name="twitter:description" content="Validate UPC-A, EAN-8, EAN-13, and GTIN-14 barcodes: GS1 check digit, format detection, country prefix lookup. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'GTIN / UPC / EAN Barcode Validator',
-            url: 'https://www.ogtechnologies.co/tools/gtin-validator/',
-            description: 'Validate UPC-A, EAN-8, EAN-13, and GTIN-14 barcodes: GS1 mod-10 check digit, format detection, country prefix lookup, ISBN validation. 100% client-side.',
-            applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'GS1 mod-10 check digit verification',
-              'EAN-8, UPC-A, EAN-13, GTIN-14 format detection',
-              'GS1 country prefix lookup',
-              'ISBN-10/ISBN-13 validation',
-              'Check digit calculator',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

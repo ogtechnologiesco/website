@@ -35,21 +35,6 @@ function EthereumCalldata() {
           <meta name="twitter:title" content="Ethereum Calldata Deep Dive: Function Selectors, ABI Encoding, and EIP-55 Checksums" />
           <meta name="twitter:description" content="How Ethereum transactions encode function calls: selectors, ABI encoding, and EIP-55 checksums." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": "Ethereum Calldata Deep Dive: Function Selectors, ABI Encoding, and EIP-55 Checksums",
-              "description": "A developer reference for how Ethereum transactions encode function calls: 4-byte selectors, ABI argument encoding, and EIP-55 address checksums.",
-              "datePublished": "2026-09-21",
-              "dateModified": "2026-09-21",
-              "author": { "@type": "Organization", "name": "OG Technologies EU" },
-              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/insights/ethereum-calldata-abi-guide/",
-              "image": "https://www.ogtechnologies.co/og-og-image.png",
-              "mainEntityOfPage": "https://www.ogtechnologies.co/insights/ethereum-calldata-abi-guide/"
-            })}
-          </script>
         </Helmet>
         <Header />
 

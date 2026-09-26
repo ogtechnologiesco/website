@@ -43,36 +43,6 @@ function XmlTools() {
         <meta name="twitter:title" content="Free XML Tools — Formatter, Validator, Converter | OG Technologies EU" />
         <meta name="twitter:description" content="Free online XML tools: format and beautify XML, validate well-formedness, convert XML to JSON or CSV, minify XML, and test XPath expressions. 100% browser-based." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'XML Tools',
-            url: 'https://www.ogtechnologies.co/tools/xml-tools/',
-            description: 'Free online XML tools: format and beautify XML, validate well-formedness, convert XML to JSON or CSV, minify XML, and test XPath expressions. 100% browser-based, no data sent to any server.',
-            applicationCategory: 'DeveloperApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'XML Formatter & Beautifier with configurable indentation',
-              'XML Validator with well-formedness checking and error reporting',
-              'XML to JSON Converter with @-prefix attribute convention',
-              'XML Minifier to compress XML by removing whitespace',
-              'XPath Tester to evaluate XPath expressions against XML documents',
-              'XML to CSV Converter with automatic record detection',
-            ],
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       <Header />

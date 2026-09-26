@@ -88,26 +88,6 @@ function TleConverter() {
         <meta name="twitter:title" content="Free TLE to JSON / CSV Converter - OMM GP Format | OG Technologies EU" />
         <meta name="twitter:description" content="Convert NORAD TLE/3LE element sets to CCSDS OMM/GP JSON or CSV. Batch conversion, checksum validation. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'TLE to JSON / CSV Converter',
-            url: 'https://www.ogtechnologies.co/tools/tle-converter/',
-            description: 'Convert NORAD TLE/3LE satellite element sets to CCSDS OMM/GP JSON or CSV. Batch conversion with checksum validation. 100% client-side.',
-            applicationCategory: 'DeveloperApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'TLE/3LE to OMM/GP JSON conversion',
-              'TLE to CSV export',
-              'Batch conversion of full catalogs',
-              'Checksum validation per record',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 
 const routeNames = {
   '': 'Home',
@@ -48,24 +47,7 @@ function Breadcrumbs() {
     crumbs.push({ name, path: currentPath + '/' });
   });
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: crumbs.map((crumb, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: crumb.name,
-      item: `https://www.ogtechnologies.co${crumb.path}`,
-    })),
-  };
-
   return (
-    <>
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
-        </script>
-      </Helmet>
       <nav aria-label="Breadcrumb" className="relative max-w-6xl mx-auto px-4 sm:px-6" style={{ paddingTop: '88px' }}>
         <ol className="flex flex-wrap items-center text-sm text-gray-500 pb-2">
           {crumbs.map((crumb, index) => {
@@ -87,7 +69,6 @@ function Breadcrumbs() {
           })}
         </ol>
       </nav>
-    </>
   );
 }
 

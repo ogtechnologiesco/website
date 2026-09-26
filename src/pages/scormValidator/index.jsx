@@ -190,26 +190,6 @@ function ScormValidator() {
         <meta name="twitter:title" content="Free SCORM Package Validator - SCORM 1.2 / 2004 / xAPI / cmi5 | OG Technologies EU" />
         <meta name="twitter:description" content="Validate SCORM, xAPI, and cmi5 packages before LMS upload. Manifest, launch file, and reference checks. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'SCORM Package Validator',
-            url: 'https://www.ogtechnologies.co/tools/scorm-validator/',
-            description: 'Validate SCORM 1.2, SCORM 2004, xAPI, and cmi5 packages before LMS upload. Checks manifest, launch file, and file references. 100% client-side.',
-            applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'SCORM 1.2 / 2004 / xAPI / cmi5 detection',
-              'imsmanifest.xml structure validation',
-              'Launch file existence check',
-              'File reference and case-sensitivity checks',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

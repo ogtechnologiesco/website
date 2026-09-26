@@ -32,20 +32,6 @@ function BlogPost() {
         <meta name="twitter:title" content="Reaching New Tech Frontiers with OG Technologies EU" />
         <meta name="twitter:description" content="Discover how OG Technologies EU drives growth through IT consulting in Finance, Education, and Web3/Blockchain." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": "Reaching New Tech Frontiers with OG Technologies EU",
-            "description": "Discover how OG Technologies EU drives growth through IT consulting in Finance, Education, and Web3/Blockchain.",
-            "datePublished": "2024-05-14",
-            "dateModified": "2024-05-14",
-            "author": { "@type": "Organization", "name": "OG Technologies EU" },
-            "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-            "url": "https://www.ogtechnologies.co/blog/reaching-new-frontiers/",
-            "image": "https://www.ogtechnologies.co/og-og-image.png"
-          })}
-        </script>
       </Helmet>
       {/* Site header */}
       <Header />

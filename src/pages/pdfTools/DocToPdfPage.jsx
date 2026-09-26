@@ -47,22 +47,7 @@ function DocToPdfPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Document to PDF Converter',
-        url: 'https://www.ogtechnologies.co/tools/document-to-pdf/',
-        description: 'Convert DOCX, ODT, and TXT documents to PDF directly in your browser. Preserves text, headings, lists, tables, and images. 100% client-side.',
-        applicationCategory: 'UtilitiesApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Convert DOCX, ODT, and TXT to PDF',
-          'Preserves headings, bold/italic, lists, tables, and images',
-          '100% browser-based — no file uploads',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <DocToPdf />
     </ToolShell>

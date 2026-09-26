@@ -47,23 +47,7 @@ function PdfToWordPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'PDF to Word Converter',
-        url: 'https://www.ogtechnologies.co/tools/pdf-to-word/',
-        description: 'Convert PDF to Word (.docx), plain text (.txt), or HTML directly in your browser. 100% client-side and private.',
-        applicationCategory: 'UtilitiesApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Convert PDF to Word (.docx)',
-          'Convert PDF to plain text (.txt)',
-          'Convert PDF to HTML',
-          '100% browser-based — no file uploads',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <PdfToWord />
     </ToolShell>

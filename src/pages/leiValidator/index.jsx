@@ -54,26 +54,6 @@ function LeiValidator() {
         <meta name="twitter:title" content="Free LEI Validator - Legal Entity Identifier Check (ISO 17442) | OG Technologies EU" />
         <meta name="twitter:description" content="Validate LEIs online: structure, reserved positions, and MOD 97-10 check digits per ISO 17442. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'LEI Validator',
-            url: 'https://www.ogtechnologies.co/tools/lei-validator/',
-            description: 'Validate Legal Entity Identifiers (LEI) online: structure, reserved positions, and ISO 7064 MOD 97-10 check digits per ISO 17442. 100% client-side.',
-            applicationCategory: 'FinanceApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'ISO 17442 structure validation',
-              'ISO 7064 MOD 97-10 checksum',
-              'LOU prefix decoding',
-              'Reserved position check',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

@@ -39,21 +39,6 @@ function EarthquakeStandards() {
           <meta name="twitter:title" content="Terremoto en Colombia: Guía de Estándares ISO para Responder y Reconstruir" />
           <meta name="twitter:description" content="Normas ISO clave para evaluación estructural, respuesta ante emergencias y reconstrucción resiliente tras el terremoto en Colombia." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              "headline": "Terremoto de 7,4 en Colombia: la guía de estándares ISO para responder, evaluar y reconstruir",
-              "description": "Normas ISO clave para evaluación estructural, respuesta ante emergencias, continuidad del negocio y reconstrucción resiliente tras el terremoto en Colombia.",
-              "datePublished": "2026-08-14",
-              "dateModified": "2026-08-14",
-              "author": { "@type": "Person", "name": "Olvis Enrique Gil Ríos" },
-              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/blog/estandares-sismicos-colombia/",
-              "image": "https://www.ogtechnologies.co/og-og-image.png",
-              "inLanguage": "es"
-            })}
-          </script>
         </Helmet>
         <Header />
 

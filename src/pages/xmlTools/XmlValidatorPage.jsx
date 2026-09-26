@@ -49,22 +49,7 @@ function XmlValidatorPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'XML Validator',
-        url: 'https://www.ogtechnologies.co/tools/xml-validator/',
-        description: 'Validate XML well-formedness online. Check for unclosed tags, unescaped characters, and duplicate attributes with error line and column reporting.',
-        applicationCategory: 'DeveloperApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Well-formedness checking with line and column error reporting',
-          'Document statistics: element count, attribute count, max depth, comments',
-          'Supports all XML dialects including SVG, RSS, XSD, and WSDL',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <XmlValidator />
     </ToolShell>

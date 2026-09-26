@@ -57,26 +57,6 @@ function BicValidator() {
         <meta name="twitter:title" content="Free BIC / SWIFT Code Validator & Decoder (ISO 9362) | OG Technologies EU" />
         <meta name="twitter:description" content="Validate and decode BIC/SWIFT codes: institution, country, location, and branch breakdown per ISO 9362. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'BIC / SWIFT Code Validator',
-            url: 'https://www.ogtechnologies.co/tools/bic-validator/',
-            description: 'Validate and decode BIC/SWIFT codes: institution, country, location, and branch breakdown per ISO 9362. 100% client-side.',
-            applicationCategory: 'FinanceApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'ISO 9362 structure validation',
-              'Institution, country, location, branch breakdown',
-              'Test BIC and passive participant detection',
-              'BIC8 and BIC11 support',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

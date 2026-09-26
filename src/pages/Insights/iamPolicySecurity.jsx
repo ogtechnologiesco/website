@@ -35,21 +35,6 @@ function IamPolicySecurity() {
           <meta name="twitter:title" content="IAM Policy Security: 7 Privilege Escalation Patterns and How to Catch Them" />
           <meta name="twitter:description" content="The 7 most common AWS IAM privilege escalation patterns and how to validate policies automatically." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": "IAM Policy Security: 7 Privilege Escalation Patterns and How to Catch Them",
-              "description": "Overly permissive AWS IAM policies are a leading cause of cloud breaches. Learn the most common privilege escalation patterns and how to validate policies automatically.",
-              "datePublished": "2026-09-21",
-              "dateModified": "2026-09-21",
-              "author": { "@type": "Organization", "name": "OG Technologies EU" },
-              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/insights/iam-policy-security-patterns/",
-              "image": "https://www.ogtechnologies.co/og-og-image.png",
-              "mainEntityOfPage": "https://www.ogtechnologies.co/insights/iam-policy-security-patterns/"
-            })}
-          </script>
         </Helmet>
         <Header />
 

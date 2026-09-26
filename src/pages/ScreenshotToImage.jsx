@@ -123,27 +123,6 @@ function ScreenshotToImage() {
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Screenshot to Image',
-            url: 'https://www.ogtechnologies.co/tools/screenshot-to-image/',
-            description: 'Paste a screenshot from your clipboard and download it as an image file. Everything happens locally in your browser.',
-            applicationCategory: 'UtilitiesApplication',
-            operatingSystem: 'Any',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       {/* Site header */}

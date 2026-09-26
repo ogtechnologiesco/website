@@ -47,22 +47,7 @@ function WeiConverterPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Wei to Ether Converter',
-        url: 'https://www.ogtechnologies.co/tools/wei-converter/',
-        description: 'Convert between Wei, Gwei, Finney, and Ether with full BigInt precision. Free browser-based Ethereum unit converter. 100% client-side.',
-        applicationCategory: 'DeveloperApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Convert between Wei, Gwei, Finney, and Ether',
-          'Full BigInt precision — no floating point errors',
-          'Supports arbitrary precision input values',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <WeiConverter />
     </ToolShell>

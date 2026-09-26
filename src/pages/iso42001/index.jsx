@@ -74,36 +74,6 @@ function Iso42001AiReadiness() {
         <meta name="twitter:title" content="ISO 42001 AI Readiness Assessment - Free AIMS Checker | OG Technologies EU" />
         <meta name="twitter:description" content="Free ISO/IEC 42001:2023 AI readiness assessment. Evaluate your AIMS, get a maturity score, prioritized gaps, and downloadable PDF report." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'ISO 42001 AI Readiness Assessment',
-            url: 'https://www.ogtechnologies.co/tools/iso-42001-ai-readiness/',
-            description: 'Free ISO/IEC 42001:2023 AI readiness assessment tool. Evaluate your AI Management System against all clauses and Annex A controls. Get a maturity score, prioritized gap list, and downloadable PDF report.',
-            applicationCategory: 'SecurityApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'Clause-by-clause assessment (Clauses 4–10)',
-              'Annex A control assessment (AI policy, risk register, impact assessments, data governance, lifecycle, transparency, oversight, suppliers, monitoring)',
-              'Maturity score with level (Absent to Optimized)',
-              'Prioritized gap list with remediation recommendations',
-              'Downloadable PDF report',
-              'Estimated weeks to certification readiness',
-            ],
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       <Header />

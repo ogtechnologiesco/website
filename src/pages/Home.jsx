@@ -46,64 +46,7 @@ function Home() {
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         
         {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "OG Technologies EU",
-            "url": "https://www.ogtechnologies.co",
-            "logo": "https://www.ogtechnologies.co/og-og-image.png",
-            "description": "Transforming businesses through Web3 and blockchain innovation. Enterprise solutions for the decentralized future.",
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "AT",
-              "addressRegion": "Vienna"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "email": "hi@ogtechnologies.co",
-              "contactType": "sales",
-              "areaServed": "Worldwide"
-            },
-            "sameAs": [
-              "https://www.linkedin.com/company/ogtechnologieseu"
-            ],
-            "knowsAbout": [
-              "Blockchain",
-              "Web3",
-              "Decentralized Applications",
-              "Verifiable Credentials",
-              "Digital Identity",
-              "Stellar",
-              "DeFi",
-              "Enterprise Solutions",
-              "ISO Standards",
-              "CRM Systems"
-            ]
-          })}
-        </script>
         {/* VideoObject Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "VideoObject",
-            "name": "OG Technologies EU — Company Overview",
-            "description": "An overview of OG Technologies EU and our expertise in Web3, blockchain, and enterprise solutions.",
-            "thumbnailUrl": "https://www.ogtechnologies.co/og-og-image.png",
-            "uploadDate": "2025-01-01",
-            "contentUrl": "https://vimeo.com/1149520449",
-            "embedUrl": "https://player.vimeo.com/video/1149520449",
-            "potentialAction": {
-              "@type": "WatchAction",
-              "target": "https://www.ogtechnologies.co/#video",
-              "actionAccessibilityRequirement": {
-                "@type": "AccessAction",
-                "availability": "https://schema.org/InStock",
-                "category": "free"
-              }
-            }
-          })}
-        </script>
       </Helmet>
       <div className="flex flex-col min-h-screen overflow-hidden" id="light">
       {/*  Site header */}

@@ -33,22 +33,6 @@ function Insights() {
         <meta name="twitter:title" content="Insights - OG Technologies EU | Industry Articles on Standards, Payments & Developer Tools" />
         <meta name="twitter:description" content="In-depth industry articles on ISO 20022, AI governance, IAM security, healthcare interoperability, and Ethereum development — with free tools to apply what you learn." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": "Insights - OG Technologies EU",
-            "description": "In-depth industry articles on payment standards, AI governance, cloud security, healthcare interoperability, and blockchain development.",
-            "url": "https://www.ogtechnologies.co/insights/",
-            "publisher": { "@type": "Organization", "name": "OG Technologies EU" },
-            "hasPart": insightsPosts.map((post) => ({
-              "@type": "Article",
-              "headline": post.title,
-              "description": post.description,
-              "url": `https://www.ogtechnologies.co${post.link}`,
-            })),
-          })}
-        </script>
       </Helmet>
       {/* Site header */}
       <Header />

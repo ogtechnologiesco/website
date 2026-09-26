@@ -10,7 +10,6 @@ function ToolShell({
   description,
   canonical,
   keywords,
-  jsonLd,
   tabs,
   activeTab,
   heading,
@@ -38,12 +37,6 @@ function ToolShell({
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        {jsonLd && (
-          <script type="application/ld+json">
-            {JSON.stringify(jsonLd)}
-          </script>
-        )}
       </Helmet>
 
       <Header />

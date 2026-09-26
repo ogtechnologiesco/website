@@ -115,44 +115,23 @@ function IamPolicyValidator() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Helmet>
-        <title>Free AWS IAM Policy Validator Online | OG Technologies EU</title>
-        <meta name="description" content="Paste an AWS IAM policy JSON and instantly flag wildcards, privilege escalation, NotAction traps, public principals, and check policy size limits. 100% client-side." />
-        <meta name="keywords" content="IAM policy validator, AWS security, IAM linter, policy checker, privilege escalation, wildcard detection, AWS developer tools" />
+        <title>AWS IAM Policy Validator & Checker Online | OG Technologies EU</title>
+        <meta name="description" content="Free AWS IAM policy checker. Paste IAM policy JSON to flag wildcard actions, privilege escalation, NotAction traps, and public principals — and check size limits. Runs 100% in your browser." />
+        <meta name="keywords" content="IAM policy validator, AWS policy checker, AWS policy validator online, AWS JSON policy validator, IAM linter, privilege escalation, wildcard detection, AWS developer tools" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.ogtechnologies.co/tools/iam-policy-validator/" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.ogtechnologies.co/tools/iam-policy-validator/" />
-        <meta property="og:title" content="Free AWS IAM Policy Validator Online | OG Technologies EU" />
-        <meta property="og:description" content="Paste an IAM policy and instantly flag wildcards, privilege escalation, NotAction traps, public principals, and check size limits. 100% client-side." />
+        <meta property="og:title" content="AWS IAM Policy Validator & Checker Online | OG Technologies EU" />
+        <meta property="og:description" content="Free AWS IAM policy checker. Paste IAM policy JSON to flag wildcards, privilege escalation, NotAction traps, public principals, and check size limits. 100% client-side." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/iam-policy-validator/" />
-        <meta name="twitter:title" content="Free AWS IAM Policy Validator Online | OG Technologies EU" />
-        <meta name="twitter:description" content="Paste an IAM policy and instantly flag wildcards, privilege escalation, NotAction traps, public principals, and check size limits. 100% client-side." />
+        <meta name="twitter:title" content="AWS IAM Policy Validator & Checker Online | OG Technologies EU" />
+        <meta name="twitter:description" content="Free AWS IAM policy checker. Paste IAM policy JSON to flag wildcards, privilege escalation, NotAction traps, public principals, and check size limits. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'AWS IAM Policy Validator',
-            url: 'https://www.ogtechnologies.co/tools/iam-policy-validator/',
-            description: 'Paste an AWS IAM policy JSON and instantly flag wildcards, privilege escalation, NotAction traps, public principals, and check policy size limits. 100% client-side.',
-            applicationCategory: 'DeveloperApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'Detect wildcard actions and resources',
-              'Flag privilege escalation actions',
-              'Identify NotAction and NotResource traps',
-              'Check for public principals',
-              'Validate policy size against AWS limits',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />
@@ -247,6 +226,87 @@ function IamPolicyValidator() {
                   <div className="mt-6 text-xs text-gray-500">
                     <p><strong>Size limits:</strong> Managed policies: 6,144 chars. Inline: user 5,120, group 10,240, role 10,240.</p>
                     <p className="mt-1">This tool performs static analysis only. It does not check whether resources actually exist or whether actions are valid.</p>
+                  </div>
+                </div>
+
+                <div className="bg-gray-800 rounded-lg p-8 border border-gray-700 mt-8">
+                  <h2 className="text-2xl font-bold text-white mb-6">What This IAM Policy Checker Catches</h2>
+                  <div className="grid sm:grid-cols-2 gap-6 text-gray-300">
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Wildcard permissions</h3>
+                      <p className="text-sm">
+                        <code className="text-purple-300">"Action": "*"</code> grants every AWS action and{' '}
+                        <code className="text-purple-300">"Resource": "*"</code> applies it to every resource.
+                        Combined in an Allow statement this is effectively administrator access — the single most
+                        common finding in real-world IAM audits.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Privilege escalation actions</h3>
+                      <p className="text-sm">
+                        Actions like <code className="text-purple-300">iam:PassRole</code>,{' '}
+                        <code className="text-purple-300">iam:CreatePolicy</code>,{' '}
+                        <code className="text-purple-300">lambda:CreateFunction</code>, and{' '}
+                        <code className="text-purple-300">cloudformation:CreateStack</code> can let a limited
+                        principal grant itself broader permissions through resources it controls.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">NotAction / NotResource traps</h3>
+                      <p className="text-sm">
+                        <code className="text-purple-300">NotAction</code> grants everything <em>except</em> the
+                        listed actions — an allow-list in disguise that grows silently as AWS releases new APIs.
+                        It is almost always safer to enumerate allowed actions explicitly.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">Public principals</h3>
+                      <p className="text-sm">
+                        A <code className="text-purple-300">Principal</code> containing{' '}
+                        <code className="text-purple-300">"*"</code> in a resource-based policy opens access to
+                        anyone on the internet. Legitimate for a handful of cases (public S3 websites), dangerous
+                        almost everywhere else.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-800 rounded-lg p-8 border border-gray-700 mt-8">
+                  <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+                  <div className="space-y-6 text-gray-300">
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">Is it safe to paste my IAM policy into this checker?</h3>
+                      <p className="text-sm">
+                        Yes. All analysis runs entirely in your browser — the policy JSON is never sent to a server
+                        or stored anywhere. You can verify this in your browser's network tab.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">How does this compare to AWS Access Analyzer?</h3>
+                      <p className="text-sm">
+                        AWS IAM Access Analyzer validates policies against the IAM grammar and AWS best-practice
+                        rules inside your account. This tool is a quick client-side check you can run without
+                        logging into AWS — useful for reviewing policies in pull requests, docs, or third-party
+                        templates before deployment.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">What size limits apply to IAM policies?</h3>
+                      <p className="text-sm">
+                        Managed policies are limited to 6,144 characters; inline policies to 5,120 for users and
+                        10,240 for groups and roles. If your policy is over the limit, split it into multiple
+                        managed policies or move statements into separate inline policies.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">Does a clean result mean my policy is safe?</h3>
+                      <p className="text-sm">
+                        No — this is static analysis, not a security guarantee. It catches common structural
+                        misconfigurations but cannot evaluate your actual risk, which depends on which principals
+                        hold the policy, resource sensitivity, and conditions. For a full audit use tools like
+                        Cloudsplaining, Parliament, or Access Analyzer's unused-access findings.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

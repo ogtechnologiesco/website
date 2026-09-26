@@ -48,23 +48,7 @@ function XmlToCsvPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'XML to CSV Converter',
-        url: 'https://www.ogtechnologies.co/tools/xml-to-csv/',
-        description: 'Convert XML to CSV online with automatic record element detection. Attributes included as @-prefixed columns. 100% browser-based.',
-        applicationCategory: 'DeveloperApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'Automatic detection of repeating record elements',
-          'Attributes included as @-prefixed columns',
-          'Configurable delimiter: comma, semicolon, or tab',
-          'Download as .csv file or copy to clipboard',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <XmlToCsv />
     </ToolShell>

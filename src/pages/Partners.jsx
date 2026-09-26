@@ -116,21 +116,6 @@ function Partners() {
         <meta name="twitter:title" content="Partner Program - Revenue Share Partnerships | OG Technologies EU" />
         <meta name="twitter:description" content="Earn revenue share on high-value IT consulting, blockchain, and compliance contracts. Referral, reseller, and co-delivery models." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            name: 'Partner Program - OG Technologies EU',
-            url: 'https://www.ogtechnologies.co/partners/',
-            description: 'Revenue-share partnership program for consultants, MSPs, and agencies referring enterprise IT, blockchain, and compliance contracts to OG Technologies EU.',
-            about: {
-              '@type': 'Thing',
-              name: 'Revenue share partnership program',
-            },
-            provider: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       {/*  Site header */}

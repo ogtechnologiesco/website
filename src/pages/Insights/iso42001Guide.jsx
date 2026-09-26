@@ -35,21 +35,6 @@ function Iso42001Guide() {
           <meta name="twitter:title" content="ISO/IEC 42001 Explained: A Practical Guide to AI Management System Readiness" />
           <meta name="twitter:description" content="The first international standard for AI management systems — clauses, Annex A controls, and readiness assessment." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": "ISO/IEC 42001 Explained: A Practical Guide to AI Management System Readiness",
-              "description": "ISO/IEC 42001:2023 is the first international standard for AI management systems (AIMS). Understand its clauses, Annex A controls, and how to assess readiness.",
-              "datePublished": "2026-09-21",
-              "dateModified": "2026-09-21",
-              "author": { "@type": "Organization", "name": "OG Technologies EU" },
-              "publisher": { "@type": "Organization", "name": "OG Technologies EU", "logo": { "@type": "ImageObject", "url": "https://www.ogtechnologies.co/og-og-image.png" } },
-              "url": "https://www.ogtechnologies.co/insights/iso-42001-ai-management-guide/",
-              "image": "https://www.ogtechnologies.co/og-og-image.png",
-              "mainEntityOfPage": "https://www.ogtechnologies.co/insights/iso-42001-ai-management-guide/"
-            })}
-          </script>
         </Helmet>
         <Header />
 
@@ -114,6 +99,41 @@ function Iso42001Guide() {
                       The AI Act is a regulation with risk-tiered obligations (prohibited, high-risk, limited, minimal). ISO/IEC 42001 is a voluntary management system standard. Implementing an AIMS does not replace AI Act compliance, but it gives you the governance machinery — risk processes, documentation, accountability — that regulators expect to see. Harmonized European standards under the AI Act are still being finalized; ISO/IEC 42001 is the closest internationally recognized anchor today.
                     </p>
 
+                    <h2 className="h2 mb-4 text-gray-100">ISO/IEC 42001 vs. NIST AI RMF vs. EU AI Act</h2>
+                    <p className="mb-8">
+                      These three frameworks are often confused because they overlap, but they serve different purposes:
+                    </p>
+                    <ul className="list-disc list-inside mb-8 space-y-2">
+                      <li><strong>ISO/IEC 42001</strong> — a certifiable management system standard. It defines the processes and documentation your organization must run continuously, and an accredited body can certify you against it.</li>
+                      <li><strong>NIST AI RMF</strong> — a voluntary US risk management framework (Govern, Map, Measure, Manage). Excellent for structuring AI risk work, but it is guidance, not a certifiable standard.</li>
+                      <li><strong>EU AI Act</strong> — binding law for AI placed on the EU market. Compliance is mandatory for in-scope systems; unlike the other two, non-compliance carries fines.</li>
+                    </ul>
+                    <p className="mb-8">
+                      A common pattern is to use the NIST AI RMF to structure risk thinking, implement it through an ISO/IEC 42001 management system, and map the resulting controls to AI Act obligations. ISO/IEC 23894 (AI risk management guidance) slots in alongside as the risk-process companion to 42001.
+                    </p>
+
+                    <h2 className="h2 mb-4 text-gray-100">Implementation Roadmap</h2>
+                    <p className="mb-8">
+                      A typical path from zero to certification readiness looks like this:
+                    </p>
+                    <ol className="list-decimal list-inside mb-8 space-y-2">
+                      <li><strong>Scope the AIMS (Clause 4):</strong> inventory your AI systems — including third-party models embedded in products — and decide what is in scope.</li>
+                      <li><strong>Gap assessment:</strong> compare current practices against clauses 4–10 and Annex A to identify missing processes and controls.</li>
+                      <li><strong>Establish governance:</strong> appoint accountable leadership, publish an AI policy, and define roles for AI development, deployment, and oversight.</li>
+                      <li><strong>Build risk and impact assessment processes:</strong> Clause 6 requires an AI risk assessment; Clause 8 requires AI system impact assessments for each system in scope.</li>
+                      <li><strong>Implement controls and the Statement of Applicability:</strong> apply the Annex A controls you selected and document justifications for exclusions.</li>
+                      <li><strong>Internal audit and management review (Clause 9):</strong> verify the AIMS works before inviting external auditors.</li>
+                      <li><strong>Certification audit:</strong> Stage 1 reviews documentation readiness; Stage 2 verifies the system operates in practice.</li>
+                    </ol>
+
+                    <h2 className="h2 mb-4 text-gray-100">Evidence and Documentation Auditors Expect</h2>
+                    <p className="mb-8">
+                      Auditors will ask for documented information at every stage. The most commonly requested artifacts are: the AIMS scope statement, the AI policy, an AI system inventory, completed AI system impact assessments, risk assessment and treatment records, the Statement of Applicability, competence and training records, supplier/third-party AI assessments, internal audit reports, and management review minutes. Treating documentation as a byproduct of running the processes — rather than a pre-audit paperwork exercise — is what separates smooth certifications from painful ones.
+                    </p>
+                    <p className="mb-8">
+                      Evidence expectations also matter commercially: enterprise procurement teams increasingly ask vendors for AI governance artifacts in security questionnaires and RFPs, and an ISO/IEC 42001 certificate is becoming a recognized shorthand answer.
+                    </p>
+
                     <h2 className="h2 mb-4 text-gray-100">Assess Your Readiness in 10 Minutes</h2>
                     <p className="mb-8">
                       Before engaging consultants or auditors, get a baseline. Our free{' '}
@@ -138,6 +158,14 @@ function Iso42001Guide() {
                     <h3 className="h3 mb-4 text-gray-100">Can it be integrated with ISO 27001?</h3>
                     <p className="mb-8">
                       Yes — both share the Harmonized Structure, so context, leadership, audit, and improvement processes can be integrated into a single management system.
+                    </p>
+                    <h3 className="h3 mb-4 text-gray-100">Does ISO/IEC 42001 apply if we only use third-party AI?</h3>
+                    <p className="mb-8">
+                      Yes. The standard covers organizations that <em>use</em> AI-based products or services, not just those that develop them. Third-party AI relationships have a dedicated Annex A control domain covering supplier assessment and responsible use.
+                    </p>
+                    <h3 className="h3 mb-4 text-gray-100">Is ISO/IEC 42001 required in procurement?</h3>
+                    <p className="mb-8">
+                      Not legally, but enterprise buyers increasingly ask for AI governance evidence in security questionnaires and RFPs. A certificate — or a documented readiness assessment — is becoming a recognized shorthand answer to those questions.
                     </p>
                   </article>
 

@@ -130,26 +130,6 @@ function Hl7Parser() {
         <meta name="twitter:title" content="Free HL7 v2 Message Parser & Viewer Online | OG Technologies EU" />
         <meta name="twitter:description" content="Parse HL7 v2.x messages: segment/field/component breakdown with labels. 100% client-side — PHI never uploaded." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'HL7 v2 Message Parser',
-            url: 'https://www.ogtechnologies.co/tools/hl7-parser/',
-            description: 'Parse HL7 v2.x messages: segment, field, component, and subcomponent breakdown with field labels. Detects message type and version. 100% client-side — PHI never uploaded.',
-            applicationCategory: 'DeveloperApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'HL7 v2.x segment/field/component parsing',
-              'Field labels for common segments (MSH, PID, PV1, OBR, OBX)',
-              'Message type and version detection',
-              'Delimiter and encoding character detection',
-            ],
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-            creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-          })}
-        </script>
       </Helmet>
 
       <Header />

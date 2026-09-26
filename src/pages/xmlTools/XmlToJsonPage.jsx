@@ -48,23 +48,7 @@ function XmlToJsonPage() {
           ],
         },
       ]}
-      jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'XML to JSON Converter',
-        url: 'https://www.ogtechnologies.co/tools/xml-to-json/',
-        description: 'Convert XML to JSON online using the @-prefix attribute convention. Repeated elements become arrays automatically. 100% browser-based.',
-        applicationCategory: 'DeveloperApplication',
-        operatingSystem: 'Any',
-        featureList: [
-          'XML to JSON conversion with @-prefix attribute convention',
-          'Automatic array detection for repeated sibling elements',
-          'Optional type inference for numbers, booleans, and null',
-          'Compatible with xml2js and xmltodict output format',
-        ],
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
-      }}
+      
     >
       <XmlToJson />
     </ToolShell>

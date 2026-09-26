@@ -73,37 +73,6 @@ function SecurityTools() {
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Web Security Scanner',
-            url: 'https://www.ogtechnologies.co/tools/security-tools/',
-            description: 'Enter any website URL and get an instant passive security scan. Checks HTTPS, security headers, cookies, mixed content, and more — mapped to OWASP Top 10.',
-            applicationCategory: 'SecurityApplication',
-            operatingSystem: 'Any',
-            featureList: [
-              'HTTPS enforcement and HSTS verification',
-              'Content-Security-Policy analysis',
-              'Security headers audit (X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy)',
-              'Cookie security flags check (Secure, HttpOnly, SameSite)',
-              'Mixed content detection on HTTPS pages',
-              'Sensitive path exposure probing',
-              'Information disclosure detection',
-              'OWASP Top 10 category mapping with remediation advice',
-            ],
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'EUR',
-            },
-            creator: {
-              '@type': 'Organization',
-              name: 'OG Technologies EU',
-              url: 'https://www.ogtechnologies.co/',
-            },
-          })}
-        </script>
       </Helmet>
 
       {/* Site header */}
