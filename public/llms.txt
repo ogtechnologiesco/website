@@ -45,6 +45,7 @@
 - [vCard Generator](https://www.ogtechnologies.co/tools/vcard-generator/)
 - [Email List Validator](https://www.ogtechnologies.co/tools/email-validator/)
 - [CSV Deduplicator](https://www.ogtechnologies.co/tools/csv-deduplicator/)
+- [Word Counter](https://www.ogtechnologies.co/tools/word-counter/): Count words, characters, sentences, paragraphs, and spaces with reading time and keyword density
 
 ## Insights
 
@@ -54,6 +55,11 @@
 - [IAM Policy Security Patterns](https://www.ogtechnologies.co/insights/iam-policy-security-patterns/): 7 AWS privilege escalation patterns and how to catch them
 - [HL7 v2 vs FHIR](https://www.ogtechnologies.co/insights/hl7-v2-vs-fhir-comparison/): Choosing the right healthcare interoperability standard
 - [Ethereum Calldata & ABI Guide](https://www.ogtechnologies.co/insights/ethereum-calldata-abi-guide/): Function selectors, ABI encoding, and EIP-55 checksums
+- [ISO 27001 Gap Analysis Guide](https://www.ogtechnologies.co/insights/iso-27001-gap-analysis-guide/): Step-by-step gap assessment with scoring, remediation roadmap, and PDF report
+- [Ethereum Wei & Gwei Units](https://www.ogtechnologies.co/insights/ethereum-wei-gwei-units/): Ethereum denominations explained with conversion table and worked examples
+- [HL7 v2 Message Structure](https://www.ogtechnologies.co/insights/hl7-v2-message-structure/): Segments, fields, delimiters, and message types decoded
+- [AWS IAM Policy Validation](https://www.ogtechnologies.co/insights/aws-iam-policy-validation/): 7 checks to run before deploying an IAM policy
+- [DORA for Crypto & Web3](https://www.ogtechnologies.co/insights/dora-crypto-web3-compliance/): What EU Regulation 2022/2554 requires from CASPs
 
 ## Resources
 

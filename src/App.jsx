@@ -64,6 +64,7 @@ const PhoneFormatter = lazy(() => import('./pages/phoneFormatter'));
 const VcardGenerator = lazy(() => import('./pages/vcardGenerator'));
 const EmailValidator = lazy(() => import('./pages/emailValidator'));
 const CsvDeduplicator = lazy(() => import('./pages/csvDeduplicator'));
+const WordCounter = lazy(() => import('./pages/wordCounter'));
 const Tools = lazy(() => import('./pages/Tools'));
 const XmlTools = lazy(() => import('./pages/xmlTools'));
 const XmlFormatterPage = lazy(() => import('./pages/xmlTools/XmlFormatterPage'));
@@ -107,6 +108,11 @@ const Iso42001Guide = lazy(() => import('./pages/Insights/iso42001Guide'));
 const IamPolicySecurity = lazy(() => import('./pages/Insights/iamPolicySecurity'));
 const Hl7VsFhir = lazy(() => import('./pages/Insights/hl7VsFhir'));
 const EthereumCalldata = lazy(() => import('./pages/Insights/ethereumCalldata'));
+const Iso27001GapAnalysisGuide = lazy(() => import('./pages/Insights/iso27001GapAnalysisGuide'));
+const EthereumWeiGweiUnits = lazy(() => import('./pages/Insights/ethereumWeiGweiUnits'));
+const Hl7V2MessageStructure = lazy(() => import('./pages/Insights/hl7V2MessageStructure'));
+const AwsIamPolicyValidation = lazy(() => import('./pages/Insights/awsIamPolicyValidation'));
+const DoraCryptoWeb3 = lazy(() => import('./pages/Insights/doraCryptoWeb3'));
 
 
 function App() {
@@ -200,6 +206,11 @@ function App() {
         <Route exact path="/insights/iam-policy-security-patterns" element={<IamPolicySecurity/>} />
         <Route exact path="/insights/hl7-v2-vs-fhir-comparison" element={<Hl7VsFhir/>} />
         <Route exact path="/insights/ethereum-calldata-abi-guide" element={<EthereumCalldata/>} />
+        <Route exact path="/insights/iso-27001-gap-analysis-guide" element={<Iso27001GapAnalysisGuide/>} />
+        <Route exact path="/insights/ethereum-wei-gwei-units" element={<EthereumWeiGweiUnits/>} />
+        <Route exact path="/insights/hl7-v2-message-structure" element={<Hl7V2MessageStructure/>} />
+        <Route exact path="/insights/aws-iam-policy-validation" element={<AwsIamPolicyValidation/>} />
+        <Route exact path="/insights/dora-crypto-web3-compliance" element={<DoraCryptoWeb3/>} />
         <Route exact path="/tools" element={<Tools/>} />
         <Route exact path="/tools/html-to-image" element={<HtmlToImage/>} />
         <Route exact path="/tools/screenshot-to-image" element={<ScreenshotToImage/>} />
@@ -247,6 +258,7 @@ function App() {
         <Route exact path="/tools/vcard-generator" element={<VcardGenerator/>} />
         <Route exact path="/tools/email-validator" element={<EmailValidator/>} />
         <Route exact path="/tools/csv-deduplicator" element={<CsvDeduplicator/>} />
+        <Route exact path="/tools/word-counter" element={<WordCounter/>} />
       </Routes>
         </Suspense>
       <ConsentBanner />
