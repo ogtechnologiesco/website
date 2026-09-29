@@ -14,7 +14,7 @@ const DEFAULT_REPLY =
 
 const REPLY_RULES = [
   {
-    keywords: ['pricing', 'price', 'cost', 'quote', 'budget', 'how much'],
+    keywords: ['pricing', 'price', 'cost', 'quote', 'budget', 'how much', 'precio', 'cotización'],
     reply:
       "Thanks for your interest! You can find our plans at https://www.ogtechnologies.co/pricing/ or request a custom quote at https://www.ogtechnologies.co/quote/",
   },
@@ -40,20 +40,8 @@ const REPLY_RULES = [
   },
 ];
 
-// Comment-triggered DMs: comment a trigger word on a post, get a DM.
-// No match = no DM (avoids spamming every commenter).
-const COMMENT_DM_RULES = [
-  {
-    keywords: ['price', 'pricing', 'cost', 'quote', 'how much', 'precio'],
-    reply:
-      "Hey! Thanks for your comment — here's what you asked for: our plans are at https://www.ogtechnologies.co/pricing/ and you can request a custom quote at https://www.ogtechnologies.co/quote/. Feel free to reply here if you have questions!",
-  },
-  {
-    keywords: ['info', 'details', 'more info', 'dm', 'interested'],
-    reply:
-      "Thanks for your interest! Here's more about what we do: https://www.ogtechnologies.co/products/ — and feel free to reply here anytime.",
-  },
-];
+// Comment-triggered DMs share REPLY_RULES — the same keywords work in DMs
+// and comments. No match = no DM (avoids spamming every commenter).
 
 const COMMENT_PUBLIC_REPLY = 'Just sent you a DM! 📩';
 
@@ -145,7 +133,7 @@ async function processEntries(entries) {
       if (!comment.id || !from.id || from.id === IG_ACCOUNT_ID) continue;
 
       const text = (comment.text || '').trim();
-      const reply = matchReply(text, COMMENT_DM_RULES);
+      const reply = matchReply(text, REPLY_RULES);
       if (!reply) continue;
 
       const sent = await sendMessage({ comment_id: comment.id }, reply);
