@@ -55,6 +55,8 @@ const COMMENT_DM_RULES = [
   },
 ];
 
+const COMMENT_PUBLIC_REPLY = 'Just sent you a DM! 📩';
+
 exports.handler = async (event) => {
   if (event.httpMethod === 'GET') return handleVerification(event);
   if (event.httpMethod === 'POST') return handleEvent(event);
@@ -146,7 +148,8 @@ async function processEntries(entries) {
       const reply = matchReply(text, COMMENT_DM_RULES);
       if (!reply) continue;
 
-      await sendMessage({ comment_id: comment.id }, reply);
+      const sent = await sendMessage({ comment_id: comment.id }, reply);
+      if (sent) await replyToComment(comment.id);
     }
   }
 }
@@ -176,5 +179,23 @@ async function sendMessage(recipient, text) {
     console.error(`Graph API send failed (${res.status}):`, await res.text());
   } else {
     console.log(`Reply sent to ${JSON.stringify(recipient)}`);
+  }
+  return res.ok;
+}
+
+async function replyToComment(commentId) {
+  const res = await fetch(`${GRAPH_API_BASE}/${commentId}/replies`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      message: COMMENT_PUBLIC_REPLY,
+      access_token: IG_ACCESS_TOKEN,
+    }),
+  });
+
+  if (!res.ok) {
+    console.error(`Comment reply failed (${res.status}):`, await res.text());
+  } else {
+    console.log(`Public reply posted on comment ${commentId}`);
   }
 }
