@@ -606,7 +606,12 @@ export default defineConfig({
         maxConcurrentRoutes: 4,
         renderAfterTime: 5000,
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
-        executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+        // On macOS use system Chrome; on CI (Linux) fall back to Puppeteer's bundled Chromium
+        executablePath:
+          process.env.PUPPETEER_EXECUTABLE_PATH ||
+          (process.platform === 'darwin'
+            ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+            : undefined),
       }),
       postProcess(renderedRoute) {
         const meta = routeMeta[renderedRoute.route]
