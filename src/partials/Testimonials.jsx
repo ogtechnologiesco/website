@@ -8,7 +8,7 @@ import Mongodb from '../images/MongoDB.jpg';
 import Docker from '../images/Docker.jpg';
 import Postg from '../images/postgres.png';
 import Bitcoin from '../images/bitcoi.jpg'
-import Vercel from '../images/Vercel.jpg'
+import Vercel from '../images/vercel.jpg'
 import zaho from '../images/zaho.png'
 import openai from '../images/openai.png'
 import npm from '../images/NPM.png'
@@ -19,7 +19,7 @@ import ffg from '../images/ffg.png'
 import asi from '../images/ASI_logo.png'
 import iso from '../images/ISO_logo.png'
 import kafka from '../images/kafka_logo.jpg'
-import kubernetes from '../images/kubernetes.jpg'
+import kubernetes from '../images/Kubernetes.jpg'
 import aws from '../images/aws.jpg'
 import microsoft from '../images/microsoft.jpg'
 import google from '../images/googlecloud.jpg'
