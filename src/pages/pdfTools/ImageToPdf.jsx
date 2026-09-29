@@ -17,7 +17,7 @@ function downloadUrl(url, name) {
 
 function ImageToPdf() {
   const [image, setImage] = useState(null);
-  const [pageSize, setPageSize] = useState('a4');
+  const [pageSize, setPageSize] = useState('original');
   const [isProcessing, setIsProcessing] = useState(false);
   const [result, setResult] = useState(null);
 
