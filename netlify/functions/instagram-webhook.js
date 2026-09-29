@@ -40,6 +40,21 @@ const REPLY_RULES = [
   },
 ];
 
+// Comment-triggered DMs: comment a trigger word on a post, get a DM.
+// No match = no DM (avoids spamming every commenter).
+const COMMENT_DM_RULES = [
+  {
+    keywords: ['price', 'pricing', 'cost', 'quote', 'how much', 'precio'],
+    reply:
+      "Hey! Thanks for your comment — here's what you asked for: our plans are at https://www.ogtechnologies.co/pricing/ and you can request a custom quote at https://www.ogtechnologies.co/quote/. Feel free to reply here if you have questions!",
+  },
+  {
+    keywords: ['info', 'details', 'more info', 'dm', 'interested'],
+    reply:
+      "Thanks for your interest! Here's more about what we do: https://www.ogtechnologies.co/products/ — and feel free to reply here anytime.",
+  },
+];
+
 exports.handler = async (event) => {
   if (event.httpMethod === 'GET') return handleVerification(event);
   if (event.httpMethod === 'POST') return handleEvent(event);
@@ -115,28 +130,43 @@ async function processEntries(entries) {
       const text = (message.text || '').trim();
       if (!text) continue;
 
-      const reply = matchReply(text);
-      await sendMessage(senderId, reply);
+      const reply = matchReply(text, REPLY_RULES) || DEFAULT_REPLY;
+      await sendMessage({ id: senderId }, reply);
+    }
+
+    for (const change of entry.changes || []) {
+      if (change.field !== 'comments') continue;
+      const comment = change.value || {};
+      const from = comment.from || {};
+
+      // Skip comments without an id, and our own comments (prevents reply loops).
+      if (!comment.id || !from.id || from.id === IG_ACCOUNT_ID) continue;
+
+      const text = (comment.text || '').trim();
+      const reply = matchReply(text, COMMENT_DM_RULES);
+      if (!reply) continue;
+
+      await sendMessage({ comment_id: comment.id }, reply);
     }
   }
 }
 
-function matchReply(text) {
+function matchReply(text, rules) {
   const normalized = text.toLowerCase();
-  for (const rule of REPLY_RULES) {
+  for (const rule of rules) {
     if (rule.keywords.some((keyword) => normalized.includes(keyword))) {
       return rule.reply;
     }
   }
-  return DEFAULT_REPLY;
+  return null;
 }
 
-async function sendMessage(recipientId, text) {
+async function sendMessage(recipient, text) {
   const res = await fetch(`${GRAPH_API_BASE}/me/messages`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      recipient: { id: recipientId },
+      recipient,
       message: { text },
       access_token: IG_ACCESS_TOKEN,
     }),
@@ -144,5 +174,7 @@ async function sendMessage(recipientId, text) {
 
   if (!res.ok) {
     console.error(`Graph API send failed (${res.status}):`, await res.text());
+  } else {
+    console.log(`Reply sent to ${JSON.stringify(recipient)}`);
   }
 }
