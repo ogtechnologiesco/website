@@ -40,8 +40,57 @@ const REPLY_RULES = [
   },
 ];
 
-// Comment-triggered DMs share REPLY_RULES — the same keywords work in DMs
-// and comments. No match = no DM (avoids spamming every commenter).
+// Comment keywords expressing intent to receive info. When matched (and the
+// comment itself has no topic keyword), we fetch the post and reply with
+// post-specific content or the post link.
+const INTENT_KEYWORDS = [
+  'info', 'details', 'more info', 'dm', 'interested',
+  'send me', 'send it', 'link please', 'enlace', 'publicación',
+];
+
+// Post-caption-aware DMs: matched against the post's caption, not the comment.
+const POST_DM_RULES = [
+  {
+    keywords: ['iso 27001', 'iso27001', 'isms'],
+    reply:
+      'Thanks for your interest! Our ISO 27001 gap analysis guide: https://www.ogtechnologies.co/insights/iso-27001-gap-analysis-guide/ — free readiness checker: https://www.ogtechnologies.co/tools/iso-27001-gap-analysis/',
+  },
+  {
+    keywords: ['iso 42001', 'iso42001', 'ai management'],
+    reply:
+      'Our ISO 42001 AI management guide: https://www.ogtechnologies.co/insights/iso-42001-ai-management-guide/ — free readiness check: https://www.ogtechnologies.co/tools/iso-42001-ai-readiness/',
+  },
+  {
+    keywords: ['dora', 'resilience act'],
+    reply:
+      'DORA compliance resources: https://www.ogtechnologies.co/dora/ — plus our guide: https://www.ogtechnologies.co/insights/dora-crypto-web3-compliance/',
+  },
+  {
+    keywords: ['ethereum', 'web3', 'blockchain', 'evm'],
+    reply:
+      'Free Ethereum toolkit (calldata decoder, ABI tools, converters): https://www.ogtechnologies.co/tools/ethereum-toolkit/',
+  },
+  {
+    keywords: ['hl7', 'fhir'],
+    reply:
+      'Free HL7/FHIR tools: https://www.ogtechnologies.co/tools/hl7-parser/ and https://www.ogtechnologies.co/tools/fhir-validator/',
+  },
+  {
+    keywords: ['iam', 'aws policy'],
+    reply:
+      'Free IAM policy validator: https://www.ogtechnologies.co/tools/iam-policy-validator/ — plus our IAM security patterns guide: https://www.ogtechnologies.co/insights/iam-policy-security-patterns/',
+  },
+  {
+    keywords: ['iso 20022', 'iso20022', 'mt940', 'payments'],
+    reply:
+      'ISO 20022 migration guide: https://www.ogtechnologies.co/insights/iso-20022-migration-guide/ — free viewer: https://www.ogtechnologies.co/tools/iso-20022-viewer/',
+  },
+  {
+    keywords: ['pdf'],
+    reply:
+      'Free PDF tools (merge, split, convert): https://www.ogtechnologies.co/tools/pdf-tools/',
+  },
+];
 
 const COMMENT_PUBLIC_REPLY = 'Just sent you a DM! 📩';
 
@@ -133,7 +182,17 @@ async function processEntries(entries) {
       if (!comment.id || !from.id || from.id === IG_ACCOUNT_ID) continue;
 
       const text = (comment.text || '').trim();
-      const reply = matchReply(text, REPLY_RULES);
+      const normalized = text.toLowerCase();
+      let reply = matchReply(text, REPLY_RULES);
+
+      if (!reply && INTENT_KEYWORDS.some((k) => normalized.includes(k))) {
+        const media = comment.media && comment.media.id ? await fetchMedia(comment.media.id) : null;
+        reply =
+          (media && media.caption && matchReply(media.caption, POST_DM_RULES)) ||
+          (media && media.permalink &&
+            `Here's the post you asked about: ${media.permalink} — and more at https://www.ogtechnologies.co/`);
+      }
+
       if (!reply) continue;
 
       const sent = await sendMessage({ comment_id: comment.id }, reply);
@@ -169,6 +228,17 @@ async function sendMessage(recipient, text) {
     console.log(`Reply sent to ${JSON.stringify(recipient)}`);
   }
   return res.ok;
+}
+
+async function fetchMedia(mediaId) {
+  const res = await fetch(
+    `${GRAPH_API_BASE}/${mediaId}?fields=caption,permalink,media_type&access_token=${encodeURIComponent(IG_ACCESS_TOKEN)}`
+  );
+  if (!res.ok) {
+    console.error(`Media fetch failed (${res.status}):`, await res.text());
+    return null;
+  }
+  return res.json();
 }
 
 async function replyToComment(commentId) {
