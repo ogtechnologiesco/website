@@ -4,6 +4,7 @@ import stand from '../images/stand.jpeg';
 import ebsi from '../images/ebsi2.png';
 import digitalPaymentsFuture from '../images/digital-payments-future.jpg';
 import earthquakeStandards from '../images/pereira-earthquake.jpg';
+import entrepreneurshipAvenue2026 from '../images/entrepreneurship-avenue-2026-hero.jpg';
 
 export const blogPosts = [
   {
@@ -62,9 +63,18 @@ export const blogPosts = [
     link: '/blog/estandares-sismicos-colombia/',
     categories: ['Standards', 'Compliance'],
   },
+  {
+    title: 'AI Agent Architecture: Fueling Entrepreneurial Innovation — Workshop Recap at Entrepreneurship Avenue 2026',
+    date: '02/10/2026',
+    description: 'A recap of our interactive workshop at Entrepreneurship Avenue 2026 at WU Wien: the sense-think-act agent anatomy, MCP orchestration, RAG and vector DBs, and AI model selection for startups.',
+    image: entrepreneurshipAvenue2026,
+    imageText: 'AI Agent Architecture workshop at Entrepreneurship Avenue 2026',
+    link: '/blog/entrepreneurship-avenue-2026/',
+    categories: ['Events', 'Company', 'AI'],
+  },
 ];
 
-export const allCategories = ['All', 'Blockchain', 'Web3', 'Standards', 'Compliance', 'Payments', 'Company', 'Events'];
+export const allCategories = ['All', 'AI', 'Blockchain', 'Web3', 'Standards', 'Compliance', 'Payments', 'Company', 'Events'];
 
 export function getRelatedPosts(currentLink, categories, count = 3) {
   return blogPosts

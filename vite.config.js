@@ -52,6 +52,12 @@ const routeMeta = {
     ogType: "article",
     article: {"datePublished": "2026-08-14", "dateModified": "2026-08-14", "author": {"@type": "Person", "name": "Olvis Enrique Gil Ríos"}, "image": "https://www.ogtechnologies.co/og-og-image.png", "inLanguage": "es"},
   },
+  '/blog/entrepreneurship-avenue-2026': {
+    title: 'AI Agent Architecture: Fueling Entrepreneurial Innovation — Workshop Recap at Entrepreneurship Avenue 2026 | OG Technologies EU',
+    description: 'A recap of our interactive workshop at Entrepreneurship Avenue 2026 at WU Wien: the sense-think-act agent anatomy, MCP orchestration, RAG and vector DBs, and AI model selection for startups.',
+    ogType: "article",
+    article: {"datePublished": "2026-10-02", "dateModified": "2026-10-02", "author": {"@type": "Person", "name": "Olvis Enrique Gil Ríos"}, "image": "https://www.ogtechnologies.co/og-og-image.png"},
+  },
   '/insights': {
     title: 'Insights - OG Technologies EU | Industry Articles on Standards, Payments & Developer Tools',
     description: 'In-depth industry articles from OG Technologies EU: ISO 20022 payments, ISO/IEC 42001 AI governance, IAM security, HL7/FHIR interoperability, and Ethereum development.',
@@ -524,6 +530,7 @@ export default defineConfig({
         '/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers',
         '/blog/digital-payments-future',
         '/blog/estandares-sismicos-colombia',
+        '/blog/entrepreneurship-avenue-2026',
         '/insights',
         '/insights/iso-20022-migration-guide',
         '/insights/iso-42001-ai-management-guide',

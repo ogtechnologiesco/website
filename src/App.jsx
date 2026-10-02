@@ -35,6 +35,7 @@ const StandardsPost = lazy(() => import('./pages/Blogs/standards'));
 const Ebsi = lazy(() => import('./pages/Blogs/ebsi'));
 const DigitalPaymentsFuture = lazy(() => import('./pages/Blogs/digitalPaymentsFuture'));
 const EarthquakeStandards = lazy(() => import('./pages/Blogs/earthquakeStandards'));
+const EntrepreneurshipAvenue2026 = lazy(() => import('./pages/Blogs/entrepreneurshipAvenue2026'));
 const HtmlToImage = lazy(() => import('./pages/HtmlToImage'));
 const ScreenshotToImage = lazy(() => import('./pages/ScreenshotToImage'));
 const PdfTools = lazy(() => import('./pages/pdfTools'));
@@ -200,6 +201,7 @@ function App() {
         <Route exact path="/blog/how-blockchain-standards-enable-enterprises-to-reach-global-customers" element={<StandardsPost/>} />
         <Route exact path="/blog/digital-payments-future" element={<DigitalPaymentsFuture/>} />
         <Route exact path="/blog/estandares-sismicos-colombia" element={<EarthquakeStandards/>} />
+        <Route exact path="/blog/entrepreneurship-avenue-2026" element={<EntrepreneurshipAvenue2026/>} />
         <Route exact path="/insights" element={<Insights/>} />
         <Route exact path="/insights/iso-20022-migration-guide" element={<Iso20022Migration/>} />
         <Route exact path="/insights/iso-42001-ai-management-guide" element={<Iso42001Guide/>} />

@@ -64,6 +64,7 @@
 ## Resources
 
 - [Blog](https://www.ogtechnologies.co/blog/): Insights on Web3, blockchain, and enterprise IT
+- [Entrepreneurship Avenue 2026 Workshop Recap](https://www.ogtechnologies.co/blog/entrepreneurship-avenue-2026/): AI agent architecture for startups — sense-think-act, MCP orchestration, RAG, and model selection
 - [Partner Program](https://www.ogtechnologies.co/partners/): Revenue share partnerships — referral, reseller, and co-delivery models
 - [Ventures](https://www.ogtechnologies.co/ventures/): Supporting startups and spin-offs
 - [Portfolio](https://www.ogtechnologies.co/portfolio/): Explore our projects
