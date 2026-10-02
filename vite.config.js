@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import postcss from './postcss.config.js'
 import react from '@vitejs/plugin-react'
-import vitePrerender, { PuppeteerRenderer } from 'vite-plugin-prerender'
-import viteImagemin from 'vite-plugin-imagemin'
+import prerenderPlugin from './prerender-plugin.mjs'
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 
 const routeMeta = {
   '/': {
@@ -489,32 +489,29 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    viteImagemin({
-      gifsicle: {
-        optimizationLevel: 7,
-        interlaced: false,
+    ViteImageOptimizer({
+      png: {
+        quality: 70,
+        palette: true,
       },
-      optipng: {
-        optimizationLevel: 7,
-      },
-      mozjpeg: {
+      jpeg: {
         quality: 80,
       },
-      pngquant: {
-        quality: [0.65, 0.8],
-        speed: 4,
+      jpg: {
+        quality: 80,
       },
-      svgo: {
+      webp: {
+        quality: 80,
+      },
+      svg: {
+        multipass: true,
         plugins: [
           { name: 'removeViewBox', active: false },
           { name: 'removeEmptyAttrs', active: false },
         ],
       },
-      webp: {
-        quality: 80,
-      },
     }),
-    vitePrerender({
+    prerenderPlugin({
       staticDir: path.join(__dirname, 'dist'),
       indexPath: path.join(__dirname, 'dist', 'index.html'),
       routes: [
@@ -609,9 +606,9 @@ export default defineConfig({
         keepClosingSlash: true,
         sortAttributes: true,
       },
-      renderer: new PuppeteerRenderer({
-        maxConcurrentRoutes: 4,
-        renderAfterTime: 5000,
+      maxConcurrentRoutes: 4,
+      renderAfterTime: 5000,
+      launchOptions: {
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
         // On macOS use system Chrome; on CI (Linux) fall back to Puppeteer's bundled Chromium
         executablePath:
@@ -619,7 +616,7 @@ export default defineConfig({
           (process.platform === 'darwin'
             ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
             : undefined),
-      }),
+      },
       postProcess(renderedRoute) {
         const meta = routeMeta[renderedRoute.route]
         if (meta) {
