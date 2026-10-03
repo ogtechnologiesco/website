@@ -90,6 +90,20 @@ function BlogPost() {
       </main>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-12">
+        <h3 className="h3 mb-4 text-gray-100">Frequently Asked Questions</h3>
+        <h4 className="h4 mb-3 text-gray-100">What services does OG Technologies EU offer?</h4>
+        <p className="mb-8 text-gray-100">
+          IT consulting and tailored technology solutions across Finance, Education, and IT Helpdesk — plus specialized expertise in Web3 and blockchain, including verifiable credentials, payment infrastructure, and enterprise blockchain integration.
+        </p>
+        <h4 className="h4 mb-3 text-gray-100">Where is OG Technologies EU based?</h4>
+        <p className="mb-8 text-gray-100">
+          In Vienna, Austria, serving clients across Europe and internationally.
+        </p>
+        <h4 className="h4 mb-3 text-gray-100">How can I request a quote or get in touch?</h4>
+        <p className="mb-8 text-gray-100">
+          Use the quote request form on our website or email us at <a href="mailto:hi@ogtechnologies.co" className="text-blue-600 hover:text-blue-800 underline">hi@ogtechnologies.co</a> — we tailor every engagement to your specific business objectives.
+        </p>
+
         <RelatedPosts currentLink="/blog/reaching-new-frontiers" categories={['Company', 'Web3', 'Blockchain']} />
       </div>
 

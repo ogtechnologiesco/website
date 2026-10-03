@@ -428,6 +428,24 @@ function EBSI() {
                      
                     </ul>
                     
+                    <h3 className="h3 mb-4 text-gray-100">Frequently Asked Questions</h3>
+                    <h4 className="h4 mb-3 text-gray-100">What is EBSI?</h4>
+                    <p className="mb-8">
+                      The European Blockchain Services Infrastructure — an EU initiative operating a cross-border network of nodes that deliver public services via blockchain, with use cases including digital identity, educational diplomas, and trusted data sharing.
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">What is a verifiable credential trust chain?</h4>
+                    <p className="mb-8">
+                      The chain of cryptographic attestations linking a credential back to trusted issuers — from the credential, through trusted accreditation organizations, up to the EBSI root trust anchor — letting a verifier confirm authenticity without contacting the issuer directly.
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">How does eIDAS relate to EBSI?</h4>
+                    <p className="mb-8">
+                      eIDAS provides the EU legal framework for electronic identification and trust services. EBSI's verifiable credential model is designed to operate within it, including alignment with the European Digital Identity (EUDI) wallet.
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">Which standards underpin EBSI credential verification?</h4>
+                    <p className="mb-8">
+                      The W3C Verifiable Credentials data model and Decentralized Identifiers (DIDs), ISO/IEC 27001 for the security framework, ISO/IEC 29115 for authentication assurance, and the EBSI verifiable trust model governing accreditation.
+                    </p>
+
                     <h3 className="h3 mb-4 text-gray-100">DISCLAIMER</h3>
                     <p className="mb-8 text-sm text-gray-400 border-t border-gray-700 pt-4">
                       The European Commission support for the production of this publication does not constitute

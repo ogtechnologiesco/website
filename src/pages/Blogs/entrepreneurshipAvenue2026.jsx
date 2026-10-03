@@ -182,6 +182,24 @@ function EntrepreneurshipAvenue2026() {
                       Photos: Entrepreneurship Avenue
                     </p>
 
+                    <h3 className="h3 mb-4 text-gray-100">Frequently Asked Questions</h3>
+                    <h4 className="h4 mb-3 text-gray-100">What is the sense-think-act agent anatomy?</h4>
+                    <p className="mb-8">
+                      A practical framework for understanding AI agents: sensing (ingesting market, visual, sensor, and API data), thinking (knowledge bases, planning logic, LLM-powered analysis with feedback loops), and acting (automation, alerts, and CRM/ERP actions).
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">What is MCP in AI agent architecture?</h4>
+                    <p className="mb-8">
+                      Model Context Protocol — an emerging standard for connecting AI agents with external tools, data sources, and other agents, enabling orchestrated multi-agent workflows.
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">Should startups choose small or large language models?</h4>
+                    <p className="mb-8">
+                      It depends on the use case: SLMs offer faster inference and lower operational cost for lean startups, LLMs provide superior reasoning for complex problems — and specialization through fine-tuning often beats raw capability.
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">What is Entrepreneurship Avenue?</h4>
+                    <p className="mb-8">
+                      A European student-run startup conference hosted at WU Wien (Vienna University of Economics and Business), connecting founders, students, and innovators — the 2026 edition featured our AI Agent Architecture workshop.
+                    </p>
+
                     <div className="mt-12 pt-8 border-t border-gray-700">
                       <p className="text-gray-400 mb-4">
                         <strong>Olvis Enrique Gil Ríos</strong> is the founder of OG Technologies EU, a Vienna-based consultancy helping enterprises and startups adopt AI, blockchain, and international standards.

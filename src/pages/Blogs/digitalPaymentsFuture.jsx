@@ -302,6 +302,24 @@ function DigitalPaymentsFuture() {
                       <li className="mb-2">[19] FATF, "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers" <a href="https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets-2021.html" className="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener noreferrer">https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets-2021.html</a></li>
                     </ul>
 
+                    <h3 className="h3 mb-4 text-gray-100">Frequently Asked Questions</h3>
+                    <h4 className="h4 mb-3 text-gray-100">When did MiCA fully take effect?</h4>
+                    <p className="mb-8">
+                      MiCA's stablecoin provisions applied from June 2024 and the full regime for crypto-asset service providers from December 2024. Regulated exchanges began delisting non-compliant stablecoins as enforcement ramped up through 2025.
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">What is the digital euro timeline?</h4>
+                    <p className="mb-8">
+                      The ECB's preparation phase runs through the mid-2020s: the Single Currency Package advanced to trilogue negotiations, a pilot with 36 payment service providers is scheduled for the second half of 2027, and citizen availability is targeted around 2029 if negotiations stay on track.
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">What is the StandICT.eu fellowship?</h4>
+                    <p className="mb-8">
+                      An EU-funded program supporting European experts contributing to international ICT standardization. The author's fellowship develops standards for interoperable, compliant DLT integration in retail payments.
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">How does ISO 20022 relate to DLT payments?</h4>
+                    <p className="mb-8">
+                      ISO 20022 is the global financial messaging standard that becomes mandatory for cross-border payments in November 2026. The fellowship work maps DLT transaction metadata into ISO 20022 messages (pacs.008) via the SupplementaryData element so DLT systems can interoperate with bank rails.
+                    </p>
+
                     <div className="mt-12 pt-8 border-t border-gray-700">
                       <p className="text-gray-400 mb-4">
                         <strong>Olvis Enrique Gil Ríos</strong> is the founder of OG Technologies EU and a StandICT.eu 2029 fellow. His project, "Retail Payments Standards for Interoperable, Compliant DLT Integration" runs from March to September 2026.

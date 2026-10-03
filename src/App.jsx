@@ -114,6 +114,11 @@ const EthereumWeiGweiUnits = lazy(() => import('./pages/Insights/ethereumWeiGwei
 const Hl7V2MessageStructure = lazy(() => import('./pages/Insights/hl7V2MessageStructure'));
 const AwsIamPolicyValidation = lazy(() => import('./pages/Insights/awsIamPolicyValidation'));
 const DoraCryptoWeb3 = lazy(() => import('./pages/Insights/doraCryptoWeb3'));
+const StellarCrossBorderPayments = lazy(() => import('./pages/Insights/stellarCrossBorderPayments'));
+const Iso27001Soa = lazy(() => import('./pages/Insights/iso27001Soa'));
+const Iso42001AnnexA = lazy(() => import('./pages/Insights/iso42001AnnexA'));
+const IntegratedManagementSystem = lazy(() => import('./pages/Insights/integratedManagementSystem'));
+const Iso8601Format = lazy(() => import('./pages/Insights/iso8601Format'));
 
 
 function App() {
@@ -213,6 +218,11 @@ function App() {
         <Route exact path="/insights/hl7-v2-message-structure" element={<Hl7V2MessageStructure/>} />
         <Route exact path="/insights/aws-iam-policy-validation" element={<AwsIamPolicyValidation/>} />
         <Route exact path="/insights/dora-crypto-web3-compliance" element={<DoraCryptoWeb3/>} />
+        <Route exact path="/insights/stellar-cross-border-payments-anchors-sep24" element={<StellarCrossBorderPayments/>} />
+        <Route exact path="/insights/iso-27001-statement-of-applicability" element={<Iso27001Soa/>} />
+        <Route exact path="/insights/iso-42001-annex-a-controls" element={<Iso42001AnnexA/>} />
+        <Route exact path="/insights/integrated-management-system-iso-9001-27001-42001" element={<IntegratedManagementSystem/>} />
+        <Route exact path="/insights/iso-8601-format-guide" element={<Iso8601Format/>} />
         <Route exact path="/tools" element={<Tools/>} />
         <Route exact path="/tools/html-to-image" element={<HtmlToImage/>} />
         <Route exact path="/tools/screenshot-to-image" element={<ScreenshotToImage/>} />

@@ -200,6 +200,24 @@ function MeridianBlogPost() {
       </main>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-12">
+        <h3 className="h3 mb-4 text-gray-100">Frequently Asked Questions</h3>
+        <h4 className="h4 mb-3 text-gray-100">What is the Meridian conference?</h4>
+        <p className="mb-8 text-gray-100">
+          Meridian is the Stellar ecosystem's annual conference, organized by the Stellar Development Foundation. It brings together developers, enterprises, and ecosystem partners to discuss the network's roadmap — the 2024 edition was held in London under the theme "Transformation."
+        </p>
+        <h4 className="h4 mb-3 text-gray-100">What is Soroban?</h4>
+        <p className="mb-8 text-gray-100">
+          Soroban is Stellar's smart contracts platform, designed for efficient, secure on-chain programs. It was a major topic at Meridian 2024 alongside asset tokenization and Stellar Aid Assist.
+        </p>
+        <h4 className="h4 mb-3 text-gray-100">What is Stellar Aid Assist?</h4>
+        <p className="mb-8 text-gray-100">
+          An open-source bulk-disbursement system built on Stellar that lets aid organizations deliver funds quickly and transparently to recipients, demonstrated at Meridian alongside integrations like the MoneyGram partnership.
+        </p>
+        <h4 className="h4 mb-3 text-gray-100">Why does OG Technologies EU build on Stellar?</h4>
+        <p className="mb-8 text-gray-100">
+          Stellar's focus on financial inclusion, fast low-cost settlement, and enterprise-ready asset issuance aligns with our payments work — including Mozart Pay, our Stellar-based payment platform built with Circle USDC/EURC.
+        </p>
+
         <RelatedPosts currentLink="/blog/meridian-2024-highlights" categories={['Blockchain', 'Web3', 'Events']} />
       </div>
 

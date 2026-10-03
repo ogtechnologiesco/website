@@ -8,6 +8,11 @@ import ethereumUnitsImage from '../images/insight-ethereum-units.jpg';
 import hl7MessagesImage from '../images/insight-hl7-messages.jpg';
 import iamPolicyImage from '../images/insight-iam-policy.jpg';
 import doraCryptoImage from '../images/insight-dora-crypto.jpg';
+import stellarPaymentsImage from '../images/insight-stellar-payments.jpg';
+import iso27001SoaImage from '../images/insight-iso27001-soa.jpg';
+import iso42001AnnexAImage from '../images/insight-iso42001-annexa.jpg';
+import imsImage from '../images/insight-integrated-management-system.jpg';
+import iso8601Image from '../images/insight-iso8601-format.jpg';
 
 export const insightsPosts = [
   {
@@ -109,6 +114,56 @@ export const insightsPosts = [
     imageText: 'DORA compliance for crypto and Web3',
     link: '/insights/dora-crypto-web3-compliance/',
     categories: ['Compliance', 'Blockchain', 'Standards'],
+  },
+  {
+    title: 'Building Cross-Border Payments on Stellar: Anchors, SEP-24, and USDC/EURC Settlement',
+    date: '03/10/2026',
+    description:
+      'How Stellar cross-border payments work: anchors and the SEP stack (SEP-6, SEP-24, SEP-31, SEP-38), trustlines, path payments, and USDC/EURC settlement.',
+    image: stellarPaymentsImage,
+    imageText: 'Stellar cross-border payments network',
+    link: '/insights/stellar-cross-border-payments-anchors-sep24/',
+    categories: ['Payments', 'Blockchain', 'Standards'],
+  },
+  {
+    title: 'ISO 27001 Statement of Applicability: How to Choose and Justify Annex A Controls',
+    date: '03/10/2026',
+    description:
+      'What Clause 6.1.3 requires: selecting Annex A controls, justifying exclusions, and building a Statement of Applicability that survives a Stage 1 audit.',
+    image: iso27001SoaImage,
+    imageText: 'ISO 27001 Statement of Applicability checklist',
+    link: '/insights/iso-27001-statement-of-applicability/',
+    categories: ['Standards', 'Compliance', 'Security'],
+  },
+  {
+    title: 'ISO/IEC 42001 Annex A Controls: The Complete List of 38 Controls Across 9 Domains',
+    date: '03/10/2026',
+    description:
+      'Every ISO/IEC 42001:2023 Annex A control by reference and title, grouped by domain — plus how to select them in your AI Statement of Applicability.',
+    image: iso42001AnnexAImage,
+    imageText: 'ISO/IEC 42001 Annex A controls',
+    link: '/insights/iso-42001-annex-a-controls/',
+    categories: ['AI Governance', 'Standards', 'Compliance'],
+  },
+  {
+    title: 'One Management System, Three Standards: Integrating ISO 9001, ISO 27001, and ISO 42001',
+    date: '03/10/2026',
+    description:
+      'The Harmonized Structure shared by all three standards, where they diverge, and how to run quality, security, and AI governance on one integrated management system.',
+    image: imsImage,
+    imageText: 'Integrated management system gears',
+    link: '/insights/integrated-management-system-iso-9001-27001-42001/',
+    categories: ['Standards', 'Compliance'],
+  },
+  {
+    title: 'ISO 8601 Date Formats Explained: Durations, Week Dates, Intervals, and the RFC 3339 Subset',
+    date: '03/10/2026',
+    description:
+      'The anatomy of ISO 8601: calendar/ordinal/week dates, durations (PnYnMnDTnHnMnS), intervals, reduced precision, and how RFC 3339 differs.',
+    image: iso8601Image,
+    imageText: 'ISO 8601 date-time format',
+    link: '/insights/iso-8601-format-guide/',
+    categories: ['Standards', 'Developer'],
   },
 ];
 

@@ -2,7 +2,6 @@ import http from 'http'
 import path from 'path'
 import fs from 'fs'
 import serveStatic from 'serve-static'
-import puppeteer from 'puppeteer'
 import { minify } from 'html-minifier-terser'
 
 // Minimal local replacement for vite-plugin-prerender: serves the build output
@@ -37,6 +36,7 @@ export default function prerenderPlugin(options) {
       await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve))
       const baseURL = `http://127.0.0.1:${server.address().port}`
 
+      const { default: puppeteer } = await import('puppeteer')
       const browser = await puppeteer.launch({ headless: true, ...launchOptions })
       try {
         const queue = [...routes]

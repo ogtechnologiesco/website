@@ -151,6 +151,20 @@ function Standards() {
                     <p className="mb-8">
                       At OG Technologies EU, we specialize in helping enterprises navigate the evolving landscape of blockchain standards. Our expertise in blockchain interoperability, security, and regulatory compliance ensures that businesses can adopt blockchain technology confidently and scale globally, all while staying ahead of industry standards and legal requirements.
                     </p>
+
+                    <h3 className="h3 mb-4 text-gray-100">Frequently Asked Questions</h3>
+                    <h4 className="h4 mb-3 text-gray-100">What are blockchain standards?</h4>
+                    <p className="mb-8">
+                      Agreed technical specifications — such as ISO/TC 307 DLT standards, W3C Verifiable Credentials, and ETSI/EBSI profiles — that let different blockchain systems and enterprises interoperate securely and predictably.
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">Why do standards matter for enterprises adopting blockchain?</h4>
+                    <p className="mb-8">
+                      They cut integration costs, create shared trust frameworks with partners and regulators, and let enterprises reach global customers on common rails instead of proprietary silos.
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">What is BlockStand?</h4>
+                    <p className="mb-8">
+                      An EU-funded initiative supporting European participation in international blockchain standardization. OG Technologies EU partnered with BlockStand to contribute expertise to standards development.
+                    </p>
                   </article>
                 </div>
               </div>

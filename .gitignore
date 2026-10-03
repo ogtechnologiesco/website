@@ -62,3 +62,7 @@ dist/
 
 # Local Netlify folder
 .netlify
+
+#social
+scripts/
+social-cards/

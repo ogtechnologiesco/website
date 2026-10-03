@@ -60,6 +60,11 @@
 - [HL7 v2 Message Structure](https://www.ogtechnologies.co/insights/hl7-v2-message-structure/): Segments, fields, delimiters, and message types decoded
 - [AWS IAM Policy Validation](https://www.ogtechnologies.co/insights/aws-iam-policy-validation/): 7 checks to run before deploying an IAM policy
 - [DORA for Crypto & Web3](https://www.ogtechnologies.co/insights/dora-crypto-web3-compliance/): What EU Regulation 2022/2554 requires from CASPs
+- [Stellar Cross-Border Payments](https://www.ogtechnologies.co/insights/stellar-cross-border-payments-anchors-sep24/): Anchors, SEP-24, trustlines, and USDC/EURC settlement explained
+- [ISO 27001 Statement of Applicability](https://www.ogtechnologies.co/insights/iso-27001-statement-of-applicability/): How to choose and justify Annex A controls
+- [ISO/IEC 42001 Annex A Controls](https://www.ogtechnologies.co/insights/iso-42001-annex-a-controls/): The complete list of 38 controls across 9 domains
+- [Integrated Management System](https://www.ogtechnologies.co/insights/integrated-management-system-iso-9001-27001-42001/): Combining ISO 9001, ISO 27001, and ISO 42001 into one system
+- [ISO 8601 Format Guide](https://www.ogtechnologies.co/insights/iso-8601-format-guide/): Durations, week dates, intervals, and the RFC 3339 subset explained
 
 ## Resources
 

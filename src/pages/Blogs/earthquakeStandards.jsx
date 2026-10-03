@@ -177,6 +177,20 @@ function EarthquakeStandards() {
                       <li className="mb-2">[7] UNGRD, "Unidad Nacional para la Gestión del Riesgo de Desastres," <a href="https://portal.gestiondelriesgo.gov.co" className="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener noreferrer">https://portal.gestiondelriesgo.gov.co</a></li>
                     </ul>
 
+                    <h3 className="h3 mb-4 text-gray-100">Preguntas frecuentes</h3>
+                    <h4 className="h4 mb-3 text-gray-100">¿Qué normas ISO aplican a la evaluación de edificaciones tras un sismo?</h4>
+                    <p className="mb-8">
+                      Las normas de gestión de emergencias y continuidad del negocio como la serie ISO 22301, junto con estándares de evaluación estructural y resiliencia organizacional, complementan — sin sustituir — el reglamento colombiano NSR-10 y la normativa local vigente.
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">¿Las normas ISO sustituyen la normativa colombiana de construcción sismo-resistente?</h4>
+                    <p className="mb-8">
+                      No. La normativa colombiana (NSR-10, leyes y decretos locales) es obligatoria. Las normas ISO son marcos voluntarios que complementan la gestión de emergencias, la continuidad del negocio y la resiliencia organizacional.
+                    </p>
+                    <h4 className="h4 mb-3 text-gray-100">¿Cómo ayuda el software a la gestión de emergencias sísmicas?</h4>
+                    <p className="mb-8">
+                      Los módulos SaaS mapeados a requisitos ISO permiten coordinar inspecciones, gestionar evidencia, priorizar evaluaciones estructurales y documentar decisiones para aseguradoras y autoridades.
+                    </p>
+
                     <div className="mt-12 pt-8 border-t border-gray-700">
                       <p className="text-gray-400 mb-4">
                         <strong>Olvis Enrique Gil Ríos</strong> es el fundador de OG Technologies EU, consultora de TI especializada en estándares internacionales, tecnologías emergentes y soluciones digitales para la industria.
