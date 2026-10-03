@@ -4,7 +4,7 @@
   "scripts": {
     "start": "react-scripts start",
     "dev": "vite",
-    "build": "vite build",
+    "build": "npx puppeteer browsers install chrome && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
