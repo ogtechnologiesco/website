@@ -62,7 +62,11 @@ dist/
 
 # Local Netlify folder
 .netlify
+deno.lock
 
 #social
 scripts/
 social-cards/
+
+# Local analytics dashboard (local-only, not for deploy)
+/analytics/
