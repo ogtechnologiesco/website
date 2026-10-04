@@ -13,6 +13,8 @@ const CORS_HEADERS = {
 const READ_BATCH = 20;
 const MAX_PAGES = 100;
 const MAX_REFERRERS = 25;
+const MAX_IPS = 50;
+const MAX_COUNTRIES = 50;
 
 export default async (req) => {
   if (req.method === 'OPTIONS') {
@@ -89,6 +91,9 @@ function aggregate(raw, days) {
   const perDay = {};
   const perPath = {};
   const perRef = {};
+  const perIp = {};
+  const perCountry = {};
+  const perCity = {};
   const buckets = { under10s: 0, s10to60: 0, m1to5: 0, over5m: 0 };
   let engagedSum = 0;
 
@@ -108,6 +113,25 @@ function aggregate(raw, days) {
 
     if (e.r && !e.r.startsWith('internal:')) {
       perRef[e.r] = (perRef[e.r] || 0) + 1;
+    }
+
+    if (e.ip) {
+      const pi = perIp[e.ip] || (perIp[e.ip] = { views: 0, visitors: new Set(), engaged: 0 });
+      pi.views += 1;
+      pi.visitors.add(e.vid);
+      pi.engaged += engaged;
+    }
+
+    const cc = e.geo && e.geo.cc;
+    if (cc) {
+      const pc = perCountry[cc] || (perCountry[cc] = { name: e.geo.cn || cc, views: 0, visitors: new Set() });
+      pc.views += 1;
+      pc.visitors.add(e.vid);
+
+      if (e.geo.city) {
+        const cityKey = `${e.geo.city}, ${cc}`;
+        perCity[cityKey] = (perCity[cityKey] || 0) + 1;
+      }
     }
 
     const secs = engaged / 1000;
@@ -138,6 +162,26 @@ function aggregate(raw, days) {
     .sort((a, b) => b.views - a.views)
     .slice(0, MAX_REFERRERS);
 
+  const ips = Object.entries(perIp)
+    .map(([ip, p]) => ({
+      ip,
+      views: p.views,
+      uniques: p.visitors.size,
+      avgEngagedMs: p.views ? Math.round(p.engaged / p.views) : 0,
+    }))
+    .sort((a, b) => b.views - a.views)
+    .slice(0, MAX_IPS);
+
+  const countries = Object.entries(perCountry)
+    .map(([code, c]) => ({ code, name: c.name, views: c.views, uniques: c.visitors.size }))
+    .sort((a, b) => b.views - a.views)
+    .slice(0, MAX_COUNTRIES);
+
+  const cities = Object.entries(perCity)
+    .map(([city, count]) => ({ city, views: count }))
+    .sort((a, b) => b.views - a.views)
+    .slice(0, MAX_COUNTRIES);
+
   return {
     days,
     generatedAt: new Date().toISOString(),
@@ -150,6 +194,9 @@ function aggregate(raw, days) {
     daily,
     pages,
     referrers,
+    ips,
+    countries,
+    cities,
     buckets,
   };
 }

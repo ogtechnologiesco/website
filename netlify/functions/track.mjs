@@ -4,7 +4,17 @@ const MAX_BODY_BYTES = 2048;
 const MAX_DURATION_MS = 30 * 60 * 1000;
 const ALLOWED_ORIGINS = ['ogtechnologies.co', 'localhost', '127.0.0.1'];
 
-export default async (req) => {
+function truncateIp(ip) {
+  if (!ip) return null;
+  if (ip.includes('.')) {
+    const parts = ip.split('.');
+    return parts.length === 4 ? `${parts.slice(0, 3).join('.')}.0` : null;
+  }
+  const hextets = ip.split(':').filter(Boolean);
+  return hextets.length ? `${hextets.slice(0, 3).join(':')}::` : null;
+}
+
+export default async (req, context) => {
   if (req.method !== 'POST') {
     return new Response('Method Not Allowed', { status: 405 });
   }
@@ -42,6 +52,12 @@ export default async (req) => {
     ts: Number(data.ts) || received,
     d: Math.min(Math.max(0, Number(data.d) || 0), MAX_DURATION_MS),
     done: data.done === true,
+    ip: truncateIp(context.ip || ''),
+    geo: {
+      cc: context.geo?.country?.code || null,
+      cn: context.geo?.country?.name || null,
+      city: context.geo?.city || null,
+    },
     received,
   };
 
