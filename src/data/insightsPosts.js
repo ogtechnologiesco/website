@@ -13,6 +13,7 @@ import iso27001SoaImage from '../images/insight-iso27001-soa.jpg';
 import iso42001AnnexAImage from '../images/insight-iso42001-annexa.jpg';
 import imsImage from '../images/insight-integrated-management-system.jpg';
 import iso8601Image from '../images/insight-iso8601-format.jpg';
+import mergePdfImage from '../images/insight-merge-pdf.jpg';
 
 export const insightsPosts = [
   {
@@ -165,6 +166,16 @@ export const insightsPosts = [
     link: '/insights/iso-8601-format-guide/',
     categories: ['Standards', 'Developer'],
   },
+  {
+    title: 'How to Merge PDF Files for Free (No Acrobat, No Uploads)',
+    date: '08/10/2026',
+    description:
+      'Combine PDFs into one document entirely in your browser — how merging works, page order, protected files, and why no-upload tools are the private option.',
+    image: mergePdfImage,
+    imageText: 'Merge PDF tool combining two PDF files',
+    link: '/insights/how-to-merge-pdf-files/',
+    categories: ['Tools', 'Developer'],
+  },
 ];
 
 export const allInsightCategories = [
@@ -178,6 +189,7 @@ export const allInsightCategories = [
   'Healthcare',
   'Blockchain',
   'Developer',
+  'Tools',
 ];
 
 export function getRelatedInsights(currentLink, categories, count = 3) {

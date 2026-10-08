@@ -119,6 +119,7 @@ const Iso27001Soa = lazy(() => import('./pages/Insights/iso27001Soa'));
 const Iso42001AnnexA = lazy(() => import('./pages/Insights/iso42001AnnexA'));
 const IntegratedManagementSystem = lazy(() => import('./pages/Insights/integratedManagementSystem'));
 const Iso8601Format = lazy(() => import('./pages/Insights/iso8601Format'));
+const HowToMergePdfFiles = lazy(() => import('./pages/Insights/howToMergePdfFiles'));
 
 
 function App() {
@@ -223,6 +224,7 @@ function App() {
         <Route exact path="/insights/iso-42001-annex-a-controls" element={<Iso42001AnnexA/>} />
         <Route exact path="/insights/integrated-management-system-iso-9001-27001-42001" element={<IntegratedManagementSystem/>} />
         <Route exact path="/insights/iso-8601-format-guide" element={<Iso8601Format/>} />
+        <Route exact path="/insights/how-to-merge-pdf-files" element={<HowToMergePdfFiles/>} />
         <Route exact path="/tools" element={<Tools/>} />
         <Route exact path="/tools/html-to-image" element={<HtmlToImage/>} />
         <Route exact path="/tools/screenshot-to-image" element={<ScreenshotToImage/>} />
