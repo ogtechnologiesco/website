@@ -120,6 +120,9 @@ const Iso42001AnnexA = lazy(() => import('./pages/Insights/iso42001AnnexA'));
 const IntegratedManagementSystem = lazy(() => import('./pages/Insights/integratedManagementSystem'));
 const Iso8601Format = lazy(() => import('./pages/Insights/iso8601Format'));
 const HowToMergePdfFiles = lazy(() => import('./pages/Insights/howToMergePdfFiles'));
+const Mt940Format = lazy(() => import('./pages/Insights/mt940Format'));
+const Eidas2EudiWallet = lazy(() => import('./pages/Insights/eidas2EudiWallet'));
+const OdataQueryOptions = lazy(() => import('./pages/Insights/odataQueryOptions'));
 
 
 function App() {
@@ -225,6 +228,9 @@ function App() {
         <Route exact path="/insights/integrated-management-system-iso-9001-27001-42001" element={<IntegratedManagementSystem/>} />
         <Route exact path="/insights/iso-8601-format-guide" element={<Iso8601Format/>} />
         <Route exact path="/insights/how-to-merge-pdf-files" element={<HowToMergePdfFiles/>} />
+        <Route exact path="/insights/mt940-format-camt053-migration" element={<Mt940Format/>} />
+        <Route exact path="/insights/eidas2-eudi-wallet" element={<Eidas2EudiWallet/>} />
+        <Route exact path="/insights/odata-query-options-guide" element={<OdataQueryOptions/>} />
         <Route exact path="/tools" element={<Tools/>} />
         <Route exact path="/tools/html-to-image" element={<HtmlToImage/>} />
         <Route exact path="/tools/screenshot-to-image" element={<ScreenshotToImage/>} />

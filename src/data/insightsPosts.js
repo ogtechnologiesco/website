@@ -14,6 +14,9 @@ import iso42001AnnexAImage from '../images/insight-iso42001-annexa.jpg';
 import imsImage from '../images/insight-integrated-management-system.jpg';
 import iso8601Image from '../images/insight-iso8601-format.jpg';
 import mergePdfImage from '../images/insight-merge-pdf.jpg';
+import mt940Image from '../images/insight-mt940-camt053.jpg';
+import eudiWalletImage from '../images/insight-eudi-wallet.jpg';
+import odataImage from '../images/insight-odata-query.jpg';
 
 export const insightsPosts = [
   {
@@ -175,6 +178,36 @@ export const insightsPosts = [
     imageText: 'Merge PDF tool combining two PDF files',
     link: '/insights/how-to-merge-pdf-files/',
     categories: ['Tools', 'Developer'],
+  },
+  {
+    title: 'MT940 Format Explained: Field Tags, Field 86, and the Migration to camt.053',
+    date: '09/10/2026',
+    description:
+      'The SWIFT MT940 bank statement format decoded: every tag from :20: to :62F:, the :61: statement line, structured :86: remittance data, and how it all maps to ISO 20022 camt.053.',
+    image: mt940Image,
+    imageText: 'MT940 to CSV converter parsing statement entries',
+    link: '/insights/mt940-format-camt053-migration/',
+    categories: ['Payments', 'Standards'],
+  },
+  {
+    title: 'eIDAS 2.0 and the EUDI Wallet: What Businesses Need to Know Before the Rollout',
+    date: '09/10/2026',
+    description:
+      'The European Digital Identity Wallet is rolling out across member states. What it contains, which businesses must accept it, and how it builds on verifiable credentials and EBSI.',
+    image: eudiWalletImage,
+    imageText: 'European Digital Identity Wallet credential card',
+    link: '/insights/eidas2-eudi-wallet/',
+    categories: ['Compliance', 'Standards', 'Blockchain'],
+  },
+  {
+    title: 'OData Query Options Explained: $filter, $select, $expand, and $orderby',
+    date: '09/10/2026',
+    description:
+      'A practical guide to OData system query options: filter operators and functions, projections, navigation expansion, sorting, paging, V2 vs V4 syntax, and SAP Gateway specifics.',
+    image: odataImage,
+    imageText: 'SAP OData URL builder with generated query string',
+    link: '/insights/odata-query-options-guide/',
+    categories: ['Developer', 'Standards'],
   },
 ];
 

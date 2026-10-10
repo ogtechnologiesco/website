@@ -66,6 +66,9 @@
 - [Integrated Management System](https://www.ogtechnologies.co/insights/integrated-management-system-iso-9001-27001-42001/): Combining ISO 9001, ISO 27001, and ISO 42001 into one system
 - [ISO 8601 Format Guide](https://www.ogtechnologies.co/insights/iso-8601-format-guide/): Durations, week dates, intervals, and the RFC 3339 subset explained
 - [How to Merge PDF Files](https://www.ogtechnologies.co/insights/how-to-merge-pdf-files/): Combine PDFs free in the browser — page order, protected files, and no-upload privacy
+- [MT940 Format Explained](https://www.ogtechnologies.co/insights/mt940-format-camt053-migration/): Field tags, the :61: statement line, structured :86: remittance data, and the camt.053 migration
+- [eIDAS 2.0 and the EUDI Wallet](https://www.ogtechnologies.co/insights/eidas2-eudi-wallet/): What the European Digital Identity Wallet means for businesses before the rollout
+- [OData Query Options Guide](https://www.ogtechnologies.co/insights/odata-query-options-guide/): $filter, $select, $expand, $orderby, paging, and SAP Gateway specifics
 
 ## Resources
 
