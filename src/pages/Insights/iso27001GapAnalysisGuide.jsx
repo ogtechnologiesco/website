@@ -20,9 +20,9 @@ function Iso27001GapAnalysisGuide() {
       <style>{fadeInKeyframes}</style>
       <div className="flex flex-col min-h-screen overflow-hidden">
         <Helmet>
-          <title>ISO 27001 Gap Analysis: A Step-by-Step Guide with Free Assessment Tool | OG Technologies EU</title>
-          <meta name="description" content="How to run an ISO 27001 gap analysis: scope, clause-by-clause assessment, scoring, remediation roadmap, and a PDF report. Includes a free browser-based gap assessment tool." />
-          <meta name="keywords" content="ISO 27001 gap analysis, ISO 27001 gap assessment, gap analysis checklist, ISMS gap analysis, ISO 27001 compliance assessment, gap analysis report pdf, ISO 27001 readiness" />
+          <title>ISO 27001 Gap Analysis: Step-by-Step Guide + Free Template (Excel/CSV) | OG Technologies EU</title>
+          <meta name="description" content="How to run an ISO 27001 gap analysis: scope, clause-by-clause assessment, scoring, remediation roadmap. Download a free Excel/CSV gap analysis template covering clauses 4–10 and all 93 Annex A controls, or use the free online tool for a scored PDF report." />
+          <meta name="keywords" content="ISO 27001 gap analysis, ISO 27001 gap assessment, gap analysis checklist, ISO 27001 gap analysis template, ISO 27001 template excel, gap analysis report pdf, ISMS gap analysis, ISO 27001 compliance assessment, ISO 27001 readiness" />
           <meta name="robots" content="index, follow" />
           <link rel="canonical" href="https://www.ogtechnologies.co/insights/iso-27001-gap-analysis-guide/" />
           <meta property="og:type" content="article" />
@@ -83,6 +83,24 @@ function Iso27001GapAnalysisGuide() {
                       The gap analysis comes first: it tells you whether you need a full ISMS build-out or a targeted remediation effort, and it scopes the risk assessment that follows.
                     </p>
 
+                    <div className="not-prose bg-gray-800 border border-purple-700/50 rounded-xl p-6 mb-10 text-left">
+                      <h3 className="text-lg font-bold text-white mb-2">Download the free gap analysis template</h3>
+                      <p className="text-sm text-gray-300 mb-4">
+                        A pre-structured workbook covering all management-system clauses (4–10) and the 93 Annex A
+                        controls — with columns for status, gap severity, evidence, remediation action, owner, and
+                        due date. Ready for a workshop-style assessment.
+                      </p>
+                      <div className="flex flex-wrap gap-3">
+                        <a href="/downloads/iso-27001-gap-analysis-template.xlsx" download className="px-4 py-2 rounded-md bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors">
+                          Download Excel template (.xlsx)
+                        </a>
+                        <a href="/downloads/iso-27001-annex-a-controls.csv" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
+                          Annex A controls only (.csv)
+                        </a>
+                      </div>
+                      <p className="text-xs text-gray-500 mt-3">Working reference for self-assessment — not a substitute for the standard or a formal audit.</p>
+                    </div>
+
                     <h2 className="h2 mb-4 text-gray-100">The Five Steps of an ISO 27001 Gap Analysis</h2>
                     <ol className="list-decimal list-inside mb-8 space-y-3">
                       <li><strong>Define the scope.</strong> Which business units, systems, and locations are in? Scope creep is the most common reason gap analyses stall — be explicit about what is out of scope.</li>
@@ -118,6 +136,10 @@ function Iso27001GapAnalysisGuide() {
                     <h3 className="h3 mb-4 text-gray-100">What is the difference between a gap analysis and a gap assessment?</h3>
                     <p className="mb-8">
                       The terms are used interchangeably. "Gap analysis" emphasizes the comparison methodology; "gap assessment" emphasizes the scoring deliverable. Both measure distance from ISO 27001 conformity.
+                    </p>
+                    <h3 className="h3 mb-4 text-gray-100">Is there a free ISO 27001 gap analysis template?</h3>
+                    <p className="mb-8">
+                      Yes — <a href="/downloads/iso-27001-gap-analysis-template.xlsx" className="text-purple-400 hover:text-purple-300 underline" download>download the Excel template</a> covering clauses 4–10 and all 93 Annex A controls, with columns for status, gap severity, evidence, remediation, owner, and due date. A <a href="/downloads/iso-27001-annex-a-controls.csv" className="text-purple-400 hover:text-purple-300 underline" download>CSV of the Annex A controls</a> is also available.
                     </p>
                     <h3 className="h3 mb-4 text-gray-100">Do I need a gap analysis before certification?</h3>
                     <p className="mb-8">

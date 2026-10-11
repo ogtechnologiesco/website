@@ -117,7 +117,7 @@ function Iso42001AnnexA() {
         <Helmet>
           <title>ISO/IEC 42001 Annex A Controls: The Complete List of 38 Controls Across 9 Domains | OG Technologies EU</title>
           <meta name="description" content="Every ISO/IEC 42001:2023 Annex A control listed: all 38 controls across the 9 domains (A.2–A.10) with one-line descriptions, plus how to select them in your AI Statement of Applicability." />
-          <meta name="keywords" content="ISO 42001 controls, ISO 42001 controls list, ISO 42001 annex a, ISO/IEC 42001 controls, AIMS controls, ISO 42001 requirements, AI management system controls, ISO 42001 statement of applicability" />
+          <meta name="keywords" content="ISO 42001 controls, ISO 42001 controls list, ISO 42001 controls list pdf, ISO 42001 controls list excel, ISO 42001 annex a, ISO/IEC 42001 controls, AIMS controls, ISO 42001 requirements, AI management system controls, ISO 42001 statement of applicability" />
           <meta name="robots" content="index, follow" />
           <link rel="canonical" href="https://www.ogtechnologies.co/insights/iso-42001-annex-a-controls/" />
           <meta property="og:type" content="article" />
@@ -167,6 +167,23 @@ function Iso42001AnnexA() {
                     <p className="mb-8">
                       New to the standard? Start with our <Link to="/insights/iso-42001-ai-management-guide/" className="text-purple-400 hover:text-purple-300 underline">ISO/IEC 42001 practical guide</Link> for the full picture — clauses 4–10, the EU AI Act relationship, and the certification roadmap — then come back here for the control-level detail.
                     </p>
+
+                    <div className="not-prose bg-gray-800 border border-purple-700/50 rounded-xl p-6 mb-10 text-left">
+                      <h3 className="text-lg font-bold text-white mb-2">Download the controls list as a workbook</h3>
+                      <p className="text-sm text-gray-300 mb-4">
+                        All 38 Annex A controls in a spreadsheet, pre-structured as a Statement of Applicability
+                        worksheet — columns for applicability, justification, implementation status, and evidence.
+                      </p>
+                      <div className="flex flex-wrap gap-3">
+                        <a href="/downloads/iso-42001-annex-a-controls.xlsx" download className="px-4 py-2 rounded-md bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors">
+                          Download Excel (.xlsx)
+                        </a>
+                        <a href="/downloads/iso-42001-annex-a-controls.csv" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
+                          Download CSV
+                        </a>
+                      </div>
+                      <p className="text-xs text-gray-500 mt-3">Working reference for self-assessment — not a substitute for the ISO/IEC 42001 standard or a formal certification audit.</p>
+                    </div>
 
                     <h2 className="h2 mb-4 text-gray-100">How the 38 Controls Are Organized</h2>
                     <p className="mb-8">

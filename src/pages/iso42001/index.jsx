@@ -156,6 +156,22 @@ function Iso42001AiReadiness() {
                         </ul>
                       </div>
 
+                      <div className="bg-gray-800 rounded-lg p-8 border border-purple-700/50 mb-8">
+                        <h3 className="text-xl font-bold text-white mb-3">Free Controls List Download</h3>
+                        <p className="text-gray-300 text-sm mb-4">
+                          Need the full control catalogue in a spreadsheet? Download the ISO/IEC 42001 Annex A
+                          controls list — all 38 controls pre-structured as a Statement of Applicability worksheet.
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                          <a href="/downloads/iso-42001-annex-a-controls.xlsx" download className="px-4 py-2 rounded-md bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors">
+                            Download Excel (.xlsx)
+                          </a>
+                          <a href="/downloads/iso-42001-annex-a-controls.csv" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
+                            CSV
+                          </a>
+                        </div>
+                      </div>
+
                       <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
                         <h3 className="text-xl font-bold text-white mb-4">Maturity Scale</h3>
                         <p className="text-sm text-gray-300 mb-3">Each control is rated on a 4-point maturity scale:</p>

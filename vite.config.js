@@ -163,12 +163,13 @@ const routeMeta = {
     ],
   },
   '/insights/iso-27001-gap-analysis-guide': {
-    title: 'ISO 27001 Gap Analysis: A Step-by-Step Guide with Free Assessment Tool | OG Technologies EU',
-    description: 'How to run an ISO 27001 gap analysis: scope, clause-by-clause assessment, scoring, remediation roadmap, and a PDF report. Includes a free browser-based gap assessment tool.',
+    title: 'ISO 27001 Gap Analysis: Step-by-Step Guide + Free Template (Excel/CSV) | OG Technologies EU',
+    description: 'How to run an ISO 27001 gap analysis: scope, clause-by-clause assessment, scoring, remediation roadmap. Download a free Excel/CSV gap analysis template covering clauses 4–10 and all 93 Annex A controls, or use the free online tool for a scored PDF report.',
     ogType: "article",
-    article: {"datePublished": "2026-09-26", "dateModified": "2026-09-26", "author": {"@type": "Organization", "name": "OG Technologies EU"}, "image": "https://www.ogtechnologies.co/og-og-image.png"},
+    article: {"datePublished": "2026-09-26", "dateModified": "2026-10-12", "author": {"@type": "Organization", "name": "OG Technologies EU"}, "image": "https://www.ogtechnologies.co/og-og-image.png"},
     faq: [
       { q: 'How long does an ISO 27001 gap analysis take?', a: 'A focused self-assessment takes 2–4 hours with a structured questionnaire. A consultant-led analysis for a mid-size company typically runs 2–4 weeks including document review and interviews.' },
+      { q: 'Is there a free ISO 27001 gap analysis template?', a: 'Yes — download the free Excel template covering clauses 4–10 and all 93 Annex A controls, with columns for status, gap severity, evidence, remediation, owner, and due date. A CSV of the Annex A controls is also available.' },
       { q: 'What is the difference between a gap analysis and a gap assessment?', a: 'The terms are used interchangeably. "Gap analysis" emphasizes the comparison methodology; "gap assessment" emphasizes the scoring deliverable. Both measure distance from ISO 27001 conformity.' },
       { q: 'Do I need a gap analysis before certification?', a: 'It is not a formal requirement, but skipping it is the most common cause of failed Stage 1 audits. Certification bodies expect you to arrive with a working ISMS — the gap analysis is how you find out whether you have one.' },
       { q: 'Can I get a gap analysis report as a PDF?', a: 'Yes. The ISO 27001 Gap Assessment tool generates a downloadable PDF report with per-clause scores and remediation priorities, free and browser-based.' },
@@ -256,7 +257,7 @@ const routeMeta = {
   },
   '/insights/iso-42001-annex-a-controls': {
     title: 'ISO/IEC 42001 Annex A Controls: The Complete List of 38 Controls Across 9 Domains | OG Technologies EU',
-    description: 'Every ISO/IEC 42001:2023 Annex A control listed: all 38 controls across the 9 domains (A.2–A.10) with one-line descriptions, plus how to select them in your AI Statement of Applicability.',
+    description: 'Every ISO/IEC 42001:2023 Annex A control listed: all 38 controls across the 9 domains (A.2–A.10) with one-line descriptions, plus a free Excel/CSV controls-list download and how to select controls in your AI Statement of Applicability.',
     ogType: 'article',
     article: {
       datePublished: '2026-10-03',
@@ -498,6 +499,12 @@ const routeMeta = {
     title: 'Free XML Formatter & Beautifier Online | OG Technologies EU',
     description: 'Format and beautify XML with customizable indentation (2 spaces, 4 spaces, or tabs). Pretty-print minified XML online — 100% browser-based, no data sent to any server.',
     featureList: ["Pretty-print XML with 2-space, 4-space, or tab indentation", "Preserves comments, CDATA sections, and processing instructions", "Error reporting with line and column numbers"],
+    faq: [
+      { q: 'Is formatting the same as validating?', a: 'No — formatting only changes whitespace. Use the XML Validator tab to check well-formedness, or the XSD Validator to check conformance against a schema.' },
+      { q: 'Does formatting change my data?', a: 'No. Pretty-printing only adjusts whitespace between elements; element order, attributes, text content, comments, and CDATA are preserved.' },
+      { q: 'Is my XML uploaded anywhere?', a: 'No — the formatter runs 100% in your browser. You can disconnect from the network and it still works.' },
+      { q: 'What indentation should I use?', a: '2 spaces is the common default for XML; tabs keep diffs smallest in editors configured for them. The tool supports 2 spaces, 4 spaces, and tabs.' },
+    ],
   },
   '/tools/xml-validator': {
     title: 'Free XML Validator Online - Check Well-Formed XML | OG Technologies EU',
@@ -523,6 +530,11 @@ const routeMeta = {
     title: 'Free XML to CSV Converter Online | OG Technologies EU',
     description: 'Convert XML to CSV online with automatic record element detection. Attributes included as @-prefixed columns. Choose comma, semicolon, or tab delimiter. Download or copy — 100% browser-based.',
     featureList: ["Automatic detection of repeating record elements", "Attributes included as @-prefixed columns", "Configurable delimiter: comma, semicolon, or tab", "Download as .csv file or copy to clipboard"],
+  },
+  '/tools/xsd-validator': {
+    title: 'Free XSD Schema Validator Online - Validate XML Against Schema | OG Technologies EU',
+    description: 'Validate XML against an XSD schema online. Checks element structure, cardinality, required attributes, and simple-type restrictions like enumerations and patterns — with path-level errors. 100% browser-based, no uploads.',
+    featureList: ["Validate XML against XSD 1.0 schemas", "Element structure per xs:sequence, xs:choice, xs:all", "Cardinality checks: minOccurs and maxOccurs", "Required and declared attribute validation", "Simple-type facets: enumeration, pattern, lengths, ranges", "Path-level error reporting"],
   },
   '/tools/merge-pdf': {
     title: 'Free Merge PDF Tool - Combine PDF Files Online | OG Technologies EU',
@@ -602,6 +614,12 @@ const routeMeta = {
     description: 'Parse and inspect ISO 20022 XML messages online: pain.001, pain.008, camt.052/053/054, pacs.008. Auto-detects message type, checks NbOfTxs/CtrlSum consistency, validates embedded IBANs and BICs. 100% client-side.',
     appCategory: "FinanceApplication",
     featureList: ["Auto-detection of message type from namespace", "pain.001, pain.008, camt.052/053/054, pacs.008 support", "NbOfTxs and CtrlSum consistency checks", "Embedded IBAN and BIC validation", "Balances and transaction extraction"],
+  },
+  '/tools/sepa-xml-validator': {
+    title: 'Free SEPA XML Validator - pain.001, pain.008, camt.053 | OG Technologies EU',
+    description: 'Validate SEPA payment files online: pain.001 credit transfers, pain.008 direct debits, camt.053 statements. Checks ISO 20022 structure, SEPA rulebook constraints (EUR currency, SLEV charges, mandates), IBANs and BICs. 100% client-side, no uploads.',
+    appCategory: "FinanceApplication",
+    featureList: ["pain.001 credit transfer, pain.008 direct debit, camt.053 statement checks", "SEPA rulebook constraints: EUR currency, SLEV charge bearer, creditor scheme ID", "NbOfTxs and CtrlSum consistency verification", "IBAN MOD-97 checksum and SEPA-zone reachability", "BIC validation per ISO 9362", "Error / warning / pass findings with detail"],
   },
   '/tools/mt940-to-csv': {
     title: 'Free MT940 to CSV Converter - SWIFT Statement Parser | OG Technologies EU',
@@ -781,6 +799,7 @@ export default defineConfig({
   '/tools/xml-minifier',
   '/tools/xpath-tester',
   '/tools/xml-to-csv',
+  '/tools/xsd-validator',
   '/tools/merge-pdf',
   '/tools/split-pdf',
   '/tools/image-to-pdf',
@@ -795,6 +814,7 @@ export default defineConfig({
   '/tools/bic-validator',
   '/tools/lei-validator',
   '/tools/iso-20022-viewer',
+  '/tools/sepa-xml-validator',
   '/tools/mt940-to-csv',
   '/tools/hl7-parser',
   '/tools/fhir-validator',

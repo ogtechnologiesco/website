@@ -40,6 +40,7 @@ export const searchIndex = [
   { title: 'BIC / SWIFT Validator', description: 'Decode BIC/SWIFT codes per ISO 9362 — institution, country, branch', path: '/tools/bic-validator/' },
   { title: 'LEI Validator', description: 'Validate Legal Entity Identifiers per ISO 17442 with MOD 97-10 check digits', path: '/tools/lei-validator/' },
   { title: 'ISO 20022 Viewer', description: 'Parse pain.001, camt.053, pacs.008 messages with consistency checks', path: '/tools/iso-20022-viewer/' },
+  { title: 'SEPA XML Validator', description: 'Validate pain.001, pain.008, camt.053 files — SEPA rulebook checks, IBAN/BIC validation', path: '/tools/sepa-xml-validator/' },
   { title: 'MT940 to CSV', description: 'Convert SWIFT MT940 bank statements to CSV for Excel', path: '/tools/mt940-to-csv/' },
   { title: 'HL7 v2 Message Parser', description: 'Parse HL7 v2.x messages — segment, field, component breakdown with labels', path: '/tools/hl7-parser/' },
   { title: 'FHIR Resource Viewer', description: 'Validate and inspect FHIR R4 JSON resources', path: '/tools/fhir-validator/' },
@@ -52,6 +53,13 @@ export const searchIndex = [
   { title: 'Email List Validator', description: 'Bulk email syntax check, dedupe, disposable-domain flagging', path: '/tools/email-validator/' },
   { title: 'CSV Deduplicator', description: 'Remove duplicate rows by key columns before CRM import', path: '/tools/csv-deduplicator/' },
   { title: 'Word Counter', description: 'Count words, characters, sentences, paragraphs, and spaces — with reading time and keyword density', path: '/tools/word-counter/' },
+  { title: 'XML Formatter', description: 'Beautify and pretty-print XML with configurable indentation — 100% client-side', path: '/tools/xml-formatter/' },
+  { title: 'XML Validator', description: 'Check XML well-formedness with line/column error reporting', path: '/tools/xml-validator/' },
+  { title: 'XSD Validator', description: 'Validate XML against XSD schemas — structure, cardinality, types', path: '/tools/xsd-validator/' },
+  { title: 'XML to JSON', description: 'Convert XML to JSON with the @-prefix attribute convention', path: '/tools/xml-to-json/' },
+  { title: 'XML Minifier', description: 'Compress XML by removing unnecessary whitespace', path: '/tools/xml-minifier/' },
+  { title: 'XPath Tester', description: 'Evaluate XPath 1.0 expressions against XML documents live', path: '/tools/xpath-tester/' },
+  { title: 'XML to CSV', description: 'Convert XML to CSV with automatic record detection', path: '/tools/xml-to-csv/' },
   // Blog posts
   ...blogPosts.map((post) => ({
     title: post.title,

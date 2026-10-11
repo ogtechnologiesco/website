@@ -74,6 +74,8 @@ const XmlToJsonPage = lazy(() => import('./pages/xmlTools/XmlToJsonPage'));
 const XmlMinifierPage = lazy(() => import('./pages/xmlTools/XmlMinifierPage'));
 const XPathTesterPage = lazy(() => import('./pages/xmlTools/XPathTesterPage'));
 const XmlToCsvPage = lazy(() => import('./pages/xmlTools/XmlToCsvPage'));
+const XsdValidatorPage = lazy(() => import('./pages/xmlTools/XsdValidatorPage'));
+const SepaXmlValidator = lazy(() => import('./pages/sepaValidator'));
 const PdfMergePage = lazy(() => import('./pages/pdfTools/PdfMergePage'));
 const PdfSplitPage = lazy(() => import('./pages/pdfTools/PdfSplitPage'));
 const ImageToPdfPage = lazy(() => import('./pages/pdfTools/ImageToPdfPage'));
@@ -253,6 +255,8 @@ function App() {
         <Route exact path="/tools/xml-minifier" element={<XmlMinifierPage/>} />
         <Route exact path="/tools/xpath-tester" element={<XPathTesterPage/>} />
         <Route exact path="/tools/xml-to-csv" element={<XmlToCsvPage/>} />
+        <Route exact path="/tools/xsd-validator" element={<XsdValidatorPage/>} />
+        <Route exact path="/tools/sepa-xml-validator" element={<SepaXmlValidator/>} />
         <Route exact path="/tools/merge-pdf" element={<PdfMergePage/>} />
         <Route exact path="/tools/split-pdf" element={<PdfSplitPage/>} />
         <Route exact path="/tools/image-to-pdf" element={<ImageToPdfPage/>} />

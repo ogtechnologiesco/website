@@ -148,6 +148,31 @@ function Iso27001GapAnalysis() {
                         </ul>
                       </div>
 
+                      <div className="bg-gray-800 rounded-lg p-8 border border-purple-700/50 mb-8">
+                        <h3 className="text-xl font-bold text-white mb-3">Free Gap Analysis Template</h3>
+                        <p className="text-gray-300 text-sm mb-4">
+                          Prefer working in a spreadsheet? Download our ISO/IEC 27001:2022 gap analysis
+                          template — all clauses 4–10 and the 93 Annex A controls, pre-structured with
+                          columns for status, gap severity, evidence, remediation, owner, and due date.
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                          <a
+                            href="/downloads/iso-27001-gap-analysis-template.xlsx"
+                            download
+                            className="px-4 py-2 rounded-md bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors"
+                          >
+                            Download Excel (.xlsx)
+                          </a>
+                          <a
+                            href="/downloads/iso-27001-annex-a-controls.csv"
+                            download
+                            className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors"
+                          >
+                            Annex A controls (.csv)
+                          </a>
+                        </div>
+                      </div>
+
                       <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
                         <h3 className="text-xl font-bold text-white mb-4">How It Works</h3>
                         <ul className="space-y-2 text-gray-300">
@@ -216,6 +241,15 @@ function Iso27001GapAnalysis() {
                         clause-by-clause and Annex A breakdown, a prioritized gap list with remediation
                         recommendations, and an estimated timeline to certification readiness — formatted for
                         sharing with management or auditors.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">Is there a spreadsheet template I can use instead?</h3>
+                      <p className="text-sm">
+                        Yes — the <a href="/downloads/iso-27001-gap-analysis-template.xlsx" className="text-purple-400 hover:text-purple-300 underline" download>free gap analysis template</a> covers
+                        clauses 4–10 and all 93 Annex A controls with columns for status, severity, evidence,
+                        remediation, owner, and due date. Use it for workshop-style assessments; use this
+                        online tool for an instant scored result with a PDF report.
                       </p>
                     </div>
                     <div>

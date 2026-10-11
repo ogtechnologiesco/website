@@ -14,6 +14,13 @@ const DEFAULT_REPLY =
 
 const REPLY_RULES = [
   {
+    // "ai" uses a word-boundary pattern so words like "email" or "detail" don't match.
+    pattern: '\\b(ai|agents?|guardrails?)\\b',
+    keywords: ['ai agent', 'artificial intelligence', 'ai governance', 'ai control'],
+    reply:
+      'AI is powerful — control is essential 🔐 Our ISO 42001 AI management guide: https://www.ogtechnologies.co/insights/iso-42001-ai-management-guide/ — free AI readiness check: https://www.ogtechnologies.co/tools/iso-42001-ai-readiness/ — want to talk through your setup? Just reply here.',
+  },
+  {
     keywords: ['pricing', 'price', 'cost', 'quote', 'budget', 'how much', 'precio', 'cotización'],
     reply:
       "Thanks for your interest! You can find our plans at https://www.ogtechnologies.co/pricing/ or request a custom quote at https://www.ogtechnologies.co/quote/",
@@ -204,7 +211,10 @@ async function processEntries(entries) {
 function matchReply(text, rules) {
   const normalized = text.toLowerCase();
   for (const rule of rules) {
-    if (rule.keywords.some((keyword) => normalized.includes(keyword))) {
+    if (rule.pattern && new RegExp(rule.pattern, 'i').test(normalized)) {
+      return rule.reply;
+    }
+    if (rule.keywords && rule.keywords.some((keyword) => normalized.includes(keyword))) {
       return rule.reply;
     }
   }
