@@ -169,7 +169,7 @@ const routeMeta = {
     article: {"datePublished": "2026-09-26", "dateModified": "2026-10-12", "author": {"@type": "Organization", "name": "OG Technologies EU"}, "image": "https://www.ogtechnologies.co/og-og-image.png"},
     faq: [
       { q: 'How long does an ISO 27001 gap analysis take?', a: 'A focused self-assessment takes 2–4 hours with a structured questionnaire. A consultant-led analysis for a mid-size company typically runs 2–4 weeks including document review and interviews.' },
-      { q: 'Is there a free ISO 27001 gap analysis template?', a: 'Yes — download the free Excel template covering clauses 4–10 and all 93 Annex A controls, with columns for status, gap severity, evidence, remediation, owner, and due date. A CSV of the Annex A controls is also available.' },
+      { q: 'Is there a free ISO 27001 gap analysis template?', a: 'Yes — download the free Excel or PDF template covering clauses 4–10 and all 93 Annex A controls, with columns for status, gap severity, evidence, remediation, owner, and due date. A CSV of the Annex A controls is also available.' },
       { q: 'What is the difference between a gap analysis and a gap assessment?', a: 'The terms are used interchangeably. "Gap analysis" emphasizes the comparison methodology; "gap assessment" emphasizes the scoring deliverable. Both measure distance from ISO 27001 conformity.' },
       { q: 'Do I need a gap analysis before certification?', a: 'It is not a formal requirement, but skipping it is the most common cause of failed Stage 1 audits. Certification bodies expect you to arrive with a working ISMS — the gap analysis is how you find out whether you have one.' },
       { q: 'Can I get a gap analysis report as a PDF?', a: 'Yes. The ISO 27001 Gap Assessment tool generates a downloadable PDF report with per-clause scores and remediation priorities, free and browser-based.' },
@@ -257,7 +257,7 @@ const routeMeta = {
   },
   '/insights/iso-42001-annex-a-controls': {
     title: 'ISO/IEC 42001 Annex A Controls: The Complete List of 38 Controls Across 9 Domains | OG Technologies EU',
-    description: 'Every ISO/IEC 42001:2023 Annex A control listed: all 38 controls across the 9 domains (A.2–A.10) with one-line descriptions, plus a free Excel/CSV controls-list download and how to select controls in your AI Statement of Applicability.',
+    description: 'Every ISO/IEC 42001:2023 Annex A control listed: all 38 controls across the 9 domains (A.2–A.10) with one-line descriptions, plus a free Excel, PDF, or CSV controls-list download and how to select controls in your AI Statement of Applicability.',
     ogType: 'article',
     article: {
       datePublished: '2026-10-03',

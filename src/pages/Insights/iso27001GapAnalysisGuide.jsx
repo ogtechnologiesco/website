@@ -94,6 +94,9 @@ function Iso27001GapAnalysisGuide() {
                         <a href="/downloads/iso-27001-gap-analysis-template.xlsx" download className="px-4 py-2 rounded-md bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors">
                           Download Excel template (.xlsx)
                         </a>
+                        <a href="/downloads/iso-27001-gap-analysis-template.pdf" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
+                          Printable PDF template
+                        </a>
                         <a href="/downloads/iso-27001-annex-a-controls.csv" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
                           Annex A controls only (.csv)
                         </a>

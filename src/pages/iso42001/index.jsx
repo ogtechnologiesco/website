@@ -166,6 +166,9 @@ function Iso42001AiReadiness() {
                           <a href="/downloads/iso-42001-annex-a-controls.xlsx" download className="px-4 py-2 rounded-md bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors">
                             Download Excel (.xlsx)
                           </a>
+                          <a href="/downloads/iso-42001-annex-a-controls.pdf" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
+                            Controls list (.pdf)
+                          </a>
                           <a href="/downloads/iso-42001-annex-a-controls.csv" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
                             CSV
                           </a>
