@@ -4,6 +4,7 @@
 
 ## Products
 
+- [OG CRM & Ticketing](https://www.ogtechnologies.co/products/): CRM and helpdesk platform — contacts, companies, deals, activities, and ticketing in one place
 - [EduNode](https://www.ogtechnologies.co/products/): Education platform built on Web3 technology
 - [Mozart Pay](https://www.ogtechnologies.co/products/): Payment infrastructure solution
 
@@ -77,10 +78,13 @@
 - [MT940 Format Explained](https://www.ogtechnologies.co/insights/mt940-format-camt053-migration/): Field tags, the :61: statement line, structured :86: remittance data, and the camt.053 migration
 - [eIDAS 2.0 and the EUDI Wallet](https://www.ogtechnologies.co/insights/eidas2-eudi-wallet/): What the European Digital Identity Wallet means for businesses before the rollout
 - [OData Query Options Guide](https://www.ogtechnologies.co/insights/odata-query-options-guide/): $filter, $select, $expand, $orderby, paging, and SAP Gateway specifics
+- [How to Choose a CRM & Ticketing System](https://www.ogtechnologies.co/insights/how-to-choose-crm-ticketing-system/): Buyer's guide — capabilities, migration, GDPR, integrations, and pricing checklist
+- [Helpdesk Workflow Best Practices](https://www.ogtechnologies.co/insights/helpdesk-workflow-best-practices/): Ticket intake, triage, SLAs, escalation, automation, and support metrics
 
 ## Resources
 
 - [Blog](https://www.ogtechnologies.co/blog/): Insights on Web3, blockchain, and enterprise IT
+- [Introducing OG CRM & Ticketing](https://www.ogtechnologies.co/blog/introducing-og-crm-ticketing/): Contacts, deals, and customer support in one platform — CSV import and free tier
 - [Entrepreneurship Avenue 2026 Workshop Recap](https://www.ogtechnologies.co/blog/entrepreneurship-avenue-2026/): AI agent architecture for startups — sense-think-act, MCP orchestration, RAG, and model selection
 - [Partner Program](https://www.ogtechnologies.co/partners/): Revenue share partnerships — referral, reseller, and co-delivery models
 - [Ventures](https://www.ogtechnologies.co/ventures/): Supporting startups and spin-offs

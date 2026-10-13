@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Header from '../../partials/Header';
 import Footer from '../../partials/Footer';
 import PageIllustration from '../../partials/PageIllustration';
@@ -183,6 +184,29 @@ function VcardGenerator() {
                     for Outlook and older clients; 4.0 (RFC 6350) is the modern default on Android and most apps.
                     Files are generated with proper line folding and escaping.
                   </p>
+                </div>
+
+                {/* CRM cross-promotion */}
+                <div className="mt-8 bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-lg p-6 border border-purple-500/30">
+                  <h2 className="text-lg font-semibold text-white mb-2">Need more than a contact card?</h2>
+                  <p className="text-gray-300 text-sm mb-4">
+                    OG CRM keeps your whole contact database in one place — contacts, companies, deals, activities,
+                    and a built-in ticketing helpdesk. Import a CSV of contacts in minutes.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link
+                      to="/crm/"
+                      className="bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold py-2.5 px-5 rounded-md transition duration-150 ease-in-out text-center"
+                    >
+                      Open OG CRM
+                    </Link>
+                    <Link
+                      to="/products/"
+                      className="bg-transparent border border-purple-500 text-purple-300 hover:bg-purple-600 hover:text-white text-sm font-semibold py-2.5 px-5 rounded-md transition duration-150 ease-in-out text-center"
+                    >
+                      Learn about the CRM &amp; Ticketing platform
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

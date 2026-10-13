@@ -5,6 +5,7 @@ import ebsi from '../images/ebsi2.png';
 import digitalPaymentsFuture from '../images/digital-payments-future.jpg';
 import earthquakeStandards from '../images/pereira-earthquake.jpg';
 import entrepreneurshipAvenue2026 from '../images/entrepreneurship-avenue-2026-hero.jpg';
+import ogCrmLaunch from '../images/blog-og-crm-launch.jpg';
 
 export const blogPosts = [
   {
@@ -72,9 +73,19 @@ export const blogPosts = [
     link: '/blog/entrepreneurship-avenue-2026/',
     categories: ['Events', 'Company', 'AI'],
   },
+  {
+    title: 'Introducing OG CRM & Ticketing: Contacts, Deals, and Support in One Platform',
+    date: '13/10/2026',
+    description:
+      'Announcing our flagship CRM & Ticketing platform: contacts, companies, leads, opportunities, activities, and a full helpdesk — with CSV import and a free tier.',
+    image: ogCrmLaunch,
+    imageText: 'OG CRM & Ticketing platform launch',
+    link: '/blog/introducing-og-crm-ticketing/',
+    categories: ['Company', 'Product'],
+  },
 ];
 
-export const allCategories = ['All', 'AI', 'Blockchain', 'Web3', 'Standards', 'Compliance', 'Payments', 'Company', 'Events'];
+export const allCategories = ['All', 'AI', 'Blockchain', 'Web3', 'Standards', 'Compliance', 'Payments', 'Company', 'Events', 'Product'];
 
 export function getRelatedPosts(currentLink, categories, count = 3) {
   return blogPosts

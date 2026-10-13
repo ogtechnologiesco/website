@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Header from '../../partials/Header';
 import Footer from '../../partials/Footer';
 import PageIllustration from '../../partials/PageIllustration';
@@ -237,6 +238,30 @@ function CsvDeduplicator() {
                     and <code className="text-gray-400">john@example.com</code> count as duplicates. Select multiple
                     columns for stricter matching — e.g. first name + last name + email.
                   </p>
+                </div>
+
+                {/* CRM cross-promotion */}
+                <div className="mt-8 bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-lg p-6 border border-purple-500/30">
+                  <h2 className="text-lg font-semibold text-white mb-2">Clean CSV? Import it straight into OG CRM</h2>
+                  <p className="text-gray-300 text-sm mb-4">
+                    OG CRM is our CRM and ticketing platform — contacts, companies, deals, activities, and a full
+                    helpdesk in one place. The built-in importer maps your CSV columns, deduplicates by email, and
+                    shows per-row results.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link
+                      to="/crm/import/"
+                      className="bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold py-2.5 px-5 rounded-md transition duration-150 ease-in-out text-center"
+                    >
+                      Import into OG CRM
+                    </Link>
+                    <Link
+                      to="/products/"
+                      className="bg-transparent border border-purple-500 text-purple-300 hover:bg-purple-600 hover:text-white text-sm font-semibold py-2.5 px-5 rounded-md transition duration-150 ease-in-out text-center"
+                    >
+                      Learn about the CRM &amp; Ticketing platform
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

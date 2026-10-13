@@ -123,6 +123,7 @@ All canonical URLs use `https://www.ogtechnologies.co` with a trailing slash.
 7. **Verify** — run `npm run build` and confirm the route appears in the prerendered output (`dist/<route>/index.html` contains the injected meta and JSON-LD).
 
 Notes:
+- Blog/insight cards need a hero image in `src/images/` (imported by `blogPosts.js`/`insightsPosts.js`). To generate a branded placeholder: write a 1200×675 SVG, screenshot it with headless Chrome (`--headless --screenshot=out.png --window-size=1200,675 file.svg`), then `sips -s format jpeg` to JPG. `qlmanage` thumbnails crop SVGs — don't use them.
 - `robots.txt` allows all crawlers including AI bots — only touch it to disallow a route.
 - `public/_redirects` SPA fallback (`/* /index.html 200`) covers new routes automatically; no edit needed.
 - `/insights`'s `CollectionPage` schema in `routeMeta` contains a static `hasPart` article list — when adding a new insights post, append its `{headline, description, url}` there too.

@@ -36,6 +36,7 @@ const Ebsi = lazy(() => import('./pages/Blogs/ebsi'));
 const DigitalPaymentsFuture = lazy(() => import('./pages/Blogs/digitalPaymentsFuture'));
 const EarthquakeStandards = lazy(() => import('./pages/Blogs/earthquakeStandards'));
 const EntrepreneurshipAvenue2026 = lazy(() => import('./pages/Blogs/entrepreneurshipAvenue2026'));
+const OgCrmTicketing = lazy(() => import('./pages/Blogs/ogCrmTicketing'));
 const HtmlToImage = lazy(() => import('./pages/HtmlToImage'));
 const ScreenshotToImage = lazy(() => import('./pages/ScreenshotToImage'));
 const PdfTools = lazy(() => import('./pages/pdfTools'));
@@ -125,6 +126,8 @@ const HowToMergePdfFiles = lazy(() => import('./pages/Insights/howToMergePdfFile
 const Mt940Format = lazy(() => import('./pages/Insights/mt940Format'));
 const Eidas2EudiWallet = lazy(() => import('./pages/Insights/eidas2EudiWallet'));
 const OdataQueryOptions = lazy(() => import('./pages/Insights/odataQueryOptions'));
+const ChooseCrmTicketing = lazy(() => import('./pages/Insights/chooseCrmTicketing'));
+const HelpdeskWorkflow = lazy(() => import('./pages/Insights/helpdeskWorkflow'));
 
 
 function App() {
@@ -213,6 +216,7 @@ function App() {
         <Route exact path="/blog/digital-payments-future" element={<DigitalPaymentsFuture/>} />
         <Route exact path="/blog/estandares-sismicos-colombia" element={<EarthquakeStandards/>} />
         <Route exact path="/blog/entrepreneurship-avenue-2026" element={<EntrepreneurshipAvenue2026/>} />
+        <Route exact path="/blog/introducing-og-crm-ticketing" element={<OgCrmTicketing/>} />
         <Route exact path="/insights" element={<Insights/>} />
         <Route exact path="/insights/iso-20022-migration-guide" element={<Iso20022Migration/>} />
         <Route exact path="/insights/iso-42001-ai-management-guide" element={<Iso42001Guide/>} />
@@ -233,6 +237,8 @@ function App() {
         <Route exact path="/insights/mt940-format-camt053-migration" element={<Mt940Format/>} />
         <Route exact path="/insights/eidas2-eudi-wallet" element={<Eidas2EudiWallet/>} />
         <Route exact path="/insights/odata-query-options-guide" element={<OdataQueryOptions/>} />
+        <Route exact path="/insights/how-to-choose-crm-ticketing-system" element={<ChooseCrmTicketing/>} />
+        <Route exact path="/insights/helpdesk-workflow-best-practices" element={<HelpdeskWorkflow/>} />
         <Route exact path="/tools" element={<Tools/>} />
         <Route exact path="/tools/html-to-image" element={<HtmlToImage/>} />
         <Route exact path="/tools/screenshot-to-image" element={<ScreenshotToImage/>} />

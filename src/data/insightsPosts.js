@@ -17,6 +17,8 @@ import mergePdfImage from '../images/insight-merge-pdf.jpg';
 import mt940Image from '../images/insight-mt940-camt053.jpg';
 import eudiWalletImage from '../images/insight-eudi-wallet.jpg';
 import odataImage from '../images/insight-odata-query.jpg';
+import chooseCrmImage from '../images/insight-choose-crm.jpg';
+import helpdeskWorkflowImage from '../images/insight-helpdesk-workflow.jpg';
 
 export const insightsPosts = [
   {
@@ -209,6 +211,26 @@ export const insightsPosts = [
     link: '/insights/odata-query-options-guide/',
     categories: ['Developer', 'Standards'],
   },
+  {
+    title: "How to Choose a CRM and Ticketing System: A Practical Buyer's Guide",
+    date: '13/10/2026',
+    description:
+      'A framework for evaluating CRM and ticketing platforms: must-have capabilities, data model, CSV import and migration, GDPR, integrations, and pricing — plus a 10-point buyer checklist.',
+    image: chooseCrmImage,
+    imageText: 'Choosing a CRM and ticketing system',
+    link: '/insights/how-to-choose-crm-ticketing-system/',
+    categories: ['Tools', 'Business'],
+  },
+  {
+    title: 'Helpdesk Workflow Best Practices: From Ticket Intake to Resolution',
+    date: '13/10/2026',
+    description:
+      'Intake, triage, resolve, learn — a practical helpdesk workflow covering priority and SLA rules, ownership and escalation, automation, and the metrics that matter.',
+    image: helpdeskWorkflowImage,
+    imageText: 'Helpdesk workflow stages from intake to resolution',
+    link: '/insights/helpdesk-workflow-best-practices/',
+    categories: ['Business', 'Tools'],
+  },
 ];
 
 export const allInsightCategories = [
@@ -223,6 +245,7 @@ export const allInsightCategories = [
   'Blockchain',
   'Developer',
   'Tools',
+  'Business',
 ];
 
 export function getRelatedInsights(currentLink, categories, count = 3) {
