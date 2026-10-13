@@ -191,7 +191,9 @@ export const apiRequest = async (method, url, data = null, config = {}) => {
     }).catch(error => {
       pendingRequests.delete(requestKey);
       const errorMessage = handleApiError(error);
-      throw new Error(errorMessage);
+      const wrappedError = new Error(errorMessage);
+      wrappedError.original = error;
+      throw wrappedError;
     });
     
     pendingRequests.set(requestKey, requestPromise);

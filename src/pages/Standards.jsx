@@ -50,6 +50,9 @@ function Standards() {
                   <p className="text-lg text-gray-300">
                     As Austrian delegates for ISO/TC 307 and CEN CENELEC JTC 19, we provide unparalleled expertise in blockchain and digital ledger technology standardization, complemented by comprehensive financial services and sustainability standards consulting.
                   </p>
+                  <p className="text-lg text-gray-400 mt-4">
+                    See our published standardization reports on the <Link to="/publications/" className="text-purple-400 hover:text-purple-300">publications page</Link>.
+                  </p>
                 </div>
               </div>
 

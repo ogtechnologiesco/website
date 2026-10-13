@@ -187,6 +187,7 @@ function Header() {
                   <div className="absolute left-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50">
                     <Link to="/blog/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setResourcesOpen(false)}>Blog</Link>
                     <Link to="/insights/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setResourcesOpen(false)}>Insights</Link>
+                    <Link to="/publications/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setResourcesOpen(false)}>Publications</Link>
                     <Link to="/careers/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setResourcesOpen(false)}>Careers</Link>
                     <Link to="/quote/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setResourcesOpen(false)}>Request a Quote</Link>
                   </div>

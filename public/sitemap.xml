@@ -79,6 +79,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.ogtechnologies.co/publications/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.ogtechnologies.co/terms/</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>

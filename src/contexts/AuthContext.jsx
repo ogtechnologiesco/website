@@ -162,9 +162,14 @@ export const AuthProvider = ({ children }) => {
           });
         } catch (error) {
           console.warn('Token validation failed:', error.message);
-          // Token is invalid, clear storage
-          localStorage.removeItem('jwtToken');
-          localStorage.removeItem('user');
+          // Only clear credentials when the server actually rejected the token.
+          // Network errors/timeouts (e.g. a cold-starting backend) should not
+          // log the user out — the next load can retry validation. Genuine 401s
+          // are already handled by the response interceptor in api.jsx.
+          if (error.original?.response) {
+            localStorage.removeItem('jwtToken');
+            localStorage.removeItem('user');
+          }
           dispatch({
             type: AUTH_ACTIONS.LOAD_USER_FAILURE
           });

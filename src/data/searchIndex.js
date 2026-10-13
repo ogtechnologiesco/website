@@ -13,6 +13,7 @@ export const searchIndex = [
   { title: 'Portfolio', description: 'Innovative projects including EduNode and Mozart Pay', path: '/portfolio/' },
   { title: 'Careers', description: 'Join OG Technologies EU - jobs in Web3, blockchain, and enterprise IT', path: '/careers/' },
   { title: 'Partner Program', description: 'Revenue share partnerships for consultants, MSPs, and agencies - referral, reseller, and co-delivery models', path: '/partners/' },
+  { title: 'Publications', description: 'Blockchain standardization reports on cross-border payments — BlockStand expert deliverables', path: '/publications/' },
   { title: 'Request a Quote', description: 'Get a customized quote for IT consulting services', path: '/quote/' },
   { title: 'Helpdesk', description: 'IT helpdesk and support services', path: '/helpdesk/' },
   { title: 'Terms and Conditions', description: 'Terms for using OG Technologies EU website and services', path: '/terms/' },

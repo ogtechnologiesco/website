@@ -1152,7 +1152,22 @@ function PublicHelpdesk() {
 }
 
 function HelpDesk() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isInitialized, token } = useAuth();
+
+  // Wait for the initial token validation before choosing a view, otherwise a
+  // stored session briefly renders the public page (and on slow backend cold
+  // starts it looks like the dashboard never loads).
+  if (!isInitialized && token) {
+    return (
+      <div className="flex flex-col min-h-screen overflow-hidden bg-gray-900">
+        <Header />
+        <main className="grow flex items-center justify-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   if (isAuthenticated) {
     return <HelpdeskDashboard />;
