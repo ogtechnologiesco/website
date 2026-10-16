@@ -21,6 +21,8 @@ import chooseCrmImage from '../images/insight-choose-crm.jpg';
 import helpdeskWorkflowImage from '../images/insight-helpdesk-workflow.jpg';
 import iso9001Image from '../images/insight-iso9001-implementation.jpg';
 import iso27001AnnexAImage from '../images/insight-iso27001-annexa.jpg';
+import soc2TscImage from '../images/insight-soc2-tsc.jpg';
+import soc2VsIsoImage from '../images/insight-soc2-vs-iso27001.jpg';
 
 export const insightsPosts = [
   {
@@ -252,6 +254,26 @@ export const insightsPosts = [
     imageText: 'ISO/IEC 27001 Annex A controls',
     link: '/insights/iso-27001-annex-a-controls/',
     categories: ['Standards', 'Compliance', 'Security'],
+  },
+  {
+    title: 'SOC 2 Trust Services Criteria: The Complete List Explained',
+    date: '16/10/2026',
+    description:
+      'All 52 AICPA Trust Services Criteria: the 33 Common Criteria (CC1–CC9) required in every SOC 2 report, plus the optional Availability, Processing Integrity, Confidentiality, and Privacy categories.',
+    image: soc2TscImage,
+    imageText: 'SOC 2 Trust Services Criteria checklist',
+    link: '/insights/soc-2-trust-services-criteria/',
+    categories: ['Compliance', 'Security', 'Standards'],
+  },
+  {
+    title: 'SOC 2 vs ISO 27001: Differences, Overlap, and Which You Need',
+    date: '16/10/2026',
+    description:
+      'Attestation vs certification, Trust Services Criteria vs Annex A, Type I/II vs 3-year cycle — a practical comparison for teams choosing (or combining) the two frameworks.',
+    image: soc2VsIsoImage,
+    imageText: 'SOC 2 vs ISO 27001 comparison',
+    link: '/insights/soc-2-vs-iso-27001/',
+    categories: ['Compliance', 'Security', 'Standards'],
   },
 ];
 

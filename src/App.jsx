@@ -44,6 +44,7 @@ const SecurityTools = lazy(() => import('./pages/securityTools'));
 const BlockchainCompliance = lazy(() => import('./pages/blockchainCompliance'));
 const Iso27001GapAnalysis = lazy(() => import('./pages/iso27001'));
 const Iso9001ReadinessChecker = lazy(() => import('./pages/iso9001'));
+const Soc2ReadinessChecker = lazy(() => import('./pages/soc2'));
 const Iso42001AiReadiness = lazy(() => import('./pages/iso42001'));
 const Iso8601Validator = lazy(() => import('./pages/iso8601'));
 const EthereumToolkit = lazy(() => import('./pages/ethereumToolkit'));
@@ -121,6 +122,8 @@ const DoraCryptoWeb3 = lazy(() => import('./pages/Insights/doraCryptoWeb3'));
 const StellarCrossBorderPayments = lazy(() => import('./pages/Insights/stellarCrossBorderPayments'));
 const Iso27001Soa = lazy(() => import('./pages/Insights/iso27001Soa'));
 const Iso27001AnnexA = lazy(() => import('./pages/Insights/iso27001AnnexA'));
+const Soc2TrustServicesCriteria = lazy(() => import('./pages/Insights/soc2TrustServicesCriteria'));
+const Soc2VsIso27001 = lazy(() => import('./pages/Insights/soc2VsIso27001'));
 const Iso42001AnnexA = lazy(() => import('./pages/Insights/iso42001AnnexA'));
 const IntegratedManagementSystem = lazy(() => import('./pages/Insights/integratedManagementSystem'));
 const Iso8601Format = lazy(() => import('./pages/Insights/iso8601Format'));
@@ -235,6 +238,8 @@ function App() {
         <Route exact path="/insights/stellar-cross-border-payments-anchors-sep24" element={<StellarCrossBorderPayments/>} />
         <Route exact path="/insights/iso-27001-statement-of-applicability" element={<Iso27001Soa/>} />
         <Route exact path="/insights/iso-27001-annex-a-controls" element={<Iso27001AnnexA/>} />
+        <Route exact path="/insights/soc-2-trust-services-criteria" element={<Soc2TrustServicesCriteria/>} />
+        <Route exact path="/insights/soc-2-vs-iso-27001" element={<Soc2VsIso27001/>} />
         <Route exact path="/insights/iso-42001-annex-a-controls" element={<Iso42001AnnexA/>} />
         <Route exact path="/insights/integrated-management-system-iso-9001-27001-42001" element={<IntegratedManagementSystem/>} />
         <Route exact path="/insights/iso-8601-format-guide" element={<Iso8601Format/>} />
@@ -253,6 +258,7 @@ function App() {
         <Route exact path="/tools/blockchain-compliance-checker" element={<BlockchainCompliance/>} />
         <Route exact path="/tools/iso-27001-gap-analysis" element={<Iso27001GapAnalysis/>} />
         <Route exact path="/tools/iso-9001-readiness-checker" element={<Iso9001ReadinessChecker/>} />
+        <Route exact path="/tools/soc-2-readiness-checker" element={<Soc2ReadinessChecker/>} />
         <Route exact path="/tools/iso-42001-ai-readiness" element={<Iso42001AiReadiness/>} />
         <Route exact path="/tools/iso-8601-validator" element={<Iso8601Validator/>} />
         <Route exact path="/tools/ethereum-toolkit" element={<EthereumToolkit/>} />

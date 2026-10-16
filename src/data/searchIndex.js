@@ -31,6 +31,7 @@ export const searchIndex = [
   { title: 'ISO 27001 Gap Analysis', description: 'Free ISO/IEC 27001:2022 gap analysis tool — assess your ISMS readiness', path: '/tools/iso-27001-gap-analysis/' },
   { title: 'ISO 9001 Readiness Checker', description: 'Free ISO 9001:2015 readiness checker — assess your QMS', path: '/tools/iso-9001-readiness-checker/' },
   { title: 'ISO 42001 AI Readiness', description: 'Free ISO/IEC 42001:2023 AI readiness assessment — evaluate your AIMS', path: '/tools/iso-42001-ai-readiness/' },
+  { title: 'SOC 2 Readiness Checker', description: 'Free SOC 2 readiness assessment against the AICPA Trust Services Criteria — Security, Availability, Processing Integrity, Confidentiality, Privacy', path: '/tools/soc-2-readiness-checker/' },
   { title: 'ISO 8601 Date Validator', description: 'Free ISO 8601 / RFC 3339 date validator — validate date strings in bulk', path: '/tools/iso-8601-validator/' },
   { title: 'Ethereum Developer Toolkit', description: 'Free Ethereum tools: Wei/Gwei/ETH converter, Keccak256 hash, function selector, ABI encoder, EIP-55 address checksum', path: '/tools/ethereum-toolkit/' },
   { title: 'AWS ARN Parser', description: 'Parse AWS ARN strings into components or build valid ARNs from fields', path: '/tools/aws-arn-parser/' },

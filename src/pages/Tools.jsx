@@ -97,6 +97,7 @@ const TOOL_CATEGORIES = [
       { name: 'ISO 27001 Gap Analysis', path: '/tools/iso-27001-gap-analysis/', description: 'Assess your ISMS against ISO/IEC 27001:2022.' },
       { name: 'ISO 9001 Readiness Checker', path: '/tools/iso-9001-readiness-checker/', description: 'Assess your QMS against ISO 9001:2015.' },
       { name: 'ISO 42001 AI Readiness', path: '/tools/iso-42001-ai-readiness/', description: 'Evaluate your AIMS against ISO/IEC 42001:2023.' },
+      { name: 'SOC 2 Readiness Checker', path: '/tools/soc-2-readiness-checker/', description: 'Assess your controls against the AICPA Trust Services Criteria.' },
       { name: 'ISO 8601 Date Validator', path: '/tools/iso-8601-validator/', description: 'Validate ISO 8601 / RFC 3339 date-time strings.' },
     ],
   },
