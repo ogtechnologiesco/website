@@ -20,6 +20,16 @@ const TABS = [
   { id: 'csv', label: 'XML → CSV', path: '/tools/xml-to-csv/', component: XmlToCsv },
 ];
 
+const TOOL_INDEX = [
+  { name: 'XML Formatter & Beautifier', path: '/tools/xml-formatter/', description: 'Pretty-print minified XML with 2-space, 4-space, or tab indentation. Preserves comments and CDATA.' },
+  { name: 'XML Validator', path: '/tools/xml-validator/', description: 'Check XML well-formedness: unclosed tags, bad nesting, unescaped characters — with line and column errors.' },
+  { name: 'XSD Schema Validator', path: '/tools/xsd-validator/', description: 'Validate XML against an XSD schema: structure, cardinality, required attributes, and type restrictions.' },
+  { name: 'XML to JSON Converter', path: '/tools/xml-to-json/', description: 'Convert XML to JSON with @-prefix attributes and automatic arrays — xml2js/xmltodict compatible.' },
+  { name: 'XML to CSV Converter', path: '/tools/xml-to-csv/', description: 'Flatten XML records into CSV with automatic record detection and configurable delimiters.' },
+  { name: 'XML Minifier', path: '/tools/xml-minifier/', description: 'Strip whitespace to compress XML for production payloads — with before/after size comparison.' },
+  { name: 'XPath Tester', path: '/tools/xpath-tester/', description: 'Evaluate XPath 1.0 expressions live against your document, with typed results and example queries.' },
+];
+
 function XmlTools() {
   const ActiveComponent = TABS[0].component;
 
@@ -82,6 +92,28 @@ function XmlTools() {
                 </div>
 
                 <ActiveComponent />
+
+                <div className="mt-12">
+                  <h2 className="h4 mb-4">All XML tools</h2>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {TOOL_INDEX.map((tool) => (
+                      <Link
+                        key={tool.path}
+                        to={tool.path}
+                        className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-purple-600 transition-colors"
+                      >
+                        <p className="text-sm font-semibold text-gray-200">{tool.name}</p>
+                        <p className="text-xs text-gray-500 mt-1">{tool.description}</p>
+                      </Link>
+                    ))}
+                  </div>
+                  <p className="mt-4 text-sm text-gray-500">
+                    Every tool runs 100% in your browser — no uploads, no accounts, no limits. Validating
+                    SEPA or payment files specifically? Try the{' '}
+                    <Link to="/tools/sepa-xml-validator/" className="text-purple-400 hover:text-purple-300">SEPA XML Validator</Link>{' '}
+                    or the <Link to="/tools/iso-20022-viewer/" className="text-purple-400 hover:text-purple-300">ISO 20022 Viewer</Link>.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

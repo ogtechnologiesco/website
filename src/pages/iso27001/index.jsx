@@ -201,6 +201,24 @@ function Iso27001GapAnalysis() {
                           </li>
                         </ul>
                       </div>
+
+                      <div className="bg-gray-800 rounded-lg p-8 border border-gray-700 mt-8">
+                        <h3 className="text-xl font-bold text-white mb-4">Further Reading</h3>
+                        <ul className="space-y-3 text-gray-300 text-sm">
+                          <li className="flex items-start">
+                            <span className="text-purple-400 mr-2 mt-1">→</span>
+                            <a href="/insights/iso-27001-annex-a-controls/" className="text-purple-400 hover:text-purple-300 underline">ISO/IEC 27001 Annex A: the complete list of all 93 controls</a>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-purple-400 mr-2 mt-1">→</span>
+                            <a href="/insights/iso-27001-gap-analysis-guide/" className="text-purple-400 hover:text-purple-300 underline">How to run a gap analysis: the step-by-step guide</a>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-purple-400 mr-2 mt-1">→</span>
+                            <a href="/insights/iso-27001-statement-of-applicability/" className="text-purple-400 hover:text-purple-300 underline">Statement of Applicability: choosing and justifying controls</a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
 
                     {/* Right Column — Form */}

@@ -50,6 +50,12 @@ function XmlValidatorPage() {
           ],
         },
       ]}
+      faq={[
+        { q: 'What does "well-formed" XML mean?', a: 'The document follows XML\'s basic syntax rules: every element is closed, attributes are quoted, special characters are escaped, nesting is correct, and there is exactly one root element. Well-formed is the minimum every XML parser requires.' },
+        { q: 'What is the difference between well-formed and valid XML?', a: 'Well-formed means syntactically correct. Valid means it also conforms to a schema (XSD or DTD) that defines which elements and attributes are allowed. This tool checks well-formedness; use the XSD Validator tab for schema validation.' },
+        { q: 'Which errors does the validator catch?', a: 'Unclosed or mismatched tags, bad nesting, unescaped & < > characters, duplicate attributes, multiple root elements, and content outside the root — each reported with line and column numbers.' },
+        { q: 'Is my XML uploaded or stored?', a: 'No — validation uses the browser\'s built-in DOM parser locally. Nothing is sent to a server, which makes it safe for configs containing internal endpoints or credentials.' },
+      ]}
       
     >
       <XmlValidator />

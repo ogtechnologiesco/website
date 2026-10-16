@@ -49,6 +49,12 @@ function XmlToJsonPage() {
           ],
         },
       ]}
+      faq={[
+        { q: 'How are XML attributes converted?', a: 'Attributes become @-prefixed JSON properties — <item id="42"> becomes {"@id": "42"}. This is the same convention xml2js and xmltodict use, so output stays predictable for downstream tooling.' },
+        { q: 'What happens to repeated elements?', a: 'Repeated sibling elements automatically collapse into JSON arrays — two <item> elements become "item": [...]. Single elements stay objects, matching xml2js/xmltodict behavior.' },
+        { q: 'Is the output compatible with xml2js or xmltodict?', a: 'Yes — the converter follows the @-prefix attribute and #text mixed-content conventions used by xml2js (Node.js) and xmltodict (Python).' },
+        { q: 'Is my data uploaded anywhere?', a: 'No — conversion runs entirely in your browser. Nothing is sent to a server or persisted.' },
+      ]}
       
     >
       <XmlToJson />

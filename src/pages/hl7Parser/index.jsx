@@ -114,8 +114,8 @@ function Hl7Parser() {
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Helmet>
         <title>Free HL7 v2 Message Parser & Viewer Online | OG Technologies EU</title>
-        <meta name="description" content="Parse HL7 v2.x messages online: segment, field, component, and subcomponent breakdown with field labels for MSH, PID, PV1, OBR, OBX and more. Detects message type and version. 100% client-side — PHI never uploaded." />
-        <meta name="keywords" content="hl7 parser, hl7 viewer, hl7 v2 message, hl7 message analyzer, msh pid obr obx, healthcare integration, hl7 validator" />
+        <meta name="description" content="Parse, view, and read HL7 v2.x messages online: segment, field, component, and subcomponent breakdown with field labels for MSH, PID, PV1, OBR, OBX and more. Detects message type and version. 100% client-side — PHI never uploaded." />
+        <meta name="keywords" content="hl7 parser, hl7 parser online, hl7 viewer, hl7 viewer online, hl7 reader, hl7 message viewer, hl7 v2 message, hl7 message analyzer, msh pid obr obx, healthcare integration, hl7 validator" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.ogtechnologies.co/tools/hl7-parser/" />
 
@@ -143,11 +143,11 @@ function Hl7Parser() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1">HL7 v2 Message Parser</h1>
+                <h1 className="h1">HL7 v2 Message Parser &amp; Viewer</h1>
                 <p className="text-xl text-gray-400 mt-4">
-                  Paste a pipe-delimited HL7 v2.x message to see every segment, field, component, and subcomponent
-                  with human-readable labels. <strong className="text-gray-300">PHI never leaves your browser</strong> —
-                  all parsing is client-side.
+                  Paste or load a pipe-delimited HL7 v2.x message to read every segment, field, component, and
+                  subcomponent with human-readable labels. <strong className="text-gray-300">PHI never leaves your
+                  browser</strong> — all parsing is client-side.
                 </p>
               </div>
 
@@ -217,6 +217,54 @@ function Hl7Parser() {
                     specific HL7 version or implementation guide. For FHIR resources, use the{' '}
                     <a href="/tools/fhir-validator/" className="text-purple-400 hover:text-purple-300">FHIR Resource Viewer</a>.
                   </p>
+                </div>
+
+                <div className="mt-12">
+                  <h2 className="h4 mb-4">Frequently asked questions</h2>
+                  <div className="space-y-4">
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">Is my patient data (PHI) uploaded or stored?</h3>
+                      <p className="text-sm text-gray-400">
+                        No. Parsing runs entirely in your browser — the message never touches a server, so real PHI
+                        can be inspected without leaving the machine. You can verify this in the browser's network
+                        tab or use the tool offline.
+                      </p>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">Which HL7 versions are supported?</h3>
+                      <p className="text-sm text-gray-400">
+                        All pipe-delimited HL7 v2.x messages (2.1 through 2.9) — the parser reads the version from
+                        MSH-12 and the delimiters from MSH-1/MSH-2 automatically. FHIR resources (JSON) are a
+                        different standard — use the FHIR Resource Viewer for those.
+                      </p>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">Can I open .hl7 or .er7 files?</h3>
+                      <p className="text-sm text-gray-400">
+                        Yes — use the file loader to open .hl7, .er7, or .txt exports directly from an interface
+                        engine or hospital system. The file is read locally and never uploaded.
+                      </p>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">Is this an HL7 validator?</h3>
+                      <p className="text-sm text-gray-400">
+                        It performs structural checks — delimiter consistency, required MSH fields, segment ordering —
+                        and decodes every field with labels. It is not a conformance validator against a specific
+                        implementation guide or message profile.
+                      </p>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">What is the difference between HL7 v2 and FHIR?</h3>
+                      <p className="text-sm text-gray-400">
+                        v2 is the legacy pipe-delimited format that still runs most intra-hospital messaging (ADT,
+                        ORU, ORM); FHIR is the modern resource-based standard for APIs, usually JSON over REST. Our{' '}
+                        <a href="/insights/hl7-v2-vs-fhir-comparison/" className="text-purple-400 hover:text-purple-300 underline">HL7 v2 vs FHIR comparison</a>{' '}
+                        covers when to use each, and the{' '}
+                        <a href="/insights/hl7-v2-message-structure/" className="text-purple-400 hover:text-purple-300 underline">v2 message anatomy guide</a>{' '}
+                        explains segments and delimiters in depth.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

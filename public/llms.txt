@@ -71,6 +71,7 @@
 - [DORA for Crypto & Web3](https://www.ogtechnologies.co/insights/dora-crypto-web3-compliance/): What EU Regulation 2022/2554 requires from CASPs
 - [Stellar Cross-Border Payments](https://www.ogtechnologies.co/insights/stellar-cross-border-payments-anchors-sep24/): Anchors, SEP-24, trustlines, and USDC/EURC settlement explained
 - [ISO 27001 Statement of Applicability](https://www.ogtechnologies.co/insights/iso-27001-statement-of-applicability/): How to choose and justify Annex A controls
+- [ISO/IEC 27001 Annex A Controls](https://www.ogtechnologies.co/insights/iso-27001-annex-a-controls/): The complete list of 93 controls across 4 themes
 - [ISO/IEC 42001 Annex A Controls](https://www.ogtechnologies.co/insights/iso-42001-annex-a-controls/): The complete list of 38 controls across 9 domains
 - [Integrated Management System](https://www.ogtechnologies.co/insights/integrated-management-system-iso-9001-27001-42001/): Combining ISO 9001, ISO 27001, and ISO 42001 into one system
 - [ISO 8601 Format Guide](https://www.ogtechnologies.co/insights/iso-8601-format-guide/): Durations, week dates, intervals, and the RFC 3339 subset explained
@@ -80,6 +81,7 @@
 - [OData Query Options Guide](https://www.ogtechnologies.co/insights/odata-query-options-guide/): $filter, $select, $expand, $orderby, paging, and SAP Gateway specifics
 - [How to Choose a CRM & Ticketing System](https://www.ogtechnologies.co/insights/how-to-choose-crm-ticketing-system/): Buyer's guide — capabilities, migration, GDPR, integrations, and pricing checklist
 - [Helpdesk Workflow Best Practices](https://www.ogtechnologies.co/insights/helpdesk-workflow-best-practices/): Ticket intake, triage, SLAs, escalation, automation, and support metrics
+- [ISO 9001 Implementation Guide](https://www.ogtechnologies.co/insights/iso-9001-implementation-guide/): Clauses 4–10, quality management principles, and the Stage 1/Stage 2 certification audit process
 
 ## Resources
 

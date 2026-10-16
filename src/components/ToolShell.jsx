@@ -15,6 +15,7 @@ function ToolShell({
   heading,
   subheading,
   about,
+  faq,
   children,
 }) {
   return (
@@ -94,6 +95,20 @@ function ToolShell({
                         )}
                       </div>
                     ))}
+                  </div>
+                )}
+
+                {faq && faq.length > 0 && (
+                  <div className="mt-12">
+                    <h2 className="h4 mb-4">Frequently asked questions</h2>
+                    <div className="space-y-4">
+                      {faq.map((item) => (
+                        <div key={item.q} className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                          <h3 className="text-sm font-semibold text-gray-200 mb-1.5">{item.q}</h3>
+                          <p className="text-sm text-gray-400">{item.a}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>

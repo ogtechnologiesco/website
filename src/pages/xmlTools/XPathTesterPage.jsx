@@ -49,6 +49,12 @@ function XPathTesterPage() {
           ],
         },
       ]}
+      faq={[
+        { q: 'Which XPath version does this tester support?', a: 'XPath 1.0, via the browser\'s native document.evaluate() engine — the same implementation your page scripts and most automation tools use. XPath 2.0/3.x functions like matches() or tokenize() are not available in browsers.' },
+        { q: 'How do I write an XPath expression?', a: 'Start with // for a descendant search (//item finds every item element), / for direct children, [@attr="value"] for attribute filters, [1] or [last()] for position, and functions like contains() or text() for content matching. The example expressions in the tool cover the common patterns.' },
+        { q: 'Does it work with XML namespaces?', a: 'Yes — namespaced elements can be matched using their prefix or local-name() (e.g. //*[local-name()="item"]), which is the practical workaround when prefixes differ between documents.' },
+        { q: 'Is my XML or query sent to a server?', a: 'No — evaluation happens entirely in the browser via document.evaluate(). Nothing is uploaded, which makes it safe for internal XML payloads.' },
+      ]}
       
     >
       <XPathTester />

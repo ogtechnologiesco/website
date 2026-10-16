@@ -19,6 +19,8 @@ import eudiWalletImage from '../images/insight-eudi-wallet.jpg';
 import odataImage from '../images/insight-odata-query.jpg';
 import chooseCrmImage from '../images/insight-choose-crm.jpg';
 import helpdeskWorkflowImage from '../images/insight-helpdesk-workflow.jpg';
+import iso9001Image from '../images/insight-iso9001-implementation.jpg';
+import iso27001AnnexAImage from '../images/insight-iso27001-annexa.jpg';
 
 export const insightsPosts = [
   {
@@ -230,6 +232,26 @@ export const insightsPosts = [
     imageText: 'Helpdesk workflow stages from intake to resolution',
     link: '/insights/helpdesk-workflow-best-practices/',
     categories: ['Business', 'Tools'],
+  },
+  {
+    title: 'ISO 9001 Implementation: A Step-by-Step Guide to Certification',
+    date: '16/10/2026',
+    description:
+      'Clauses 4–10, the seven quality management principles, and the Stage 1/Stage 2 audit process — a practical ISO 9001 implementation roadmap with a free readiness checker.',
+    image: iso9001Image,
+    imageText: 'ISO 9001 certification badge',
+    link: '/insights/iso-9001-implementation-guide/',
+    categories: ['Standards', 'Compliance', 'Business'],
+  },
+  {
+    title: 'ISO/IEC 27001 Annex A Controls: The Complete List of 93 Controls',
+    date: '16/10/2026',
+    description:
+      'Every ISO/IEC 27001:2022 Annex A control by reference and title across the 4 themes (Organizational, People, Physical, Technological) — plus how to select them in your Statement of Applicability.',
+    image: iso27001AnnexAImage,
+    imageText: 'ISO/IEC 27001 Annex A controls',
+    link: '/insights/iso-27001-annex-a-controls/',
+    categories: ['Standards', 'Compliance', 'Security'],
   },
 ];
 

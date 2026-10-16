@@ -47,6 +47,13 @@ function WeiConverterPage() {
           ],
         },
       ]}
+      faq={[
+        { q: 'How many wei are in 1 ETH?', a: 'Exactly 1,000,000,000,000,000,000 wei (10¹⁸). Ether has 18 decimal places — wei is its smallest indivisible unit, the same role a cent plays for a euro.' },
+        { q: 'How many gwei are in 1 ETH?', a: '1,000,000,000 gwei (10⁹). Gwei sits between wei and ether: 1 gwei = 10⁹ wei, and gas prices are almost always quoted in gwei.' },
+        { q: 'Is gwei the same as wei?', a: 'No — they are different denominations of the same currency. Wei is the base unit; gwei is a billion wei. Confusing them is a 9-order-of-magnitude error, the most expensive typo in Ethereum.' },
+        { q: 'Why is gas priced in gwei?', a: 'Gas fees are small fractions of an ether — typically 0.000000001 to 0.0000001 ETH. Quoting them in gwei keeps the numbers readable (5 gwei instead of 0.000000005 ETH).' },
+        { q: 'Does this converter handle large numbers precisely?', a: 'Yes — it uses BigInt arithmetic throughout, so no floating-point rounding even for very large values. JavaScript\'s native numbers lose precision above 2⁵³; this tool does not.' },
+      ]}
       
     >
       <WeiConverter />

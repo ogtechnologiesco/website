@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Header from '../../partials/Header';
 import Footer from '../../partials/Footer';
 import PageIllustration from '../../partials/PageIllustration';
@@ -33,6 +34,8 @@ function GtinValidator() {
   const [isbnResult, setIsbnResult] = useState(null);
   const [calcInput, setCalcInput] = useState('');
   const [calcResult, setCalcResult] = useState(null);
+  const [convInput, setConvInput] = useState('');
+  const [convResult, setConvResult] = useState(null);
 
   const validate = (value) => {
     const v = value !== undefined ? value : input;
@@ -52,25 +55,40 @@ function GtinValidator() {
     setCalcResult(clean + gs1CheckDigit(clean));
   };
 
+  const convertFormats = (value) => {
+    const clean = value.replace(/[\s-]/g, '');
+    if (!/^\d+$/.test(clean) || clean.length < 7 || clean.length > 14) { setConvResult(null); return; }
+    const rows = [{ format: 'GTIN-14', code: clean.padStart(14, '0') }];
+    if (clean.length === 13) rows.push({ format: 'EAN-13', code: clean });
+    else if (clean.length === 14 && clean.startsWith('0')) rows.push({ format: 'EAN-13', code: clean.slice(1) });
+    else if (clean.length < 13) rows.push({ format: 'EAN-13', code: clean.padStart(13, '0') });
+    if (clean.length === 12) rows.push({ format: 'UPC-A', code: clean });
+    else if (clean.length === 13 && clean.startsWith('0')) rows.push({ format: 'UPC-A', code: clean.slice(1) });
+    else if (clean.length === 14 && clean.startsWith('00')) rows.push({ format: 'UPC-A', code: clean.slice(2) });
+    if (clean.length === 8) rows.push({ format: 'EAN-8', code: clean });
+    else if (clean.length > 8 && /^0+$/.test(clean.slice(0, clean.length - 8))) rows.push({ format: 'EAN-8', code: clean.slice(-8) });
+    setConvResult(rows);
+  };
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Helmet>
-        <title>Free GTIN / UPC / EAN Barcode Validator - GS1 Check Digit | OG Technologies EU</title>
-        <meta name="description" content="Validate UPC-A, EAN-8, EAN-13, and GTIN-14 barcodes online: GS1 mod-10 check digit verification, format detection, and country prefix lookup. Includes ISBN validator and check digit calculator. 100% client-side." />
-        <meta name="keywords" content="gtin validator, upc validator, ean validator, barcode check digit, gs1 check digit calculator, ean-13, upc-a, isbn validator" />
+        <title>Free GTIN Checker — GS1 Check Digit Calculator (UPC/EAN/ISBN) | OG Technologies EU</title>
+        <meta name="description" content="Free GTIN checker online: verify UPC-A, EAN-8, EAN-13, and GTIN-14 barcodes against the GS1 mod-10 check digit, look up the country prefix, convert UPC to GTIN-14, and validate ISBNs. 100% client-side." />
+        <meta name="keywords" content="gtin check, gtin checker, gtin check digit calculator, upc check, ean check, ean validator, barcode checker, gs1 check digit calculator, upc to gtin, ean-13, upc-a, isbn validator, gtin lookup" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.ogtechnologies.co/tools/gtin-validator/" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.ogtechnologies.co/tools/gtin-validator/" />
-        <meta property="og:title" content="Free GTIN / UPC / EAN Barcode Validator - GS1 Check Digit | OG Technologies EU" />
-        <meta property="og:description" content="Validate UPC-A, EAN-8, EAN-13, and GTIN-14 barcodes: GS1 check digit, format detection, country prefix lookup. 100% client-side." />
+        <meta property="og:title" content="Free GTIN Checker — GS1 Check Digit Calculator (UPC/EAN/ISBN) | OG Technologies EU" />
+        <meta property="og:description" content="Verify UPC-A, EAN-8, EAN-13, and GTIN-14 barcodes: GS1 check digit, format detection, country prefix lookup, UPC↔GTIN conversion. 100% client-side." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/gtin-validator/" />
-        <meta name="twitter:title" content="Free GTIN / UPC / EAN Barcode Validator - GS1 Check Digit | OG Technologies EU" />
-        <meta name="twitter:description" content="Validate UPC-A, EAN-8, EAN-13, and GTIN-14 barcodes: GS1 check digit, format detection, country prefix lookup. 100% client-side." />
+        <meta name="twitter:title" content="Free GTIN Checker — GS1 Check Digit Calculator (UPC/EAN/ISBN) | OG Technologies EU" />
+        <meta name="twitter:description" content="Verify UPC-A, EAN-8, EAN-13, and GTIN-14 barcodes: GS1 check digit, format detection, country prefix lookup, UPC↔GTIN conversion. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
       </Helmet>
 
@@ -85,10 +103,11 @@ function GtinValidator() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1">GTIN / UPC / EAN Validator</h1>
+                <h1 className="h1">GTIN Checker — UPC / EAN / ISBN Validator</h1>
                 <p className="text-xl text-gray-400 mt-4">
-                  Validate retail barcodes against the GS1 check-digit algorithm — EAN-8, UPC-A, EAN-13, and
-                  GTIN-14 — with format detection and country prefix lookup. Everything runs in your browser.
+                  Check retail barcodes against the GS1 check-digit algorithm — EAN-8, UPC-A, EAN-13, and
+                  GTIN-14 — with format detection, country prefix lookup, and UPC↔GTIN conversion.
+                  Everything runs in your browser.
                 </p>
               </div>
 
@@ -182,6 +201,49 @@ function GtinValidator() {
                   </div>
 
                   <div className="mt-8 pt-6 border-t border-gray-700">
+                    <h2 className="text-lg font-semibold text-gray-200 mb-3">UPC ↔ GTIN converter</h2>
+                    <p className="text-xs text-gray-500 mb-3">
+                      Paste any barcode to see every equivalent format. Leading zeros never change the check
+                      digit — a UPC-A is just a GTIN-14 without them.
+                    </p>
+                    <input
+                      type="text"
+                      value={convInput}
+                      onChange={(e) => { setConvInput(e.target.value); convertFormats(e.target.value); }}
+                      className="w-full bg-gray-700 text-white px-4 py-2 rounded-md border border-gray-600 focus:border-purple-500 focus:outline-none font-mono text-sm"
+                      placeholder="036000291452"
+                      spellCheck="false"
+                    />
+                    {convResult && (
+                      <div className="mt-3 overflow-x-auto">
+                        <table className="w-full text-left text-sm border border-gray-700">
+                          <thead>
+                            <tr className="bg-gray-700/60">
+                              <th className="px-4 py-2 font-semibold text-gray-300 w-28">Format</th>
+                              <th className="px-4 py-2 font-semibold text-gray-300">Code</th>
+                              <th className="px-4 py-2 font-semibold text-gray-300 w-24">Check digit</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {convResult.map((row) => {
+                              const v = validateGtin(row.code);
+                              return (
+                                <tr key={row.format} className="border-t border-gray-700">
+                                  <td className="px-4 py-2 text-gray-300">{row.format}</td>
+                                  <td className="px-4 py-2 font-mono text-purple-300">{row.code}</td>
+                                  <td className={`px-4 py-2 text-xs font-medium ${v.valid ? 'text-green-400' : 'text-red-400'}`}>
+                                    {v.valid ? '✓ valid' : '✗ invalid'}
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mt-8 pt-6 border-t border-gray-700">
                     <h2 className="text-lg font-semibold text-gray-200 mb-3">ISBN-10 validator</h2>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <input
@@ -217,6 +279,78 @@ function GtinValidator() {
                     brand. Marketplaces like Amazon cross-check the GS1 registry — reseller codes can pass the
                     checksum and still be rejected.
                   </p>
+                </div>
+
+                <div className="mt-12">
+                  <h2 className="h4 mb-4">Frequently asked questions</h2>
+                  <div className="space-y-4">
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">What is the difference between UPC, EAN, and GTIN?</h3>
+                      <p className="text-sm text-gray-400">
+                        GTIN is the umbrella identifier in the GS1 system. UPC-A (12 digits) is the North American
+                        variant, EAN-8 and EAN-13 are the international retail formats, and GTIN-14 is the 14-digit
+                        superset used on cases and pallets. They are the same numbering system — shorter codes are
+                        simply zero-padded to GTIN-14.
+                      </p>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">How do I convert UPC to GTIN-14?</h3>
+                      <p className="text-sm text-gray-400">
+                        Pad the UPC-A with leading zeros to 14 digits. The check digit does not change, because GS1
+                        weights are counted from the rightmost data digit. Use the converter above — it shows every
+                        equivalent format and re-verifies each one.
+                      </p>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">Does a valid check digit mean the barcode is registered?</h3>
+                      <p className="text-sm text-gray-400">
+                        No. The checksum only proves the digits are well-formed — it says nothing about whether GS1
+                        issued the number or who owns it. Marketplaces like Amazon cross-check the GS1 registry and
+                        brand ownership, so a checksum-valid code can still be rejected as unregistered or mismatched.
+                      </p>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">What does the check digit actually catch?</h3>
+                      <p className="text-sm text-gray-400">
+                        Single mistyped digits and most adjacent-digit transpositions — the classic data-entry errors
+                        when someone keys a barcode by hand. It is an integrity check, not a security feature: the
+                        algorithm is public and trivially reproducible.
+                      </p>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">Can I validate ISBNs here too?</h3>
+                      <p className="text-sm text-gray-400">
+                        Yes. ISBN-13 is just an EAN with a Bookland prefix (978 or 979) and validates with the same
+                        GS1 check digit — paste one into the main field. The separate ISBN-10 box below uses the older
+                        mod-11 checksum and also shows the ISBN-13 equivalent.
+                      </p>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">Is my barcode data uploaded anywhere?</h3>
+                      <p className="text-sm text-gray-400">
+                        No — every check runs in your browser. Nothing is sent to a server, logged, or stored, so
+                        pre-launch product codes stay private.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-10">
+                  <h2 className="h4 mb-4">Related tools</h2>
+                  <div className="grid sm:grid-cols-3 gap-3">
+                    <Link to="/tools/iban-validator/" className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-purple-600 transition-colors">
+                      <p className="text-sm font-semibold text-gray-200">IBAN Validator</p>
+                      <p className="text-xs text-gray-500 mt-1">MOD-97 check, BBAN structure, SEPA reachability</p>
+                    </Link>
+                    <Link to="/tools/bic-validator/" className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-purple-600 transition-colors">
+                      <p className="text-sm font-semibold text-gray-200">BIC / SWIFT Validator</p>
+                      <p className="text-xs text-gray-500 mt-1">Decode bank codes per ISO 9362</p>
+                    </Link>
+                    <Link to="/tools/lei-validator/" className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-purple-600 transition-colors">
+                      <p className="text-sm font-semibold text-gray-200">LEI Validator</p>
+                      <p className="text-xs text-gray-500 mt-1">Legal Entity Identifier check digits</p>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

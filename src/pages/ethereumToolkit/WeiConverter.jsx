@@ -99,10 +99,42 @@ function WeiConverter() {
         <p className="text-xs text-red-400 mt-4">Invalid number format. Please enter a valid decimal number.</p>
       )}
 
-      <div className="mt-6 text-xs text-gray-500">
-        <p><strong>1 Ether</strong> = 10<sup>18</sup> Wei = 10<sup>9</sup> Gwei</p>
-        <p className="mt-1"><strong>1 Gwei</strong> = 10<sup>9</sup> Wei</p>
-        <p className="mt-1"><strong>1 Finney</strong> = 10<sup>15</sup> Wei (milliether)</p>
+      <div className="mt-8 pt-6 border-t border-gray-700">
+        <h3 className="text-sm font-semibold text-gray-300 mb-3">Ethereum unit conversion table</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-xs border border-gray-700">
+            <thead>
+              <tr className="bg-gray-700/60">
+                <th className="px-4 py-2 font-semibold text-gray-300">Unit</th>
+                <th className="px-4 py-2 font-semibold text-gray-300">Wei equivalent</th>
+                <th className="px-4 py-2 font-semibold text-gray-300">Common name</th>
+                <th className="px-4 py-2 font-semibold text-gray-300">Typical use</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['wei', '1', 'wei', 'Smallest unit — contract values, balances'],
+                ['kwei', '1,000 (10³)', 'babbage', 'Rarely used'],
+                ['mwei', '1,000,000 (10⁶)', 'lovelace', 'Rarely used'],
+                ['gwei', '1,000,000,000 (10⁹)', 'shannon', 'Gas prices, EIP-1559 fees'],
+                ['microether', '10¹²', 'szabo', 'Occasional tooling'],
+                ['milliether', '10¹⁵', 'finney', 'Occasional tooling'],
+                ['ether', '10¹⁸', 'ETH', 'Balances, transfers, staking'],
+              ].map(([unit, wei, common, use]) => (
+                <tr key={unit} className="border-t border-gray-700">
+                  <td className="px-4 py-2 text-gray-200 font-medium">{unit}</td>
+                  <td className="px-4 py-2 text-gray-400 font-mono">{wei}</td>
+                  <td className="px-4 py-2 text-gray-400">{common}</td>
+                  <td className="px-4 py-2 text-gray-500">{use}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3 text-xs text-gray-500">
+          <strong>1 Ether</strong> = 10<sup>18</sup> Wei = 10<sup>9</sup> Gwei.{' '}
+          <strong>1 Gwei</strong> = 10<sup>9</sup> Wei.
+        </p>
       </div>
     </div>
   );

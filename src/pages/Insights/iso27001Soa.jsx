@@ -102,7 +102,7 @@ function Iso27001Soa() {
                       <li><strong>A.8 Technological</strong> — 34 controls: access control, authentication, cryptography, network security, logging, vulnerability management, backups, secure development.</li>
                     </ul>
                     <p className="mb-8">
-                      Each control now also carries <strong>attributes</strong> (control type, security properties, cyber concepts, operational capabilities) — useful metadata for filtering and reporting, though the attributes themselves are informative, not requirements.
+                      Each control now also carries <strong>attributes</strong> (control type, security properties, cyber concepts, operational capabilities) — useful metadata for filtering and reporting, though the attributes themselves are informative, not requirements. The <Link to="/insights/iso-27001-annex-a-controls/" className="text-purple-400 hover:text-purple-300 underline">complete list of all 93 Annex A controls</Link> has every control by reference and title — the menu you're marking up here.
                     </p>
 
                     <h2 className="h2 mb-4 text-gray-100">Anatomy of a Good SoA</h2>

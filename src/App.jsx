@@ -120,6 +120,7 @@ const AwsIamPolicyValidation = lazy(() => import('./pages/Insights/awsIamPolicyV
 const DoraCryptoWeb3 = lazy(() => import('./pages/Insights/doraCryptoWeb3'));
 const StellarCrossBorderPayments = lazy(() => import('./pages/Insights/stellarCrossBorderPayments'));
 const Iso27001Soa = lazy(() => import('./pages/Insights/iso27001Soa'));
+const Iso27001AnnexA = lazy(() => import('./pages/Insights/iso27001AnnexA'));
 const Iso42001AnnexA = lazy(() => import('./pages/Insights/iso42001AnnexA'));
 const IntegratedManagementSystem = lazy(() => import('./pages/Insights/integratedManagementSystem'));
 const Iso8601Format = lazy(() => import('./pages/Insights/iso8601Format'));
@@ -129,6 +130,7 @@ const Eidas2EudiWallet = lazy(() => import('./pages/Insights/eidas2EudiWallet'))
 const OdataQueryOptions = lazy(() => import('./pages/Insights/odataQueryOptions'));
 const ChooseCrmTicketing = lazy(() => import('./pages/Insights/chooseCrmTicketing'));
 const HelpdeskWorkflow = lazy(() => import('./pages/Insights/helpdeskWorkflow'));
+const Iso9001ImplementationGuide = lazy(() => import('./pages/Insights/iso9001ImplementationGuide'));
 
 
 function App() {
@@ -232,6 +234,7 @@ function App() {
         <Route exact path="/insights/dora-crypto-web3-compliance" element={<DoraCryptoWeb3/>} />
         <Route exact path="/insights/stellar-cross-border-payments-anchors-sep24" element={<StellarCrossBorderPayments/>} />
         <Route exact path="/insights/iso-27001-statement-of-applicability" element={<Iso27001Soa/>} />
+        <Route exact path="/insights/iso-27001-annex-a-controls" element={<Iso27001AnnexA/>} />
         <Route exact path="/insights/iso-42001-annex-a-controls" element={<Iso42001AnnexA/>} />
         <Route exact path="/insights/integrated-management-system-iso-9001-27001-42001" element={<IntegratedManagementSystem/>} />
         <Route exact path="/insights/iso-8601-format-guide" element={<Iso8601Format/>} />
@@ -241,6 +244,7 @@ function App() {
         <Route exact path="/insights/odata-query-options-guide" element={<OdataQueryOptions/>} />
         <Route exact path="/insights/how-to-choose-crm-ticketing-system" element={<ChooseCrmTicketing/>} />
         <Route exact path="/insights/helpdesk-workflow-best-practices" element={<HelpdeskWorkflow/>} />
+        <Route exact path="/insights/iso-9001-implementation-guide" element={<Iso9001ImplementationGuide/>} />
         <Route exact path="/tools" element={<Tools/>} />
         <Route exact path="/tools/html-to-image" element={<HtmlToImage/>} />
         <Route exact path="/tools/screenshot-to-image" element={<ScreenshotToImage/>} />
