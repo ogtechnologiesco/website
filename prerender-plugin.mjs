@@ -40,8 +40,20 @@ export default function prerenderPlugin(options) {
       const browser = await puppeteer.launch({ headless: true, ...launchOptions })
       try {
         const queue = [...routes]
+        const blockedHosts = /googlesyndication\.com|doubleclick\.net|googleadservices\.com|googletagservices\.com|google-analytics\.com|googletagmanager\.com|fundingchoicesmessages\.google\.com/
         const workers = Array.from({ length: Math.min(maxConcurrentRoutes, routes.length) }, async () => {
           const page = await browser.newPage()
+          // Abort ad/analytics requests — the script tags must remain in the DOM
+          // for verification (AdSense crawls the HTML), but loading them during
+          // prerender blocks networkidle0 and hangs the build on ad-blocked CI networks.
+          await page.setRequestInterception(true)
+          page.on('request', (req) => {
+            if (blockedHosts.test(req.url())) {
+              req.abort()
+            } else {
+              req.continue()
+            }
+          })
           while (queue.length > 0) {
             const route = queue.shift()
             const renderedRoute = {
@@ -50,7 +62,7 @@ export default function prerenderPlugin(options) {
               html: null,
               outputPath: path.join(staticDir, route, 'index.html'),
             }
-            await page.goto(`${baseURL}${route}`, { waitUntil: 'networkidle0' })
+            await page.goto(`${baseURL}${route}`, { waitUntil: 'networkidle0', timeout: 90000 })
             if (renderAfterTime > 0) {
               await new Promise((resolve) => setTimeout(resolve, renderAfterTime))
             }
