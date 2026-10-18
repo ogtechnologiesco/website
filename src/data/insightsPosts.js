@@ -23,6 +23,7 @@ import iso9001Image from '../images/insight-iso9001-implementation.jpg';
 import iso27001AnnexAImage from '../images/insight-iso27001-annexa.jpg';
 import soc2TscImage from '../images/insight-soc2-tsc.jpg';
 import soc2VsIsoImage from '../images/insight-soc2-vs-iso27001.jpg';
+import pdfMetadataImage from '../images/insight-pdf-metadata.jpg';
 
 export const insightsPosts = [
   {
@@ -274,6 +275,16 @@ export const insightsPosts = [
     imageText: 'SOC 2 vs ISO 27001 comparison',
     link: '/insights/soc-2-vs-iso-27001/',
     categories: ['Compliance', 'Security', 'Standards'],
+  },
+  {
+    title: 'PDF Metadata Explained: What Your Files Reveal and How to Remove It',
+    date: '18/10/2026',
+    description:
+      'The document info dictionary and XMP stream inside every PDF — what each field reveals, how to inspect and edit them, and how to strip metadata before sharing a file.',
+    image: pdfMetadataImage,
+    imageText: 'PDF metadata viewer showing document info fields',
+    link: '/insights/pdf-metadata-guide/',
+    categories: ['Tools', 'Security'],
   },
 ];
 

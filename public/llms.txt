@@ -20,6 +20,7 @@
 - [HTML to Image Converter](https://www.ogtechnologies.co/tools/html-to-image/)
 - [Screenshot to Image](https://www.ogtechnologies.co/tools/screenshot-to-image/)
 - [PDF Tools](https://www.ogtechnologies.co/tools/pdf-tools/)
+- [PDF Metadata Editor](https://www.ogtechnologies.co/tools/pdf-metadata/): View, edit, and remove PDF metadata — title, author, keywords, timestamps, and XMP stream
 - [Security Scanner](https://www.ogtechnologies.co/tools/security-tools/)
 - [Blockchain Compliance Checker](https://www.ogtechnologies.co/tools/blockchain-compliance-checker/)
 - [ISO 27001 Gap Analysis Tool](https://www.ogtechnologies.co/tools/iso-27001-gap-analysis/)
@@ -85,6 +86,7 @@
 - [How to Choose a CRM & Ticketing System](https://www.ogtechnologies.co/insights/how-to-choose-crm-ticketing-system/): Buyer's guide — capabilities, migration, GDPR, integrations, and pricing checklist
 - [Helpdesk Workflow Best Practices](https://www.ogtechnologies.co/insights/helpdesk-workflow-best-practices/): Ticket intake, triage, SLAs, escalation, automation, and support metrics
 - [ISO 9001 Implementation Guide](https://www.ogtechnologies.co/insights/iso-9001-implementation-guide/): Clauses 4–10, quality management principles, and the Stage 1/Stage 2 certification audit process
+- [PDF Metadata Guide](https://www.ogtechnologies.co/insights/pdf-metadata-guide/): What the PDF info dictionary and XMP stream reveal — and how to view, edit, or strip them
 
 ## Resources
 

@@ -17,6 +17,7 @@ const TOOL_CATEGORIES = [
       { name: 'Image to PDF', path: '/tools/image-to-pdf/', description: 'Convert PNG/JPG images to PDF.' },
       { name: 'Document to PDF', path: '/tools/document-to-pdf/', description: 'Convert DOCX/ODT/TXT documents to PDF.' },
       { name: 'PDF to Word', path: '/tools/pdf-to-word/', description: 'Convert PDF to DOCX, TXT, or HTML.' },
+      { name: 'PDF Metadata', path: '/tools/pdf-metadata/', description: 'View, edit, and remove PDF metadata.' },
     ],
   },
   {

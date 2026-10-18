@@ -83,6 +83,7 @@ const PdfSplitPage = lazy(() => import('./pages/pdfTools/PdfSplitPage'));
 const ImageToPdfPage = lazy(() => import('./pages/pdfTools/ImageToPdfPage'));
 const DocToPdfPage = lazy(() => import('./pages/pdfTools/DocToPdfPage'));
 const PdfToWordPage = lazy(() => import('./pages/pdfTools/PdfToWordPage'));
+const PdfMetadataPage = lazy(() => import('./pages/pdfTools/PdfMetadataPage'));
 const WeiConverterPage = lazy(() => import('./pages/ethereumToolkit/WeiConverterPage'));
 const Keccak256Page = lazy(() => import('./pages/ethereumToolkit/Keccak256Page'));
 const FunctionSelectorPage = lazy(() => import('./pages/ethereumToolkit/FunctionSelectorPage'));
@@ -128,6 +129,7 @@ const Iso42001AnnexA = lazy(() => import('./pages/Insights/iso42001AnnexA'));
 const IntegratedManagementSystem = lazy(() => import('./pages/Insights/integratedManagementSystem'));
 const Iso8601Format = lazy(() => import('./pages/Insights/iso8601Format'));
 const HowToMergePdfFiles = lazy(() => import('./pages/Insights/howToMergePdfFiles'));
+const PdfMetadataGuide = lazy(() => import('./pages/Insights/pdfMetadataGuide'));
 const Mt940Format = lazy(() => import('./pages/Insights/mt940Format'));
 const Eidas2EudiWallet = lazy(() => import('./pages/Insights/eidas2EudiWallet'));
 const OdataQueryOptions = lazy(() => import('./pages/Insights/odataQueryOptions'));
@@ -244,6 +246,7 @@ function App() {
         <Route exact path="/insights/integrated-management-system-iso-9001-27001-42001" element={<IntegratedManagementSystem/>} />
         <Route exact path="/insights/iso-8601-format-guide" element={<Iso8601Format/>} />
         <Route exact path="/insights/how-to-merge-pdf-files" element={<HowToMergePdfFiles/>} />
+        <Route exact path="/insights/pdf-metadata-guide" element={<PdfMetadataGuide/>} />
         <Route exact path="/insights/mt940-format-camt053-migration" element={<Mt940Format/>} />
         <Route exact path="/insights/eidas2-eudi-wallet" element={<Eidas2EudiWallet/>} />
         <Route exact path="/insights/odata-query-options-guide" element={<OdataQueryOptions/>} />
@@ -280,6 +283,7 @@ function App() {
         <Route exact path="/tools/image-to-pdf" element={<ImageToPdfPage/>} />
         <Route exact path="/tools/document-to-pdf" element={<DocToPdfPage/>} />
         <Route exact path="/tools/pdf-to-word" element={<PdfToWordPage/>} />
+        <Route exact path="/tools/pdf-metadata" element={<PdfMetadataPage/>} />
         <Route exact path="/tools/wei-converter" element={<WeiConverterPage/>} />
         <Route exact path="/tools/keccak256-hash" element={<Keccak256Page/>} />
         <Route exact path="/tools/function-selector" element={<FunctionSelectorPage/>} />

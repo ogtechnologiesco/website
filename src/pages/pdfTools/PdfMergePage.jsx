@@ -8,6 +8,7 @@ const TABS = [
   { id: 'image', label: 'Image → PDF', path: '/tools/image-to-pdf/' },
   { id: 'doc', label: 'Document → PDF', path: '/tools/document-to-pdf/' },
   { id: 'word', label: 'PDF → Word', path: '/tools/pdf-to-word/' },
+  { id: 'metadata', label: 'Metadata', path: '/tools/pdf-metadata/' },
 ];
 
 function PdfMergePage() {

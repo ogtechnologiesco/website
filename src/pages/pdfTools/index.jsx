@@ -9,6 +9,7 @@ import PdfSplit from './PdfSplit';
 import ImageToPdf from './ImageToPdf';
 import DocToPdf from './DocToPdf';
 import PdfToWord from './PdfToWord';
+import PdfMetadata from './PdfMetadata';
 
 const TABS = [
   { id: 'merge', label: 'Merge PDFs', path: '/tools/merge-pdf/', component: PdfMerge },
@@ -16,6 +17,7 @@ const TABS = [
   { id: 'image', label: 'Image → PDF', path: '/tools/image-to-pdf/', component: ImageToPdf },
   { id: 'doc', label: 'Document → PDF', path: '/tools/document-to-pdf/', component: DocToPdf },
   { id: 'word', label: 'PDF → Word', path: '/tools/pdf-to-word/', component: PdfToWord },
+  { id: 'metadata', label: 'Metadata', path: '/tools/pdf-metadata/', component: PdfMetadata },
 ];
 
 function PdfTools() {
@@ -26,7 +28,7 @@ function PdfTools() {
       <Helmet>
         <title>Free PDF Tools - Merge, Split & Convert PDFs Online | OG Technologies EU</title>
         <meta name="description" content="Merge, split, and convert PDF files directly in your browser. Convert images and documents to PDF, or convert PDF to Word (.docx, .txt, .html). Free and private - no file is ever uploaded to a server." />
-        <meta name="keywords" content="PDF tools, merge PDF, split PDF, image to PDF, DOCX to PDF, ODT to PDF, TXT to PDF, PDF to Word, PDF to docx, free PDF converter, browser PDF tools" />
+        <meta name="keywords" content="PDF tools, merge PDF, split PDF, image to PDF, DOCX to PDF, ODT to PDF, TXT to PDF, PDF to Word, PDF to docx, PDF metadata, remove PDF metadata, free PDF converter, browser PDF tools" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.ogtechnologies.co/tools/pdf-tools/" />
 

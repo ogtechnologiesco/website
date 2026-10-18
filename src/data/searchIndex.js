@@ -26,6 +26,7 @@ export const searchIndex = [
   { title: 'HTML to Image', description: 'Convert HTML content to images', path: '/tools/html-to-image/' },
   { title: 'Screenshot to Image', description: 'Capture screenshots of web pages', path: '/tools/screenshot-to-image/' },
   { title: 'PDF Tools', description: 'PDF manipulation and conversion utilities', path: '/tools/pdf-tools/' },
+  { title: 'PDF Metadata Editor', description: 'View, edit, and remove PDF metadata — title, author, keywords, timestamps', path: '/tools/pdf-metadata/' },
   { title: 'Security Scanner', description: 'Scan websites for security vulnerabilities', path: '/tools/security-tools/' },
   { title: 'Blockchain Compliance Checker', description: 'Check blockchain smart contracts for compliance', path: '/tools/blockchain-compliance-checker/' },
   { title: 'ISO 27001 Gap Analysis', description: 'Free ISO/IEC 27001:2022 gap analysis tool — assess your ISMS readiness', path: '/tools/iso-27001-gap-analysis/' },

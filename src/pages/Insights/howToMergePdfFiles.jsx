@@ -122,7 +122,7 @@ function HowToMergePdfFiles() {
 
                     <h2 className="h2 mb-4 text-gray-100">Try It</h2>
                     <p className="mb-8">
-                      The <Link to="/tools/merge-pdf/" className="text-purple-400 hover:text-purple-300 underline">free PDF merger</Link> is one of five PDF utilities on the site — all client-side, no signup, no watermarks. If your source files aren't PDFs yet, the <Link to="/tools/image-to-pdf/" className="text-purple-400 hover:text-purple-300 underline">Image to PDF</Link> and <Link to="/tools/document-to-pdf/" className="text-purple-400 hover:text-purple-300 underline">Document to PDF</Link> converters get them there, and <Link to="/tools/pdf-to-word/" className="text-purple-400 hover:text-purple-300 underline">PDF to Word</Link> handles the reverse trip when you need to edit the merged result.
+                      The <Link to="/tools/merge-pdf/" className="text-purple-400 hover:text-purple-300 underline">free PDF merger</Link> is one of six PDF utilities on the site — all client-side, no signup, no watermarks. If your source files aren't PDFs yet, the <Link to="/tools/image-to-pdf/" className="text-purple-400 hover:text-purple-300 underline">Image to PDF</Link> and <Link to="/tools/document-to-pdf/" className="text-purple-400 hover:text-purple-300 underline">Document to PDF</Link> converters get them there, and <Link to="/tools/pdf-to-word/" className="text-purple-400 hover:text-purple-300 underline">PDF to Word</Link> handles the reverse trip when you need to edit the merged result.
                     </p>
 
                     <h2 className="h2 mb-4 text-gray-100">Frequently Asked Questions</h2>
