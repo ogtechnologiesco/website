@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import PageIllustration from '../partials/PageIllustration';
+import { AdSlot } from './AdSlot';
 
 function ToolShell({
   title,
@@ -75,6 +76,8 @@ function ToolShell({
                 )}
 
                 {children}
+
+                <AdSlot className="mt-12" />
 
                 {about && about.length > 0 && (
                   <div className="mt-12 space-y-8">

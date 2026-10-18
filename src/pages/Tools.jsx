@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import PageIllustration from '../partials/PageIllustration';
+import { InFeedAd } from '../components/AdSlot';
+import { useMarketingConsent } from '../hooks/useMarketingConsent';
 
 const TOOL_CATEGORIES = [
   {
@@ -120,6 +122,8 @@ const TOOL_CATEGORIES = [
 ];
 
 function Tools() {
+  const adsEnabled = useMarketingConsent();
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Helmet>
@@ -164,15 +168,17 @@ function Tools() {
                 <div key={category.name} className="mb-12" data-aos="fade-up" data-aos-delay={categoryIndex * 100}>
                   <h2 className="h3 mb-6">{category.name}</h2>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {category.tools.map((tool) => (
-                      <Link
-                        key={tool.path}
-                        to={tool.path}
-                        className="block p-5 rounded-lg border border-gray-700 bg-gray-800/50 hover:border-purple-600 hover:bg-gray-800 transition duration-150 ease-in-out"
-                      >
-                        <h3 className="font-semibold text-gray-200 mb-1">{tool.name}</h3>
-                        <p className="text-sm text-gray-400">{tool.description}</p>
-                      </Link>
+                    {category.tools.map((tool, toolIndex) => (
+                      <React.Fragment key={tool.path}>
+                        <Link
+                          to={tool.path}
+                          className="block p-5 rounded-lg border border-gray-700 bg-gray-800/50 hover:border-purple-600 hover:bg-gray-800 transition duration-150 ease-in-out"
+                        >
+                          <h3 className="font-semibold text-gray-200 mb-1">{tool.name}</h3>
+                          <p className="text-sm text-gray-400">{tool.description}</p>
+                        </Link>
+                        {adsEnabled && categoryIndex === 0 && toolIndex === 4 && <InFeedAd />}
+                      </React.Fragment>
                     ))}
                   </div>
                 </div>

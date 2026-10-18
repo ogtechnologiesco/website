@@ -1,6 +1,7 @@
 // Shared utility functions for cookie consent management
 
 export const COOKIE_CONSENT_KEY = 'cookieConsent';
+export const COOKIE_CONSENT_EVENT = 'cookie-consent-changed';
 
 export const defaultCookiePreferences = {
   necessary: true,
@@ -26,6 +27,7 @@ export const saveConsent = (preferences) => {
       timestamp: new Date().toISOString()
     };
     localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consentWithTimestamp));
+    window.dispatchEvent(new CustomEvent(COOKIE_CONSENT_EVENT, { detail: consentWithTimestamp }));
     return true;
   } catch (error) {
     console.error('Error saving cookie consent:', error);

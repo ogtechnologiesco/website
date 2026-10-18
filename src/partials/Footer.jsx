@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AdSlot } from '../components/AdSlot';
 import logo from '../images/og_logo.png';
 
 function Footer() {
@@ -10,6 +11,8 @@ function Footer() {
     <footer>
       <div className="py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
+
+          <AdSlot className="mb-8 md:mb-12" />
 
           {/* Top area: Blocks */}
           <div className="grid md:grid-cols-12 gap-8 lg:gap-20 mb-8 md:mb-12">

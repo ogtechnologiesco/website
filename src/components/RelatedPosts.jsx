@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { InArticleAd } from './AdSlot';
 import { getRelatedPosts } from '../data/blogPosts';
 
 export default function RelatedPosts({ currentLink, categories }) {
   const related = getRelatedPosts(currentLink, categories);
 
-  if (related.length === 0) return null;
-
   return (
+    <>
+      <InArticleAd className="mt-12" />
+      {related.length > 0 && (
     <section className="mt-12 pt-8 border-t border-gray-700">
       <h2 className="text-2xl font-bold text-white mb-6">Related Posts</h2>
       <div className="grid gap-6 md:grid-cols-3">
@@ -44,5 +46,7 @@ export default function RelatedPosts({ currentLink, categories }) {
         ))}
       </div>
     </section>
+      )}
+    </>
   );
 }

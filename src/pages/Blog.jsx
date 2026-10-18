@@ -7,10 +7,13 @@ import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import PageIllustration from '../partials/PageIllustration';
 import FeaturedPost from './FeaturedPost';
+import { InFeedAd } from '../components/AdSlot';
+import { useMarketingConsent } from '../hooks/useMarketingConsent';
 import { blogPosts, allCategories } from '../data/blogPosts';
 
 function Blog() {
   const [activeCategory, setActiveCategory] = useState('All');
+  const adsEnabled = useMarketingConsent();
 
   const filteredPosts = activeCategory === 'All'
     ? blogPosts
@@ -78,8 +81,15 @@ function Blog() {
                 <Container disableGutters maxWidth="xl" component="main" sx={{ pt: 1, pb: 6 }}>
                   <main>
                     <Grid container spacing={4}>
-                      {filteredPosts.map((post) => (
-                        <FeaturedPost key={post.title} post={post} />
+                      {filteredPosts.map((post, index) => (
+                        <React.Fragment key={post.title}>
+                          <FeaturedPost post={post} />
+                          {adsEnabled && index === 1 && (
+                            <Grid item xs={12} md={6}>
+                              <InFeedAd />
+                            </Grid>
+                          )}
+                        </React.Fragment>
                       ))}
                     </Grid>
                   </main>
