@@ -73,6 +73,29 @@ function AssessmentResults({ results, formData, onReset }) {
     }
   };
 
+  const handleDownloadCsv = () => {
+    const esc = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
+    const rows = [
+      ['Organization', 'Date', 'Readiness Score', 'Grade', 'Implemented', 'Partial', 'Gaps', 'Est. Weeks to Ready'],
+      [formData.companyName || '', new Date().toISOString().slice(0, 10), summary.readinessScore, summary.grade, summary.implemented, summary.partialGaps, summary.criticalGaps, summary.weeksToReady],
+      [],
+      ['Section', 'Compliance %'],
+      ...sections.map((sec) => [sec.name, sec.percentage]),
+      [],
+      ['Clause / Area', 'Requirement', 'Status', 'Recommended Action'],
+      ...gaps.map((gap) => [gap.clause, gap.question, gap.status === 'critical' ? 'Gap' : 'Partial', gap.remediation]),
+    ];
+    const csv = rows.map((r) => r.map(esc).join(',')).join('\r\n');
+    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const safeName = (formData.companyName || 'organization').replace(/[^a-zA-Z0-9.-]/g, '_');
+    a.href = url;
+    a.download = `iso-27001-gap-analysis-${safeName}-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="max-w-4xl mx-auto">
       {/* Summary */}
@@ -180,6 +203,15 @@ function AssessmentResults({ results, formData, onReset }) {
               Download PDF Report
             </>
           )}
+        </button>
+        <button
+          onClick={handleDownloadCsv}
+          className="px-6 py-3 rounded-lg bg-gray-800 border border-gray-600 text-gray-300 font-medium hover:bg-gray-700 transition-colors flex items-center justify-center gap-2"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Download CSV
         </button>
         <button
           onClick={onReset}

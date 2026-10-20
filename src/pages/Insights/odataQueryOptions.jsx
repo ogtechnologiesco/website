@@ -20,20 +20,20 @@ function OdataQueryOptions() {
       <style>{fadeInKeyframes}</style>
       <div className="flex flex-col min-h-screen overflow-hidden">
         <Helmet>
-          <title>OData Query Options Explained: $filter, $select, $expand, and $orderby | OG Technologies EU</title>
-          <meta name="description" content="A practical guide to OData query options: $filter operators and functions, $select projections, $expand navigation properties, $orderby, $top/$skip pagination, V2 vs V4 differences, and SAP Gateway specifics." />
-          <meta name="keywords" content="OData, OData query, $filter, $select, $expand, $orderby, $top, $skip, $count, SAP OData, OData V2 vs V4, OData URL, OData filter syntax, OData tutorial" />
+          <title>OData Query Options Cheat Sheet: $filter, $select, $expand, $orderby | OG Technologies EU</title>
+          <meta name="description" content="Complete OData query options cheat sheet and guide: $filter operators and functions, $select projections, $expand navigation properties, $orderby, $top/$skip pagination, V2 vs V4 differences, and SAP Gateway specifics." />
+          <meta name="keywords" content="OData, OData query, OData cheat sheet, OData query options, $filter, $select, $expand, $orderby, $top, $skip, $count, SAP OData, OData V2 vs V4, OData URL, OData filter syntax, OData tutorial" />
           <meta name="robots" content="index, follow" />
           <link rel="canonical" href="https://www.ogtechnologies.co/insights/odata-query-options-guide/" />
           <meta property="og:type" content="article" />
           <meta property="og:url" content="https://www.ogtechnologies.co/insights/odata-query-options-guide/" />
-          <meta property="og:title" content="OData Query Options Explained: $filter, $select, $expand, and $orderby" />
-          <meta property="og:description" content="OData query options with worked examples: $filter, $select, $expand, $orderby, pagination, V2 vs V4 syntax, and SAP Gateway specifics." />
+          <meta property="og:title" content="OData Query Options Cheat Sheet: $filter, $select, $expand, and $orderby" />
+          <meta property="og:description" content="OData query options with a quick-reference cheat sheet and worked examples: $filter, $select, $expand, $orderby, pagination, V2 vs V4 syntax, and SAP Gateway specifics." />
           <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:url" content="https://www.ogtechnologies.co/insights/odata-query-options-guide/" />
-          <meta name="twitter:title" content="OData Query Options Explained: $filter, $select, $expand, and $orderby" />
-          <meta name="twitter:description" content="OData query options with worked examples, V2 vs V4 syntax, and SAP Gateway specifics." />
+          <meta name="twitter:title" content="OData Query Options Cheat Sheet: $filter, $select, $expand, and $orderby" />
+          <meta name="twitter:description" content="OData query options cheat sheet with worked examples, V2 vs V4 syntax, and SAP Gateway specifics." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         </Helmet>
         <Header />
@@ -49,7 +49,7 @@ function OdataQueryOptions() {
                 {/* Article header */}
                 <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
                   <div className="text-purple-400 text-sm font-medium mb-2">Developer · Standards</div>
-                  <h1 className="h1">OData Query Options Explained: $filter, $select, $expand, and $orderby</h1>
+                  <h1 className="h1">OData Query Options Cheat Sheet: $filter, $select, $expand, and $orderby</h1>
                   <div className="text-gray-400 text-center mt-4">09/10/2026</div>
                 </div>
 
@@ -80,6 +80,76 @@ https://host/sap/opu/odata/sap/SALESORDER_SRV/SalesOrderSet
                     </pre>
                     <p className="mb-8">
                       Everything before the <code className="text-purple-300">?</code> addresses a resource — the service root, then an entity set, optionally a key like <code className="text-purple-300">SalesOrderSet('500000123')</code> for a single record. Everything after it is a query option evaluated server-side. Options combine freely with <code className="text-purple-300">&</code>.
+                    </p>
+
+                    <h2 className="h2 mb-4 text-gray-100">Cheat Sheet: Every Query Option at a Glance</h2>
+                    <div className="overflow-x-auto mb-8">
+                      <table className="w-full text-left text-sm border border-gray-700">
+                        <thead>
+                          <tr className="bg-gray-800">
+                            <th className="px-4 py-2 font-semibold text-gray-200 w-28">Option</th>
+                            <th className="px-4 py-2 font-semibold text-gray-200 w-64">What it does</th>
+                            <th className="px-4 py-2 font-semibold text-gray-200">Example</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            ['$select', 'Projection — return only listed properties', 'Name,Price'],
+                            ['$filter', 'Boolean predicate evaluated per entity', "Status eq 'Open' and Price gt 100"],
+                            ['$expand', 'Inline related entities (JOIN)', 'Items  ·  Items($select=Sku;$top=5)'],
+                            ['$orderby', 'Sort results', 'Price desc,Name asc'],
+                            ['$top', 'Return at most N entities', '20'],
+                            ['$skip', 'Skip N entities — paging with $top', '40'],
+                            ['$count', 'Include total matching count (V4)', 'true'],
+                            ['$inlinecount', 'Total count in OData V2', 'allpages'],
+                            ['$search', 'Full-text search (V4 only)', 'invoice'],
+                            ['$format', 'Response format', 'json'],
+                            ['$apply', 'Aggregation and grouping (V4)', 'groupby((Region),aggregate(Amount with sum as Total))'],
+                            ['$compute', 'Append computed properties (V4.01)', 'Price mul Qty as Total'],
+                            ['$skiptoken', 'Server-driven continuation paging', 'R0lPUi1'],
+                            ['$levels', 'Recursion depth inside $expand', 'Subordinates($levels=3)'],
+                            ['$index', 'Include position index in results', 'true'],
+                            ['$metadata', 'Service data dictionary (URL segment)', '…/SERVICE_SRV/$metadata'],
+                            ['$value', 'Raw value of a property or stream', "Products(1)/Photo/$value"],
+                            ['$ref', 'Entity reference instead of full entity', "Products(1)/Supplier/$ref"],
+                            ['$batch', 'Multiple operations in one request (URL segment)', 'POST …/$batch'],
+                            ['sap-client', 'SAP-specific client option (non-$)', '100'],
+                          ].map(([op, meaning, example]) => (
+                            <tr key={op} className="border-t border-gray-700">
+                              <td className="px-4 py-2 text-purple-300 font-mono text-xs align-top">{op}</td>
+                              <td className="px-4 py-2 text-gray-200 align-top">{meaning}</td>
+                              <td className="px-4 py-2 text-gray-400 align-top font-mono text-xs">{example}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="overflow-x-auto mb-8">
+                      <table className="w-full text-left text-sm border border-gray-700">
+                        <thead>
+                          <tr className="bg-gray-800">
+                            <th className="px-4 py-2 font-semibold text-gray-200 w-64">V2 syntax</th>
+                            <th className="px-4 py-2 font-semibold text-gray-200">V4 equivalent</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            ["substringof('Acme',CustomerName)", "contains(CustomerName,'Acme')"],
+                            ['$inlinecount=allpages', '$count=true'],
+                            ["datetime'2026-01-01T00:00:00'", '2026-01-01T00:00:00Z (bare ISO 8601)'],
+                            ["guid'…' and duration'…' literals", 'bare literals'],
+                            ['Atom XML default', 'JSON default'],
+                          ].map(([v2, v4]) => (
+                            <tr key={v2} className="border-t border-gray-700">
+                              <td className="px-4 py-2 text-gray-400 font-mono text-xs align-top">{v2}</td>
+                              <td className="px-4 py-2 text-purple-300 font-mono text-xs align-top">{v4}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <p className="mb-8">
+                      String functions worth memorizing: <code className="text-purple-300">contains()</code>, <code className="text-purple-300">startswith()</code>, <code className="text-purple-300">endswith()</code>, <code className="text-purple-300">tolower()</code>, <code className="text-purple-300">toupper()</code>, <code className="text-purple-300">trim()</code>, <code className="text-purple-300">length()</code>, <code className="text-purple-300">concat()</code>, <code className="text-purple-300">substring()</code>, <code className="text-purple-300">indexof()</code>; date parts: <code className="text-purple-300">year()</code>, <code className="text-purple-300">month()</code>, <code className="text-purple-300">day()</code>, <code className="text-purple-300">hour()</code>, <code className="text-purple-300">minute()</code>, <code className="text-purple-300">second()</code>; math: <code className="text-purple-300">round()</code>, <code className="text-purple-300">floor()</code>, <code className="text-purple-300">ceiling()</code>; typing: <code className="text-purple-300">cast()</code>, <code className="text-purple-300">isof()</code>.
                     </p>
 
                     <h2 className="h2 mb-4 text-gray-100">$select — Return Only What You Need</h2>

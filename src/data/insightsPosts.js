@@ -207,10 +207,10 @@ export const insightsPosts = [
     categories: ['Compliance', 'Standards', 'Blockchain'],
   },
   {
-    title: 'OData Query Options Explained: $filter, $select, $expand, and $orderby',
+    title: 'OData Query Options Cheat Sheet: $filter, $select, $expand, and $orderby',
     date: '09/10/2026',
     description:
-      'A practical guide to OData system query options: filter operators and functions, projections, navigation expansion, sorting, paging, V2 vs V4 syntax, and SAP Gateway specifics.',
+      'A cheat sheet and practical guide to OData system query options: filter operators and functions, projections, navigation expansion, sorting, paging, V2 vs V4 syntax, and SAP Gateway specifics.',
     image: odataImage,
     imageText: 'SAP OData URL builder with generated query string',
     link: '/insights/odata-query-options-guide/',

@@ -578,7 +578,7 @@
   </url>
   <url>
     <loc>https://www.ogtechnologies.co/insights/odata-query-options-guide/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -629,5 +629,41 @@
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/downloads/iso-27001-gap-analysis-template.xlsx</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/downloads/iso-27001-gap-analysis-template.pdf</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/downloads/iso-27001-annex-a-controls.csv</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/downloads/iso-42001-annex-a-controls.csv</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/downloads/iso-42001-annex-a-controls.xlsx</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/downloads/iso-42001-annex-a-controls.pdf</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

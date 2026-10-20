@@ -166,9 +166,9 @@ function GtinValidator() {
                     </div>
                   )}
 
-                  <div className="mt-8 pt-6 border-t border-gray-700">
-                    <h2 className="text-lg font-semibold text-gray-200 mb-3">Check digit calculator</h2>
-                    <p className="text-xs text-gray-500 mb-3">Enter the digits without the check digit — the full code is returned.</p>
+                  <div className="mt-8 pt-6 border-t border-gray-700" id="check-digit-calculator">
+                    <h2 className="text-lg font-semibold text-gray-200 mb-3">GS1 check digit calculator</h2>
+                    <p className="text-xs text-gray-500 mb-3">Enter the digits without the check digit — the full code is returned. Works for GTIN-8, UPC-A, EAN-13, and GTIN-14.</p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <input
                         type="text"
@@ -200,7 +200,7 @@ function GtinValidator() {
                     )}
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-gray-700">
+                  <div className="mt-8 pt-6 border-t border-gray-700" id="upc-to-gtin-converter">
                     <h2 className="text-lg font-semibold text-gray-200 mb-3">UPC ↔ GTIN converter</h2>
                     <p className="text-xs text-gray-500 mb-3">
                       Paste any barcode to see every equivalent format. Leading zeros never change the check
@@ -243,7 +243,7 @@ function GtinValidator() {
                     )}
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-gray-700">
+                  <div className="mt-8 pt-6 border-t border-gray-700" id="isbn-validator">
                     <h2 className="text-lg font-semibold text-gray-200 mb-3">ISBN-10 validator</h2>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <input
@@ -307,6 +307,25 @@ function GtinValidator() {
                         No. The checksum only proves the digits are well-formed — it says nothing about whether GS1
                         issued the number or who owns it. Marketplaces like Amazon cross-check the GS1 registry and
                         brand ownership, so a checksum-valid code can still be rejected as unregistered or mismatched.
+                      </p>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">Can I look up which company or product a GTIN belongs to?</h3>
+                      <p className="text-sm text-gray-400">
+                        Not from the digits alone. A GTIN encodes a GS1 prefix (which identifies the issuing
+                        country organization, shown in the result above), a company prefix, and an item
+                        reference — but mapping those to a company name requires the GS1 registry (GEPIR) or a
+                        licensed product database. This tool verifies the number is structurally valid; ownership
+                        lookup is a separate registry query.
+                      </p>
+                    </div>
+                    <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                      <h3 className="text-sm font-semibold text-gray-200 mb-1.5">How do I calculate a GTIN check digit by hand?</h3>
+                      <p className="text-sm text-gray-400">
+                        Starting from the rightmost data digit, multiply digits alternately by 3 and 1 moving
+                        right-to-left, then sum. The check digit is whatever brings the total to the next
+                        multiple of 10. The calculator above does this for you — enter the code without its last
+                        digit and it returns the complete GTIN.
                       </p>
                     </div>
                     <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">

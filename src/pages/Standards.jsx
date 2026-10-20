@@ -230,6 +230,10 @@ function Standards() {
                         <li>• Security controls</li>
                         <li>• Compliance management</li>
                       </ul>
+                      <ul className="space-y-2 text-sm">
+                        <li><Link to="/tools/iso-27001-gap-analysis/" className="text-purple-400 hover:text-purple-300 underline">Free ISO 27001 Gap Analysis tool</Link></li>
+                        <li><Link to="/insights/iso-27001-annex-a-controls/" className="text-purple-400 hover:text-purple-300 underline">Annex A controls reference</Link></li>
+                      </ul>
                     </div>
 
                     {/* ISO IMS */}
@@ -241,6 +245,10 @@ function Standards() {
                         <li>• Environmental management</li>
                         <li>• Health & safety</li>
                       </ul>
+                      <ul className="space-y-2 text-sm">
+                        <li><Link to="/tools/iso-9001-readiness-checker/" className="text-purple-400 hover:text-purple-300 underline">Free ISO 9001 Readiness Checker</Link></li>
+                        <li><Link to="/insights/integrated-management-system-iso-9001-27001-42001/" className="text-purple-400 hover:text-purple-300 underline">Integrated management system guide</Link></li>
+                      </ul>
                     </div>
 
                     {/* AIMS */}
@@ -251,6 +259,10 @@ function Standards() {
                         <li>• AI governance</li>
                         <li>• Risk management</li>
                         <li>• Ethical AI practices</li>
+                      </ul>
+                      <ul className="space-y-2 text-sm">
+                        <li><Link to="/tools/iso-42001-ai-readiness/" className="text-purple-400 hover:text-purple-300 underline">Free ISO 42001 AI Readiness Check</Link></li>
+                        <li><Link to="/insights/iso-42001-annex-a-controls/" className="text-purple-400 hover:text-purple-300 underline">Annex A controls reference</Link></li>
                       </ul>
                     </div>
                   </div>
