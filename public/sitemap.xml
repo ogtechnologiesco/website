@@ -355,8 +355,20 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.ogtechnologies.co/tools/mt940-to-camt053/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.ogtechnologies.co/tools/sepa-xml-validator/</loc>
     <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/tools/sepa-xml-generator/</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -434,9 +446,27 @@
   </url>
   <url>
     <loc>https://www.ogtechnologies.co/portfolio/</loc>
-    <lastmod>2025-01-24</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/portfolio/edunode/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/portfolio/mozart-pay/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/portfolio/stellar-go-cli/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.ogtechnologies.co/helpdesk/</loc>
@@ -621,6 +651,24 @@
   <url>
     <loc>https://www.ogtechnologies.co/insights/pdf-metadata-guide/</loc>
     <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/insights/mt940-field-reference/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/insights/odata-filter-examples/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/insights/o1js-state-assertions/</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -167,6 +167,9 @@ function Mt940Format() {
                         <Link to="/tools/mt940-to-csv/" className="text-purple-400 hover:text-purple-300 underline">MT940 to CSV Converter</Link> — parses :61:/:86: tags, decodes SEPA references (EREF+, MREF+, CRED+, SVWZ+) and ?NN subfields into dedicated columns, and verifies running balances against the closing balance.
                       </li>
                       <li>
+                        <Link to="/tools/mt940-to-camt053/" className="text-purple-400 hover:text-purple-300 underline">MT940 → camt.053 Converter</Link> — maps :60F:/:62F: balances and :61:/:86: entries into camt.053.001.02 XML for migration testing.
+                      </li>
+                      <li>
                         <Link to="/tools/iso-20022-viewer/" className="text-purple-400 hover:text-purple-300 underline">ISO 20022 Message Viewer</Link> — for the camt.053 files your bank is migrating to: parse, inspect entries and balances, and validate structure.
                       </li>
                       <li>

@@ -24,6 +24,9 @@ import iso27001AnnexAImage from '../images/insight-iso27001-annexa.jpg';
 import soc2TscImage from '../images/insight-soc2-tsc.jpg';
 import soc2VsIsoImage from '../images/insight-soc2-vs-iso27001.jpg';
 import pdfMetadataImage from '../images/insight-pdf-metadata.jpg';
+import mt940FieldsImage from '../images/insight-mt940-fields.jpg';
+import odataFilterImage from '../images/insight-odata-filter.jpg';
+import o1jsStateImage from '../images/insight-o1js-state.jpg';
 
 export const insightsPosts = [
   {
@@ -285,6 +288,36 @@ export const insightsPosts = [
     imageText: 'PDF metadata viewer showing document info fields',
     link: '/insights/pdf-metadata-guide/',
     categories: ['Tools', 'Security'],
+  },
+  {
+    title: 'MT940 Fields Explained: The Complete Tag Reference (:20: to :62F:)',
+    date: '20/10/2026',
+    description:
+      'Every MT940 tag by name and format — :60F:/:62F: balances, the :61: statement line anatomy, structured :86: SEPA remittance subfields, and the transaction code table.',
+    image: mt940FieldsImage,
+    imageText: 'MT940 field tag reference table',
+    link: '/insights/mt940-field-reference/',
+    categories: ['Payments', 'Standards'],
+  },
+  {
+    title: 'OData $filter Examples: Operators, Functions, and 40+ Copy-Paste Queries',
+    date: '20/10/2026',
+    description:
+      'A copy-pasteable OData $filter cookbook: every operator and function with real examples, collection filters with any/all, and the V2 vs V4 differences that break queries.',
+    image: odataFilterImage,
+    imageText: 'OData $filter query examples',
+    link: '/insights/odata-filter-examples/',
+    categories: ['Developer', 'Standards'],
+  },
+  {
+    title: 'o1js State Assertions: getAndRequireEquals vs getAndAssertEquals',
+    date: '20/10/2026',
+    description:
+      'How o1js state preconditions work on Mina zkApps, why the assert* API was renamed to require*, and what "precondition unsatisfied" actually means.',
+    image: o1jsStateImage,
+    imageText: 'o1js zkApp state assertion code',
+    link: '/insights/o1js-state-assertions/',
+    categories: ['Blockchain', 'Developer'],
   },
 ];
 

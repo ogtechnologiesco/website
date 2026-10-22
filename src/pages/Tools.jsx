@@ -43,7 +43,9 @@ const TOOL_CATEGORIES = [
       { name: 'LEI Validator', path: '/tools/lei-validator/', description: 'Validate Legal Entity Identifiers per ISO 17442.' },
       { name: 'ISO 20022 Viewer', path: '/tools/iso-20022-viewer/', description: 'Parse pain.001, camt.053, pacs.008 messages with consistency checks.' },
       { name: 'SEPA XML Validator', path: '/tools/sepa-xml-validator/', description: 'Validate pain.001, pain.008, camt.053 files against SEPA rulebook checks.' },
+      { name: 'SEPA XML Generator', path: '/tools/sepa-xml-generator/', description: 'Build pain.001 credit transfer and pain.008 direct debit files from a CSV of payments.' },
       { name: 'MT940 to CSV', path: '/tools/mt940-to-csv/', description: 'Convert SWIFT MT940 statements to CSV for Excel.' },
+      { name: 'MT940 to camt.053', path: '/tools/mt940-to-camt053/', description: 'Convert MT940 statements to ISO 20022 camt.053.001.02 XML.' },
     ],
   },
   {

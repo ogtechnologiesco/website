@@ -456,6 +456,9 @@ function SepaXmlValidator() {
                       <Link to="/tools/xsd-validator/" className="text-purple-400 hover:text-purple-300 underline">XSD Validator</Link>{' '}
                       with the official XSDs from iso20022.org. To inspect what a message contains, use the{' '}
                       <Link to="/tools/iso-20022-viewer/" className="text-purple-400 hover:text-purple-300 underline">ISO 20022 Viewer</Link>.
+                      {' '}Need to build a file instead? The{' '}
+                      <Link to="/tools/sepa-xml-generator/" className="text-purple-400 hover:text-purple-300 underline">SEPA XML Generator</Link>{' '}
+                      produces pain.001 and pain.008 messages from a CSV of payments — come back here to check them.
                     </p>
                     <p className="text-gray-300 text-sm">
                       Working with legacy SWIFT statements? Convert them first with our{' '}

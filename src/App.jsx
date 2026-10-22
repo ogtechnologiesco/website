@@ -57,6 +57,7 @@ const BicValidator = lazy(() => import('./pages/bicValidator'));
 const LeiValidator = lazy(() => import('./pages/leiValidator'));
 const Iso20022Viewer = lazy(() => import('./pages/iso20022'));
 const Mt940ToCsv = lazy(() => import('./pages/mt940ToCsv'));
+const Mt940ToCamt053 = lazy(() => import('./pages/mt940ToCamt053'));
 const Hl7Parser = lazy(() => import('./pages/hl7Parser'));
 const FhirValidator = lazy(() => import('./pages/fhirValidator'));
 const TleParser = lazy(() => import('./pages/tleParser'));
@@ -78,6 +79,7 @@ const XPathTesterPage = lazy(() => import('./pages/xmlTools/XPathTesterPage'));
 const XmlToCsvPage = lazy(() => import('./pages/xmlTools/XmlToCsvPage'));
 const XsdValidatorPage = lazy(() => import('./pages/xmlTools/XsdValidatorPage'));
 const SepaXmlValidator = lazy(() => import('./pages/sepaValidator'));
+const SepaXmlGenerator = lazy(() => import('./pages/sepaXmlGenerator'));
 const PdfMergePage = lazy(() => import('./pages/pdfTools/PdfMergePage'));
 const PdfSplitPage = lazy(() => import('./pages/pdfTools/PdfSplitPage'));
 const ImageToPdfPage = lazy(() => import('./pages/pdfTools/ImageToPdfPage'));
@@ -105,6 +107,7 @@ const Import = lazy(() => import('./pages/Import'));
 const Companies = lazy(() => import('./pages/Companies'));
 const Ventures = lazy(() => import('./pages/Ventures'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
+const PortfolioProject = lazy(() => import('./pages/portfolio/ProjectDetail'));
 const Partners = lazy(() => import('./pages/Partners'));
 const Publications = lazy(() => import('./pages/Publications'));
 const PaymentSuccess = lazy(() => import('./pages/PaymentSuccess'));
@@ -136,6 +139,9 @@ const OdataQueryOptions = lazy(() => import('./pages/Insights/odataQueryOptions'
 const ChooseCrmTicketing = lazy(() => import('./pages/Insights/chooseCrmTicketing'));
 const HelpdeskWorkflow = lazy(() => import('./pages/Insights/helpdeskWorkflow'));
 const Iso9001ImplementationGuide = lazy(() => import('./pages/Insights/iso9001ImplementationGuide'));
+const Mt940FieldReference = lazy(() => import('./pages/Insights/mt940FieldReference'));
+const OdataFilterExamples = lazy(() => import('./pages/Insights/odataFilterExamples'));
+const O1jsStateAssertions = lazy(() => import('./pages/Insights/o1jsStateAssertions'));
 
 
 function App() {
@@ -215,6 +221,7 @@ function App() {
         <Route path="/crm/companies" element={<Companies/>} />
         <Route exact path="/ventures" element={<Ventures/>} />
         <Route exact path="/portfolio" element={<Portfolio/>} />
+        <Route exact path="/portfolio/:slug" element={<PortfolioProject/>} />
         <Route exact path="/partners" element={<Partners/>} />
         <Route exact path="/publications" element={<Publications/>} />
         <Route exact path="/blog" element={<Blogs/>} />
@@ -253,6 +260,9 @@ function App() {
         <Route exact path="/insights/how-to-choose-crm-ticketing-system" element={<ChooseCrmTicketing/>} />
         <Route exact path="/insights/helpdesk-workflow-best-practices" element={<HelpdeskWorkflow/>} />
         <Route exact path="/insights/iso-9001-implementation-guide" element={<Iso9001ImplementationGuide/>} />
+        <Route exact path="/insights/mt940-field-reference" element={<Mt940FieldReference/>} />
+        <Route exact path="/insights/odata-filter-examples" element={<OdataFilterExamples/>} />
+        <Route exact path="/insights/o1js-state-assertions" element={<O1jsStateAssertions/>} />
         <Route exact path="/tools" element={<Tools/>} />
         <Route exact path="/tools/html-to-image" element={<HtmlToImage/>} />
         <Route exact path="/tools/screenshot-to-image" element={<ScreenshotToImage/>} />
@@ -294,6 +304,8 @@ function App() {
         <Route exact path="/tools/lei-validator" element={<LeiValidator/>} />
         <Route exact path="/tools/iso-20022-viewer" element={<Iso20022Viewer/>} />
         <Route exact path="/tools/mt940-to-csv" element={<Mt940ToCsv/>} />
+        <Route exact path="/tools/mt940-to-camt053" element={<Mt940ToCamt053/>} />
+        <Route exact path="/tools/sepa-xml-generator" element={<SepaXmlGenerator/>} />
         <Route exact path="/tools/hl7-parser" element={<Hl7Parser/>} />
         <Route exact path="/tools/fhir-validator" element={<FhirValidator/>} />
         <Route exact path="/tools/tle-parser" element={<TleParser/>} />

@@ -38,7 +38,9 @@
 - [LEI Validator](https://www.ogtechnologies.co/tools/lei-validator/)
 - [ISO 20022 Message Viewer](https://www.ogtechnologies.co/tools/iso-20022-viewer/)
 - [MT940 to CSV Converter](https://www.ogtechnologies.co/tools/mt940-to-csv/)
+- [MT940 to camt.053 Converter](https://www.ogtechnologies.co/tools/mt940-to-camt053/)
 - [SEPA XML Validator](https://www.ogtechnologies.co/tools/sepa-xml-validator/)
+- [SEPA XML Generator](https://www.ogtechnologies.co/tools/sepa-xml-generator/)
 - [XML Formatter & Beautifier](https://www.ogtechnologies.co/tools/xml-formatter/)
 - [XML Validator](https://www.ogtechnologies.co/tools/xml-validator/)
 - [XSD Schema Validator](https://www.ogtechnologies.co/tools/xsd-validator/)
@@ -87,6 +89,9 @@
 - [Helpdesk Workflow Best Practices](https://www.ogtechnologies.co/insights/helpdesk-workflow-best-practices/): Ticket intake, triage, SLAs, escalation, automation, and support metrics
 - [ISO 9001 Implementation Guide](https://www.ogtechnologies.co/insights/iso-9001-implementation-guide/): Clauses 4–10, quality management principles, and the Stage 1/Stage 2 certification audit process
 - [PDF Metadata Guide](https://www.ogtechnologies.co/insights/pdf-metadata-guide/): What the PDF info dictionary and XMP stream reveal — and how to view, edit, or strip them
+- [MT940 Field Reference](https://www.ogtechnologies.co/insights/mt940-field-reference/): Every tag from :20: to :62F:, :61: anatomy, structured :86: SEPA subfields, transaction codes
+- [OData $filter Examples](https://www.ogtechnologies.co/insights/odata-filter-examples/): Operators, functions, and 40+ copy-paste queries — any/all, V2 vs V4 syntax
+- [o1js State Assertions](https://www.ogtechnologies.co/insights/o1js-state-assertions/): getAndRequireEquals vs getAndAssertEquals, Mina zkApp preconditions explained
 
 ## Resources
 
@@ -97,6 +102,9 @@
 - [Publications](https://www.ogtechnologies.co/publications/): Blockchain standardization reports on cross-border payments — BlockStand expert deliverables
 - [Ventures](https://www.ogtechnologies.co/ventures/): Supporting startups and spin-offs
 - [Portfolio](https://www.ogtechnologies.co/portfolio/): Explore our projects
+- [EduNode](https://www.ogtechnologies.co/portfolio/edunode/): STEM, Web3, and AI education platform — Stellar Development Foundation grant
+- [Mozart Pay](https://www.ogtechnologies.co/portfolio/mozart-pay/): Stellar payment platform with Circle USDC/EURC settlement
+- [Stellar Go CLI](https://www.ogtechnologies.co/portfolio/stellar-go-cli/): Open-source Go toolkit for Stellar — wallets, payments, SEP-41, DIDs/VCs, ISO 20022, Soroban, MCP
 - [Careers](https://www.ogtechnologies.co/careers/): Join our team
 
 ## Legal
