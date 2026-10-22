@@ -63,6 +63,9 @@ function Footer() {
                     <Link to="/insights/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Insights</Link>
                   </li>
                   <li className="mb-1">
+                    <Link to="/glossary/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Glossary</Link>
+                  </li>
+                  <li className="mb-1">
                     <Link to="/publications/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Publications</Link>
                   </li>
                   <li className="mb-1">
@@ -70,6 +73,9 @@ function Footer() {
                   </li>
                   <li className="mb-1">
                     <Link to="/partners/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Partners</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/expert-hub/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Expert Hub</Link>
                   </li>
                   <li className="mb-1">
                     <Link to="/portfolio/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Portfolio</Link>

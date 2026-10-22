@@ -235,6 +235,13 @@ function Job() {
                         </a>
                       </div>
                     </div>
+                    <p className="text-gray-400 mt-8">
+                      Freelancer or independent consultant?{' '}
+                      <Link to="/expert-hub/" className="text-purple-400 hover:text-purple-300">
+                        Join our Expert Hub
+                      </Link>{' '}
+                      for project-based and contract work.
+                    </p>
                   </div>
                 </div>
 

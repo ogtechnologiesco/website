@@ -446,6 +446,26 @@ export const doraAPI = {
   })
 };
 
+// Expert Hub API methods
+export const expertsAPI = {
+  // Submit an expert/freelancer application. Falls back to the public quote
+  // endpoint until the dedicated /api/experts route exists on the backend.
+  submitApplication: async (applicationData) => {
+    try {
+      return await publicApiPost('/api/experts', applicationData);
+    } catch (error) {
+      if (error.response?.status === 404) {
+        return publicApiPost('/api/quote', {
+          name: applicationData.name,
+          email: applicationData.email,
+          message: `Expert Hub Application\n\n${JSON.stringify(applicationData, null, 2)}`
+        });
+      }
+      throw error;
+    }
+  }
+};
+
 // Legacy API methods
 export const legacyAPI = {
   // Newsletter subscription

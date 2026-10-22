@@ -1,5 +1,14 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { GLOSSARY_TERMS } from '../data/glossaryTerms';
+import { PRODUCTS } from '../data/products';
+
+const glossaryTermNames = Object.fromEntries(
+  GLOSSARY_TERMS.map((t) => [t.slug, t.shortName || t.term])
+);
+const productNames = Object.fromEntries(
+  PRODUCTS.map((p) => [p.slug, p.shortName || p.name])
+);
 
 const routeNames = {
   '': 'Home',
@@ -29,6 +38,7 @@ const routeNames = {
   'how-blockchain-standards-enable-enterprises-to-reach-global-customers': 'Blockchain Standards for Global Customers',
   'digital-payments-future': "Europe's Digital Payment Future",
   'estandares-sismicos-colombia': 'Estándares Sísmicos Colombia',
+  'glossary': 'Glossary',
 };
 
 function Breadcrumbs() {
@@ -43,7 +53,7 @@ function Breadcrumbs() {
 
   segments.forEach((segment) => {
     currentPath += '/' + segment;
-    const name = routeNames[segment] || segment.charAt(0).toUpperCase() + segment.slice(1);
+    const name = routeNames[segment] || glossaryTermNames[segment] || productNames[segment] || segment.charAt(0).toUpperCase() + segment.slice(1);
     crumbs.push({ name, path: currentPath + '/' });
   });
 

@@ -130,8 +130,14 @@ function Products() {
                   
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link 
-                      to="/pricing/"
+                      to="/products/crm-ticketing/"
                       className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out text-center"
+                    >
+                      Product Details
+                    </Link>
+                    <Link 
+                      to="/pricing/"
+                      className="bg-transparent border-2 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out text-center"
                     >
                       View Pricing Plans
                     </Link>
@@ -158,7 +164,9 @@ function Products() {
                   
                   <h3 className="h3 mb-3">Customized travel booking platform development </h3>
                   <p className="text-xl text-gray-400 mb-4">Our team of experts can help your business build a customized travel booking platform that incorporates AI and blockchain technologies. We work closely with you to understand your business requirements and design a platform that provides personalized travel recommendations and a seamless booking experience, while ensuring secure and transparent transactions.</p>
-                  
+                  <Link to="/products/travel-booking-platform/" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition duration-150 ease-in-out">
+                    Learn more →
+                  </Link>
                 </div>
               </div>
             </div>
@@ -175,7 +183,9 @@ function Products() {
                  
                   <h3 className="h3 mb-3">E-commerce marketplace development </h3>
                   <p className="text-xl text-gray-400 mb-4"> We can help your business build a decentralized and secure e-commerce marketplace that utilizes blockchain technology. Our team of developers and designers can work with you to create a user-friendly platform that incorporates AI algorithms to provide personalized product recommendations and real-time pricing optimization.</p>
-                  
+                  <Link to="/products/ecommerce-marketplace/" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition duration-150 ease-in-out">
+                    Learn more →
+                  </Link>
                 </div>
               </div>
             </div>
@@ -192,7 +202,9 @@ function Products() {
                  
                   <h3 className="h3 mb-3">Blockchain consulting services </h3>
                   <p className="text-xl text-gray-400 mb-4"> Our team of blockchain experts provides consulting services to companies looking to integrate blockchain technology into their existing systems. We can help you develop a blockchain strategy, design and build smart contracts, and develop blockchain-based applications that streamline your business operations. </p>
-                  
+                  <Link to="/products/blockchain-consulting/" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition duration-150 ease-in-out">
+                    Learn more →
+                  </Link>
                 </div>
               </div>
             </div>
@@ -209,7 +221,9 @@ function Products() {
                  
                   <h3 className="h3 mb-3">AI-powered chatbot development  </h3>
                   <p className="text-xl text-gray-400 mb-4">We can help your business build an AI-powered agents/chatbot that provides 24/7 customer support to your customers. Our team of developers and data scientists can work with you to design a agent/chatbot that uses natural language processing and machine learning algorithms to provide personalized assistance to your customers.</p>
-                  
+                  <Link to="/products/ai-chatbot/" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition duration-150 ease-in-out">
+                    Learn more →
+                  </Link>
                 </div>
               </div>
             </div>
@@ -227,7 +241,9 @@ function Products() {
                  
                   <h3 className="h3 mb-3">Blockchain-based loyalty program development  </h3>
                   <p className="text-xl text-gray-400 mb-4"> We can help your business build a blockchain-based loyalty program that rewards and retains your customers. Our team of developers can work with you to design and develop a loyalty program that uses blockchain technology to ensure transparency and security in the reward distribution process. </p>
-                  
+                  <Link to="/products/loyalty-program/" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition duration-150 ease-in-out">
+                    Learn more →
+                  </Link>
                 </div>
               </div>
             </div>
@@ -246,7 +262,9 @@ function Products() {
                  
                   <h3 className="h3 mb-3">E-learning platform development </h3>
                   <p className="text-xl text-gray-400 mb-4"> We can help your business build a custom e-learning platform that incorporates the latest technologies such as AI and blockchain. Our team of instructional designers, developers, and data scientists can work with you to design and develop an e-learning platform that provides personalized learning experiences to your users, while ensuring data security and integrity.</p>
-                  
+                  <Link to="/products/elearning-platform/" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition duration-150 ease-in-out">
+                    Learn more →
+                  </Link>
                 </div>
               </div>
             </div>
@@ -263,7 +281,9 @@ function Products() {
                  
                   <h3 className="h3 mb-3">Space technology development </h3>
                   <p className="text-xl text-gray-400 mb-4"> Explore the cosmos with our expertise in crafting cutting-edge space technology solutions. Our skilled team, comprising engineers, developers, and data specialists, is ready to collaborate with you in creating a bespoke space technology platform. From satellite communications to celestial data analysis, we tailor solutions that offer unparalleled experiences. Ensuring the utmost security and integrity of space-related data, we bring innovation to the forefront of your cosmic endeavors. Join hands with us to propel your business into the future of space technology. </p>
-                  
+                  <Link to="/products/space-technology/" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition duration-150 ease-in-out">
+                    Learn more →
+                  </Link>
                 </div>
               </div>
             </div>
@@ -312,6 +332,153 @@ function Products() {
                       AI-Powered Diagnostic Tools
                     </li>
                   </ul>
+                  <Link to="/products/healthcare-solutions/" className="inline-flex items-center text-teal-400 hover:text-teal-300 font-medium transition duration-150 ease-in-out">
+                    Learn more →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Payment Infrastructure item */}
+            <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
+              {/* Image */}
+              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="fade-up">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-indigo-600/20 rounded-lg blur-xl"></div>
+                  <div className="relative bg-gray-800 rounded-lg p-8 border border-blue-500/30 flex items-center justify-center min-h-[300px]">
+                    <svg className="w-32 h-32 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                    </svg>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                        <span className="text-blue-300 text-xs font-medium">Payments</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Content */}
+              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
+                <div className="md:pr-4 lg:pr-12 xl:pr-16">
+                  <div className="flex items-center mb-3">
+                    <span className="bg-blue-600/20 text-blue-400 text-xs px-2 py-1 rounded-full border border-blue-500/30">PAYMENTS</span>
+                  </div>
+                  <h3 className="h3 mb-3">Payment Infrastructure &amp; ISO 20022 Migration </h3>
+                  <p className="text-xl text-gray-400 mb-4">Get your payment systems ready for the November 2026 ISO 20022 deadline. We assess your pain/camt/pacs message flows, migrate MT940 statement pipelines to camt.053, and connect your ERP to bank rails — plus stablecoin settlement where the use case earns it.</p>
+                  <ul className="space-y-2 text-gray-300 mb-4">
+                    <li className="flex items-center">
+                      <span className="text-blue-400 mr-2">✓</span>
+                      ISO 20022 Migration Assessment &amp; Roadmap
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-blue-400 mr-2">✓</span>
+                      SEPA SCT/SDD/SCT Inst File Pipelines
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-blue-400 mr-2">✓</span>
+                      ERP-to-Bank Connectivity &amp; Stablecoin Settlement
+                    </li>
+                  </ul>
+                  <Link to="/products/payment-infrastructure/" className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition duration-150 ease-in-out">
+                    Learn more →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Digital Identity item */}
+            <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
+              {/* Image */}
+              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 rtl" data-aos="fade-up">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-violet-600/20 rounded-lg blur-xl"></div>
+                  <div className="relative bg-gray-800 rounded-lg p-8 border border-indigo-500/30 flex items-center justify-center min-h-[300px]">
+                    <svg className="w-32 h-32 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path>
+                    </svg>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
+                        <span className="text-indigo-300 text-xs font-medium">Digital Identity</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Content */}
+              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-left">
+                <div className="md:pl-4 lg:pl-12 xl:pl-16">
+                  <div className="flex items-center mb-3">
+                    <span className="bg-indigo-600/20 text-indigo-400 text-xs px-2 py-1 rounded-full border border-indigo-500/30">IDENTITY</span>
+                  </div>
+                  <h3 className="h3 mb-3">Digital Identity &amp; Verifiable Credential Solutions </h3>
+                  <p className="text-xl text-gray-400 mb-4">Prepare for the EUDI Wallet era. We build verifiable credential issuance and verification on W3C standards — EUDI Wallet acceptance under eIDAS 2.0, DID infrastructure, EBSI trust chains, and KYC flows upgraded to cryptographic proof.</p>
+                  <ul className="space-y-2 text-gray-300 mb-4">
+                    <li className="flex items-center">
+                      <span className="text-indigo-400 mr-2">✓</span>
+                      Verifiable Credential Issuance &amp; Verification
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-indigo-400 mr-2">✓</span>
+                      EUDI Wallet Readiness (eIDAS 2.0)
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-indigo-400 mr-2">✓</span>
+                      DID Infrastructure &amp; EBSI Trust Chains
+                    </li>
+                  </ul>
+                  <Link to="/products/digital-identity/" className="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-medium transition duration-150 ease-in-out">
+                    Learn more →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* GRC item */}
+            <div className="md:grid md:grid-cols-12 md:gap-6 items-center">
+              {/* Image */}
+              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="fade-up">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-600/20 to-orange-600/20 rounded-lg blur-xl"></div>
+                  <div className="relative bg-gray-800 rounded-lg p-8 border border-amber-500/30 flex items-center justify-center min-h-[300px]">
+                    <svg className="w-32 h-32 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
+                        <span className="text-amber-300 text-xs font-medium">GRC &amp; Compliance</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Content */}
+              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
+                <div className="md:pr-4 lg:pr-12 xl:pr-16">
+                  <div className="flex items-center mb-3">
+                    <span className="bg-amber-600/20 text-amber-400 text-xs px-2 py-1 rounded-full border border-amber-500/30">COMPLIANCE</span>
+                  </div>
+                  <h3 className="h3 mb-3">GRC &amp; Management-System Automation </h3>
+                  <p className="text-xl text-gray-400 mb-4">Run your ISMS, QMS, or AIMS as a working system, not a spreadsheet. We implement integrated management systems across ISO 27001, 9001, and 42001 — with living Statements of Applicability, evidence tracking, and DORA register-of-information automation.</p>
+                  <ul className="space-y-2 text-gray-300 mb-4">
+                    <li className="flex items-center">
+                      <span className="text-amber-400 mr-2">✓</span>
+                      ISMS / QMS / AIMS Implementation
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-amber-400 mr-2">✓</span>
+                      SoA Registers &amp; Evidence Workflows
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-amber-400 mr-2">✓</span>
+                      DORA Register of Information Automation
+                    </li>
+                  </ul>
+                  <Link to="/products/grc-compliance-automation/" className="inline-flex items-center text-amber-400 hover:text-amber-300 font-medium transition duration-150 ease-in-out">
+                    Learn more →
+                  </Link>
                 </div>
               </div>
             </div>

@@ -27,8 +27,96 @@ import pdfMetadataImage from '../images/insight-pdf-metadata.jpg';
 import mt940FieldsImage from '../images/insight-mt940-fields.jpg';
 import odataFilterImage from '../images/insight-odata-filter.jpg';
 import o1jsStateImage from '../images/insight-o1js-state.jpg';
+import iso24874StellarImage from '../images/insight-iso24874-stellar-sdg.jpg';
+import claudeCodeMcpImage from '../images/insight-claude-code-mcp.jpg';
+import gpt6TiersImage from '../images/insight-gpt6-model-tiers.jpg';
+import devinAutonomousImage from '../images/insight-devin-autonomous.jpg';
+import deepseekV4Image from '../images/insight-deepseek-v4-moe.jpg';
+import geminiArgonImage from '../images/insight-gemini-4-argon.jpg';
+import kimiK3Image from '../images/insight-kimi-k3.jpg';
+import glm5Image from '../images/insight-glm-5-zai.jpg';
 
 export const insightsPosts = [
+  {
+    title: 'Claude Code for Enterprise Teams: Agentic Workflows, Subagents, and MCP Integration',
+    date: '22/10/2026',
+    description:
+      'How enterprise teams deploy Claude Code: the agentic loop, CLAUDE.md memory, subagents, Model Context Protocol (MCP) servers, permission models, and AI governance.',
+    image: claudeCodeMcpImage,
+    imageText: 'Claude Code terminal with MCP server connections',
+    link: '/insights/claude-code-agentic-workflows-mcp/',
+    categories: ['AI Agents', 'Developer'],
+  },
+  {
+    title: 'GPT-6 Explained: Astra, Sol, and Luna — Choosing the Right Model Tier for Your Workload',
+    date: '22/10/2026',
+    description:
+      'OpenAI\'s GPT-6 family tiers by cost and intelligence: Astra at the frontier, Sol in the balanced middle, Luna at the efficient end. How to route workloads across tiers.',
+    image: gpt6TiersImage,
+    imageText: 'GPT-6 model tiers on the cost-intelligence curve',
+    link: '/insights/gpt-6-astra-sol-luna-model-tiers/',
+    categories: ['LLMs', 'AI Governance'],
+  },
+  {
+    title: 'Inside Devin: What Autonomous AI Software Engineers Can (and Can\'t) Ship in Production',
+    date: '22/10/2026',
+    description:
+      'A practical evaluation of Cognition\'s Devin — how ticket-to-PR workflows work, where autonomous engineers excel, and where human judgment still leads.',
+    image: devinAutonomousImage,
+    imageText: 'Devin autonomous engineer ticket-to-PR workflow',
+    link: '/insights/devin-autonomous-ai-software-engineer/',
+    categories: ['AI Agents', 'Developer'],
+  },
+  {
+    title: 'DeepSeek V4.1 and the Open-Weight Price War: MIT-Licensed MoE Models for Coding Agents',
+    date: '22/10/2026',
+    description:
+      'DeepSeek V4.1 Flash ships MIT-licensed weights and a 552B MoE backbone at ~1/40th the cost per agent task of frontier open models. What it means for your AI stack.',
+    image: deepseekV4Image,
+    imageText: 'DeepSeek V4.1 mixture-of-experts routing diagram',
+    link: '/insights/deepseek-v4-open-weight-moe-coding-agents/',
+    categories: ['LLMs', 'AI Agents'],
+  },
+  {
+    title: 'Gemini 4 Argon and Antigravity: Google\'s New Agentic Coding Stack, Explained',
+    date: '22/10/2026',
+    description:
+      'Gemini 4 Argon — Google\'s newest frontier model, #1 on the Vals Index — paired with Antigravity, an agent-first IDE. What the stack means for engineering teams.',
+    image: geminiArgonImage,
+    imageText: 'Gemini 4 Argon with the Antigravity agent manager',
+    link: '/insights/gemini-4-argon-antigravity-agentic-coding/',
+    categories: ['LLMs', 'AI Agents'],
+  },
+  {
+    title: 'Kimi K3: Inside the 2.8-Trillion-Parameter Open Model Leading Agentic Benchmarks',
+    date: '22/10/2026',
+    description:
+      'Moonshot AI\'s Kimi K3 is the largest open-weight flagship at 2.8T parameters — leading agentic coding benchmarks. What it offers, and the hosting reality.',
+    image: kimiK3Image,
+    imageText: 'Kimi K3 2.8-trillion-parameter open model',
+    link: '/insights/kimi-k3-open-weight-agentic-model/',
+    categories: ['LLMs', 'AI Agents'],
+  },
+  {
+    title: 'GLM-5.3 Explained: Z.ai\'s Open-Weight Model for Long-Horizon Agent Sessions',
+    date: '22/10/2026',
+    description:
+      'Z.ai\'s GLM-5.3 targets long-horizon agent and engineering sessions at the cheapest API tier in its class — capabilities, positioning vs DeepSeek and Kimi.',
+    image: glm5Image,
+    imageText: 'GLM-5.3 long-horizon agent session timeline',
+    link: '/insights/glm-5-zai-long-horizon-agents/',
+    categories: ['LLMs', 'AI Agents'],
+  },
+  {
+    title: 'Measuring SDG Impact on Stellar: ISO 24874 KPIs, Benchmarking and Reporting',
+    date: '22/10/2026',
+    description:
+      'How to apply the ISO/DPAS 24874 draft framework — KPI catalogue, five-level maturity benchmarking, and the SDG alignment methodology — to measure and report the impact of Stellar-based solutions.',
+    image: iso24874StellarImage,
+    imageText: 'ISO 24874 KPI panel measuring SDG impact on Stellar',
+    link: '/insights/iso-24874-stellar-sdg-impact/',
+    categories: ['Blockchain', 'Standards', 'Sustainability'],
+  },
   {
     title: 'ISO 20022 Migration: What the November 2026 Deadline Means for Your Payment Messages',
     date: '21/09/2026',
@@ -325,6 +413,8 @@ export const allInsightCategories = [
   'All',
   'Payments',
   'Standards',
+  'AI Agents',
+  'LLMs',
   'AI Governance',
   'Compliance',
   'Security',
@@ -334,6 +424,7 @@ export const allInsightCategories = [
   'Developer',
   'Tools',
   'Business',
+  'Sustainability',
 ];
 
 export function getRelatedInsights(currentLink, categories, count = 3) {

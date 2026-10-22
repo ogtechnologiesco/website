@@ -27,6 +27,7 @@ const Terms = lazy(() => import('./pages/Terms'));
 const Imprint = lazy(() => import('./pages/Imprint'));
 const SecurityHallOfFame = lazy(() => import('./pages/SecurityHallOfFame'));
 const Products = lazy(() => import('./pages/Products'));
+const ProductDetail = lazy(() => import('./pages/products/ProductDetail'));
 const Job = lazy(() => import('./pages/Job'));
 const Blogs = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/Blogs/intro'));
@@ -109,6 +110,7 @@ const Ventures = lazy(() => import('./pages/Ventures'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const PortfolioProject = lazy(() => import('./pages/portfolio/ProjectDetail'));
 const Partners = lazy(() => import('./pages/Partners'));
+const ExpertHub = lazy(() => import('./pages/ExpertHub'));
 const Publications = lazy(() => import('./pages/Publications'));
 const PaymentSuccess = lazy(() => import('./pages/PaymentSuccess'));
 const PaymentCancel = lazy(() => import('./pages/PaymentCancel'));
@@ -142,6 +144,16 @@ const Iso9001ImplementationGuide = lazy(() => import('./pages/Insights/iso9001Im
 const Mt940FieldReference = lazy(() => import('./pages/Insights/mt940FieldReference'));
 const OdataFilterExamples = lazy(() => import('./pages/Insights/odataFilterExamples'));
 const O1jsStateAssertions = lazy(() => import('./pages/Insights/o1jsStateAssertions'));
+const Iso24874StellarSdg = lazy(() => import('./pages/Insights/iso24874StellarSdg'));
+const ClaudeCodeMcp = lazy(() => import('./pages/Insights/claudeCodeMcp'));
+const Gpt6ModelTiers = lazy(() => import('./pages/Insights/gpt6ModelTiers'));
+const DevinAutonomous = lazy(() => import('./pages/Insights/devinAutonomous'));
+const DeepseekV4 = lazy(() => import('./pages/Insights/deepseekV4'));
+const GeminiArgon = lazy(() => import('./pages/Insights/geminiArgon'));
+const KimiK3 = lazy(() => import('./pages/Insights/kimiK3'));
+const Glm5Zai = lazy(() => import('./pages/Insights/glm5Zai'));
+const Glossary = lazy(() => import('./pages/glossary'));
+const GlossaryTerm = lazy(() => import('./pages/glossary/GlossaryTerm'));
 
 
 function App() {
@@ -203,6 +215,7 @@ function App() {
         <Route exact path="/privacy" element={<DataProtection/>} />
         <Route exact path="/cookie-policy" element={<DataPolicy/>} />
         <Route exact path="/products" element={<Products/>} />
+        <Route exact path="/products/:slug" element={<ProductDetail/>} />
         <Route exact path="/careers" element={<Job/>} />
         <Route exact path="/quote" element={<Quote/>} />
         <Route exact path="/dora" element={<Dora/>} />
@@ -223,6 +236,7 @@ function App() {
         <Route exact path="/portfolio" element={<Portfolio/>} />
         <Route exact path="/portfolio/:slug" element={<PortfolioProject/>} />
         <Route exact path="/partners" element={<Partners/>} />
+        <Route exact path="/expert-hub" element={<ExpertHub/>} />
         <Route exact path="/publications" element={<Publications/>} />
         <Route exact path="/blog" element={<Blogs/>} />
         <Route exact path="/blog/reaching-new-frontiers" element={<BlogPost/>} />
@@ -263,6 +277,16 @@ function App() {
         <Route exact path="/insights/mt940-field-reference" element={<Mt940FieldReference/>} />
         <Route exact path="/insights/odata-filter-examples" element={<OdataFilterExamples/>} />
         <Route exact path="/insights/o1js-state-assertions" element={<O1jsStateAssertions/>} />
+        <Route exact path="/insights/iso-24874-stellar-sdg-impact" element={<Iso24874StellarSdg/>} />
+        <Route exact path="/insights/claude-code-agentic-workflows-mcp" element={<ClaudeCodeMcp/>} />
+        <Route exact path="/insights/gpt-6-astra-sol-luna-model-tiers" element={<Gpt6ModelTiers/>} />
+        <Route exact path="/insights/devin-autonomous-ai-software-engineer" element={<DevinAutonomous/>} />
+        <Route exact path="/insights/deepseek-v4-open-weight-moe-coding-agents" element={<DeepseekV4/>} />
+        <Route exact path="/insights/gemini-4-argon-antigravity-agentic-coding" element={<GeminiArgon/>} />
+        <Route exact path="/insights/kimi-k3-open-weight-agentic-model" element={<KimiK3/>} />
+        <Route exact path="/insights/glm-5-zai-long-horizon-agents" element={<Glm5Zai/>} />
+        <Route exact path="/glossary" element={<Glossary/>} />
+        <Route exact path="/glossary/:slug" element={<GlossaryTerm/>} />
         <Route exact path="/tools" element={<Tools/>} />
         <Route exact path="/tools/html-to-image" element={<HtmlToImage/>} />
         <Route exact path="/tools/screenshot-to-image" element={<ScreenshotToImage/>} />

@@ -1,5 +1,7 @@
 import { blogPosts } from './blogPosts';
 import { insightsPosts } from './insightsPosts';
+import { GLOSSARY_TERMS, GLOSSARY_CATEGORIES } from './glossaryTerms';
+import { PRODUCTS } from './products';
 
 export const searchIndex = [
   { title: 'Home', description: 'OG Technologies EU - IT consulting for Web3, blockchain, and enterprise solutions', path: '/' },
@@ -16,6 +18,7 @@ export const searchIndex = [
   { title: 'Stellar Go CLI', description: 'Open-source Go CLI for Stellar — wallets, payments, SEP-41, DIDs/Verifiable Credentials, ISO 20022 reporting, Soroban RPC, MCP server', path: '/portfolio/stellar-go-cli/' },
   { title: 'Careers', description: 'Join OG Technologies EU - jobs in Web3, blockchain, and enterprise IT', path: '/careers/' },
   { title: 'Partner Program', description: 'Revenue share partnerships for consultants, MSPs, and agencies - referral, reseller, and co-delivery models', path: '/partners/' },
+  { title: 'Expert Hub', description: 'Freelance and contract projects for independent developers and consultants — open projects board and application', path: '/expert-hub/' },
   { title: 'Publications', description: 'Blockchain standardization reports on cross-border payments — BlockStand expert deliverables', path: '/publications/' },
   { title: 'Request a Quote', description: 'Get a customized quote for IT consulting services', path: '/quote/' },
   { title: 'Helpdesk', description: 'IT helpdesk and support services', path: '/helpdesk/' },
@@ -24,6 +27,7 @@ export const searchIndex = [
   { title: 'Cookie Policy', description: 'Types of cookies we use and GDPR compliance', path: '/cookie-policy/' },
   { title: 'Imprint', description: 'Legal imprint for OG Technologies EU, Vienna, Austria', path: '/imprint/' },
   { title: 'Security Hall of Fame', description: 'Recognizing security researchers who responsibly disclose vulnerabilities — how to report security issues', path: '/security-hall-of-fame/' },
+  { title: 'Glossary', description: 'Plain-language definitions of the standards, regulations, and technologies our clients work with', path: '/glossary/' },
   // Tools
   { title: 'All Tools', description: 'Index of all free browser-based tools and utilities', path: '/tools/' },
   { title: 'HTML to Image', description: 'Convert HTML content to images', path: '/tools/html-to-image/' },
@@ -68,6 +72,19 @@ export const searchIndex = [
   { title: 'XML Minifier', description: 'Compress XML by removing unnecessary whitespace', path: '/tools/xml-minifier/' },
   { title: 'XPath Tester', description: 'Evaluate XPath 1.0 expressions against XML documents live', path: '/tools/xpath-tester/' },
   { title: 'XML to CSV', description: 'Convert XML to CSV with automatic record detection', path: '/tools/xml-to-csv/' },
+  // Product pages
+  ...PRODUCTS.map((p) => ({
+    title: p.name,
+    description: p.tagline,
+    path: `/products/${p.slug}/`,
+  })),
+  // Glossary terms
+  ...GLOSSARY_TERMS.map((t) => ({
+    title: t.term,
+    description: t.definition,
+    path: `/glossary/${t.slug}/`,
+    categories: [(GLOSSARY_CATEGORIES.find((c) => c.id === t.category) || {}).name || ''],
+  })),
   // Blog posts
   ...blogPosts.map((post) => ({
     title: post.title,

@@ -4,6 +4,9 @@ import postcss from './postcss.config.js'
 import react from '@vitejs/plugin-react'
 import prerenderPlugin from './prerender-plugin.mjs'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
+import { GLOSSARY_TERMS } from './src/data/glossaryTerms.js'
+import { EXPERT_PROJECTS } from './src/data/expertProjects.js'
+import { PRODUCTS } from './src/data/products.js'
 
 const routeMeta = {
   '/': {
@@ -111,7 +114,7 @@ const routeMeta = {
   '/insights': {
     title: 'Insights - OG Technologies EU | Industry Articles on Standards, Payments & Developer Tools',
     description: 'In-depth industry articles from OG Technologies EU: ISO 20022 payments, ISO/IEC 42001 AI governance, IAM security, HL7/FHIR interoperability, and Ethereum development.',
-    jsonLd: [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Insights - OG Technologies EU", "description": "In-depth industry articles on payment standards, AI governance, cloud security, healthcare interoperability, and blockchain development.", "url": "https://www.ogtechnologies.co/insights/", "publisher": {"@type": "Organization", "name": "OG Technologies EU"}, "hasPart": [{"@type": "Article", "headline": "ISO 20022 Migration: What the November 2026 Deadline Means for Your Payment Messages", "description": "The coexistence period for MT and ISO 20022 messages ends in November 2026. Learn what changes, how to validate pain.001, camt.053 and pacs.008 messages, and which free tools can help.", "url": "https://www.ogtechnologies.co/insights/iso-20022-migration-guide/"}, {"@type": "Article", "headline": "ISO/IEC 42001 Explained: A Practical Guide to AI Management System Readiness", "description": "ISO/IEC 42001:2023 is the first international standard for AI management systems. Understand its clauses, Annex A controls, and how to assess your organization readiness before certification.", "url": "https://www.ogtechnologies.co/insights/iso-42001-ai-management-guide/"}, {"@type": "Article", "headline": "IAM Policy Security: 7 Privilege Escalation Patterns and How to Catch Them", "description": "Overly permissive AWS IAM policies are a leading cause of cloud breaches. Learn the most common privilege escalation patterns, why wildcards are dangerous, and how to validate policies automatically.", "url": "https://www.ogtechnologies.co/insights/iam-policy-security-patterns/"}, {"@type": "Article", "headline": "HL7 v2 vs FHIR: Choosing the Right Healthcare Interoperability Standard", "description": "HL7 v2 still powers most hospital integrations, but FHIR R4 is the future of healthcare APIs. Compare message formats, transport, tooling, and migration strategies.", "url": "https://www.ogtechnologies.co/insights/hl7-v2-vs-fhir-comparison/"}, {"@type": "Article", "headline": "Ethereum Calldata Deep Dive: Function Selectors, ABI Encoding, and EIP-55 Checksums", "description": "A developer reference for how Ethereum transactions encode function calls: 4-byte selectors, ABI argument encoding, and address checksums — with free tools to verify each step.", "url": "https://www.ogtechnologies.co/insights/ethereum-calldata-abi-guide/"}, {"@type": "Article", "headline": "ISO 27001 Gap Analysis: A Step-by-Step Guide", "description": "How to run an ISO 27001 gap analysis: scope, clause-by-clause assessment, scoring, remediation roadmap, and a PDF report.", "url": "https://www.ogtechnologies.co/insights/iso-27001-gap-analysis-guide/"}, {"@type": "Article", "headline": "Wei, Gwei, and Ether: Ethereum Units Explained", "description": "The full Ethereum denomination table, why gas is priced in Gwei, and worked wei-to-ETH conversion examples.", "url": "https://www.ogtechnologies.co/insights/ethereum-wei-gwei-units/"}, {"@type": "Article", "headline": "HL7 v2 Message Structure Explained: Segments, Fields, and Delimiters", "description": "A practical anatomy of HL7 v2 messages: delimiters, segments, fields, components, and message types — with a decoded ADT example.", "url": "https://www.ogtechnologies.co/insights/hl7-v2-message-structure/"}, {"@type": "Article", "headline": "How to Validate AWS IAM Policies: 7 Checks Before You Deploy", "description": "A practical checklist for validating AWS IAM policies before deployment: syntax, wildcards, resource ARNs, condition keys, and privilege escalation patterns.", "url": "https://www.ogtechnologies.co/insights/aws-iam-policy-validation/"}, {"@type": "Article", "headline": "DORA for Crypto and Web3 Companies: What You Need to Comply", "description": "DORA applies to crypto-asset service providers since January 2025 — the ICT risk, incident reporting, testing, and vendor requirements CASPs must implement.", "url": "https://www.ogtechnologies.co/insights/dora-crypto-web3-compliance/"}, {"@type": "Article", "headline": "Building Cross-Border Payments on Stellar: Anchors, SEP-24, and USDC/EURC Settlement", "description": "How Stellar cross-border payments work: anchors and the SEP stack (SEP-6, SEP-24, SEP-31, SEP-38), trustlines, path payments, and USDC/EURC settlement.", "url": "https://www.ogtechnologies.co/insights/stellar-cross-border-payments-anchors-sep24/"}, {"@type": "Article", "headline": "ISO 27001 Statement of Applicability: How to Choose and Justify Annex A Controls", "description": "What Clause 6.1.3 requires: selecting Annex A controls, justifying exclusions, and building a Statement of Applicability that survives a Stage 1 audit.", "url": "https://www.ogtechnologies.co/insights/iso-27001-statement-of-applicability/"}, {"@type": "Article", "headline": "ISO/IEC 42001 Annex A Controls: The Complete List of 38 Controls Across 9 Domains", "description": "Every ISO/IEC 42001:2023 Annex A control by reference and title, grouped by domain — plus how to select them in your AI Statement of Applicability.", "url": "https://www.ogtechnologies.co/insights/iso-42001-annex-a-controls/"}, {"@type": "Article", "headline": "One Management System, Three Standards: Integrating ISO 9001, ISO 27001, and ISO 42001", "description": "The Harmonized Structure shared by all three standards, where they diverge, and how to run quality, security, and AI governance on one integrated management system.", "url": "https://www.ogtechnologies.co/insights/integrated-management-system-iso-9001-27001-42001/"}, {"@type": "Article", "headline": "ISO 8601 Date Formats Explained: Durations, Week Dates, Intervals, and the RFC 3339 Subset", "description": "The anatomy of ISO 8601: calendar/ordinal/week dates, durations, intervals, reduced precision, and how RFC 3339 differs.", "url": "https://www.ogtechnologies.co/insights/iso-8601-format-guide/"}, {"@type": "Article", "headline": "How to Merge PDF Files for Free (No Acrobat, No Uploads)", "description": "Combine PDFs into one document entirely in your browser — how merging works, page order, protected files, and why no-upload tools are the private option.", "url": "https://www.ogtechnologies.co/insights/how-to-merge-pdf-files/"}, {"@type": "Article", "headline": "MT940 Format Explained: Field Tags, Field 86, and the Migration to camt.053", "description": "The SWIFT MT940 bank statement format decoded: every field tag from :20: to :62F:, the :61: statement line, structured :86: remittance data, and how it maps to ISO 20022 camt.053.", "url": "https://www.ogtechnologies.co/insights/mt940-format-camt053-migration/"}, {"@type": "Article", "headline": "eIDAS 2.0 and the EUDI Wallet: What Businesses Need to Know Before the Rollout", "description": "What the European Digital Identity Wallet contains, which businesses must accept it, how it relates to verifiable credentials and EBSI, and what to prepare now.", "url": "https://www.ogtechnologies.co/insights/eidas2-eudi-wallet/"}, {"@type": "Article", "headline": "OData Query Options Cheat Sheet: $filter, $select, $expand, and $orderby", "description": "Complete OData query options cheat sheet and guide: $filter operators, $select projections, $expand navigation properties, paging, V2 vs V4 differences, and SAP Gateway specifics.", "url": "https://www.ogtechnologies.co/insights/odata-query-options-guide/"}, {"@type": "Article", "headline": "How to Choose a CRM and Ticketing System: A Practical Buyer's Guide", "description": "A framework for evaluating CRM and ticketing platforms: must-have capabilities, data model, CSV import and migration, GDPR, integrations, and pricing — plus a 10-point buyer checklist.", "url": "https://www.ogtechnologies.co/insights/how-to-choose-crm-ticketing-system/"}, {"@type": "Article", "headline": "Helpdesk Workflow Best Practices: From Ticket Intake to Resolution", "description": "Intake, triage, resolve, learn — a practical helpdesk workflow covering priority and SLA rules, ownership and escalation, automation, and the metrics that matter.", "url": "https://www.ogtechnologies.co/insights/helpdesk-workflow-best-practices/"}, {"@type": "Article", "headline": "ISO 9001 Implementation: A Step-by-Step Guide to Certification", "description": "Clauses 4–10, the seven quality management principles, and the Stage 1/Stage 2 audit process — a practical ISO 9001 implementation roadmap with a free readiness checker.", "url": "https://www.ogtechnologies.co/insights/iso-9001-implementation-guide/"}, {"@type": "Article", "headline": "ISO/IEC 27001 Annex A Controls: The Complete List of 93 Controls", "description": "Every ISO/IEC 27001:2022 Annex A control by reference and title across the 4 themes (Organizational, People, Physical, Technological) — plus how to select them in your Statement of Applicability.", "url": "https://www.ogtechnologies.co/insights/iso-27001-annex-a-controls/"}, {"@type": "Article", "headline": "SOC 2 Trust Services Criteria: The Complete List Explained", "description": "All 52 AICPA Trust Services Criteria: the 33 Common Criteria (CC1–CC9) required in every SOC 2 report, plus the optional Availability, Processing Integrity, Confidentiality, and Privacy categories.", "url": "https://www.ogtechnologies.co/insights/soc-2-trust-services-criteria/"}, {"@type": "Article", "headline": "SOC 2 vs ISO 27001: Differences, Overlap, and Which You Need", "description": "Attestation vs certification, Trust Services Criteria vs Annex A, Type I/II vs 3-year cycle — a practical comparison for teams choosing (or combining) the two frameworks.", "url": "https://www.ogtechnologies.co/insights/soc-2-vs-iso-27001/"}, {"@type": "Article", "headline": "PDF Metadata Explained: What Your Files Reveal and How to Remove It", "description": "The document info dictionary and XMP stream inside every PDF — what each field reveals, how to inspect and edit them, and how to strip metadata before sharing a file.", "url": "https://www.ogtechnologies.co/insights/pdf-metadata-guide/"}, {"@type": "Article", "headline": "MT940 Fields Explained: The Complete Tag Reference (:20: to :62F:)", "description": "Every MT940 tag by name and format — :60F:/:62F: balances, the :61: statement line anatomy, structured :86: SEPA remittance subfields, and the transaction code table.", "url": "https://www.ogtechnologies.co/insights/mt940-field-reference/"}, {"@type": "Article", "headline": "OData $filter Examples: Operators, Functions, and 40+ Copy-Paste Queries", "description": "A copy-pasteable OData $filter cookbook: every operator and function with real examples, collection filters with any/all, and the V2 vs V4 differences that break queries.", "url": "https://www.ogtechnologies.co/insights/odata-filter-examples/"}, {"@type": "Article", "headline": "o1js State Assertions: getAndRequireEquals vs getAndAssertEquals", "description": "How o1js state preconditions work on Mina zkApps, why the assert* API was renamed to require*, and what \"precondition unsatisfied\" actually means.", "url": "https://www.ogtechnologies.co/insights/o1js-state-assertions/"}]}],
+    jsonLd: [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Insights - OG Technologies EU", "description": "In-depth industry articles on payment standards, AI governance, cloud security, healthcare interoperability, and blockchain development.", "url": "https://www.ogtechnologies.co/insights/", "publisher": {"@type": "Organization", "name": "OG Technologies EU"}, "hasPart": [{"@type": "Article", "headline": "Claude Code for Enterprise Teams: Agentic Workflows, Subagents, and MCP Integration", "description": "How enterprise teams use Claude Code: the agentic loop, CLAUDE.md memory, subagents, Model Context Protocol (MCP) servers, permissions, and governance.", "url": "https://www.ogtechnologies.co/insights/claude-code-agentic-workflows-mcp/"}, {"@type": "Article", "headline": "GPT-6 Explained: Astra, Sol, and Luna — Choosing the Right Model Tier for Your Workload", "description": "OpenAI's GPT-6 family tiers by cost and intelligence: GPT-6 Astra (flagship), GPT-6.1 Sol (balanced), and GPT-6 Luna (efficient). How to route workloads across tiers.", "url": "https://www.ogtechnologies.co/insights/gpt-6-astra-sol-luna-model-tiers/"}, {"@type": "Article", "headline": "Inside Devin: What Autonomous AI Software Engineers Can (and Can't) Ship in Production", "description": "A practical evaluation of Devin, Cognition's autonomous AI software engineer — how ticket-to-PR workflows work, where it excels, and where human engineers still lead.", "url": "https://www.ogtechnologies.co/insights/devin-autonomous-ai-software-engineer/"}, {"@type": "Article", "headline": "DeepSeek V4.1 and the Open-Weight Price War: MIT-Licensed MoE Models for Coding Agents", "description": "DeepSeek V4.1 Flash ships MIT-licensed weights, a 552B-parameter MoE backbone, and agent-task economics ~40x cheaper than frontier open models.", "url": "https://www.ogtechnologies.co/insights/deepseek-v4-open-weight-moe-coding-agents/"}, {"@type": "Article", "headline": "Gemini 4 Argon and Antigravity: Google's New Agentic Coding Stack, Explained", "description": "Gemini 4 Argon is Google's newest frontier model — #1 on the Vals Index — paired with Antigravity, an agent-first IDE.", "url": "https://www.ogtechnologies.co/insights/gemini-4-argon-antigravity-agentic-coding/"}, {"@type": "Article", "headline": "Kimi K3: Inside the 2.8-Trillion-Parameter Open Model Leading Agentic Benchmarks", "description": "Moonshot AI's Kimi K3 is the largest open-weight flagship at 2.8 trillion parameters — leading agentic coding benchmarks.", "url": "https://www.ogtechnologies.co/insights/kimi-k3-open-weight-agentic-model/"}, {"@type": "Article", "headline": "GLM-5.3 Explained: Z.ai's Open-Weight Model for Long-Horizon Agent Sessions", "description": "Z.ai's GLM-5.3 targets long-horizon agent and engineering sessions at the cheapest API tier in its class.", "url": "https://www.ogtechnologies.co/insights/glm-5-zai-long-horizon-agents/"}, {"@type": "Article", "headline": "ISO 20022 Migration: What the November 2026 Deadline Means for Your Payment Messages", "description": "The coexistence period for MT and ISO 20022 messages ends in November 2026. Learn what changes, how to validate pain.001, camt.053 and pacs.008 messages, and which free tools can help.", "url": "https://www.ogtechnologies.co/insights/iso-20022-migration-guide/"}, {"@type": "Article", "headline": "ISO/IEC 42001 Explained: A Practical Guide to AI Management System Readiness", "description": "ISO/IEC 42001:2023 is the first international standard for AI management systems. Understand its clauses, Annex A controls, and how to assess your organization readiness before certification.", "url": "https://www.ogtechnologies.co/insights/iso-42001-ai-management-guide/"}, {"@type": "Article", "headline": "IAM Policy Security: 7 Privilege Escalation Patterns and How to Catch Them", "description": "Overly permissive AWS IAM policies are a leading cause of cloud breaches. Learn the most common privilege escalation patterns, why wildcards are dangerous, and how to validate policies automatically.", "url": "https://www.ogtechnologies.co/insights/iam-policy-security-patterns/"}, {"@type": "Article", "headline": "HL7 v2 vs FHIR: Choosing the Right Healthcare Interoperability Standard", "description": "HL7 v2 still powers most hospital integrations, but FHIR R4 is the future of healthcare APIs. Compare message formats, transport, tooling, and migration strategies.", "url": "https://www.ogtechnologies.co/insights/hl7-v2-vs-fhir-comparison/"}, {"@type": "Article", "headline": "Ethereum Calldata Deep Dive: Function Selectors, ABI Encoding, and EIP-55 Checksums", "description": "A developer reference for how Ethereum transactions encode function calls: 4-byte selectors, ABI argument encoding, and address checksums — with free tools to verify each step.", "url": "https://www.ogtechnologies.co/insights/ethereum-calldata-abi-guide/"}, {"@type": "Article", "headline": "ISO 27001 Gap Analysis: A Step-by-Step Guide", "description": "How to run an ISO 27001 gap analysis: scope, clause-by-clause assessment, scoring, remediation roadmap, and a PDF report.", "url": "https://www.ogtechnologies.co/insights/iso-27001-gap-analysis-guide/"}, {"@type": "Article", "headline": "Wei, Gwei, and Ether: Ethereum Units Explained", "description": "The full Ethereum denomination table, why gas is priced in Gwei, and worked wei-to-ETH conversion examples.", "url": "https://www.ogtechnologies.co/insights/ethereum-wei-gwei-units/"}, {"@type": "Article", "headline": "HL7 v2 Message Structure Explained: Segments, Fields, and Delimiters", "description": "A practical anatomy of HL7 v2 messages: delimiters, segments, fields, components, and message types — with a decoded ADT example.", "url": "https://www.ogtechnologies.co/insights/hl7-v2-message-structure/"}, {"@type": "Article", "headline": "How to Validate AWS IAM Policies: 7 Checks Before You Deploy", "description": "A practical checklist for validating AWS IAM policies before deployment: syntax, wildcards, resource ARNs, condition keys, and privilege escalation patterns.", "url": "https://www.ogtechnologies.co/insights/aws-iam-policy-validation/"}, {"@type": "Article", "headline": "DORA for Crypto and Web3 Companies: What You Need to Comply", "description": "DORA applies to crypto-asset service providers since January 2025 — the ICT risk, incident reporting, testing, and vendor requirements CASPs must implement.", "url": "https://www.ogtechnologies.co/insights/dora-crypto-web3-compliance/"}, {"@type": "Article", "headline": "Building Cross-Border Payments on Stellar: Anchors, SEP-24, and USDC/EURC Settlement", "description": "How Stellar cross-border payments work: anchors and the SEP stack (SEP-6, SEP-24, SEP-31, SEP-38), trustlines, path payments, and USDC/EURC settlement.", "url": "https://www.ogtechnologies.co/insights/stellar-cross-border-payments-anchors-sep24/"}, {"@type": "Article", "headline": "ISO 27001 Statement of Applicability: How to Choose and Justify Annex A Controls", "description": "What Clause 6.1.3 requires: selecting Annex A controls, justifying exclusions, and building a Statement of Applicability that survives a Stage 1 audit.", "url": "https://www.ogtechnologies.co/insights/iso-27001-statement-of-applicability/"}, {"@type": "Article", "headline": "ISO/IEC 42001 Annex A Controls: The Complete List of 38 Controls Across 9 Domains", "description": "Every ISO/IEC 42001:2023 Annex A control by reference and title, grouped by domain — plus how to select them in your AI Statement of Applicability.", "url": "https://www.ogtechnologies.co/insights/iso-42001-annex-a-controls/"}, {"@type": "Article", "headline": "One Management System, Three Standards: Integrating ISO 9001, ISO 27001, and ISO 42001", "description": "The Harmonized Structure shared by all three standards, where they diverge, and how to run quality, security, and AI governance on one integrated management system.", "url": "https://www.ogtechnologies.co/insights/integrated-management-system-iso-9001-27001-42001/"}, {"@type": "Article", "headline": "ISO 8601 Date Formats Explained: Durations, Week Dates, Intervals, and the RFC 3339 Subset", "description": "The anatomy of ISO 8601: calendar/ordinal/week dates, durations, intervals, reduced precision, and how RFC 3339 differs.", "url": "https://www.ogtechnologies.co/insights/iso-8601-format-guide/"}, {"@type": "Article", "headline": "How to Merge PDF Files for Free (No Acrobat, No Uploads)", "description": "Combine PDFs into one document entirely in your browser — how merging works, page order, protected files, and why no-upload tools are the private option.", "url": "https://www.ogtechnologies.co/insights/how-to-merge-pdf-files/"}, {"@type": "Article", "headline": "MT940 Format Explained: Field Tags, Field 86, and the Migration to camt.053", "description": "The SWIFT MT940 bank statement format decoded: every field tag from :20: to :62F:, the :61: statement line, structured :86: remittance data, and how it maps to ISO 20022 camt.053.", "url": "https://www.ogtechnologies.co/insights/mt940-format-camt053-migration/"}, {"@type": "Article", "headline": "eIDAS 2.0 and the EUDI Wallet: What Businesses Need to Know Before the Rollout", "description": "What the European Digital Identity Wallet contains, which businesses must accept it, how it relates to verifiable credentials and EBSI, and what to prepare now.", "url": "https://www.ogtechnologies.co/insights/eidas2-eudi-wallet/"}, {"@type": "Article", "headline": "OData Query Options Cheat Sheet: $filter, $select, $expand, and $orderby", "description": "Complete OData query options cheat sheet and guide: $filter operators, $select projections, $expand navigation properties, paging, V2 vs V4 differences, and SAP Gateway specifics.", "url": "https://www.ogtechnologies.co/insights/odata-query-options-guide/"}, {"@type": "Article", "headline": "How to Choose a CRM and Ticketing System: A Practical Buyer's Guide", "description": "A framework for evaluating CRM and ticketing platforms: must-have capabilities, data model, CSV import and migration, GDPR, integrations, and pricing — plus a 10-point buyer checklist.", "url": "https://www.ogtechnologies.co/insights/how-to-choose-crm-ticketing-system/"}, {"@type": "Article", "headline": "Helpdesk Workflow Best Practices: From Ticket Intake to Resolution", "description": "Intake, triage, resolve, learn — a practical helpdesk workflow covering priority and SLA rules, ownership and escalation, automation, and the metrics that matter.", "url": "https://www.ogtechnologies.co/insights/helpdesk-workflow-best-practices/"}, {"@type": "Article", "headline": "ISO 9001 Implementation: A Step-by-Step Guide to Certification", "description": "Clauses 4–10, the seven quality management principles, and the Stage 1/Stage 2 audit process — a practical ISO 9001 implementation roadmap with a free readiness checker.", "url": "https://www.ogtechnologies.co/insights/iso-9001-implementation-guide/"}, {"@type": "Article", "headline": "ISO/IEC 27001 Annex A Controls: The Complete List of 93 Controls", "description": "Every ISO/IEC 27001:2022 Annex A control by reference and title across the 4 themes (Organizational, People, Physical, Technological) — plus how to select them in your Statement of Applicability.", "url": "https://www.ogtechnologies.co/insights/iso-27001-annex-a-controls/"}, {"@type": "Article", "headline": "SOC 2 Trust Services Criteria: The Complete List Explained", "description": "All 52 AICPA Trust Services Criteria: the 33 Common Criteria (CC1–CC9) required in every SOC 2 report, plus the optional Availability, Processing Integrity, Confidentiality, and Privacy categories.", "url": "https://www.ogtechnologies.co/insights/soc-2-trust-services-criteria/"}, {"@type": "Article", "headline": "SOC 2 vs ISO 27001: Differences, Overlap, and Which You Need", "description": "Attestation vs certification, Trust Services Criteria vs Annex A, Type I/II vs 3-year cycle — a practical comparison for teams choosing (or combining) the two frameworks.", "url": "https://www.ogtechnologies.co/insights/soc-2-vs-iso-27001/"}, {"@type": "Article", "headline": "PDF Metadata Explained: What Your Files Reveal and How to Remove It", "description": "The document info dictionary and XMP stream inside every PDF — what each field reveals, how to inspect and edit them, and how to strip metadata before sharing a file.", "url": "https://www.ogtechnologies.co/insights/pdf-metadata-guide/"}, {"@type": "Article", "headline": "MT940 Fields Explained: The Complete Tag Reference (:20: to :62F:)", "description": "Every MT940 tag by name and format — :60F:/:62F: balances, the :61: statement line anatomy, structured :86: SEPA remittance subfields, and the transaction code table.", "url": "https://www.ogtechnologies.co/insights/mt940-field-reference/"}, {"@type": "Article", "headline": "OData $filter Examples: Operators, Functions, and 40+ Copy-Paste Queries", "description": "A copy-pasteable OData $filter cookbook: every operator and function with real examples, collection filters with any/all, and the V2 vs V4 differences that break queries.", "url": "https://www.ogtechnologies.co/insights/odata-filter-examples/"}, {"@type": "Article", "headline": "o1js State Assertions: getAndRequireEquals vs getAndAssertEquals", "description": "How o1js state preconditions work on Mina zkApps, why the assert* API was renamed to require*, and what \"precondition unsatisfied\" actually means.", "url": "https://www.ogtechnologies.co/insights/o1js-state-assertions/"}, {"@type": "Article", "headline": "Measuring SDG Impact on Stellar: ISO 24874 KPIs, Benchmarking and Reporting", "description": "How to apply the ISO/DPAS 24874 draft framework — KPI catalogue, five-level maturity benchmarking, and the SDG alignment methodology — to measure and report the sustainability impact of Stellar-based solutions.", "url": "https://www.ogtechnologies.co/insights/iso-24874-stellar-sdg-impact/"}]}],
   },
   '/insights/iso-20022-migration-guide': {
     title: 'ISO 20022 Migration: What the November 2026 Deadline Means for Your Payment Messages | OG Technologies EU',
@@ -420,6 +423,127 @@ const routeMeta = {
       { q: "Why can't I call state.get() outside a method?", a: 'Because a precondition only makes sense inside a transaction being proved. Off-chain reads go through fetch() or Mina.getAccount(), which return the raw appState without touching the account-update machinery.' },
     ],
   },
+  '/insights/iso-24874-stellar-sdg-impact': {
+    title: 'Measuring SDG Impact on Stellar: ISO 24874 KPIs, Benchmarking and Reporting | OG Technologies EU',
+    description: 'How to apply the ISO/DPAS 24874 draft framework — KPI catalogue, five-level maturity benchmarking, and the SDG alignment methodology — to measure and report the sustainability impact of Stellar-based solutions.',
+    ogType: 'article',
+    article: {
+      datePublished: '2026-10-22',
+      dateModified: '2026-10-22',
+    },
+    faq: [
+      { q: 'What is ISO/DPAS 24874?', a: 'A Draft Publicly Available Specification under development by ISO/TC 307 (Blockchain and distributed ledger technologies) titled "Guidance on the use of smart contracts in contributing to the Sustainable Development Goals." It provides a KPI framework for evaluating smart contracts, a five-level benchmarking maturity model, an SDG alignment methodology, and guiding principles for SDG-oriented oracles, energy accounting, and climate-friendly contract design.' },
+      { q: 'Is ISO 24874 a published standard?', a: 'Not yet — DPAS denotes a draft at the Publicly Available Specification stage, still subject to ballot and revision within ISO/TC 307. It is usable today as a reference framework for structuring impact measurement, but treat clause and KPI identifiers as provisional and record the draft edition your reporting is based on.' },
+      { q: 'How does StellarCarbon map to the ISO 24874 KPIs?', a: 'Sinking CARBON tokens corresponds to retiring Verra Verified Carbon Units — a direct fit for KPI SDG-01 (verified GHG emissions avoided or reduced, in tCO₂e). Verra acts as the MRV/oracle layer, the on-chain mirror provides public auditability, and registry retirement structurally prevents double counting. Its project co-benefits (REDD+ forest protection in Peru, VCS + CCB-Gold certified) can support SDG 15 linkages where verified.' },
+      { q: 'Which SDG targets do Stellar payment solutions typically support?', a: 'Most commonly 1.4 (equal access to economic resources and financial services) and 8.10 (expanding access to banking and financial services) — the same targets the ISO draft assigns to its own financial-inclusion use case — plus 10.c for remittance-cost reduction. Climate-oriented deployments add SDG 13, and transparency architectures can support 16.6/16.10-style accountability claims and SDG 17 partnership objectives.' },
+      { q: 'What does "attribution" mean in SDG impact reporting?', a: 'Attribution describes the causal link between your system and the outcome: direct (the system caused it, e.g., disbursements it executed), indirect (it contributed alongside other factors), or enabling (it created conditions for an outcome others deliver). ISO 24874 requires claims to be qualified as "contributing to" an SDG target whenever attribution cannot be established with confidence — the single most important anti-greenwashing rule in the framework.' },
+    ],
+  },
+  '/insights/claude-code-agentic-workflows-mcp': {
+    title: 'Claude Code for Enterprise Teams: Agentic Workflows, Subagents, and MCP Integration | OG Technologies EU',
+    description: 'How enterprise teams use Claude Code: the agentic loop, CLAUDE.md memory, subagents, Model Context Protocol (MCP) servers, permissions, and governance.',
+    ogType: 'article',
+    article: {
+      datePublished: '2026-10-22',
+      dateModified: '2026-10-22',
+    },
+    faq: [
+      { q: 'Does Claude Code replace code review?', a: 'No — it shifts it. Agents generate the diff; reviewers verify intent, edge cases, and fit with the architecture. Teams that skip review accumulate subtle defects faster than they accumulate features.' },
+      { q: 'What is the difference between Claude Code and a chat assistant?', a: 'A chat assistant returns text you apply yourself. Claude Code operates the loop end-to-end — reading files, running commands, executing tests — inside your environment, with permissions and an audit trail.' },
+      { q: 'Is MCP only for Claude?', a: 'No. MCP is an open protocol now supported by most major AI tools and IDEs. An MCP server you build once works across agents, which is why it has become the standard integration layer.' },
+      { q: 'How do we control what the agent can access?', a: 'Through the permission model (scoped tool allowlists), sandboxed execution, MCP servers that expose only the endpoints you choose, and hooks that enforce policy on every tool call. Treat agent credentials like any service account: least privilege, scoped, auditable.' },
+    ],
+  },
+  '/insights/gpt-6-astra-sol-luna-model-tiers': {
+    title: 'GPT-6 Explained: Astra, Sol, and Luna — Choosing the Right Model Tier for Your Workload | OG Technologies EU',
+    description: 'OpenAI\'s GPT-6 family tiers by cost and intelligence: GPT-6 Astra (flagship), GPT-6.1 Sol (balanced), and GPT-6 Luna (efficient). How to route workloads across tiers.',
+    ogType: 'article',
+    article: {
+      datePublished: '2026-10-22',
+      dateModified: '2026-10-22',
+    },
+    faq: [
+      { q: 'Should we always default to the flagship?', a: 'No — that\'s the expensive failure mode. Most production traffic is routine work that Luna or Sol handles at a fraction of the price. Reserve Astra for workloads where you can demonstrate, with evals, that lower tiers fall short.' },
+      { q: 'How stable are the tiers for production?', a: 'Model IDs are versioned and point releases ship frequently. Pin model versions per endpoint, run your eval suite before upgrading, and keep a documented rollback — tier improvements can change behavior on edge cases even when averages improve.' },
+      { q: 'Is the ~1M context window a reason to skip retrieval (RAG)?', a: 'Usually not. Long context is excellent for single large documents or a codebase slice, but retrieval still wins on cost and latency for corpus-scale questions, and it keeps source attribution explicit.' },
+      { q: 'How do we keep tier spend under control?', a: 'Route by workload, cap reasoning effort per endpoint, tag API spend by feature, and review the top-cost endpoints monthly. A monthly report of "tokens by tier by feature" catches drift before it becomes a budget conversation.' },
+    ],
+  },
+  '/insights/devin-autonomous-ai-software-engineer': {
+    title: 'Inside Devin: What Autonomous AI Software Engineers Can (and Can\'t) Ship in Production | OG Technologies EU',
+    description: 'A practical evaluation of Devin, Cognition\'s autonomous AI software engineer — how ticket-to-PR workflows work, where it excels, and where human engineers still lead.',
+    ogType: 'article',
+    article: {
+      datePublished: '2026-10-22',
+      dateModified: '2026-10-22',
+    },
+    faq: [
+      { q: 'Is Devin the same as a coding copilot?', a: 'No. Copilots assist line-by-line inside your editor session. Devin takes whole tasks and executes them asynchronously in its own environment, returning a pull request rather than suggestions.' },
+      { q: 'How good is it on benchmarks?', a: 'Devin made its name on SWE-bench-style tasks — real GitHub issues resolved end-to-end. Benchmarks understate what matters operationally: success rate on your backlog, which depends on ticket quality and repo hygiene more than on the model.' },
+      { q: 'What tasks should we assign first?', a: 'Dependency upgrades, test coverage gaps, and small well-specified bugs — bounded work with a clear verification signal. Avoid ambiguous feature work until you\'ve calibrated on easy wins.' },
+      { q: 'Does it remove the need for code review?', a: 'No — it increases review demand. Every task ends in a PR, and the human merge decision stays mandatory. Plan for review capacity; it becomes the real throughput limit.' },
+    ],
+  },
+  '/insights/deepseek-v4-open-weight-moe-coding-agents': {
+    title: 'DeepSeek V4.1 and the Open-Weight Price War: MIT-Licensed MoE Models for Coding Agents | OG Technologies EU',
+    description: 'DeepSeek V4.1 Flash ships MIT-licensed weights, a 552B-parameter MoE backbone, and agent-task economics ~40x cheaper than frontier open models. What it means for your AI stack.',
+    ogType: 'article',
+    article: {
+      datePublished: '2026-10-22',
+      dateModified: '2026-10-22',
+    },
+    faq: [
+      { q: 'Is DeepSeek V4.1 really free to use commercially?', a: 'Yes — the weights are MIT-licensed, the most permissive mainstream license. You can run, modify, and embed it commercially with no usage restrictions. Hosted API access is priced separately by whichever provider serves it.' },
+      { q: 'Should we self-host or use an API?', a: 'Self-host only if you have the GPU capacity (552B total parameters) and the utilization to justify it — continuous high-volume agent fleets, or hard data-residency requirements. Otherwise a hosted open-weights inference provider gives you the same model at per-token prices, often on EU/US infrastructure.' },
+      { q: 'How does it compare to frontier models like GPT-6 or Claude 5.5?', a: 'On independent agentic-coding evals it sits just below the proprietary frontier while costing a small fraction per task. The right architecture usually isn\'t "either/or" — route hard judgment steps to frontier tiers and the high-volume agent loops to open-weight models.' },
+      { q: 'Is it safe to send our code to a DeepSeek-hosted API?', a: 'For EU organizations, a China-hosted endpoint raises data-residency and GDPR considerations. The MIT license solves this cleanly: the same weights run on EU/US-hosted inference providers or your own infrastructure, so you can get the model without the data leaving your chosen jurisdiction.' },
+    ],
+  },
+  '/insights/gemini-4-argon-antigravity-agentic-coding': {
+    title: 'Gemini 4 Argon and Antigravity: Google\'s New Agentic Coding Stack, Explained | OG Technologies EU',
+    description: 'Gemini 4 Argon is Google\'s newest frontier model — #1 on the Vals Index — paired with Antigravity, an agent-first IDE. What the stack means for engineering teams.',
+    ogType: 'article',
+    article: {
+      datePublished: '2026-10-22',
+      dateModified: '2026-10-22',
+    },
+    faq: [
+      { q: 'Is Gemini 4 Argon available now?', a: 'Yes — generally available since October 13, 2026 via the Gemini API and AI Studio, and inside Antigravity for Google AI Ultra subscribers.' },
+      { q: 'What makes Antigravity different from other AI IDEs?', a: 'Its primary surface is an agent manager: you dispatch and supervise multiple parallel agents and review structured walkthroughs of their work, rather than editing files with an assistant at your cursor. It\'s designed around orchestration first, editing second.' },
+      { q: 'Should we switch from our current agentic stack?', a: 'Evaluate on your own codebase before deciding — run a fixed task suite through both stacks and compare acceptance rate, cost, and review effort. The introductory pricing makes a real pilot cheap right now.' },
+      { q: 'How does the 1M context window affect cost?', a: 'Large contexts are expensive per call but cheap when cached — the 95% cache discount rewards keeping a stable prefix (your codebase, your conventions) and varying only the task. Design prompts to maximize cache hits.' },
+    ],
+  },
+  '/insights/kimi-k3-open-weight-agentic-model': {
+    title: 'Kimi K3: Inside the 2.8-Trillion-Parameter Open Model Leading Agentic Benchmarks | OG Technologies EU',
+    description: 'Moonshot AI\'s Kimi K3 is the largest open-weight flagship at 2.8 trillion parameters — leading agentic coding benchmarks. What it offers, and the hosting reality.',
+    ogType: 'article',
+    article: {
+      datePublished: '2026-10-22',
+      dateModified: '2026-10-22',
+    },
+    faq: [
+      { q: 'Can we self-host Kimi K3?', a: 'Practically, no — at 2.8T total parameters, full-quality serving needs a multi-node GPU cluster. Use a hosted API, or pick a smaller family variant or distilled model if self-hosting is a hard requirement.' },
+      { q: 'Is K3 better than DeepSeek V4.1?', a: 'On independent evals they\'re statistically tied at the top of the open-weight field, with different strengths: K3 has the higher ceiling on the hardest agentic tasks; DeepSeek is dramatically cheaper per task and more self-hostable. Evaluate both on your own workload.' },
+      { q: 'What about data residency?', a: 'Same consideration as any China-lab model: prefer inference providers hosting the open weights in your chosen jurisdiction over the vendor\'s own endpoint when data sensitivity demands it.' },
+      { q: 'Where does Kimi fit vs. GPT-6 or Claude 5.5?', a: 'K3 narrows the gap on agentic benchmarks at a fraction of frontier prices, but proprietary flagships still lead the hardest reasoning work. Most production stacks end up tiered: open-weight models for volume, frontier models for judgment-critical steps.' },
+    ],
+  },
+  '/insights/glm-5-zai-long-horizon-agents': {
+    title: 'GLM-5.3 Explained: Z.ai\'s Open-Weight Model for Long-Horizon Agent Sessions | OG Technologies EU',
+    description: 'Z.ai\'s GLM-5.3 targets long-horizon agent and engineering sessions at the cheapest API tier in its class. Capabilities, positioning vs DeepSeek and Kimi, and when to use it.',
+    ogType: 'article',
+    article: {
+      datePublished: '2026-10-22',
+      dateModified: '2026-10-22',
+    },
+    faq: [
+      { q: 'Is Z.ai the same company as Zhipu?', a: 'Yes — Z.ai is the international brand of Zhipu AI, the Beijing lab behind the GLM (General Language Model) series, one of China\'s earliest foundation-model efforts.' },
+      { q: 'When should we pick GLM over DeepSeek?', a: 'When your workloads are long-horizon: multi-hour agent sessions, deep refactoring loops, standing maintenance agents. GLM\'s differentiation is session stability; DeepSeek\'s is raw cost-per-task on shorter, retriable work.' },
+      { q: 'What does GLM-5.3-Flash\'s video input enable?', a: 'Agents that can interpret screen recordings and UI walkthroughs — useful for QA agents watching app flows, documentation generation from demos, or verifying UI changes visually instead of only through the DOM.' },
+      { q: 'Are the weights really open?', a: 'Yes — GLM-5.3 weights were released openly days after the API launch, enabling self-hosting, fine-tuning, and deployment through third-party inference providers in whatever jurisdiction you choose.' },
+    ],
+  },
   '/insights/how-to-choose-crm-ticketing-system': {
     title: "How to Choose a CRM and Ticketing System: A Practical Buyer's Guide | OG Technologies EU",
     description: "A practical framework for evaluating CRM and ticketing systems: must-have capabilities, data model, migration and CSV import, GDPR and EU hosting, integrations, and pricing models — with a buyer's checklist.",
@@ -566,6 +690,35 @@ const routeMeta = {
     title: 'Partner Program - Revenue Share Partnerships | OG Technologies EU',
     description: 'Earn revenue share referring enterprise IT, blockchain, and compliance contracts. Referral, reseller, and co-delivery partnership models for consultants, MSPs, and agencies.',
     jsonLd: [{"@context": "https://schema.org", "@type": "WebPage", "name": "Partner Program - OG Technologies EU", "url": "https://www.ogtechnologies.co/partners/", "description": "Revenue-share partnership program for consultants, MSPs, and agencies referring enterprise IT, blockchain, and compliance contracts to OG Technologies EU.", "about": {"@type": "Thing", "name": "Revenue share partnership program"}, "provider": {"@type": "Organization", "name": "OG Technologies EU", "url": "https://www.ogtechnologies.co/"}}],
+  },
+  '/expert-hub': {
+    title: 'Expert Hub - Freelance & Contract Projects | OG Technologies EU',
+    description: 'Join the OG Technologies EU Expert Hub — freelance and contract work for independent developers and consultants on blockchain, payments, compliance, and healthcare IT projects. Browse open projects and apply.',
+    faq: [
+      { q: 'Is the Expert Hub the same as a job at OG Technologies?', a: 'No — the Hub is for independent freelancers and contractors who join us on specific projects. If you\'re looking for employment, check our careers page instead.' },
+      { q: 'Do I need to be based in the EU?', a: 'No. Most work is remote; we ask for a few hours of overlap with European time zones. Individual postings note when a client requires EU-based contractors.' },
+      { q: 'How do rates work?', a: 'You state your day or hourly rate in the application. When a project matches, we agree scope and terms in writing before work starts — no unpaid discovery.' },
+      { q: 'What does the paid trial task look like?', a: 'A small, real piece of work scoped to a few hours — a parser, a contract module, a control mapping — paid at your rate. It replaces a long interview loop.' },
+      { q: 'Can I apply if no open project matches my skills?', a: 'Yes — choose "General application" in the form. Most matches happen when new projects come in, not from the board, so the bench is the point.' },
+      { q: 'Who owns the work I produce?', a: 'Engagement deliverables are assigned per the project agreement. Your own tools, libraries, and know-how stay yours — and your existing clients stay your clients.' },
+    ],
+    jsonLd: [
+      {"@context": "https://schema.org", "@type": "WebPage", "name": "Expert Hub - OG Technologies EU", "url": "https://www.ogtechnologies.co/expert-hub/", "description": "Freelance and contract network for independent developers and consultants — open project board and application to join OG Technologies EU delivery engagements.", "about": {"@type": "Thing", "name": "Freelance expert network"}, "provider": {"@type": "Organization", "name": "OG Technologies EU", "url": "https://www.ogtechnologies.co/"}},
+      ...EXPERT_PROJECTS.filter((p) => p.status === 'open').map((p) => ({
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "title": p.title,
+        "description": `${p.summary} Required skills: ${p.skills.join(', ')}. Engagement type: ${p.type}; duration: ${p.duration}; commitment: ${p.commitment}; location: ${p.location}.`,
+        "identifier": {"@type": "PropertyValue", "name": "OG Technologies EU", "value": p.id},
+        "datePosted": p.datePosted,
+        "validThrough": p.validThrough,
+        "employmentType": "CONTRACTOR",
+        "jobLocationType": "TELECOMMUTE",
+        "hiringOrganization": {"@type": "Organization", "name": "OG Technologies EU", "sameAs": "https://www.ogtechnologies.co/", "logo": "https://www.ogtechnologies.co/og-og-image.png"},
+        "jobLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "Vienna", "addressCountry": "AT"}},
+        "url": "https://www.ogtechnologies.co/expert-hub/#openings",
+      })),
+    ],
   },
   '/publications': {
     title: 'Publications - Blockchain Standardization Reports | OG Technologies EU',
@@ -1007,6 +1160,87 @@ const routeMeta = {
   },
 }
 
+// Glossary — routeMeta generated from src/data/glossaryTerms.js so the data
+// file stays the single source of truth (same definitions, FAQs, and slugs
+// as the pages themselves).
+routeMeta['/glossary'] = {
+  title: 'IT & Standards Glossary - Security, Payments, Identity & Data Terms | OG Technologies EU',
+  description: 'Plain-language glossary of the standards, regulations, and technologies our clients work with: ISO 27001, ISO 42001, DORA, GDPR, ISO 20022, SEPA, eIDAS, HL7/FHIR, verifiable credentials, blockchain, and more.',
+  faq: [
+    { q: 'Who is this glossary for?', a: 'Clients, partners, and practitioners who work with the standards and technologies we implement — compliance teams preparing for ISO 27001 or DORA, engineers integrating ISO 20022 or HL7, and product teams navigating eIDAS, MiCA, and verifiable credentials.' },
+    { q: 'Are these the official definitions?', a: 'No — these are practical summaries written for orientation. Each entry lists the related standards and regulations it is based on; for compliance work always refer to the official standard text.' },
+    { q: 'Can I request a term?', a: 'Yes — email hi@ogtechnologies.co or use the quote form if you want a walkthrough of how a standard or technology applies to your project.' },
+  ],
+  jsonLd: [{
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    name: 'OG Technologies EU Glossary',
+    description: 'Definitions of the standards, regulations, and technologies OG Technologies EU works across — information security, AI governance, payments, digital identity, blockchain, health IT, and data formats.',
+    url: 'https://www.ogtechnologies.co/glossary/',
+    publisher: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
+    hasDefinedTerm: GLOSSARY_TERMS.map((t) => ({
+      '@type': 'DefinedTerm',
+      name: t.term,
+      url: `https://www.ogtechnologies.co/glossary/${t.slug}/`,
+    })),
+  }],
+}
+
+GLOSSARY_TERMS.forEach((t) => {
+  routeMeta[`/glossary/${t.slug}`] = {
+    title: `${t.term} — Definition & Meaning | OG Technologies EU`,
+    description: t.definition,
+    ...(t.faq && t.faq.length > 0 ? { faq: t.faq } : {}),
+    jsonLd: [{
+      '@context': 'https://schema.org',
+      '@type': 'DefinedTerm',
+      name: t.term,
+      description: t.definition,
+      url: `https://www.ogtechnologies.co/glossary/${t.slug}/`,
+      inDefinedTermSet: {
+        '@type': 'DefinedTermSet',
+        name: 'OG Technologies EU Glossary',
+        url: 'https://www.ogtechnologies.co/glossary/',
+      },
+    }],
+  }
+})
+
+// Product detail pages — JSON-LD type driven by product.schemaType
+// ('software' -> SoftwareApplication, 'service' -> Service).
+PRODUCTS.forEach((p) => {
+  const url = `https://www.ogtechnologies.co/products/${p.slug}/`
+  const schema = p.schemaType === 'software'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: p.name,
+        description: p.metaDescription,
+        url,
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Any',
+        ...(p.features ? { featureList: p.features } : {}),
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+        creator: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
+      }
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: p.name,
+        description: p.metaDescription,
+        url,
+        serviceType: p.shortName,
+        provider: { '@type': 'Organization', name: 'OG Technologies EU', url: 'https://www.ogtechnologies.co/' },
+        areaServed: 'Worldwide',
+      }
+  routeMeta[`/products/${p.slug}`] = {
+    title: p.metaTitle,
+    description: p.metaDescription,
+    ...(p.faq && p.faq.length > 0 ? { faq: p.faq } : {}),
+    jsonLd: [schema],
+  }
+})
+
 // https://vitejs.dev/config/
 export default defineConfig({
   define: {
@@ -1087,12 +1321,24 @@ export default defineConfig({
         '/insights/mt940-field-reference',
         '/insights/odata-filter-examples',
         '/insights/o1js-state-assertions',
+        '/insights/iso-24874-stellar-sdg-impact',
+        '/insights/claude-code-agentic-workflows-mcp',
+        '/insights/gpt-6-astra-sol-luna-model-tiers',
+        '/insights/devin-autonomous-ai-software-engineer',
+        '/insights/deepseek-v4-open-weight-moe-coding-agents',
+        '/insights/gemini-4-argon-antigravity-agentic-coding',
+        '/insights/kimi-k3-open-weight-agentic-model',
+        '/insights/glm-5-zai-long-horizon-agents',
+        '/glossary',
+        ...GLOSSARY_TERMS.map((t) => `/glossary/${t.slug}`),
+        ...PRODUCTS.map((p) => `/products/${p.slug}`),
         '/ventures',
         '/portfolio',
         '/portfolio/edunode',
         '/portfolio/mozart-pay',
         '/portfolio/stellar-go-cli',
         '/partners',
+        '/expert-hub',
         '/publications',
         '/careers',
         '/quote',
