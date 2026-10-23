@@ -225,6 +225,7 @@ export const PRODUCTS = [
     relatedLinks: [
       { label: 'Request a quote', url: '/quote/', type: 'cta' },
       { label: 'AI agent architecture workshop recap', url: '/blog/entrepreneurship-avenue-2026/', type: 'blog' },
+      { label: 'EU AI Act compliance guide', url: '/insights/eu-ai-act-compliance-guide/', type: 'article' },
       { label: 'EU AI Act in the glossary', url: '/glossary/eu-ai-act/', type: 'article' },
       { label: 'ISO/IEC 42001 in the glossary', url: '/glossary/iso-42001/', type: 'article' },
       { label: 'OG CRM & Ticketing', url: '/products/crm-ticketing/', type: 'product' },
@@ -526,6 +527,8 @@ export const PRODUCTS = [
       { label: 'ISO 42001 AI Readiness', url: '/tools/iso-42001-ai-readiness/', type: 'tool' },
       { label: 'Gap analysis template (.xlsx)', url: '/downloads/iso-27001-gap-analysis-template.xlsx', type: 'download' },
       { label: 'Integrated management system guide', url: '/insights/integrated-management-system-iso-9001-27001-42001/', type: 'article' },
+      { label: 'NIS2 compliance and the ISO 27001 shortcut', url: '/insights/nis2-compliance-iso-27001/', type: 'article' },
+      { label: 'Cyber Resilience Act guide', url: '/insights/cyber-resilience-act-cra-guide/', type: 'article' },
       { label: 'DORA compliance', url: '/dora/', type: 'service' },
       { label: 'Standards consulting', url: '/standards/', type: 'service' },
     ],

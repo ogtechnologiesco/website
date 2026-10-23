@@ -111,6 +111,9 @@
 - [Gemini 4 Argon and Antigravity](https://www.ogtechnologies.co/insights/gemini-4-argon-antigravity-agentic-coding/): Google's frontier model and agent-first IDE explained
 - [Kimi K3](https://www.ogtechnologies.co/insights/kimi-k3-open-weight-agentic-model/): Inside Moonshot's 2.8-trillion-parameter open model leading agentic benchmarks
 - [GLM-5.3 by Z.ai](https://www.ogtechnologies.co/insights/glm-5-zai-long-horizon-agents/): Open-weight model for long-horizon agent sessions at the cheapest API tier
+- [EU AI Act Compliance Guide](https://www.ogtechnologies.co/insights/eu-ai-act-compliance-guide/): Risk tiers, Article 50 transparency duties, deployer obligations, GPAI rules, and penalty tiers now in force
+- [NIS2 Compliance](https://www.ogtechnologies.co/insights/nis2-compliance-iso-27001/): Scope, Article 21 measures, the 24/72-hour reporting clock, management liability, and the ISO 27001 shortcut
+- [EU Cyber Resilience Act](https://www.ogtechnologies.co/insights/cyber-resilience-act-cra-guide/): SBOMs, CE marking, live reporting duties, and the December 2027 deadline for products with digital elements
 
 ## Glossary
 

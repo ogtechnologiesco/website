@@ -35,8 +35,41 @@ import deepseekV4Image from '../images/insight-deepseek-v4-moe.jpg';
 import geminiArgonImage from '../images/insight-gemini-4-argon.jpg';
 import kimiK3Image from '../images/insight-kimi-k3.jpg';
 import glm5Image from '../images/insight-glm-5-zai.jpg';
+import euAiActImage from '../images/insight-eu-ai-act.jpg';
+import nis2Image from '../images/insight-nis2-compliance.jpg';
+import craImage from '../images/insight-cyber-resilience-act.jpg';
 
 export const insightsPosts = [
+  {
+    title: 'EU AI Act Compliance: What the August 2026 Obligations Mean for Your Business',
+    date: '23/10/2026',
+    description:
+      'The EU AI Act\'s general application date passed on 2 August 2026. Risk tiers, Article 50 transparency duties, deployer obligations under Article 26, GPAI rules, and the penalty tiers.',
+    image: euAiActImage,
+    imageText: 'EU AI Act risk tiers and compliance timeline',
+    link: '/insights/eu-ai-act-compliance-guide/',
+    categories: ['AI Governance', 'Compliance', 'Standards'],
+  },
+  {
+    title: 'NIS2 Compliance: Scope, Management Liability, and the ISO 27001 Shortcut',
+    date: '23/10/2026',
+    description:
+      'NIS2 applies to ~160,000 EU organizations across 18 sectors. Essential vs important entities, the ten Article 21 measures, the 24/72-hour reporting clock — and how ISO 27001 covers most of it.',
+    image: nis2Image,
+    imageText: 'NIS2 directive scope — essential and important entities',
+    link: '/insights/nis2-compliance-iso-27001/',
+    categories: ['Compliance', 'Security', 'Standards'],
+  },
+  {
+    title: 'EU Cyber Resilience Act: SBOMs, CE Marking, and the December 2027 Deadline',
+    date: '23/10/2026',
+    description:
+      'CRA vulnerability-reporting duties apply since September 2026 and full obligations land December 2027. Product categories, SBOMs, secure updates, support periods, and CE marking.',
+    image: craImage,
+    imageText: 'Cyber Resilience Act — SBOM, CE marking, December 2027 deadline',
+    link: '/insights/cyber-resilience-act-cra-guide/',
+    categories: ['Compliance', 'Security', 'Standards'],
+  },
   {
     title: 'Claude Code for Enterprise Teams: Agentic Workflows, Subagents, and MCP Integration',
     date: '22/10/2026',

@@ -235,7 +235,9 @@ function ExpertHub() {
               <div className="max-w-3xl mx-auto text-center pb-12">
                 <h2 className="h2 mb-4">Open Projects</h2>
                 <p className="text-xl text-gray-400">
-                  Engagements we need expert help with right now. Apply to a specific posting — or a general application puts you on the bench for what comes next.
+                  {openProjects.length > 0
+                    ? 'Engagements we need expert help with right now. Apply to a specific posting — or a general application puts you on the bench for what comes next.'
+                    : 'No open postings right now — a general application puts you on the bench for what comes next.'}
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
@@ -268,7 +270,7 @@ function ExpertHub() {
                   </div>
                 ))}
                 {/* General application card */}
-                <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-lg p-6 border border-purple-500/30 flex flex-col" data-aos="fade-up">
+                <div className={`bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-lg p-6 border border-purple-500/30 flex flex-col${openProjects.length === 0 ? ' md:col-span-2 md:max-w-2xl md:mx-auto w-full' : ''}`} data-aos="fade-up">
                   <h3 className="h4 mb-2">Don't see your thing?</h3>
                   <p className="text-gray-400 mb-4">
                     The board shows what we need today — the bench is how most matches happen. If you're strong in any of our tracks, send a general application and we'll reach out when a project fits.

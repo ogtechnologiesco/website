@@ -799,6 +799,24 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.ogtechnologies.co/insights/eu-ai-act-compliance-guide/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/insights/nis2-compliance-iso-27001/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/insights/cyber-resilience-act-cra-guide/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.ogtechnologies.co/blog/introducing-og-crm-ticketing/</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
