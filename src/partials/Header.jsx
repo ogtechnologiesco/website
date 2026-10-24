@@ -167,6 +167,7 @@ function Header() {
                     <Link to="/dora/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setSolutionsOpen(false)}>DORA Compliance</Link>
                     <Link to="/ventures/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setSolutionsOpen(false)}>Ventures</Link>
                     <Link to="/portfolio/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setSolutionsOpen(false)}>Portfolio</Link>
+                    <Link to="/about/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setSolutionsOpen(false)}>About Us</Link>
                   </div>
                 )}
               </li>
@@ -217,6 +218,7 @@ function Header() {
                     <Link to="/tools/image-to-pdf/" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>Image → PDF</Link>
                     <Link to="/tools/document-to-pdf/" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>Document → PDF</Link>
                     <Link to="/tools/pdf-to-word/" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>PDF → Word</Link>
+                    <Link to="/tools/pdf-metadata/" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>PDF Metadata</Link>
                     <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">XML Tools</p>
                     <Link to="/tools/xml-tools/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>XML Tools</Link>
                     <Link to="/tools/xml-formatter/" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>XML Formatter</Link>
@@ -225,6 +227,7 @@ function Header() {
                     <Link to="/tools/xml-minifier/" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>XML Minifier</Link>
                     <Link to="/tools/xpath-tester/" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>XPath Tester</Link>
                     <Link to="/tools/xml-to-csv/" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>XML → CSV</Link>
+                    <Link to="/tools/xsd-validator/" className="block px-4 py-2 text-sm text-gray-400 hover:bg-gray-700 hover:text-white pl-8" onClick={() => setUtilitiesOpen(false)}>XSD Validator</Link>
                     <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Security</p>
                     <Link to="/tools/security-tools/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Security Scanner</Link>
                     <Link to="/tools/blockchain-compliance-checker/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Blockchain Compliance Checker</Link>
@@ -232,6 +235,7 @@ function Header() {
                     <Link to="/tools/iso-27001-gap-analysis/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>ISO 27001 Gap Analysis</Link>
                     <Link to="/tools/iso-9001-readiness-checker/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>ISO 9001 Readiness Checker</Link>
                     <Link to="/tools/iso-42001-ai-readiness/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>ISO 42001 AI Readiness</Link>
+                    <Link to="/tools/soc-2-readiness-checker/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>SOC 2 Readiness Checker</Link>
                     <Link to="/tools/iso-8601-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>ISO 8601 Date Validator</Link>
                     <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Developer Tools</p>
                     <Link to="/tools/ethereum-toolkit/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Ethereum Toolkit</Link>
@@ -243,13 +247,17 @@ function Header() {
                     <Link to="/tools/aws-arn-parser/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>AWS ARN Parser</Link>
                     <Link to="/tools/iam-policy-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>IAM Policy Validator</Link>
                     <Link to="/tools/sap-odata-url-builder/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>SAP OData URL Builder</Link>
+                    <Link to="/tools/servicenow-query-builder/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>ServiceNow Query Builder</Link>
                     <Link to="/tools/hash-generator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>Hash Generator</Link>
                     <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Finance & Payments</p>
                     <Link to="/tools/iban-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>IBAN Validator</Link>
                     <Link to="/tools/bic-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>BIC Validator</Link>
                     <Link to="/tools/lei-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>LEI Validator</Link>
                     <Link to="/tools/iso-20022-viewer/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>ISO 20022 Viewer</Link>
+                    <Link to="/tools/sepa-xml-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>SEPA XML Validator</Link>
+                    <Link to="/tools/sepa-xml-generator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>SEPA XML Generator</Link>
                     <Link to="/tools/mt940-to-csv/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>MT940 to CSV</Link>
+                    <Link to="/tools/mt940-to-camt053/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>MT940 to camt.053</Link>
                     <p className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Health IT</p>
                     <Link to="/tools/hl7-parser/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>HL7 Parser</Link>
                     <Link to="/tools/fhir-validator/" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white" onClick={() => setUtilitiesOpen(false)}>FHIR Validator</Link>
@@ -411,6 +419,7 @@ function Header() {
                       <li><Link to="/dora/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">DORA Compliance</Link></li>
                       <li><Link to="/ventures/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Ventures</Link></li>
                       <li><Link to="/portfolio/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Portfolio</Link></li>
+                      <li><Link to="/about/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">About Us</Link></li>
                     </ul>
                   )}
                 </li>
@@ -458,6 +467,7 @@ function Header() {
                       <li><Link to="/tools/image-to-pdf/" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">Image → PDF</Link></li>
                       <li><Link to="/tools/document-to-pdf/" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">Document → PDF</Link></li>
                       <li><Link to="/tools/pdf-to-word/" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">PDF → Word</Link></li>
+                      <li><Link to="/tools/pdf-metadata/" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">PDF Metadata</Link></li>
                       <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">XML Tools</li>
                       <li><Link to="/tools/xml-tools/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">XML Tools</Link></li>
                       <li><Link to="/tools/xml-formatter/" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">XML Formatter</Link></li>
@@ -466,6 +476,7 @@ function Header() {
                       <li><Link to="/tools/xml-minifier/" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">XML Minifier</Link></li>
                       <li><Link to="/tools/xpath-tester/" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">XPath Tester</Link></li>
                       <li><Link to="/tools/xml-to-csv/" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">XML → CSV</Link></li>
+                      <li><Link to="/tools/xsd-validator/" className="flex font-medium w-full text-gray-400 hover:text-white py-2 px-8 justify-center">XSD Validator</Link></li>
                       <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Security</li>
                       <li><Link to="/tools/security-tools/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Security Scanner</Link></li>
                       <li><Link to="/tools/blockchain-compliance-checker/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Blockchain Compliance Checker</Link></li>
@@ -473,6 +484,7 @@ function Header() {
                       <li><Link to="/tools/iso-27001-gap-analysis/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">ISO 27001 Gap Analysis</Link></li>
                       <li><Link to="/tools/iso-9001-readiness-checker/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">ISO 9001 Readiness Checker</Link></li>
                       <li><Link to="/tools/iso-42001-ai-readiness/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">ISO 42001 AI Readiness</Link></li>
+                      <li><Link to="/tools/soc-2-readiness-checker/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">SOC 2 Readiness Checker</Link></li>
                       <li><Link to="/tools/iso-8601-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">ISO 8601 Date Validator</Link></li>
                       <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Developer Tools</li>
                       <li><Link to="/tools/ethereum-toolkit/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Ethereum Toolkit</Link></li>
@@ -484,13 +496,17 @@ function Header() {
                       <li><Link to="/tools/aws-arn-parser/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">AWS ARN Parser</Link></li>
                       <li><Link to="/tools/iam-policy-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">IAM Policy Validator</Link></li>
                       <li><Link to="/tools/sap-odata-url-builder/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">SAP OData URL Builder</Link></li>
+                      <li><Link to="/tools/servicenow-query-builder/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">ServiceNow Query Builder</Link></li>
                       <li><Link to="/tools/hash-generator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">Hash Generator</Link></li>
                       <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Finance & Payments</li>
                       <li><Link to="/tools/iban-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">IBAN Validator</Link></li>
                       <li><Link to="/tools/bic-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">BIC Validator</Link></li>
                       <li><Link to="/tools/lei-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">LEI Validator</Link></li>
                       <li><Link to="/tools/iso-20022-viewer/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">ISO 20022 Viewer</Link></li>
+                      <li><Link to="/tools/sepa-xml-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">SEPA XML Validator</Link></li>
+                      <li><Link to="/tools/sepa-xml-generator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">SEPA XML Generator</Link></li>
                       <li><Link to="/tools/mt940-to-csv/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">MT940 to CSV</Link></li>
+                      <li><Link to="/tools/mt940-to-camt053/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">MT940 to camt.053</Link></li>
                       <li className="px-4 pt-2 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide">Health IT</li>
                       <li><Link to="/tools/hl7-parser/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">HL7 Parser</Link></li>
                       <li><Link to="/tools/fhir-validator/" className="flex font-medium w-full text-gray-300 hover:text-white py-2 px-4 justify-center">FHIR Validator</Link></li>

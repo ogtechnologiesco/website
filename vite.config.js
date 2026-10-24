@@ -714,6 +714,11 @@ const routeMeta = {
     ],
   },
   '/ventures': { title: 'Ventures - OG Technologies EU', description: 'Supporting startups, spin-offs, and intrapreneurship programs in Web3 and blockchain.' },
+  '/about': {
+    title: 'About Us - OG Technologies EU | IT Consulting in Vienna',
+    description: 'OG Technologies EU is a Vienna-based IT consultancy specializing in payment infrastructure, DLT, digital identity, and international standards. Learn about our mission, values, and expertise.',
+    jsonLd: [{"@context": "https://schema.org", "@type": "AboutPage", "name": "About OG Technologies EU", "url": "https://www.ogtechnologies.co/about/", "description": "OG Technologies EU is a Vienna-based IT consultancy specializing in payment infrastructure, DLT, digital identity, and international standards.", "about": {"@type": "Organization", "name": "OG Technologies EU", "url": "https://www.ogtechnologies.co/", "email": "hi@ogtechnologies.co", "address": {"@type": "PostalAddress", "streetAddress": "Widerhofergasse 6 / 12", "postalCode": "1090", "addressLocality": "Vienna", "addressCountry": "AT"}}}],
+  },
   '/portfolio': {
     title: 'Portfolio - OG Technologies EU',
     description: 'Explore our innovative projects including EduNode, Mozart Pay, and Stellar Go CLI.',
@@ -909,6 +914,17 @@ const routeMeta = {
     title: 'SAP OData URL Builder - Free Online Query Tool | OG Technologies EU',
     description: 'Build SAP OData query URLs interactively with $select, $expand, $filter, $orderby, $top, $skip, $format, and $count parameters. 100% client-side.',
     featureList: ["Interactive OData query parameter builder", "Support for $select, $expand, $filter, $orderby", "Support for $top, $skip, $format, $count, $search", "Live URL preview with URL encoding", "Copy generated URL to clipboard"],
+  },
+  '/tools/servicenow-query-builder': {
+    title: 'ServiceNow Encoded Query Builder - Free Online Tool | OG Technologies EU',
+    description: 'Build and decode ServiceNow encoded queries visually — ^, ^OR, and ^NQ joiners with all operators (CONTAINS, IN, BETWEEN, ISEMPTY, ON). Generates sysparm_query URLs and GlideRecord scripts. 100% client-side.',
+    featureList: ["Visual condition editor with ^, ^OR, and ^NQ joiners", "All encoded query operators: CONTAINS, IN, BETWEEN, ISEMPTY, ON, SAMEAS, GT_FIELD, and more", "Decode mode parses existing queries, sysparm_query values, or Table API URLs", "Generates URL-encoded sysparm_query, Table API URL, and GlideRecord script", "100% client-side — no data sent to any server"],
+    faq: [
+      { q: 'What is a ServiceNow encoded query?', a: 'An encoded query is ServiceNow\'s compact condition syntax — field + operator + value pairs joined by ^ (AND), ^OR (OR), or ^NQ (new query group). The same string works in list filters, GlideRecord.addEncodedQuery(), and the Table API\'s sysparm_query parameter.' },
+      { q: 'How do I use this with the Table API?', a: 'Enter your instance name and table, then copy the generated Table API URL — the query is already URL-encoded in the sysparm_query parameter. Send it as a GET request with Basic Auth or an OAuth Bearer token. Add sysparm_fields, sysparm_limit, and other parameters as needed.' },
+      { q: 'What does ^NQ (New Query) do?', a: '^NQ starts a new top-level query group that is OR\'d with everything before it. It\'s how you express (A AND B) OR (C AND D) in flat encoded-query syntax — equivalent to clicking "New Query" in the list filter designer.' },
+      { q: 'Is it safe to paste queries here?', a: 'Yes. Building and decoding run entirely in your browser — nothing is sent to a server or stored. You can verify this in your browser\'s network tab.' },
+    ],
   },
   '/tools/hash-generator': {
     title: 'Hash Generator - SHA-256, SHA-512, Keccak256, MD5 | OG Technologies EU',
@@ -1384,6 +1400,7 @@ export default defineConfig({
         ...GLOSSARY_TERMS.map((t) => `/glossary/${t.slug}`),
         ...PRODUCTS.map((p) => `/products/${p.slug}`),
         '/ventures',
+        '/about',
         '/portfolio',
         '/portfolio/edunode',
         '/portfolio/mozart-pay',
@@ -1414,6 +1431,7 @@ export default defineConfig({
   '/tools/aws-arn-parser',
   '/tools/iam-policy-validator',
   '/tools/sap-odata-url-builder',
+  '/tools/servicenow-query-builder',
   '/tools/hash-generator',
   '/tools/xml-tools',
   '/tools/xml-formatter',
@@ -1461,8 +1479,8 @@ export default defineConfig({
         keepClosingSlash: true,
         sortAttributes: true,
       },
-      maxConcurrentRoutes: 4,
-      renderAfterTime: 5000,
+      maxConcurrentRoutes: 8,
+      renderAfterTime: 500,
       launchOptions: {
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
         // On macOS use system Chrome; on CI (Linux) fall back to Puppeteer's bundled Chromium

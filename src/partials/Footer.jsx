@@ -94,6 +94,9 @@ function Footer() {
                 <h6 className="text-gray-200 font-medium mb-2">Company</h6>
                 <ul>
                   <li className="mb-1">
+                    <Link to="/about/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">About Us</Link>
+                  </li>
+                  <li className="mb-1">
                     <Link to="/imprint/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Imprint</Link>
                   </li>
                   <li className="mb-1">
@@ -156,6 +159,9 @@ function Footer() {
                   <li className="mb-1">
                     <Link to="/tools/pdf-to-word/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">PDF → Word</Link>
                   </li>
+                  <li className="mb-1">
+                    <Link to="/tools/pdf-metadata/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">PDF Metadata</Link>
+                  </li>
                 </ul>
               </div>
 
@@ -183,6 +189,9 @@ function Footer() {
                   </li>
                   <li className="mb-1">
                     <Link to="/tools/xml-to-csv/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XML → CSV</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/xsd-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">XSD Validator</Link>
                   </li>
                 </ul>
               </div>
@@ -219,6 +228,9 @@ function Footer() {
                     <Link to="/tools/sap-odata-url-builder/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">SAP OData Builder</Link>
                   </li>
                   <li className="mb-1">
+                    <Link to="/tools/servicenow-query-builder/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ServiceNow Query Builder</Link>
+                  </li>
+                  <li className="mb-1">
                     <Link to="/tools/hash-generator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Hash Generator</Link>
                   </li>
                 </ul>
@@ -244,6 +256,9 @@ function Footer() {
                     <Link to="/tools/iso-42001-ai-readiness/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 42001 AI Readiness</Link>
                   </li>
                   <li className="mb-1">
+                    <Link to="/tools/soc-2-readiness-checker/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">SOC 2 Readiness</Link>
+                  </li>
+                  <li className="mb-1">
                     <Link to="/tools/iso-8601-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 8601 Validator</Link>
                   </li>
                 </ul>
@@ -266,7 +281,16 @@ function Footer() {
                     <Link to="/tools/iso-20022-viewer/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">ISO 20022 Viewer</Link>
                   </li>
                   <li className="mb-1">
+                    <Link to="/tools/sepa-xml-validator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">SEPA XML Validator</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/sepa-xml-generator/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">SEPA XML Generator</Link>
+                  </li>
+                  <li className="mb-1">
                     <Link to="/tools/mt940-to-csv/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">MT940 to CSV</Link>
+                  </li>
+                  <li className="mb-1">
+                    <Link to="/tools/mt940-to-camt053/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">MT940 to camt.053</Link>
                   </li>
                 </ul>
               </div>

@@ -32,6 +32,11 @@
 - [Screenshot to Image](https://www.ogtechnologies.co/tools/screenshot-to-image/)
 - [PDF Tools](https://www.ogtechnologies.co/tools/pdf-tools/)
 - [PDF Metadata Editor](https://www.ogtechnologies.co/tools/pdf-metadata/): View, edit, and remove PDF metadata — title, author, keywords, timestamps, and XMP stream
+- [Merge PDF](https://www.ogtechnologies.co/tools/merge-pdf/): Combine multiple PDF files into one document
+- [Split PDF](https://www.ogtechnologies.co/tools/split-pdf/): Extract pages or page ranges from a PDF
+- [Image to PDF](https://www.ogtechnologies.co/tools/image-to-pdf/): Convert PNG/JPG images to a PDF document
+- [Document to PDF](https://www.ogtechnologies.co/tools/document-to-pdf/): Convert DOCX/ODT/TXT documents to PDF
+- [PDF to Word](https://www.ogtechnologies.co/tools/pdf-to-word/): Convert PDF to DOCX, TXT, or HTML
 - [Security Scanner](https://www.ogtechnologies.co/tools/security-tools/)
 - [Blockchain Compliance Checker](https://www.ogtechnologies.co/tools/blockchain-compliance-checker/)
 - [ISO 27001 Gap Analysis Tool](https://www.ogtechnologies.co/tools/iso-27001-gap-analysis/)
@@ -40,9 +45,15 @@
 - [ISO 42001 AI Readiness Assessment](https://www.ogtechnologies.co/tools/iso-42001-ai-readiness/)
 - [ISO 8601 Date Validator](https://www.ogtechnologies.co/tools/iso-8601-validator/)
 - [Ethereum Developer Toolkit](https://www.ogtechnologies.co/tools/ethereum-toolkit/)
+- [Wei Converter](https://www.ogtechnologies.co/tools/wei-converter/): Convert Wei, Gwei, Finney, and Ether units
+- [Keccak256 Hash](https://www.ogtechnologies.co/tools/keccak256-hash/): Compute Ethereum Keccak-256 hashes
+- [Function Selector](https://www.ogtechnologies.co/tools/function-selector/): Calculate 4-byte Solidity function selectors
+- [ABI Encoder](https://www.ogtechnologies.co/tools/abi-encoder/): Encode and decode Ethereum ABI calldata
+- [Address Checksum](https://www.ogtechnologies.co/tools/address-checksum/): Validate EIP-55 checksummed Ethereum addresses
 - [AWS ARN Parser](https://www.ogtechnologies.co/tools/aws-arn-parser/)
 - [IAM Policy Validator](https://www.ogtechnologies.co/tools/iam-policy-validator/)
 - [SAP OData URL Builder](https://www.ogtechnologies.co/tools/sap-odata-url-builder/)
+- [ServiceNow Encoded Query Builder](https://www.ogtechnologies.co/tools/servicenow-query-builder/): Build and decode ServiceNow encoded queries — generates sysparm_query URLs and GlideRecord scripts
 - [Hash Generator](https://www.ogtechnologies.co/tools/hash-generator/)
 - [IBAN Validator](https://www.ogtechnologies.co/tools/iban-validator/)
 - [BIC / SWIFT Validator](https://www.ogtechnologies.co/tools/bic-validator/)
@@ -52,6 +63,7 @@
 - [MT940 to camt.053 Converter](https://www.ogtechnologies.co/tools/mt940-to-camt053/)
 - [SEPA XML Validator](https://www.ogtechnologies.co/tools/sepa-xml-validator/)
 - [SEPA XML Generator](https://www.ogtechnologies.co/tools/sepa-xml-generator/)
+- [XML Tools](https://www.ogtechnologies.co/tools/xml-tools/): Index of XML utilities — formatter, validator, XSD, JSON/CSV converters, XPath tester
 - [XML Formatter & Beautifier](https://www.ogtechnologies.co/tools/xml-formatter/)
 - [XML Validator](https://www.ogtechnologies.co/tools/xml-validator/)
 - [XSD Schema Validator](https://www.ogtechnologies.co/tools/xsd-validator/)
@@ -189,6 +201,7 @@
 - [Partner Program](https://www.ogtechnologies.co/partners/): Revenue share partnerships — referral, reseller, and co-delivery models
 - [Expert Hub](https://www.ogtechnologies.co/expert-hub/): Freelance and contract projects for independent developers and consultants — open projects board and application
 - [Publications](https://www.ogtechnologies.co/publications/): Blockchain standardization reports on cross-border payments — BlockStand expert deliverables
+- [About Us](https://www.ogtechnologies.co/about/): Vienna-based IT consultancy — payment infrastructure, DLT, digital identity, and international standards
 - [Ventures](https://www.ogtechnologies.co/ventures/): Supporting startups and spin-offs
 - [Portfolio](https://www.ogtechnologies.co/portfolio/): Explore our projects
 - [EduNode](https://www.ogtechnologies.co/portfolio/edunode/): STEM, Web3, and AI education platform — Stellar Development Foundation grant

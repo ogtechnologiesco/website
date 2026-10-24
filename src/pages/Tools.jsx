@@ -118,6 +118,7 @@ const TOOL_CATEGORIES = [
       { name: 'AWS ARN Parser', path: '/tools/aws-arn-parser/', description: 'Parse and build AWS ARN strings.' },
       { name: 'IAM Policy Validator', path: '/tools/iam-policy-validator/', description: 'Flag wildcards and privilege escalation in IAM policies.' },
       { name: 'SAP OData URL Builder', path: '/tools/sap-odata-url-builder/', description: 'Build SAP OData query URLs interactively.' },
+      { name: 'ServiceNow Query Builder', path: '/tools/servicenow-query-builder/', description: 'Build and decode ServiceNow encoded queries — sysparm_query and GlideRecord output.' },
       { name: 'Hash Generator', path: '/tools/hash-generator/', description: 'MD5, SHA-1, SHA-256, SHA-512, Keccak hashes.' },
     ],
   },

@@ -15,6 +15,7 @@ export default function prerenderPlugin(options) {
     postProcess,
     minify: minifyOptions,
     renderAfterTime = 0,
+    readyTimeout = 30000,
     maxConcurrentRoutes = 4,
     launchOptions = {},
   } = options
@@ -41,14 +42,17 @@ export default function prerenderPlugin(options) {
       try {
         const queue = [...routes]
         const blockedHosts = /googlesyndication\.com|doubleclick\.net|googleadservices\.com|googletagservices\.com|google-analytics\.com|googletagmanager\.com|fundingchoicesmessages\.google\.com/
+        const blockedTypes = new Set(['image', 'media', 'font'])
         const workers = Array.from({ length: Math.min(maxConcurrentRoutes, routes.length) }, async () => {
           const page = await browser.newPage()
           // Abort ad/analytics requests — the script tags must remain in the DOM
           // for verification (AdSense crawls the HTML), but loading them during
           // prerender blocks networkidle0 and hangs the build on ad-blocked CI networks.
+          // Images, fonts, and media are also aborted — only the DOM is captured,
+          // and skipping their downloads lets networkidle0 settle much sooner.
           await page.setRequestInterception(true)
           page.on('request', (req) => {
-            if (blockedHosts.test(req.url())) {
+            if (blockedHosts.test(req.url()) || blockedTypes.has(req.resourceType())) {
               req.abort()
             } else {
               req.continue()
@@ -63,6 +67,25 @@ export default function prerenderPlugin(options) {
               outputPath: path.join(staticDir, route, 'index.html'),
             }
             await page.goto(`${baseURL}${route}`, { waitUntil: 'networkidle0', timeout: 90000 })
+            // Wait for real content instead of sleeping a fixed interval: the
+            // Suspense fallback is marked data-prerender-loading, so this only
+            // resolves once the lazy route chunk (already fetched, per
+            // networkidle0) has committed its render.
+            try {
+              await page.waitForFunction(
+                () => {
+                  const root = document.getElementById('root')
+                  return (
+                    root &&
+                    root.children.length > 0 &&
+                    !root.querySelector('[data-prerender-loading]')
+                  )
+                },
+                { timeout: readyTimeout }
+              )
+            } catch {
+              console.warn(`[prerender] Readiness check timed out for ${route} — capturing anyway`)
+            }
             if (renderAfterTime > 0) {
               await new Promise((resolve) => setTimeout(resolve, renderAfterTime))
             }

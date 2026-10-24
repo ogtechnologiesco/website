@@ -52,6 +52,7 @@ const EthereumToolkit = lazy(() => import('./pages/ethereumToolkit'));
 const AwsArnParser = lazy(() => import('./pages/awsArnParser'));
 const IamPolicyValidator = lazy(() => import('./pages/iamPolicyValidator'));
 const SapODataUrlBuilder = lazy(() => import('./pages/sapODataUrlBuilder'));
+const ServiceNowQueryBuilder = lazy(() => import('./pages/servicenowQueryBuilder'));
 const HashGenerator = lazy(() => import('./pages/hashGenerator'));
 const IbanValidator = lazy(() => import('./pages/ibanValidator'));
 const BicValidator = lazy(() => import('./pages/bicValidator'));
@@ -107,6 +108,7 @@ const Activities = lazy(() => import('./pages/Activities'));
 const Import = lazy(() => import('./pages/Import'));
 const Companies = lazy(() => import('./pages/Companies'));
 const Ventures = lazy(() => import('./pages/Ventures'));
+const About = lazy(() => import('./pages/About'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const PortfolioProject = lazy(() => import('./pages/portfolio/ProjectDetail'));
 const Partners = lazy(() => import('./pages/Partners'));
@@ -191,7 +193,7 @@ function App() {
     <HelmetProvider>
       <AuthProvider>
         <Breadcrumbs />
-        <Suspense fallback={<div className="flex items-center justify-center min-h-screen bg-black"><div className="text-gray-400">Loading...</div></div>}>
+        <Suspense fallback={<div data-prerender-loading className="flex items-center justify-center min-h-screen bg-black"><div className="text-gray-400">Loading...</div></div>}>
         <Routes>
         <Route exact path="/terms" element={<Terms/>} />
         <Route exact path="/" element={<Home />} />
@@ -236,6 +238,7 @@ function App() {
         <Route path="/crm/import" element={<Import/>} />
         <Route path="/crm/companies" element={<Companies/>} />
         <Route exact path="/ventures" element={<Ventures/>} />
+        <Route exact path="/about" element={<About/>} />
         <Route exact path="/portfolio" element={<Portfolio/>} />
         <Route exact path="/portfolio/:slug" element={<PortfolioProject/>} />
         <Route exact path="/partners" element={<Partners/>} />
@@ -308,6 +311,7 @@ function App() {
         <Route exact path="/tools/aws-arn-parser" element={<AwsArnParser/>} />
         <Route exact path="/tools/iam-policy-validator" element={<IamPolicyValidator/>} />
         <Route exact path="/tools/sap-odata-url-builder" element={<SapODataUrlBuilder/>} />
+        <Route exact path="/tools/servicenow-query-builder" element={<ServiceNowQueryBuilder/>} />
         <Route exact path="/tools/hash-generator" element={<HashGenerator/>} />
         <Route exact path="/tools/xml-tools" element={<XmlTools/>} />
         <Route exact path="/tools/xml-formatter" element={<XmlFormatterPage/>} />

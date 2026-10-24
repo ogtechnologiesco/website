@@ -422,6 +422,16 @@ function ExpertHub() {
               </div>
               <div className="max-w-xl mx-auto">
                 <form onSubmit={handleSubmit} className="bg-gray-800 rounded-lg p-6 border border-gray-700 space-y-4">
+                  <div className="bg-purple-900/20 border border-purple-500/30 rounded-md p-4">
+                    <p className="text-sm text-gray-400">
+                      <span className="text-purple-300 font-semibold">Stand out:</span> the strongest applications point at real work — and the easiest way to show it is to build on our own products and ventures. Ship a small feature, fix an issue, or build an example on the{' '}
+                      <Link to="/products/" className="text-purple-400 hover:text-purple-300">OG CRM &amp; Ticketing platform</Link>, our grant-funded{' '}
+                      <Link to="/portfolio/edunode/" className="text-purple-400 hover:text-purple-300">EduNode</Link> or{' '}
+                      <Link to="/portfolio/mozart-pay/" className="text-purple-400 hover:text-purple-300">Mozart Pay</Link> projects, or the open-source{' '}
+                      <Link to="/portfolio/stellar-go-cli/" className="text-purple-400 hover:text-purple-300">Stellar Go CLI</Link>
+                      {' '}— then link it in your application below.
+                    </p>
+                  </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="expert-name" className="block text-gray-400 text-sm mb-1">Your Name *</label>
