@@ -52,7 +52,7 @@ function Insights() {
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h1">Insights</h1>
+                <h1 className="h1">Insights — Standards, Payments &amp; Developer Tools</h1>
                 <p>
                   In-depth industry articles on the standards, protocols, and technologies behind our products and free tools. Each piece is written to be practical: understand the concept, then apply it immediately with our browser-based utilities — no uploads, no sign-up.
                 </p>

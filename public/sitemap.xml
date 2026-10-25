@@ -290,7 +290,7 @@
   </url>
   <url>
     <loc>https://www.ogtechnologies.co/tools/hash-generator/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -397,6 +397,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.ogtechnologies.co/tools/event-topic-hash/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.ogtechnologies.co/tools/abi-encoder/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -483,6 +489,24 @@
   <url>
     <loc>https://www.ogtechnologies.co/tools/scorm-validator/</loc>
     <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/tools/xapi-statement-builder/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/tools/gs1-barcode-parser/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ogtechnologies.co/tools/geo-checker/</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -625,6 +649,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.ogtechnologies.co/insights/iso-27001-gap-analysis-template/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.ogtechnologies.co/insights/ethereum-wei-gwei-units/</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -722,13 +752,13 @@
   </url>
   <url>
     <loc>https://www.ogtechnologies.co/insights/iso-27001-annex-a-controls/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.ogtechnologies.co/insights/soc-2-trust-services-criteria/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -752,7 +782,7 @@
   </url>
   <url>
     <loc>https://www.ogtechnologies.co/insights/odata-filter-examples/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

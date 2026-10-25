@@ -256,7 +256,7 @@ function SepaXmlGenerator() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1">SEPA XML Generator</h1>
+                <h1 className="h1">SEPA XML Generator — pain.001 &amp; pain.008 from CSV</h1>
                 <p className="text-xl text-gray-400 mt-4">
                   Build a pain.001 credit transfer or pain.008 direct debit file from a list of payments.
                   IBANs and BICs are validated as you type — everything runs locally, nothing is uploaded.

@@ -154,8 +154,8 @@ function Soc2TrustServicesCriteria() {
       <div className="flex flex-col min-h-screen overflow-hidden">
         <Helmet>
           <title>SOC 2 Trust Services Criteria: The Complete List Explained | OG Technologies EU</title>
-          <meta name="description" content="All 52 AICPA Trust Services Criteria listed and explained: the 33 Common Criteria (CC1–CC9) required in every SOC 2 report, plus the optional Availability, Processing Integrity, Confidentiality, and Privacy categories." />
-          <meta name="keywords" content="SOC 2 trust services criteria, trust services criteria list, SOC 2 common criteria, CC1-CC9, SOC 2 criteria explained, SOC 2 controls list, SOC 2 requirements, TSP 100, SOC 2 trust services categories" />
+          <meta name="description" content="All 52 AICPA Trust Services Criteria listed and explained: the 33 Common Criteria (CC1–CC9) required in every SOC 2 report, plus the optional Availability, Processing Integrity, Confidentiality, and Privacy categories — with a free Excel/CSV/PDF scoping checklist download." />
+          <meta name="keywords" content="SOC 2 trust services criteria, trust services criteria list, SOC 2 common criteria, CC1-CC9, SOC 2 criteria explained, SOC 2 controls list, SOC 2 requirements, TSP 100, SOC 2 trust services categories, soc 2 trust services criteria excel, soc 2 criteria checklist" />
           <meta name="robots" content="index, follow" />
           <link rel="canonical" href="https://www.ogtechnologies.co/insights/soc-2-trust-services-criteria/" />
           <meta property="og:type" content="article" />
@@ -216,6 +216,27 @@ function Soc2TrustServicesCriteria() {
                     </ul>
 
                     <h2 className="h2 mb-6 text-gray-100">The Complete Criteria List</h2>
+
+                    <div className="not-prose bg-gray-800 border border-purple-700/50 rounded-xl p-6 mb-10 text-left">
+                      <h3 className="text-lg font-bold text-white mb-2">Download the criteria checklist</h3>
+                      <p className="text-sm text-gray-300 mb-4">
+                        All 52 Trust Services Criteria as an Excel, CSV, or printable PDF scoping checklist —
+                        domain, criterion, and title, with in-scope, implementation status, and evidence columns.
+                        Ready for your readiness assessment or GRC tool.
+                      </p>
+                      <div className="flex flex-wrap gap-3">
+                        <a href="/downloads/soc-2-trust-services-criteria.xlsx" download className="px-4 py-2 rounded-md bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors">
+                          TSC checklist (.xlsx)
+                        </a>
+                        <a href="/downloads/soc-2-trust-services-criteria.csv" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
+                          TSC checklist (.csv)
+                        </a>
+                        <a href="/downloads/soc-2-trust-services-criteria.pdf" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
+                          Printable PDF
+                        </a>
+                      </div>
+                      <p className="text-xs text-gray-500 mt-3">Working reference for self-assessment — not a substitute for the AICPA Trust Services Criteria (TSP section 100) or a formal SOC 2 examination.</p>
+                    </div>
 
                     {controlGroups.map((group) => (
                       <div key={group.domain} className="mb-10">

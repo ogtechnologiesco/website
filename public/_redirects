@@ -2,12 +2,27 @@
 http://ogtechnologies.co/* https://www.ogtechnologies.co/:splat 301!
 http://www.ogtechnologies.co/* https://www.ogtechnologies.co/:splat 301!
 
-# SPA routing
-/* /index.html 200
-
-# 404 handling for non-API routes
+# Security blocks — probed paths return 404
 /.git/* /404.html 404
 /backup* /404.html 404
 /admin /404.html 404
 /wp-admin /404.html 404
 /phpmyadmin /404.html 404
+
+# Non-prerendered SPA routes (client-side app screens) get index.html
+/signin /index.html 200
+/signup /index.html 200
+/reset-password /index.html 200
+/auth/callback /index.html 200
+/dashboard /index.html 200
+/dashboard/* /index.html 200
+/settings /index.html 200
+/settings/* /index.html 200
+/crm /index.html 200
+/crm/* /index.html 200
+/helpdesk/ticket/* /index.html 200
+/payment/success /index.html 200
+/payment/cancel /index.html 200
+
+# Everything else is a real 404 (prerendered pages are served before this)
+/* /404.html 404

@@ -61,7 +61,7 @@ function Job() {
 
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h1">We are Hiring!</h1>
+                <h1 className="h1">We're Hiring — Careers at OG Technologies EU</h1>
                 <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="100">
                   Join our innovative team and help shape the future of technology
                 </p>

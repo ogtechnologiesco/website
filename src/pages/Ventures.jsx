@@ -49,7 +49,7 @@ function Ventures() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-200">
             
-            <h1 className="h2 mb-4">Our Ventures</h1>
+            <h1 className="h2 mb-4">Our Ventures — Startups, Spin-offs &amp; Intrapreneurship</h1>
             <p className="text-xl text-gray-400 mb-4">We support innovation and entrepreneurship across various domains, helping transform ideas into successful ventures.</p>
             
           </div>

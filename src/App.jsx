@@ -65,7 +65,10 @@ const FhirValidator = lazy(() => import('./pages/fhirValidator'));
 const TleParser = lazy(() => import('./pages/tleParser'));
 const TleConverter = lazy(() => import('./pages/tleConverter'));
 const ScormValidator = lazy(() => import('./pages/scormValidator'));
+const XapiStatementBuilder = lazy(() => import('./pages/xapiStatementBuilder'));
 const GtinValidator = lazy(() => import('./pages/gtinValidator'));
+const Gs1BarcodeParser = lazy(() => import('./pages/gs1BarcodeParser'));
+const GeoChecker = lazy(() => import('./pages/geoChecker'));
 const PhoneFormatter = lazy(() => import('./pages/phoneFormatter'));
 const VcardGenerator = lazy(() => import('./pages/vcardGenerator'));
 const EmailValidator = lazy(() => import('./pages/emailValidator'));
@@ -91,6 +94,7 @@ const PdfMetadataPage = lazy(() => import('./pages/pdfTools/PdfMetadataPage'));
 const WeiConverterPage = lazy(() => import('./pages/ethereumToolkit/WeiConverterPage'));
 const Keccak256Page = lazy(() => import('./pages/ethereumToolkit/Keccak256Page'));
 const FunctionSelectorPage = lazy(() => import('./pages/ethereumToolkit/FunctionSelectorPage'));
+const EventTopicPage = lazy(() => import('./pages/ethereumToolkit/EventTopicPage'));
 const AbiEncoderPage = lazy(() => import('./pages/ethereumToolkit/AbiEncoderPage'));
 const AddressChecksumPage = lazy(() => import('./pages/ethereumToolkit/AddressChecksumPage'));
 const DataProtection = lazy(() => import('./pages/DataProtection'));
@@ -123,6 +127,7 @@ const IamPolicySecurity = lazy(() => import('./pages/Insights/iamPolicySecurity'
 const Hl7VsFhir = lazy(() => import('./pages/Insights/hl7VsFhir'));
 const EthereumCalldata = lazy(() => import('./pages/Insights/ethereumCalldata'));
 const Iso27001GapAnalysisGuide = lazy(() => import('./pages/Insights/iso27001GapAnalysisGuide'));
+const Iso27001GapTemplate = lazy(() => import('./pages/Insights/iso27001GapTemplate'));
 const EthereumWeiGweiUnits = lazy(() => import('./pages/Insights/ethereumWeiGweiUnits'));
 const Hl7V2MessageStructure = lazy(() => import('./pages/Insights/hl7V2MessageStructure'));
 const AwsIamPolicyValidation = lazy(() => import('./pages/Insights/awsIamPolicyValidation'));
@@ -260,6 +265,7 @@ function App() {
         <Route exact path="/insights/hl7-v2-vs-fhir-comparison" element={<Hl7VsFhir/>} />
         <Route exact path="/insights/ethereum-calldata-abi-guide" element={<EthereumCalldata/>} />
         <Route exact path="/insights/iso-27001-gap-analysis-guide" element={<Iso27001GapAnalysisGuide/>} />
+        <Route exact path="/insights/iso-27001-gap-analysis-template" element={<Iso27001GapTemplate/>} />
         <Route exact path="/insights/ethereum-wei-gwei-units" element={<EthereumWeiGweiUnits/>} />
         <Route exact path="/insights/hl7-v2-message-structure" element={<Hl7V2MessageStructure/>} />
         <Route exact path="/insights/aws-iam-policy-validation" element={<AwsIamPolicyValidation/>} />
@@ -331,6 +337,7 @@ function App() {
         <Route exact path="/tools/wei-converter" element={<WeiConverterPage/>} />
         <Route exact path="/tools/keccak256-hash" element={<Keccak256Page/>} />
         <Route exact path="/tools/function-selector" element={<FunctionSelectorPage/>} />
+        <Route exact path="/tools/event-topic-hash" element={<EventTopicPage/>} />
         <Route exact path="/tools/abi-encoder" element={<AbiEncoderPage/>} />
         <Route exact path="/tools/address-checksum" element={<AddressChecksumPage/>} />
         <Route exact path="/tools/iban-validator" element={<IbanValidator/>} />
@@ -345,7 +352,10 @@ function App() {
         <Route exact path="/tools/tle-parser" element={<TleParser/>} />
         <Route exact path="/tools/tle-converter" element={<TleConverter/>} />
         <Route exact path="/tools/scorm-validator" element={<ScormValidator/>} />
+        <Route exact path="/tools/xapi-statement-builder" element={<XapiStatementBuilder/>} />
         <Route exact path="/tools/gtin-validator" element={<GtinValidator/>} />
+        <Route exact path="/tools/gs1-barcode-parser" element={<Gs1BarcodeParser/>} />
+        <Route exact path="/tools/geo-checker" element={<GeoChecker/>} />
         <Route exact path="/tools/phone-formatter" element={<PhoneFormatter/>} />
         <Route exact path="/tools/vcard-generator" element={<VcardGenerator/>} />
         <Route exact path="/tools/email-validator" element={<EmailValidator/>} />

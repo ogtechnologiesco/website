@@ -6,6 +6,7 @@ const TABS = [
   { id: 'wei', label: 'Wei Converter', path: '/tools/wei-converter/' },
   { id: 'keccak', label: 'Keccak256', path: '/tools/keccak256-hash/' },
   { id: 'selector', label: 'Function Selector', path: '/tools/function-selector/' },
+  { id: 'topic', label: 'Event Topic', path: '/tools/event-topic-hash/' },
   { id: 'abi', label: 'ABI Encoder', path: '/tools/abi-encoder/' },
   { id: 'address', label: 'Address Checksum', path: '/tools/address-checksum/' },
 ];

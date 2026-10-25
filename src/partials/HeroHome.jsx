@@ -74,7 +74,7 @@ function HeroHome() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h1 mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-gradient bg-300" data-aos="fade-up">
-             OG Technologies EU
+             OG Technologies EU — Web3, Payments &amp; Digital Identity Solutions
             </h1>
             <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">
             We provide technical expertise at the intersection of payment infrastructure, DLT, digital identity and international standards.

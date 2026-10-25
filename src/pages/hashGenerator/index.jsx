@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../../partials/Header';
 import Footer from '../../partials/Footer';
 import PageIllustration from '../../partials/PageIllustration';
-import { keccak256, keccak512 } from 'js-sha3';
+import { keccak256, keccak512, shake128, shake256 } from 'js-sha3';
 
 const ALGORITHMS = [
   { id: 'sha-1', label: 'SHA-1', insecure: true },
@@ -12,10 +12,12 @@ const ALGORITHMS = [
   { id: 'sha-512', label: 'SHA-512', insecure: false },
   { id: 'keccak256', label: 'Keccak-256', insecure: false },
   { id: 'keccak512', label: 'Keccak-512', insecure: false },
+  { id: 'shake128', label: 'SHAKE-128', insecure: false, xof: true },
+  { id: 'shake256', label: 'SHAKE-256', insecure: false, xof: true },
   { id: 'md5', label: 'MD5', insecure: true },
 ];
 
-async function computeHash(algorithm, input, inputMode) {
+async function computeHash(algorithm, input, inputMode, shakeBits = 256) {
   let data;
   if (inputMode === 'hex') {
     const cleanHex = input.startsWith('0x') ? input.slice(2) : input;
@@ -34,6 +36,12 @@ async function computeHash(algorithm, input, inputMode) {
   }
   if (algorithm === 'keccak512') {
     return keccak512(data);
+  }
+  if (algorithm === 'shake128') {
+    return shake128(data, shakeBits);
+  }
+  if (algorithm === 'shake256') {
+    return shake256(data, shakeBits);
   }
 
   if (algorithm === 'md5') {
@@ -106,6 +114,8 @@ function HashGenerator() {
   const [results, setResults] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [shakeBits, setShakeBits] = useState(256);
+  const shakeSelected = selectedAlgos.some((a) => a.startsWith('shake'));
 
   const inputBytes = useMemo(() => {
     if (!input) return 0;
@@ -129,7 +139,7 @@ function HashGenerator() {
     const newResults = {};
     try {
       for (const algoId of selectedAlgos) {
-        const hash = await computeHash(algoId, input, inputMode);
+        const hash = await computeHash(algoId, input, inputMode, shakeBits);
         newResults[algoId] = hash;
       }
       setResults(newResults);
@@ -143,22 +153,22 @@ function HashGenerator() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Helmet>
-        <title>Free Hash Generator - SHA-256, SHA-512, Keccak256, MD5 | OG Technologies EU</title>
-        <meta name="description" content="Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512. 100% client-side, no data sent to any server." />
-        <meta name="keywords" content="hash generator, sha256, sha512, keccak256, md5, sha1, hash calculator, online hash tool, cryptographic hash" />
+        <title>Free Hash Generator - SHA-256, SHA-512, Keccak256, SHAKE, MD5 | OG Technologies EU</title>
+        <meta name="description" content="Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512, and SHAKE-128/SHAKE-256 with adjustable output length. 100% client-side, no data sent to any server." />
+        <meta name="keywords" content="hash generator, sha256, sha512, keccak256, md5, sha1, shake128, shake256, shake generator, sha-3, hash calculator, online hash tool, cryptographic hash" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.ogtechnologies.co/tools/hash-generator/" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.ogtechnologies.co/tools/hash-generator/" />
-        <meta property="og:title" content="Free Hash Generator - SHA-256, SHA-512, Keccak256, MD5 | OG Technologies EU" />
-        <meta property="og:description" content="Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512. 100% client-side." />
+        <meta property="og:title" content="Free Hash Generator - SHA-256, SHA-512, Keccak256, SHAKE, MD5 | OG Technologies EU" />
+        <meta property="og:description" content="Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512, SHAKE-128/256. 100% client-side." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/hash-generator/" />
-        <meta name="twitter:title" content="Free Hash Generator - SHA-256, SHA-512, Keccak256, MD5 | OG Technologies EU" />
-        <meta name="twitter:description" content="Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512. 100% client-side." />
+        <meta name="twitter:title" content="Free Hash Generator - SHA-256, SHA-512, Keccak256, SHAKE, MD5 | OG Technologies EU" />
+        <meta name="twitter:description" content="Generate hashes online: MD5, SHA-1, SHA-256, SHA-384, SHA-512, Keccak-256, Keccak-512, SHAKE-128/256. 100% client-side." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
       </Helmet>
 
@@ -173,10 +183,11 @@ function HashGenerator() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1">Hash Generator</h1>
+                <h1 className="h1">Hash Generator — SHA-256, SHA-512, Keccak256, SHAKE &amp; MD5</h1>
                 <p className="text-xl text-gray-400 mt-4">
                   Generate cryptographic hashes from text or hex data. Supports MD5, SHA-1, SHA-256, SHA-384, SHA-512,
-                  Keccak-256, and Keccak-512. Everything runs in your browser — no data is sent to any server.
+                  Keccak-256, Keccak-512, and SHAKE-128/256 with adjustable output length. Everything runs in your
+                  browser — no data is sent to any server.
                 </p>
               </div>
 
@@ -236,6 +247,18 @@ function HashGenerator() {
                         </button>
                       ))}
                     </div>
+                    {shakeSelected && (
+                      <div className="mt-3 flex items-center gap-3">
+                        <label className="text-xs text-gray-400">SHAKE output (bits)</label>
+                        <select
+                          value={shakeBits}
+                          onChange={(e) => setShakeBits(parseInt(e.target.value, 10))}
+                          className="bg-gray-700 text-white px-3 py-1.5 rounded-md border border-gray-600 text-sm focus:border-purple-500 focus:outline-none"
+                        >
+                          {[128, 256, 512, 1024].map((b) => <option key={b} value={b}>{b}</option>)}
+                        </select>
+                      </div>
+                    )}
                   </div>
 
                   <button
@@ -257,6 +280,7 @@ function HashGenerator() {
                             <span className="text-gray-300 text-sm font-medium">
                               {algo.label}
                               {algo.insecure && <span className="text-xs text-yellow-400 ml-2">(insecure for crypto)</span>}
+                              {algo.xof && <span className="text-xs text-purple-400 ml-2">({shakeBits}-bit output)</span>}
                             </span>
                             <button
                               type="button"
@@ -277,6 +301,7 @@ function HashGenerator() {
                   <div className="mt-6 text-xs text-gray-500">
                     <p><strong>SHA-1 and MD5</strong> are cryptographically broken — do not use for security purposes.</p>
                     <p className="mt-1"><strong>Keccak-256</strong> is the hash used by Ethereum (not the same as NIST SHA3-256).</p>
+                    <p className="mt-1"><strong>SHAKE-128 / SHAKE-256</strong> are SHA-3 extendable-output functions (XOF) — unlike fixed-length digests they can produce any output size; pick the output length above.</p>
                   </div>
                 </div>
               </div>

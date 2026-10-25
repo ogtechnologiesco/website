@@ -66,7 +66,7 @@ function Products() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-200">
             
-            <h1 className="h2 mb-4">Our Products</h1>
+            <h1 className="h2 mb-4">Our Products — CRM, Helpdesk &amp; Enterprise Software</h1>
             
           </div>
 
@@ -165,7 +165,7 @@ function Products() {
                   <h3 className="h3 mb-3">Customized travel booking platform development </h3>
                   <p className="text-xl text-gray-400 mb-4">Our team of experts can help your business build a customized travel booking platform that incorporates AI and blockchain technologies. We work closely with you to understand your business requirements and design a platform that provides personalized travel recommendations and a seamless booking experience, while ensuring secure and transparent transactions.</p>
                   <Link to="/products/travel-booking-platform/" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition duration-150 ease-in-out">
-                    Learn more →
+                    Explore the travel booking platform →
                   </Link>
                 </div>
               </div>
@@ -184,7 +184,7 @@ function Products() {
                   <h3 className="h3 mb-3">E-commerce marketplace development </h3>
                   <p className="text-xl text-gray-400 mb-4"> We can help your business build a decentralized and secure e-commerce marketplace that utilizes blockchain technology. Our team of developers and designers can work with you to create a user-friendly platform that incorporates AI algorithms to provide personalized product recommendations and real-time pricing optimization.</p>
                   <Link to="/products/ecommerce-marketplace/" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition duration-150 ease-in-out">
-                    Learn more →
+                    Explore the ecommerce marketplace →
                   </Link>
                 </div>
               </div>
@@ -203,7 +203,7 @@ function Products() {
                   <h3 className="h3 mb-3">Blockchain consulting services </h3>
                   <p className="text-xl text-gray-400 mb-4"> Our team of blockchain experts provides consulting services to companies looking to integrate blockchain technology into their existing systems. We can help you develop a blockchain strategy, design and build smart contracts, and develop blockchain-based applications that streamline your business operations. </p>
                   <Link to="/products/blockchain-consulting/" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition duration-150 ease-in-out">
-                    Learn more →
+                    Explore blockchain consulting →
                   </Link>
                 </div>
               </div>
@@ -222,7 +222,7 @@ function Products() {
                   <h3 className="h3 mb-3">AI-powered chatbot development  </h3>
                   <p className="text-xl text-gray-400 mb-4">We can help your business build an AI-powered agents/chatbot that provides 24/7 customer support to your customers. Our team of developers and data scientists can work with you to design a agent/chatbot that uses natural language processing and machine learning algorithms to provide personalized assistance to your customers.</p>
                   <Link to="/products/ai-chatbot/" className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition duration-150 ease-in-out">
-                    Learn more →
+                    Explore the AI chatbot →
                   </Link>
                 </div>
               </div>

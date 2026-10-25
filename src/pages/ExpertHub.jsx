@@ -121,6 +121,7 @@ function ExpertHub() {
     skillTrack: skillTracks[0].title,
     seniority: seniorityOptions[1],
     project: 'General application',
+    openSourceInterest: '',
     portfolioUrl: '',
     linkedinUrl: '',
     availability: availabilityOptions[0],
@@ -149,15 +150,18 @@ function ExpertHub() {
         skillTrack: formData.skillTrack,
         seniority: formData.seniority,
         project: formData.project,
+        openSourceInterest: formData.openSourceInterest || undefined,
         portfolioUrl: formData.portfolioUrl,
         linkedinUrl: formData.linkedinUrl,
         availability: formData.availability,
         timezone: formData.timezone,
-        message: formData.message,
+        message: formData.openSourceInterest
+          ? `Open-source interest: ${formData.openSourceInterest}\n\n${formData.message}`
+          : formData.message,
       });
       setSubmitSuccess(true);
       setFormData({
-        name: '', email: '', skillTrack: skillTracks[0].title, seniority: seniorityOptions[1],
+        name: '', email: '', skillTrack: skillTracks[0].title, seniority: seniorityOptions[1], openSourceInterest: '',
         project: 'General application', portfolioUrl: '', linkedinUrl: '',
         availability: availabilityOptions[0], timezone: '', message: '',
       });
@@ -211,7 +215,7 @@ function ExpertHub() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-3xl mx-auto text-center pb-12">
-                <h1 className="h1 mb-4">Expert Hub</h1>
+                <h1 className="h1 mb-4">Expert Hub — Freelance &amp; Contract Projects</h1>
                 <p className="text-xl text-gray-400 mb-8">
                   Real projects for independent developers and consultants. Join our bench of vetted experts and get matched to blockchain, payments, compliance, and healthcare IT work — with written terms, a paid trial, and fast invoicing.
                 </p>
@@ -497,10 +501,30 @@ function ExpertHub() {
                       className={inputClass}
                     >
                       <option value="General application">General application — join the bench</option>
+                      <option value="Open-source products & ventures">Open-source products &amp; ventures — contribute or build</option>
                       {openProjects.map((project) => (
                         <option key={project.id} value={project.title}>{project.title}</option>
                       ))}
                     </select>
+                    {formData.project === 'Open-source products & ventures' && (
+                      <div className="mt-3">
+                        <label htmlFor="expert-oss" className="block text-gray-400 text-sm mb-1">Which product, or what would you build?</label>
+                        <select
+                          id="expert-oss"
+                          required
+                          value={formData.openSourceInterest}
+                          onChange={(e) => setFormData({ ...formData, openSourceInterest: e.target.value })}
+                          className={inputClass}
+                        >
+                          <option value="" disabled>Choose one…</option>
+                          <option value="OG CRM & Ticketing platform">OG CRM &amp; Ticketing platform</option>
+                          <option value="EduNode (Stellar education platform)">EduNode — Stellar education platform</option>
+                          <option value="Mozart Pay (Stellar payments)">Mozart Pay — Stellar payments</option>
+                          <option value="Stellar Go CLI (open source)">Stellar Go CLI — open source</option>
+                          <option value="A new product or venture — see my message">A new product or venture — see my message</option>
+                        </select>
+                      </div>
+                    )}
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>

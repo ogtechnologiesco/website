@@ -8,12 +8,14 @@ import WeiConverter from './WeiConverter';
 import Keccak256 from './Keccak256';
 import FunctionSelector from './FunctionSelector';
 import AbiEncoder from './AbiEncoder';
+import EventTopic from './EventTopic';
 import AddressChecksum from './AddressChecksum';
 
 const TABS = [
   { id: 'wei', label: 'Wei Converter', path: '/tools/wei-converter/', component: WeiConverter },
   { id: 'keccak', label: 'Keccak256', path: '/tools/keccak256-hash/', component: Keccak256 },
   { id: 'selector', label: 'Function Selector', path: '/tools/function-selector/', component: FunctionSelector },
+  { id: 'topic', label: 'Event Topic', path: '/tools/event-topic-hash/', component: EventTopic },
   { id: 'abi', label: 'ABI Encoder', path: '/tools/abi-encoder/', component: AbiEncoder },
   { id: 'address', label: 'Address Checksum', path: '/tools/address-checksum/', component: AddressChecksum },
 ];

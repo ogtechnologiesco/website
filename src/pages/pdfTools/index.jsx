@@ -64,7 +64,7 @@ function PdfTools() {
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1">PDF Tools</h1>
+                <h1 className="h1">Free PDF Tools — Merge, Split &amp; Convert</h1>
                 <p className="text-xl text-gray-400 mt-4">
                   Merge, split, convert, and transform PDF files directly in your browser. No file is sent to a server.
                 </p>

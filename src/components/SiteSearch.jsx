@@ -56,6 +56,7 @@ export default function SiteSearch({ isMobile = false }) {
             onChange={handleInput}
             onKeyDown={handleKeyDown}
             placeholder="Search..."
+            aria-label="Search the site"
             className="w-full bg-gray-700 text-white text-sm rounded-full px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-purple-600"
           />
           <svg
@@ -94,6 +95,7 @@ export default function SiteSearch({ isMobile = false }) {
           onChange={handleInput}
           onKeyDown={handleKeyDown}
           placeholder="Search..."
+            aria-label="Search the site"
           className="bg-gray-800 text-white text-sm rounded-full px-4 py-2 pl-10 w-48 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:w-64 transition-all duration-200"
         />
         <svg

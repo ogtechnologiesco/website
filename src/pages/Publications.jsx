@@ -77,7 +77,7 @@ function Publications() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-3xl mx-auto text-center pb-12">
-                <h1 className="h1 mb-4">Publications</h1>
+                <h1 className="h1 mb-4">Publications — Blockchain Standardization Reports</h1>
                 <p className="text-xl text-gray-400 mb-8">
                   Standardization reports and technical deliverables authored by OG Technologies EU.
                 </p>

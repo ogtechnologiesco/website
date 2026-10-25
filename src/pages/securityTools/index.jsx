@@ -90,7 +90,7 @@ function SecurityTools() {
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-8">
-                <h1 className="h1">Web Security Scanner</h1>
+                <h1 className="h1">Web Security Scanner — Free Passive Security Check</h1>
                 <p className="text-xl text-gray-400 mt-4">
                   Enter a website URL to get an instant passive security assessment with
                   OWASP Top 10 mapping and remediation advice. For Free.

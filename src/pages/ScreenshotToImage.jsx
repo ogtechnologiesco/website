@@ -140,7 +140,7 @@ function ScreenshotToImage() {
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1">Screenshot to Image</h1>
+                <h1 className="h1">Screenshot to Image — Paste &amp; Download</h1>
                 <p className="text-xl text-gray-400 mt-4">
                   Paste a screenshot from your clipboard and download it as an image file. Everything happens in your browser; nothing is sent to a server.
                 </p>

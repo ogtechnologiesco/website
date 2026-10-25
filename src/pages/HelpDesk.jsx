@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../partials/Footer';
 import Header from '../partials/Header';
@@ -637,8 +638,12 @@ function HelpdeskDashboard() {
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden bg-gray-900">
+      <Helmet>
+        <title>Helpdesk Dashboard - OG Technologies EU</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <Header />
-      
+
       <main className="grow">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <PageIllustration />
@@ -1098,6 +1103,27 @@ function HelpdeskDashboard() {
 function PublicHelpdesk() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden bg-gray-900">
+      <Helmet>
+        <title>OG Helpdesk — AI-Powered Ticket Management | OG Technologies EU</title>
+        <meta name="description" content="Submit and track IT support requests with OG Helpdesk, an AI-powered ticket management system. Technical assistance, service questions, and troubleshooting from our team." />
+        <meta name="keywords" content="helpdesk, ticket management, AI helpdesk, IT support, support tickets, OG Helpdesk" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.ogtechnologies.co/helpdesk/" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ogtechnologies.co/helpdesk/" />
+        <meta property="og:title" content="OG Helpdesk — AI-Powered Ticket Management | OG Technologies EU" />
+        <meta property="og:description" content="Submit and track IT support requests with OG Helpdesk, an AI-powered ticket management system." />
+        <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.ogtechnologies.co/helpdesk/" />
+        <meta name="twitter:title" content="OG Helpdesk — AI-Powered Ticket Management | OG Technologies EU" />
+        <meta name="twitter:description" content="Submit and track IT support requests with OG Helpdesk, an AI-powered ticket management system." />
+        <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
+      </Helmet>
       <Header />
       
       <main className="grow">
@@ -1112,7 +1138,7 @@ function PublicHelpdesk() {
 
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h1"> Help Desk </h1>
+                <h1 className="h1">OG Helpdesk — AI-Powered Ticket Management</h1>
               </div>
 
               

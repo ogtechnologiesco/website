@@ -52,7 +52,7 @@ function Blog() {
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h1">Welcome to our Blog</h1>
+                <h1 className="h1">OG Technologies EU Blog — Web3, Blockchain &amp; IT Insights</h1>
                 <p>
                   Hello, and welcome to the blog of OG Technologies EU! We are thrilled you've decided to join us on this digital journey as we explore the dynamic world of Information Technology (IT) and the innovative solutions we offer at our top-tier consulting firm.
                   Based in Europe, OG Technologies EU is a leading IT consulting company with a strong commitment to delivering high-quality services and customized solutions to businesses across various industries. Our areas of expertise include Finance, Education, and Corporate Helpdesk. In addition, we set ourselves apart from the competition by specializing in cutting-edge technologies such as Web3 and Blockchain.

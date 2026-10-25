@@ -44,7 +44,7 @@ function Quote() {
 
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h1"> Request a Quote </h1>
+                <h1 className="h1">Request a Quote — IT Consulting Services</h1>
               </div>
 
               

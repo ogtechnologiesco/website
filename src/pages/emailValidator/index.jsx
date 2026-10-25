@@ -81,7 +81,7 @@ function EmailValidator() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1">Email List Validator</h1>
+                <h1 className="h1">Email List Validator — Bulk Email Checker &amp; Cleaner</h1>
                 <p className="text-xl text-gray-400 mt-4">
                   Paste or upload an email list to check syntax, flag duplicates and disposable domains, and catch
                   common domain typos — then export a clean CSV.{' '}

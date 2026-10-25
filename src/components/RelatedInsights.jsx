@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { InArticleAd } from './AdSlot';
+import ShareButtons from './ShareButtons';
 import { getRelatedInsights } from '../data/insightsPosts';
 
 export default function RelatedInsights({ currentLink, categories }) {
@@ -8,6 +9,7 @@ export default function RelatedInsights({ currentLink, categories }) {
 
   return (
     <>
+      <ShareButtons className="mt-12" />
       <InArticleAd className="mt-12" />
       {related.length > 0 && (
     <section className="mt-12 pt-8 border-t border-gray-700">

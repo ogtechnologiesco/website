@@ -106,7 +106,7 @@ function CsvDeduplicator() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1">CSV Deduplicator</h1>
+                <h1 className="h1">CSV Deduplicator — Remove Duplicate Rows Online</h1>
                 <p className="text-xl text-gray-400 mt-4">
                   Remove duplicate rows from a CSV before importing into your CRM. Pick the columns that define a
                   duplicate — email, phone, name — and download a clean file.{' '}

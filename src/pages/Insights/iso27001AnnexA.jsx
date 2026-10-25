@@ -193,19 +193,25 @@ function Iso27001AnnexA() {
                     <div className="not-prose bg-gray-800 border border-purple-700/50 rounded-xl p-6 mb-10 text-left">
                       <h3 className="text-lg font-bold text-white mb-2">Download the controls list</h3>
                       <p className="text-sm text-gray-300 mb-4">
-                        All 93 Annex A controls as a CSV checklist — reference, title, and theme — ready to
-                        import into your Statement of Applicability or GRC tool. The full gap analysis
+                        All 93 Annex A controls as an Excel or CSV checklist — reference, title, and theme —
+                        ready to import into your Statement of Applicability or GRC tool. The full gap analysis
                         template (clauses 4–10 + Annex A, with scoring columns) is also available.
                       </p>
                       <div className="flex flex-wrap gap-3">
-                        <a href="/downloads/iso-27001-annex-a-controls.csv" download className="px-4 py-2 rounded-md bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors">
+                        <a href="/downloads/iso-27001-annex-a-controls.xlsx" download className="px-4 py-2 rounded-md bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors">
+                          Annex A controls (.xlsx)
+                        </a>
+                        <a href="/downloads/iso-27001-annex-a-controls.csv" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
                           Annex A controls (.csv)
+                        </a>
+                        <a href="/downloads/iso-27001-annex-a-controls.pdf" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
+                          Controls list (.pdf)
                         </a>
                         <a href="/downloads/iso-27001-gap-analysis-template.xlsx" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
                           Gap analysis template (.xlsx)
                         </a>
                         <a href="/downloads/iso-27001-gap-analysis-template.pdf" download className="px-4 py-2 rounded-md bg-gray-700 text-gray-300 text-sm font-medium hover:bg-gray-600 transition-colors">
-                          Printable PDF
+                          Gap template (.pdf)
                         </a>
                       </div>
                       <p className="text-xs text-gray-500 mt-3">Working reference for self-assessment — not a substitute for the ISO/IEC 27001 standard or a formal certification audit.</p>

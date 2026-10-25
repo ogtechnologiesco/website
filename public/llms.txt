@@ -48,6 +48,7 @@
 - [Wei Converter](https://www.ogtechnologies.co/tools/wei-converter/): Convert Wei, Gwei, Finney, and Ether units
 - [Keccak256 Hash](https://www.ogtechnologies.co/tools/keccak256-hash/): Compute Ethereum Keccak-256 hashes
 - [Function Selector](https://www.ogtechnologies.co/tools/function-selector/): Calculate 4-byte Solidity function selectors
+- [Event Topic Calculator](https://www.ogtechnologies.co/tools/event-topic-hash/): Compute Keccak-256 event signature hashes (topics[0]) — normalizes full declarations, bulk mode, common event table
 - [ABI Encoder](https://www.ogtechnologies.co/tools/abi-encoder/): Encode and decode Ethereum ABI calldata
 - [Address Checksum](https://www.ogtechnologies.co/tools/address-checksum/): Validate EIP-55 checksummed Ethereum addresses
 - [AWS ARN Parser](https://www.ogtechnologies.co/tools/aws-arn-parser/)
@@ -76,7 +77,10 @@
 - [TLE Parser](https://www.ogtechnologies.co/tools/tle-parser/)
 - [TLE to JSON/CSV Converter](https://www.ogtechnologies.co/tools/tle-converter/)
 - [SCORM Package Validator](https://www.ogtechnologies.co/tools/scorm-validator/)
+- [xAPI Statement Builder & Validator](https://www.ogtechnologies.co/tools/xapi-statement-builder/): Validate Tin Can / xAPI statements against the 1.0.x / 2.0 spec and build valid statements with the ADL verb registry
 - [GTIN / UPC / EAN Validator](https://www.ogtechnologies.co/tools/gtin-validator/)
+- [GS1 Barcode / AI Parser](https://www.ogtechnologies.co/tools/gs1-barcode-parser/): Decode GS1-128, DataMatrix, and QR element strings — GTIN, SSCC, batch, serial, dates, weights, GLN
+- [GEO & SEO Checker](https://www.ogtechnologies.co/tools/geo-checker/): Audit any website against 50+ SEO and GEO checks — llms.txt, AI crawler rules, structured data, DMARC, security headers
 - [Phone Number Formatter](https://www.ogtechnologies.co/tools/phone-formatter/)
 - [vCard Generator](https://www.ogtechnologies.co/tools/vcard-generator/)
 - [Email List Validator](https://www.ogtechnologies.co/tools/email-validator/)
@@ -92,6 +96,7 @@
 - [HL7 v2 vs FHIR](https://www.ogtechnologies.co/insights/hl7-v2-vs-fhir-comparison/): Choosing the right healthcare interoperability standard
 - [Ethereum Calldata & ABI Guide](https://www.ogtechnologies.co/insights/ethereum-calldata-abi-guide/): Function selectors, ABI encoding, and EIP-55 checksums
 - [ISO 27001 Gap Analysis Guide](https://www.ogtechnologies.co/insights/iso-27001-gap-analysis-guide/): Step-by-step gap assessment with scoring, remediation roadmap, and PDF report
+- [ISO 27001 Gap Analysis Template](https://www.ogtechnologies.co/insights/iso-27001-gap-analysis-template/): Free Excel & PDF template — clauses 4-10 plus all 93 Annex A controls
 - [Ethereum Wei & Gwei Units](https://www.ogtechnologies.co/insights/ethereum-wei-gwei-units/): Ethereum denominations explained with conversion table and worked examples
 - [HL7 v2 Message Structure](https://www.ogtechnologies.co/insights/hl7-v2-message-structure/): Segments, fields, delimiters, and message types decoded
 - [AWS IAM Policy Validation](https://www.ogtechnologies.co/insights/aws-iam-policy-validation/): 7 checks to run before deploying an IAM policy

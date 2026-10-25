@@ -4,6 +4,7 @@ import awsImage from '../images/insight-iam-security.jpg';
 import hl7Image from '../images/insight-hl7-fhir.jpg';
 import ethereumImage from '../images/insight-ethereum-calldata.jpg';
 import iso27001Image from '../images/insight-iso27001-gap.jpg';
+import iso27001TemplateImage from '../images/insight-iso27001-template.jpg';
 import ethereumUnitsImage from '../images/insight-ethereum-units.jpg';
 import hl7MessagesImage from '../images/insight-hl7-messages.jpg';
 import iamPolicyImage from '../images/insight-iam-policy.jpg';
@@ -208,6 +209,16 @@ export const insightsPosts = [
     image: iso27001Image,
     imageText: 'ISO 27001 gap analysis',
     link: '/insights/iso-27001-gap-analysis-guide/',
+    categories: ['Standards', 'Compliance', 'Security'],
+  },
+  {
+    title: 'ISO 27001 Gap Analysis Template — Free Excel & PDF',
+    date: '25/10/2026',
+    description:
+      'Free ISO 27001:2022 gap analysis template covering clauses 4–10 and all 93 Annex A controls — status, gap severity, evidence, remediation, owner, and due-date columns. Excel and printable PDF.',
+    image: iso27001TemplateImage,
+    imageText: 'ISO 27001 gap analysis template',
+    link: '/insights/iso-27001-gap-analysis-template/',
     categories: ['Standards', 'Compliance', 'Security'],
   },
   {

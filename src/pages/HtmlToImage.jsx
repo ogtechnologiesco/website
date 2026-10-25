@@ -138,7 +138,7 @@ function HtmlToImage() {
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1">HTML to PNG / JPG</h1>
+                <h1 className="h1">HTML to Image Converter — PNG &amp; JPG</h1>
                 <p className="text-xl text-gray-400 mt-4">
                   Upload an HTML file and download it as an image. Conversion happens entirely in your browser; no file is sent to a server.
                 </p>

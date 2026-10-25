@@ -66,12 +66,14 @@ const TOOL_CATEGORIES = [
     name: 'E-Learning',
     tools: [
       { name: 'SCORM Package Validator', path: '/tools/scorm-validator/', description: 'Validate SCORM/xAPI/cmi5 packages before LMS upload.' },
+      { name: 'xAPI Statement Builder & Validator', path: '/tools/xapi-statement-builder/', description: 'Validate Tin Can statements and build spec-compliant actor-verb-object JSON.' },
     ],
   },
   {
     name: 'E-Commerce',
     tools: [
       { name: 'GTIN / UPC / EAN Validator', path: '/tools/gtin-validator/', description: 'GS1 check digit validation, format detection, country prefix lookup.' },
+      { name: 'GS1 Barcode / AI Parser', path: '/tools/gs1-barcode-parser/', description: 'Decode GS1-128 / DataMatrix element strings — GTIN, SSCC, batch, serial, dates, GLN.' },
     ],
   },
   {
@@ -113,13 +115,15 @@ const TOOL_CATEGORIES = [
       { name: 'Wei Converter', path: '/tools/wei-converter/', description: 'Convert Wei, Gwei, Finney, and Ether.' },
       { name: 'Keccak256 Hash', path: '/tools/keccak256-hash/', description: 'Compute Ethereum Keccak-256 hashes.' },
       { name: 'Function Selector', path: '/tools/function-selector/', description: 'Calculate 4-byte Solidity function selectors.' },
+      { name: 'Event Topic Calculator', path: '/tools/event-topic-hash/', description: 'Keccak-256 event signature hash (topics[0]) — declarations and bulk lists.' },
       { name: 'ABI Encoder', path: '/tools/abi-encoder/', description: 'Encode and decode Ethereum ABI calldata.' },
       { name: 'Address Checksum', path: '/tools/address-checksum/', description: 'Validate EIP-55 checksummed addresses.' },
       { name: 'AWS ARN Parser', path: '/tools/aws-arn-parser/', description: 'Parse and build AWS ARN strings.' },
       { name: 'IAM Policy Validator', path: '/tools/iam-policy-validator/', description: 'Flag wildcards and privilege escalation in IAM policies.' },
       { name: 'SAP OData URL Builder', path: '/tools/sap-odata-url-builder/', description: 'Build SAP OData query URLs interactively.' },
       { name: 'ServiceNow Query Builder', path: '/tools/servicenow-query-builder/', description: 'Build and decode ServiceNow encoded queries — sysparm_query and GlideRecord output.' },
-      { name: 'Hash Generator', path: '/tools/hash-generator/', description: 'MD5, SHA-1, SHA-256, SHA-512, Keccak hashes.' },
+      { name: 'Hash Generator', path: '/tools/hash-generator/', description: 'MD5, SHA-1, SHA-256, SHA-512, Keccak, SHAKE-128/256 hashes.' },
+      { name: 'GEO & SEO Checker', path: '/tools/geo-checker/', description: 'Audit any website — SEO, llms.txt, AI crawlers, structured data, DMARC. A–F grade.' },
     ],
   },
 ];
@@ -160,7 +164,7 @@ function Tools() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1">Free Online Tools</h1>
+                <h1 className="h1">Free Online Tools — Developer, PDF, XML &amp; Security Utilities</h1>
                 <p className="text-xl text-gray-400 mt-4">
                   A collection of free utilities for developers, security teams, and compliance
                   professionals. Everything runs in your browser — no data is sent to any server.

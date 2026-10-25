@@ -134,7 +134,7 @@ function Partners() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-3xl mx-auto text-center pb-12">
-                <h1 className="h1 mb-4">Partner Program</h1>
+                <h1 className="h1 mb-4">Partner Program — Revenue Share Partnerships</h1>
                 <p className="text-xl text-gray-400 mb-8">
                   You know the clients. We do the technical delivery. Earn revenue share on high-value IT consulting, blockchain, and compliance contracts — with registered-deal protection and a written agreement.
                 </p>

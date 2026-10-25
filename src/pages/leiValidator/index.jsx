@@ -67,7 +67,7 @@ function LeiValidator() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1">LEI Validator</h1>
+                <h1 className="h1">LEI Validator — Legal Entity Identifier Check</h1>
                 <p className="text-xl text-gray-400 mt-4">
                   Validate a Legal Entity Identifier against ISO 17442 — structure, reserved positions, and
                   MOD 97-10 check digits. Runs entirely in your browser; nothing is sent to a server.

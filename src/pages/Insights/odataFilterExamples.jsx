@@ -24,19 +24,19 @@ function OdataFilterExamples() {
       <style>{fadeInKeyframes}</style>
       <div className="flex flex-col min-h-screen overflow-hidden">
         <Helmet>
-          <title>OData $filter Examples: Operators, Functions, and 40+ Copy-Paste Queries | OG Technologies EU</title>
-          <meta name="description" content="OData $filter examples cookbook: comparison and logical operators, startswith/contains/endswith, date and number filters, null checks, boolean filters, any/all on collections, and V2 vs V4 syntax." />
-          <meta name="keywords" content="odata filter, odata filter examples, odata filter syntax, odata filter operators, odata boolean filter, odata greater than, odata less than or equal to, odata startswith, odata contains, odata nested expand, odata filter date" />
+          <title>OData $filter Cheat Sheet: Syntax, Operators & 40+ Examples | OG Technologies EU</title>
+          <meta name="description" content="OData $filter cheat sheet and examples: comparison and logical operators, startswith/contains/endswith, date and number filters, null checks, boolean filters, any/all on collections, and V2 vs V4 syntax — with a quick-reference table." />
+          <meta name="keywords" content="odata filter, odata cheat sheet, odata filter examples, odata filter syntax, odata filter operators, odata boolean filter, odata greater than, odata less than or equal to, odata startswith, odata contains, odata nested expand, odata filter date" />
           <meta name="robots" content="index, follow" />
           <link rel="canonical" href="https://www.ogtechnologies.co/insights/odata-filter-examples/" />
           <meta property="og:type" content="article" />
           <meta property="og:url" content="https://www.ogtechnologies.co/insights/odata-filter-examples/" />
-          <meta property="og:title" content="OData $filter Examples: Operators, Functions, and 40+ Copy-Paste Queries" />
-          <meta property="og:description" content="A copy-pasteable OData $filter cookbook: every operator and function with real examples, collection filters with any/all, and the V2 vs V4 differences that break queries." />
+          <meta property="og:title" content="OData $filter Cheat Sheet: Syntax, Operators & 40+ Examples" />
+          <meta property="og:description" content="A copy-pasteable OData $filter cheat sheet: every operator and function with real examples, collection filters with any/all, and the V2 vs V4 differences that break queries." />
           <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:url" content="https://www.ogtechnologies.co/insights/odata-filter-examples/" />
-          <meta name="twitter:title" content="OData $filter Examples: Operators, Functions, and 40+ Copy-Paste Queries" />
+          <meta name="twitter:title" content="OData $filter Cheat Sheet: Syntax, Operators & 40+ Examples" />
           <meta name="twitter:description" content="Every OData filter operator and function with copy-paste examples — equality, dates, contains, boolean combos, and any/all." />
           <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         </Helmet>
@@ -53,8 +53,8 @@ function OdataFilterExamples() {
                 {/* Article header */}
                 <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
                   <div className="text-purple-400 text-sm font-medium mb-2">Developer · Standards</div>
-                  <h1 className="h1">OData $filter Examples: Operators, Functions, and 40+ Copy-Paste Queries</h1>
-                  <div className="text-gray-400 text-center mt-4">20/10/2026</div>
+                  <h1 className="h1">OData $filter Cheat Sheet: Syntax, Operators & 40+ Examples</h1>
+                  <div className="text-gray-400 text-center mt-4">20/10/2026 · updated 25/10/2026</div>
                 </div>
 
                 {/* Article content */}
@@ -77,6 +77,44 @@ function OdataFilterExamples() {
                       to build URLs interactively use
                       the <Link to="/tools/sap-odata-url-builder/" className="text-purple-400 hover:text-purple-300 underline">SAP OData URL builder</Link>.
                     </p>
+
+                    <h2 className="h2 mb-4 text-gray-100">OData $filter cheat sheet — quick reference</h2>
+                    <div className="not-prose overflow-x-auto mb-10">
+                      <table className="w-full text-left text-sm border border-gray-700">
+                        <thead>
+                          <tr className="bg-gray-800">
+                            <th className="px-4 py-2 font-semibold text-gray-200 w-40">You want to</th>
+                            <th className="px-4 py-2 font-semibold text-gray-200 w-28">Syntax</th>
+                            <th className="px-4 py-2 font-semibold text-gray-200">Example</th>
+                          </tr>
+                        </thead>
+                        <tbody className="font-mono text-xs">
+                          {[
+                            ['equals', 'eq', "Status eq 'Open'"],
+                            ['not equals', 'ne', "Status ne 'Cancelled'"],
+                            ['greater / less', 'gt · ge', 'Total gt 1000 · Total ge 1000'],
+                            ['less / less-eq', 'lt · le', 'Total lt 500 · Total le 500'],
+                            ['and / or / not', 'and · or · not', "Status eq 'Open' and Total gt 100"],
+                            ['string contains', 'contains()', "contains(Customer,'acme')"],
+                            ['starts / ends with', 'startswith() · endswith()', "startswith(Customer,'A')"],
+                            ['date filter', "ISO date, no quotes", 'OrderDate gt 2026-01-01'],
+                            ['datetime', 'ISO literal', 'OrderDate ge 2026-01-01T00:00:00Z'],
+                            ['null check', 'eq null · ne null', 'ShipDate eq null'],
+                            ['boolean field', 'bare property', 'IsActive eq true'],
+                            ['IN list', 'in (V4)', "Status in ('Open','Pending')"],
+                            ['collection: any', 'any()', "Items/any(i: i/Quantity gt 10)"],
+                            ['collection: all', 'all()', "Items/all(i: i/Quantity gt 0)"],
+                            ['nested property', 'slash path', "Customer/Country eq 'DE'"],
+                          ].map(([what, syntax, ex]) => (
+                            <tr key={syntax} className="border-t border-gray-700">
+                              <td className="px-4 py-2 text-gray-300">{what}</td>
+                              <td className="px-4 py-2 text-purple-300">{syntax}</td>
+                              <td className="px-4 py-2 text-gray-400">$filter={ex}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
 
                     <h2 className="h2 mb-4 text-gray-100">Comparison operators</h2>
                     <EX code={`$filter=Status eq 'Open'\n$filter=Status ne 'Cancelled'\n$filter=Total gt 1000\n$filter=Total ge 1000\n$filter=Total lt 500\n$filter=Total le 500`} />
