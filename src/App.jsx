@@ -105,6 +105,8 @@ const Dora = lazy(() => import('./pages/Dora'));
 const HelpDesk = lazy(() => import('./pages/HelpDesk'));
 const HelpDeskTicketDetail = lazy(() => import('./pages/HelpDeskTicketDetail'));
 const CRM = lazy(() => import('./pages/CRM'));
+const ExpertNetwork = lazy(() => import('./pages/ExpertNetwork'));
+const ExpertApplications = lazy(() => import('./pages/ExpertApplications'));
 const Contacts = lazy(() => import('./pages/Contacts'));
 const Leads = lazy(() => import('./pages/Leads'));
 const Opportunities = lazy(() => import('./pages/Opportunities'));
@@ -244,6 +246,8 @@ function App() {
         <Route path="/crm/activities" element={<Activities/>} />
         <Route path="/crm/import" element={<Import/>} />
         <Route path="/crm/companies" element={<Companies/>} />
+        <Route path="/crm/expert-applications" element={<ExpertApplications/>} />
+        <Route path="/expert-network" element={<ExpertNetwork/>} />
         <Route exact path="/ventures" element={<Ventures/>} />
         <Route exact path="/about" element={<About/>} />
         <Route exact path="/portfolio" element={<Portfolio/>} />

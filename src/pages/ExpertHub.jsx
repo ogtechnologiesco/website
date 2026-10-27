@@ -131,6 +131,7 @@ function ExpertHub() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(null);
+  const [submittedEmail, setSubmittedEmail] = useState('');
 
   const applyFor = (projectTitle) => {
     setFormData((prev) => ({ ...prev, project: projectTitle }));
@@ -160,6 +161,7 @@ function ExpertHub() {
           : formData.message,
       });
       setSubmitSuccess(true);
+      setSubmittedEmail(formData.email);
       setFormData({
         name: '', email: '', skillTrack: skillTracks[0].title, seniority: seniorityOptions[1], openSourceInterest: '',
         project: 'General application', portfolioUrl: '', linkedinUrl: '',
@@ -394,6 +396,42 @@ function ExpertHub() {
           </div>
         </section>
 
+        {/* Expert Network */}
+        <section className="relative">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="pb-12 md:pb-20">
+              <div className="max-w-3xl mx-auto text-center pb-12">
+                <h2 className="h2 mb-4">The Expert Network</h2>
+                <p className="text-xl text-gray-400">
+                  Registering takes two minutes — and it unlocks the private network for Hub experts.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6 mb-10">
+                <div className="bg-gray-800 rounded-lg p-6 border border-gray-700" data-aos="fade-up">
+                  <h3 className="h4 mb-2">Connect with peers</h3>
+                  <p className="text-gray-400">Send connection requests to other vetted experts — find the Soroban dev, the FHIR integrator, or the ISO auditor you'll need on the next engagement.</p>
+                </div>
+                <div className="bg-gray-800 rounded-lg p-6 border border-gray-700" data-aos="fade-up">
+                  <h3 className="h4 mb-2">Direct messaging</h3>
+                  <p className="text-gray-400">Talk shop, share rates context, or assemble a team — conversations stay inside the network, no cold-emailing strangers.</p>
+                </div>
+                <div className="bg-gray-800 rounded-lg p-6 border border-gray-700" data-aos="fade-up">
+                  <h3 className="h4 mb-2">A feed that matters</h3>
+                  <p className="text-gray-400">Post wins, questions, and availability — and see what your connections and suggested experts are working on, ranked by relevance.</p>
+                </div>
+              </div>
+              <div className="max-w-2xl mx-auto bg-gradient-to-br from-purple-900/30 to-blue-900/20 rounded-lg p-6 border border-purple-500/30 text-center" data-aos="fade-up">
+                <p className="text-gray-300 mb-4">
+                  <span className="font-semibold text-white">How it works:</span> submit an application below, then create a free account with the same email — your network profile appears automatically, and you'll see your application status live.
+                </p>
+                <a href="#apply" className="inline-block bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md font-semibold transition duration-150 ease-in-out">
+                  Apply &amp; join the network
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="relative">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -599,7 +637,19 @@ function ExpertHub() {
                     {isSubmitting ? 'Submitting...' : 'Submit Application'}
                   </button>
                   {submitSuccess && (
-                    <p className="text-green-400 text-center">Application received — if a project fits, we'll reach out about an intro call.</p>
+                    <div className="bg-green-900/20 border border-green-600/40 rounded-md p-4 space-y-3">
+                      <p className="text-green-400 text-center">Application received — if a project fits, we'll reach out about an intro call.</p>
+                      <p className="text-sm text-gray-400 text-center">
+                        Want to track your application?{' '}
+                        <Link
+                          to={`/signup/?email=${encodeURIComponent(submittedEmail)}`}
+                          className="text-purple-400 hover:text-purple-300 underline font-medium"
+                        >
+                          Create a free account
+                        </Link>{' '}
+                        — your email is already filled in.
+                      </p>
+                    </div>
                   )}
                   {submitError && (
                     <p className="text-red-400 text-center">{submitError}</p>

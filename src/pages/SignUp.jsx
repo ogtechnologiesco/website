@@ -23,6 +23,12 @@ function SignUp() {
     }
   }, [isInitialized, isAuthenticated, navigate]);
 
+  // Prefill email from ?email= (e.g. Expert Hub post-submit CTA)
+  useEffect(() => {
+    const e = new URLSearchParams(window.location.search).get('email');
+    if (e) setEmail(e);
+  }, []);
+
   // Validation functions
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

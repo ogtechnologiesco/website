@@ -300,6 +300,17 @@ function CRM() {
                   Opportunities
                 </Link>
                 <Link
+                  to="/crm/expert-applications/"
+                  className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out ${
+                    activeTab === 'experts' 
+                      ? 'bg-purple-600 text-white' 
+                      : 'text-gray-400 hover:text-white hover:bg-gray-800'
+                  }`}
+                  onClick={() => setActiveTab('experts')}
+                >
+                  Expert Applications
+                </Link>
+                <Link
                   to="/crm/activities/"
                   className={`px-4 py-2 rounded-md font-medium transition duration-150 ease-in-out ${
                     activeTab === 'activities' 

@@ -466,6 +466,33 @@ export const expertsAPI = {
   }
 };
 
+// Expert Network API methods (authenticated — requires registered account)
+export const expertNetworkAPI = {
+  getMe: () => apiGet('/api/expert-network/me'),
+  updateProfile: (data) => apiPost('/api/expert-network/me', data),
+  getExperts: (params = {}) => apiGet(`/api/expert-network/experts?${new URLSearchParams(params)}`),
+  getSuggestions: () => apiGet('/api/expert-network/suggestions'),
+  requestConnection: (to, message) => apiPost('/api/expert-network/connections/request', { to, message }),
+  respondConnection: (id, action) => apiPost(`/api/expert-network/connections/${id}/${action}`),
+  removeConnection: (id) => apiDelete(`/api/expert-network/connections/${id}`),
+  getConnections: (status = 'accepted') => apiGet(`/api/expert-network/connections?status=${status}`),
+  sendMessage: (to, text) => apiPost('/api/expert-network/messages', { to, text }),
+  getConversations: () => apiGet('/api/expert-network/conversations'),
+  getMessages: (conversationId, after = '') => apiGet(`/api/expert-network/conversations/${conversationId}/messages${after ? `?after=${encodeURIComponent(after)}` : ''}`),
+  getFeed: (filter = 'suggested', cursor = '') => apiGet(`/api/expert-network/feed?filter=${filter}${cursor ? `&cursor=${encodeURIComponent(cursor)}` : ''}`),
+  createPost: (data) => apiPost('/api/expert-network/posts', data),
+  likePost: (postId) => apiPost(`/api/expert-network/posts/${postId}/like`),
+  commentPost: (postId, text) => apiPost(`/api/expert-network/posts/${postId}/comments`, { text }),
+};
+
+// Admin: Expert Hub application review (authenticated + admin role server-side)
+export const adminExpertsAPI = {
+  getApplications: (params = {}) => apiGet(`/api/admin/expert-applications?${new URLSearchParams(params)}`),
+  getApplication: (id) => apiGet(`/api/admin/expert-applications/${id}`),
+  updateStatus: (id, status) => apiPut(`/api/admin/expert-applications/${id}/status`, { status }),
+  addNote: (id, text) => apiPost(`/api/admin/expert-applications/${id}/notes`, { text }),
+};
+
 // Legacy API methods
 export const legacyAPI = {
   // Newsletter subscription
