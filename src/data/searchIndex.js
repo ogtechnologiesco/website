@@ -75,7 +75,7 @@ export const searchIndex = [
   { title: 'xAPI Statement Builder & Validator', description: 'Build and validate xAPI (Tin Can) statements — actors, verbs, objects, results, context', path: '/tools/xapi-statement-builder/' },
   { title: 'ISO 27001 Gap Analysis Template', description: 'Free Excel & PDF gap analysis template — clauses 4–10 plus all 93 Annex A controls', path: '/insights/iso-27001-gap-analysis-template/' },
   { title: 'GS1 Barcode / AI Parser', description: 'Decode GS1-128, DataMatrix, QR element strings — GTIN, SSCC, batch, serial, dates, GLN', path: '/tools/gs1-barcode-parser/' },
-  { title: 'GEO & SEO Checker', description: 'Audit any website — SEO fundamentals, llms.txt, AI crawler rules, structured data, DMARC, security headers', path: '/tools/geo-checker/' },
+  { title: 'AI Search & SEO Audit', description: 'Grade your homepage for search engines and AI assistants — indexability, JSON-LD entities, llms.txt, crawler access, mail auth', path: '/tools/geo-checker/' },
   { title: 'GTIN / UPC / EAN Validator', description: 'GS1 check digit validation, format detection, country prefix lookup', path: '/tools/gtin-validator/' },
   { title: 'Phone Number Formatter', description: 'E.164, international, national phone formats — single or bulk', path: '/tools/phone-formatter/' },
   { title: 'vCard Generator', description: 'Create and parse .vcf contact files (v3.0/4.0)', path: '/tools/vcard-generator/' },

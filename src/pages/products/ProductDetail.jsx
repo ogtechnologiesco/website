@@ -21,7 +21,11 @@ function LinkCard({ heading, links }) {
         {links.map((link) => (
           <li key={link.url + link.label} className="flex items-start">
             <span className="text-purple-400 mr-2 mt-1">→</span>
-            <a href={link.url} className="text-purple-400 hover:text-purple-300 underline">{link.label}</a>
+            <a
+              href={link.url}
+              className="text-purple-400 hover:text-purple-300 underline"
+              {...(link.url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            >{link.label}</a>
           </li>
         ))}
       </ul>
@@ -107,6 +111,7 @@ function ProductDetail() {
                       <a
                         key={link.url + link.label}
                         href={link.url}
+                        {...(link.url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                         className={i === 0
                           ? 'bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out text-center'
                           : 'bg-transparent border-2 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white py-3 px-6 rounded-md font-semibold transition duration-150 ease-in-out text-center'}
@@ -136,12 +141,30 @@ function ProductDetail() {
                     </div>
                   )}
 
+                  {product.gallery && product.gallery.length > 0 && (
+                    <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                      {product.gallery.map((img, i) => (
+                        <figure key={i} className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
+                          <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-56 object-cover" />
+                          {img.caption && <figcaption className="px-4 py-3 text-sm text-gray-400">{img.caption}</figcaption>}
+                        </figure>
+                      ))}
+                    </div>
+                  )}
+
                   {product.sections.map((section, i) => (
                     <div key={i} className="bg-gray-800 rounded-lg p-8 border border-gray-700 mb-8">
                       <h2 className="text-2xl font-bold text-white mb-4">{section.heading}</h2>
                       {section.paragraphs.map((p, j) => (
                         <p key={j} className="text-gray-300 mb-4 last:mb-0">{p}</p>
                       ))}
+                      {section.steps && (
+                        <ol className="list-decimal list-inside text-gray-300 space-y-2 mt-4">
+                          {section.steps.map((s, k) => (
+                            <li key={k}>{s}</li>
+                          ))}
+                        </ol>
+                      )}
                     </div>
                   ))}
 

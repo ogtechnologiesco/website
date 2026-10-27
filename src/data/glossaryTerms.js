@@ -562,17 +562,19 @@ export const GLOSSARY_TERMS = [
       {
         heading: 'How organizations are responding',
         paragraphs: [
-          'The Act deliberately connects to standards: conformity with harmonised CEN-CENELEC standards creates a presumption of conformity, and ISO/IEC 42001 is the management-system layer most organizations adopt to operationalize the obligations — AI inventory, risk process, oversight, and evidence in one system.',
+          'The Act deliberately connects to standards: conformity with harmonised CEN-CENELEC standards creates a presumption of conformity — EN 18286:2026, the quality management system standard covering Article 17, became the first when cited in the Official Journal in October 2026. ISO/IEC 42001 is the management-system layer most organizations adopt to operationalize the obligations — AI inventory, risk process, oversight, and evidence in one system.',
         ],
       },
     ],
     standards: [
       { name: 'Regulation (EU) 2024/1689 (EU AI Act)' },
+      { name: 'EN 18286:2026 — AI quality management system (first harmonised standard)' },
       { name: 'ISO/IEC 42001:2023 — AI management systems' },
-      { name: 'CEN-CENELEC harmonised standards (in development)' },
+      { name: 'CEN-CENELEC JTC 21 harmonised standards (further standards in development)' },
     ],
     relatedTerms: ['iso-42001', 'aims', 'gdpr', 'mica'],
     relatedLinks: [
+      { label: 'EN 18286:2026 explained: the first harmonised AI Act standard', url: '/insights/en-18286-ai-act-qms/', type: 'article' },
       { label: 'ISO/IEC 42001 explained: AIMS readiness guide', url: '/insights/iso-42001-ai-management-guide/', type: 'article' },
       { label: 'ISO 42001 AI Readiness Assessment', url: '/tools/iso-42001-ai-readiness/', type: 'tool' },
       { label: 'Standards consulting', url: '/standards/', type: 'service' },
@@ -938,6 +940,7 @@ export const GLOSSARY_TERMS = [
     ],
     relatedTerms: ['dora', 'psd2', 'stellar', 'blockchain', 'lei'],
     relatedLinks: [
+      { label: 'Asset tokenization explained: RWA, MiCA, and how issuance works', url: '/insights/asset-tokenization-explained/', type: 'article' },
       { label: 'DORA for crypto & Web3: what CASPs must do', url: '/insights/dora-crypto-web3-compliance/', type: 'article' },
       { label: 'Building the rails for Europe’s digital payment future', url: '/blog/digital-payments-future/', type: 'blog' },
       { label: 'Blockchain Compliance Checker', url: '/tools/blockchain-compliance-checker/', type: 'tool' },
@@ -1237,6 +1240,7 @@ export const GLOSSARY_TERMS = [
     relatedLinks: [
       { label: 'Mozart Pay', url: '/portfolio/mozart-pay/', type: 'product' },
       { label: 'Stellar Go CLI', url: '/portfolio/stellar-go-cli/', type: 'product' },
+      { label: 'Asset tokenization explained: RWA, MiCA, and how issuance works', url: '/insights/asset-tokenization-explained/', type: 'article' },
       { label: 'Stellar cross-border payments: anchors, SEP-24, USDC/EURC', url: '/insights/stellar-cross-border-payments-anchors-sep24/', type: 'article' },
       { label: 'Measuring SDG impact on Stellar', url: '/insights/iso-24874-stellar-sdg-impact/', type: 'article' },
       { label: 'Meridian 2024 highlights', url: '/blog/meridian-2024-highlights/', type: 'blog' },

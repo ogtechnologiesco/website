@@ -131,7 +131,7 @@ function EuAiActCompliance() {
                       <li><strong>Classify each system.</strong> Prohibited? Annex III high-risk? Article 50 transparency-risk? Minimal? Document the reasoning.</li>
                       <li><strong>Fix transparency first.</strong> Chatbot disclosures and synthetic-content marking are cheap, fast, and already enforceable.</li>
                       <li><strong>Map deployer duties for high-risk systems.</strong> Oversight, logs, worker notification, FRIA where required.</li>
-                      <li><strong>Build the management system.</strong> The Act rewards demonstrable governance — and <Link to="/insights/iso-42001-ai-management-guide/" className="text-purple-400 hover:text-purple-300 underline">ISO/IEC 42001</Link> provides the certifiable scaffolding (risk processes, documentation, accountability) regulators and procurement teams increasingly expect.</li>
+                      <li><strong>Build the management system.</strong> The Act rewards demonstrable governance — and <Link to="/insights/iso-42001-ai-management-guide/" className="text-purple-400 hover:text-purple-300 underline">ISO/IEC 42001</Link> provides the certifiable scaffolding (risk processes, documentation, accountability) regulators and procurement teams increasingly expect. For the Article 17 QMS specifically, <Link to="/insights/en-18286-ai-act-qms/" className="text-purple-400 hover:text-purple-300 underline">EN 18286:2026</Link> is now the presumption-of-conformity route.</li>
                     </ol>
 
                     <h2 className="h2 mb-4 text-gray-100">Start With a Readiness Baseline</h2>
@@ -163,7 +163,7 @@ function EuAiActCompliance() {
                       Usually not — calling a model API as a deployer stays a deployer role. You become a provider if you place an AI system on the market under your own name, substantially modify a GPAI model, or repurpose a general system into a high-risk use case.</p>
                     <h3 className="h3 mb-4 text-gray-100">Does ISO/IEC 42001 certification equal AI Act compliance?</h3>
                     <p className="mb-8">
-                      No — certification is evidence of governance maturity, not a legal safe harbor. But an AIMS gives you the inventory, risk process, and documentation machinery the Act assumes you have, and harmonized standards (still being finalized) will provide presumption-of-conformity routes once published.
+                      No — certification is evidence of governance maturity, not a legal safe harbor. But an AIMS gives you the inventory, risk process, and documentation machinery the Act assumes you have, and EN 18286:2026 — cited in the Official Journal in October 2026 — now provides a presumption-of-conformity route for the Article 17 QMS.
                     </p>
                     <h3 className="h3 mb-4 text-gray-100">What is the deadline most companies actually face?</h3>
                     <p className="mb-8">

@@ -67,6 +67,7 @@ deno.lock
 #social
 scripts/
 social-cards/
+videos/
 
 # Local analytics dashboard (local-only, not for deploy)
 /analytics/

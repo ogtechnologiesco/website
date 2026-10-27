@@ -123,7 +123,7 @@ const TOOL_CATEGORIES = [
       { name: 'SAP OData URL Builder', path: '/tools/sap-odata-url-builder/', description: 'Build SAP OData query URLs interactively.' },
       { name: 'ServiceNow Query Builder', path: '/tools/servicenow-query-builder/', description: 'Build and decode ServiceNow encoded queries — sysparm_query and GlideRecord output.' },
       { name: 'Hash Generator', path: '/tools/hash-generator/', description: 'MD5, SHA-1, SHA-256, SHA-512, Keccak, SHAKE-128/256 hashes.' },
-      { name: 'GEO & SEO Checker', path: '/tools/geo-checker/', description: 'Audit any website — SEO, llms.txt, AI crawlers, structured data, DMARC. A–F grade.' },
+      { name: 'AI Search & SEO Audit', path: '/tools/geo-checker/', description: 'Grade your homepage for search engines and AI assistants — llms.txt, crawler access, JSON-LD. A–F report.' },
     ],
   },
 ];

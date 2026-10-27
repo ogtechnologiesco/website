@@ -22,7 +22,7 @@ const inputClass = 'form-input w-full bg-gray-900 border border-gray-700 focus:b
 const btnClass = 'btn-sm px-6 py-3 rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed';
 
 function mdReport(url, results, score) {
-  const lines = [`# GEO & SEO report — ${url}`, `Grade: ${score.grade} (${score.pct}%)`, ''];
+  const lines = [`# Site visibility audit — ${url}`, `Grade: ${score.grade} (${score.pct}%)`, ''];
   CATEGORIES.forEach((cat) => {
     const rs = results.filter((r) => r.cat === cat.id);
     if (!rs.length) return;
@@ -60,7 +60,7 @@ export default function GeoChecker() {
       } else {
         const out = await scanSite(u, setProgress);
         if (!out.ok) {
-          setError('Could not fetch that URL — the site may block automated requests or the proxies may be busy. Try again, or use "paste HTML" mode below.');
+          setError('Fetching failed — the site may refuse automated requests or the proxies are busy. Retry, or paste the page HTML below.');
           setRunning(false); return;
         }
         ctx = out.ctx;
@@ -88,20 +88,20 @@ export default function GeoChecker() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Helmet>
-        <title>Free GEO & SEO Checker — AI Search Visibility Audit | OG Technologies EU</title>
-        <meta name="description" content="Audit any website against 50+ SEO and GEO (Generative Engine Optimization) checks: meta tags, structured data, llms.txt, AI crawler rules, DMARC, security headers. Free, no signup — results in seconds." />
-        <meta name="keywords" content="geo checker, generative engine optimization, seo checker free, ai visibility checker, llms.txt checker, website audit tool, chatgpt visibility, seo audit online" />
+        <title>AI Search & SEO Audit — Free Website Visibility Checker | OG Technologies EU</title>
+        <meta name="description" content="See your homepage the way machines see it. 50+ checks covering indexability, metadata, JSON-LD entities, llms.txt, AI-crawler access, security headers, and mail authentication — graded A–F, free, nothing to install." />
+        <meta name="keywords" content="ai search readiness, geo checker, generative engine optimization, ai visibility test, llms.txt checker, seo audit free, website visibility checker, chatgpt citation checker" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://www.ogtechnologies.co/tools/geo-checker/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.ogtechnologies.co/tools/geo-checker/" />
-        <meta property="og:title" content="Free GEO & SEO Checker — AI Search Visibility Audit" />
-        <meta property="og:description" content="Audit any website against 50+ SEO and GEO checks — structured data, llms.txt, AI crawler rules, DMARC, security headers. Free, no signup." />
+        <meta property="og:title" content="AI Search & SEO Audit — Free Website Visibility Checker" />
+        <meta property="og:description" content="50+ checks on indexability, JSON-LD, llms.txt, AI-crawler access, and mail authentication — one A–F report. Free, nothing to install." />
         <meta property="og:image" content="https://www.ogtechnologies.co/og-og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.ogtechnologies.co/tools/geo-checker/" />
-        <meta name="twitter:title" content="Free GEO & SEO Checker — AI Search Visibility Audit" />
-        <meta name="twitter:description" content="Audit any website against 50+ SEO and GEO checks — structured data, llms.txt, AI crawler rules, DMARC, security headers." />
+        <meta name="twitter:title" content="AI Search & SEO Audit — Free Website Visibility Checker" />
+        <meta name="twitter:description" content="50+ checks on indexability, JSON-LD, llms.txt, AI-crawler access, and mail authentication — one A–F report." />
         <meta name="twitter:image" content="https://www.ogtechnologies.co/og-og-image.png" />
       </Helmet>
       <Header />
@@ -115,9 +115,9 @@ export default function GeoChecker() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-3xl mx-auto text-center pb-10">
-                <h1 className="h1">Free GEO &amp; SEO Website Checker</h1>
+                <h1 className="h1">AI Search &amp; SEO Audit — How Machines See Your Site</h1>
                 <p className="text-xl text-gray-400 mt-4">
-                  Audit any site against 50+ checks across SEO fundamentals, structured data, AI-search readiness (GEO), and email security — graded A–F with a prioritized fix list. Free, no signup.
+                  Paste a URL. We fetch it the way a crawler would and grade 50+ signals — indexability, metadata, JSON-LD entities, AI-crawler access, and mail authentication — into a single A–F report you can share.
                 </p>
               </div>
 
@@ -130,7 +130,7 @@ export default function GeoChecker() {
                       <input type="text" value={url} onChange={(e) => setUrl(e.target.value)}
                         placeholder="example.com or https://example.com/page" className={inputClass} aria-label="Website URL to audit" />
                       <button type="submit" disabled={running || !url.trim()} className={btnClass}>
-                        {running ? 'Checking…' : 'Analyze'}
+                        {running ? 'Auditing…' : 'Run audit'}
                       </button>
                     </div>
                   ) : (
@@ -140,13 +140,13 @@ export default function GeoChecker() {
                       <textarea value={pasteHtml} onChange={(e) => setPasteHtml(e.target.value)} rows={6}
                         placeholder="Paste the full page source (view-source) here…" className={inputClass + ' font-mono text-xs'} aria-label="Page HTML source" />
                       <button type="submit" disabled={running || !pasteHtml.trim() || !url.trim()} className={btnClass}>
-                        {running ? 'Checking…' : 'Analyze pasted HTML'}
+                        {running ? 'Auditing…' : 'Audit pasted HTML'}
                       </button>
                     </div>
                   )}
                   <div className="flex items-center justify-between">
                     <button type="button" onClick={() => setPasteMode(!pasteMode)} className="text-sm text-purple-400 hover:text-purple-300">
-                      {pasteMode ? '← Back to URL check' : 'Site blocks automated fetch? Paste HTML instead →'}
+                      {pasteMode ? '← Back to URL input' : 'Crawler blocked? Audit pasted HTML instead →'}
                     </button>
                     {progress && <span className="text-sm text-purple-400 animate-pulse">{progress}</span>}
                   </div>
@@ -165,9 +165,9 @@ export default function GeoChecker() {
                           {score.grade}
                         </div>
                         <div>
-                          <div className="text-2xl font-bold text-white">{score.pct}% SEO &amp; GEO score</div>
+                          <div className="text-2xl font-bold text-white">{score.pct}% visibility score</div>
                           <div className="text-gray-400 text-sm">{target}</div>
-                          {score.blocked && <div className="text-red-400 text-sm mt-1">Grade capped — blocker issues found</div>}
+                          {score.blocked && <div className="text-red-400 text-sm mt-1">Capped at D — a blocker was detected</div>}
                         </div>
                       </div>
                       <div className="flex flex-wrap gap-2">
@@ -185,7 +185,7 @@ export default function GeoChecker() {
                     <div className="flex flex-wrap gap-3 mt-6 pt-5 border-t border-gray-700">
                       <button onClick={() => { navigator.clipboard.writeText(shareLink); setCopied(true); setTimeout(() => setCopied(false), 2000); }}
                         className="text-sm px-4 py-2 rounded-md bg-gray-700 text-gray-200 hover:bg-gray-600">
-                        {copied ? 'Copied!' : 'Copy report link'}
+                        {copied ? 'Copied!' : 'Copy share link'}
                       </button>
                       <button onClick={() => {
                         const blob = new Blob([mdReport(target, results, score)], { type: 'text/markdown' });
@@ -194,10 +194,10 @@ export default function GeoChecker() {
                         a.download = `geo-report-${new URL('https://' + target.replace(/^https?:\/\//, '')).hostname}.md`;
                         a.click();
                       }} className="text-sm px-4 py-2 rounded-md bg-gray-700 text-gray-200 hover:bg-gray-600">
-                        Download report (.md)
+                        Export as Markdown
                       </button>
                       <button onClick={() => window.print()} className="text-sm px-4 py-2 rounded-md bg-gray-700 text-gray-200 hover:bg-gray-600">
-                        Print / Save as PDF
+                        Print / PDF
                       </button>
                     </div>
                   </div>
@@ -205,7 +205,7 @@ export default function GeoChecker() {
                   {/* Priority fixes */}
                   {fixList.length > 0 && (
                     <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-                      <h2 className="h4 mb-4">Priority fixes for {new URL('https://' + target.replace(/^https?:\/\//, '')).hostname}</h2>
+                      <h2 className="h4 mb-4">Highest-impact fixes for {new URL('https://' + target.replace(/^https?:\/\//, '')).hostname}</h2>
                       <ol className="space-y-2 list-decimal list-inside">
                         {fixList.slice(0, 10).map((r) => (
                           <li key={r.id} className="text-sm text-gray-300">
@@ -249,31 +249,31 @@ export default function GeoChecker() {
               {/* About */}
               <div className="max-w-3xl mx-auto mt-16 space-y-8">
                 <div>
-                  <h2 className="h4 mb-3">What is GEO (Generative Engine Optimization)?</h2>
+                  <h2 className="h4 mb-3">SEO gets you ranked. GEO gets you cited.</h2>
                   <p className="text-gray-400">
-                    GEO is the practice of structuring a website so AI search engines — Google AI Overviews, ChatGPT, Perplexity, Claude — can accurately cite it in their answers. Traditional SEO wins the blue links; GEO determines whether your content appears when someone asks an AI assistant a question your site should answer. This checker audits both in one pass.
+                    GEO — Generative Engine Optimization — is everything that decides whether an AI answer engine mentions you at all. Google AI Overviews, ChatGPT, Perplexity, and Claude all draw on pages they can crawl, parse, and attribute. A page can rank well in classic search and still be invisible to an assistant if its content only appears after JavaScript runs, its robots.txt turns AI crawlers away, or nothing tells machines who is behind the site. This audit measures both halves of that problem in a single run.
                   </p>
                 </div>
                 <div>
-                  <h2 className="h4 mb-3">How the scoring works</h2>
+                  <h2 className="h4 mb-3">Grading is weighted, not counted</h2>
                   <p className="text-gray-400">
-                    Every check is pass/fail with an impact weight — Severe 3, Medium 2, Low 1. Your score is the weight of passing checks divided by the weight of all applicable checks; N/A checks are excluded. Grades: A 90%+, B 75%+, C 60%+, D 40%+, F below 40%. Blocker failures (noindex, unreachable, no indexable content) cap the grade at D. Email security is shown for context and does not affect the score.
+                    Checks don't count equally. Each carries an impact weight — a severe failure costs 3 points, a medium 2, a low 1 — and your percentage is points earned divided by points available. Checks that don't apply to your page (Article schema on a non-article, say) are excluded rather than marked down. Letter grades: A ≥ 90%, B ≥ 75%, C ≥ 60%, D ≥ 40%, F below. A short list of blockers — noindex, an unreachable page, content absent from the raw HTML — caps the result at D no matter how strong the rest looks. The mail-authentication group is reported for context but never scored.
                   </p>
                 </div>
                 <div>
-                  <h2 className="h4 mb-3">What we check</h2>
+                  <h2 className="h4 mb-3">The 50+ signals behind the grade</h2>
                   <ul className="list-disc list-inside text-gray-400 space-y-1">
-                    <li><strong>SEO:</strong> HTTPS, title/meta description, canonical, Open Graph, heading structure, image alt &amp; lazy-loading, favicon, manifest</li>
-                    <li><strong>GEO:</strong> llms.txt, AI crawler rules in robots.txt (GPTBot, ClaudeBot, OAI-SearchBot, PerplexityBot and more), content-in-HTML, question headings, sitemap</li>
-                    <li><strong>Structured data:</strong> valid JSON-LD, Organization (name/url/logo/sameAs/knowsAbout), WebSite, Article, BreadcrumbList, FAQPage</li>
-                    <li><strong>Technical:</strong> security headers (when readable), mixed content, HTML size, security.txt, robots.txt health</li>
-                    <li><strong>Email:</strong> DMARC, SPF, MTA-STS via DNS-over-HTTPS — informational, not scored</li>
+                    <li><strong>Indexability &amp; metadata:</strong> HTTPS, status code, title and description, canonical, robots directives, heading outline, social cards, image alt text</li>
+                    <li><strong>AI-readiness:</strong> llms.txt, whether robots.txt names or blocks AI crawlers (GPTBot, ClaudeBot, OAI-SearchBot, PerplexityBot and more), content present without JavaScript, sitemap discoverability</li>
+                    <li><strong>Entity markup:</strong> parseable JSON-LD, Organization identity (sameAs, knowsAbout), WebSite, Article, BreadcrumbList, FAQPage</li>
+                    <li><strong>Transport &amp; hardening:</strong> security headers where readable, mixed content, payload size, security.txt, robots.txt health</li>
+                    <li><strong>Mail authentication:</strong> DMARC, SPF, MTA-STS looked up over DNS-over-HTTPS — informational only</li>
                   </ul>
                 </div>
                 <div>
-                  <h2 className="h4 mb-3">Privacy &amp; limitations</h2>
+                  <h2 className="h4 mb-3">Read-only, in your browser</h2>
                   <p className="text-gray-400">
-                    Checks run entirely in your browser. In production, page fetches route through a small serverless function on our domain that returns the real status code and response headers; public CORS proxies are the fallback when it isn't available (e.g. local dev). Either way, don't audit non-public pages containing secrets. If fetch still fails, use the paste-HTML mode — analysis is identical. Response-header checks show N/A when headers can't be read through the proxy.
+                    Every check runs client-side and writes nothing — the tool stores no results; the share link simply carries the URL in a query parameter. In production the page fetch goes through a small serverless function on our domain so the real status code and headers come back; public CORS proxies are the fallback where that isn't deployed (e.g. local dev), and DNS lookups use DNS-over-HTTPS. Don't point it at private pages containing secrets. If fetching fails outright, paste-HTML mode runs the identical analysis on markup you supply, and header checks return N/A whenever the proxy can't expose them.
                   </p>
                 </div>
               </div>

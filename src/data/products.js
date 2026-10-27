@@ -95,11 +95,25 @@ export const PRODUCTS = [
         heading: 'How we deliver',
         paragraphs: [
           'Engagements start from a scoped architecture: booking flow, supplier APIs, payment orchestration, and the data model underneath. We build iteratively with a working booking path early, then extend into recommendations, loyalty, and reporting.',
+          'A typical onboarding looks like this:',
+        ],
+        steps: [
+          'Discovery call — your business model, suppliers, target markets, and what a successful launch looks like',
+          'Scoping & architecture — booking flow, supplier APIs, payment orchestration, and the data model; delivered as a fixed proposal and statement of work',
+          'Kickoff — access, credentials, environments, and a shared project channel with an agreed weekly cadence',
+          'Working booking path first — search, availability, checkout, and confirmation end to end before anything else',
+          'Iterative delivery — recommendations, loyalty, reporting, and back-office tooling shipped in reviewable increments',
+          'Handover & go-live — documentation, runbook, deployment, and a support window after launch',
         ],
       },
     ],
+    gallery: [
+      { src: '/images/travel-booking-beach.jpg', alt: 'Tropical beach at sunset — the kind of destination inventory a booking platform sells', caption: 'The inventory your customers are actually buying' },
+      { src: '/images/travel-booking-planning.jpg', alt: 'Map, camera, and field notes laid out for planning a trip', caption: 'From inspiration to a bookable itinerary' },
+    ],
     relatedLinks: [
       { label: 'Request a quote', url: '/quote/', type: 'cta' },
+      { label: 'See a live example — SeaAdviser', url: 'https://seaadviser.netlify.app/', type: 'cta' },
       { label: 'Mozart Pay — our payment platform', url: '/portfolio/mozart-pay/', type: 'product' },
       { label: 'SEPA in the glossary', url: '/glossary/sepa/', type: 'article' },
       { label: 'Stellar cross-border payments explained', url: '/insights/stellar-cross-border-payments-anchors-sep24/', type: 'article' },

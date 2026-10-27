@@ -375,7 +375,19 @@ function Footer() {
             </ul>
 
             {/* Copyright note */}
-            <div className="text-gray-400 text-sm mr-4">&copy; {currentYear} OG Technologies EU. All rights reserved.</div>
+            <div className="text-gray-400 text-sm mr-4">
+              &copy; {currentYear} OG Technologies EU. All rights reserved.
+              <span className="mx-2 text-gray-600">·</span>
+              <a
+                href="https://techbehemoths.com/company/og-technologies-eu"
+                target="_blank"
+                rel="noopener"
+                data-techbehemoths-verification
+                className="hover:text-gray-100 transition duration-150 ease-in-out"
+              >
+                Verified on TechBehemoths
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -162,6 +162,8 @@ const Glm5Zai = lazy(() => import('./pages/Insights/glm5Zai'));
 const EuAiActCompliance = lazy(() => import('./pages/Insights/euAiActCompliance'));
 const Nis2Compliance = lazy(() => import('./pages/Insights/nis2Compliance'));
 const CyberResilienceAct = lazy(() => import('./pages/Insights/cyberResilienceAct'));
+const En18286AiQms = lazy(() => import('./pages/Insights/en18286AiQms'));
+const AssetTokenization = lazy(() => import('./pages/Insights/assetTokenization'));
 const Glossary = lazy(() => import('./pages/glossary'));
 const GlossaryTerm = lazy(() => import('./pages/glossary/GlossaryTerm'));
 
@@ -300,6 +302,8 @@ function App() {
         <Route exact path="/insights/eu-ai-act-compliance-guide" element={<EuAiActCompliance/>} />
         <Route exact path="/insights/nis2-compliance-iso-27001" element={<Nis2Compliance/>} />
         <Route exact path="/insights/cyber-resilience-act-cra-guide" element={<CyberResilienceAct/>} />
+        <Route exact path="/insights/en-18286-ai-act-qms" element={<En18286AiQms/>} />
+        <Route exact path="/insights/asset-tokenization-explained" element={<AssetTokenization/>} />
         <Route exact path="/glossary" element={<Glossary/>} />
         <Route exact path="/glossary/:slug" element={<GlossaryTerm/>} />
         <Route exact path="/tools" element={<Tools/>} />

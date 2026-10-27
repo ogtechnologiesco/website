@@ -39,8 +39,30 @@ import glm5Image from '../images/insight-glm-5-zai.jpg';
 import euAiActImage from '../images/insight-eu-ai-act.jpg';
 import nis2Image from '../images/insight-nis2-compliance.jpg';
 import craImage from '../images/insight-cyber-resilience-act.jpg';
+import en18286Image from '../images/insight-en-18286-qms.jpg';
+import assetTokenizationImage from '../images/insight-asset-tokenization.jpg';
 
 export const insightsPosts = [
+  {
+    title: 'Asset Tokenization Explained: What It Is, How Issuance Works, and Why 2026 Was the Breakout Year',
+    date: '27/10/2026',
+    description:
+      'The token is evidence of the entitlement, not the asset. How legal wrappers, the three EU regulatory boxes (MiCA, MiFID II + DLT Pilot Regime, tokenized deposits), and on-chain issuance controls fit together — ~$4B live on Stellar.',
+    image: assetTokenizationImage,
+    imageText: 'Asset tokenization — a fund share split into transferable ledger tokens',
+    link: '/insights/asset-tokenization-explained/',
+    categories: ['Blockchain', 'Standards', 'Compliance'],
+  },
+  {
+    title: "EN 18286:2026 Explained: The AI Act's First Harmonised Standard",
+    date: '27/10/2026',
+    description:
+      'Cited in the OJEU on 14 October 2026, EN 18286 gives providers of high-risk AI systems presumption of conformity with the Article 17 quality management system — and layers onto ISO 9001 and ISO/IEC 42001.',
+    image: en18286Image,
+    imageText: 'EN 18286:2026 — AI Act quality management system standard',
+    link: '/insights/en-18286-ai-act-qms/',
+    categories: ['AI Governance', 'Compliance', 'Standards'],
+  },
   {
     title: 'EU AI Act Compliance: What the August 2026 Obligations Mean for Your Business',
     date: '23/10/2026',
